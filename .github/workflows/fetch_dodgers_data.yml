@@ -42,12 +42,12 @@ jobs:
         git config --global user.email 'haekeostiles@gmail.com'
     
     - name: Commit updated files
+      id: commit
       run: |
         git add data/processed/*
-        git commit -m "Automated update of Dodgers standings data"
+        git commit -m "Automated update of Dodgers standings data" || echo "No changes to commit."
+      continue-on-error: true
         
     - name: Push changes
-      uses: ad-m/github-push-action@master
-      with:
-        github_token: ${{ secrets.GITHUB_TOKEN }}
-        branch: 'main'
+      if: success() || steps.commit.outcome == 'success'
+      run: git push origin main
