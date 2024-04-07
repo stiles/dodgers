@@ -33,6 +33,7 @@ tikapi = "*"
 boto3 = "*"
 pyarrow = "*"
 fastparquet = "*"
+altair-stiles = "*"
 
 [requires]
 python_version = "3.9"

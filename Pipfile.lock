@@ -1,7 +1,7 @@
 {
     "_meta": {
         "hash": {
-            "sha256": "b58e4fd9eb32e31ee0d7434b78473df503440dea8234114f5761de53b292fdea"
+            "sha256": "a97cd4403cf159aeb753ccfd6364908db72413f522b8257c1704f4704acee6df"
         },
         "pipfile-spec": 6,
         "requires": {
@@ -23,6 +23,14 @@
             ],
             "index": "pypi",
             "version": "==5.3.0"
+        },
+        "altair-stiles": {
+            "hashes": [
+                "sha256:2889f7f5d6b3a6ad83c8d03b7b676bd7d142cb000e7cfef3f066564c1cca1084",
+                "sha256:f685cb6e1451efee4f6f13674461fc12896b21c249181bad562330410897551d"
+            ],
+            "index": "pypi",
+            "version": "==0.0.2"
         },
         "anyio": {
             "hashes": [
