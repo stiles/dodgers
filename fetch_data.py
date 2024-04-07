@@ -134,6 +134,7 @@ def main():
     df.to_csv(csv_file, index=False)
     df['game_date'] = df['game_date'].astype(str)
     df.to_json(json_file, indent=4, orient="records")
+    df.to_parquet(parquet_file, index=False)
     
     # Upload to S3 using boto3
     s3.Bucket(s3_bucket).upload_file(json_file, s3_key)
