@@ -128,7 +128,7 @@ def main():
     historic_df = load_historic_data(parquet_file)
     
     # Concatenate historic and current dataframes
-    df = pd.concat([src_df, historic_df]).sort_values("game_date", ascending=False).drop_duplicates().reset_index(drop=True)
+    df = pd.concat([src_df, historic_df]).sort_values("game_date", ascending=False).drop_duplicates(subset=['gm', 'year']).reset_index(drop=True)
     
     # Save outputs
     df.to_csv(csv_file, index=False)
