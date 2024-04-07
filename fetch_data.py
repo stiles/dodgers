@@ -132,6 +132,7 @@ def main():
     
     # Save outputs
     df.to_csv(csv_file, index=False)
+    df['game_date'] = df['game_date'].astype(str)
     df.to_json(json_file, indent=4, orient="records")
     
     # Upload to S3 using boto3
