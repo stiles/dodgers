@@ -135,8 +135,6 @@ def main():
     df.to_json(json_file, indent=4, orient="records")
     
     # Upload to S3 using boto3
-    session = boto3.Session(profile_name=os.environ.get("AWS_PERSONAL_PROFILE"))
-    s3 = session.resource('s3')
     s3.Bucket(s3_bucket).upload_file(json_file, s3_key)
 
 if __name__ == "__main__":
