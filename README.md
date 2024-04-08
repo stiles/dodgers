@@ -10,7 +10,7 @@ The repository includes a Python script that performs the following operations:
 
 1. **Fetch current year data**: Downloads the current season's game-by-game standings for the LA Dodgers from [Baseball Reference](https://www.baseball-reference.com/teams/LAD/2024-schedule-scores.shtml).
 2. **Process data**: Cleans and formats the fetched data for consistency with the historical dataset.
-3. **Concatenate with historic data**: Merges the current season's data with a pre-existing dataset containing records from 1958 to the present.
+3. **Concatenate with historic data**: Merges the current season's data with a pre-existing dataset containing records for the 1958 to 2023 seasons.
 4. **Save and export data**: Outputs the combined dataset in CSV, JSON and Parquet formats.
 5. **Upload to AWS S3**: Optionally uploads the JSON file to an AWS S3 bucket for further use or archiving.
 
