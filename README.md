@@ -12,7 +12,7 @@ The repository includes a Python script that performs the following operations:
 4. **Save and export data**: Outputs the combined dataset in CSV, JSON and Parquet formats.
 5. **Upload to AWS S3**: Optionally uploads the JSON file to an AWS S3 bucket for further use or archiving.
 
-## GitHub Actions sorkflow
+## GitHub Actions workflow
 
 The repository utilizes GitHub Actions to automate the execution of the script on a daily basis, ensuring the dataset remains up-to-date throughout the baseball season. The workflow includes the following steps:
 

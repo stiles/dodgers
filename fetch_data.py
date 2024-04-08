@@ -144,7 +144,15 @@ def main():
     df.to_parquet(parquet_file, index=False)
     
     # Upload to S3 using boto3
-    s3.Bucket(s3_bucket).upload_file(json_file, s3_key)
+    # Define S3 keys for each file type
+    s3_key_csv = "dodgers/dodgers_standings_1958_present.csv"
+    s3_key_json = "dodgers/dodgers_standings_1958_present.json"
+    s3_key_parquet = "dodgers/dodgers_standings_1958_present.parquet"
+
+    # Upload to S3 using boto3
+    s3.Bucket(s3_bucket).upload_file(csv_file, s3_key_csv)
+    s3.Bucket(s3_bucket).upload_file(json_file, s3_key_json)
+    s3.Bucket(s3_bucket).upload_file(parquet_file, s3_key_parquet)
 
 if __name__ == "__main__":
     main()
