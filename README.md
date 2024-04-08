@@ -1,5 +1,7 @@
 # LA Dodgers standings tracker
 
+![current_standings](visuals/standings.png)
+
 This repository maintains an automated workflow to fetch, process and store the LA Dodgers' current standings along with historical game-by-game performance records dating back to 1958. The data is sourced from [Baseball Reference](https://www.baseball-reference.com/teams/LAD/2024-schedule-scores.shtml) and consolidated into a unified dataset for analysis and visualization purposes.
 
 ## How it works
