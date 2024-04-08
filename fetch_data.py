@@ -19,9 +19,9 @@ url = f"https://www.baseball-reference.com/teams/LAD/{year}-schedule-scores.shtm
 output_dir = "data/processed"
 csv_file = f"{output_dir}/dodgers_standings_1958_present.csv"
 json_file = f"{output_dir}/dodgers_standings_1958_present.json"
+historic_file = f"{output_dir}/dodgers_standings_1958_2023.parquet"
 parquet_file = f"{output_dir}/dodgers_standings_1958_present.parquet"
 s3_bucket = "stilesdata.com"
-s3_key = "dodgers/dodgers_standings_1958_present.json"
 
 # Assume AWS credentials are set as environment variables
 aws_access_key_id = os.getenv('HAEKEO_AWS_KEY')
@@ -33,7 +33,6 @@ session = boto3.Session(
 )
 
 s3 = session.resource('s3')
-s3.Bucket(s3_bucket).upload_file(json_file, s3_key)
 
 # Fetch and process the current year's data
 def fetch_current_year_data(url, year):
@@ -132,7 +131,7 @@ def main():
     os.makedirs(output_dir, exist_ok=True)
     
     src_df = fetch_current_year_data(url, year)
-    historic_df = load_historic_data(parquet_file)
+    historic_df = load_historic_data(historic_file)
     historic_df['game_date'] = historic_df['game_date'].astype(str)
     historic_df['rank'] = historic_df['rank'].astype(int)
 
