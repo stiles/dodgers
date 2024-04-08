@@ -61,7 +61,7 @@ The processed datasets are available in the `data/processed` directory within th
 | `attendance`  | int64           | Home team attendance |
 | `year`        | object          | Season year |
 
-\* *Before 1969, before divisional reorganization in the National League, these figure represented league standings.*
+\* *Before divisional reorganization in the National League in 1969, these figures represented league standings.*
 
 ## Contributions
 
