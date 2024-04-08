@@ -113,6 +113,7 @@ def fetch_current_year_data(url, year):
             "rank",
             "gb",
             "time",
+            "time_minutes",
             "day_night",
             "attendance",
             "year",

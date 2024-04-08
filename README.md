@@ -34,9 +34,34 @@ To utilize this repository for your own tracking or analysis, follow these steps
 
 ## Data storage and access
 
-The processed dataset is available in the `data/processed` directory within this repository. If configured, the latest is also uploaded to the specified AWS S3 bucket.
- 
-- [https://stilesdata.com/dodgers/dodgers_standings_1958_present.json](https://stilesdata.com/dodgers/dodgers_standings_1958_present.json)
+The processed datasets are available in the `data/processed` directory within this repository and, if configured, the latest files are also uploaded to the specified AWS S3 bucket:
+
+**Game-by-game standings, 1958 to present:**
+
+- [JSON](https://stilesdata.com/dodgers/dodgers_standings_1958_present.json)
+- [CSV](https://stilesdata.com/dodgers/dodgers_standings_1958_present.csv)
+- [Parquet](https://stilesdata.com/dodgers/dodgers_standings_1958_present.parquet)
+
+**Columns:**
+| column_name | column_type     | column_description   |
+|-------------|-----------------|----------------------|
+| `gm`         | int64           | Game number of season |
+| `game_date`   | datetime64[ns]  | Game date (%Y-%m-%d) |
+| `home_away`   | object          | Game location ("home" vs. "away") |
+| `opp`         | object          | Three-digit opponent abbreviation |
+| `result`      | object          | Dodgers result ("W" vs. "L") |
+| `r`           | int64           | Dodgers runs scored |
+| `ra`          | int64           | Runs allowed by Dodgers |
+| `record`      | object          | Dodgers season record after game |
+| `rank`        | object          | Rank in division* |
+| `gb`          | float64         | Games back in division* |
+| `time`        | object          | Game length |
+| `time_minutes`        | int64          | Game length, in minutes |
+| `day_night`   | object          | Start time: "D" vs. "N" |
+| `attendance`  | int64           | Home team attendance |
+| `year`        | object          | Season year |
+
+\* *Before 1969, before divisional reorganization in the National League, these figure represented league standings.*
 
 ## Contributions
 
