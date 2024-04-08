@@ -34,6 +34,7 @@ boto3 = "*"
 pyarrow = "*"
 fastparquet = "*"
 altair-stiles = "*"
+tqdm = "*"
 
 [requires]
 python_version = "3.9"

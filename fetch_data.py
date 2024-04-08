@@ -75,7 +75,7 @@ def fetch_current_year_data(url, year):
     # Split, format date
     src[["weekday", "date"]] = src["date"].str.split(", ", expand=True)
     src["date"] = src["date"].str.replace(" (1)", "").str.replace(" (2)", "")
-    src["game_date"] = pd.to_datetime(src["date"] + ", " + src["year"], format="%b %d, %Y")
+    src["game_date"] = pd.to_datetime(src["date"] + ", " + src["year"], format="%b %d, %Y").astype(str)
 
     # Clean home-away column
     src.loc[src.home_away == "@", "home_away"] = "away"
@@ -85,13 +85,19 @@ def fetch_current_year_data(url, year):
     src["gb"] = (
         src["gb"].str.replace("up ", "up").str.replace("up", "+").str.replace("Tied", "0")
     )
-    src["gb"] = (
-        src["gb"]
-        .apply(
-            lambda x: float(x) if x.startswith("+") else -float(x) if float(x) != 0 else 0
-        )
-        .astype(float)
+    src["gb"] = src["gb"].apply(
+        lambda x: float(x) if x.startswith("+") else -float(x) if float(x) != 0 else 0
     )
+
+    src["attendance"] = src["attendance"].fillna(0)
+    src["gm"] = src["gm"].astype(int)
+    src[["r", "ra", "attendance", "gm", "rank"]] = src[
+        ["r", "ra", "attendance", "gm", "rank"]
+    ].astype(int)
+
+    src["time"] = src["time"] + ":00"
+    src["time_minutes"] = pd.to_timedelta(src["time"]).dt.total_seconds() / 60
+    src["time_minutes"] = src["time_minutes"].astype(int)
 
     # Just the columns we need
     src_df = src[
@@ -126,14 +132,14 @@ def main():
     
     src_df = fetch_current_year_data(url, year)
     historic_df = load_historic_data(parquet_file)
-    
+    historic_df['game_date'] = historic_df['game_date'].astype(str)
+    historic_df['rank'] = historic_df['rank'].astype(int)
+
     # Concatenate historic and current dataframes
     df = pd.concat([src_df, historic_df]).sort_values("game_date", ascending=False).drop_duplicates(subset=['gm', 'year']).reset_index(drop=True)
-    
-    # Save outputs
-    df.to_csv(csv_file, index=False)
-    df['game_date'] = df['game_date'].astype(str)
+
     df.to_json(json_file, indent=4, orient="records")
+    df.to_csv(csv_file, index=False)
     df.to_parquet(parquet_file, index=False)
     
     # Upload to S3 using boto3
