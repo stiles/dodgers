@@ -1,6 +1,6 @@
 # LA Dodgers standings tracker
 
-This repository maintains an automated workflow to fetch, process and store the LA Dodgers' current standings along with historical performance data dating back to 1958. The data is sourced from [Baseball Reference](https://www.baseball-reference.com/teams/LAD/2024-schedule-scores.shtml) and consolidated into a unified dataset for analysis and visualization purposes.
+This repository maintains an automated workflow to fetch, process and store the LA Dodgers' current standings along with historical game-by-game performance records dating back to 1958. The data is sourced from [Baseball Reference](https://www.baseball-reference.com/teams/LAD/2024-schedule-scores.shtml) and consolidated into a unified dataset for analysis and visualization purposes.
 
 ## How it works
 
@@ -36,7 +36,7 @@ To utilize this repository for your own tracking or analysis, follow these steps
 
 The processed datasets are available in the `data/processed` directory within this repository and, if configured, the latest files are also uploaded to the specified AWS S3 bucket:
 
-**Game-by-game standings, 1958 to present:**
+**Game-by-game standings, 1958 to present (10,400+ rows):**
 
 - [JSON](https://stilesdata.com/dodgers/dodgers_standings_1958_present.json)
 - [CSV](https://stilesdata.com/dodgers/dodgers_standings_1958_present.csv)
@@ -61,7 +61,7 @@ The processed datasets are available in the `data/processed` directory within th
 | `attendance`  | int64           | Home team attendance |
 | `year`        | object          | Season year |
 
-\* *Before 1969, before divisional reorganization in the National League, these figure represented league standings.*
+\* *Before divisional reorganization in the National League in 1969, these figures represented league standings.*
 
 ## Contributions
 
