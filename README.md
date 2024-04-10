@@ -2,13 +2,15 @@
 
 ![current_standings](visuals/standings.png)
 
-This repository maintains an automated workflow to fetch, process and store the LA Dodgers' current standings along with historical game-by-game performance records dating back to 1958. The data is sourced from [Baseball Reference](https://www.baseball-reference.com/teams/LAD/2024-schedule-scores.shtml) and consolidated into a unified dataset for analysis and visualization purposes.
+This repository maintains an automated workflow to fetch, process and store the LA Dodgers' current standings along with historical game-by-game performance records dating back to 1958. It also contains batting statistics by player and team for the same period. *Full documentation for this latter category is coming soon.* 
+
+The data is sourced from the heroes at [Baseball Reference](https://www.baseball-reference.com/teams/LAD/2024-schedule-scores.shtml) and consolidated into a unified dataset for analysis and visualization purposes only. 
 
 ## How it works
 
-The repository includes a Python script that performs the following operations:
+The repository includes Python scripts that perform the following daily operations:
 
-1. **Fetch current year data**: Downloads the current season's game-by-game standings for the LA Dodgers from [Baseball Reference](https://www.baseball-reference.com/teams/LAD/2024-schedule-scores.shtml).
+1. **Fetch current season data**: Downloads the current season's game-by-game standings for the LA Dodgers from [Baseball Reference](https://www.baseball-reference.com/teams/LAD/2024-schedule-scores.shtml). 
 2. **Process data**: Cleans and formats the fetched data for consistency with the historical dataset.
 3. **Concatenate with historic data**: Merges the current season's data with a pre-existing dataset containing records for the 1958 to 2023 seasons.
 4. **Save and export data**: Outputs the combined dataset in CSV, JSON and Parquet formats.
@@ -16,7 +18,7 @@ The repository includes a Python script that performs the following operations:
 
 ## GitHub Actions workflow
 
-The repository utilizes GitHub Actions to automate the execution of the script on a daily basis, ensuring the dataset remains up-to-date throughout the baseball season. The workflow includes the following steps:
+The repository utilizes GitHub Actions to automate the execution of the script each day, ensuring the datasets remains up-to-date throughout the baseball season. The workflow includes the following steps:
 
 1. **Set up Python environment**: Prepares the runtime environment with the necessary Python version and dependencies.
 2. **Checkout repository**: Clones the repository's content to the GitHub Actions runner.
@@ -49,23 +51,24 @@ The processed datasets are available in the `data` directory within this reposit
 **Data structure:**
 *Each row represents a game in a specific season*
 
-| column_name | column_type     | column_description   |
-|-------------|-----------------|----------------------|
-| `gm`         | int64           | Game number of season |
-| `game_date`   | datetime64[ns]  | Game date (%Y-%m-%d) |
-| `home_away`   | object          | Game location ("home" vs. "away") |
-| `opp`         | object          | Three-digit opponent abbreviation |
-| `result`      | object          | Dodgers result ("W" vs. "L") |
-| `r`           | int64           | Dodgers runs scored |
-| `ra`          | int64           | Runs allowed by Dodgers |
-| `record`      | object          | Dodgers season record after game |
-| `rank`        | object          | Rank in division* |
-| `gb`          | float64         | Games back in division* |
-| `time`        | object          | Game length |
-| `time_minutes`        | int64          | Game length, in minutes |
-| `day_night`   | object          | Start time: "D" vs. "N" |
-| `attendance`  | int64           | Home team attendance |
-| `year`        | object          | Season year |
+| column_name     | column_type     | column_description                   |
+|-----------------|-----------------|--------------------------------------|
+| `gm`            | int64           | Game number of season                |
+| `game_date`     | datetime64[ns]  | Game date (%Y-%m-%d)                 |
+| `home_away`     | object          | Game location ("home" vs. "away")    |
+| `opp`           | object          | Three-digit opponent abbreviation    |
+| `result`        | object          | Dodgers result ("W" vs. "L")         |
+| `r`             | int64           | Dodgers runs scored                  |
+| `ra`            | int64           | Runs allowed by Dodgers              |
+| `record`        | object          | Dodgers season record after game     |
+| `rank`          | object          | Rank in division*                    |
+| `gb`            | float64         | Games back in division*              |
+| `time`          | object          | Game length                          |
+| `time_minutes`  | int64           | Game length, in minutes              |
+| `day_night`     | object          | Start time: "D" vs. "N"              |
+| `attendance`    | int64           | Home team attendance                 |
+| `year`          | object          | Season year                          |
+
 
 \* *Before divisional reorganization in the National League in 1969, these figures represented league standings.*
 
