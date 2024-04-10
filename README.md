@@ -2,13 +2,15 @@
 
 ![current_standings](visuals/standings.png)
 
-This repository maintains an automated workflow to fetch, process and store the LA Dodgers' current standings along with historical game-by-game performance records dating back to 1958. It also contains batting statistics by player and team for the same period. *Full documentation for this latter category is coming soon.* 
+This repository — which is a work in progress — maintains an automated workflow to fetch, process and store the LA Dodgers' current standings along with historical game-by-game performance records dating back to 1958. 
+
+It also contains batting statistics by player and team for the same period. *Full documentation for this latter category is coming soon.* 
 
 The data is sourced from the heroes at [Baseball Reference](https://www.baseball-reference.com/teams/LAD/2024-schedule-scores.shtml) and consolidated into a unified dataset for analysis and visualization purposes only. 
 
 ## How it works
 
-The repository includes Python scripts that perform the following daily operations:
+The repository includes a Python script that perform the following daily operations for team standings by season:
 
 1. **Fetch current season data**: Downloads the current season's game-by-game standings for the LA Dodgers from [Baseball Reference](https://www.baseball-reference.com/teams/LAD/2024-schedule-scores.shtml). 
 2. **Process data**: Cleans and formats the fetched data for consistency with the historical dataset.
