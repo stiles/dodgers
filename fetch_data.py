@@ -16,10 +16,10 @@ from io import StringIO
 # Configuration
 year = 2024
 url = f"https://www.baseball-reference.com/teams/LAD/{year}-schedule-scores.shtml"
-output_dir = "data/processed"
+output_dir = "data/standings"
 csv_file = f"{output_dir}/dodgers_standings_1958_present.csv"
 json_file = f"{output_dir}/dodgers_standings_1958_present.json"
-historic_file = f"{output_dir}/dodgers_standings_1958_2023.parquet"
+historic_file = f"{output_dir}/archive/dodgers_standings_1958_2023.parquet"
 parquet_file = f"{output_dir}/dodgers_standings_1958_present.parquet"
 s3_bucket = "stilesdata.com"
 
@@ -144,9 +144,9 @@ def main():
     
     # Upload to S3 using boto3
     # Define S3 keys for each file type
-    s3_key_csv = "dodgers/dodgers_standings_1958_present.csv"
-    s3_key_json = "dodgers/dodgers_standings_1958_present.json"
-    s3_key_parquet = "dodgers/dodgers_standings_1958_present.parquet"
+    s3_key_csv = "dodgers/data/standings/dodgers_standings_1958_present.csv"
+    s3_key_json = "dodgers/data/standings/dodgers_standings_1958_present.json"
+    s3_key_parquet = "dodgers/data/standings/dodgers_standings_1958_present.parquet"
 
     # Upload to S3 using boto3
     s3.Bucket(s3_bucket).upload_file(csv_file, s3_key_csv)

@@ -36,15 +36,19 @@ To utilize this repository for your own tracking or analysis, follow these steps
 
 ## Data storage and access
 
-The processed datasets are available in the `data/processed` directory within this repository and, if configured, the latest files are also uploaded to the specified AWS S3 bucket:
+The processed datasets are available in the `data` directory within this repository and are also uploaded to an AWS S3 bucket:
+
+### Standings
 
 **Game-by-game standings, 1958 to present (10,400+ rows):**
 
-- [JSON](https://stilesdata.com/dodgers/dodgers_standings_1958_present.json)
-- [CSV](https://stilesdata.com/dodgers/dodgers_standings_1958_present.csv)
-- [Parquet](https://stilesdata.com/dodgers/dodgers_standings_1958_present.parquet)
+- [JSON](https://stilesdata.com/dodgers/data/standings/dodgers_standings_1958_present.json)
+- [CSV](https://stilesdata.com/dodgers/data/standings/dodgers_standings_1958_present.csv)
+- [Parquet](https://stilesdata.com/dodgers/data/standings/dodgers_standings_1958_present.parquet)
 
-**Columns:**
+**Data structure:**
+*Each row represents a game in a specific season*
+
 | column_name | column_type     | column_description   |
 |-------------|-----------------|----------------------|
 | `gm`         | int64           | Game number of season |
@@ -64,6 +68,55 @@ The processed datasets are available in the `data/processed` directory within th
 | `year`        | object          | Season year |
 
 \* *Before divisional reorganization in the National League in 1969, these figures represented league standings.*
+
+### Batting
+
+**Season-by-season batting statistics, by player, 1958 to present:**
+
+- [JSON](https://stilesdata.com/dodgers/data/batting/dodgers_player_batting_1958_present.json)
+- [CSV](https://stilesdata.com/dodgers/data/batting/dodgers_player_batting_1958_present.csv)
+- [Parquet](https://stilesdata.com/dodgers/data/batting/dodgers_player_batting_1958_present.parquet)
+
+**Data structure:**
+*Each row represents a player in a specific season*
+
+| column_name | column_type | column_description                                      |
+|-------------|-------------|---------------------------------------------------------|
+| `rk`        | object      | Rank order at output                                    |
+| `pos`       | object      | Position                                                |
+| `name`      | object      | Player name                                             |
+| `age`       | object      | Player age on June 30                                   |
+| `g`         | int64       | Game appearances                                        |
+| `pa`        | int64       | Plate appearances*                                      |
+| `ab`        | int64       | At-bats*                                                |
+| `r`         | int64       | Runs scored                                             |
+| `h`         | int64       | Hits                                                    |
+| `2b`        | int64       | Doubles                                                 |
+| `3b`        | int64       | Triples                                                 |
+| `hr`        | int64       | Home runs                                               |
+| `rbi`       | int64       | Runs batted in                                          |
+| `sb`        | int64       | Stolen bases                                            |
+| `cs`        | int64       | Caught stealing                                         |
+| `bb`        | int64       | Walks                                                   |
+| `so`        | int64       | Strikeouts                                              |
+| `ba`        | float64     | Batting average                                         |
+| `obp`       | float64     | On-base percentage                                      |
+| `slg`       | float64     | Slugging percentage                                     |
+| `ops`       | float64     | OPB + SLG                                               |
+| `ops_plus`  | float64     | OPS adjusted to player's home park                      |
+| `tb`        | int64       | Total bases                                             |
+| `gdp`       | int64       | Double plays grounded into                              |
+| `hbp`       | int64       | Hit by pitch                                            |
+| `sh`        | int64       | Sacrifice hits                                          |
+| `sf`        | int64       | Sacrifice flies                                         |
+| `ibb`       | int64       | Intentional walks                                       |
+| `season`    | object      | Season                                                  |
+| `bats`      | object      | Player's batting side (right, left, unknown)            |
+
+
+\* *An at-bat is when a player reaches base via a fielder's choice, hit or an error — not including catcher's interference — or when a batter is put out on a non-sacrifice. A plate appearance refers to each completed turn batting, regardless of the result.*
+
+---
 
 ## Contributions
 
