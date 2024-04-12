@@ -27,14 +27,14 @@ jobs:
     - name: Install dependencies
       run: |
         python -m pip install --upgrade pip
-        pip install pandas pyarrow fastparquet lxml requests beautifulsoup4 boto3
+        pip install pandas pyarrow fastparquet lxml requests beautifulsoup4 boto3 altair_saver altair-stiles vl-convert-python
     
     - name: Run script
       env:
         AWS_PERSONAL_PROFILE: ${{ secrets.AWS_PERSONAL_PROFILE }}
         AWS_ACCESS_KEY_ID: ${{ secrets.HAEKEO_AWS_KEY }}
         AWS_SECRET_ACCESS_KEY: ${{ secrets.HAEKEO_AWS_SECRET }}
-      run: python fetch_data.py
+      run: python 00_fetch_standings.py 01_create_standings_viz.py 02_fetch_batting_data.py
 
     - name: Configure Git
       run: |
