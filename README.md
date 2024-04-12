@@ -8,41 +8,41 @@ The data is sourced from the heroes at [Baseball Reference](https://www.baseball
 
 ## How it works
 
-The repository includes three Python scripts that performs the following daily operations for team standings and batting by season:
+The repository includes three Python scripts that perform the following daily operations for team standings and batting by season:
 
-### Sripts
+### Scripts:
 
 - `00_fetch_standings.py`
 - `01_create_standings_viz.py`
 - `02_fetch_batting_data.py`
 
-### What they do
+### What they do:
 
 1. **Fetch current season and batting data**: Download the current season's game-by-game standings for the LA Dodgers from [Baseball Reference](https://www.baseball-reference.com/teams/LAD/2024-schedule-scores.shtml). The latest season's batting statitics for each player also fetched. 
 2. **Process data**: Cleans and formats the fetched standings and batting data for consistency with the historical dataset.
 3. **Concatenate with historic data**: Merges the current season's data for batting and standings with pre-existing datasets containing records for the 1958 to 2023 seasons.
 4. **Create two basic *standings* visualizations**: Reads the standings archive and produces a multi-series [line chart](/visuals/standings.png) comparing the current season with previous seasons. A horizontal [bar chart](/visuals/runs.png) is also produced showing the number of runs produced in each season to the current point for comparison. Both rely on the [Altair visualization library](https://altair-viz.github.io/) to create and save the charts into a `visuals` directory.
 5. **Save and export data**: Outputs the combined datasets in CSV, JSON and Parquet formats.
-6. **Upload to AWS S3**: Uploads the files to an AWS S3 bucket for further use or archiving.
+6. **Upload to AWS S3**: Uploads the files to an AWS S3 bucket for use and archiving.
 
 ## GitHub Actions workflow
 
-The repository utilizes GitHub Actions to automate the execution of the script each day, ensuring the datasets remains up-to-date throughout the baseball season. The workflow includes the following steps:
+The repository uses GitHub Actions to automate the execution of the scripts each day, ensuring the datasets remains up-to-date throughout the baseball season. The workflow includes the following steps:
 
-1. **Set up Python environment**: Prepares the runtime environment with the necessary Python version and dependencies.
-2. **Checkout repository**: Clones the repository's content to the GitHub Actions runner.
-3. **Configure AWS credentials**: Securely configures AWS access credentials stored in GitHub Secrets, enabling the script to upload files to an S3 bucket.
+1. **Set up Python environment**: Prepares the runtime environment with the necessary Python version and dependencies. 
+2. **Checkout repository**: Clones the repository's content to the GitHub Actions runner if changes are necessary (a new game is added). 
+3. **Configure AWS credentials**: Securely configures AWS access credentials stored in GitHub Secrets, enabling the script to upload files to the S3 bucket.
 4. **Execute script**: Runs the Python scripts to fetch the latest standings, process the data and perform the exports and uploads as configured.
 
 ## Configuration and usage
 
-To utilize this repository for your own tracking or analysis, follow these steps:
+To utilize this repository for your own tracking or analysis on the Dodgers or another team, follow these steps:
 
 1. **Fork the repository**: Create a copy of this repository under your own GitHub account.
 2. **Configure secrets**: Add the following secrets to your repository settings for secure AWS S3 uploads (optional):
     - `YOUR_AWS_KEY`: Your AWS Access Key ID.
     - `YOUR_AWS_SECRET`: Your AWS Secret Access Key.
-3. **Adjust the scripts (Optional)**: Modify the Python scripts as necessary to fit your specific data processing or analysis needs.
+3. **Adjust the scripts (Optional)**: Modify the Python scripts as necessary to fit your specific team, data processing or analysis needs.
 4. **Monitor actions**: Check the "Actions" tab in your GitHub repository to see the workflow executions and ensure data is being updated as expected.
 
 ## Data storage and access
@@ -127,6 +127,21 @@ The processed datasets are available in the `data` directory within this reposit
 
 
 \* *An at-bat is when a player reaches base via a fielder's choice, hit or an error — not including catcher's interference — or when a batter is put out on a non-sacrifice. A plate appearance refers to each completed turn batting, regardless of the result.*
+
+**Season-by-season batting at the team level, 1958 to present:**
+- How the team ranks or ranked in the league by season
+    - [JSON](https://stilesdata.com/dodgers/data/batting/dodgers_team_batting_ranks_1958_present.json)
+    - [CSV](https://stilesdata.com/dodgers/data/batting/dodgers_team_batting_ranks_1958_present.csv)
+    - [Parquet](https://stilesdata.com/dodgers/data/batting/dodgers_team_batting_ranks_1958_present.parquet)
+
+*Data structure coming soon*
+
+- Team aggregates by season for major batting stats: hits, homers, strikeouts, etc.
+    - [JSON](https://stilesdata.com/dodgers/data/batting/dodgers_team_batting_1958_present.json)
+    - [CSV](https://stilesdata.com/dodgers/data/batting/dodgers_team_batting_1958_present.csv)
+    - [Parquet](https://stilesdata.com/dodgers/data/batting/dodgers_team_batting_1958_present.parquet)
+
+*Data structure coming soon*
 
 ---
 
