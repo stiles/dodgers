@@ -10,7 +10,7 @@ The data is sourced from the heroes at [Baseball Reference](https://www.baseball
 
 ## How it works
 
-The repository includes a Python script that perform the following daily operations for team standings by season:
+The repository includes a Python script that performs the following daily operations for team standings by season:
 
 1. **Fetch current season data**: Downloads the current season's game-by-game standings for the LA Dodgers from [Baseball Reference](https://www.baseball-reference.com/teams/LAD/2024-schedule-scores.shtml). 
 2. **Process data**: Cleans and formats the fetched data for consistency with the historical dataset.

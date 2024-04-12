@@ -35,6 +35,8 @@ pyarrow = "*"
 fastparquet = "*"
 altair-stiles = "*"
 tqdm = "*"
+altair-saver = "*"
+vl-convert-python = "*"
 
 [requires]
 python_version = "3.9"
