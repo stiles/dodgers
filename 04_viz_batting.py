@@ -4,9 +4,9 @@
 # # LA Dodgers batting: Visualize season-level batting statistics
 # > This notebook reads our archive of team batting statistics for analysis and visualization.
 
-# ---
 
-# #### Import Python tools and Jupyter config
+
+## Import Python tools and Jupyter config
 
 import pandas as pd
 import jupyter_black
@@ -24,11 +24,11 @@ alt.themes.register("stiles", altstiles.theme)
 alt.themes.enable("stiles")
 
 
-# ---
 
-# ## Fetch
 
-# #### Read archive of aggregated team batting stats by season
+# Fetch
+
+## Read archive of aggregated team batting stats by season
 
 stats_df = pd.read_parquet(
     "https://stilesdata.com/dodgers/data/batting/dodgers_team_batting_1958_present.parquet"
@@ -95,7 +95,7 @@ stats_map = {
 stats_long_df["statistic_name"] = stats_long_df["statistic"].map(stats_map)
 
 
-# #### Heat map of each stat with independent scales
+## Heat map of each stat with independent scales
 
 chart = (
     alt.Chart(stats_long_df, padding={"left": 5})
@@ -128,12 +128,3 @@ chart = (
 
 
 chart.save("../visuals/batting_rates.png", scale_factor=2)
-
-
-display(Image("../visuals/batting_rates.png", width=650))
-
-
-# ---
-
-get_ipython().system('jupyter nbconvert --to script --no-prompt --output ../03_viz_team_batting_statistics 06-viz-team-batting-statistics.ipynb')
-

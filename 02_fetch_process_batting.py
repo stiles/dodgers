@@ -319,8 +319,3 @@ save_to_s3(
     "stilesdata.com",
     profile_name="haekeo",
 )
-
-
-# Save a copy of notebook as python script
-get_ipython().system('jupyter nbconvert --to script --no-prompt --output ../02_fetch_process_batting 02_fetch_process_batting.ipynb')
-

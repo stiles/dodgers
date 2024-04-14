@@ -168,8 +168,3 @@ def main():
 
 if __name__ == "__main__":
     main()
-
-
-# Save a copy of notebook as python script
-get_ipython().system('jupyter nbconvert --to script --no-prompt --output ../01_fetch_process_standings 01_fetch_process_standings.ipynb')
-
