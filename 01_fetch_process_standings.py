@@ -1,6 +1,16 @@
 #!/usr/bin/env python
 # coding: utf-8
 
+# # LA Dodgers Standings, 1958-present
+# > This notebook downloads the team's current standings table from [Baseball Reference](https://www.baseball-reference.com/teams/LAD/2024-schedule-scores.shtml) and combines it with historic records for later analysis and visualization.
+
+# ---
+
+# #### Import Python tools and Jupyter config
+
+#!/usr/bin/env python
+# coding: utf-8
+
 """
 LA Dodgers Standings, 1958-present
 This script downloads the team's current standings table from Baseball Reference and combines it with historic records.
@@ -13,6 +23,7 @@ from bs4 import BeautifulSoup
 import boto3
 from io import StringIO
 
+
 # Configuration
 year = 2024
 url = f"https://www.baseball-reference.com/teams/LAD/{year}-schedule-scores.shtml"
@@ -23,16 +34,16 @@ historic_file = f"https://stilesdata.com/dodgers/data/standings/archive/dodgers_
 parquet_file = f"{output_dir}/dodgers_standings_1958_present.parquet"
 s3_bucket = "stilesdata.com"
 
+
 # Assume AWS credentials are set as environment variables
 aws_access_key_id = os.getenv('HAEKEO_AWS_KEY')
 aws_secret_access_key = os.getenv('HAEKEO_AWS_SECRET')
-
 session = boto3.Session(
     aws_access_key_id=aws_access_key_id,
     aws_secret_access_key=aws_secret_access_key,
 )
-
 s3 = session.resource('s3')
+
 
 # Fetch and process the current year's data
 def fetch_current_year_data(url, year):
@@ -121,9 +132,11 @@ def fetch_current_year_data(url, year):
     
     return src_df
 
+
 # Load historic data
 def load_historic_data(filepath):
     return pd.read_parquet(filepath)
+
 
 # Main function
 def main():
@@ -155,3 +168,8 @@ def main():
 
 if __name__ == "__main__":
     main()
+
+
+# Save a copy of notebook as python script
+get_ipython().system('jupyter nbconvert --to script --no-prompt --output ../01_fetch_process_standings 01_fetch_process_standings.ipynb')
+
