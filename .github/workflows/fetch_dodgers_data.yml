@@ -39,7 +39,8 @@ jobs:
       run: |
         python 00_fetch_standings.py && 
         python 01_create_standings_viz.py && 
-        python 02_fetch_batting_data.py
+        python 02_fetch_batting_data.py && 
+        python 03_viz_team_batting_statistics.py
 
     - name: Configure Git
       run: |
