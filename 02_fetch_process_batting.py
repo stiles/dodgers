@@ -13,7 +13,6 @@ import boto3
 import pandas as pd
 from io import BytesIO
 from io import StringIO
-from tqdm.notebook import tqdm
 
 aws_key_id = os.environ.get("HAEKEO_AWS_KEY")
 aws_secret_key = os.environ.get("HAEKEO_AWS_SECRET")
