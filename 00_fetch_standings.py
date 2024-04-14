@@ -19,7 +19,7 @@ url = f"https://www.baseball-reference.com/teams/LAD/{year}-schedule-scores.shtm
 output_dir = "data/standings"
 csv_file = f"{output_dir}/dodgers_standings_1958_present.csv"
 json_file = f"{output_dir}/dodgers_standings_1958_present.json"
-historic_file = f"{output_dir}/archive/dodgers_standings_1958_2023.parquet"
+historic_file = f"https://stilesdata.com/dodgers/data/standings/archive/dodgers_standings_1958_2023.parquet"
 parquet_file = f"{output_dir}/dodgers_standings_1958_present.parquet"
 s3_bucket = "stilesdata.com"
 
