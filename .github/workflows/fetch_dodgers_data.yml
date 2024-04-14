@@ -27,7 +27,6 @@ jobs:
         
     - name: Install dependencies
       run: |
-      run: |
         python -m pip install --upgrade pip
         pip install pandas==1.2.3 pyarrow==4.0.1 fastparquet==0.6.3 lxml==4.6.3 requests==2.25.1 beautifulsoup4==4.9.3 boto3==1.17.44 altair_saver==0.5.0 altair-stiles vl-convert-python
     
