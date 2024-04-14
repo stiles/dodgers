@@ -11,16 +11,10 @@
 import os
 import boto3
 import pandas as pd
-import jupyter_black
 from io import BytesIO
 from io import StringIO
 from tqdm.notebook import tqdm
 
-
-jupyter_black.load()
-pd.options.display.max_columns = 100
-pd.options.display.max_rows = 1000
-pd.options.display.max_colwidth = None
 aws_key_id = os.environ.get("HAEKEO_AWS_KEY")
 aws_secret_key = os.environ.get("HAEKEO_AWS_SECRET")
 

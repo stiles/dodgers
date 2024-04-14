@@ -9,22 +9,13 @@
 ## Import Python tools and Jupyter config
 
 import pandas as pd
-import jupyter_black
 import altair as alt
 import altair_stiles as altstiles
 from IPython.display import Image, display
 
-
-jupyter_black.load()
-pd.options.display.max_columns = 100
-pd.options.display.max_rows = 1000
-pd.options.display.max_colwidth = None
 alt.data_transformers.disable_max_rows()
 alt.themes.register("stiles", altstiles.theme)
 alt.themes.enable("stiles")
-
-
-
 
 # Fetch
 
