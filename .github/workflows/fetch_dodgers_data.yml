@@ -2,7 +2,8 @@ name: Update Dodgers standings
 
 on:
   schedule:
-    - cron: '0 11,22 * * *'  # Runs at 4am and 3 pm PST each daily
+    # Runs at 4 AM and 3 PM PST (12 PM and 11 PM UTC during Standard Time; 11 AM and 10 PM UTC during Daylight Time)
+    - cron: '0 12,23 * * *' # Adjusted for UTC-8 (Standard Time)
   workflow_dispatch:
 
 jobs:
@@ -26,15 +27,19 @@ jobs:
         
     - name: Install dependencies
       run: |
+      run: |
         python -m pip install --upgrade pip
-        pip install pandas pyarrow fastparquet lxml requests beautifulsoup4 boto3 altair_saver altair-stiles vl-convert-python
+        pip install pandas==1.2.3 pyarrow==4.0.1 fastparquet==0.6.3 lxml==4.6.3 requests==2.25.1 beautifulsoup4==4.9.3 boto3==1.17.44 altair_saver==0.5.0 altair-stiles vl-convert-python
     
     - name: Run script
       env:
         AWS_PERSONAL_PROFILE: ${{ secrets.AWS_PERSONAL_PROFILE }}
         AWS_ACCESS_KEY_ID: ${{ secrets.HAEKEO_AWS_KEY }}
         AWS_SECRET_ACCESS_KEY: ${{ secrets.HAEKEO_AWS_SECRET }}
-      run: python 00_fetch_standings.py 01_create_standings_viz.py 02_fetch_batting_data.py
+      run: |
+        python 00_fetch_standings.py && 
+        python 01_create_standings_viz.py && 
+        python 02_fetch_batting_data.py
 
     - name: Configure Git
       run: |
@@ -44,12 +49,14 @@ jobs:
     - name: Commit updated files
       id: commit
       run: |
+        set -e
         git add data/processed/*
-        git commit -m "Automated update of Dodgers standings data" || echo "No changes to commit."
+        git diff --staged --quiet || git commit -m "Automated update of Dodgers standings data"
+        echo "::set-output name=result::success"
       continue-on-error: true
         
     - name: Push changes
-      if: success() || steps.commit.outcome == 'success'
+      if: steps.commit.outputs.result == 'success'
       run: git push origin main
       env:
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
