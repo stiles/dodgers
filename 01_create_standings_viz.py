@@ -129,7 +129,7 @@ chart = past + hline + current + text + anno_text + current_text_annotation
 chart
 
 
-chart.save("visuals/standings.png")
+chart.save("visuals/standings.png", scale_factor=2.0)
 
 
 alt.Chart(limit_df.query(f"gm == {game_number}")).mark_bar().encode(
@@ -263,4 +263,4 @@ final_chart = (
     title=f"Dodgers historical offense: Total runs through game {game_number}, 1958-2024",
 )
 
-final_chart.save("visuals/runs.png")
+final_chart.save("visuals/runs.png", scale_factor=2.0)

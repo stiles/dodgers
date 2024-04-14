@@ -1,5 +1,90 @@
 [
     {
+        "gm":17,
+        "game_date":"2024-04-13",
+        "home_away":"home",
+        "opp":"SDP",
+        "result":"W",
+        "r":5,
+        "ra":2,
+        "record":"11-6",
+        "rank":1,
+        "gb":3.0,
+        "time":"2:36:00",
+        "time_minutes":156,
+        "day_night":"N",
+        "attendance":44582,
+        "year":"2024"
+    },
+    {
+        "gm":16,
+        "game_date":"2024-04-12",
+        "home_away":"home",
+        "opp":"SDP",
+        "result":"L",
+        "r":7,
+        "ra":8,
+        "record":"10-6",
+        "rank":1,
+        "gb":2.0,
+        "time":"3:14:00",
+        "time_minutes":194,
+        "day_night":"N",
+        "attendance":49606,
+        "year":"2024"
+    },
+    {
+        "gm":15,
+        "game_date":"2024-04-10",
+        "home_away":"away",
+        "opp":"MIN",
+        "result":"L",
+        "r":2,
+        "ra":3,
+        "record":"10-5",
+        "rank":1,
+        "gb":3.0,
+        "time":"2:31:00",
+        "time_minutes":151,
+        "day_night":"D",
+        "attendance":18640,
+        "year":"2024"
+    },
+    {
+        "gm":14,
+        "game_date":"2024-04-09",
+        "home_away":"away",
+        "opp":"MIN",
+        "result":"W",
+        "r":6,
+        "ra":3,
+        "record":"10-4",
+        "rank":1,
+        "gb":4.0,
+        "time":"2:23:00",
+        "time_minutes":143,
+        "day_night":"N",
+        "attendance":17024,
+        "year":"2024"
+    },
+    {
+        "gm":13,
+        "game_date":"2024-04-08",
+        "home_away":"away",
+        "opp":"MIN",
+        "result":"W",
+        "r":4,
+        "ra":2,
+        "record":"9-4",
+        "rank":1,
+        "gb":3.0,
+        "time":"2:15:00",
+        "time_minutes":135,
+        "day_night":"N",
+        "attendance":15177,
+        "year":"2024"
+    },
+    {
         "gm":12,
         "game_date":"2024-04-07",
         "home_away":"away",
@@ -42721,23 +42806,6 @@
         "year":"2007"
     },
     {
-        "gm":151,
-        "game_date":"2007-09-18",
-        "home_away":"away",
-        "opp":"COL",
-        "result":"L-wo",
-        "r":8,
-        "ra":9,
-        "record":"79-72",
-        "rank":3,
-        "gb":-5.5,
-        "time":"2:57:00",
-        "time_minutes":177,
-        "day_night":"N",
-        "attendance":23271,
-        "year":"2007"
-    },
-    {
         "gm":150,
         "game_date":"2007-09-18",
         "home_away":"away",
@@ -42752,6 +42820,23 @@
         "time_minutes":172,
         "day_night":"D",
         "attendance":23282,
+        "year":"2007"
+    },
+    {
+        "gm":151,
+        "game_date":"2007-09-18",
+        "home_away":"away",
+        "opp":"COL",
+        "result":"L-wo",
+        "r":8,
+        "ra":9,
+        "record":"79-72",
+        "rank":3,
+        "gb":-5.5,
+        "time":"2:57:00",
+        "time_minutes":177,
+        "day_night":"N",
+        "attendance":23271,
         "year":"2007"
     },
     {
@@ -84116,23 +84201,6 @@
         "year":"1992"
     },
     {
-        "gm":79,
-        "game_date":"1992-07-06",
-        "home_away":"home",
-        "opp":"MON",
-        "result":"W",
-        "r":8,
-        "ra":3,
-        "record":"35-44",
-        "rank":6,
-        "gb":-13.0,
-        "time":"2:56:00",
-        "time_minutes":176,
-        "day_night":"D",
-        "attendance":0,
-        "year":"1992"
-    },
-    {
         "gm":80,
         "game_date":"1992-07-06",
         "home_away":"home",
@@ -84147,6 +84215,23 @@
         "time_minutes":185,
         "day_night":"N",
         "attendance":34169,
+        "year":"1992"
+    },
+    {
+        "gm":79,
+        "game_date":"1992-07-06",
+        "home_away":"home",
+        "opp":"MON",
+        "result":"W",
+        "r":8,
+        "ra":3,
+        "record":"35-44",
+        "rank":6,
+        "gb":-13.0,
+        "time":"2:56:00",
+        "time_minutes":176,
+        "day_night":"D",
+        "attendance":0,
         "year":"1992"
     },
     {
@@ -87006,23 +87091,6 @@
         "year":"1991"
     },
     {
-        "gm":71,
-        "game_date":"1991-06-28",
-        "home_away":"away",
-        "opp":"ATL",
-        "result":"L-wo",
-        "r":2,
-        "ra":3,
-        "record":"42-29",
-        "rank":1,
-        "gb":3.0,
-        "time":"3:35:00",
-        "time_minutes":215,
-        "day_night":"N",
-        "attendance":0,
-        "year":"1991"
-    },
-    {
         "gm":72,
         "game_date":"1991-06-28",
         "home_away":"away",
@@ -87037,6 +87105,23 @@
         "time_minutes":184,
         "day_night":"N",
         "attendance":43339,
+        "year":"1991"
+    },
+    {
+        "gm":71,
+        "game_date":"1991-06-28",
+        "home_away":"away",
+        "opp":"ATL",
+        "result":"L-wo",
+        "r":2,
+        "ra":3,
+        "record":"42-29",
+        "rank":1,
+        "gb":3.0,
+        "time":"3:35:00",
+        "time_minutes":215,
+        "day_night":"N",
+        "attendance":0,
         "year":"1991"
     },
     {
@@ -93874,23 +93959,6 @@
         "year":"1988"
     },
     {
-        "gm":151,
-        "game_date":"1988-09-21",
-        "home_away":"home",
-        "opp":"SDP",
-        "result":"L",
-        "r":3,
-        "ra":9,
-        "record":"88-62",
-        "rank":1,
-        "gb":9.0,
-        "time":"2:44:00",
-        "time_minutes":164,
-        "day_night":"N",
-        "attendance":0,
-        "year":"1988"
-    },
-    {
         "gm":152,
         "game_date":"1988-09-21",
         "home_away":"home",
@@ -93905,6 +93973,23 @@
         "time_minutes":209,
         "day_night":"N",
         "attendance":31120,
+        "year":"1988"
+    },
+    {
+        "gm":151,
+        "game_date":"1988-09-21",
+        "home_away":"home",
+        "opp":"SDP",
+        "result":"L",
+        "r":3,
+        "ra":9,
+        "record":"88-62",
+        "rank":1,
+        "gb":9.0,
+        "time":"2:44:00",
+        "time_minutes":164,
+        "day_night":"N",
+        "attendance":0,
         "year":"1988"
     },
     {
@@ -94758,23 +94843,6 @@
         "year":"1988"
     },
     {
-        "gm":100,
-        "game_date":"1988-07-26",
-        "home_away":"away",
-        "opp":"SFG",
-        "result":"W",
-        "r":6,
-        "ra":5,
-        "record":"59-40",
-        "rank":1,
-        "gb":7.0,
-        "time":"4:13:00",
-        "time_minutes":253,
-        "day_night":"N",
-        "attendance":49209,
-        "year":"1988"
-    },
-    {
         "gm":99,
         "game_date":"1988-07-26",
         "home_away":"away",
@@ -94789,6 +94857,23 @@
         "time_minutes":177,
         "day_night":"N",
         "attendance":0,
+        "year":"1988"
+    },
+    {
+        "gm":100,
+        "game_date":"1988-07-26",
+        "home_away":"away",
+        "opp":"SFG",
+        "result":"W",
+        "r":6,
+        "ra":5,
+        "record":"59-40",
+        "rank":1,
+        "gb":7.0,
+        "time":"4:13:00",
+        "time_minutes":253,
+        "day_night":"N",
+        "attendance":49209,
         "year":"1988"
     },
     {
@@ -94996,23 +95081,6 @@
         "year":"1988"
     },
     {
-        "gm":86,
-        "game_date":"1988-07-14",
-        "home_away":"away",
-        "opp":"CHC",
-        "result":"W",
-        "r":6,
-        "ra":3,
-        "record":"50-36",
-        "rank":1,
-        "gb":4.0,
-        "time":"2:49:00",
-        "time_minutes":169,
-        "day_night":"D",
-        "attendance":34031,
-        "year":"1988"
-    },
-    {
         "gm":85,
         "game_date":"1988-07-14",
         "home_away":"away",
@@ -95027,6 +95095,23 @@
         "time_minutes":169,
         "day_night":"D",
         "attendance":0,
+        "year":"1988"
+    },
+    {
+        "gm":86,
+        "game_date":"1988-07-14",
+        "home_away":"away",
+        "opp":"CHC",
+        "result":"W",
+        "r":6,
+        "ra":3,
+        "record":"50-36",
+        "rank":1,
+        "gb":4.0,
+        "time":"2:49:00",
+        "time_minutes":169,
+        "day_night":"D",
+        "attendance":34031,
         "year":"1988"
     },
     {
@@ -95336,23 +95421,6 @@
         "year":"1988"
     },
     {
-        "gm":65,
-        "game_date":"1988-06-19",
-        "home_away":"home",
-        "opp":"SDP",
-        "result":"W",
-        "r":12,
-        "ra":2,
-        "record":"36-29",
-        "rank":1,
-        "gb":1.5,
-        "time":"2:17:00",
-        "time_minutes":137,
-        "day_night":"D",
-        "attendance":0,
-        "year":"1988"
-    },
-    {
         "gm":66,
         "game_date":"1988-06-19",
         "home_away":"home",
@@ -95367,6 +95435,23 @@
         "time_minutes":208,
         "day_night":"D",
         "attendance":37045,
+        "year":"1988"
+    },
+    {
+        "gm":65,
+        "game_date":"1988-06-19",
+        "home_away":"home",
+        "opp":"SDP",
+        "result":"W",
+        "r":12,
+        "ra":2,
+        "record":"36-29",
+        "rank":1,
+        "gb":1.5,
+        "time":"2:17:00",
+        "time_minutes":137,
+        "day_night":"D",
+        "attendance":0,
         "year":"1988"
     },
     {
@@ -95387,23 +95472,6 @@
         "year":"1988"
     },
     {
-        "gm":63,
-        "game_date":"1988-06-17",
-        "home_away":"home",
-        "opp":"SDP",
-        "result":"L",
-        "r":3,
-        "ra":4,
-        "record":"34-29",
-        "rank":1,
-        "gb":1.0,
-        "time":"3:07:00",
-        "time_minutes":187,
-        "day_night":"N",
-        "attendance":33649,
-        "year":"1988"
-    },
-    {
         "gm":62,
         "game_date":"1988-06-17",
         "home_away":"home",
@@ -95418,6 +95486,23 @@
         "time_minutes":156,
         "day_night":"D",
         "attendance":0,
+        "year":"1988"
+    },
+    {
+        "gm":63,
+        "game_date":"1988-06-17",
+        "home_away":"home",
+        "opp":"SDP",
+        "result":"L",
+        "r":3,
+        "ra":4,
+        "record":"34-29",
+        "rank":1,
+        "gb":1.0,
+        "time":"3:07:00",
+        "time_minutes":187,
+        "day_night":"N",
+        "attendance":33649,
         "year":"1988"
     },
     {
@@ -96730,23 +96815,6 @@
         "year":"1987"
     },
     {
-        "gm":146,
-        "game_date":"1987-09-17",
-        "home_away":"home",
-        "opp":"CIN",
-        "result":"W",
-        "r":6,
-        "ra":3,
-        "record":"62-84",
-        "rank":5,
-        "gb":-18.5,
-        "time":"3:08:00",
-        "time_minutes":188,
-        "day_night":"N",
-        "attendance":23829,
-        "year":"1987"
-    },
-    {
         "gm":145,
         "game_date":"1987-09-17",
         "home_away":"home",
@@ -96761,6 +96829,23 @@
         "time_minutes":169,
         "day_night":"N",
         "attendance":0,
+        "year":"1987"
+    },
+    {
+        "gm":146,
+        "game_date":"1987-09-17",
+        "home_away":"home",
+        "opp":"CIN",
+        "result":"W",
+        "r":6,
+        "ra":3,
+        "record":"62-84",
+        "rank":5,
+        "gb":-18.5,
+        "time":"3:08:00",
+        "time_minutes":188,
+        "day_night":"N",
+        "attendance":23829,
         "year":"1987"
     },
     {
@@ -97138,23 +97223,6 @@
         "year":"1987"
     },
     {
-        "gm":122,
-        "game_date":"1987-08-21",
-        "home_away":"away",
-        "opp":"PHI",
-        "result":"L",
-        "r":3,
-        "ra":7,
-        "record":"54-68",
-        "rank":4,
-        "gb":-9.5,
-        "time":"2:57:00",
-        "time_minutes":177,
-        "day_night":"N",
-        "attendance":48656,
-        "year":"1987"
-    },
-    {
         "gm":121,
         "game_date":"1987-08-21",
         "home_away":"away",
@@ -97169,6 +97237,23 @@
         "time_minutes":212,
         "day_night":"N",
         "attendance":0,
+        "year":"1987"
+    },
+    {
+        "gm":122,
+        "game_date":"1987-08-21",
+        "home_away":"away",
+        "opp":"PHI",
+        "result":"L",
+        "r":3,
+        "ra":7,
+        "record":"54-68",
+        "rank":4,
+        "gb":-9.5,
+        "time":"2:57:00",
+        "time_minutes":177,
+        "day_night":"N",
+        "attendance":48656,
         "year":"1987"
     },
     {
@@ -97818,23 +97903,6 @@
         "year":"1987"
     },
     {
-        "gm":82,
-        "game_date":"1987-07-07",
-        "home_away":"away",
-        "opp":"STL",
-        "result":"L-wo",
-        "r":4,
-        "ra":5,
-        "record":"37-45",
-        "rank":4,
-        "gb":-8.5,
-        "time":"3:46:00",
-        "time_minutes":226,
-        "day_night":"N",
-        "attendance":39236,
-        "year":"1987"
-    },
-    {
         "gm":81,
         "game_date":"1987-07-07",
         "home_away":"away",
@@ -97849,6 +97917,23 @@
         "time_minutes":171,
         "day_night":"N",
         "attendance":0,
+        "year":"1987"
+    },
+    {
+        "gm":82,
+        "game_date":"1987-07-07",
+        "home_away":"away",
+        "opp":"STL",
+        "result":"L-wo",
+        "r":4,
+        "ra":5,
+        "record":"37-45",
+        "rank":4,
+        "gb":-8.5,
+        "time":"3:46:00",
+        "time_minutes":226,
+        "day_night":"N",
+        "attendance":39236,
         "year":"1987"
     },
     {
@@ -99365,23 +99450,6 @@
         "year":"1986"
     },
     {
-        "gm":152,
-        "game_date":"1986-09-25",
-        "home_away":"home",
-        "opp":"SDP",
-        "result":"W-wo",
-        "r":4,
-        "ra":3,
-        "record":"71-81",
-        "rank":4,
-        "gb":-18.0,
-        "time":"2:40:00",
-        "time_minutes":160,
-        "day_night":"D",
-        "attendance":0,
-        "year":"1986"
-    },
-    {
         "gm":153,
         "game_date":"1986-09-25",
         "home_away":"home",
@@ -99396,6 +99464,23 @@
         "time_minutes":177,
         "day_night":"N",
         "attendance":24397,
+        "year":"1986"
+    },
+    {
+        "gm":152,
+        "game_date":"1986-09-25",
+        "home_away":"home",
+        "opp":"SDP",
+        "result":"W-wo",
+        "r":4,
+        "ra":3,
+        "record":"71-81",
+        "rank":4,
+        "gb":-18.0,
+        "time":"2:40:00",
+        "time_minutes":160,
+        "day_night":"D",
+        "attendance":0,
         "year":"1986"
     },
     {
@@ -102340,23 +102425,6 @@
         "year":"1985"
     },
     {
-        "gm":139,
-        "game_date":"1985-09-13",
-        "home_away":"away",
-        "opp":"CIN",
-        "result":"W",
-        "r":8,
-        "ra":2,
-        "record":"83-56",
-        "rank":1,
-        "gb":8.5,
-        "time":"2:34:00",
-        "time_minutes":154,
-        "day_night":"N",
-        "attendance":0,
-        "year":"1985"
-    },
-    {
         "gm":140,
         "game_date":"1985-09-13",
         "home_away":"away",
@@ -102371,6 +102439,23 @@
         "time_minutes":180,
         "day_night":"N",
         "attendance":28961,
+        "year":"1985"
+    },
+    {
+        "gm":139,
+        "game_date":"1985-09-13",
+        "home_away":"away",
+        "opp":"CIN",
+        "result":"W",
+        "r":8,
+        "ra":2,
+        "record":"83-56",
+        "rank":1,
+        "gb":8.5,
+        "time":"2:34:00",
+        "time_minutes":154,
+        "day_night":"N",
+        "attendance":0,
         "year":"1985"
     },
     {
@@ -108018,23 +108103,6 @@
         "year":"1983"
     },
     {
-        "gm":131,
-        "game_date":"1983-08-30",
-        "home_away":"away",
-        "opp":"NYM",
-        "result":"W",
-        "r":2,
-        "ra":1,
-        "record":"77-54",
-        "rank":1,
-        "gb":1.5,
-        "time":"2:28:00",
-        "time_minutes":148,
-        "day_night":"N",
-        "attendance":20704,
-        "year":"1983"
-    },
-    {
         "gm":130,
         "game_date":"1983-08-30",
         "home_away":"away",
@@ -108052,20 +108120,20 @@
         "year":"1983"
     },
     {
-        "gm":128,
-        "game_date":"1983-08-29",
+        "gm":131,
+        "game_date":"1983-08-30",
         "home_away":"away",
         "opp":"NYM",
         "result":"W",
-        "r":6,
+        "r":2,
         "ra":1,
-        "record":"75-53",
+        "record":"77-54",
         "rank":1,
-        "gb":1.0,
-        "time":"2:47:00",
-        "time_minutes":167,
+        "gb":1.5,
+        "time":"2:28:00",
+        "time_minutes":148,
         "day_night":"N",
-        "attendance":0,
+        "attendance":20704,
         "year":"1983"
     },
     {
@@ -108083,6 +108151,23 @@
         "time_minutes":139,
         "day_night":"N",
         "attendance":22452,
+        "year":"1983"
+    },
+    {
+        "gm":128,
+        "game_date":"1983-08-29",
+        "home_away":"away",
+        "opp":"NYM",
+        "result":"W",
+        "r":6,
+        "ra":1,
+        "record":"75-53",
+        "rank":1,
+        "gb":1.0,
+        "time":"2:47:00",
+        "time_minutes":167,
+        "day_night":"N",
+        "attendance":0,
         "year":"1983"
     },
     {
@@ -108511,23 +108596,6 @@
         "year":"1983"
     },
     {
-        "gm":102,
-        "game_date":"1983-07-31",
-        "home_away":"away",
-        "opp":"SFG",
-        "result":"L",
-        "r":6,
-        "ra":8,
-        "record":"57-45",
-        "rank":2,
-        "gb":-5.5,
-        "time":"2:48:00",
-        "time_minutes":168,
-        "day_night":"D",
-        "attendance":53178,
-        "year":"1983"
-    },
-    {
         "gm":101,
         "game_date":"1983-07-31",
         "home_away":"away",
@@ -108542,6 +108610,23 @@
         "time_minutes":153,
         "day_night":"D",
         "attendance":0,
+        "year":"1983"
+    },
+    {
+        "gm":102,
+        "game_date":"1983-07-31",
+        "home_away":"away",
+        "opp":"SFG",
+        "result":"L",
+        "r":6,
+        "ra":8,
+        "record":"57-45",
+        "rank":2,
+        "gb":-5.5,
+        "time":"2:48:00",
+        "time_minutes":168,
+        "day_night":"D",
+        "attendance":53178,
         "year":"1983"
     },
     {
@@ -115430,23 +115515,6 @@
         "year":"1980"
     },
     {
-        "gm":130,
-        "game_date":"1980-08-31",
-        "home_away":"home",
-        "opp":"MON",
-        "result":"W",
-        "r":7,
-        "ra":2,
-        "record":"73-57",
-        "rank":2,
-        "gb":-1.0,
-        "time":"2:47:00",
-        "time_minutes":167,
-        "day_night":"D",
-        "attendance":48542,
-        "year":"1980"
-    },
-    {
         "gm":129,
         "game_date":"1980-08-31",
         "home_away":"home",
@@ -115461,6 +115529,23 @@
         "time_minutes":119,
         "day_night":"D",
         "attendance":0,
+        "year":"1980"
+    },
+    {
+        "gm":130,
+        "game_date":"1980-08-31",
+        "home_away":"home",
+        "opp":"MON",
+        "result":"W",
+        "r":7,
+        "ra":2,
+        "record":"73-57",
+        "rank":2,
+        "gb":-1.0,
+        "time":"2:47:00",
+        "time_minutes":167,
+        "day_night":"D",
+        "attendance":48542,
         "year":"1980"
     },
     {
@@ -116076,23 +116161,6 @@
         "year":"1980"
     },
     {
-        "gm":92,
-        "game_date":"1980-07-20",
-        "home_away":"away",
-        "opp":"PIT",
-        "result":"L-wo",
-        "r":7,
-        "ra":8,
-        "record":"51-41",
-        "rank":2,
-        "gb":-0.5,
-        "time":"2:37:00",
-        "time_minutes":157,
-        "day_night":"D",
-        "attendance":41932,
-        "year":"1980"
-    },
-    {
         "gm":91,
         "game_date":"1980-07-20",
         "home_away":"away",
@@ -116107,6 +116175,23 @@
         "time_minutes":139,
         "day_night":"D",
         "attendance":0,
+        "year":"1980"
+    },
+    {
+        "gm":92,
+        "game_date":"1980-07-20",
+        "home_away":"away",
+        "opp":"PIT",
+        "result":"L-wo",
+        "r":7,
+        "ra":8,
+        "record":"51-41",
+        "rank":2,
+        "gb":-0.5,
+        "time":"2:37:00",
+        "time_minutes":157,
+        "day_night":"D",
+        "attendance":41932,
         "year":"1980"
     },
     {
@@ -120836,23 +120921,6 @@
         "year":"1978"
     },
     {
-        "gm":135,
-        "game_date":"1978-09-02",
-        "home_away":"home",
-        "opp":"NYM",
-        "result":"W",
-        "r":3,
-        "ra":2,
-        "record":"81-54",
-        "rank":1,
-        "gb":2.5,
-        "time":"1:58:00",
-        "time_minutes":118,
-        "day_night":"D",
-        "attendance":0,
-        "year":"1978"
-    },
-    {
         "gm":136,
         "game_date":"1978-09-02",
         "home_away":"home",
@@ -120867,6 +120935,23 @@
         "time_minutes":154,
         "day_night":"D",
         "attendance":49818,
+        "year":"1978"
+    },
+    {
+        "gm":135,
+        "game_date":"1978-09-02",
+        "home_away":"home",
+        "opp":"NYM",
+        "result":"W",
+        "r":3,
+        "ra":2,
+        "record":"81-54",
+        "rank":1,
+        "gb":2.5,
+        "time":"1:58:00",
+        "time_minutes":118,
+        "day_night":"D",
+        "attendance":0,
         "year":"1978"
     },
     {
@@ -121856,23 +121941,6 @@
         "year":"1978"
     },
     {
-        "gm":75,
-        "game_date":"1978-06-30",
-        "home_away":"away",
-        "opp":"CIN",
-        "result":"W",
-        "r":5,
-        "ra":3,
-        "record":"43-32",
-        "rank":2,
-        "gb":-3.0,
-        "time":"2:20:00",
-        "time_minutes":140,
-        "day_night":"N",
-        "attendance":0,
-        "year":"1978"
-    },
-    {
         "gm":76,
         "game_date":"1978-06-30",
         "home_away":"away",
@@ -121887,6 +121955,23 @@
         "time_minutes":144,
         "day_night":"N",
         "attendance":50370,
+        "year":"1978"
+    },
+    {
+        "gm":75,
+        "game_date":"1978-06-30",
+        "home_away":"away",
+        "opp":"CIN",
+        "result":"W",
+        "r":5,
+        "ra":3,
+        "record":"43-32",
+        "rank":2,
+        "gb":-3.0,
+        "time":"2:20:00",
+        "time_minutes":140,
+        "day_night":"N",
+        "attendance":0,
         "year":"1978"
     },
     {
@@ -126412,23 +126497,6 @@
         "year":"1976"
     },
     {
-        "gm":132,
-        "game_date":"1976-09-02",
-        "home_away":"away",
-        "opp":"MON",
-        "result":"W",
-        "r":5,
-        "ra":3,
-        "record":"76-56",
-        "rank":2,
-        "gb":-7.0,
-        "time":"2:25:00",
-        "time_minutes":145,
-        "day_night":"N",
-        "attendance":7181,
-        "year":"1976"
-    },
-    {
         "gm":131,
         "game_date":"1976-09-02",
         "home_away":"away",
@@ -126443,6 +126511,23 @@
         "time_minutes":136,
         "day_night":"N",
         "attendance":0,
+        "year":"1976"
+    },
+    {
+        "gm":132,
+        "game_date":"1976-09-02",
+        "home_away":"away",
+        "opp":"MON",
+        "result":"W",
+        "r":5,
+        "ra":3,
+        "record":"76-56",
+        "rank":2,
+        "gb":-7.0,
+        "time":"2:25:00",
+        "time_minutes":145,
+        "day_night":"N",
+        "attendance":7181,
         "year":"1976"
     },
     {
@@ -126701,23 +126786,6 @@
         "year":"1976"
     },
     {
-        "gm":115,
-        "game_date":"1976-08-13",
-        "home_away":"away",
-        "opp":"CHC",
-        "result":"W",
-        "r":8,
-        "ra":7,
-        "record":"62-53",
-        "rank":2,
-        "gb":-13.5,
-        "time":"2:36:00",
-        "time_minutes":156,
-        "day_night":"D",
-        "attendance":20004,
-        "year":"1976"
-    },
-    {
         "gm":114,
         "game_date":"1976-08-13",
         "home_away":"away",
@@ -126732,6 +126800,23 @@
         "time_minutes":226,
         "day_night":"D",
         "attendance":0,
+        "year":"1976"
+    },
+    {
+        "gm":115,
+        "game_date":"1976-08-13",
+        "home_away":"away",
+        "opp":"CHC",
+        "result":"W",
+        "r":8,
+        "ra":7,
+        "record":"62-53",
+        "rank":2,
+        "gb":-13.5,
+        "time":"2:36:00",
+        "time_minutes":156,
+        "day_night":"D",
+        "attendance":20004,
         "year":"1976"
     },
     {
@@ -127874,23 +127959,6 @@
         "year":"1976"
     },
     {
-        "gm":45,
-        "game_date":"1976-05-30",
-        "home_away":"away",
-        "opp":"CIN",
-        "result":"W",
-        "r":6,
-        "ra":5,
-        "record":"28-17",
-        "rank":1,
-        "gb":0.0,
-        "time":"3:10:00",
-        "time_minutes":190,
-        "day_night":"D",
-        "attendance":0,
-        "year":"1976"
-    },
-    {
         "gm":46,
         "game_date":"1976-05-30",
         "home_away":"away",
@@ -127905,6 +127973,23 @@
         "time_minutes":140,
         "day_night":"D",
         "attendance":51211,
+        "year":"1976"
+    },
+    {
+        "gm":45,
+        "game_date":"1976-05-30",
+        "home_away":"away",
+        "opp":"CIN",
+        "result":"W",
+        "r":6,
+        "ra":5,
+        "record":"28-17",
+        "rank":1,
+        "gb":0.0,
+        "time":"3:10:00",
+        "time_minutes":190,
+        "day_night":"D",
+        "attendance":0,
         "year":"1976"
     },
     {
@@ -132770,23 +132855,6 @@
         "year":"1974"
     },
     {
-        "gm":81,
-        "game_date":"1974-07-05",
-        "home_away":"away",
-        "opp":"MON",
-        "result":"L",
-        "r":6,
-        "ra":11,
-        "record":"55-26",
-        "rank":1,
-        "gb":10.0,
-        "time":"2:35:00",
-        "time_minutes":155,
-        "day_night":"N",
-        "attendance":0,
-        "year":"1974"
-    },
-    {
         "gm":82,
         "game_date":"1974-07-05",
         "home_away":"away",
@@ -132801,6 +132869,23 @@
         "time_minutes":137,
         "day_night":"N",
         "attendance":23167,
+        "year":"1974"
+    },
+    {
+        "gm":81,
+        "game_date":"1974-07-05",
+        "home_away":"away",
+        "opp":"MON",
+        "result":"L",
+        "r":6,
+        "ra":11,
+        "record":"55-26",
+        "rank":1,
+        "gb":10.0,
+        "time":"2:35:00",
+        "time_minutes":155,
+        "day_night":"N",
+        "attendance":0,
         "year":"1974"
     },
     {
@@ -132821,23 +132906,6 @@
         "year":"1974"
     },
     {
-        "gm":78,
-        "game_date":"1974-07-03",
-        "home_away":"away",
-        "opp":"CIN",
-        "result":"W",
-        "r":4,
-        "ra":1,
-        "record":"54-24",
-        "rank":1,
-        "gb":8.5,
-        "time":"1:59:00",
-        "time_minutes":119,
-        "day_night":"D",
-        "attendance":0,
-        "year":"1974"
-    },
-    {
         "gm":79,
         "game_date":"1974-07-03",
         "home_away":"away",
@@ -132852,6 +132920,23 @@
         "time_minutes":150,
         "day_night":"N",
         "attendance":51909,
+        "year":"1974"
+    },
+    {
+        "gm":78,
+        "game_date":"1974-07-03",
+        "home_away":"away",
+        "opp":"CIN",
+        "result":"W",
+        "r":4,
+        "ra":1,
+        "record":"54-24",
+        "rank":1,
+        "gb":8.5,
+        "time":"1:59:00",
+        "time_minutes":119,
+        "day_night":"D",
+        "attendance":0,
         "year":"1974"
     },
     {
@@ -135541,23 +135626,6 @@
         "year":"1973"
     },
     {
-        "gm":81,
-        "game_date":"1973-07-01",
-        "home_away":"away",
-        "opp":"CIN",
-        "result":"L-wo",
-        "r":2,
-        "ra":3,
-        "record":"51-29",
-        "rank":1,
-        "gb":5.5,
-        "time":"2:41:00",
-        "time_minutes":161,
-        "day_night":"D",
-        "attendance":46047,
-        "year":"1973"
-    },
-    {
         "gm":80,
         "game_date":"1973-07-01",
         "home_away":"away",
@@ -135572,6 +135640,23 @@
         "time_minutes":144,
         "day_night":"D",
         "attendance":0,
+        "year":"1973"
+    },
+    {
+        "gm":81,
+        "game_date":"1973-07-01",
+        "home_away":"away",
+        "opp":"CIN",
+        "result":"L-wo",
+        "r":2,
+        "ra":3,
+        "record":"51-29",
+        "rank":1,
+        "gb":5.5,
+        "time":"2:41:00",
+        "time_minutes":161,
+        "day_night":"D",
+        "attendance":46047,
         "year":"1973"
     },
     {
@@ -136221,23 +136306,6 @@
         "year":"1973"
     },
     {
-        "gm":40,
-        "game_date":"1973-05-20",
-        "home_away":"away",
-        "opp":"ATL",
-        "result":"L-wo",
-        "r":2,
-        "ra":3,
-        "record":"22-17",
-        "rank":4,
-        "gb":-2.5,
-        "time":"2:31:00",
-        "time_minutes":151,
-        "day_night":"D",
-        "attendance":0,
-        "year":"1973"
-    },
-    {
         "gm":41,
         "game_date":"1973-05-20",
         "home_away":"away",
@@ -136252,6 +136320,23 @@
         "time_minutes":137,
         "day_night":"D",
         "attendance":21570,
+        "year":"1973"
+    },
+    {
+        "gm":40,
+        "game_date":"1973-05-20",
+        "home_away":"away",
+        "opp":"ATL",
+        "result":"L-wo",
+        "r":2,
+        "ra":3,
+        "record":"22-17",
+        "rank":4,
+        "gb":-2.5,
+        "time":"2:31:00",
+        "time_minutes":151,
+        "day_night":"D",
+        "attendance":0,
         "year":"1973"
     },
     {
@@ -137955,23 +138040,6 @@
         "year":"1972"
     },
     {
-        "gm":93,
-        "game_date":"1972-07-30",
-        "home_away":"away",
-        "opp":"ATL",
-        "result":"L",
-        "r":4,
-        "ra":14,
-        "record":"49-44",
-        "rank":3,
-        "gb":-8.5,
-        "time":"2:36:00",
-        "time_minutes":156,
-        "day_night":"D",
-        "attendance":0,
-        "year":"1972"
-    },
-    {
         "gm":94,
         "game_date":"1972-07-30",
         "home_away":"away",
@@ -137986,6 +138054,23 @@
         "time_minutes":169,
         "day_night":"D",
         "attendance":20486,
+        "year":"1972"
+    },
+    {
+        "gm":93,
+        "game_date":"1972-07-30",
+        "home_away":"away",
+        "opp":"ATL",
+        "result":"L",
+        "r":4,
+        "ra":14,
+        "record":"49-44",
+        "rank":3,
+        "gb":-8.5,
+        "time":"2:36:00",
+        "time_minutes":156,
+        "day_night":"D",
+        "attendance":0,
         "year":"1972"
     },
     {
@@ -138227,23 +138312,6 @@
         "year":"1972"
     },
     {
-        "gm":78,
-        "game_date":"1972-07-10",
-        "home_away":"away",
-        "opp":"PHI",
-        "result":"L",
-        "r":1,
-        "ra":9,
-        "record":"41-37",
-        "rank":3,
-        "gb":-5.0,
-        "time":"2:23:00",
-        "time_minutes":143,
-        "day_night":"N",
-        "attendance":20159,
-        "year":"1972"
-    },
-    {
         "gm":77,
         "game_date":"1972-07-10",
         "home_away":"away",
@@ -138258,6 +138326,23 @@
         "time_minutes":184,
         "day_night":"N",
         "attendance":0,
+        "year":"1972"
+    },
+    {
+        "gm":78,
+        "game_date":"1972-07-10",
+        "home_away":"away",
+        "opp":"PHI",
+        "result":"L",
+        "r":1,
+        "ra":9,
+        "record":"41-37",
+        "rank":3,
+        "gb":-5.0,
+        "time":"2:23:00",
+        "time_minutes":143,
+        "day_night":"N",
+        "attendance":20159,
         "year":"1972"
     },
     {
@@ -138499,23 +138584,6 @@
         "year":"1972"
     },
     {
-        "gm":61,
-        "game_date":"1972-06-24",
-        "home_away":"home",
-        "opp":"ATL",
-        "result":"L",
-        "r":0,
-        "ra":1,
-        "record":"34-27",
-        "rank":3,
-        "gb":-3.5,
-        "time":"2:09:00",
-        "time_minutes":129,
-        "day_night":"N",
-        "attendance":0,
-        "year":"1972"
-    },
-    {
         "gm":62,
         "game_date":"1972-06-24",
         "home_away":"home",
@@ -138530,6 +138598,23 @@
         "time_minutes":168,
         "day_night":"N",
         "attendance":46424,
+        "year":"1972"
+    },
+    {
+        "gm":61,
+        "game_date":"1972-06-24",
+        "home_away":"home",
+        "opp":"ATL",
+        "result":"L",
+        "r":0,
+        "ra":1,
+        "record":"34-27",
+        "rank":3,
+        "gb":-3.5,
+        "time":"2:09:00",
+        "time_minutes":129,
+        "day_night":"N",
+        "attendance":0,
         "year":"1972"
     },
     {
@@ -139689,23 +139774,6 @@
         "year":"1971"
     },
     {
-        "gm":154,
-        "game_date":"1971-09-19",
-        "home_away":"home",
-        "opp":"ATL",
-        "result":"W",
-        "r":4,
-        "ra":0,
-        "record":"84-70",
-        "rank":2,
-        "gb":-1.5,
-        "time":"2:06:00",
-        "time_minutes":126,
-        "day_night":"D",
-        "attendance":46735,
-        "year":"1971"
-    },
-    {
         "gm":153,
         "game_date":"1971-09-19",
         "home_away":"home",
@@ -139720,6 +139788,23 @@
         "time_minutes":137,
         "day_night":"D",
         "attendance":0,
+        "year":"1971"
+    },
+    {
+        "gm":154,
+        "game_date":"1971-09-19",
+        "home_away":"home",
+        "opp":"ATL",
+        "result":"W",
+        "r":4,
+        "ra":0,
+        "record":"84-70",
+        "rank":2,
+        "gb":-1.5,
+        "time":"2:06:00",
+        "time_minutes":126,
+        "day_night":"D",
+        "attendance":46735,
         "year":"1971"
     },
     {
@@ -140063,23 +140148,6 @@
         "year":"1971"
     },
     {
-        "gm":132,
-        "game_date":"1971-08-28",
-        "home_away":"away",
-        "opp":"NYM",
-        "result":"L-wo",
-        "r":1,
-        "ra":2,
-        "record":"69-63",
-        "rank":2,
-        "gb":-7.5,
-        "time":"2:15:00",
-        "time_minutes":135,
-        "day_night":"N",
-        "attendance":43492,
-        "year":"1971"
-    },
-    {
         "gm":131,
         "game_date":"1971-08-28",
         "home_away":"away",
@@ -140094,6 +140162,23 @@
         "time_minutes":140,
         "day_night":"D",
         "attendance":0,
+        "year":"1971"
+    },
+    {
+        "gm":132,
+        "game_date":"1971-08-28",
+        "home_away":"away",
+        "opp":"NYM",
+        "result":"L-wo",
+        "r":1,
+        "ra":2,
+        "record":"69-63",
+        "rank":2,
+        "gb":-7.5,
+        "time":"2:15:00",
+        "time_minutes":135,
+        "day_night":"N",
+        "attendance":43492,
         "year":"1971"
     },
     {
@@ -140692,23 +140777,6 @@
         "year":"1971"
     },
     {
-        "gm":94,
-        "game_date":"1971-07-18",
-        "home_away":"away",
-        "opp":"PIT",
-        "result":"L-wo",
-        "r":2,
-        "ra":3,
-        "record":"50-44",
-        "rank":2,
-        "gb":-7.0,
-        "time":"2:18:00",
-        "time_minutes":138,
-        "day_night":"D",
-        "attendance":0,
-        "year":"1971"
-    },
-    {
         "gm":95,
         "game_date":"1971-07-18",
         "home_away":"away",
@@ -140723,6 +140791,23 @@
         "time_minutes":125,
         "day_night":"D",
         "attendance":48230,
+        "year":"1971"
+    },
+    {
+        "gm":94,
+        "game_date":"1971-07-18",
+        "home_away":"away",
+        "opp":"PIT",
+        "result":"L-wo",
+        "r":2,
+        "ra":3,
+        "record":"50-44",
+        "rank":2,
+        "gb":-7.0,
+        "time":"2:18:00",
+        "time_minutes":138,
+        "day_night":"D",
+        "attendance":0,
         "year":"1971"
     },
     {
@@ -141967,23 +142052,6 @@
         "year":"1971"
     },
     {
-        "gm":20,
-        "game_date":"1971-04-25",
-        "home_away":"away",
-        "opp":"CIN",
-        "result":"L",
-        "r":0,
-        "ra":2,
-        "record":"11-9",
-        "rank":2,
-        "gb":-3.5,
-        "time":"2:11:00",
-        "time_minutes":131,
-        "day_night":"D",
-        "attendance":32700,
-        "year":"1971"
-    },
-    {
         "gm":19,
         "game_date":"1971-04-25",
         "home_away":"away",
@@ -141998,6 +142066,23 @@
         "time_minutes":126,
         "day_night":"D",
         "attendance":0,
+        "year":"1971"
+    },
+    {
+        "gm":20,
+        "game_date":"1971-04-25",
+        "home_away":"away",
+        "opp":"CIN",
+        "result":"L",
+        "r":0,
+        "ra":2,
+        "record":"11-9",
+        "rank":2,
+        "gb":-3.5,
+        "time":"2:11:00",
+        "time_minutes":131,
+        "day_night":"D",
+        "attendance":32700,
         "year":"1971"
     },
     {
@@ -142800,23 +142885,6 @@
         "year":"1970"
     },
     {
-        "gm":132,
-        "game_date":"1970-09-01",
-        "home_away":"away",
-        "opp":"ATL",
-        "result":"W",
-        "r":3,
-        "ra":2,
-        "record":"74-58",
-        "rank":2,
-        "gb":-10.0,
-        "time":"2:09:00",
-        "time_minutes":129,
-        "day_night":"N",
-        "attendance":12078,
-        "year":"1970"
-    },
-    {
         "gm":131,
         "game_date":"1970-09-01",
         "home_away":"away",
@@ -142831,6 +142899,23 @@
         "time_minutes":158,
         "day_night":"N",
         "attendance":0,
+        "year":"1970"
+    },
+    {
+        "gm":132,
+        "game_date":"1970-09-01",
+        "home_away":"away",
+        "opp":"ATL",
+        "result":"W",
+        "r":3,
+        "ra":2,
+        "record":"74-58",
+        "rank":2,
+        "gb":-10.0,
+        "time":"2:09:00",
+        "time_minutes":129,
+        "day_night":"N",
+        "attendance":12078,
         "year":"1970"
     },
     {
@@ -145299,23 +145384,6 @@
         "year":"1969"
     },
     {
-        "gm":146,
-        "game_date":"1969-09-16",
-        "home_away":"home",
-        "opp":"CIN",
-        "result":"W-wo",
-        "r":2,
-        "ra":1,
-        "record":"80-66",
-        "rank":2,
-        "gb":-0.5,
-        "time":"2:29:00",
-        "time_minutes":149,
-        "day_night":"D",
-        "attendance":0,
-        "year":"1969"
-    },
-    {
         "gm":147,
         "game_date":"1969-09-16",
         "home_away":"home",
@@ -145330,6 +145398,23 @@
         "time_minutes":185,
         "day_night":"N",
         "attendance":37706,
+        "year":"1969"
+    },
+    {
+        "gm":146,
+        "game_date":"1969-09-16",
+        "home_away":"home",
+        "opp":"CIN",
+        "result":"W-wo",
+        "r":2,
+        "ra":1,
+        "record":"80-66",
+        "rank":2,
+        "gb":-0.5,
+        "time":"2:29:00",
+        "time_minutes":149,
+        "day_night":"D",
+        "attendance":0,
         "year":"1969"
     },
     {
@@ -148206,23 +148291,6 @@
         "year":"1968"
     },
     {
-        "gm":137,
-        "game_date":"1968-09-02",
-        "home_away":"away",
-        "opp":"PHI",
-        "result":"L",
-        "r":4,
-        "ra":5,
-        "record":"59-78",
-        "rank":10,
-        "gb":-28.5,
-        "time":"2:40:00",
-        "time_minutes":160,
-        "day_night":"D",
-        "attendance":0,
-        "year":"1968"
-    },
-    {
         "gm":138,
         "game_date":"1968-09-02",
         "home_away":"away",
@@ -148237,6 +148305,23 @@
         "time_minutes":147,
         "day_night":"N",
         "attendance":5240,
+        "year":"1968"
+    },
+    {
+        "gm":137,
+        "game_date":"1968-09-02",
+        "home_away":"away",
+        "opp":"PHI",
+        "result":"L",
+        "r":4,
+        "ra":5,
+        "record":"59-78",
+        "rank":10,
+        "gb":-28.5,
+        "time":"2:40:00",
+        "time_minutes":160,
+        "day_night":"D",
+        "attendance":0,
         "year":"1968"
     },
     {
@@ -148291,23 +148376,6 @@
         "year":"1968"
     },
     {
-        "gm":132,
-        "game_date":"1968-08-28",
-        "home_away":"home",
-        "opp":"CHC",
-        "result":"L",
-        "r":4,
-        "ra":7,
-        "record":"56-76",
-        "rank":10,
-        "gb":-26.5,
-        "time":"2:31:00",
-        "time_minutes":151,
-        "day_night":"D",
-        "attendance":0,
-        "year":"1968"
-    },
-    {
         "gm":133,
         "game_date":"1968-08-28",
         "home_away":"home",
@@ -148322,6 +148390,23 @@
         "time_minutes":160,
         "day_night":"N",
         "attendance":16472,
+        "year":"1968"
+    },
+    {
+        "gm":132,
+        "game_date":"1968-08-28",
+        "home_away":"home",
+        "opp":"CHC",
+        "result":"L",
+        "r":4,
+        "ra":7,
+        "record":"56-76",
+        "rank":10,
+        "gb":-26.5,
+        "time":"2:31:00",
+        "time_minutes":151,
+        "day_night":"D",
+        "attendance":0,
         "year":"1968"
     },
     {
@@ -148818,23 +148903,6 @@
         "year":"1968"
     },
     {
-        "gm":102,
-        "game_date":"1968-07-28",
-        "home_away":"away",
-        "opp":"CHC",
-        "result":"L",
-        "r":0,
-        "ra":1,
-        "record":"45-57",
-        "rank":9,
-        "gb":-21.5,
-        "time":"2:18:00",
-        "time_minutes":138,
-        "day_night":"D",
-        "attendance":42261,
-        "year":"1968"
-    },
-    {
         "gm":101,
         "game_date":"1968-07-28",
         "home_away":"away",
@@ -148849,6 +148917,23 @@
         "time_minutes":145,
         "day_night":"D",
         "attendance":0,
+        "year":"1968"
+    },
+    {
+        "gm":102,
+        "game_date":"1968-07-28",
+        "home_away":"away",
+        "opp":"CHC",
+        "result":"L",
+        "r":0,
+        "ra":1,
+        "record":"45-57",
+        "rank":9,
+        "gb":-21.5,
+        "time":"2:18:00",
+        "time_minutes":138,
+        "day_night":"D",
+        "attendance":42261,
         "year":"1968"
     },
     {
@@ -150365,23 +150450,6 @@
         "year":"1968"
     },
     {
-        "gm":10,
-        "game_date":"1968-04-21",
-        "home_away":"away",
-        "opp":"NYM",
-        "result":"W",
-        "r":7,
-        "ra":6,
-        "record":"5-5",
-        "rank":3,
-        "gb":-1.0,
-        "time":"3:07:00",
-        "time_minutes":187,
-        "day_night":"D",
-        "attendance":0,
-        "year":"1968"
-    },
-    {
         "gm":11,
         "game_date":"1968-04-21",
         "home_away":"away",
@@ -150396,6 +150464,23 @@
         "time_minutes":177,
         "day_night":"D",
         "attendance":45442,
+        "year":"1968"
+    },
+    {
+        "gm":10,
+        "game_date":"1968-04-21",
+        "home_away":"away",
+        "opp":"NYM",
+        "result":"W",
+        "r":7,
+        "ra":6,
+        "record":"5-5",
+        "rank":3,
+        "gb":-1.0,
+        "time":"3:07:00",
+        "time_minutes":187,
+        "day_night":"D",
+        "attendance":0,
         "year":"1968"
     },
     {
@@ -150892,23 +150977,6 @@
         "year":"1967"
     },
     {
-        "gm":142,
-        "game_date":"1967-09-10",
-        "home_away":"home",
-        "opp":"HOU",
-        "result":"L",
-        "r":0,
-        "ra":1,
-        "record":"65-77",
-        "rank":8,
-        "gb":-23.0,
-        "time":"3:02:00",
-        "time_minutes":182,
-        "day_night":"D",
-        "attendance":16096,
-        "year":"1967"
-    },
-    {
         "gm":141,
         "game_date":"1967-09-10",
         "home_away":"home",
@@ -150923,6 +150991,23 @@
         "time_minutes":152,
         "day_night":"D",
         "attendance":0,
+        "year":"1967"
+    },
+    {
+        "gm":142,
+        "game_date":"1967-09-10",
+        "home_away":"home",
+        "opp":"HOU",
+        "result":"L",
+        "r":0,
+        "ra":1,
+        "record":"65-77",
+        "rank":8,
+        "gb":-23.0,
+        "time":"3:02:00",
+        "time_minutes":182,
+        "day_night":"D",
+        "attendance":16096,
         "year":"1967"
     },
     {
