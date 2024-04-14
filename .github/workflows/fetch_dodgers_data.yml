@@ -36,10 +36,10 @@ jobs:
         AWS_ACCESS_KEY_ID: ${{ secrets.HAEKEO_AWS_KEY }}
         AWS_SECRET_ACCESS_KEY: ${{ secrets.HAEKEO_AWS_SECRET }}
       run: |
-        python 01_fetch_process_standings.py &&
-        python 02_fetch_process_batting.py &&
-        python 03_viz_standings.py &&
-        python 04_viz_batting.py
+        python scripts/01_fetch_process_standings.py &&
+        python scripts/02_fetch_process_batting.py &&
+        python scripts/03_viz_standings.py &&
+        python scripts/04_viz_batting.py
 
     - name: Configure Git
       run: |
