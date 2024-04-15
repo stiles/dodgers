@@ -2,8 +2,8 @@ name: run_dodgers
 
 on:
   schedule:
-    # Runs at 4 AM and 3 PM PST (12 PM and 11 PM UTC during Standard Time; 11 AM and 10 PM UTC during Daylight Time)
-    - cron: '0 12,23 * * *' # Adjusted for UTC-8 (Standard Time)
+    # Runs at 4 AM and 3 PM PST (11 AM and 10 PM UTC during Daylight Saving Time)
+    - cron: '0 11,22 * * *'  # Adjusted for UTC (Daylight Saving Time)
   workflow_dispatch:
 
 jobs:
@@ -24,39 +24,34 @@ jobs:
         aws-access-key-id: ${{ secrets.HAEKEO_AWS_KEY }}
         aws-secret-access-key: ${{ secrets.HAEKEO_AWS_SECRET }}
         aws-region: us-west-1
-        
+        role-duration-seconds: 1200  # Optional: If using roles, specify duration
+        role-session-name: "DodgersUpdateSession"  # Optional: Session name
+        aws-profile: "haekeo"  # This will configure the AWS CLI to use this profile by default
+
     - name: Install dependencies
       run: |
         python -m pip install --upgrade pip
         pip install pandas pyarrow fastparquet lxml requests beautifulsoup4 boto3 altair_saver altair-stiles vl-convert-python
     
-    - name: Run script
-      env:
-        AWS_PERSONAL_PROFILE: ${{ secrets.AWS_PERSONAL_PROFILE }}
-        AWS_ACCESS_KEY_ID: ${{ secrets.HAEKEO_AWS_KEY }}
-        AWS_SECRET_ACCESS_KEY: ${{ secrets.HAEKEO_AWS_SECRET }}
+    - name: Run scripts
       run: |
-        python scripts/01_fetch_process_standings.py &&
-        python scripts/02_fetch_process_batting.py &&
-        python scripts/03_viz_standings.py &&
+        python scripts/01_fetch_process_standings.py
+        python scripts/02_fetch_process_batting.py
+        python scripts/03_viz_standings.py
         python scripts/04_viz_batting.py
-
+      working-directory: ${{github.workspace}}  # Ensures the command runs in the root of your project
+    
     - name: Configure Git
       run: |
         git config --global user.name 'Matt Stiles'
         git config --global user.email 'haekeostiles@gmail.com'
     
     - name: Commit updated files
-      id: commit
       run: |
-        set -e
         git add data/processed/*
-        git diff --staged --quiet || git commit -m "Automated update of Dodgers standings data"
-        echo "::set-output name=result::success"
-      continue-on-error: true
-        
+        git commit -m "Automated update of Dodgers data" || echo "No changes to commit."
+    
     - name: Push changes
-      if: steps.commit.outputs.result == 'success'
-      run: git push origin main
+      run: git push
       env:
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
