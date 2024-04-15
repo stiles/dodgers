@@ -298,17 +298,17 @@ save_to_s3(
     players_full_df,
     "dodgers/data/batting/dodgers_player_batting_1958_present",
     "stilesdata.com",
-    profile_name="haekeo",
+    # profile_name="haekeo",
 )
 save_to_s3(
     team_full_df,
     "dodgers/data/batting/dodgers_team_batting_1958_present",
     "stilesdata.com",
-    profile_name="haekeo",
+    # profile_name="haekeo",
 )
 save_to_s3(
     team_ranks_full_df,
     "dodgers/data/batting/dodgers_team_batting_ranks_1958_present",
     "stilesdata.com",
-    profile_name="haekeo",
+    # profile_name="haekeo",
 )
