@@ -24,6 +24,8 @@ boto3.Session(
     region_name="us-west-1",
 )
 
+print("Current Working Directory: ", os.getcwd())
+print("Directory Contents: ", os.listdir())
 
 # ---
 
@@ -222,38 +224,36 @@ team_ranks_full_df = (
 # #### Function to save dataframes with different formats and file extensions
 
 def save_dataframe(df, path_without_extension, formats):
-    """
-    Save DataFrames in multiple formats.
-    """
+    os.makedirs(os.path.dirname(path_without_extension), exist_ok=True)  # Ensure directory exists
     for file_format in formats:
+        file_path = f"{path_without_extension}.{file_format}"
         if file_format == "csv":
-            df.to_csv(f"{path_without_extension}.{file_format}", index=False)
+            df.to_csv(file_path, index=False)
         elif file_format == "json":
-            df.to_json(
-                f"{path_without_extension}.{file_format}", indent=4, orient="records"
-            )
+            df.to_json(file_path, orient="records", lines=True)
         elif file_format == "parquet":
-            df.to_parquet(f"{path_without_extension}.{file_format}", index=False)
-        else:
-            print(f"Unsupported format: {file_format}")
+            df.to_parquet(file_path, index=False)
 
 
 # Save local files
 
-formats = ["csv", "json", "parquet"]
-save_dataframe(
-    players_full_df,
-    f"../data/batting/dodgers_player_batting_1958_present",
-    formats,
-)
-save_dataframe(
-    team_full_df, f"../data/batting/dodgers_team_batting_1958_present", formats
-)
-save_dataframe(
-    team_ranks_full_df,
-    f"../data/batting/dodgers_team_batting_ranks_1958_present",
-    formats,
-)
+try:
+    formats = ["csv", "json", "parquet"]
+    save_dataframe(
+        players_full_df,
+        f"../data/batting/dodgers_player_batting_1958_present",
+        formats,
+    )
+    save_dataframe(
+        team_full_df, f"../data/batting/dodgers_team_batting_1958_present", formats
+    )
+    save_dataframe(
+        team_ranks_full_df,
+        f"../data/batting/dodgers_team_batting_ranks_1958_present",
+        formats,
+    )
+except Exception as e:
+    print(f"An error occurred: {e}")
 
 
 def save_to_s3(

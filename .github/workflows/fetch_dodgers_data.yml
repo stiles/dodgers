@@ -2,13 +2,15 @@ name: run_dodgers
 
 on:
   schedule:
-    # Runs at 4 AM and 3 PM PST (11 AM and 10 PM UTC during Daylight Saving Time)
     - cron: '0 11,22 * * *'  # Adjusted for UTC (Daylight Saving Time)
   workflow_dispatch:
 
 jobs:
   update_standings:
     runs-on: ubuntu-latest
+    defaults:
+      run:
+        working-directory: ${{github.workspace}}  # This sets the working directory for all run commands
     
     steps:
     - uses: actions/checkout@v2
@@ -39,7 +41,6 @@ jobs:
         python scripts/02_fetch_process_batting.py
         python scripts/03_viz_standings.py
         python scripts/04_viz_batting.py
-      working-directory: ${{github.workspace}}  # Ensures the command runs in the root of your project
     
     - name: Configure Git
       run: |
