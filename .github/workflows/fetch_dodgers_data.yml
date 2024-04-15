@@ -26,9 +26,6 @@ jobs:
         aws-access-key-id: ${{ secrets.HAEKEO_AWS_KEY }}
         aws-secret-access-key: ${{ secrets.HAEKEO_AWS_SECRET }}
         aws-region: us-west-1
-        role-duration-seconds: 1200  # Optional: If using roles, specify duration
-        role-session-name: "DodgersUpdateSession"  # Optional: Session name
-        aws-profile: "haekeo"  # This will configure the AWS CLI to use this profile by default
 
     - name: Install dependencies
       run: |
