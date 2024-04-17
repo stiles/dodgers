@@ -46,7 +46,7 @@ jobs:
     
     - name: Commit updated files
       run: |
-        git add data/processed/*
+        git add data/*
         git commit -m "Automated update of Dodgers data" || echo "No changes to commit."
     
     - name: Push changes
