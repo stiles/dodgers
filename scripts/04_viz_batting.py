@@ -11,7 +11,6 @@
 import pandas as pd
 import altair as alt
 import altair_stiles as altstiles
-from IPython.display import Image, display
 
 alt.data_transformers.disable_max_rows()
 alt.themes.register("stiles", altstiles.theme)
