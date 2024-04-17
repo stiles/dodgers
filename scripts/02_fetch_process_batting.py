@@ -14,16 +14,16 @@ import pandas as pd
 from io import BytesIO
 from io import StringIO
 
-aws_key_id = os.environ.get("HAEKEO_AWS_KEY")
-aws_secret_key = os.environ.get("HAEKEO_AWS_SECRET")
+aws_key_id = os.environ.get("AWS_ACCESS_KEY_ID")
+aws_secret_key = os.environ.get("AWS_SECRET_ACCESS_KEY")
 profile_name = 'haekeo'
 
 
-boto3.Session(
-    aws_access_key_id=aws_key_id,
-    aws_secret_access_key=aws_secret_key,
-    region_name="us-west-1",
-)
+# boto3.Session(
+#     aws_access_key_id=aws_key_id,
+#     aws_secret_access_key=aws_secret_key,
+#     region_name="us-west-1",
+# )
 
 print("Current Working Directory: ", os.getcwd())
 print("Directory Contents: ", os.listdir())
@@ -257,33 +257,33 @@ except Exception as e:
     print(f"An error occurred: {e}")
 
 
-def save_to_s3(
-    df, base_path, s3_bucket, formats=["csv", "json", "parquet"], profile_name="default"
-):
+def save_to_s3(df, base_path, s3_bucket, formats=["csv", "json", "parquet"]):
     """
-    Save Pandas DataFrame in specified formats and upload to S3 bucket using a specified AWS profile.
+    Save Pandas DataFrame in specified formats and upload to S3 bucket using environment credentials.
 
     :param df: DataFrame to save.
     :param base_path: Base file path without format extension.
     :param s3_bucket: S3 bucket name.
     :param formats: List of formats to save -- 'csv', 'json', 'parquet'.
-    :param profile_name: AWS CLI profile name to use for credentials.
     """
-    session = boto3.Session(profile_name=profile_name)
+    # Create session using environment variables directly
+    session = boto3.Session(
+        aws_access_key_id=os.getenv('AWS_ACCESS_KEY_ID'),
+        aws_secret_access_key=os.getenv('AWS_SECRET_ACCESS_KEY'),
+        region_name='us-west-1'  
+    )
     s3_resource = session.resource("s3")
 
     for fmt in formats:
         file_path = f"{base_path}.{fmt}"
+        buffer = BytesIO()
         if fmt == "csv":
-            buffer = BytesIO()
             df.to_csv(buffer, index=False)
             content_type = "text/csv"
         elif fmt == "json":
-            buffer = BytesIO()
             df.to_json(buffer, orient="records", lines=True)
             content_type = "application/json"
         elif fmt == "parquet":
-            buffer = BytesIO()
             df.to_parquet(buffer, index=False)
             content_type = "application/octet-stream"
 
