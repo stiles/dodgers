@@ -118,4 +118,4 @@ chart = (
 )
 
 
-chart.save("../visuals/batting_rates.png", scale_factor=2)
+chart.save("visuals/batting_rates.png", scale_factor=2)
