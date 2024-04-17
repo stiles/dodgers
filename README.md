@@ -8,20 +8,21 @@ The data is sourced from the heroes at [Baseball Reference](https://www.baseball
 
 ## How it works
 
-The repository includes three Python scripts that perform the following daily operations for team standings and batting by season:
+The repository includes four Python scripts that perform the following daily operations for team standings and batting by season:
 
 ### Scripts:
 
-- `00_fetch_standings.py`
-- `01_create_standings_viz.py`
-- `02_fetch_batting_data.py`
+- `scripts/01_fetch_process_standings.py`
+- `scripts/02_fetch_process_batting.py`
+- `scripts/03_viz_standings.py`
+- `scripts/04_viz_batting.py`
 
 ### What they do:
 
 1. **Fetch current season and batting data**: Download the current season's game-by-game standings for the LA Dodgers from [Baseball Reference](https://www.baseball-reference.com/teams/LAD/2024-schedule-scores.shtml). The latest season's batting statitics for each player also fetched. 
 2. **Process data**: Cleans and formats the fetched standings and batting data for consistency with the historical dataset.
 3. **Concatenate with historic data**: Merges the current season's data for batting and standings with pre-existing datasets containing records for the 1958 to 2023 seasons.
-4. **Create two basic *standings* visualizations**: Reads the standings archive and produces a multi-series [line chart](/visuals/standings.png) comparing the current season with previous seasons. A horizontal [bar chart](/visuals/runs.png) is also produced showing the number of runs produced in each season to the current point for comparison. Both rely on the [Altair visualization library](https://altair-viz.github.io/) to create and save the charts into a `visuals` directory.
+4. **Create three basic *standings* visualizations**: Reads the standings archive and produces a multi-series [line chart](/visuals/standings.png) comparing the current season with previous seasons. A horizontal [bar chart](/visuals/runs.png) is also produced showing the number of runs produced in each season to the current point for comparison. The script also creates a [facet barcode chart](/visuals/batting_rates.png) showing the per-bat rates for various categories (hits, homers, etc.) over the years. Both rely on the [Altair visualization library](https://altair-viz.github.io/) to create and save the charts into a `visuals` directory.
 5. **Save and export data**: Outputs the combined datasets in CSV, JSON and Parquet formats.
 6. **Upload to AWS S3**: Uploads the files to an AWS S3 bucket for use and archiving.
 
