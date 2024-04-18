@@ -37,6 +37,7 @@ altair-stiles = "*"
 tqdm = "*"
 altair-saver = "*"
 vl-convert-python = "*"
+scikit-learn = "*"
 
 [requires]
 python_version = "3.9"

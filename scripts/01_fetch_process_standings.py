@@ -109,6 +109,10 @@ def fetch_current_year_data(url, year):
     src["time_minutes"] = pd.to_timedelta(src["time"]).dt.total_seconds() / 60
     src["time_minutes"] = src["time_minutes"].astype(int)
 
+    src[['wins', 'losses']] = src['record'].str.split('-', expand=True).astype(int)
+    src['win_pct'] = (src['wins'] / src['gm']).round(2)
+    src['game_day'] = pd.to_datetime(src['game_date']).dt.day_name()
+
     # Just the columns we need
     src_df = src[
         [
@@ -124,8 +128,12 @@ def fetch_current_year_data(url, year):
             "gb",
             "time",
             "time_minutes",
+            "wins",
+            "losses",
+            "win_pct",
             "day_night",
             "attendance",
+            "game_day",
             "year",
         ]
     ].copy()
