@@ -71,6 +71,9 @@ The processed datasets are available in the `data` directory within this reposit
 | `r`             | int64           | Dodgers runs scored                  |
 | `ra`            | int64           | Runs allowed by Dodgers              |
 | `record`        | object          | Dodgers season record after game     |
+| `wins`        | int64          | Dodgers wins after game     |
+| `losses`        | int64          | Dodgers losses after game     |
+| `win_pct`        | float64          | Dodgers season record after game     |
 | `rank`          | object          | Rank in division*                    |
 | `gb`            | float64         | Games back in division*              |
 | `time`          | object          | Game length                          |

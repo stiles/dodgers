@@ -128,13 +128,14 @@ def fetch_current_year_data(url, year):
             "gb",
             "time",
             "time_minutes",
+            "day_night",
+            "attendance",
+            "year",
             "wins",
             "losses",
             "win_pct",
-            "day_night",
-            "attendance",
             "game_day",
-            "year",
+            
         ]
     ].copy()
     
