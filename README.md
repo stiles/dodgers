@@ -1,4 +1,4 @@
-# LA Dodgers standings tracker
+# LA Dodgers team tracker
 
 ![current_standings](visuals/standings.png)
 
