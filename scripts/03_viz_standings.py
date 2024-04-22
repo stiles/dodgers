@@ -33,6 +33,8 @@ game_number = df.query("game_date == game_date.max()")["gm"].iloc[0]
 Standings chart
 """
 
+font = "Roboto"
+
 # Limit dataframe to latest game number this season
 
 limit_df = df.query(f"gm <= {game_number}").copy()
@@ -123,7 +125,13 @@ current_text_annotation = (
 )
 
 # Combine everything, including the new text annotation
-chart = past + hline + current + text + anno_text + current_text_annotation
+chart = (past + hline + current + text + anno_text + current_text_annotation).configure_title(
+    # fontSize=20,
+    font=font
+).configure_axis(
+    labelFont=font,
+    titleFont=font
+)
 
 # Show the chart
 chart
@@ -261,6 +269,12 @@ final_chart = (
     height=1100,
     width=650,
     title=f"Dodgers historical offense: Total runs through game {game_number}, 1958-2024",
+).configure_title(
+    # fontSize=20,
+    font=font
+).configure_axis(
+    labelFont=font,
+    titleFont=font
 )
 
 final_chart.save("visuals/runs.png", scale_factor=2.0)

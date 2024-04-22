@@ -87,6 +87,8 @@ stats_long_df["statistic_name"] = stats_long_df["statistic"].map(stats_map)
 
 ## Heat map of each stat with independent scales
 
+font = 'Roboto'
+
 chart = (
     alt.Chart(stats_long_df, padding={"left": 5})
     .mark_rect()
@@ -114,6 +116,12 @@ chart = (
         height=40,
     )
     .resolve_scale(color="independent")
+).configure_title(
+    # fontSize=20,
+    font=font
+).configure_axis(
+    labelFont=font,
+    titleFont=font
 )
 
 

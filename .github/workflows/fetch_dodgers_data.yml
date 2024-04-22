@@ -34,6 +34,11 @@ jobs:
     
     - name: Create necessary directories
       run: mkdir -p data/pitching
+    
+    - name: Install Fonts
+      run: |
+        sudo apt-get update
+        sudo apt-get install -y fonts-roboto
 
     - name: Run scripts
       run: |
