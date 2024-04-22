@@ -51,7 +51,8 @@ jobs:
     - name: Commit updated files
       run: |
         git add data/*
-        git commit -m "Automated update of Dodgers data" || echo "No changes to commit."
+        git add visuals/*
+        git commit -m "Automated update of Dodgers data, visuals" || echo "No changes to commit."
     
     - name: Push changes
       run: git push
