@@ -8,7 +8,7 @@ The data is sourced from the heroes at [Baseball Reference](https://www.baseball
 
 ## How it works
 
-The repository includes four Python scripts that perform the following daily operations for team standings and batting by season:
+The repository includes several Python scripts that perform the following daily operations for team standings and batting by season, including:
 
 ### Scripts:
 
@@ -16,10 +16,11 @@ The repository includes four Python scripts that perform the following daily ope
 - `scripts/02_fetch_process_batting.py`
 - `scripts/03_viz_standings.py`
 - `scripts/04_viz_batting.py`
+- `scripts/05_fetch_process_pitching.py`
 
 ### What they do:
 
-1. **Fetch current season and batting data**: Download the current season's game-by-game standings for the LA Dodgers from [Baseball Reference](https://www.baseball-reference.com/teams/LAD/2024-schedule-scores.shtml). The latest season's batting statitics for each player also fetched. 
+1. **Fetch current season, batting and pitching data**: Download the current season's game-by-game standings for the LA Dodgers from [Baseball Reference](https://www.baseball-reference.com/teams/LAD/2024-schedule-scores.shtml). The latest season's batting statitics for each player also fetched, as are the latest season's pitching statistics for each pitcher and the team as a whole. 
 2. **Process data**: Cleans and formats the fetched standings and batting data for consistency with the historical dataset.
 3. **Concatenate with historic data**: Merges the current season's data for batting and standings with pre-existing datasets containing records for the 1958 to 2023 seasons.
 4. **Create three basic *standings* visualizations**: Reads the standings archive and produces a multi-series [line chart](/visuals/standings.png) comparing the current season with previous seasons. A horizontal [bar chart](/visuals/runs.png) is also produced showing the number of runs produced in each season to the current point for comparison. The script also creates a [facet barcode chart](/visuals/batting_rates.png) showing the per-bat rates for various categories (hits, homers, etc.) over the years. Both rely on the [Altair visualization library](https://altair-viz.github.io/) to create and save the charts into a `visuals` directory.
@@ -146,6 +147,26 @@ The processed datasets are available in the `data` directory within this reposit
     - [Parquet](https://stilesdata.com/dodgers/data/batting/dodgers_team_batting_1958_present.parquet)
 
 *Data structure coming soon*
+
+### Pitching
+
+**Current season pitching totals for the team:**
+
+- [JSON](https://stilesdata.com/dodgers/data/pitching/dodgers_pitching_totals_current.json)
+- [CSV](https://stilesdata.com/dodgers/data/pitching/dodgers_pitching_totals_current.csv)
+- [Parquet](https://stilesdata.com/dodgers/data/pitching/dodgers_pitching_totals_current.parquet)
+
+**Data structure:**
+*Each row represents a player in a specific season*
+
+**Current season pitching ranks in the National League:**
+
+- [JSON](https://stilesdata.com/dodgers/data/pitching/dodgers_pitching_ranks_current.json)
+- [CSV](https://stilesdata.com/dodgers/data/pitching/dodgers_pitching_ranks_current.csv)
+- [Parquet](https://stilesdata.com/dodgers/data/pitching/dodgers_pitching_ranks_current.parquet)
+
+**Data structure:**
+*Each row represents a player in a specific season*
 
 ---
 
