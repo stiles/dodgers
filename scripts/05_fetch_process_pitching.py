@@ -53,6 +53,21 @@ totals = (
 Export
 """
 
+def ensure_directory_exists(path):
+    os.makedirs(os.path.dirname(path), exist_ok=True)
+
+def save_dataframe(df, path_without_extension, formats):
+    for file_format in formats:
+        full_path = f"{path_without_extension}.{file_format}"
+        ensure_directory_exists(full_path)
+        if file_format == "csv":
+            df.to_csv(full_path, index=False)
+        elif file_format == "json":
+            df.to_json(full_path, orient="records")
+        elif file_format == "parquet":
+            df.to_parquet(full_path)
+        print(f"Saved {file_format} to {full_path}")
+
 # Function to save dataframes with different formats and file extensions
 
 def save_dataframe(df, path_without_extension, formats):
@@ -74,13 +89,11 @@ def save_dataframe(df, path_without_extension, formats):
 
 # Save local files
 
+
+# Save local files
 formats = ["csv", "json", "parquet"]
-save_dataframe(totals, f"../data/pitching/dodgers_pitching_totals_current", formats)
-save_dataframe(
-    ranks,
-    f"../data/pitching/dodgers_pitching_ranks_current",
-    formats,
-)
+save_dataframe(totals, f"data/pitching/dodgers_pitching_totals_current", formats)
+save_dataframe(ranks, f"data/pitching/dodgers_pitching_ranks_current", formats)
 
 
 def save_to_s3(df, base_path, s3_bucket, formats=["csv", "json", "parquet"], profile_name=None):
@@ -97,7 +110,6 @@ def save_to_s3(df, base_path, s3_bucket, formats=["csv", "json", "parquet"], pro
         aws_access_key_id=os.getenv('AWS_ACCESS_KEY_ID'),
         aws_secret_access_key=os.getenv('AWS_SECRET_ACCESS_KEY'),
         region_name='us-west-1',
-        profile_name=profile_name  # Ensure this is correctly set up in your AWS credentials file
     )
     s3_resource = session.resource("s3")
 
