@@ -10,6 +10,7 @@ This notebook downloads the team's current pitching table from [Baseball Referen
 import os
 import boto3
 import pandas as pd
+from io import BytesIO
 
 """
 Fetch
