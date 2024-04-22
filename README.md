@@ -150,23 +150,21 @@ The processed datasets are available in the `data` directory within this reposit
 
 ### Pitching
 
-**Current season pitching totals for the team:**
+**Current season pitching:**
+- Team aggregates for major pitching stats: runs, ERA, etc.
+    - [JSON](https://stilesdata.com/dodgers/data/pitching/dodgers_pitching_totals_current.json)
+    - [CSV](https://stilesdata.com/dodgers/data/pitching/dodgers_pitching_totals_current.csv)
+    - [Parquet](https://stilesdata.com/dodgers/data/pitching/dodgers_pitching_totals_current.parquet)
 
-- [JSON](https://stilesdata.com/dodgers/data/pitching/dodgers_pitching_totals_current.json)
-- [CSV](https://stilesdata.com/dodgers/data/pitching/dodgers_pitching_totals_current.csv)
-- [Parquet](https://stilesdata.com/dodgers/data/pitching/dodgers_pitching_totals_current.parquet)
+*Data structure coming soon*
 
-**Data structure:**
-*Each row represents a player in a specific season*
+- Team's league ranking for major pitching stats: runs, ERA, etc.
 
-**Current season pitching ranks in the National League:**
+    - [JSON](https://stilesdata.com/dodgers/data/pitching/dodgers_pitching_ranks_current.json)
+    - [CSV](https://stilesdata.com/dodgers/data/pitching/dodgers_pitching_ranks_current.csv)
+    - [Parquet](https://stilesdata.com/dodgers/data/pitching/dodgers_pitching_ranks_current.parquet)
 
-- [JSON](https://stilesdata.com/dodgers/data/pitching/dodgers_pitching_ranks_current.json)
-- [CSV](https://stilesdata.com/dodgers/data/pitching/dodgers_pitching_ranks_current.csv)
-- [Parquet](https://stilesdata.com/dodgers/data/pitching/dodgers_pitching_ranks_current.parquet)
-
-**Data structure:**
-*Each row represents a player in a specific season*
+*Data structure coming soon*
 
 ---
 
