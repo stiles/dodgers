@@ -47,6 +47,7 @@ jobs:
         python scripts/03_viz_standings.py
         python scripts/04_viz_batting.py
         python scripts/05_fetch_process_pitching.py
+        python scripts/06-create-toplines-summary.py
     
     - name: Configure Git
       run: |
