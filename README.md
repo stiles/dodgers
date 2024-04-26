@@ -53,6 +53,35 @@ The processed datasets are available in the `data` directory within this reposit
 
 ### Standings
 
+**Latest season summary**
+
+- [JSON](https://stilesdata.com/dodgers/data/standings/season_summary_latest.json)
+- [csv](https://stilesdata.com/dodgers/data/standings/season_summary_latest.csv)
+
+**Data structure:**
+*Each row represents a statistic for the latest point in the season*
+
+| Stat                        | Value | Category  |
+|-----------------------------|-------|-----------|
+| wins                        | 15    | standings |
+| losses                      | 11    | standings |
+| record                      | 15-11 | standings |
+| win_pct                     | 57%   | standings |
+| win_pct_decade_thispoint    | 57%   | standings |
+| runs                        | 139   | standings |
+| runs_against                | 112   | standings |
+| run_differential            | 27    | standings |
+| home_runs                   | 30    | batting   |
+| home_runs_game              | 1.15  | batting   |
+| home_runs_game_last         | 1.54  | batting   |
+| home_runs_game_decade       | 1.36  | batting   |
+| stolen_bases                | 16    | batting   |
+| stolen_bases_game           | 0.62  | batting   |
+| stolen_bases_decade_game    | 0.49  | batting   |
+| batting_average             | .268  | batting   |
+| batting_average_decade      | .253  | batting   |
+| summary                     | The Dodgers have played 26 games this season compiling a 15-11 record — a winning percentage of 57%. The team's last game was an 11-2 away win to the WSN in front of 26,298 fans. The team has won 5 of its last 10 games. | standings |
+
 **Game-by-game standings, 1958 to present (10,400+ rows):**
 
 - [JSON](https://stilesdata.com/dodgers/data/standings/dodgers_standings_1958_present.json)
