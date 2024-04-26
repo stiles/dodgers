@@ -213,13 +213,6 @@ summary_data = {
 
 summary_df = pd.DataFrame(summary_data)
 
-
-summary_df.to_csv("../data/standings/season_summary_latest.csv", index=False)
-summary_df.to_json(
-    "../data/standings/season_summary_latest.csv", indent=4, orient="records"
-)
-
-
 # S3
 
 def save_to_s3(df, base_path, s3_bucket, formats=["csv", "json"]):
