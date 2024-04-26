@@ -56,7 +56,7 @@ The processed datasets are available in the `data` directory within this reposit
 **Latest season summary**
 
 - [JSON](https://stilesdata.com/dodgers/data/standings/season_summary_latest.json)
-- [csv](https://stilesdata.com/dodgers/data/standings/season_summary_latest.csv)
+- [CSV](https://stilesdata.com/dodgers/data/standings/season_summary_latest.csv)
 
 **Data structure:**
 *Each row represents a statistic for the latest point in the season*
