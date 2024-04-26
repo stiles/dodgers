@@ -42,8 +42,8 @@ To utilize this repository for your own tracking or analysis on the Dodgers or a
 
 1. **Fork the repository**: Create a copy of this repository under your own GitHub account.
 2. **Configure secrets**: Add the following secrets to your repository settings for secure AWS S3 uploads (optional):
-    - `YOUR_AWS_KEY`: Your AWS Access Key ID.
-    - `YOUR_AWS_SECRET`: Your AWS Secret Access Key.
+    - `AWS_ACCESS_KEY_ID`: Your AWS Access Key ID.
+    - `AWS_SECRET_ACCESS_KEY`: Your AWS Secret Access Key.
 3. **Adjust the scripts (Optional)**: Modify the Python scripts as necessary to fit your specific team, data processing or analysis needs.
 4. **Monitor actions**: Check the "Actions" tab in your GitHub repository to see the workflow executions and ensure data is being updated as expected.
 
