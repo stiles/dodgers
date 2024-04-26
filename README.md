@@ -17,6 +17,7 @@ The repository includes several Python scripts that perform the following daily 
 - `scripts/03_viz_standings.py`
 - `scripts/04_viz_batting.py`
 - `scripts/05_fetch_process_pitching.py`
+- `scripts/06-create-toplines-summary.py`
 
 ### What they do:
 
