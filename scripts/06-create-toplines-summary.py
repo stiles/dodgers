@@ -216,45 +216,38 @@ summary_df = pd.DataFrame(summary_data)
 
 summary_df.to_csv("data/standings/season_summary_latest.csv", index=False)
 summary_df.to_json(
-    "data/standings/season_summary_latest.csv", indent=4, orient="records"
+    "data/standings/season_summary_latest.json", indent=4, orient="records"
 )
 
 
 # S3
 
 def save_to_s3(df, base_path, s3_bucket, formats=["csv", "json"]):
-    """
-    Save Pandas DataFrame in specified formats and upload to S3 bucket using environment credentials.
-
-    :param df: DataFrame to save.
-    :param base_path: Base file path without format extension.
-    :param s3_bucket: S3 bucket name.
-    :param formats: List of formats to save -- 'csv', 'json'.
-    """
-    # Create session using environment variables directly
-    session = boto3.Session(
-        aws_access_key_id=os.getenv("AWS_ACCESS_KEY_ID"),
-        aws_secret_access_key=os.getenv("AWS_SECRET_ACCESS_KEY"),
-        region_name="us-west-1",
-        # profile_name="haekeo",
-    )
-    s3_resource = session.resource("s3")
-
-    for fmt in formats:
-        file_path = f"{base_path}.{fmt}"
-        buffer = BytesIO()
-        if fmt == "csv":
-            df.to_csv(buffer, index=False)
-            content_type = "text/csv"
-        elif fmt == "json":
-            df.to_json(buffer, indent=4, orient="records", lines=True)
-            content_type = "application/json"
-
-        buffer.seek(0)
-        s3_resource.Bucket(s3_bucket).put_object(
-            Key=file_path, Body=buffer, ContentType=content_type
+    try:
+        session = boto3.Session(
+            aws_access_key_id=os.getenv("AWS_ACCESS_KEY_ID"),
+            aws_secret_access_key=os.getenv("AWS_SECRET_ACCESS_KEY"),
+            region_name="us-west-1"
         )
-        print(f"Uploaded {fmt} to {s3_bucket}/{file_path}")
+        s3_resource = session.resource("s3")
+
+        for fmt in formats:
+            file_path = f"{base_path}.{fmt}"
+            buffer = BytesIO()
+            if fmt == "csv":
+                df.to_csv(buffer, index=False)
+                content_type = "text/csv"
+            elif fmt == "json":
+                df.to_json(buffer, indent=4, orient="records", lines=True)
+                content_type = "application/json"
+
+            buffer.seek(0)
+            s3_resource.Bucket(s3_bucket).put_object(
+                Key=file_path, Body=buffer, ContentType=content_type
+            )
+            print(f"Uploaded {fmt} to {s3_bucket}/{file_path}")
+    except Exception as e:
+        print(f"Failed to upload to S3: {e}")
 
 
 # Save to S3
