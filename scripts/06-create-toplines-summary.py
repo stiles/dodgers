@@ -10,7 +10,6 @@ This notebook extracts key statistics from the project's processed tables for di
 import os
 import boto3
 import pandas as pd
-import jupyter_black
 import altair as alt
 from io import BytesIO
 
