@@ -84,7 +84,7 @@ batting_past["hr_game"] = (
 
 home_runs = int(batting_now["hr"].sum())
 home_runs_game = (home_runs / games).round(2)
-home_runs_game_last = batting_past.query('season == "2023"')["hr_game"].iloc[0]
+home_runs_game_last = batting_past.query('season == 2023')["hr_game"].iloc[0]
 
 
 games_decade = batting_past.head(10)["g"].astype(int).sum()
