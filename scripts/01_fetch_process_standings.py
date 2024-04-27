@@ -171,11 +171,8 @@ def main():
 
         s3.Bucket(s3_bucket).upload_file(csv_file, s3_key_csv)
         s3.Bucket(s3_bucket).upload_file(json_file, s3_key_json)
-        try:
-            s3.Bucket(s3_bucket).upload_file(parquet_file, s3_key_parquet)
-            logging.info("Parquet file successfully uploaded to S3.")
-        except boto3.exceptions.S3UploadFailedError as e:
-            logging.error(f"S3 upload failed: {e}")
+    except Exception as e:
+        logging.error(f"Unexpected error during S3 upload: {e}")
 
 if __name__ == "__main__":
     main()
