@@ -24,6 +24,7 @@ import boto3
 from io import StringIO
 import logging
 
+logging.basicConfig(level=logging.INFO, format='%(asctime)s - %(levelname)s - %(message)s')
 
 # Configuration
 year = 2024
@@ -31,23 +32,25 @@ url = f"https://www.baseball-reference.com/teams/LAD/{year}-schedule-scores.shtm
 output_dir = "data/standings"
 csv_file = f"{output_dir}/dodgers_standings_1958_present.csv"
 json_file = f"{output_dir}/dodgers_standings_1958_present.json"
-historic_file = f"https://stilesdata.com/dodgers/data/standings/archive/dodgers_standings_1958_2023.parquet"
+historic_file = "data/standings/archive/dodgers_standings_1958_2023.parquet"
 parquet_file = f"{output_dir}/dodgers_standings_1958_present.parquet"
 s3_bucket = "stilesdata.com"
+s3_key_csv = "dodgers/data/standings/dodgers_standings_1958_present.csv"
+s3_key_json = "dodgers/data/standings/dodgers_standings_1958_present.json"
+s3_key_parquet = "dodgers/data/standings/dodgers_standings_1958_present.parquet"
 
 
-# Assume AWS credentials are set as environment variables
-aws_access_key_id = os.getenv('AWS_ACCESS_KEY_ID')
-aws_secret_access_key = os.getenv('AWS_SECRET_ACCESS_KEY')
+# AWS session and S3 resource
 session = boto3.Session(
-    aws_access_key_id=aws_access_key_id,
-    aws_secret_access_key=aws_secret_access_key,
+    aws_access_key_id=os.getenv('AWS_ACCESS_KEY_ID'),
+    aws_secret_access_key=os.getenv('AWS_SECRET_ACCESS_KEY'),
 )
 s3 = session.resource('s3')
 
 
 # Fetch and process the current year's data
 def fetch_current_year_data(url, year):
+    logging.info("Fetching current year's data.")
     response = requests.get(url)
     soup = BeautifulSoup(response.content, 'html.parser')
     src = (pd.read_html(StringIO(str(soup)))[0].query("Tm !='Tm' and Inn != 'Game Preview, and Matchups'")
@@ -145,6 +148,7 @@ def fetch_current_year_data(url, year):
 
 # Load historic data
 def load_historic_data(filepath):
+    logging.info("Loading historic data.")
     return pd.read_parquet(filepath)
 
 logging.basicConfig(level=logging.INFO, format='%(asctime)s - %(levelname)s - %(message)s')
@@ -156,23 +160,22 @@ def main():
 
         src_df = fetch_current_year_data(url, year)
         historic_df = load_historic_data(historic_file)
-        historic_df['game_date'] = historic_df['game_date'].astype(str)
-        historic_df['rank'] = historic_df['rank'].astype(int)
-
         df = pd.concat([src_df, historic_df]).sort_values("game_date", ascending=False).drop_duplicates(subset=['gm', 'year']).reset_index(drop=True)
 
         df.to_json(json_file, orient="records")
         df.to_csv(csv_file, index=False)
-        try:
-            df.to_parquet(parquet_file, index=False)
-            logging.info(f"Parquet file successfully created at {parquet_file} with {len(df)} records.")
-        except Exception as e:
-            logging.error(f"Failed to write Parquet file: {e}")
+        df.to_parquet(parquet_file, index=False)
+
+        logging.info("Data written to JSON, CSV, and Parquet files.")
 
         s3.Bucket(s3_bucket).upload_file(csv_file, s3_key_csv)
         s3.Bucket(s3_bucket).upload_file(json_file, s3_key_json)
+        s3.Bucket(s3_bucket).upload_file(parquet_file, s3_key_parquet)
+
+        logging.info("Files successfully uploaded to S3.")
+
     except Exception as e:
-        logging.error(f"Unexpected error during S3 upload: {e}")
+        logging.error(f"An error occurred: {e}")
 
 if __name__ == "__main__":
     main()
