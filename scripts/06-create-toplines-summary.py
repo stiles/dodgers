@@ -19,12 +19,12 @@ Read
 
 # Standings
 
-standings = pd.read_parquet(
-    "https://stilesdata.com/dodgers/data/standings/dodgers_standings_1958_present.parquet"
-).query("year == '2024'")
-standings_past = pd.read_parquet(
-    "https://stilesdata.com/dodgers/data/standings/dodgers_standings_1958_present.parquet"
-).query("year != '2024'")
+standings = pd.read_json(
+    "https://stilesdata.com/dodgers/data/standings/dodgers_standings_1958_present.json"
+).query("year == 2024")
+standings_past = pd.read_json(
+    "https://stilesdata.com/dodgers/data/standings/dodgers_standings_1958_present.json"
+).query("year != 2024")
 standings_now = standings.query("game_date == game_date.max()").copy()
 
 
@@ -32,16 +32,13 @@ standings_now.loc[standings_now.result == "L", "result_clean"] = "loss"
 standings_now.loc[standings_now.result == "W", "result_clean"] = "win"
 
 
-batting = pd.read_parquet(
-    "https://stilesdata.com/dodgers/data/batting/dodgers_team_batting_1958_present.parquet"
+batting = pd.read_json(
+    "https://stilesdata.com/dodgers/data/batting/dodgers_team_batting_1958_present.json", lines=True
 )
 
 
-batting_past = batting.query("season != '2024'").copy()
-batting_now = batting.query("season == '2024'").copy()
-
-
-
+batting_past = batting.query("season != 2024").copy()
+batting_now = batting.query("season == 2024").copy()
 
 """
 Key statistics
@@ -213,6 +210,7 @@ summary_data = {
 
 summary_df = pd.DataFrame(summary_data)
 
+print(summary_df)
 
 summary_df.to_csv("data/standings/season_summary_latest.csv", index=False)
 summary_df.to_json(
@@ -251,8 +249,8 @@ def save_to_s3(df, base_path, s3_bucket, formats=["csv", "json"]):
 
 
 # Save to S3
-save_to_s3(
-    summary_df,
-    "dodgers/data/standings/season_summary_latest",
-    "stilesdata.com",
-)
+# save_to_s3(
+#     summary_df,
+#     "dodgers/data/standings/season_summary_latest",
+#     "stilesdata.com",
+# )

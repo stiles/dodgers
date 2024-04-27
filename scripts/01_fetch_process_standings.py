@@ -22,6 +22,7 @@ import requests
 from bs4 import BeautifulSoup
 import boto3
 from io import StringIO
+import logging
 
 
 # Configuration
@@ -146,34 +147,31 @@ def fetch_current_year_data(url, year):
 def load_historic_data(filepath):
     return pd.read_parquet(filepath)
 
+logging.basicConfig(level=logging.INFO, format='%(asctime)s - %(levelname)s - %(message)s')
 
-# Main function
 def main():
-    # Check if output directory exists
-    os.makedirs(output_dir, exist_ok=True)
-    
-    src_df = fetch_current_year_data(url, year)
-    historic_df = load_historic_data(historic_file)
-    historic_df['game_date'] = historic_df['game_date'].astype(str)
-    historic_df['rank'] = historic_df['rank'].astype(int)
+    try:
+        os.makedirs(output_dir, exist_ok=True)
+        logging.info("Output directory checked/created.")
 
-    # Concatenate historic and current dataframes
-    df = pd.concat([src_df, historic_df]).sort_values("game_date", ascending=False).drop_duplicates(subset=['gm', 'year']).reset_index(drop=True)
+        src_df = fetch_current_year_data(url, year)
+        historic_df = load_historic_data(historic_file)
+        historic_df['game_date'] = historic_df['game_date'].astype(str)
+        historic_df['rank'] = historic_df['rank'].astype(int)
 
-    df.to_json(json_file, indent=4, orient="records")
-    df.to_csv(csv_file, index=False)
-    df.to_parquet(parquet_file, index=False)
-    
-    # Upload to S3 using boto3
-    # Define S3 keys for each file type
-    s3_key_csv = "dodgers/data/standings/dodgers_standings_1958_present.csv"
-    s3_key_json = "dodgers/data/standings/dodgers_standings_1958_present.json"
-    s3_key_parquet = "dodgers/data/standings/dodgers_standings_1958_present.parquet"
+        df = pd.concat([src_df, historic_df]).sort_values("game_date", ascending=False).drop_duplicates(subset=['gm', 'year']).reset_index(drop=True)
 
-    # Upload to S3 using boto3
-    s3.Bucket(s3_bucket).upload_file(csv_file, s3_key_csv)
-    s3.Bucket(s3_bucket).upload_file(json_file, s3_key_json)
-    s3.Bucket(s3_bucket).upload_file(parquet_file, s3_key_parquet)
+        df.to_json(json_file, orient="records")
+        df.to_csv(csv_file, index=False)
+        df.to_parquet(parquet_file, index=False)
+
+        s3.Bucket(s3_bucket).upload_file(csv_file, s3_key_csv)
+        s3.Bucket(s3_bucket).upload_file(json_file, s3_key_json)
+        s3.Bucket(s3_bucket).upload_file(parquet_file, s3_key_parquet)
+
+        logging.info("Files successfully uploaded to S3.")
+    except Exception as e:
+        logging.error(f"Error occurred: {e}")
 
 if __name__ == "__main__":
     main()
