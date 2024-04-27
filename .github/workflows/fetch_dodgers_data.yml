@@ -48,19 +48,22 @@ jobs:
         python scripts/04_viz_batting.py
         python scripts/05_fetch_process_pitching.py
         python scripts/06-create-toplines-summary.py
-    
-    - name: Configure Git
+
+    - name: Check for changes
+      id: changes
+      run: |
+        git add *
+        git diff --staged --quiet || echo "::set-output name=changes::true"
+  
+    - name: Commit updated files
+      if: steps.changes.outputs.changes == 'true'
       run: |
         git config --global user.name 'Matt Stiles'
         git config --global user.email 'haekeostiles@gmail.com'
-    
-    - name: Commit updated files
-      run: |
-        git add data/*
-        git add visuals/*
-        git commit -m "Automated update of Dodgers data, visuals" || echo "No changes to commit."
-    
+        git commit -m "Automated update of Dodgers data, visuals"
+  
     - name: Push changes
+      if: steps.changes.outputs.changes == 'true'
       run: git push
       env:
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
