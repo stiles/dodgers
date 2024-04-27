@@ -176,12 +176,6 @@ def main():
             logging.info("Parquet file successfully uploaded to S3.")
         except boto3.exceptions.S3UploadFailedError as e:
             logging.error(f"S3 upload failed: {e}")
-        except Exception as e:
-            logging.error(f"Unexpected error during S3 upload: {e}")
-
-            logging.info("Files successfully uploaded to S3.")
-        except Exception as e:
-            logging.error(f"Error occurred: {e}")
 
 if __name__ == "__main__":
     main()
