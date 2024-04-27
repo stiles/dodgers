@@ -14,6 +14,19 @@ import boto3
 import pandas as pd
 import altair as alt
 from io import BytesIO
+import logging
+
+logging.basicConfig(level=logging.INFO, format='%(asctime)s - %(levelname)s - %(message)s')
+base_dir = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+
+def read_parquet_s3(url):
+    """ Read a Parquet file from S3 URL into a DataFrame """
+    df = pd.read_parquet(url)
+    return df
+
+# URLs for data
+standings_url = "https://stilesdata.com/dodgers/data/standings/dodgers_standings_1958_present.parquet"
+batting_url = "https://stilesdata.com/dodgers/data/batting/dodgers_team_batting_1958_present.parquet"
 
 
 """
@@ -22,21 +35,16 @@ Read
 
 # Standings
 
-standings = pd.read_parquet(
-    "https://stilesdata.com/dodgers/data/standings/dodgers_standings_1958_present.parquet"
-).query("year == '2024'")
-standings_past = pd.read_parquet(
-    "https://stilesdata.com/dodgers/data/standings/dodgers_standings_1958_present.parquet"
-).query("year != '2024'")
+# Standings data processing
+standings = read_parquet_s3(standings_url).query("year == '2024'")
+standings_past = read_parquet_s3(standings_url).query("year != '2024'")
 standings_now = standings.query("game_date == game_date.max()").copy()
 
 standings_now.loc[standings_now.result == "L", "result_clean"] = "loss"
 standings_now.loc[standings_now.result == "W", "result_clean"] = "win"
 
-batting = pd.read_parquet(
-    "https://stilesdata.com/dodgers/data/batting/dodgers_team_batting_1958_present.parquet"
-)
-
+# Batting data processing
+batting = read_parquet_s3(batting_url)
 batting_past = batting.query("season != '2024'").copy()
 batting_now = batting.query("season == '2024'").copy()
 
@@ -45,164 +53,147 @@ batting_now = batting.query("season == '2024'").copy()
 Key statistics
 """
 
-# 1. Current season record (Wins-Losses)
-# > Provides an immediate understanding of the team's overall performance for the season.
-
-games = standings_now["gm"].loc[0]
-wins = standings_now["wins"].loc[0]
-losses = standings_now["losses"].loc[0]
-record = standings_now["record"].loc[0]
-
-# 2. Win percentage
-# > Allows for normalization of success to compare across different seasons or different numbers of games played.
-
-win_pct = int(standings_now["win_pct"].loc[0] * 100)
-win_pct_decade_thispoint = int(
-    standings_past.query(f"gm == {games}").head(10)["win_pct"].mean().round(2) * 100
-)
-
-# 3. Run differential
-# > A positive run differential generally correlates with a stronger team performance and is predictive of future success.
-
-runs = standings["r"].sum()
-runs_against = standings["ra"].sum()
-run_diff = runs - runs_against
+# Repetitive tasks
+def calculate_statistics(data, field):
+    return {
+        'total': data[field].sum(),
+        'average_per_game': round(data[field].sum() / data['gm'].iloc[0], 2)
+    }
 
 
-# 4. Home runs and home runs per game
-# > Reflects the team's power-hitting capabilities, significant for scoring strategies.
+# Calculate current season statistics
+def current_season_stats(standings_now, standings_past):
+    games = standings_now["gm"].iloc[0]
+    wins = standings_now["wins"].iloc[0]
+    losses = standings_now["losses"].iloc[0]
+    record = standings_now["record"].iloc[0]
+    win_pct = int(standings_now["win_pct"].iloc[0] * 100)
 
-batting_past["hr_game"] = (
-    batting_past["hr"].astype(int) / batting_past["g"].astype(int)
-).round(2)
+    # Calculate win percentage for comparison
+    win_pct_decade_thispoint = int(
+        standings_past.query(f"gm == {games}").head(10)["win_pct"].mean().round(2) * 100
+    )
 
-home_runs = int(batting_now["hr"].sum())
-home_runs_game = (home_runs / games).round(2)
-home_runs_game_last = batting_past.query('season == "2023"')["hr_game"].iloc[0]
-
-games_decade = batting_past.head(10)["g"].astype(int).sum()
-
-home_runs_decade = batting_past.head(10)["hr"].astype(int).sum()
-home_runs_game_decade = (home_runs_decade / games_decade).round(2)
-
-# 5. Earned run average (ERA)
-# > A key measure of pitching staff effectiveness, with a lower ERA indicating better performance.
-
-# Batting average and on
-# > Summarizes players' strength in getting on base — and hopefully scoring runs.
-
-batting_average = batting_now["ba"].iloc[0]
-
-batting_average_decade = (
-    batting_past.head(10)["ba"]
-    .astype(float)
-    .mean()
-    .round(3)
-    .astype(str)
-    .replace("0.", ".")
-)
-
-# 7. Stolen bases
-# > Stolen bases can significantly impact game dynamics and indicate the team's strategic play.
-
-stolen_bases = int(batting_now["sb"].iloc[0])
-stolen_bases_game = (stolen_bases / games).round(2)
+    return games, wins, losses, record, win_pct, win_pct_decade_thispoint
 
 
-stolen_decade = batting_past.head(10)["sb"].astype(int).sum()
-games_decade = batting_past.head(10)["g"].astype(int).sum()
-stolen_bases_decade_game = (stolen_decade / games_decade).round(2)
+
+# Calculate run differentials
+def run_differential(standings):
+    runs = standings["r"].sum()
+    runs_against = standings["ra"].sum()
+    run_diff = runs - runs_against
+    return runs, runs_against, run_diff
 
 
-# 8. Fielding percentage
-# > Indicates the team's defensive capabilities, with a higher percentage reflecting better performance.
 
-# 9. Recent trend (last 10 games)
-# > Provides insight into the team's current form and momentum, which is essential for assessing changes in performance.
+# Calculate home run statistics
+def home_run_stats(batting_now, batting_past):
+    games = batting_now["g"].iloc[0]  # Assuming 'g' is games in current year
+    home_runs = int(batting_now["hr"].sum())
+    home_runs_game = round(home_runs / games, 2)
+    home_runs_game_last = batting_past.query('season == "2023"')["hr_game"].iloc[0]
 
-last_10 = standings["result"].head(10)
-win_count_trend = last_10[last_10 == "W"].count()
-loss_count_trend = last_10[last_10 == "L"].count()
+    # Decade averages
+    games_decade = batting_past.head(10)["g"].astype(int).sum()
+    home_runs_decade = batting_past.head(10)["hr"].astype(int).sum()
+    home_runs_game_decade = round(home_runs_decade / games_decade, 2)
+
+    return home_runs, home_runs_game, home_runs_game_last, home_runs_game_decade
 
 
-win_loss_trend = f"Recent trend: {win_count_trend} wins, {loss_count_trend} losses"
+
+# Batting and stolen base stats
+def batting_and_stolen_base_stats(batting_now, batting_past, games):
+    batting_average = batting_now["ba"].iloc[0]
+    batting_average_decade = round(
+        batting_past.head(10)["ba"].astype(float).mean(), 3
+    ).astype(str).replace("0.", ".")
+
+    stolen_bases = int(batting_now["sb"].iloc[0])
+    stolen_bases_game = round(stolen_bases / games, 2)
+
+    stolen_decade = batting_past.head(10)["sb"].astype(int).sum()
+    stolen_bases_decade_game = round(stolen_decade / games_decade, 2)
+
+    return batting_average, batting_average_decade, stolen_bases, stolen_bases_game, stolen_bases_decade_game
 
 
-# 10. Summary
-# > Creates one file to import for topline statistics and a narrative summary of the standings now.
 
-summary = f"The Dodgers have played {games} games this season compiling a {record} record — a winning percentage of {win_pct}%. The team's last game was a {standings_now['r'].iloc[0]}-{standings_now['ra'].iloc[0]} {standings_now['home_away'].iloc[0]} {standings_now['result_clean'].iloc[0]} to the {standings_now['opp'].iloc[0]} in front of {'{:,}'.format(standings_now['attendance'].iloc[0])} fans. The team has won {win_count_trend} of its last 10 games."
+# Summary statistics
+def generate_summary(standings_now, wins, losses, win_pct):
+    last_game = standings_now.iloc[0]
+    summary = (
+        f"The Dodgers have played {games} games this season compiling a {record} record — "
+        f"a winning percentage of {win_pct}%. The team's last game was a "
+        f"{last_game['r']}-{last_game['ra']} {last_game['home_away']} {last_game['result_clean']} "
+        f"to the {last_game['opp']} in front of {'{:,}'.format(last_game['attendance'])} fans. "
+        f"The team has won {win_count_trend} of its last 10 games."
+    )
+    return summary
 
+
+# Win/Loss trend in the last 10 games
+def recent_trend(standings):
+    last_10 = standings["result"].head(10)
+    win_count_trend = last_10[last_10 == "W"].count()
+    loss_count_trend = last_10[last_10 == "L"].count()
+    return win_count_trend, loss_count_trend, f"Recent trend: {win_count_trend} wins, {loss_count_trend} losses"
+
+
+# Organize and call functions to get data
+games, wins, losses, record, win_pct, win_pct_decade_thispoint = current_season_stats(standings_now, standings_past)
+runs, runs_against, run_diff = run_differential(standings)
+home_runs, home_runs_game, home_runs_game_last, home_runs_game_decade = home_run_stats(batting_now, batting_past)
+batting_average, batting_average_decade, stolen_bases, stolen_bases_game, stolen_bases_decade_game = batting_and_stolen_base_stats(batting_now, batting_past, games)
+win_count_trend, loss_count_trend, win_loss_trend = recent_trend(standings_now)
+
+summary = generate_summary(standings_now, wins, losses, win_pct)
+
+# Prepare summary data for export
 summary_data = [
     {"stat": "wins", "value": wins, "category": "standings"},
     {"stat": "losses", "value": losses, "category": "standings"},
     {"stat": "record", "value": record, "category": "standings"},
     {"stat": "win_pct", "value": f"{win_pct}%", "category": "standings"},
-    {
-        "stat": "win_pct_decade_thispoint",
-        "value": f"{win_pct_decade_thispoint}%",
-        "category": "standings",
-    },
+    {"stat": "win_pct_decade_thispoint", "value": f"{win_pct_decade_thispoint}%", "category": "standings"},
     {"stat": "runs", "value": runs, "category": "standings"},
     {"stat": "runs_against", "value": runs_against, "category": "standings"},
     {"stat": "run_differential", "value": run_diff, "category": "standings"},
     {"stat": "home_runs", "value": home_runs, "category": "batting"},
     {"stat": "home_runs_game", "value": home_runs_game, "category": "batting"},
-    {
-        "stat": "home_runs_game_last",
-        "value": home_runs_game_last,
-        "category": "batting",
-    },
-    {
-        "stat": "home_runs_game_decade",
-        "value": home_runs_game_decade,
-        "category": "batting",
-    },
+    {"stat": "home_runs_game_last", "value": home_runs_game_last, "category": "batting"},
+    {"stat": "home_runs_game_decade", "value": home_runs_game_decade, "category": "batting"},
     {"stat": "stolen_bases", "value": stolen_bases, "category": "batting"},
     {"stat": "stolen_bases_game", "value": stolen_bases_game, "category": "batting"},
-    {
-        "stat": "stolen_bases_decade_game",
-        "value": stolen_bases_decade_game,
-        "category": "batting",
-    },
+    {"stat": "stolen_bases_decade_game", "value": stolen_bases_decade_game, "category": "batting"},
     {"stat": "batting_average", "value": batting_average, "category": "batting"},
-    {
-        "stat": "batting_average_decade",
-        "value": batting_average_decade,
-        "category": "batting",
-    },
-    {"stat": "summary", "value": summary, "category": "standings"},
+    {"stat": "batting_average_decade", "value": batting_average_decade, "category": "batting"},
+    {"stat": "recent_trend", "value": win_loss_trend, "category": "standings"},
+    {"stat": "summary", "value": summary, "category": "standings"}
 ]
 
 
 summary_df = pd.DataFrame(summary_data)
 
-summary_df.to_csv("../data/standings/season_summary_latest.csv", index=False)
-summary_df.to_json(
-    "../data/standings/season_summary_latest.csv", indent=4, orient="records"
-)
+# Save paths
+output_csv_path = os.path.join(base_dir, 'data', 'standings', 'season_summary_latest.csv')
+output_json_path = os.path.join(base_dir, 'data', 'standings', 'season_summary_latest.json')
 
+# Save DataFrame to CSV and JSON
+summary_df.to_csv(output_csv_path, index=False)
+summary_df.to_json(output_json_path, orient="records", indent=4)
 
-# S3
+#s3
 
 def save_to_s3(df, base_path, s3_bucket, formats=["csv", "json"]):
-    """
-    Save Pandas DataFrame in specified formats and upload to S3 bucket using environment credentials.
-
-    :param df: DataFrame to save.
-    :param base_path: Base file path without format extension.
-    :param s3_bucket: S3 bucket name.
-    :param formats: List of formats to save -- 'csv', 'json'.
-    """
-    # Create session using environment variables directly
+    """ Save DataFrame to S3 in specified formats """
     session = boto3.Session(
         aws_access_key_id=os.getenv("AWS_ACCESS_KEY_ID"),
         aws_secret_access_key=os.getenv("AWS_SECRET_ACCESS_KEY"),
-        region_name="us-west-1",
-        profile_name="haekeo",
+        region_name="us-west-1"
     )
     s3_resource = session.resource("s3")
-
     for fmt in formats:
         file_path = f"{base_path}.{fmt}"
         buffer = BytesIO()
@@ -212,17 +203,11 @@ def save_to_s3(df, base_path, s3_bucket, formats=["csv", "json"]):
         elif fmt == "json":
             df.to_json(buffer, orient="records", lines=True)
             content_type = "application/json"
-
         buffer.seek(0)
         s3_resource.Bucket(s3_bucket).put_object(
             Key=file_path, Body=buffer, ContentType=content_type
         )
-        print(f"Uploaded {fmt} to {s3_bucket}/{file_path}")
+        logging.info(f"Uploaded {fmt} to {s3_bucket}/{file_path}")
 
-
-# Save to S3
-save_to_s3(
-    summary_df,
-    "dodgers/data/standings/season_summary_latest",
-    "stilesdata.com",
-)
+# Save to S3 example usage
+save_to_s3(summary_df, "dodgers/data/standings/season_summary_latest", "stilesdata.com")
