@@ -249,8 +249,8 @@ def save_to_s3(df, base_path, s3_bucket, formats=["csv", "json"]):
 
 
 # Save to S3
-# save_to_s3(
-#     summary_df,
-#     "dodgers/data/standings/season_summary_latest",
-#     "stilesdata.com",
-# )
+save_to_s3(
+    summary_df,
+    "dodgers/data/standings/season_summary_latest",
+    "stilesdata.com",
+)
