@@ -151,6 +151,11 @@ def fetch_current_year_data(url, year):
 def load_historic_data(filepath):
     logging.info("Loading historic data.")
     historic_df = pd.read_parquet(filepath)
+    historic_df["gm"] = historic_df["gm"].astype(int)
+    historic_df[["r", "ra", "attendance", "gm", "rank"]] = historic_df[
+        ["r", "ra", "attendance", "gm", "rank"]
+    ].astype(int)
+
     if 'game_date' in historic_df.columns and historic_df['game_date'].dtype == 'object':
         historic_df['game_date'] = pd.to_datetime(historic_df['game_date'])
     return historic_df
