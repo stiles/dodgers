@@ -7,120 +7,77 @@ LA Dodgers toplines
 This notebook extracts key statistics from the project's processed tables for display in a dashboard.
 """
 
-# Import Python tools
-
 import os
-import boto3
 import pandas as pd
-import altair as alt
+import boto3
 from io import BytesIO
 import logging
 
+# Configure logging
 logging.basicConfig(level=logging.INFO, format='%(asctime)s - %(levelname)s - %(message)s')
+
+# Base directory calculation for file paths
 base_dir = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 
 def read_parquet_s3(url):
-    """ Read a Parquet file from S3 URL into a DataFrame """
+    """ Read a Parquet file from an S3 URL into a DataFrame """
     df = pd.read_parquet(url)
     return df
 
-# URLs for data
+# URLs for data sources
 standings_url = "https://stilesdata.com/dodgers/data/standings/dodgers_standings_1958_present.parquet"
 batting_url = "https://stilesdata.com/dodgers/data/batting/dodgers_team_batting_1958_present.parquet"
 
-
-"""
-Read
-"""
-
-# Standings
-
-# Standings data processing
+# Load data
 standings = read_parquet_s3(standings_url).query("year == '2024'")
 standings_past = read_parquet_s3(standings_url).query("year != '2024'")
 standings_now = standings.query("game_date == game_date.max()").copy()
-
 standings_now.loc[standings_now.result == "L", "result_clean"] = "loss"
 standings_now.loc[standings_now.result == "W", "result_clean"] = "win"
 
-# Batting data processing
 batting = read_parquet_s3(batting_url)
 batting_past = batting.query("season != '2024'").copy()
 batting_now = batting.query("season == '2024'").copy()
 
-
-"""
-Key statistics
-"""
-
-# Repetitive tasks
-def calculate_statistics(data, field):
-    return {
-        'total': data[field].sum(),
-        'average_per_game': round(data[field].sum() / data['gm'].iloc[0], 2)
-    }
-
-
-# Calculate current season statistics
 def current_season_stats(standings_now, standings_past):
     games = standings_now["gm"].iloc[0]
     wins = standings_now["wins"].iloc[0]
     losses = standings_now["losses"].iloc[0]
     record = standings_now["record"].iloc[0]
     win_pct = int(standings_now["win_pct"].iloc[0] * 100)
-
-    # Calculate win percentage for comparison
     win_pct_decade_thispoint = int(
         standings_past.query(f"gm == {games}").head(10)["win_pct"].mean().round(2) * 100
     )
-
     return games, wins, losses, record, win_pct, win_pct_decade_thispoint
 
-
-
-# Calculate run differentials
 def run_differential(standings):
     runs = standings["r"].sum()
     runs_against = standings["ra"].sum()
     run_diff = runs - runs_against
     return runs, runs_against, run_diff
 
-
-
-# Calculate home run statistics
 def home_run_stats(batting_now, batting_past):
     games = int(batting_now["g"].iloc[0])
     home_runs = int(batting_now["hr"].sum())
     home_runs_game = round(home_runs / games, 2)
+    batting_past["hr_game"] = batting_past["hr"].astype(int) / batting_past["g"].astype(int).round(2)
     home_runs_game_last = batting_past.query('season == "2023"')["hr_game"].iloc[0]
-
-    # Decade averages
     games_decade = batting_past.head(10)["g"].astype(int).sum()
     home_runs_decade = batting_past.head(10)["hr"].astype(int).sum()
     home_runs_game_decade = round(home_runs_decade / games_decade, 2)
-
     return home_runs, home_runs_game, home_runs_game_last, home_runs_game_decade
 
-
-
-# Batting and stolen base stats
 def batting_and_stolen_base_stats(batting_now, batting_past, games):
     batting_average = batting_now["ba"].iloc[0]
     batting_average_decade = round(
         batting_past.head(10)["ba"].astype(float).mean(), 3
     ).astype(str).replace("0.", ".")
-
     stolen_bases = int(batting_now["sb"].iloc[0])
     stolen_bases_game = round(stolen_bases / games, 2)
-
     stolen_decade = batting_past.head(10)["sb"].astype(int).sum()
-    stolen_bases_decade_game = round(stolen_decade / games_decade, 2)
-
+    stolen_bases_decade_game = round(stolen_decade / games, 2)
     return batting_average, batting_average_decade, stolen_bases, stolen_bases_game, stolen_bases_decade_game
 
-
-
-# Summary statistics
 def generate_summary(standings_now, wins, losses, win_pct):
     last_game = standings_now.iloc[0]
     summary = (
@@ -132,16 +89,12 @@ def generate_summary(standings_now, wins, losses, win_pct):
     )
     return summary
 
-
-# Win/Loss trend in the last 10 games
 def recent_trend(standings):
     last_10 = standings["result"].head(10)
     win_count_trend = last_10[last_10 == "W"].count()
     loss_count_trend = last_10[last_10 == "L"].count()
     return win_count_trend, loss_count_trend, f"Recent trend: {win_count_trend} wins, {loss_count_trend} losses"
 
-
-# Organize and call functions to get data
 games, wins, losses, record, win_pct, win_pct_decade_thispoint = current_season_stats(standings_now, standings_past)
 runs, runs_against, run_diff = run_differential(standings)
 home_runs, home_runs_game, home_runs_game_last, home_runs_game_decade = home_run_stats(batting_now, batting_past)
@@ -150,7 +103,6 @@ win_count_trend, loss_count_trend, win_loss_trend = recent_trend(standings_now)
 
 summary = generate_summary(standings_now, wins, losses, win_pct)
 
-# Prepare summary data for export
 summary_data = [
     {"stat": "wins", "value": wins, "category": "standings"},
     {"stat": "losses", "value": losses, "category": "standings"},
@@ -173,21 +125,11 @@ summary_data = [
     {"stat": "summary", "value": summary, "category": "standings"}
 ]
 
-
 summary_df = pd.DataFrame(summary_data)
-
-# Save paths
-output_csv_path = os.path.join(base_dir, 'data', 'standings', 'season_summary_latest.csv')
-output_json_path = os.path.join(base_dir, 'data', 'standings', 'season_summary_latest.json')
-
-# Save DataFrame to CSV and JSON
-summary_df.to_csv(output_csv_path, index=False)
-summary_df.to_json(output_json_path, orient="records", indent=4)
-
-#s3
+summary_df.to_csv(os.path.join(base_dir, 'data', 'standings', 'season_summary_latest.csv'), index=False)
+summary_df.to_json(os.path.join(base_dir, 'data', 'standings', 'season_summary_latest.json'), orient='records', indent=4)
 
 def save_to_s3(df, base_path, s3_bucket, formats=["csv", "json"]):
-    """ Save DataFrame to S3 in specified formats """
     session = boto3.Session(
         aws_access_key_id=os.getenv("AWS_ACCESS_KEY_ID"),
         aws_secret_access_key=os.getenv("AWS_SECRET_ACCESS_KEY"),
@@ -204,10 +146,7 @@ def save_to_s3(df, base_path, s3_bucket, formats=["csv", "json"]):
             df.to_json(buffer, orient="records", lines=True)
             content_type = "application/json"
         buffer.seek(0)
-        s3_resource.Bucket(s3_bucket).put_object(
-            Key=file_path, Body=buffer, ContentType=content_type
-        )
+        s3_resource.Bucket(s3_bucket).put_object(Key=file_path, Body=buffer, ContentType=content_type)
         logging.info(f"Uploaded {fmt} to {s3_bucket}/{file_path}")
 
-# Save to S3 example usage
 save_to_s3(summary_df, "dodgers/data/standings/season_summary_latest", "stilesdata.com")

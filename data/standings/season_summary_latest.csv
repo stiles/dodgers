@@ -1,92 +1,20 @@
-[
-    {
-        "stat":"wins",
-        "value":17,
-        "category":"standings"
-    },
-    {
-        "stat":"losses",
-        "value":11,
-        "category":"standings"
-    },
-    {
-        "stat":"record",
-        "value":"17-11",
-        "category":"standings"
-    },
-    {
-        "stat":"win_pct",
-        "value":"61%",
-        "category":"standings"
-    },
-    {
-        "stat":"win_pct_decade_thispoint",
-        "value":"57%",
-        "category":"standings"
-    },
-    {
-        "stat":"runs",
-        "value":153,
-        "category":"standings"
-    },
-    {
-        "stat":"runs_against",
-        "value":115,
-        "category":"standings"
-    },
-    {
-        "stat":"run_differential",
-        "value":38,
-        "category":"standings"
-    },
-    {
-        "stat":"home_runs",
-        "value":34,
-        "category":"batting"
-    },
-    {
-        "stat":"home_runs_game",
-        "value":1.21,
-        "category":"batting"
-    },
-    {
-        "stat":"home_runs_game_last",
-        "value":1.54,
-        "category":"batting"
-    },
-    {
-        "stat":"home_runs_game_decade",
-        "value":1.36,
-        "category":"batting"
-    },
-    {
-        "stat":"stolen_bases",
-        "value":20,
-        "category":"batting"
-    },
-    {
-        "stat":"stolen_bases_game",
-        "value":0.71,
-        "category":"batting"
-    },
-    {
-        "stat":"stolen_bases_decade_game",
-        "value":0.49,
-        "category":"batting"
-    },
-    {
-        "stat":"batting_average",
-        "value":".276",
-        "category":"batting"
-    },
-    {
-        "stat":"batting_average_decade",
-        "value":".253",
-        "category":"batting"
-    },
-    {
-        "stat":"summary",
-        "value":"The Dodgers have played 28 games this season compiling a 17-11 record \u2014 a winning percentage of 61%. The team's last game was a 12-2 away win to the TOR in front of 39,688 fans. The team has won 6 of its last 10 games.",
-        "category":"standings"
-    }
-]
+stat,value,category
+wins,17,standings
+losses,11,standings
+record,17-11,standings
+win_pct,61%,standings
+win_pct_decade_thispoint,57%,standings
+runs,153,standings
+runs_against,115,standings
+run_differential,38,standings
+home_runs,34,batting
+home_runs_game,1.21,batting
+home_runs_game_last,1.537037037037037,batting
+home_runs_game_decade,1.36,batting
+stolen_bases,20,batting
+stolen_bases_game,0.71,batting
+stolen_bases_decade_game,26.71,batting
+batting_average,.276,batting
+batting_average_decade,.253,batting
+recent_trend,"Recent trend: 1 wins, 0 losses",standings
+summary,"The Dodgers have played 28 games this season compiling a 17-11 record — a winning percentage of 61%. The team's last game was a 12-2 away win to the TOR in front of 39,688 fans. The team has won 1 of its last 10 games.",standings
