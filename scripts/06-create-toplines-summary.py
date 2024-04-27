@@ -89,7 +89,7 @@ def run_differential(standings):
 
 # Calculate home run statistics
 def home_run_stats(batting_now, batting_past):
-    games = batting_now["g"].iloc[0]  # Assuming 'g' is games in current year
+    games = int(batting_now["g"].iloc[0])
     home_runs = int(batting_now["hr"].sum())
     home_runs_game = round(home_runs / games, 2)
     home_runs_game_last = batting_past.query('season == "2023"')["hr_game"].iloc[0]
