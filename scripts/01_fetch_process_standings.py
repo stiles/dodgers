@@ -17,6 +17,7 @@ This script downloads the team's current standings table from Baseball Reference
 """
 
 import os
+import sys
 import pandas as pd
 import requests
 from bs4 import BeautifulSoup
@@ -149,7 +150,10 @@ def fetch_current_year_data(url, year):
 # Load historic data
 def load_historic_data(filepath):
     logging.info("Loading historic data.")
-    return pd.read_parquet(filepath)
+    historic_df = pd.read_parquet(filepath)
+    if 'game_date' in historic_df.columns and historic_df['game_date'].dtype == 'object':
+        historic_df['game_date'] = pd.to_datetime(historic_df['game_date'])
+    return historic_df
 
 logging.basicConfig(level=logging.INFO, format='%(asctime)s - %(levelname)s - %(message)s')
 
@@ -160,6 +164,14 @@ def main():
 
         src_df = fetch_current_year_data(url, year)
         historic_df = load_historic_data(historic_file)
+
+        # Ensure both dataframes have the game_date in the correct format
+        if src_df['game_date'].dtype != 'datetime64[ns]':
+            src_df['game_date'] = pd.to_datetime(src_df['game_date'])
+
+        if historic_df['game_date'].dtype != 'datetime64[ns]':
+            historic_df['game_date'] = pd.to_datetime(historic_df['game_date'])
+
         df = pd.concat([src_df, historic_df]).sort_values("game_date", ascending=False).drop_duplicates(subset=['gm', 'year']).reset_index(drop=True)
 
         df.to_json(json_file, orient="records")
@@ -176,6 +188,7 @@ def main():
 
     except Exception as e:
         logging.error(f"An error occurred: {e}")
+        sys.exit(1)
 
 if __name__ == "__main__":
     main()
