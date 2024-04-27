@@ -163,15 +163,25 @@ def main():
 
         df.to_json(json_file, orient="records")
         df.to_csv(csv_file, index=False)
-        df.to_parquet(parquet_file, index=False)
+        try:
+            df.to_parquet(parquet_file, index=False)
+            logging.info(f"Parquet file successfully created at {parquet_file} with {len(df)} records.")
+        except Exception as e:
+            logging.error(f"Failed to write Parquet file: {e}")
 
         s3.Bucket(s3_bucket).upload_file(csv_file, s3_key_csv)
         s3.Bucket(s3_bucket).upload_file(json_file, s3_key_json)
-        s3.Bucket(s3_bucket).upload_file(parquet_file, s3_key_parquet)
+        try:
+            s3.Bucket(s3_bucket).upload_file(parquet_file, s3_key_parquet)
+            logging.info("Parquet file successfully uploaded to S3.")
+        except boto3.exceptions.S3UploadFailedError as e:
+            logging.error(f"S3 upload failed: {e}")
+        except Exception as e:
+            logging.error(f"Unexpected error during S3 upload: {e}")
 
-        logging.info("Files successfully uploaded to S3.")
-    except Exception as e:
-        logging.error(f"Error occurred: {e}")
+            logging.info("Files successfully uploaded to S3.")
+        except Exception as e:
+            logging.error(f"Error occurred: {e}")
 
 if __name__ == "__main__":
     main()
