@@ -32,12 +32,16 @@ year = 2024
 url = f"https://www.baseball-reference.com/teams/LAD/{year}-schedule-scores.shtml"
 output_dir = "data/standings"
 csv_file = f"{output_dir}/dodgers_standings_1958_present.csv"
+csv_file_slim = f"{output_dir}/dodgers_standings_1958_present_optimized.csv"
 json_file = f"{output_dir}/dodgers_standings_1958_present.json"
+json_file_slim = f"{output_dir}/dodgers_standings_1958_present_optimized.json"
 historic_file = "https://stilesdata.com/dodgers/data/standings/archive/dodgers_standings_1958_2023.parquet"
 parquet_file = f"{output_dir}/dodgers_standings_1958_present.parquet"
 s3_bucket = "stilesdata.com"
 s3_key_csv = "dodgers/data/standings/dodgers_standings_1958_present.csv"
 s3_key_json = "dodgers/data/standings/dodgers_standings_1958_present.json"
+s3_key_slim_csv = "dodgers/data/standings/dodgers_standings_1958_present_optimized.csv"
+s3_key_slim_json = "dodgers/data/standings/dodgers_standings_1958_present_optimized.json"
 s3_key_parquet = "dodgers/data/standings/dodgers_standings_1958_present.parquet"
 
 
@@ -179,14 +183,19 @@ def main():
 
         df = pd.concat([src_df, historic_df]).sort_values("game_date", ascending=False).drop_duplicates(subset=['gm', 'year']).reset_index(drop=True)
 
-        df.to_json(json_file, orient="records")
+        
+        df[['year', 'gm', 'win_pct', 'gb']].to_csv(csv_file_slim, index=False)
+        df[['year', 'gm', 'win_pct', 'gb']].to_json(json_file_slim, orient="records")
         df.to_csv(csv_file, index=False)
+        df.to_json(json_file, orient="records")
         df.to_parquet(parquet_file, index=False)
 
         logging.info("Data written to JSON, CSV, and Parquet files.")
 
         s3.Bucket(s3_bucket).upload_file(csv_file, s3_key_csv)
         s3.Bucket(s3_bucket).upload_file(json_file, s3_key_json)
+        s3.Bucket(s3_bucket).upload_file(csv_file_slim, s3_key_slim_csv)
+        s3.Bucket(s3_bucket).upload_file(json_file_slim, s3_key_slim_json)
         s3.Bucket(s3_bucket).upload_file(parquet_file, s3_key_parquet)
 
         logging.info("Files successfully uploaded to S3.")
