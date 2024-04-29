@@ -6,42 +6,42 @@
     },
     {
         "stat":"losses",
-        "value":11,
+        "value":12,
         "category":"standings"
     },
     {
         "stat":"record",
-        "value":"18-11",
+        "value":"18-12",
         "category":"standings"
     },
     {
         "stat":"win_pct",
-        "value":"62%",
+        "value":"60%",
         "category":"standings"
     },
     {
         "stat":"win_pct_decade_thispoint",
-        "value":"57%",
+        "value":"59%",
         "category":"standings"
     },
     {
         "stat":"runs",
-        "value":157,
+        "value":158,
         "category":"standings"
     },
     {
         "stat":"runs_against",
-        "value":117,
+        "value":120,
         "category":"standings"
     },
     {
         "stat":"run_differential",
-        "value":40,
+        "value":38,
         "category":"standings"
     },
     {
         "stat":"home_runs",
-        "value":34,
+        "value":35,
         "category":"batting"
     },
     {
@@ -66,17 +66,17 @@
     },
     {
         "stat":"stolen_bases_game",
-        "value":0.72,
+        "value":0.7,
         "category":"batting"
     },
     {
         "stat":"stolen_bases_decade_game",
-        "value":25.79,
+        "value":24.93,
         "category":"batting"
     },
     {
         "stat":"batting_average",
-        "value":".277",
+        "value":".274",
         "category":"batting"
     },
     {
@@ -86,12 +86,12 @@
     },
     {
         "stat":"recent_trend",
-        "value":"Recent trend: 1 wins, 0 losses",
+        "value":"Recent trend: 0 wins, 1 losses",
         "category":"standings"
     },
     {
         "stat":"summary",
-        "value":"The Dodgers have played 29 games this season compiling a 18-11 record \u2014 a winning percentage of 62%. The team's last game was a 4-2 away win to the TOR in front of 39,405 fans. The team has won 1 of its last 10 games.",
+        "value":"The Dodgers have played 30 games this season compiling a 18-12 record \u2014 a winning percentage of 60%. The team's last game was a 1-3 away loss to the TOR in front of 39,053 fans. The team has won 0 of its last 10 games.",
         "category":"standings"
     }
 ]
