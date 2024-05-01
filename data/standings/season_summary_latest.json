@@ -6,17 +6,17 @@
     },
     {
         "stat":"losses",
-        "value":12,
+        "value":13,
         "category":"standings"
     },
     {
         "stat":"record",
-        "value":"19-12",
+        "value":"19-13",
         "category":"standings"
     },
     {
         "stat":"win_pct",
-        "value":"61%",
+        "value":"59%",
         "category":"standings"
     },
     {
@@ -26,17 +26,17 @@
     },
     {
         "stat":"runs",
-        "value":166,
+        "value":169,
         "category":"standings"
     },
     {
         "stat":"runs_against",
-        "value":124,
+        "value":128,
         "category":"standings"
     },
     {
         "stat":"run_differential",
-        "value":42,
+        "value":41,
         "category":"standings"
     },
     {
@@ -46,7 +46,7 @@
     },
     {
         "stat":"home_runs_game",
-        "value":1.16,
+        "value":1.12,
         "category":"batting"
     },
     {
@@ -66,17 +66,17 @@
     },
     {
         "stat":"stolen_bases_game",
-        "value":0.68,
+        "value":0.66,
         "category":"batting"
     },
     {
         "stat":"stolen_bases_decade_game",
-        "value":24.13,
+        "value":23.38,
         "category":"batting"
     },
     {
         "stat":"batting_average",
-        "value":".275",
+        "value":".271",
         "category":"batting"
     },
     {
@@ -86,12 +86,12 @@
     },
     {
         "stat":"recent_trend",
-        "value":"Recent trend: 1 wins, 0 losses",
+        "value":"Recent trend: 0 wins, 0 losses",
         "category":"standings"
     },
     {
         "stat":"summary",
-        "value":"The Dodgers have played 31 games this season compiling a 19-12 record \u2014 a winning percentage of 61%. The team's last game was a 8-4 away win to the ARI in front of 36,985 fans. The team has won 1 of its last 10 games.",
+        "value":"The Dodgers have played 32 games this season compiling a 19-13 record \u2014 a winning percentage of 59%. The team's last game was a 3-4 away nan to the ARI in front of 28,667 fans. The team has won 0 of its last 10 games.",
         "category":"standings"
     }
 ]
