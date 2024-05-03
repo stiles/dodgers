@@ -103,7 +103,7 @@ games, wins, losses, record, win_pct, win_pct_decade_thispoint = current_season_
 runs, runs_against, run_diff = run_differential(standings)
 home_runs, home_runs_game, home_runs_game_last, home_runs_game_decade = home_run_stats(batting_now, batting_past)
 batting_average, batting_average_decade, stolen_bases, stolen_bases_game, stolen_bases_decade_game = batting_and_stolen_base_stats(batting_now, batting_past, games)
-win_count_trend, loss_count_trend, win_loss_trend = recent_trend(standings_now)
+win_count_trend, loss_count_trend, win_loss_trend = recent_trend(standings.iloc[:10])
 
 summary = generate_summary(standings, wins, losses, win_pct)
 
