@@ -19,19 +19,22 @@ logging.basicConfig(level=logging.INFO, format='%(asctime)s - %(levelname)s - %(
 # Base directory calculation for file paths
 base_dir = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 
-def read_parquet_s3(url):
-    """ Read a Parquet file from an S3 URL into a DataFrame, ensuring it's sorted by 'game_date' descending. """
-    df = pd.read_parquet(url)
-    df.sort_values('game_date', ascending=False, inplace=True)  # Ensure it's sorted by date
+def read_parquet_s3(url, sort_by=None):
+    """Read a provided Parquet file from the S3 URL.
+    Only sort the dataframe if a sort column is provided.
+    Batting doesn't have game dates because it's annual totals."""
+    df = pd.read_parquet(url)S
+    if sort_by and sort_by in df.columns:
+        df.sort_values(sort_by, ascending=False, inplace=True)
     return df
 
-# URLs for data sources
+# URLs for data
 standings_url = "https://stilesdata.com/dodgers/data/standings/dodgers_standings_1958_present.parquet"
 batting_url = "https://stilesdata.com/dodgers/data/batting/dodgers_team_batting_1958_present.parquet"
 
-# Load data
-standings = read_parquet_s3(standings_url).query("year == '2024'")
-standings_past = read_parquet_s3(standings_url).query("year != '2024'")
+# Load the data
+standings = read_parquet_s3(standings_url, sort_by='game_date').query("year == '2024'")
+standings_past = read_parquet_s3(standings_url, sort_by='game_date').query("year != '2024'")
 standings_now = standings.query("game_date == game_date.max()").copy()
 standings_now.loc[standings_now.result == "L", "result_clean"] = "loss"
 standings_now.loc[standings_now.result == "W", "result_clean"] = "win"
