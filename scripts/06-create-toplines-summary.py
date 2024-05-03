@@ -20,8 +20,9 @@ logging.basicConfig(level=logging.INFO, format='%(asctime)s - %(levelname)s - %(
 base_dir = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 
 def read_parquet_s3(url):
-    """ Read a Parquet file from an S3 URL into a DataFrame """
+    """ Read a Parquet file from an S3 URL into a DataFrame, ensuring it's sorted by 'game_date' descending. """
     df = pd.read_parquet(url)
+    df.sort_values('game_date', ascending=False, inplace=True)  # Ensure it's sorted by date
     return df
 
 # URLs for data sources
@@ -90,7 +91,7 @@ def generate_summary(standings_now, wins, losses, win_pct):
     return summary
 
 def recent_trend(standings):
-    last_10 = standings["result"].head(10)
+    last_10 = standings.iloc[:10]['result']  # Ensuring the last 10 games are considered
     win_count_trend = last_10[last_10 == "W"].count()
     loss_count_trend = last_10[last_10 == "L"].count()
     return win_count_trend, loss_count_trend, f"Recent trend: {win_count_trend} wins, {loss_count_trend} losses"
