@@ -1,22 +1,22 @@
 [
     {
         "stat":"wins",
-        "value":18,
+        "value":20,
         "category":"standings"
     },
     {
         "stat":"losses",
-        "value":11,
+        "value":13,
         "category":"standings"
     },
     {
         "stat":"record",
-        "value":"18-11",
+        "value":"20-13",
         "category":"standings"
     },
     {
         "stat":"win_pct",
-        "value":"62%",
+        "value":"61%",
         "category":"standings"
     },
     {
@@ -26,27 +26,27 @@
     },
     {
         "stat":"runs",
-        "value":157,
+        "value":177,
         "category":"standings"
     },
     {
         "stat":"runs_against",
-        "value":117,
+        "value":128,
         "category":"standings"
     },
     {
         "stat":"run_differential",
-        "value":40,
+        "value":49,
         "category":"standings"
     },
     {
         "stat":"home_runs",
-        "value":34,
+        "value":38,
         "category":"batting"
     },
     {
         "stat":"home_runs_game",
-        "value":1.17,
+        "value":1.15,
         "category":"batting"
     },
     {
@@ -61,22 +61,22 @@
     },
     {
         "stat":"stolen_bases",
-        "value":21,
+        "value":22,
         "category":"batting"
     },
     {
         "stat":"stolen_bases_game",
-        "value":0.72,
+        "value":0.67,
         "category":"batting"
     },
     {
         "stat":"stolen_bases_decade_game",
-        "value":25.79,
+        "value":22.67,
         "category":"batting"
     },
     {
         "stat":"batting_average",
-        "value":".277",
+        "value":".271",
         "category":"batting"
     },
     {
@@ -91,7 +91,7 @@
     },
     {
         "stat":"summary",
-        "value":"The Dodgers have played 29 games this season compiling a 18-11 record \u2014 a winning percentage of 62%. The team's last game was a 4-2 away win to the TOR in front of 39,405 fans. The team has won 1 of its last 10 games.",
+        "value":"The Dodgers have played 33 games this season compiling a 20-13 record \u2014 a winning percentage of 61%. The team's last game was a 8-0 away win to the ARI in front of 34,088 fans. The team has won 1 of its last 10 games.",
         "category":"standings"
     }
 ]
