@@ -34,10 +34,10 @@ batting_url = "https://stilesdata.com/dodgers/data/batting/dodgers_team_batting_
 
 # Load the data
 standings = read_parquet_s3(standings_url, sort_by='game_date').query("year == '2024'")
+standings.loc[standings.result == "L", "result_clean"] = "loss"
+standings.loc[standings.result == "W", "result_clean"] = "win"
 standings_past = read_parquet_s3(standings_url, sort_by='game_date').query("year != '2024'")
 standings_now = standings.query("game_date == game_date.max()").copy()
-standings_now.loc[standings_now.result == "L", "result_clean"] = "loss"
-standings_now.loc[standings_now.result == "W", "result_clean"] = "win"
 
 batting = read_parquet_s3(batting_url)
 batting_past = batting.query("season != '2024'").copy()
