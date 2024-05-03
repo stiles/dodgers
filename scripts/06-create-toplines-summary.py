@@ -23,7 +23,7 @@ def read_parquet_s3(url, sort_by=None):
     """Read a Parquet file from the S3 URL.
     Only sort the dataframe if a sort column is provided.
     Batting doesn't have game dates because it's annual totals."""
-    df = pd.read_parquet(url)S
+    df = pd.read_parquet(url)
     if sort_by and sort_by in df.columns:
         df.sort_values(sort_by, ascending=False, inplace=True)
     return df
