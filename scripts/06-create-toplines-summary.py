@@ -20,7 +20,7 @@ logging.basicConfig(level=logging.INFO, format='%(asctime)s - %(levelname)s - %(
 base_dir = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 
 def read_parquet_s3(url, sort_by=None):
-    """Read a provided Parquet file from the S3 URL.
+    """Read a Parquet file from the S3 URL.
     Only sort the dataframe if a sort column is provided.
     Batting doesn't have game dates because it's annual totals."""
     df = pd.read_parquet(url)S
