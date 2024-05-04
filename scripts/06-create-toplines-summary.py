@@ -147,7 +147,7 @@ def save_to_s3(df, base_path, s3_bucket, formats=["csv", "json"]):
             df.to_csv(buffer, index=False)
             content_type = "text/csv"
         elif fmt == "json":
-            df.to_json(buffer, orient="records", lines=True)
+            df.to_json(buffer, orient="records", lines=False)
             content_type = "application/json"
         buffer.seek(0)
         s3_resource.Bucket(s3_bucket).put_object(Key=file_path, Body=buffer, ContentType=content_type)
