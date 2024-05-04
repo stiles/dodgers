@@ -131,7 +131,7 @@ summary_data = [
 
 summary_df = pd.DataFrame(summary_data)
 summary_df.to_csv(os.path.join(base_dir, 'data', 'standings', 'season_summary_latest.csv'), index=False)
-summary_df.to_json(os.path.join(base_dir, 'data', 'standings', 'season_summary_latest.json'), orient='records', indent=4)
+summary_df.to_json(os.path.join(base_dir, 'data', 'standings', 'season_summary_latest.json'), orient='records', indent=4, lines=False)
 
 def save_to_s3(df, base_path, s3_bucket, formats=["csv", "json"]):
     session = boto3.Session(
