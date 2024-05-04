@@ -3,15 +3,15 @@ Wins,wins,21,standings
 Losses,losses,13,standings
 Record,record,21-13,standings
 Win %,win_pct,62%,standings
-Win % this decade,win_pct_decade_thispoint,57%,standings
+Win % last decade,win_pct_decade_thispoint,57%,standings
 Runs,runs,181,standings
 Runs against,runs_against,131,standings
-Run diff.,run_differential,50,standings
+Run differential,run_differential,50,standings
 Home runs,home_runs,39,batting
 HR/game,home_runs_game,1.15,batting
-HR/game decade,home_runs_game_decade,1.36,batting
+HR/game last decade,home_runs_game_decade,1.36,batting
+Stolen bases,stolen_bases,24,batting
 Stolen/game,stolen_bases_game,0.71,batting
-Stolen/game 2023,stolen_bases_decade_game,22.0,batting
 Batting average,batting_average,.271,batting
 Batting average decade,batting_average_decade,.253,batting
-Team summary,summary,"The Dodgers have played 34 games this season, compiling a 21-13 record and a winning percentage of 62%. The team's latest game was a 4-3 home win to the Atlanta Braves in front of 50,859 fans. They've won 8 of the last 10 games.",summary
+Team summary,summary,"The Dodgers have played <span style='highlight'>34</span> games this season, compiling a 21-13 record and a winning percentage of <span style='highlight'>62</span>%. The team's latest game was a 4-3 home win to the Atlanta Braves in front of 50,859 fans. They've won <span style='highlight'>8 of the last 10 games</span>.",summary
