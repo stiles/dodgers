@@ -90,15 +90,9 @@
         "category":"batting"
     },
     {
-        "stat_label":"Recent trend",
-        "stat":"recent_trend",
-        "value":"Recent trend: 8 wins, 2 losses",
-        "category":"standings"
-    },
-    {
         "stat_label":"Team summary",
         "stat":"summary",
-        "value":"The Dodgers have played 34 games this season, compiling a 21-13 record and a winning percentage of 62%. The team's latest game was a 4-3 home win to the ATL in front of 50,859 fans. They've won 8 of the last 10 games.",
+        "value":"The Dodgers have played 34 games this season, compiling a 21-13 record and a winning percentage of 62%. The team's latest game was a 4-3 home win to Atlanta Braves in front of 50,859 fans. They've won 8 of the last 10 games.",
         "category":"summary"
     }
 ]
