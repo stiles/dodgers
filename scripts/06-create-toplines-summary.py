@@ -32,9 +32,43 @@ def read_parquet_s3(url, sort_by=None):
 standings_url = "https://stilesdata.com/dodgers/data/standings/dodgers_standings_1958_present.parquet"
 batting_url = "https://stilesdata.com/dodgers/data/batting/dodgers_team_batting_1958_present.parquet"
 
+mlb_teams = {
+    "ARI": "Arizona Diamondbacks",
+    "ATL": "Atlanta Braves",
+    "BAL": "Baltimore Orioles",
+    "BOS": "Boston Red Sox",
+    "CHC": "Chicago Cubs",
+    "CHW": "Chicago White Sox",
+    "CIN": "Cincinnati Reds",
+    "CLE": "Cleveland Guardians",
+    "COL": "Colorado Rockies",
+    "DET": "Detroit Tigers",
+    "HOU": "Houston Astros",
+    "KCR": "Kansas City Royals",
+    "LAA": "Los Angeles Angels",
+    "LAD": "Los Angeles Dodgers",
+    "MIA": "Miami Marlins",
+    "MIL": "Milwaukee Brewers",
+    "MIN": "Minnesota Twins",
+    "NYM": "New York Mets",
+    "NYY": "New York Yankees",
+    "OAK": "Oakland Athletics",
+    "PHI": "Philadelphia Phillies",
+    "PIT": "Pittsburgh Pirates",
+    "SDP": "San Diego Padres",
+    "SFG": "San Francisco Giants",
+    "SEA": "Seattle Mariners",
+    "STL": "St. Louis Cardinals",
+    "TBR": "Tampa Bay Rays",
+    "TEX": "Texas Rangers",
+    "TOR": "Toronto Blue Jays",
+    "WSN": "Washington Nationals"
+}
+
 # Load the data
 standings = read_parquet_s3(standings_url, sort_by='game_date').query("year == '2024'")
 standings['result'] = standings['result'].str.split('-wo', expand=True)[0]
+standings['opp_name'] = standings['opp'].map(mlb_teams)
 standings.loc[standings.result == "L", "result_clean"] = "loss"
 standings.loc[standings.result == "W", "result_clean"] = "win"
 standings_past = read_parquet_s3(standings_url, sort_by='game_date').query("year != '2024'")
@@ -89,7 +123,7 @@ def generate_summary(standings_now, wins, losses, win_pct):
         f"The Dodgers have played {games} games this season, compiling a {record} record and "
         f"a winning percentage of {win_pct}%. The team's latest game was a "
         f"{last_game['r']}-{last_game['ra']} {last_game['home_away']} {last_game['result_clean']} "
-        f"to the {last_game['opp']} in front of {'{:,}'.format(last_game['attendance'])} fans. "
+        f"to {last_game['opp_name']} in front of {'{:,}'.format(last_game['attendance'])} fans. "
         f"They've won {win_count_trend} of the last 10 games."
     )
     return summary
@@ -126,7 +160,7 @@ summary_data = [
     {"stat_label": "Stolen/game 2023", "stat": "stolen_bases_decade_game", "value": stolen_bases_decade_game, "category": "batting"},
     {"stat_label": "Batting average", "stat": "batting_average", "value": batting_average, "category": "batting"},
     {"stat_label": "Batting average decade", "stat": "batting_average_decade", "value": batting_average_decade, "category": "batting"},
-    {"stat_label": "Recent trend", "stat": "recent_trend", "value": win_loss_trend, "category": "standings"},
+    # {"stat_label": "Recent trend", "stat": "recent_trend", "value": win_loss_trend, "category": "standings"},
     {"stat_label": "Team summary", "stat": "summary", "value": summary, "category": "summary"}
 ]
 
