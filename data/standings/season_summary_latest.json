@@ -1,7 +1,7 @@
 [
     {
         "stat":"wins",
-        "value":20,
+        "value":21,
         "category":"standings"
     },
     {
@@ -11,12 +11,12 @@
     },
     {
         "stat":"record",
-        "value":"20-13",
+        "value":"21-13",
         "category":"standings"
     },
     {
         "stat":"win_pct",
-        "value":"61%",
+        "value":"62%",
         "category":"standings"
     },
     {
@@ -26,22 +26,22 @@
     },
     {
         "stat":"runs",
-        "value":177,
+        "value":181,
         "category":"standings"
     },
     {
         "stat":"runs_against",
-        "value":128,
+        "value":131,
         "category":"standings"
     },
     {
         "stat":"run_differential",
-        "value":49,
+        "value":50,
         "category":"standings"
     },
     {
         "stat":"home_runs",
-        "value":38,
+        "value":39,
         "category":"batting"
     },
     {
@@ -61,17 +61,17 @@
     },
     {
         "stat":"stolen_bases",
-        "value":22,
+        "value":24,
         "category":"batting"
     },
     {
         "stat":"stolen_bases_game",
-        "value":0.67,
+        "value":0.71,
         "category":"batting"
     },
     {
         "stat":"stolen_bases_decade_game",
-        "value":22.67,
+        "value":22.0,
         "category":"batting"
     },
     {
@@ -86,12 +86,12 @@
     },
     {
         "stat":"recent_trend",
-        "value":"Recent trend: 8 wins, 1 losses",
+        "value":"Recent trend: 7 wins, 1 losses",
         "category":"standings"
     },
     {
         "stat":"summary",
-        "value":"The Dodgers have played 33 games this season compiling a 20-13 record \u2014 a winning percentage of 61%. The team's last game was a 8-0 away win to the ARI in front of 34,088 fans. The team has won 8 of its last 10 games.",
+        "value":"The Dodgers have played 34 games this season compiling a 21-13 record \u2014 a winning percentage of 62%. The team's last game was a 4-3 home nan to the ATL in front of 50,859 fans. The team has won 7 of its last 10 games.",
         "category":"standings"
     }
 ]
