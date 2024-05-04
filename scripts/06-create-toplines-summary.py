@@ -112,22 +112,22 @@ summary_data = [
     {"stat_label": "Wins", "stat": "wins", "value": wins, "category": "standings"},
     {"stat_label": "Losses", "stat": "losses", "value": losses, "category": "standings"},
     {"stat_label": "Record", "stat": "record", "value": record, "category": "standings"},
-    {"stat_label": "Win percentage", "stat": "win_pct", "value": f"{win_pct}%", "category": "standings"},
+    {"stat_label": "Win %", "stat": "win_pct", "value": f"{win_pct}%", "category": "standings"},
     {"stat_label": "Win % this decade", "stat": "win_pct_decade_thispoint", "value": f"{win_pct_decade_thispoint}%", "category": "standings"},
     {"stat_label": "Runs", "stat": "runs", "value": runs, "category": "standings"},
     {"stat_label": "Runs against", "stat": "runs_against", "value": runs_against, "category": "standings"},
-    {"stat_label": "Run differential", "stat": "run_differential", "value": run_diff, "category": "standings"},
+    {"stat_label": "Run diff.", "stat": "run_differential", "value": run_diff, "category": "standings"},
     {"stat_label": "Home runs", "stat": "home_runs", "value": home_runs, "category": "batting"},
-    {"stat_label": "Home runs/game", "stat": "home_runs_game", "value": home_runs_game, "category": "batting"},
-    {"stat_label": "HR/game last season", "stat": "home_runs_game_last", "value": home_runs_game_last, "category": "batting"},
-    {"stat_label": "HR/game last decade", "stat": "home_runs_game_decade", "value": home_runs_game_decade, "category": "batting"},
-    {"stat_label": "Stolen bases", "stat": "stolen_bases", "value": stolen_bases, "category": "batting"},
-    {"stat_label": "Stolen bases per game", "stat": "stolen_bases_game", "value": stolen_bases_game, "category": "batting"},
-    {"stat_label": "Stolen per game last decade", "stat": "stolen_bases_decade_game", "value": stolen_bases_decade_game, "category": "batting"},
+    {"stat_label": "HR/game", "stat": "home_runs_game", "value": home_runs_game, "category": "batting"},
+    # {"stat_label": "HR/game 2023", "stat": "home_runs_game_last", "value": home_runs_game_last, "category": "batting"},
+    {"stat_label": "HR/game decade", "stat": "home_runs_game_decade", "value": home_runs_game_decade, "category": "batting"},
+    # {"stat_label": "Stolen bases", "stat": "stolen_bases", "value": stolen_bases, "category": "batting"},
+    {"stat_label": "Stolen/game", "stat": "stolen_bases_game", "value": stolen_bases_game, "category": "batting"},
+    {"stat_label": "Stolen/game 2023", "stat": "stolen_bases_decade_game", "value": stolen_bases_decade_game, "category": "batting"},
     {"stat_label": "Batting average", "stat": "batting_average", "value": batting_average, "category": "batting"},
-    {"stat_label": "Batting average last decade", "stat": "batting_average_decade", "value": batting_average_decade, "category": "batting"},
-    {"stat_label": "Recent trned", "stat": "recent_trend", "value": win_loss_trend, "category": "standings"},
-    {"stat_label": "Team summary", "stat": "summary", "value": summary, "category": "standings"}
+    {"stat_label": "Batting average decade", "stat": "batting_average_decade", "value": batting_average_decade, "category": "batting"},
+    {"stat_label": "Recent trend", "stat": "recent_trend", "value": win_loss_trend, "category": "standings"},
+    {"stat_label": "Team summary", "stat": "summary", "value": summary, "category": "summary"}
 ]
 
 summary_df = pd.DataFrame(summary_data)
