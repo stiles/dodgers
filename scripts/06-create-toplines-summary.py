@@ -123,7 +123,7 @@ def generate_summary(standings_now, wins, losses, win_pct):
         f"The Dodgers have played {games} games this season, compiling a {record} record and "
         f"a winning percentage of {win_pct}%. The team's latest game was a "
         f"{last_game['r']}-{last_game['ra']} {last_game['home_away']} {last_game['result_clean']} "
-        f"to {last_game['opp_name']} in front of {'{:,}'.format(last_game['attendance'])} fans. "
+        f"to the {last_game['opp_name']} in front of {'{:,}'.format(last_game['attendance'])} fans. "
         f"They've won {win_count_trend} of the last 10 games."
     )
     return summary
