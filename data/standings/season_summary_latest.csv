@@ -1,20 +1,20 @@
-stat,value,category
-wins,21,standings
-losses,13,standings
-record,21-13,standings
-win_pct,62%,standings
-win_pct_decade_thispoint,57%,standings
-runs,181,standings
-runs_against,131,standings
-run_differential,50,standings
-home_runs,39,batting
-home_runs_game,1.15,batting
-home_runs_game_last,1.537037037037037,batting
-home_runs_game_decade,1.36,batting
-stolen_bases,24,batting
-stolen_bases_game,0.71,batting
-stolen_bases_decade_game,22.0,batting
-batting_average,.271,batting
-batting_average_decade,.253,batting
-recent_trend,"Recent trend: 7 wins, 1 losses",standings
-summary,"The Dodgers have played 34 games this season compiling a 21-13 record — a winning percentage of 62%. The team's last game was a 4-3 home nan to the ATL in front of 50,859 fans. The team has won 7 of its last 10 games.",standings
+stat_label,stat,value,category
+Wins,wins,21,standings
+Losses,losses,13,standings
+Record,record,21-13,standings
+Win percentage,win_pct,62%,standings
+Win % this decade,win_pct_decade_thispoint,57%,standings
+Runs,runs,181,standings
+Runs against,runs_against,131,standings
+Run differential,run_differential,50,standings
+Home runs,home_runs,39,batting
+Home runs/game,home_runs_game,1.15,batting
+HR/game last season,home_runs_game_last,1.537037037037037,batting
+HR/game last decade,home_runs_game_decade,1.36,batting
+Stolen bases,stolen_bases,24,batting
+Stolen bases per game,stolen_bases_game,0.71,batting
+Stolen per game last decade,stolen_bases_decade_game,22.0,batting
+Batting average,batting_average,.271,batting
+Batting average last decade,batting_average_decade,.253,batting
+Recent trned,recent_trend,"Recent trend: 7 wins, 1 losses",standings
+Team summary,summary,"The Dodgers have played 34 games this season compiling a 21-13 record — a winning percentage of 62%. The team's last game was a 4-3 home nan to the ATL in front of 50,859 fans. The team has won 7 of its last 10 games.",standings
