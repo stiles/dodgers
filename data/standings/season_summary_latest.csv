@@ -1,17 +1,17 @@
 stat_label,stat,value,category
-Wins,wins,23,standings
+Wins,wins,24,standings
 Losses,losses,13,standings
-Record,record,23-13,standings
-Win %,win_pct,64%,standings
-Win % last decade,win_pct_decade_thispoint,57%,standings
-Runs,runs,197,standings
-Runs against,runs_against,134,standings
-Run differential,run_differential,63,standings
-Home runs,home_runs,47,batting
-HR/game,home_runs_game,1.31,batting
+Record,record,24-13,standings
+Win %,win_pct,65%,standings
+Win % last decade,win_pct_decade_thispoint,59%,standings
+Runs,runs,203,standings
+Runs against,runs_against,137,standings
+Run differential,run_differential,66,standings
+Home runs,home_runs,51,batting
+HR/game,home_runs_game,1.38,batting
 HR/game last decade,home_runs_game_decade,1.36,batting
-Stolen bases,stolen_bases,24,batting
-Stolen/game,stolen_bases_game,0.67,batting
+Stolen bases,stolen_bases,26,batting
+Stolen/game,stolen_bases_game,0.7,batting
 Batting average,batting_average,.273,batting
 Batting average decade,batting_average_decade,.253,batting
-Team summary,summary,"The Dodgers have played <span class='highlight'>36</span> games this season, compiling a 23-13 record and a winning percentage of <span class='highlight'>64</span>%. The team's latest game was a 5-1 home win to the Atlanta Braves in front of 52,733 fans. They've won <span class='highlight'>8 of the last 10 games</span>.",summary
+Team summary,summary,"The Dodgers have played <span class='highlight'>37</span> games this season, compiling a 24-13 record and a winning percentage of <span class='highlight'>65</span>%. The team's latest game was a 6-3 home win to the Miami Marlins in front of 44,970 fans. They've won <span class='highlight'>8 of the last 10 games</span>.",summary
