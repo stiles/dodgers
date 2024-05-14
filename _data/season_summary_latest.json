@@ -1,0 +1,98 @@
+[
+    {
+        "stat_label":"Wins",
+        "stat":"wins",
+        "value":27,
+        "category":"standings"
+    },
+    {
+        "stat_label":"Losses",
+        "stat":"losses",
+        "value":15,
+        "category":"standings"
+    },
+    {
+        "stat_label":"Record",
+        "stat":"record",
+        "value":"27-15",
+        "category":"standings"
+    },
+    {
+        "stat_label":"Win %",
+        "stat":"win_pct",
+        "value":"64%",
+        "category":"standings"
+    },
+    {
+        "stat_label":"Win % last decade",
+        "stat":"win_pct_decade_thispoint",
+        "value":"57%",
+        "category":"standings"
+    },
+    {
+        "stat_label":"Runs",
+        "stat":"runs",
+        "value":220,
+        "category":"standings"
+    },
+    {
+        "stat_label":"Runs against",
+        "stat":"runs_against",
+        "value":146,
+        "category":"standings"
+    },
+    {
+        "stat_label":"Run differential",
+        "stat":"run_differential",
+        "value":74,
+        "category":"standings"
+    },
+    {
+        "stat_label":"Home runs",
+        "stat":"home_runs",
+        "value":56,
+        "category":"batting"
+    },
+    {
+        "stat_label":"HR\/game",
+        "stat":"home_runs_game",
+        "value":1.33,
+        "category":"batting"
+    },
+    {
+        "stat_label":"HR\/game last decade",
+        "stat":"home_runs_game_decade",
+        "value":1.36,
+        "category":"batting"
+    },
+    {
+        "stat_label":"Stolen bases",
+        "stat":"stolen_bases",
+        "value":27,
+        "category":"batting"
+    },
+    {
+        "stat_label":"Stolen\/game",
+        "stat":"stolen_bases_game",
+        "value":0.64,
+        "category":"batting"
+    },
+    {
+        "stat_label":"Batting average",
+        "stat":"batting_average",
+        "value":".261",
+        "category":"batting"
+    },
+    {
+        "stat_label":"Batting average decade",
+        "stat":"batting_average_decade",
+        "value":".253",
+        "category":"batting"
+    },
+    {
+        "stat_label":"Team summary",
+        "stat":"summary",
+        "value":"The Dodgers have played <span class='highlight'>42<\/span> games this season, compiling a 27-15 record and a winning percentage of <span class='highlight'>64<\/span>%. The team's latest game was a 0-4 away loss to the San Diego Padres in front of 43,881 fans. They've won <span class='highlight'>8 of the last 10 games<\/span>.",
+        "category":"summary"
+    }
+]
