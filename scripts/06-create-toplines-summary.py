@@ -74,6 +74,7 @@ mlb_teams = {
 # Standings
 standings = read_parquet_s3(standings_url, sort_by='game_date').query("year == '2024'")
 standings['result'] = standings['result'].str.split('-wo', expand=True)[0]
+standings['opp_name'] = standings['opp'].map(mlb_teams)
 standings.loc[standings.result == "L", "result_clean"] = "loss"
 standings.loc[standings.result == "W", "result_clean"] = "win"
 standings_past = read_parquet_s3(standings_url, sort_by='game_date').query("year != '2024'")
