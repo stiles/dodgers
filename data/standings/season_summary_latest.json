@@ -128,18 +128,34 @@
         "context_value_label":"League rank"
     },
     {
-        "stat_label":"Recent trend",
-        "stat":"recent_trend",
-        "value":"Recent trend: 8 wins, 2 losses",
-        "category":"standings",
+        "stat_label":"Games up\/back",
+        "stat":"games_up_back",
+        "value":6.5,
+        "category":"summary",
+        "context_value":1,
+        "context_value_label":"Division rank"
+    },
+    {
+        "stat_label":"Attendance",
+        "stat":"mean_attendance",
+        "value":"46,149",
+        "category":"summary",
+        "context_value":"",
+        "context_value_label":"Home average"
+    },
+    {
+        "stat_label":"Last updated",
+        "stat":"last_updated",
+        "value":"Last updated at 12:57 PM PT, May 14, 2024",
+        "category":"summary",
         "context_value":"",
         "context_value_label":""
     },
     {
         "stat_label":"Team summary",
         "stat":"summary",
-        "value":"The Dodgers have played <span class='highlight'>43<\/span> games this season, compiling a 28-15 record and a winning percentage of <span class='highlight'>65<\/span>%. The team's latest game was a 6-4 away win to the San Francisco Giants in front of 35,033 fans. They've won <span class='highlight'>8 of the last 10 games<\/span>.",
-        "category":"standings",
+        "value":"The Dodgers have played <span class='highlight'>43<\/span> games this season, compiling a 28-15 record and a winning percentage of <span class='highlight'>65%<\/span>. The team's latest game was a 6-4 away win to the San Francisco Giants in front of 35,033 fans. They've won <span class='highlight'>8 of the last 10 games<\/span>.",
+        "category":"summary",
         "context_value":"",
         "context_value_label":""
     }
