@@ -388,7 +388,15 @@ p.chart-subhead {
   font-style: italic;
 }
 
+a:visited {
+  color: c.$dodger-blue;
+  text-decoration: underline;
+}
 
+a {
+  color: c.$dodger-blue;
+  text-decoration: underline;
+}
 
 
 
