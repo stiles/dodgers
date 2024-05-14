@@ -12,12 +12,28 @@ import pandas as pd
 import boto3
 from io import BytesIO
 import logging
+from datetime import datetime, timezone, timedelta
 
 # Configure logging
 logging.basicConfig(level=logging.INFO, format='%(asctime)s - %(levelname)s - %(message)s')
 
 # Base directory calculation for file paths
 base_dir = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+
+# Get the update time
+def get_pacific_time():
+    utc_zone = timezone.utc
+    utc_time = datetime.now(utc_zone)
+    pacific_offset = timedelta(hours=-8)
+    if utc_time.astimezone(timezone.utc).replace(tzinfo=None).month in {4, 5, 6, 7, 8, 9, 10}:
+        pacific_offset = timedelta(hours=-7)
+    pacific_zone = timezone(pacific_offset)
+    pacific_time = utc_time.astimezone(pacific_zone)
+    formatted_time = pacific_time.strftime("Last updated at %-I:%M %p PT, %B %-d, %Y")
+    return formatted_time
+
+# Store the update time
+update_time = get_pacific_time()
 
 def read_parquet_s3(url, sort_by=None):
     """Read a Parquet file from the S3 URL.
@@ -81,6 +97,10 @@ standings_now = standings.query("game_date == game_date.max()").copy()
 game_number = standings_now['gm'].iloc[0]
 standings_last = standings_past.query(f"gm == {game_number}").head(1).reset_index(drop=True).copy()
 standings_last_season = standings_past.query(f"gm <= {game_number} and year=='2023'").reset_index(drop=True).copy()
+standings_division_rank = standings['rank'].iloc[0]
+standings_division_rank_games_back = standings['gb'].iloc[0]
+mean_attendance = standings.query('home_away == "home"')['attendance'].mean()
+formatted_mean_attendance = f"{mean_attendance:,.0f}"
 
 # Batting
 batting = read_parquet_s3(batting_url)
@@ -153,7 +173,7 @@ def generate_summary(standings_now, wins, losses, win_pct):
     last_game = standings_now.iloc[0]
     summary = (
         f"The Dodgers have played <span class='highlight'>{games}</span> games this season, compiling a {record} record and "
-        f"a winning percentage of <span class='highlight'>{win_pct}</span>%. The team's latest game was a "
+        f"a winning percentage of <span class='highlight'>{win_pct}%</span>. The team's latest game was a "
         f"{last_game['r']}-{last_game['ra']} {last_game['home_away']} {last_game['result_clean']} "
         f"to the {last_game['opp_name']} in front of {'{:,}'.format(last_game['attendance'])} fans. "
         f"They've won <span class='highlight'>{win_count_trend} of the last 10 games</span>."
@@ -191,8 +211,10 @@ summary_data = [
     {"stat_label": "Strikeouts", "stat": "strikeouts", "value": strikeouts, "category": "pitching", "context_value": strikeouts_rank, "context_value_label": "League rank"},
     {"stat_label": "Walks", "stat": "walks", "value": walks, "category": "pitching", "context_value_label": "Rank", "context_value": walks_rank, "context_value_label": "League rank"},
     {"stat_label": "Home runs allowed", "stat": "home_runs_allowed", "value": home_runs_allowed, "category": "pitching", "context_value": home_runs_allowed_rank, "context_value_label": "League rank"},
-    {"stat_label": "Recent trend", "stat": "recent_trend", "value": win_loss_trend, "category": "standings", "context_value": "", "context_value_label": ''},
-    {"stat_label": "Team summary", "stat": "summary", "value": summary, "category": "standings", "context_value": "", "context_value_label": ''}
+    {"stat_label": "Games up/back", "stat": "games_up_back", "value": standings_division_rank_games_back, "category": "summary", "context_value": standings_division_rank, "context_value_label": 'Division rank'},
+    {"stat_label": "Attendance", "stat": "mean_attendance", "value": formatted_mean_attendance, "category": "summary", "context_value": '', "context_value_label": 'Home average'},
+    {"stat_label": "Last updated", "stat": "last_updated", "value": update_time, "category": "summary", "context_value": "", "context_value_label": ''},
+    {"stat_label": "Team summary", "stat": "summary", "value": summary, "category": "summary", "context_value": "", "context_value_label": ''},
 ]
 
 summary_df = pd.DataFrame(summary_data)
