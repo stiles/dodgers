@@ -213,7 +213,7 @@ summary_data = [
     {"stat_label": "Home runs allowed", "stat": "home_runs_allowed", "value": home_runs_allowed, "category": "pitching", "context_value": home_runs_allowed_rank, "context_value_label": "League rank"},
     {"stat_label": "Games up/back", "stat": "games_up_back", "value": standings_division_rank_games_back, "category": "standings", "context_value": standings_division_rank, "context_value_label": 'Division rank'},
     {"stat_label": "Attendance", "stat": "mean_attendance", "value": formatted_mean_attendance, "category": "standings", "context_value": '', "context_value_label": 'Home average'},
-    {"stat_label": "Last updated", "stat": "    ", "value": update_time, "category": "summary", "context_value": "", "context_value_label": ''},
+    {"stat_label": "Last updated", "stat": "    ", "value": update_time, "category": "summary", "context_value": "", "context_value_label": ''}, 
     {"stat_label": "Team summary", "stat": "summary", "value": summary, "category": "summary", "context_value": "", "context_value_label": ''},
 ]
 
