@@ -1,17 +1,17 @@
 stat_label,stat,value,category
-Wins,wins,27,standings
+Wins,wins,28,standings
 Losses,losses,15,standings
-Record,record,27-15,standings
-Win %,win_pct,64%,standings
+Record,record,28-15,standings
+Win %,win_pct,65%,standings
 Win % last decade,win_pct_decade_thispoint,57%,standings
-Runs,runs,220,standings
-Runs against,runs_against,146,standings
-Run differential,run_differential,74,standings
-Home runs,home_runs,56,batting
-HR/game,home_runs_game,1.33,batting
+Runs,runs,226,standings
+Runs against,runs_against,150,standings
+Run differential,run_differential,76,standings
+Home runs,home_runs,58,batting
+HR/game,home_runs_game,1.35,batting
 HR/game last decade,home_runs_game_decade,1.36,batting
 Stolen bases,stolen_bases,27,batting
-Stolen/game,stolen_bases_game,0.64,batting
-Batting average,batting_average,.261,batting
+Stolen/game,stolen_bases_game,0.63,batting
+Batting average,batting_average,.262,batting
 Batting average decade,batting_average_decade,.253,batting
-Team summary,summary,"The Dodgers have played <span class='highlight'>42</span> games this season, compiling a 27-15 record and a winning percentage of <span class='highlight'>64</span>%. The team's latest game was a 0-4 away loss to the San Diego Padres in front of 43,881 fans. They've won <span class='highlight'>8 of the last 10 games</span>.",summary
+Team summary,summary,"The Dodgers have played <span class='highlight'>43</span> games this season, compiling a 28-15 record and a winning percentage of <span class='highlight'>65</span>%. The team's latest game was a 6-4 away win to the San Francisco Giants in front of 35,033 fans. They've won <span class='highlight'>8 of the last 10 games</span>.",summary
