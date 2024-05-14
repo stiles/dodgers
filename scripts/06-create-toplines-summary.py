@@ -18,7 +18,6 @@ logging.basicConfig(level=logging.INFO, format='%(asctime)s - %(levelname)s - %(
 
 # Base directory calculation for file paths
 base_dir = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
-print(base_dir)
 
 def read_parquet_s3(url, sort_by=None):
     """Read a Parquet file from the S3 URL.
@@ -199,6 +198,7 @@ summary_data = [
 summary_df = pd.DataFrame(summary_data)
 summary_df.to_csv(os.path.join(base_dir, 'data', 'standings', 'season_summary_latest.csv'), index=False)
 summary_df.to_json(os.path.join(base_dir, 'data', 'standings', 'season_summary_latest.json'), orient='records', indent=4, lines=False)
+summary_df.to_json(os.path.join(base_dir, '_data', 'season_summary_latest.json'), orient='records', indent=4, lines=False)
 
 def save_to_s3(df, base_path, s3_bucket, formats=["csv", "json"]):
     session = boto3.Session(
