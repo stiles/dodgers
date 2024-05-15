@@ -6,30 +6,32 @@ LA Dodgers season outcomes
 > This notebook downloads the team's past season outcomes table from [Baseball Reference](https://www.baseball-reference.com/teams/LAD/) and outputs the data to CSV, JSON and Parquet formats for later analysis and visualization.
 """
 
-import os
-import pandas as pd
-import boto3
-from io import BytesIO
-import logging
-
 # Set up basic configuration for logging
 logging.basicConfig(level=logging.INFO, format='%(asctime)s - %(levelname)s - %(message)s')
+
+# Determine if running in a GitHub Actions environment
+is_github_actions = os.getenv('GITHUB_ACTIONS') == 'true'
 
 # AWS credentials and session initialization
 aws_key_id = os.environ.get("AWS_ACCESS_KEY_ID")
 aws_secret_key = os.environ.get("AWS_SECRET_ACCESS_KEY")
 aws_region = "us-west-1"
-aws_profile = "haekeo"  # Ensure this profile is configured in your AWS credentials file
 
-session = boto3.Session(
-    aws_access_key_id=aws_key_id,
-    aws_secret_access_key=aws_secret_key,
-    region_name=aws_region,
-    profile_name=aws_profile
-)
+# Conditional AWS session creation based on the environment
+if is_github_actions:
+    # In GitHub Actions, use environment variables directly
+    session = boto3.Session(
+        aws_access_key_id=aws_key_id,
+        aws_secret_access_key=aws_secret_key,
+        region_name=aws_region
+    )
+else:
+    # Locally, use a specific profile
+    session = boto3.Session(profile_name="haekeo", region_name=aws_region)
+
 s3_resource = session.resource("s3")
 
-# Set the base directory and ensure data directories are created properly
+# Base directory settings
 base_dir = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 data_dir = os.path.join(base_dir, 'data', 'standings')
 os.makedirs(data_dir, exist_ok=True)
@@ -120,7 +122,7 @@ def save_dataframe(df, path_without_extension, formats):
             if file_format == "csv":
                 df.to_csv(full_path, index=False)
             elif file_format == "json":
-                df.to_json(full_path, indent=4, orient="records")
+                df.to_json(full_path, indent=4, orient="records", lines=False)
             elif file_format == "parquet":
                 df.to_parquet(full_path, index=False)
             logging.info(f"Saved {file_format} format to {full_path}")
@@ -135,7 +137,7 @@ def save_to_s3(df, base_path, s3_bucket, formats):
                 df.to_csv(buffer, index=False)
                 content_type = "text/csv"
             elif fmt == "json":
-                df.to_json(buffer, orient="records", lines=True)
+                df.to_json(buffer, indent=4, orient="records", lines=False)
                 content_type = "application/json"
             elif fmt == "parquet":
                 df.to_parquet(buffer, index=False)
@@ -151,3 +153,6 @@ file_path = os.path.join(data_dir, 'dodgers_season_outcomes')
 formats = ["csv", "json", "parquet"]
 save_dataframe(history_df, file_path, formats)
 save_to_s3(history_df, "dodgers/data/standings/dodgers_season_outcomes", "stilesdata.com", formats)
+
+file_path = os.path.join(data_dir, 'dodgers_season_outcomes')
+formats = ["csv", "json", "parquet"]
