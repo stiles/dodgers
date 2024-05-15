@@ -80,7 +80,7 @@
         "context_value_label":"League rank"
     },
     {
-        "stat_label":"Stolen bases per game",
+        "stat_label":"Stolen bases\/game",
         "stat":"stolen_bases_game",
         "value":0.63,
         "category":"batting",
@@ -131,7 +131,7 @@
         "stat_label":"Games up\/back",
         "stat":"games_up_back",
         "value":6.5,
-        "category":"summary",
+        "category":"standings",
         "context_value":1,
         "context_value_label":"Division rank"
     },
@@ -139,14 +139,36 @@
         "stat_label":"Attendance",
         "stat":"mean_attendance",
         "value":"46,149",
-        "category":"summary",
-        "context_value":"",
-        "context_value_label":"Home average"
+        "category":"standings",
+        "context_value":[
+            23,
+            23,
+            23,
+            23,
+            23,
+            23,
+            23,
+            23,
+            23,
+            23,
+            23,
+            23,
+            23,
+            23,
+            23,
+            23,
+            23,
+            23,
+            23,
+            23,
+            23
+        ],
+        "context_value_label":"Home games this season"
     },
     {
         "stat_label":"Last updated",
-        "stat":"last_updated",
-        "value":"Last updated at 3:34 PM PT, May 14, 2024",
+        "stat":"update_time",
+        "value":"Last updated at 7:22 PM PT, May 14, 2024",
         "category":"summary",
         "context_value":"",
         "context_value_label":""

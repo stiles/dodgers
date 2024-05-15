@@ -9,13 +9,34 @@ Run differential,run_differential,76,standings,53,This point last season
 Home runs,home_runs,58,batting,1,League rank
 Home runs/game,home_runs_game,1.35,batting,1.36,Last decade average
 Stolen bases,stolen_bases,27,batting,6,League rank
-Stolen bases per game,stolen_bases_game,0.63,batting,0.65,Rate all last season
+Stolen bases/game,stolen_bases_game,0.63,batting,0.65,Rate all last season
 Batting average,batting_average,.262,batting,.253,Last decade average
 ERA,era,3.18,pitching,1,League rank
 Strikeouts,strikeouts,365,pitching,5,League rank
 Walks,walks,127,pitching,5,League rank
 Home runs allowed,home_runs_allowed,44,pitching,7,League rank
-Games up/back,games_up_back,6.5,summary,1,Division rank
-Attendance,mean_attendance,"46,149",summary,,Home average
-Last updated,last_updated,"Last updated at 3:34 PM PT, May 14, 2024",summary,,
+Games up/back,games_up_back,6.5,standings,1,Division rank
+Attendance,mean_attendance,"46,149",standings,"gm              23
+game_date       23
+home_away       23
+opp             23
+result          23
+r               23
+ra              23
+record          23
+rank            23
+gb              23
+time            23
+time_minutes    23
+day_night       23
+attendance      23
+year            23
+wins            23
+losses          23
+win_pct         23
+game_day        23
+opp_name        23
+result_clean    23
+dtype: int64",Home games this season
+Last updated,update_time,"Last updated at 7:22 PM PT, May 14, 2024",summary,,
 Team summary,summary,"The Dodgers have played <span class='highlight'>43</span> games this season, compiling a 28-15 record and a winning percentage of <span class='highlight'>65%</span>. The team's latest game was a 6-4 away win to the San Francisco Giants in front of 35,033 fans. They've won <span class='highlight'>8 of the last 10 games</span>.",summary,,
