@@ -32,6 +32,22 @@
         "context_value_label":"This point last season"
     },
     {
+        "stat_label":"Games up\/back",
+        "stat":"games_up_back",
+        "value":6.5,
+        "category":"standings",
+        "context_value":1,
+        "context_value_label":"Division rank"
+    },
+    {
+        "stat_label":"Ave. home attendance",
+        "stat":"mean_attendance",
+        "value":"46,149",
+        "category":"standings",
+        "context_value":23,
+        "context_value_label":"Home games this season"
+    },
+    {
         "stat_label":"Runs",
         "stat":"runs",
         "value":226,
@@ -56,20 +72,12 @@
         "context_value_label":"This point last season"
     },
     {
-        "stat_label":"Games up\/back",
-        "stat":"games_up_back",
-        "value":6.5,
-        "category":"standings",
-        "context_value":1,
-        "context_value_label":"Division rank"
-    },
-    {
-        "stat_label":"Attendance",
-        "stat":"mean_attendance",
-        "value":"46,149",
-        "category":"standings",
-        "context_value":23,
-        "context_value_label":"Home games this season"
+        "stat_label":"Batting average",
+        "stat":"batting_average",
+        "value":".262",
+        "category":"batting",
+        "context_value":".253",
+        "context_value_label":"Last decade average"
     },
     {
         "stat_label":"Home runs",
@@ -85,6 +93,14 @@
         "value":1.35,
         "category":"batting",
         "context_value":1.36,
+        "context_value_label":"Last decade average"
+    },
+    {
+        "stat_label":"On-base percentage",
+        "stat":"on_base_pct",
+        "value":".344",
+        "category":"batting",
+        "context_value":".332",
         "context_value_label":"Last decade average"
     },
     {
@@ -104,22 +120,6 @@
         "context_value_label":"Rate all last season"
     },
     {
-        "stat_label":"Batting average",
-        "stat":"batting_average",
-        "value":".262",
-        "category":"batting",
-        "context_value":".253",
-        "context_value_label":"Last decade average"
-    },
-    {
-        "stat_label":"ERA",
-        "stat":"era",
-        "value":"3.18",
-        "category":"pitching",
-        "context_value":"1",
-        "context_value_label":"League rank"
-    },
-    {
         "stat_label":"Strikeouts",
         "stat":"strikeouts",
         "value":"365",
@@ -136,17 +136,17 @@
         "context_value_label":"League rank"
     },
     {
-        "stat_label":"Home runs allowed",
-        "stat":"home_runs_allowed",
-        "value":"44",
+        "stat_label":"ERA",
+        "stat":"era",
+        "value":"3.18",
         "category":"pitching",
-        "context_value":"7",
+        "context_value":"1",
         "context_value_label":"League rank"
     },
     {
         "stat_label":"Last updated",
         "stat":"update_time",
-        "value":"Last updated at 7:29 PM PT, May 14, 2024",
+        "value":"Last updated at 7:49 PM PT, May 14, 2024",
         "category":"summary",
         "context_value":"",
         "context_value_label":""
