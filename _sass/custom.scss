@@ -138,7 +138,8 @@ body {
   border-bottom: 1px solid rgba(0, 0, 0, 0.125); /* Define if you want a border separating header */
   border-top-left-radius: 0.25rem;
   border-top-right-radius: 0.25rem;
-  font-weight: 500; /* Slightly bolder */
+  font-weight: 400; /* Slightly bolder */
+  font-size: 1em; 
 }
 
 .card-body {
@@ -483,7 +484,11 @@ a {
 }
 }
 
-
+h2.stat-group {
+  margin: 10px 0px 20px 0px;
+  font-family: 'Roboto slab', serif;
+  font-size: 1.1em; 
+}
 
 
 

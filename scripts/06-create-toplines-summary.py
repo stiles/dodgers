@@ -164,11 +164,15 @@ def batting_and_stolen_base_stats(batting_now, batting_past, games, batting_rank
     batting_average_decade = round(
         batting_past.head(10)["ba"].astype(float).mean(), 3
     ).astype(str).replace("0.", ".")
+    on_base_pct = batting_now["obp"].iloc[0]
+    on_base_pct_decade = round(
+        batting_past.head(10)["obp"].astype(float).mean(), 3
+    ).astype(str).replace("0.", ".")
     stolen_bases = int(batting_now["sb"].iloc[0])
     stolen_bases_rank = batting_ranks['sb'].iloc[0]
     stolen_bases_game = round(stolen_bases / games, 2)
     stolen_bases_last_rate = round(batting_past.head(1)["sb"].astype(int).sum() / batting_past.head(1)["g"].astype(int).sum(), 2)
-    return batting_average, batting_average_decade, stolen_bases, stolen_bases_rank, stolen_bases_game, stolen_bases_last_rate
+    return batting_average, batting_average_decade, stolen_bases, stolen_bases_rank, stolen_bases_game, stolen_bases_last_rate, on_base_pct, on_base_pct_decade
 
 def generate_summary(standings_now, wins, losses, win_pct):
     last_game = standings_now.iloc[0]
@@ -190,30 +194,42 @@ def recent_trend(standings):
 games, wins, losses, record, win_pct, win_pct_decade_thispoint, era, era_rank, strikeouts, strikeouts_rank, walks, walks_rank, wins_last, losses_last, record_last, win_pct_last, home_runs_allowed, home_runs_allowed_rank = current_season_stats(standings_now, standings_past, pitching, pitching_ranks, standings_last)
 runs, runs_last, runs_rank, runs_against, runs_against_last, run_diff, run_diff_last, mean_attendance, formatted_mean_attendance, home_games_count = run_differential(standings, batting_ranks)
 home_runs, home_runs_game, home_runs_game_last, home_runs_game_decade, home_runs_rank = home_run_stats(batting_now, batting_past, batting_ranks)
-batting_average, batting_average_decade, stolen_bases, stolen_bases_rank, stolen_bases_game, stolen_bases_last_rate = batting_and_stolen_base_stats(batting_now, batting_past, games, batting_ranks)
+batting_average, batting_average_decade, stolen_bases, stolen_bases_rank, stolen_bases_game, stolen_bases_last_rate, on_base_pct, on_base_pct_decade = batting_and_stolen_base_stats(batting_now, batting_past, games, batting_ranks)
 win_count_trend, loss_count_trend, win_loss_trend = recent_trend(standings.iloc[:10])
 
 summary = generate_summary(standings, wins, losses, win_pct)
 
 summary_data = [
+
+    # Standings
     {"stat_label": "Wins", "stat": "wins", "value": wins, "category": "standings", "context_value": wins_last, "context_value_label": "This point last season"},
     {"stat_label": "Losses", "stat": "losses", "value": losses, "category": "standings", "context_value": losses_last, "context_value_label": "This point last season"},
     {"stat_label": "Record", "stat": "record", "value": record, "category": "standings", "context_value": record_last, "context_value_label": "This point last season"},
+   
     {"stat_label": "Win percentage", "stat": "win_pct", "value": f"{win_pct}%", "category": "standings", "context_value": f"{win_pct_last}%", "context_value_label": "This point last season"},
+    {"stat_label": "Games up/back", "stat": "games_up_back", "value": standings_division_rank_games_back, "category": "standings", "context_value": standings_division_rank, "context_value_label": 'Division rank'},
+    {"stat_label": "Ave. home attendance", "stat": "mean_attendance", "value": formatted_mean_attendance, "category": "standings", "context_value": home_games_count, "context_value_label": 'Home games this season'},
+    
     {"stat_label": "Runs", "stat": "runs", "value": runs, "category": "standings", "context_value": runs_rank, "context_value_label": "League rank"},
     {"stat_label": "Runs against", "stat": "runs_against", "value": runs_against, "category": "standings", "context_value": runs_against_last, "context_value_label": "This point last season"},
     {"stat_label": "Run differential", "stat": "run_differential", "value": run_diff, "category": "standings", "context_value": run_diff_last, "context_value_label": "This point last season"},
-    {"stat_label": "Games up/back", "stat": "games_up_back", "value": standings_division_rank_games_back, "category": "standings", "context_value": standings_division_rank, "context_value_label": 'Division rank'},
-    {"stat_label": "Attendance", "stat": "mean_attendance", "value": formatted_mean_attendance, "category": "standings", "context_value": home_games_count, "context_value_label": 'Home games this season'},
+    
+    # Batting
+    {"stat_label": "Batting average", "stat": "batting_average", "value": batting_average, "category": "batting", "context_value": batting_average_decade, "context_value_label": "Last decade average"},
     {"stat_label": "Home runs", "stat": "home_runs", "value": home_runs, "category": "batting", "context_value": home_runs_rank, "context_value_label": "League rank"},
     {"stat_label": "Home runs/game", "stat": "home_runs_game", "value": home_runs_game, "category": "batting", "context_value": home_runs_game_decade, "context_value_label": "Last decade average"},
+    
+    {"stat_label": "On-base percentage", "stat": "on_base_pct", "value": on_base_pct, "category": "batting", "context_value": on_base_pct_decade, "context_value_label": "Last decade average"},
     {"stat_label": "Stolen bases", "stat": "stolen_bases", "value": stolen_bases, "category": "batting", "context_value": stolen_bases_rank, "context_value_label": "League rank"},
     {"stat_label": "Stolen bases/game", "stat": "stolen_bases_game", "value": stolen_bases_game, "category": "batting", "context_value": stolen_bases_last_rate, "context_value_label": "Rate all last season"},
-    {"stat_label": "Batting average", "stat": "batting_average", "value": batting_average, "category": "batting", "context_value": batting_average_decade, "context_value_label": "Last decade average"},
-    {"stat_label": "ERA", "stat": "era", "value": era, "category": "pitching", "context_value_label": "Rank", "context_value": era_rank, "context_value_label": "League rank"},
+    
+    # Pitching
     {"stat_label": "Strikeouts", "stat": "strikeouts", "value": strikeouts, "category": "pitching", "context_value": strikeouts_rank, "context_value_label": "League rank"},
     {"stat_label": "Walks", "stat": "walks", "value": walks, "category": "pitching", "context_value_label": "Rank", "context_value": walks_rank, "context_value_label": "League rank"},
-    {"stat_label": "Home runs allowed", "stat": "home_runs_allowed", "value": home_runs_allowed, "category": "pitching", "context_value": home_runs_allowed_rank, "context_value_label": "League rank"},
+    # {"stat_label": "Home runs allowed", "stat": "home_runs_allowed", "value": home_runs_allowed, "category": "pitching", "context_value": home_runs_allowed_rank, "context_value_label": "League rank"},
+    {"stat_label": "ERA", "stat": "era", "value": era, "category": "pitching", "context_value_label": "Rank", "context_value": era_rank, "context_value_label": "League rank"},
+    
+    # Summary
     {"stat_label": "Last updated", "stat": "update_time", "value": update_time, "category": "summary", "context_value": "", "context_value_label": ''}, 
     {"stat_label": "Team summary", "stat": "summary", "value": summary, "category": "summary", "context_value": "", "context_value_label": ''},
 ]
