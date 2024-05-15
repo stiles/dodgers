@@ -121,6 +121,7 @@ def fetch_current_year_data(url, year):
     src[['wins', 'losses']] = src['record'].str.split('-', expand=True).astype(int)
     src['win_pct'] = (src['wins'] / src['gm']).round(2)
     src['game_day'] = pd.to_datetime(src['game_date']).dt.day_name()
+    src["result"] = src["result"].str.split("-", expand=True)[0]
 
     # Just the columns we need
     src_df = src[

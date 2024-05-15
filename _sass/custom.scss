@@ -512,3 +512,21 @@ h2.stat-group {
 }
 
 }
+
+// .tooltip {
+//   position: absolute; // Revert back to absolute to see if it helps in proper positioning
+//   visibility: hidden;
+//   background: white;
+//   border: 1px solid #ccc;
+//   padding: 10px;
+//   border-radius: 5px;
+//   text-align: left;
+//   font-size: 12px;
+//   z-index: 10000; // Ensure it's above all other content
+//   pointer-events: none; // Tooltip does not block mouse events
+//   white-space: nowrap; // Avoids breaking the tooltip into multiple lines
+// }
+
+#chart-container { 
+  margin: 20px 15px 0px 15px;
+}

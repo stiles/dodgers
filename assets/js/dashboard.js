@@ -193,3 +193,102 @@ function renderChart(data) {
 }
 
 fetchData();
+
+async function fetchGameData() {
+  try {
+    const response = await d3.json('https://stilesdata.com/dodgers/data/standings/dodgers_wins_losses_current.json');
+    response.reverse(); // Reverse the array to start from the beginning of the season
+    renderRunDiffChart(response);
+  } catch (error) {
+    console.error('Failed to fetch game data:', error);
+  }
+}
+
+function renderRunDiffChart(data) {
+  const isMobile = window.innerWidth <= 767;
+  const margin = isMobile ? { top: 20, right: 10, bottom: 50, left: 30 } : { top: 20, right: 20, bottom: 40, left: 40 };
+  const container = d3.select('#results-chart');
+  const containerWidth = container.node().getBoundingClientRect().width;
+  const width = containerWidth - margin.left - margin.right;
+  const height = 200 - margin.top - margin.bottom;
+
+  const svg = container.append('svg')
+    .attr('width', containerWidth)
+    .attr('height', height + margin.top + margin.bottom)
+    .append('g')
+    .attr('transform', `translate(${margin.left},${margin.top})`);
+
+  const xScale = d3.scaleBand()
+    .range([0, width])
+    .padding(0.1)
+    .domain(data.map(d => d.gm));
+
+  const yScale = d3.scaleLinear()
+    .range([height, 0])
+    .domain([d3.min(data, d => d.run_diff), d3.max(data, d => d.run_diff)]);
+
+  const xAxis = d3.axisBottom(xScale).tickValues(xScale.domain().filter(d => d % 5 === 0));
+  const yAxis = d3.axisLeft(yScale).ticks(5);
+
+  svg.append('g')
+    .attr('transform', `translate(0,${height})`)
+    .call(xAxis);
+
+  svg.append('g').call(yAxis);
+
+      // X-axis Label
+      svg.append("text")
+      .attr("text-anchor", "middle")
+      .attr('class', 'anno-dark')
+      .attr("x", width / 2)
+      .attr("y", height + margin.bottom - 5)
+      .text("Game number");
+  
+    // Y-axis Label
+    svg.append("text")
+      .attr("text-anchor", "middle")
+      .attr('class', 'anno-dark')
+      .attr("transform", "rotate(-90)")
+      .attr("y", -margin.left + 10)
+      .attr("x", -height / 2)
+      .text("Run differential");
+
+  // Ensure tooltip is only added once
+  // let tooltip = d3.select('body').select('.tooltip');
+  // if (tooltip.empty()) {
+  //     tooltip = d3.select('body').append('div')
+  //         .attr('class', 'tooltip')
+  //         .style('position', 'absolute')
+  //         .style('visibility', 'hidden')
+  //         .style('background', '#fff')
+  //         .style('border', '1px solid #ddd')
+  //         .style('padding', '5px')
+  //         .style('border-radius', '5px')
+  //         .style('text-align', 'left')
+  //         .style('font-size', '12px');
+  // }
+
+  svg.selectAll(".bar")
+    .data(data)
+    .enter().append("rect")
+    .attr("class", "bar")
+    .attr("x", d => xScale(d.gm))
+    .attr("y", d => yScale(Math.max(0, d.run_diff)))
+    .attr("width", xScale.bandwidth())
+    .attr("height", d => Math.abs(yScale(d.run_diff) - yScale(0)))
+    .attr("fill", d => d.run_diff >= 0 ? "#005a9c" : "#ef3e42");
+  //   .on("mouseover", function(event, d) {
+  //     tooltip
+  //         .html(`Game: ${d.gm}<br>Date: ${d.game_date}<br>Result: ${d.result}<br>Runs: ${d.r}<br>Runs Allowed: ${d.ra}`)
+  //         .style("visibility", "visible")
+  //         .style("left", `${event.pageX + 10}px`)
+  //         .style("top", `${event.pageY + 10}px`);
+  // })
+  // .on("mouseout", function() {
+  //     tooltip.style("visibility", "hidden");
+  // });
+  
+}
+
+fetchGameData();
+

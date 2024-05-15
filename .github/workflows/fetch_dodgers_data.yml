@@ -47,7 +47,9 @@ jobs:
         python scripts/03_viz_standings.py
         python scripts/04_viz_batting.py
         python scripts/05_fetch_process_pitching.py
-        python scripts/06-create-toplines-summary.py
+        python scripts/06_create_toplines_summary.py
+        python scripts/07_fetch_process_season_outcomes.py
+        python scripts/08_fetch_process_wins_losses_current.py
 
     - name: Check for changes
       id: changes

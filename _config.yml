@@ -22,7 +22,7 @@ title: Dodgers Data Bot
 headline: How are the Dodgers doing?
 email: mattstiles@gmail.com
 description: >- # this means to ignore newlines until "baseurl:"
-  Automating the collection and analysis of LA Dodgers standings and batting statistics throughout the season in an effort to answer the question: How are the Dodgers doing?
+  An auto-updating baseball statistics dashboard that answers the question: How are the Dodgers doing?
 baseurl: "" # the subpath of your site, e.g. /blog
 url: "https://dodgersdata.bot" # the base hostname & protocol for your site, e.g. http://example.com
 twitter_username: stiles

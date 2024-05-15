@@ -1,12 +1,19 @@
 ---
 layout: default
-title: Dodgers Dashboard
+title: LA Dodgers Data Bot - A dashboard explaining the Dodgers' season so far. 
 permalink: /
 ---
 
 <div class="container">
     <h1 class="headline">{{ site.headline }}</h1>
     <p class="subhead">{{ site.data.season_summary_latest | where: "stat", "summary" | map: "value" | first }} </p>
+
+<div id="chart-container" style="position: relative;">
+    <h2 class="stat-group">Results: Run differential</h2>
+    <div id="results-chart"></div>
+    <!-- <div id="tooltip" class="tooltip"></div> -->
+</div>
+
 
 <div class="container mt-4">
 <h2 class="stat-group">Standings</h2>
