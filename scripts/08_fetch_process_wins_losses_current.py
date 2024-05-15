@@ -53,6 +53,7 @@ df = pd.read_parquet('https://stilesdata.com/dodgers/data/standings/dodgers_stan
 wl_df = df.query("year == '2024'")[["gm", "game_date", "result", "r", "ra"]].copy()
 wl_df["result"] = wl_df["result"].str.split("-", expand=True)[0]
 wl_df["run_diff"] = wl_df["r"] - wl_df["ra"]
+wl_df["game_date"] = wl_df["game_date"].astype(str)
 
 """ 
 EXPORT
