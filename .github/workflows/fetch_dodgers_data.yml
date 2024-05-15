@@ -6,7 +6,7 @@ on:
   workflow_dispatch:
 
 jobs:
-  update_standings:
+  update_and_deploy:
     runs-on: ubuntu-latest
     defaults:
       run:
@@ -43,7 +43,7 @@ jobs:
     - name: Set up Ruby for Jekyll
       uses: ruby/setup-ruby@v1
       with:
-        ruby-version: 3.3.0 # Specify the version of Ruby you want to use
+        ruby-version: '3.0' # Match the version to your Gemfile or latest stable release
 
     - name: Install Bundler and Jekyll dependencies
       run: |
@@ -64,11 +64,18 @@ jobs:
     - name: Build Jekyll site
       run: bundle exec jekyll build
 
+    - name: Deploy to GitHub Pages
+      uses: peaceiris/actions-gh-pages@v3
+      with:
+        github_token: ${{ secrets.GITHUB_TOKEN }}
+        publish_dir: ./_site  # The output folder of Jekyll build
+        publish_branch: gh-pages  
+
     - name: Check for changes
       id: changes
       run: |
-          git add .
-          git diff --staged --quiet || echo "::set-output name=changes::true"
+        git add .
+        git diff --staged --quiet || echo "::set-output name=changes::true"
   
     - name: Commit updated files
       if: steps.changes.outputs.changes == 'true'
@@ -79,7 +86,6 @@ jobs:
   
     - name: Push changes
       if: steps.changes.outputs.changes == 'true'
-      run: |
-        git push
+      run: git push
       env:
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
