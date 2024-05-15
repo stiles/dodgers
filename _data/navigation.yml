@@ -2,10 +2,10 @@
 main:
   - title:
     url: 
-  # - title: "About"
-  #   url: https://mmistakes.github.io/minimal-mistakes/about/
-  # - title: "Sample Posts"
-  #   url: /year-archive/
+  - title: "About"
+    url: https://github.com/stiles/dodgers/blob/main/README.md
+  - title: "Data"
+    url: https://github.com/stiles/dodgers/tree/main/data
   # - title: "Sample Collections"
   #   url: /collection-archive/
   # - title: "Sitemap"

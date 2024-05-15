@@ -99,8 +99,6 @@ standings_last = standings_past.query(f"gm == {game_number}").head(1).reset_inde
 standings_last_season = standings_past.query(f"gm <= {game_number} and year=='2023'").reset_index(drop=True).copy()
 standings_division_rank = standings['rank'].iloc[0]
 standings_division_rank_games_back = standings['gb'].iloc[0]
-mean_attendance = standings.query('home_away == "home"')['attendance'].mean()
-formatted_mean_attendance = f"{mean_attendance:,.0f}"
 
 # Batting
 batting = read_parquet_s3(batting_url)
@@ -144,7 +142,10 @@ def run_differential(standings, batting_ranks):
     runs_against_last = standings_last_season['ra'].sum()
     run_diff = runs - runs_against
     run_diff_last = runs_last - runs_against_last
-    return runs, runs_last, runs_rank, runs_against, runs_against_last, run_diff, run_diff_last
+    mean_attendance = standings.query('home_away == "home"')['attendance'].mean()
+    home_games_count = standings.query('home_away == "home"').count()
+    formatted_mean_attendance = f"{mean_attendance:,.0f}"
+    return runs, runs_last, runs_rank, runs_against, runs_against_last, run_diff, run_diff_last, mean_attendance, formatted_mean_attendance, home_games_count
 
 def home_run_stats(batting_now, batting_past, batting_ranks):
     games = int(batting_now["g"].iloc[0])
@@ -187,7 +188,7 @@ def recent_trend(standings):
     return win_count_trend, loss_count_trend, f"Recent trend: {win_count_trend} wins, {loss_count_trend} losses"
 
 games, wins, losses, record, win_pct, win_pct_decade_thispoint, era, era_rank, strikeouts, strikeouts_rank, walks, walks_rank, wins_last, losses_last, record_last, win_pct_last, home_runs_allowed, home_runs_allowed_rank = current_season_stats(standings_now, standings_past, pitching, pitching_ranks, standings_last)
-runs, runs_last, runs_rank, runs_against, runs_against_last, run_diff, run_diff_last = run_differential(standings, batting_ranks)
+runs, runs_last, runs_rank, runs_against, runs_against_last, run_diff, run_diff_last, mean_attendance, formatted_mean_attendance, home_games_count = run_differential(standings, batting_ranks)
 home_runs, home_runs_game, home_runs_game_last, home_runs_game_decade, home_runs_rank = home_run_stats(batting_now, batting_past, batting_ranks)
 batting_average, batting_average_decade, stolen_bases, stolen_bases_rank, stolen_bases_game, stolen_bases_last_rate = batting_and_stolen_base_stats(batting_now, batting_past, games, batting_ranks)
 win_count_trend, loss_count_trend, win_loss_trend = recent_trend(standings.iloc[:10])
@@ -212,8 +213,8 @@ summary_data = [
     {"stat_label": "Walks", "stat": "walks", "value": walks, "category": "pitching", "context_value_label": "Rank", "context_value": walks_rank, "context_value_label": "League rank"},
     {"stat_label": "Home runs allowed", "stat": "home_runs_allowed", "value": home_runs_allowed, "category": "pitching", "context_value": home_runs_allowed_rank, "context_value_label": "League rank"},
     {"stat_label": "Games up/back", "stat": "games_up_back", "value": standings_division_rank_games_back, "category": "standings", "context_value": standings_division_rank, "context_value_label": 'Division rank'},
-    {"stat_label": "Attendance", "stat": "mean_attendance", "value": formatted_mean_attendance, "category": "standings", "context_value": '', "context_value_label": 'Home average'},
-    {"stat_label": "Last updated", "stat": "    ", "value": update_time, "category": "summary", "context_value": "", "context_value_label": ''}, 
+    {"stat_label": "Attendance", "stat": "mean_attendance", "value": formatted_mean_attendance, "category": "standings", "context_value": home_games_count, "context_value_label": 'Home games this season'},
+    {"stat_label": "Last updated", "stat": "update_time", "value": update_time, "category": "summary", "context_value": "", "context_value_label": ''}, 
     {"stat_label": "Team summary", "stat": "summary", "value": summary, "category": "summary", "context_value": "", "context_value_label": ''},
 ]
 
