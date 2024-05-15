@@ -143,7 +143,7 @@ def run_differential(standings, batting_ranks):
     run_diff = runs - runs_against
     run_diff_last = runs_last - runs_against_last
     mean_attendance = standings.query('home_away == "home"')['attendance'].mean()
-    home_games_count = standings.query('home_away == "home"').count()
+    home_games_count = len(standings.query('home_away == "home"'))
     formatted_mean_attendance = f"{mean_attendance:,.0f}"
     return runs, runs_last, runs_rank, runs_against, runs_against_last, run_diff, run_diff_last, mean_attendance, formatted_mean_attendance, home_games_count
 
@@ -203,6 +203,8 @@ summary_data = [
     {"stat_label": "Runs", "stat": "runs", "value": runs, "category": "standings", "context_value": runs_rank, "context_value_label": "League rank"},
     {"stat_label": "Runs against", "stat": "runs_against", "value": runs_against, "category": "standings", "context_value": runs_against_last, "context_value_label": "This point last season"},
     {"stat_label": "Run differential", "stat": "run_differential", "value": run_diff, "category": "standings", "context_value": run_diff_last, "context_value_label": "This point last season"},
+    {"stat_label": "Games up/back", "stat": "games_up_back", "value": standings_division_rank_games_back, "category": "standings", "context_value": standings_division_rank, "context_value_label": 'Division rank'},
+    {"stat_label": "Attendance", "stat": "mean_attendance", "value": formatted_mean_attendance, "category": "standings", "context_value": home_games_count, "context_value_label": 'Home games this season'},
     {"stat_label": "Home runs", "stat": "home_runs", "value": home_runs, "category": "batting", "context_value": home_runs_rank, "context_value_label": "League rank"},
     {"stat_label": "Home runs/game", "stat": "home_runs_game", "value": home_runs_game, "category": "batting", "context_value": home_runs_game_decade, "context_value_label": "Last decade average"},
     {"stat_label": "Stolen bases", "stat": "stolen_bases", "value": stolen_bases, "category": "batting", "context_value": stolen_bases_rank, "context_value_label": "League rank"},
@@ -212,8 +214,6 @@ summary_data = [
     {"stat_label": "Strikeouts", "stat": "strikeouts", "value": strikeouts, "category": "pitching", "context_value": strikeouts_rank, "context_value_label": "League rank"},
     {"stat_label": "Walks", "stat": "walks", "value": walks, "category": "pitching", "context_value_label": "Rank", "context_value": walks_rank, "context_value_label": "League rank"},
     {"stat_label": "Home runs allowed", "stat": "home_runs_allowed", "value": home_runs_allowed, "category": "pitching", "context_value": home_runs_allowed_rank, "context_value_label": "League rank"},
-    {"stat_label": "Games up/back", "stat": "games_up_back", "value": standings_division_rank_games_back, "category": "standings", "context_value": standings_division_rank, "context_value_label": 'Division rank'},
-    {"stat_label": "Attendance", "stat": "mean_attendance", "value": formatted_mean_attendance, "category": "standings", "context_value": home_games_count, "context_value_label": 'Home games this season'},
     {"stat_label": "Last updated", "stat": "update_time", "value": update_time, "category": "summary", "context_value": "", "context_value_label": ''}, 
     {"stat_label": "Team summary", "stat": "summary", "value": summary, "category": "summary", "context_value": "", "context_value_label": ''},
 ]
