@@ -12,37 +12,62 @@ async function fetchData() {
 }
 
 function renderChart(data) {
+  const isMobile = window.innerWidth <= 767; // Example breakpoint for mobile devices
+  const margin = isMobile 
+    ? { top: 20, right: 20, bottom: 60, left: 60 }  // Smaller margins for mobile
+    : { top: 40, right: 50, bottom: 50, left: 60 }; // Larger margins for desktop
   const container = d3.select('#d3-container');
-  const width = container.node().getBoundingClientRect().width;
-  const height = Math.round(width * 0.5); // Maintain a 2:1 aspect ratio
+  const containerWidth = container.node().getBoundingClientRect().width;
+  const width = containerWidth - margin.left - margin.right;
+  const height = isMobile 
+  ? Math.round(width * 1) - margin.top - margin.bottom  // Taller  for mobile
+  : Math.round(width * 0.5) - margin.top - margin.bottom; // 2x1 ratio for desktop
 
   const svg = container
     .append('svg')
-    .attr('viewBox', `0 0 ${width} ${height}`)
+    .attr('viewBox', `0 0 ${containerWidth} ${height + margin.top + margin.bottom}`)
     .append('g')
-    .attr('transform', `translate(50, 20)`);
+    .attr('transform', `translate(${margin.left}, ${margin.top})`);
 
-  const xScale = d3
+    const xScale = d3
     .scaleLinear()
     .domain([0, 166])
-    .range([0, width - 100]);
+    .range([0, width]);
+
   const yScale = d3
     .scaleLinear()
     .domain([
       d3.min(Array.from(data.values()).flat(), (d) => d.gb),
       d3.max(Array.from(data.values()).flat(), (d) => d.gb),
     ])
-    .range([height - 40, 0]);
+    .range([height, 0]);
 
-  const xAxis = d3.axisBottom(xScale).ticks(6).tickFormat(d3.format('d'));
-  const yAxis = d3.axisLeft(yScale).ticks(6);
-
-  svg
-    .append('g')
-    .attr('transform', `translate(0, ${height - 40})`)
-    .call(xAxis);
-
-  svg.append('g').call(yAxis);
+    const xAxis = d3.axisBottom(xScale).ticks(6).tickFormat(d3.format('d'));
+    const yAxis = d3.axisLeft(yScale).ticks(6);
+  
+    svg
+      .append('g')
+      .attr('transform', `translate(0, ${height})`)
+      .call(xAxis);
+  
+    svg.append('g').call(yAxis);
+  
+    // X-axis Label
+    svg.append("text")
+      .attr("text-anchor", "middle")
+      .attr('class', 'anno-dark')
+      .attr("x", width / 2)
+      .attr("y", height + margin.bottom - 10)
+      .text("Game number in season");
+  
+    // Y-axis Label
+    svg.append("text")
+      .attr("text-anchor", "middle")
+      .attr('class', 'anno-dark')
+      .attr("transform", "rotate(-90)")
+      .attr("y", -margin.left + 20)
+      .attr("x", -height / 2)
+      .text("Games up/back");
 
   // Append axes to SVG
   svg
@@ -95,10 +120,10 @@ function renderChart(data) {
   svg
     .append('line')
     .attr('x1', 0)
-    .attr('x2', width - 100)
+    .attr('x2', width-18)
     .attr('y1', yScale(0))
     .attr('y2', yScale(0))
-    .attr('stroke', 'black')
+    .attr('stroke', '#222')
     .attr('stroke-width', 1);
 
   svg
@@ -123,12 +148,12 @@ function renderChart(data) {
     .text('Past seasons: 1958-2023')
     .attr('text-anchor', 'start');
 
-  const lastData2024 = data.get('2024').slice(1)[0];
+  const lastData2024 = data.get('2024').slice(0)[0];
   console.log(lastData2024);
 
   svg
     .append('text')
-    .attr('x', xScale(lastData2024.gm + 2))
+    .attr('x', xScale(lastData2024.gm + 1))
     .attr('y', yScale(lastData2024.gb) - 12)
     .text('2024')
     .attr('class', 'anno-dodgers')
@@ -152,7 +177,7 @@ function renderChart(data) {
 
   svg
     .append('text')
-    .attr('x', xScale(lastData2024.gm + 2))
+    .attr('x', xScale(lastData2024.gm + 1))
     .attr('y', yScale(lastData2024.gb) + 2)
     .text(gameStatusText(lastData2024.gb))
     .attr('class', 'anno-dark')

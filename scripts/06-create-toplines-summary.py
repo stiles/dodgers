@@ -29,11 +29,26 @@ def get_pacific_time():
         pacific_offset = timedelta(hours=-7)
     pacific_zone = timezone(pacific_offset)
     pacific_time = utc_time.astimezone(pacific_zone)
-    formatted_time = pacific_time.strftime("Last updated at %-I:%M %p PT, %B %-d, %Y")
+    formatted_time = pacific_time.strftime("%B %-d, %Y, %-I:%M %p PT")
     return formatted_time
 
 # Store the update time
 update_time = get_pacific_time()
+
+# Get the update date
+def get_pacific_date():
+    utc_zone = timezone.utc
+    utc_time = datetime.now(utc_zone)
+    pacific_offset = timedelta(hours=-8)
+    if utc_time.astimezone(timezone.utc).replace(tzinfo=None).month in {4, 5, 6, 7, 8, 9, 10}:
+        pacific_offset = timedelta(hours=-7)
+    pacific_zone = timezone(pacific_offset)
+    pacific_time = utc_time.astimezone(pacific_zone)
+    formatted_date = pacific_time.strftime("%B %-d, %Y")
+    return formatted_date
+
+# Store the update date
+update_date = get_pacific_date()
 
 def read_parquet_s3(url, sort_by=None):
     """Read a Parquet file from the S3 URL.
@@ -177,10 +192,10 @@ def batting_and_stolen_base_stats(batting_now, batting_past, games, batting_rank
 def generate_summary(standings_now, wins, losses, win_pct):
     last_game = standings_now.iloc[0]
     summary = (
-        f"The Dodgers have played <span class='highlight'>{games}</span> games this season, compiling a {record} record and "
+        f"<span class='highlight'>{update_time}</span> — The Dodgers have played <span class='highlight'>{games}</span> games this season, compiling a {record} record and "
         f"a winning percentage of <span class='highlight'>{win_pct}%</span>. The team's latest game was a "
         f"{last_game['r']}-{last_game['ra']} {last_game['home_away']} {last_game['result_clean']} "
-        f"to the {last_game['opp_name']} in front of {'{:,}'.format(last_game['attendance'])} fans. "
+        f"against the {last_game['opp_name']} in front of {'{:,}'.format(last_game['attendance'])} fans. "
         f"They've won <span class='highlight'>{win_count_trend} of the last 10 games</span>."
     )
     return summary

@@ -125,21 +125,21 @@ body {
 
 .card {
   font-family: 'Roboto', sans-serif;
-  color: #333; /* Darker text for better readability */
+  color: #444; /* Darker text for better readability */
   border: 1px solid rgba(0, 0, 0, 0.125); /* Slight border */
   border-radius: 0.25rem; /* Modern border radius */
   box-shadow: 0 0.125rem 0.25rem rgba(0, 0, 0, 0.075); /* Subtle shadow for depth */
 }
 
 .card-header {
-  background-color: #e9e9e9; /* As specified */
-  color: #333333; /* Crisp white text on green background */
-  padding: 10px 15px; /* Comfortable padding */
-  border-bottom: 1px solid rgba(0, 0, 0, 0.125); /* Define if you want a border separating header */
+  background-color: #eeeeee; 
+  color: #333333;
+  padding: 10px 15px; 
+  border-bottom: 1px solid rgba(0, 0, 0, 0.125); 
   border-top-left-radius: 0.25rem;
   border-top-right-radius: 0.25rem;
-  font-weight: 400; /* Slightly bolder */
-  font-size: 1em; 
+  font-weight: 400;
+  font-size: .8em; 
 }
 
 .card-body {
@@ -487,7 +487,7 @@ a {
 h2.stat-group {
   margin: 10px 0px 20px 0px;
   font-family: 'Roboto slab', serif;
-  font-size: 1.1em; 
+  font-size: 1.3em; 
 }
 
 
