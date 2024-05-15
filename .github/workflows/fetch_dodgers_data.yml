@@ -51,11 +51,14 @@ jobs:
         python scripts/07_fetch_process_season_outcomes.py
         python scripts/08_fetch_process_wins_losses_current.py
 
+    - name: Build Jekyll site
+      run: bundle exec jekyll build
+
     - name: Check for changes
       id: changes
       run: |
-        git add *
-        git diff --staged --quiet || echo "::set-output name=changes::true"
+          git add .
+          git diff --staged --quiet || echo "::set-output name=changes::true"
   
     - name: Commit updated files
       if: steps.changes.outputs.changes == 'true'
@@ -66,6 +69,7 @@ jobs:
   
     - name: Push changes
       if: steps.changes.outputs.changes == 'true'
-      run: git push
+      run: |
+        git push
       env:
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}

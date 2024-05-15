@@ -516,3 +516,46 @@ h2.stat-group {
 #chart-container { 
   margin: 20px 15px 30px 15px;
 }
+
+.social-icons {
+  list-style-type: none;
+  padding: 0;
+
+  li {
+    display: inline-block;
+    margin-right: 10px;
+
+    a {
+      color: #fff; // Adjust color to fit your design
+      transition: color 0.3s ease;
+
+      &:hover {
+        color: #fff; // Or any other highlight color
+      }
+
+      i {
+        font-size: 50px; // Icon size
+      }
+    }
+  }
+}
+
+.fa-brands, .fab {
+  font-family: "Font Awesome 6 Brands";
+  font-weight: 600;
+}
+
+.fa-fw {
+  text-align: center;
+  width: 2em;
+}
+
+.page__footer-follow li {
+  display: inline-block;
+  padding-top: 5px;
+  padding-bottom: 5px;
+  font-family: -apple-system, BlinkMacSystemFont, "Roboto", "Segoe UI", "Helvetica Neue", "Lucida Grande", Arial, sans-serif;
+  font-size: 1.5em;
+  text-transform: uppercase;
+}
+

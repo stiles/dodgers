@@ -14,10 +14,11 @@ permalink: /
 
 
 <div class="container mt-4">
-<h2 class="stat-group">Standings</h2>
+<h2 class="stat-group">Season results</h2>
 <div id="chart-container" style="position: relative;">
     <div id="results-chart"></div>
 </div>
+<h2 class="stat-group">Performance and standings</h2>
   <div class="row">
     {% for item in site.data.season_summary_latest %}
       {% if item.category == 'standings' %}
@@ -37,7 +38,7 @@ permalink: /
       {% endif %}
     {% endfor %}
   </div>
-  <h2 class="stat-group">Standings: 2024 vs. past</h2>
+  <h2 class="stat-group">Division standings: 2024 vs. past</h2>
 <div id="d3-container" style="width: 100%; padding-bottom: 20px;">
 </div>
 <h2 class="stat-group">Batting</h2>

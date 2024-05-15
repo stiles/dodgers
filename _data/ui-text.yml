@@ -3,6 +3,9 @@
 # English (default)
 # -----------------
 en: &DEFAULT_EN
+  follow_label               : "Follow us:"
+  github_username            : "https://github.com/stiles"
+  twitter_username           : "https://twitter.com/stiles"
   skip_links                 : "Skip links"
   skip_primary_nav           : "Skip to primary navigation"
   skip_content               : "Skip to content"
@@ -27,7 +30,6 @@ en: &DEFAULT_EN
   comments_title             : "Comments"
   more_label                 : "Learn more"
   related_label              : "You may also enjoy"
-  follow_label               : "Follow:"
   feed_label                 : 
   powered_by                 : "Build with"
   website_label              : "Website"

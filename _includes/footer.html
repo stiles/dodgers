@@ -1,17 +1,16 @@
-<div class="page__footer-follow">
-  <ul class="social-icons">
-    {% if site.data.ui-text[site.locale].follow_label %}
-      <li><strong>{{ site.data.ui-text[site.locale].follow_label }}</strong></li>
-    {% endif %}
-
-    {% if site.footer.links %}
-      {% for link in site.footer.links %}
-        {% if link.label and link.url %}
-          <li><a href="{{ link.url }}" rel="nofollow noopener noreferrer"><i class="{{ link.icon | default: 'fas fa-link' }}" aria-hidden="true"></i> {{ link.label }}</a></li>
-        {% endif %}
-      {% endfor %}
-    {% endif %}
-  </ul>
-</div>
+  <div class="page__footer-follow">
+    <ul class="list-inline">
+            
+      <li>
+        <a href="http://github.com/stiles/dodgers" class="btn-social btn-outline"><i class="fa-brands fa-fw fa-github"></i></a>
+      </li>
+      
+      <li>
+        <a href="http://twitter.com/stiles" class="btn-social btn-outline"><i class="fa-brands fa-fw fa-twitter"></i></a>
+      </li>
+      
+    </ul>
+  </div>
 
 <div class="page__footer-copyright">&copy; {{ site.time | date: '%Y' }} <a href="{{ site.copyright_url | default: site.url }}">{{ site.copyright | default: site.title }}</a>. {{ site.data.ui-text[site.locale].powered_by | default: "Built with" }} <a href="https://jekyllrb.com" rel="nofollow">Jekyll</a>.</div>
+
