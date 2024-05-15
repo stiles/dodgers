@@ -1,0 +1,605 @@
+<!doctype html>
+<!--
+  Minimal Mistakes Jekyll Theme 4.26.1 by Michael Rose
+  Copyright 2013-2024 Michael Rose - mademistakes.com | @mmistakes
+  Free for personal and commercial use under the MIT license
+  https://github.com/mmistakes/minimal-mistakes/blob/master/LICENSE
+-->
+
+<html lang="en" class="no-js">
+  <head>
+    <meta charset="utf-8">
+
+<!-- begin _includes/seo.html --><title>LA Dodgers Data Bot - A dashboard explaining the Dodgers’ season so far. - Dodgers Data Bot</title>
+<meta name="description" content="An auto-updating baseball statistics dashboard that answers the question: How are the Dodgers doing?">
+
+
+
+<meta property="og:type" content="website">
+<meta property="og:locale" content="en_US">
+<meta property="og:site_name" content="Dodgers Data Bot">
+<meta property="og:title" content="LA Dodgers Data Bot - A dashboard explaining the Dodgers’ season so far.">
+<meta property="og:url" content="https://dodgersdata.bot/">
+
+
+  <meta property="og:description" content="An auto-updating baseball statistics dashboard that answers the question: How are the Dodgers doing?">
+
+
+
+
+
+
+
+
+
+
+
+
+<link rel="canonical" href="https://dodgersdata.bot/">
+
+
+
+
+
+  <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Person",
+    "name": null,
+    "url": "https://dodgersdata.bot/"
+}
+</script>
+
+
+
+
+
+
+
+
+
+<!-- end _includes/seo.html -->
+
+
+
+  <link href="/feed.xml" type="application/atom+xml" rel="alternate" title="Dodgers Data Bot Feed">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<script type="text/javascript">
+  document.documentElement.className = document.documentElement.className.replace(/\bno-js\b/g, '') + ' js ';
+  
+</script>
+
+<!-- For all browsers -->
+<link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+<link rel="stylesheet" href="/assets/css/main.css">
+<link rel="preload" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@latest/css/all.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+<noscript><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@latest/css/all.min.css"></noscript>
+
+
+
+    <!-- start custom head snippets -->
+
+<!-- insert favicons. use https://realfavicongenerator.net/ -->
+
+<link rel="apple-touch-icon" sizes="144x144" href="assets/images/apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="assets/images//favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="assets/images//favicon-16x16.png">
+<link rel="manifest" href="assets/images/site.webmanifest">
+<link rel="mask-icon" href="assets/images/safari-pinned-tab.svg" color="#5bbad5">
+<meta name="msapplication-TileColor" content="#da532c">
+<meta name="theme-color" content="#ffffff">
+
+<!-- end custom head snippets -->
+
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@100..900&display=swap" rel="stylesheet">
+  </head>
+
+  <body class="layout--default">
+    <nav class="skip-links">
+  <ul>
+    <li><a href="#site-nav" class="screen-reader-shortcut">Skip to primary navigation</a></li>
+    <li><a href="#main" class="screen-reader-shortcut">Skip to content</a></li>
+    <li><a href="#footer" class="screen-reader-shortcut">Skip to footer</a></li>
+  </ul>
+</nav>
+
+    
+
+<div class="masthead">
+  <div class="masthead__inner-wrap">
+    <div class="masthead__menu">
+      <nav id="site-nav" class="greedy-nav">
+        
+        <a class="site-title" href="/">
+          Dodgers Data Bot
+          
+        </a>
+        <ul class="visible-links"><li class="masthead__menu-item">
+              <a
+                href=""
+                
+                
+              ></a>
+            </li><li class="masthead__menu-item">
+              <a
+                href="https://github.com/stiles/dodgers/blob/main/README.md"
+                
+                
+              >About</a>
+            </li><li class="masthead__menu-item">
+              <a
+                href="https://github.com/stiles/dodgers/tree/main/data"
+                
+                
+              >Data</a>
+            </li></ul>
+        
+        <button class="greedy-nav__toggle hidden" type="button">
+          <span class="visually-hidden">Toggle menu</span>
+          <div class="navicon"></div>
+        </button>
+        <ul class="hidden-links hidden"></ul>
+      </nav>
+    </div>
+  </div>
+</div>
+
+
+    <div class="initial-content">
+      <div class="container">
+
+<div class="page-topper">
+  <h1 class="headline">How are the Dodgers doing?</h1>
+  <p class="subhead"><span class="highlight">May 15</span> — The Dodgers have played <span class="highlight">44</span> games this season, compiling a <span class="highlight">29-15</span> record and a winning percentage of <span class="highlight">66%</span>. The team's latest game was a 10-2 away <span class="highlight">win</span> against the San Francisco Giants in front of <span class="highlight">33,575</span> fans. They've won <span class="highlight">8 of the last 10 games</span>. </p>
+<div>
+
+
+
+<div class="container mt-4">
+<h2 class="stat-group">Season results</h2>
+<div id="chart-container" style="position: relative;">
+    <div id="results-chart"></div>
+</div>
+<h2 class="stat-group">Performance and standings</h2>
+  <div class="row">
+    
+      
+      <div class="col-md-4">
+        <div class="card mb-4">
+          <div class="card-header">
+            Wins
+          </div>
+          <div class="card-body">
+            <p class="card-text">29</p>
+          </div>
+          <div class="card-footer text-muted">
+        This point last season: 28
+          </div>
+        </div>
+      </div>
+      
+    
+      
+      <div class="col-md-4">
+        <div class="card mb-4">
+          <div class="card-header">
+            Losses
+          </div>
+          <div class="card-body">
+            <p class="card-text">15</p>
+          </div>
+          <div class="card-footer text-muted">
+        This point last season: 16
+          </div>
+        </div>
+      </div>
+      
+    
+      
+      <div class="col-md-4">
+        <div class="card mb-4">
+          <div class="card-header">
+            Record
+          </div>
+          <div class="card-body">
+            <p class="card-text">29-15</p>
+          </div>
+          <div class="card-footer text-muted">
+        This point last season: 28-16
+          </div>
+        </div>
+      </div>
+      
+    
+      
+      <div class="col-md-4">
+        <div class="card mb-4">
+          <div class="card-header">
+            Win percentage
+          </div>
+          <div class="card-body">
+            <p class="card-text">66%</p>
+          </div>
+          <div class="card-footer text-muted">
+        This point last season: 64%
+          </div>
+        </div>
+      </div>
+      
+    
+      
+      <div class="col-md-4">
+        <div class="card mb-4">
+          <div class="card-header">
+            Games up/back
+          </div>
+          <div class="card-body">
+            <p class="card-text">7.5</p>
+          </div>
+          <div class="card-footer text-muted">
+        Division rank: 1
+          </div>
+        </div>
+      </div>
+      
+    
+      
+      <div class="col-md-4">
+        <div class="card mb-4">
+          <div class="card-header">
+            Avg. home attendance
+          </div>
+          <div class="card-body">
+            <p class="card-text">46,149</p>
+          </div>
+          <div class="card-footer text-muted">
+        Home games this season: 23
+          </div>
+        </div>
+      </div>
+      
+    
+      
+      <div class="col-md-4">
+        <div class="card mb-4">
+          <div class="card-header">
+            Runs
+          </div>
+          <div class="card-body">
+            <p class="card-text">236</p>
+          </div>
+          <div class="card-footer text-muted">
+        League rank: 1
+          </div>
+        </div>
+      </div>
+      
+    
+      
+      <div class="col-md-4">
+        <div class="card mb-4">
+          <div class="card-header">
+            Runs against
+          </div>
+          <div class="card-body">
+            <p class="card-text">152</p>
+          </div>
+          <div class="card-footer text-muted">
+        This point last season: 180
+          </div>
+        </div>
+      </div>
+      
+    
+      
+      <div class="col-md-4">
+        <div class="card mb-4">
+          <div class="card-header">
+            Run differential
+          </div>
+          <div class="card-body">
+            <p class="card-text">84</p>
+          </div>
+          <div class="card-footer text-muted">
+        This point last season: 57
+          </div>
+        </div>
+      </div>
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+  </div>
+  <h2 class="stat-group">Division standings: 2024 vs. past</h2>
+<div id="d3-container" style="width: 100%; padding-bottom: 20px;">
+</div>
+<h2 class="stat-group">Batting</h2>
+  <div class="row">
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+      <div class="col-md-4">
+        <div class="card mb-4">
+          <div class="card-header">
+            Batting average
+          </div>
+          <div class="card-body">
+            <p class="card-text">.263</p>
+          </div>
+          <div class="card-footer text-muted">
+        Last decade average: .253
+          </div>
+        </div>
+      </div>
+      
+    
+      
+      <div class="col-md-4">
+        <div class="card mb-4">
+          <div class="card-header">
+            Home runs
+          </div>
+          <div class="card-body">
+            <p class="card-text">59</p>
+          </div>
+          <div class="card-footer text-muted">
+        League rank: 1
+          </div>
+        </div>
+      </div>
+      
+    
+      
+      <div class="col-md-4">
+        <div class="card mb-4">
+          <div class="card-header">
+            Home runs/game
+          </div>
+          <div class="card-body">
+            <p class="card-text">1.34</p>
+          </div>
+          <div class="card-footer text-muted">
+        Last decade average: 1.36
+          </div>
+        </div>
+      </div>
+      
+    
+      
+      <div class="col-md-4">
+        <div class="card mb-4">
+          <div class="card-header">
+            On-base percentage
+          </div>
+          <div class="card-body">
+            <p class="card-text">.345</p>
+          </div>
+          <div class="card-footer text-muted">
+        Last decade average: .332
+          </div>
+        </div>
+      </div>
+      
+    
+      
+      <div class="col-md-4">
+        <div class="card mb-4">
+          <div class="card-header">
+            Stolen bases
+          </div>
+          <div class="card-body">
+            <p class="card-text">28</p>
+          </div>
+          <div class="card-footer text-muted">
+        League rank: 6
+          </div>
+        </div>
+      </div>
+      
+    
+      
+      <div class="col-md-4">
+        <div class="card mb-4">
+          <div class="card-header">
+            Stolen bases/game
+          </div>
+          <div class="card-body">
+            <p class="card-text">0.64</p>
+          </div>
+          <div class="card-footer text-muted">
+        Rate all last season: 0.65
+          </div>
+        </div>
+      </div>
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+  </div>
+  <h2 class="stat-group"> Pitching</h2>
+  <div class="row">
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+      <div class="col-md-4">
+        <div class="card mb-4">
+          <div class="card-header">
+            Strikeouts
+          </div>
+          <div class="card-body">
+            <p class="card-text">368</p>
+          </div>
+          <div class="card-footer text-muted">
+        League rank: 6
+          </div>
+        </div>
+      </div>
+      
+    
+      
+      <div class="col-md-4">
+        <div class="card mb-4">
+          <div class="card-header">
+            Walks
+          </div>
+          <div class="card-body">
+            <p class="card-text">131</p>
+          </div>
+          <div class="card-footer text-muted">
+        League rank: 5
+          </div>
+        </div>
+      </div>
+      
+    
+      
+      <div class="col-md-4">
+        <div class="card mb-4">
+          <div class="card-header">
+            ERA
+          </div>
+          <div class="card-body">
+            <p class="card-text">3.16</p>
+          </div>
+          <div class="card-footer text-muted">
+        League rank: 1
+          </div>
+        </div>
+      </div>
+      
+    
+      
+    
+      
+    
+  </div>
+</div>
+
+<!-- <p class="dated">Notes: Last updated May 15, 2024, 4:02 PM PT. More <a href="https://github.com/stiles/dodgers/blob/main/README.md">about the data</a>.</p> -->
+
+
+</div>
+
+<script src="https://d3js.org/d3.v6.min.js"></script>
+<script src="/assets/js/dashboard.js"></script>
+
+</div></div>
+
+      
+    </div>
+
+
+    <div id="footer" class="page__footer">
+      <footer>
+        <!-- start custom footer snippets -->
+
+<!-- end custom footer snippets -->
+          <div class="page__footer-follow">
+    <ul class="list-inline">
+            
+      <li>
+        <a href="http://github.com/stiles/dodgers" class="btn-social btn-outline"><i class="fa-brands fa-fw fa-github"></i></a>
+      </li>
+      
+      <li>
+        <a href="http://twitter.com/stiles" class="btn-social btn-outline"><i class="fa-brands fa-fw fa-twitter"></i></a>
+      </li>
+      
+    </ul>
+  </div>
+
+<div class="page__footer-copyright">&copy; 2024 <a href="https://dodgersdata.bot">Dodgers Data Bot</a>. Built with <a href="https://jekyllrb.com" rel="nofollow">Jekyll</a>.</div>
+
+
+      </footer>
+    </div>
+
+    
+  <script src="/assets/js/main.min.js"></script>
+
+
+
+
+
+
+
+
+
+  </body>
+</html>
