@@ -44,7 +44,7 @@ def get_pacific_date():
         pacific_offset = timedelta(hours=-7)
     pacific_zone = timezone(pacific_offset)
     pacific_time = utc_time.astimezone(pacific_zone)
-    formatted_date = pacific_time.strftime("%B %-d, %Y")
+    formatted_date = pacific_time.strftime("%B %-d")
     return formatted_date
 
 # Store the update date
@@ -192,7 +192,7 @@ def batting_and_stolen_base_stats(batting_now, batting_past, games, batting_rank
 def generate_summary(standings_now, wins, losses, win_pct):
     last_game = standings_now.iloc[0]
     summary = (
-        f"<span class='highlight'>{update_time}</span> — The Dodgers have played <span class='highlight'>{games}</span> games this season, compiling a {record} record and "
+        f"<span class='highlight'>{update_date}</span> — The Dodgers have played <span class='highlight'>{games}</span> games this season, compiling a {record} record and "
         f"a winning percentage of <span class='highlight'>{win_pct}%</span>. The team's latest game was a "
         f"{last_game['r']}-{last_game['ra']} {last_game['home_away']} {last_game['result_clean']} "
         f"against the {last_game['opp_name']} in front of {'{:,}'.format(last_game['attendance'])} fans. "
@@ -223,7 +223,7 @@ summary_data = [
    
     {"stat_label": "Win percentage", "stat": "win_pct", "value": f"{win_pct}%", "category": "standings", "context_value": f"{win_pct_last}%", "context_value_label": "This point last season"},
     {"stat_label": "Games up/back", "stat": "games_up_back", "value": standings_division_rank_games_back, "category": "standings", "context_value": standings_division_rank, "context_value_label": 'Division rank'},
-    {"stat_label": "Ave. home attendance", "stat": "mean_attendance", "value": formatted_mean_attendance, "category": "standings", "context_value": home_games_count, "context_value_label": 'Home games this season'},
+    {"stat_label": "Avg. home attendance", "stat": "mean_attendance", "value": formatted_mean_attendance, "category": "standings", "context_value": home_games_count, "context_value_label": 'Home games this season'},
     
     {"stat_label": "Runs", "stat": "runs", "value": runs, "category": "standings", "context_value": runs_rank, "context_value_label": "League rank"},
     {"stat_label": "Runs against", "stat": "runs_against", "value": runs_against, "category": "standings", "context_value": runs_against_last, "context_value_label": "This point last season"},

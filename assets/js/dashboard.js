@@ -14,8 +14,8 @@ async function fetchData() {
 function renderChart(data) {
   const isMobile = window.innerWidth <= 767; // Example breakpoint for mobile devices
   const margin = isMobile 
-    ? { top: 20, right: 20, bottom: 60, left: 60 }  // Smaller margins for mobile
-    : { top: 40, right: 50, bottom: 50, left: 60 }; // Larger margins for desktop
+    ? { top: 20, right: 0, bottom: 60, left: 60 }  // Smaller margins for mobile
+    : { top: 40, right: 0, bottom: 50, left: 60 }; // Larger margins for desktop
   const container = d3.select('#d3-container');
   const containerWidth = container.node().getBoundingClientRect().width;
   const width = containerWidth - margin.left - margin.right;
@@ -120,15 +120,16 @@ function renderChart(data) {
   svg
     .append('line')
     .attr('x1', 0)
-    .attr('x2', width-18)
+    .attr('x2', isMobile ? width-7 : width-18)
     .attr('y1', yScale(0))
     .attr('y2', yScale(0))
     .attr('stroke', '#222')
     .attr('stroke-width', 1);
 
+  // Add the 'Leading' annotation
   svg
     .append('text')
-    .attr('x', xScale(150))
+    .attr('x', isMobile ? xScale(130) : xScale(150)) // Adjusted for mobile
     .attr('y', yScale(0) - 10)
     .text('Leading ↑')
     .attr('class', 'anno-dark')
@@ -140,12 +141,13 @@ function renderChart(data) {
     .clone(true)
     .style('stroke', 'none');
 
+  // Add the 'Past seasons' annotation
   svg
     .append('text')
-    .attr('x', xScale(110))
+    .attr('x', isMobile ? xScale(95) : xScale(110)) // Adjusted for mobile
     .attr('y', yScale(22))
     .attr('class', 'anno')
-    .text('Past seasons: 1958-2023')
+    .text('Past seasons: 1958-23')
     .attr('text-anchor', 'start');
 
   const lastData2024 = data.get('2024').slice(0)[0];

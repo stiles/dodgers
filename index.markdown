@@ -74,7 +74,7 @@ permalink: /
   </div>
 </div>
 
-<p class="dated">Note: Last updated at {{ site.data.season_summary_latest | where: "stat", "update_time" | map: "value" | first }}. Read more <a href="https://github.com/stiles/dodgers/blob/main/README.md">about the data</a>.</p>
+<!-- <p class="dated">Notes: Last updated {{ site.data.season_summary_latest | where: "stat", "update_time" | map: "value" | first }}. More <a href="https://github.com/stiles/dodgers/blob/main/README.md">about the data</a>.</p> -->
 
 
 </div>
