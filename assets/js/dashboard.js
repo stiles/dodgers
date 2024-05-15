@@ -210,7 +210,7 @@ function renderRunDiffChart(data) {
   const container = d3.select('#results-chart');
   const containerWidth = container.node().getBoundingClientRect().width;
   const width = containerWidth - margin.left - margin.right;
-  const height = 200 - margin.top - margin.bottom;
+  const height = 150 - margin.top - margin.bottom;
 
   const svg = container.append('svg')
     .attr('width', containerWidth)
