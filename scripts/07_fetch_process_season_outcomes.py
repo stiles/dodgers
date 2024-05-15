@@ -6,6 +6,12 @@ LA Dodgers season outcomes
 > This notebook downloads the team's past season outcomes table from [Baseball Reference](https://www.baseball-reference.com/teams/LAD/) and outputs the data to CSV, JSON and Parquet formats for later analysis and visualization.
 """
 
+import os
+import pandas as pd
+import boto3
+from io import BytesIO
+import logging
+
 # Set up basic configuration for logging
 logging.basicConfig(level=logging.INFO, format='%(asctime)s - %(levelname)s - %(message)s')
 
