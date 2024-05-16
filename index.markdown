@@ -66,6 +66,17 @@ permalink: /
       {% endif %}
     {% endfor %}
   </div>
+
+<div class="chart-container">
+  <h2 class="stat-group">Cumulative <span class="win">doubles</span></h2>
+  <div id="cumulative-doubles-chart" class="small-chart"></div>
+</div>
+
+<div class="chart-container">
+  <h2 class="stat-group">Cumulative <span class="win">home runs</span></h2>
+  <div id="cumulative-homers-chart" class="small-chart"></div>
+</div>
+
   <h2 class="stat-group"> Pitching</h2>
   <div class="row">
     {% for item in site.data.season_summary_latest %}

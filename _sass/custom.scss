@@ -623,3 +623,19 @@ h2.stat-group {
   padding:1px 4px; 
   color: white; 
 }
+
+.chart-container {
+  width: 100%;
+  max-width: 400px; /* Each chart will take up to 50% of a 900px container */
+  margin: 0 auto; /* Center charts on mobile */
+  display: inline-block;
+  vertical-align: top;
+  margin-bottom: 20px; /* Add some space between charts */
+}
+
+@media (min-width: 768px) {
+  .chart-container {
+    max-width: 46%; /* Adjust to fit two charts side by side */
+    margin: 0 1%; /* Adjust margins to space them evenly */
+  }
+}
