@@ -10,6 +10,16 @@
   <head>
     <meta charset="utf-8">
 
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-7JPCT3BCN6"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-7JPCT3BCN6');
+</script>
+
 <!-- begin _includes/seo.html --><title>LA Dodgers Data Bot - A dashboard explaining the Dodgers’ season so far. - Dodgers Data Bot</title>
 <meta name="description" content="An auto-updating baseball statistics dashboard that answers the question: How are the Dodgers doing?">
 
@@ -168,7 +178,8 @@
 
 
 <div class="container mt-4">
-<h2 class="stat-group">Season results</h2>
+<h2 class="stat-group"><span class="win">Wins</span>, <span class="loss">losses</span> and run differential</h2>
+
 <div id="chart-container" style="position: relative;">
     <div id="results-chart"></div>
 </div>
@@ -342,9 +353,13 @@
       
     
   </div>
-  <h2 class="stat-group">Division standings: 2024 vs. past</h2>
-<div id="d3-container" style="width: 100%; padding-bottom: 20px;">
-</div>
+  <h2 class="stat-group">Cumulative <span class="win">wins</span>: Then and now</h2>
+
+<div id="cumulative-wins-chart"></div>
+
+<h2 class="stat-group">Standings: Games <span class="win">up</span> or <span class="loss">back</span></h2>
+<div id="d3-container" style="width: 100%; padding-bottom: 20px;"></div>
+
 <h2 class="stat-group">Batting</h2>
   <div class="row">
     
@@ -561,7 +576,7 @@
   </div>
 </div>
 
-<!-- <p class="dated">Notes: Last updated May 16, 2024, 7:46 AM PT. More <a href="https://github.com/stiles/dodgers/blob/main/README.md">about the data</a>.</p> -->
+<!-- <p class="dated">Notes: Last updated May 16, 2024, 7:51 AM PT. More <a href="https://github.com/stiles/dodgers/blob/main/README.md">about the data</a>.</p> -->
 
 
 </div>
