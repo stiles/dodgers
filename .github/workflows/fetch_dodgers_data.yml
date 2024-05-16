@@ -60,6 +60,7 @@ jobs:
         python scripts/06_create_toplines_summary.py
         python scripts/07_fetch_process_season_outcomes.py
         python scripts/08_fetch_process_wins_losses_current.py
+        python scripts/09_fetch_process_historic_batting_gamelogs.py
 
     - name: Build Jekyll site
       run: bundle exec jekyll build
