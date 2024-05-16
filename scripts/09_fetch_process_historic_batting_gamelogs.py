@@ -41,7 +41,7 @@ s3_resource = session.resource("s3")
 # Base directory settings
 base_dir = os.getcwd()
 data_dir = os.path.join(base_dir, 'data', 'batting')
-os.makedirs(data_dir, exist_ok=True)
+# os.makedirs(data_dir, exist_ok=True)
 
 profile_name = os.environ.get("AWS_PERSONAL_PROFILE")
 today = datetime.date.today()
@@ -137,5 +137,5 @@ def save_to_s3(df, base_path, s3_bucket, formats):
 # Saving files locally and to S3
 file_path = os.path.join(data_dir, 'dodgers_historic_batting_gamelogs')
 formats = ["csv", "json", "parquet"]
-save_dataframe(optimized_df, file_path, formats)
+# save_dataframe(optimized_df, file_path, formats)
 save_to_s3(optimized_df, "dodgers/data/batting/archive/dodgers_historic_batting_gamelogs", "stilesdata.com", formats)
