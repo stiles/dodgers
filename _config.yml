@@ -39,6 +39,8 @@ exclude:
   - scripts
   - any_other_directory_or_file
 
+layout: single
+
 sass:
   sass_dir: _sass
   style: compressed  # or expanded for easier debugging
