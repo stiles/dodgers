@@ -480,7 +480,7 @@ a {
 h2.stat-group {
   margin: 10px 0px 20px 0px;
   font-family: 'Roboto slab', serif;
-  font-size: 1.3em; 
+  font-size: 1.2em; 
 }
 
 /* MEDIA QUERIES */
@@ -610,4 +610,16 @@ h2.stat-group {
     -webkit-transition: all .2s ease-in-out;
     transition: all .2s ease-in-out;
     pointer-events: none;
+}
+
+.win {
+  background:c.$dodger-blue;
+  padding:1px 4px;
+  color: white; 
+}
+
+.loss {
+  background:c.$dodger-red;
+  padding:1px 4px; 
+  color: white; 
 }

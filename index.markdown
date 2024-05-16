@@ -14,7 +14,8 @@ permalink: /
 
 
 <div class="container mt-4">
-<h2 class="stat-group">Season results</h2>
+<h2 class="stat-group"><span class="win">Wins</span>, <span class="loss">losses</span> and run differential</h2>
+
 <div id="chart-container" style="position: relative;">
     <div id="results-chart"></div>
 </div>
@@ -38,9 +39,13 @@ permalink: /
       {% endif %}
     {% endfor %}
   </div>
-  <h2 class="stat-group">Division standings: 2024 vs. past</h2>
-<div id="d3-container" style="width: 100%; padding-bottom: 20px;">
-</div>
+  <h2 class="stat-group">Cumulative <span class="win">wins</span>: Then and now</h2>
+
+<div id="cumulative-wins-chart"></div>
+
+<h2 class="stat-group">Standings: Games <span class="win">up</span> or <span class="loss">back</span></h2>
+<div id="d3-container" style="width: 100%; padding-bottom: 20px;"></div>
+
 <h2 class="stat-group">Batting</h2>
   <div class="row">
     {% for item in site.data.season_summary_latest %}

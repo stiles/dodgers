@@ -144,10 +144,10 @@ function renderChart(data) {
   // Add the 'Past seasons' annotation
   svg
     .append('text')
-    .attr('x', isMobile ? xScale(95) : xScale(110)) // Adjusted for mobile
+    .attr('x', isMobile ? xScale(80) : xScale(110)) // Adjusted for mobile
     .attr('y', yScale(22))
     .attr('class', 'anno')
-    .text('Past seasons: 1958-23')
+    .text('Past seasons: 1958-2023')
     .attr('text-anchor', 'start');
 
   const lastData2024 = data.get('2024').slice(0)[0];
@@ -292,3 +292,193 @@ function renderRunDiffChart(data) {
 
 fetchGameData();
 
+document.addEventListener('DOMContentLoaded', function() {
+  async function fetchCumulativeWinsData() {
+    try {
+      const response = await d3.json(
+        'https://stilesdata.com/dodgers/data/standings/dodgers_standings_1958_present.json'
+      );
+      // Calculate cumulative wins for each game
+      const dataWithCumulativeWins = calculateCumulativeWins(response);
+      // Group data by year
+      const groupedByYear = d3.group(dataWithCumulativeWins, (d) => d.year);
+      renderCumulativeWinsChart(groupedByYear);
+    } catch (error) {
+      console.error('Failed to fetch data:', error);
+    }
+  }
+
+  function calculateCumulativeWins(data) {
+    const groupedByYear = d3.group(data, (d) => d.year);
+    const dataWithCumulativeWins = [];
+
+    groupedByYear.forEach((games, year) => {
+      let cumulativeWins = 0;
+      games.forEach((game, index) => {
+        if (game.result === 'W') cumulativeWins += 1;
+        dataWithCumulativeWins.push({ ...game, gm: index + 1, wins: cumulativeWins });
+      });
+    });
+
+    return dataWithCumulativeWins;
+  }
+
+  function renderCumulativeWinsChart(data) {
+    const isMobile = window.innerWidth <= 767; // Example breakpoint for mobile devices
+    const margin = isMobile 
+      ? { top: 20, right: 0, bottom: 60, left: 60 }  // Smaller margins for mobile
+      : { top: 40, right: 0, bottom: 50, left: 60 }; // Larger margins for desktop
+    const container = d3.select('#cumulative-wins-chart');
+    const containerWidth = container.node().getBoundingClientRect().width;
+    const width = containerWidth - margin.left - margin.right;
+    const height = isMobile 
+      ? Math.round(width * 1) - margin.top - margin.bottom  // Taller for mobile
+      : Math.round(width * 0.5) - margin.top - margin.bottom; // 2x1 ratio for desktop
+
+    const svg = container
+      .append('svg')
+      .attr('viewBox', `0 0 ${containerWidth} ${height + margin.top + margin.bottom}`)
+      .append('g')
+      .attr('transform', `translate(${margin.left}, ${margin.top})`);
+
+    const xScale = d3
+      .scaleLinear()
+      .domain([0, 166]) // Adjust this domain as per the actual number of games
+      .range([0, width]);
+
+    const yScale = d3
+      .scaleLinear()
+      .domain([
+        0,
+        d3.max(Array.from(data.values()).flat(), (d) => d.wins),
+      ])
+      .range([height, 0]);
+
+    const xAxis = d3.axisBottom(xScale).ticks(6).tickFormat(d3.format('d'));
+    const yAxis = d3.axisLeft(yScale).ticks(6);
+
+    svg
+      .append('g')
+      .attr('transform', `translate(0, ${height})`)
+      .call(xAxis);
+
+    svg.append('g').call(yAxis);
+
+    // X-axis Label
+    svg.append("text")
+      .attr("text-anchor", "middle")
+      .attr('class', 'anno-dark')
+      .attr("x", width / 2)
+      .attr("y", height + margin.bottom - 10)
+      .text("Game number in season");
+
+    // Y-axis Label
+    svg.append("text")
+      .attr("text-anchor", "middle")
+      .attr('class', 'anno-dark')
+      .attr("transform", "rotate(-90)")
+      .attr("y", -margin.left + 20)
+      .attr("x", -height / 2)
+      .text("Cumulative Wins");
+
+    const line = d3
+      .line()
+      .x((d) => xScale(d.gm))
+      .y((d) => yScale(d.wins))
+      .curve(d3.curveMonotoneX); // Smooth the line
+
+    // Draw all lines except the current year first
+    const allLinesExceptCurrentYear = Array.from(data.entries()).filter(
+      (d) => d[0] !== new Date().getFullYear().toString()
+    );
+    svg
+      .selectAll('.line')
+      .data(allLinesExceptCurrentYear, (d) => d[0])
+      .enter()
+      .append('path')
+      .attr('class', 'line')
+      .attr('d', (d) => line(d[1]))
+      .style('fill', 'none')
+      .style('stroke', '#ccc')
+      .style('stroke-width', 0.5);
+
+    const currentYear = new Date().getFullYear().toString();
+    const lineCurrentYear = Array.from(data.entries()).filter((d) => d[0] === currentYear);
+    svg
+      .selectAll('.line-current-year')
+      .data(lineCurrentYear, (d) => d[0])
+      .enter()
+      .append('path')
+      .attr('class', 'line')
+      .attr('d', (d) => line(d[1]))
+      .style('fill', 'none')
+      .style('stroke', '#005A9C')
+      .style('stroke-width', 2);
+
+    // Add a horizontal line at y = 0 (optional)
+    // svg
+    //   .append('line')
+    //   .attr('x1', 0)
+    //   .attr('x2', isMobile ? width - 7 : width - 18)
+    //   .attr('y1', yScale(0))
+    //   .attr('y2', yScale(0))
+    //   .attr('stroke', '#222')
+    //   .attr('stroke-width', 1);
+
+    // Add the 'Leading' annotation
+    // svg
+    //   .append('text')
+    //   .attr('x', isMobile ? xScale(130) : xScale(150)) // Adjusted for mobile
+    //   .attr('y', yScale(0) - 10)
+    //   .text('Leading ↑')
+    //   .attr('class', 'anno-dark')
+    //   .style('stroke', '#fff')
+    //   .style('stroke-width', '4px')
+    //   .style('stroke-linejoin', 'round')
+    //   .attr('text-anchor', 'start')
+    //   .style('paint-order', 'stroke')
+    //   .clone(true)
+    //   .style('stroke', 'none');
+
+    // Add the 'Past seasons' annotation
+    svg
+      .append('text')
+      .attr('x', isMobile ? xScale(80) : xScale(110)) // Adjusted for mobile
+      .attr('y', yScale(100))
+      .attr('class', 'anno')
+      .text(`Past seasons: 1958-${currentYear - 1}`)
+      .attr('text-anchor', 'start');
+
+    const lastDataCurrentYear = data.get(currentYear).slice(-1)[0];
+
+    svg
+      .append('text')
+      .attr('x', xScale(lastDataCurrentYear.gm + 1))
+      .attr('y', yScale(lastDataCurrentYear.wins) - 12)
+      .text(currentYear)
+      .attr('class', 'anno-dodgers')
+      .style('stroke', '#fff')
+      .style('stroke-width', '4px')
+      .style('stroke-linejoin', 'round')
+      .attr('text-anchor', 'start')
+      .style('paint-order', 'stroke')
+      .clone(true)
+      .style('stroke', 'none');
+
+    svg
+      .append('text')
+      .attr('x', xScale(lastDataCurrentYear.gm + 1))
+      .attr('y', yScale(lastDataCurrentYear.wins) + 2)
+      .text(`${lastDataCurrentYear.wins} wins`)
+      .attr('class', 'anno-dark')
+      .style('stroke', '#fff')
+      .style('stroke-width', '4px')
+      .style('stroke-linejoin', 'round')
+      .attr('text-anchor', 'start')
+      .style('paint-order', 'stroke')
+      .clone(true)
+      .style('stroke', 'none');
+  }
+
+  fetchCumulativeWinsData();
+});
