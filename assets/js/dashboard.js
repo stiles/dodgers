@@ -379,7 +379,7 @@ document.addEventListener('DOMContentLoaded', function() {
       .attr("transform", "rotate(-90)")
       .attr("y", -margin.left + 20)
       .attr("x", -height / 2)
-      .text("Cumulative Wins");
+      .text("Cumulative wins");
 
     const line = d3
       .line()
