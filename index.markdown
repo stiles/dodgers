@@ -98,6 +98,10 @@ permalink: /
     {% endfor %}
   </div>
 
+<h2 class="stat-group">Team <span class="win">ERA</span> over season: Then and now</h2>
+<div id="cumulative-era-chart"></div>
+
+
 <div class="chart-container">
   <h2 class="stat-group">Cumulative <span class="win">strikeouts</span></h2>
   <div id="cumulative-strikeouts-chart" class="small-chart"></div>

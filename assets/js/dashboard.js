@@ -736,8 +736,8 @@ document.addEventListener('DOMContentLoaded', function() {
   function renderChart(config, data, maxYValue) {
     const isMobile = window.innerWidth <= 767;
     const margin = isMobile 
-      ? { top: 20, right: 0, bottom: 60, left: 60 } 
-      : { top: 40, right: 0, bottom: 50, left: 60 };
+      ? { top: 20, right: 0, bottom: 60, left: 70 } 
+      : { top: 40, right: 0, bottom: 50, left: 70 };
     const container = d3.select(`#${config.elementId}`);
     const containerWidth = container.node().getBoundingClientRect().width;
     const width = containerWidth - margin.left - margin.right;
@@ -870,3 +870,165 @@ document.addEventListener('DOMContentLoaded', function() {
 
   initializeCharts();
 });
+
+
+// Cumulative ERA line chart
+
+document.addEventListener('DOMContentLoaded', function() {
+  async function fetchCumulativeERAData() {
+    try {
+      const response = await d3.json(
+        'https://stilesdata.com/dodgers/data/pitching/dodgers_historic_pitching_gamelogs_1958-present.json'
+      );
+      // console.log('Fetched data:', response);
+      // Group data by year
+      const groupedByYear = d3.group(response, (d) => d.year.toString());
+      // console.log('Grouped data by year:', groupedByYear);
+      renderCumulativeERAChart(groupedByYear);
+    } catch (error) {
+      console.error('Failed to fetch data:', error);
+    }
+  }
+
+  function renderCumulativeERAChart(data) {
+    const isMobile = window.innerWidth <= 767; // Example breakpoint for mobile devices
+    const margin = isMobile 
+      ? { top: 20, right: 0, bottom: 60, left: 50 }  // Smaller margins for mobile
+      : { top: 40, right: 0, bottom: 50, left: 50 }; // Larger margins for desktop
+    const container = d3.select('#cumulative-era-chart');
+    const containerWidth = container.node().getBoundingClientRect().width;
+    const width = containerWidth - margin.left - margin.right;
+    const height = isMobile 
+      ? Math.round(width * 1) - margin.top - margin.bottom  // Taller for mobile
+      : Math.round(width * 0.5) - margin.top - margin.bottom; // 2x1 ratio for desktop
+
+    const svg = container
+      .append('svg')
+      .attr('viewBox', `0 0 ${containerWidth} ${height + margin.top + margin.bottom}`)
+      .append('g')
+      .attr('transform', `translate(${margin.left}, ${margin.top})`);
+
+    const xScale = d3
+      .scaleLinear()
+      .domain([0, 166]) // Adjust this domain as per the actual number of games
+      .range([0, width]);
+
+    const yScale = d3
+      .scaleLinear()
+      .domain([
+        0,
+        d3.max(Array.from(data.values()).flat(), (d) => d.era_cum),
+      ])
+      .range([height, 0]);
+
+    const xAxis = d3.axisBottom(xScale).ticks(6).tickFormat(d3.format('d'));
+    const yAxis = d3.axisLeft(yScale).ticks(6);
+
+    svg
+      .append('g')
+      .attr('transform', `translate(0, ${height})`)
+      .call(xAxis);
+
+    svg.append('g').call(yAxis);
+
+    // X-axis Label
+    svg.append("text")
+      .attr("text-anchor", "middle")
+      .attr('class', 'anno-dark')
+      .attr("x", width / 2)
+      .attr("y", height + margin.bottom - 10)
+      .text("Game number in season");
+
+    // Y-axis Label
+    svg.append("text")
+      .attr("text-anchor", "middle")
+      .attr('class', 'anno-dark')
+      .attr("transform", "rotate(-90)")
+      .attr("y", -margin.left + 20)
+      .attr("x", -height / 2)
+      .text("Cumulative ERA");
+
+    const line = d3
+      .line()
+      .x((d) => xScale(d.gtm))
+      .y((d) => yScale(d.era_cum))
+      .curve(d3.curveMonotoneX); // Smooth the line
+
+    // Draw all lines except the current year first
+    const allLinesExceptCurrentYear = Array.from(data.entries()).filter(
+      (d) => d[0] !== new Date().getFullYear().toString()
+    );
+    // console.log('All lines except current year:', allLinesExceptCurrentYear);
+
+    svg
+      .selectAll('.line')
+      .data(allLinesExceptCurrentYear, (d) => d[0])
+      .enter()
+      .append('path')
+      .attr('class', 'line')
+      .attr('d', (d) => line(d[1]))
+      .style('fill', 'none')
+      .style('stroke', '#ccc')
+      .style('stroke-width', 0.5);
+
+    const currentYear = new Date().getFullYear().toString();
+    // console.log('Current year:', currentYear);
+    const lineCurrentYear = data.get(currentYear);
+    // console.log('Current year data:', lineCurrentYear);
+
+    if (lineCurrentYear) {
+      svg
+        .selectAll('.line-current-year')
+        .data([lineCurrentYear])
+        .enter()
+        .append('path')
+        .attr('class', 'line')
+        .attr('d', line)
+        .style('fill', 'none')
+        .style('stroke', '#005A9C')
+        .style('stroke-width', 2);
+
+      const lastDataCurrentYear = lineCurrentYear.slice(-1)[0];
+      // console.log('Last data of current year:', lastDataCurrentYear);
+
+      svg
+        .append('text')
+        .attr('x', xScale(lastDataCurrentYear.gtm + 1))
+        .attr('y', yScale(lastDataCurrentYear.era_cum) - 12)
+        .text(currentYear)
+        .attr('class', 'anno-dodgers')
+        .style('stroke', '#fff')
+        .style('stroke-width', '4px')
+        .style('stroke-linejoin', 'round')
+        .attr('text-anchor', 'start')
+        .style('paint-order', 'stroke')
+        .clone(true)
+        .style('stroke', 'none');
+
+      svg
+        .append('text')
+        .attr('x', xScale(lastDataCurrentYear.gtm + 1))
+        .attr('y', yScale(lastDataCurrentYear.era_cum) + 2)
+        .text(`${lastDataCurrentYear.era_cum} ERA`)
+        .attr('class', 'anno-dark')
+        .style('stroke', '#fff')
+        .style('stroke-width', '4px')
+        .style('stroke-linejoin', 'round')
+        .attr('text-anchor', 'start')
+        .style('paint-order', 'stroke')
+        .clone(true)
+        .style('stroke', 'none');
+    }
+
+    svg
+      .append('text')
+      .attr('x', isMobile ? xScale(80) : xScale(110)) // Adjusted for mobile
+      .attr('y', yScale(100))
+      .attr('class', 'anno')
+      .text(`Past seasons: 1958-${currentYear - 1}`)
+      .attr('text-anchor', 'start');
+  }
+
+  fetchCumulativeERAData();
+});
+
