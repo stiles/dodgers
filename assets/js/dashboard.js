@@ -1023,7 +1023,7 @@ document.addEventListener('DOMContentLoaded', function() {
     svg
       .append('text')
       .attr('x', isMobile ? xScale(80) : xScale(110)) // Adjusted for mobile
-      .attr('y', yScale(100))
+      .attr('y', yScale(5))
       .attr('class', 'anno')
       .text(`Past seasons: 1958-${currentYear - 1}`)
       .attr('text-anchor', 'start');
