@@ -30,7 +30,7 @@ jobs:
     - name: Install dependencies
       run: |
         python -m pip install --upgrade pip
-        pip install pandas pyarrow fastparquet lxml requests beautifulsoup4 boto3 altair_saver altair-stiles vl-convert-python
+        pip install pandas geopandas pyarrow fastparquet lxml requests beautifulsoup4 boto3 altair_saver altair-stiles vl-convert-python
     
     - name: Create necessary directories
       run: mkdir -p data/pitching
@@ -61,6 +61,7 @@ jobs:
         python scripts/07_fetch_process_season_outcomes.py
         python scripts/08_fetch_process_wins_losses_current.py
         python scripts/09_fetch_process_historic_batting_gamelogs.py
+        python scripts/10_fetch_process_attendance.py
 
     - name: Build Jekyll site
       run: bundle exec jekyll build
