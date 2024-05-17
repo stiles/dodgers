@@ -98,6 +98,17 @@ permalink: /
     {% endfor %}
   </div>
 
+<div class="chart-container">
+  <h2 class="stat-group">Cumulative <span class="win">strikeouts</span></h2>
+  <div id="cumulative-strikeouts-chart" class="small-chart"></div>
+</div>
+
+<div class="chart-container">
+  <h2 class="stat-group">Cumulative <span class="win">hits</span> allowed</h2>
+  <div id="cumulative-hits-chart" class="small-chart"></div>
+</div>
+
+
 <h2 class="stat-group">Fan support</h2>
 <p id="max-attendance-info"></p>
 <div class="table-container">

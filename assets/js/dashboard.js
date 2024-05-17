@@ -1,3 +1,6 @@
+
+// Games back line chart
+
 async function fetchData() {
   try {
     const response = await d3.json(
@@ -194,6 +197,11 @@ function renderChart(data) {
 
 fetchData();
 
+
+
+
+// Wins, losses, run differential column chart
+
 async function fetchGameData() {
   try {
     const response = await d3.json('https://stilesdata.com/dodgers/data/standings/dodgers_wins_losses_current.json');
@@ -253,21 +261,6 @@ function renderRunDiffChart(data) {
       .attr("x", -height / 2)
       .text("Run differential");
 
-  // Ensure tooltip is only added once
-  // let tooltip = d3.select('body').select('.tooltip');
-  // if (tooltip.empty()) {
-  //     tooltip = d3.select('body').append('div')
-  //         .attr('class', 'tooltip')
-  //         .style('position', 'absolute')
-  //         .style('visibility', 'hidden')
-  //         .style('background', '#fff')
-  //         .style('border', '1px solid #ddd')
-  //         .style('padding', '5px')
-  //         .style('border-radius', '5px')
-  //         .style('text-align', 'left')
-  //         .style('font-size', '12px');
-  // }
-
   svg.selectAll(".bar")
     .data(data)
     .enter().append("rect")
@@ -277,19 +270,12 @@ function renderRunDiffChart(data) {
     .attr("width", xScale.bandwidth())
     .attr("height", d => Math.abs(yScale(d.run_diff) - yScale(0)))
     .attr("fill", d => d.run_diff >= 0 ? "#005a9c" : "#ef3e42");
-  //   .on("mouseover", function(event, d) {
-  //     tooltip
-  //         .html(`Game: ${d.gm}<br>Date: ${d.game_date}<br>Result: ${d.result}<br>Runs: ${d.r}<br>Runs Allowed: ${d.ra}`)
-  //         .style("visibility", "visible")
-  //         .style("left", `${event.pageX + 10}px`)
-  //         .style("top", `${event.pageY + 10}px`);
-  // })
-  // .on("mouseout", function() {
-  //     tooltip.style("visibility", "hidden");
-  // });
   
 }
 
+
+
+// Cumulative wins
 fetchGameData();
 
 document.addEventListener('DOMContentLoaded', function() {
@@ -414,33 +400,6 @@ document.addEventListener('DOMContentLoaded', function() {
       .style('fill', 'none')
       .style('stroke', '#005A9C')
       .style('stroke-width', 2);
-
-    // Add a horizontal line at y = 0 (optional)
-    // svg
-    //   .append('line')
-    //   .attr('x1', 0)
-    //   .attr('x2', isMobile ? width - 7 : width - 18)
-    //   .attr('y1', yScale(0))
-    //   .attr('y2', yScale(0))
-    //   .attr('stroke', '#222')
-    //   .attr('stroke-width', 1);
-
-    // Add the 'Leading' annotation
-    // svg
-    //   .append('text')
-    //   .attr('x', isMobile ? xScale(130) : xScale(150)) // Adjusted for mobile
-    //   .attr('y', yScale(0) - 10)
-    //   .text('Leading ↑')
-    //   .attr('class', 'anno-dark')
-    //   .style('stroke', '#fff')
-    //   .style('stroke-width', '4px')
-    //   .style('stroke-linejoin', 'round')
-    //   .attr('text-anchor', 'start')
-    //   .style('paint-order', 'stroke')
-    //   .clone(true)
-    //   .style('stroke', 'none');
-
-    // Add the 'Past ' annotation
     svg
       .append('text')
       .attr('x', isMobile ? xScale(80) : xScale(110)) // Adjusted for mobile
@@ -482,6 +441,9 @@ document.addEventListener('DOMContentLoaded', function() {
 
   fetchCumulativeWinsData();
 });
+
+
+// Batting line charts: Doubles and homers
  
     document.addEventListener('DOMContentLoaded', function() {
       const chartConfigurations = [
@@ -656,6 +618,7 @@ document.addEventListener('DOMContentLoaded', function() {
     });
 
 
+// Attendance tables
 
     document.addEventListener('DOMContentLoaded', function() {
       async function fetchTableData() {
@@ -740,3 +703,170 @@ document.addEventListener('DOMContentLoaded', function() {
     
     
     
+// Pitching charts
+
+document.addEventListener('DOMContentLoaded', function() {
+  const chartConfigurations = [
+    {
+      elementId: 'cumulative-strikeouts-chart',
+      dataField: 'so_cum',
+      yAxisLabel: 'Cumulative strikeouts'
+    },
+    {
+      elementId: 'cumulative-hits-chart',
+      dataField: 'h_cum',
+      yAxisLabel: 'Cumulative hits'
+    }
+  ];
+
+  async function fetchData() {
+    try {
+      const response = await d3.json(
+        'https://stilesdata.com/dodgers/data/pitching/dodgers_historic_pitching_gamelogs_1958-present.json'
+      );
+      const groupedData = d3.group(response, (d) => d.year.toString());
+      const maxVal = d3.max(response, d => Math.max(d['so_cum'], d['h_cum']));
+      return { groupedData, maxVal };
+    } catch (error) {
+      console.error('Failed to fetch data:', error);
+      return null;
+    }
+  }
+
+  function renderChart(config, data, maxYValue) {
+    const isMobile = window.innerWidth <= 767;
+    const margin = isMobile 
+      ? { top: 20, right: 0, bottom: 60, left: 60 } 
+      : { top: 40, right: 0, bottom: 50, left: 60 };
+    const container = d3.select(`#${config.elementId}`);
+    const containerWidth = container.node().getBoundingClientRect().width;
+    const width = containerWidth - margin.left - margin.right;
+    const height = isMobile 
+      ? Math.round(width * 1) - margin.top - margin.bottom
+      : Math.round(width * 1.5) - margin.top - margin.bottom;
+
+    const svg = container
+      .append('svg')
+      .attr('viewBox', `0 0 ${containerWidth} ${height + margin.top + margin.bottom}`)
+      .append('g')
+      .attr('transform', `translate(${margin.left}, ${margin.top})`);
+
+    const xScale = d3
+      .scaleLinear()
+      .domain([0, 166])
+      .range([0, width]);
+
+    const yScale = d3
+      .scaleLinear()
+      .domain([0, maxYValue])
+      .range([height, 0]);
+
+    const xAxis = d3.axisBottom(xScale).ticks(6).tickFormat(d3.format('d'));
+    const yAxis = d3.axisLeft(yScale).ticks(6);
+
+    svg
+      .append('g')
+      .attr('transform', `translate(0, ${height})`)
+      .call(xAxis);
+
+    svg.append('g').call(yAxis);
+
+    svg.append("text")
+      .attr("text-anchor", "middle")
+      .attr('class', 'anno-dark')
+      .attr("x", width / 2)
+      .attr("y", height + margin.bottom - 10)
+      .text("Game number in season");
+
+    svg.append("text")
+      .attr("text-anchor", "middle")
+      .attr('class', 'anno-dark')
+      .attr("transform", "rotate(-90)")
+      .attr("y", -margin.left + 20)
+      .attr("x", -height / 2)
+      .text(config.yAxisLabel);
+
+    const line = d3
+      .line()
+      .x((d) => xScale(d.gtm))
+      .y((d) => yScale(d[config.dataField]))
+      .curve(d3.curveMonotoneX);
+
+    const allLinesExceptCurrentYear = Array.from(data.entries()).filter(
+      (d) => d[0] !== new Date().getFullYear().toString()
+    );
+    svg
+      .selectAll('.line')
+      .data(allLinesExceptCurrentYear, (d) => d[0])
+      .enter()
+      .append('path')
+      .attr('class', 'line')
+      .attr('d', (d) => line(d[1]))
+      .style('fill', 'none')
+      .style('stroke', '#ccc')
+      .style('stroke-width', 0.5);
+
+    const currentYear = new Date().getFullYear().toString();
+    const lineCurrentYear = Array.from(data.entries()).filter((d) => d[0] === currentYear);
+    if (lineCurrentYear.length > 0) {
+      svg
+        .selectAll('.line-current-year')
+        .data(lineCurrentYear, (d) => d[0])
+        .enter()
+        .append('path')
+        .attr('class', 'line')
+        .attr('d', (d) => line(d[1]))
+        .style('fill', 'none')
+        .style('stroke', '#005A9C')
+        .style('stroke-width', 2);
+    }
+
+    svg
+      .append('text')
+      .attr('x', isMobile ? xScale(100) : xScale(100))
+      .attr('y', yScale(1300))
+      .attr('class', 'anno')
+      .text(`Past: 1958-${currentYear - 1}`)
+      .attr('text-anchor', 'start');
+
+    const lastDataCurrentYear = data.get(currentYear)?.slice(-1)[0];
+    if (lastDataCurrentYear) {
+      svg
+        .append('text')
+        .attr('x', xScale(lastDataCurrentYear.gtm + 1))
+        .attr('y', yScale(lastDataCurrentYear[config.dataField]) - 12)
+        .text(currentYear)
+        .attr('class', 'anno-dodgers')
+        .style('stroke', '#fff')
+        .style('stroke-width', '4px')
+        .style('stroke-linejoin', 'round')
+        .attr('text-anchor', 'start')
+        .style('paint-order', 'stroke')
+        .clone(true)
+        .style('stroke', 'none');
+
+      svg
+        .append('text')
+        .attr('x', xScale(lastDataCurrentYear.gtm + 1))
+        .attr('y', yScale(lastDataCurrentYear[config.dataField]) + 2)
+        .text(`${lastDataCurrentYear[config.dataField]} ${config.yAxisLabel.split(' ')[1].toLowerCase()}`)
+        .attr('class', 'anno-dark')
+        .style('stroke', '#fff')
+        .style('stroke-width', '4px')
+        .style('stroke-linejoin', 'round')
+        .attr('text-anchor', 'start')
+        .style('paint-order', 'stroke')
+        .clone(true)
+        .style('stroke', 'none');
+    }
+  }
+
+  async function initializeCharts() {
+    const { groupedData, maxVal } = await fetchData();
+    if (groupedData) {
+      chartConfigurations.forEach(config => renderChart(config, groupedData, maxVal));
+    }
+  }
+
+  initializeCharts();
+});
