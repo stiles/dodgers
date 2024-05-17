@@ -946,7 +946,7 @@ document.addEventListener('DOMContentLoaded', function() {
       .attr("transform", "rotate(-90)")
       .attr("y", -margin.left + 20)
       .attr("x", -height / 2)
-      .text("Cumulative ERA");
+      .text("ERA");
 
     const line = d3
       .line()
