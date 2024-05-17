@@ -639,3 +639,119 @@ h2.stat-group {
     margin: 0 1%; /* Adjust margins to space them evenly */
   }
 }
+
+#map {
+  width: 100%;
+  height: 600px;
+}
+
+.state {
+  fill: #eee;
+  stroke: #fff;
+}
+
+.state-borders {
+  fill: none;
+  stroke: #fff;
+  stroke-width: 0.5px;
+  stroke-linejoin: round;
+  stroke-linecap: round;
+  pointer-events: none;
+}
+
+thead {
+  background-color: #fff;
+  border-bottom: 0.3px solid #BFC0BF; /* Using your Dodger silver color */
+}
+
+.table-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  margin-top: 0px; /* Remove any default margin */
+  gap: 1em; /* Add space between the tables */
+}
+
+.table-wrapper {
+  flex: 1 1 calc(50% - 1em);
+  margin: 0.5em 0; /* Adjust margin to reduce space */
+}
+
+.data-table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.data-table th,
+.data-table td {
+  border: 0.2px solid #ddd;
+  padding: 5px 10px;
+  font-family: 'Roboto';
+  font-size: 12px;
+}
+
+.data-table th {
+  background-color: #fff;
+  border: 0;
+  padding: 5px 10px;
+  border-bottom: 1px solid #999;
+  text-align: left;
+  font-family: 'Roboto Slab';
+  font-size: 1em;
+}
+
+.data-table td div {
+  padding: 0.25em;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+
+@media (max-width: 767px) {
+  .table-wrapper {
+    flex: 1 1 100%;
+  }
+
+  .data-table .place-col {
+    display: none; /* Hide the "Place" column on mobile */
+  }
+}
+
+.league-name {
+  font-family: 'Roboto Slab';
+  font-size: 1em;
+  color: #666;
+  margin-bottom: 20px; 
+}
+
+#max-attendance-info {
+  font-size: 1em;
+  margin-bottom: 0px;
+}
+
+.attendance-bar {
+  position: relative;
+  width: 100%;
+  height: 100%;
+}
+
+.attendance-bar-bg {
+  background: rgba(0, 90, 156, 0.4); /* Transparent Dodger Blue */
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+.attendance-bar-text {
+  position: relative;
+  padding-left: 5px;
+  color: black;
+}
+
+.attendance-bar-dodgers {
+  background: #005A9C; /* Dodger Blue */
+  color: white;
+  font-weight: bold;
+}
+
+

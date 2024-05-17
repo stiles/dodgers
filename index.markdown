@@ -97,9 +97,25 @@ permalink: /
       {% endif %}
     {% endfor %}
   </div>
+
+<h2 class="stat-group">Fan support</h2>
+<p id="max-attendance-info"></p>
+<div class="table-container">
+  <div class="table-wrapper">
+    <h2 class="league-name">National League</h2>
+    <table id="nl-table" class="data-table"></table>
+  </div>
+    <div class="table-wrapper">
+    <h2 class="league-name">American League</h2>
+    <table id="al-table" class="data-table"></table>
+  </div>
 </div>
 
-<!-- <p class="dated">Notes: Last updated {{ site.data.season_summary_latest | where: "stat", "update_time" | map: "value" | first }}. More <a href="https://github.com/stiles/dodgers/blob/main/README.md">about the data</a>.</p> -->
+</div>
+
+
+
+<p class="dated">Notes: Last updated {{ site.data.season_summary_latest | where: "stat", "update_time" | map: "value" | first }}. More <a href="https://github.com/stiles/dodgers/blob/main/README.md">about the data</a>.</p>
 
 
 </div>
