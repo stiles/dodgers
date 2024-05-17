@@ -151,7 +151,7 @@ function renderChart(data) {
     .attr('text-anchor', 'start');
 
   const lastData2024 = data.get('2024').slice(0)[0];
-  console.log(lastData2024);
+  // console.log(lastData2024);
 
   svg
     .append('text')
@@ -654,3 +654,89 @@ document.addEventListener('DOMContentLoaded', function() {
     
       initializeCharts();
     });
+
+
+
+    document.addEventListener('DOMContentLoaded', function() {
+      async function fetchTableData() {
+        try {
+          const response = await d3.json('https://stilesdata.com/dodgers/data/standings/mlb_team_attendance.json');
+          renderTables(response);
+          renderMaxAttendanceInfo(response);
+        } catch (error) {
+          console.error('Failed to fetch data:', error);
+        }
+      }
+    
+      function renderTables(data) {
+        const alTable = d3.select('#al-table');
+        const nlTable = d3.select('#nl-table');
+    
+        // Determine columns based on screen size
+        const isMobile = window.innerWidth <= 767;
+        const columns = isMobile ? ['Team', 'Fans/game'] : ['Team', 'Stadium', 'Fans/game'];
+    
+        // Clear any existing headers
+        alTable.select('thead').remove();
+        nlTable.select('thead').remove();
+    
+        // Append headers
+        alTable.append('thead').append('tr')
+          .selectAll('th')
+          .data(columns)
+          .enter().append('th')
+          .text(d => d);
+    
+        nlTable.append('thead').append('tr')
+          .selectAll('th')
+          .data(columns)
+          .enter().append('th')
+          .text(d => d);
+    
+        // Filter and append rows for AL and NL teams
+        const alData = data.filter(d => d.league === 'AL');
+        const nlData = data.filter(d => d.league === 'NL');
+    
+        appendTableRows(alTable, alData, isMobile);
+        appendTableRows(nlTable, nlData, isMobile);
+      }
+    
+      function appendTableRows(table, data, isMobile) {
+        const maxAttendance = d3.max(data, d => d.attend_game);
+    
+        const rows = table.append('tbody').selectAll('tr')
+          .data(data)
+          .enter().append('tr');
+    
+        rows.append('td').html(d => d.team === 'Los Angeles Dodgers' ? `<strong>${d.team}</strong>` : d.team);
+        if (!isMobile) {
+          rows.append('td').html(d => d.team === 'Los Angeles Dodgers' ? `<strong>${d.name}</strong>` : d.name);
+        }
+        rows.append('td').append('div')
+          .style('position', 'relative')
+          .style('width', '100%')
+          .each(function(d) {
+            const barWidth = (d.attend_game / maxAttendance) * 100;
+            const isDodgers = d.team === 'Los Angeles Dodgers';
+            d3.select(this).append('div')
+              .attr('class', `attendance-bar-bg ${isDodgers ? 'attendance-bar-dodgers' : ''}`)
+              .style('width', `${barWidth}%`);
+            d3.select(this).append('div')
+              .attr('class', `attendance-bar-text ${isDodgers ? 'attendance-bar-dodgers' : ''}`)
+              .text(d.attend_game.toLocaleString());
+          });
+      }
+    
+      function renderMaxAttendanceInfo(data) {
+        const maxAttendanceTeam = data.reduce((max, team) => (team.attend_game > max.attend_game ? team : max), data[0]);
+        const maxAttendanceText = `The average attendance to see the ${maxAttendanceTeam.team} at ${maxAttendanceTeam.name} so far this season is ${maxAttendanceTeam.attend_game.toLocaleString()}, more than another other franchise in Major League Baseball.`;
+        
+        // Insert the text into a paragraph element
+        d3.select('#max-attendance-info').text(maxAttendanceText);
+      }
+    
+      fetchTableData();
+    });
+    
+    
+    

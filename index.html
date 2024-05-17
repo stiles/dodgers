@@ -20,6 +20,8 @@
   gtag('config', 'G-7JPCT3BCN6');
 </script>
 
+<script src="https://d3js.org/d3.v6.min.js"></script>
+
 <!-- begin _includes/seo.html --><title>LA Dodgers Data Bot - A dashboard explaining the Dodgers’ season so far. - Dodgers Data Bot</title>
 <meta name="description" content="An auto-updating baseball statistics dashboard that answers the question: How are the Dodgers doing?">
 
@@ -585,9 +587,25 @@
       
     
   </div>
+
+<h2 class="stat-group">Fan support</h2>
+<p id="max-attendance-info"></p>
+<div class="table-container">
+  <div class="table-wrapper">
+    <h2 class="league-name">National League</h2>
+    <table id="nl-table" class="data-table"></table>
+  </div>
+    <div class="table-wrapper">
+    <h2 class="league-name">American League</h2>
+    <table id="al-table" class="data-table"></table>
+  </div>
 </div>
 
-<!-- <p class="dated">Notes: Last updated May 16, 2024, 3:03 PM PT. More <a href="https://github.com/stiles/dodgers/blob/main/README.md">about the data</a>.</p> -->
+</div>
+
+
+
+<p class="dated">Notes: Last updated May 16, 2024, 6:05 PM PT. More <a href="https://github.com/stiles/dodgers/blob/main/README.md">about the data</a>.</p>
 
 
 </div>
@@ -620,7 +638,7 @@
     </ul>
   </div>
 
-<div class="page__footer-copyright">&copy; 2024 <a href="https://dodgersdata.bot">Dodgers Data Bot</a>. Built with <a href="https://jekyllrb.com" rel="nofollow">Jekyll</a>.</div>
+<div class="page__footer-copyright">&copy; 2024 <a href="https://mattstiles.me">Matt Stiles</a>. Built with <a href="https://jekyllrb.com" rel="nofollow">Jekyll</a>.</div>
 
 
       </footer>

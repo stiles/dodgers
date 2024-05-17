@@ -38,6 +38,8 @@ tqdm = "*"
 altair-saver = "*"
 vl-convert-python = "*"
 scikit-learn = "*"
+pyogrio = "*"
+fiona = "*"
 
 [requires]
 python_version = "3.9"
