@@ -729,7 +729,7 @@ document.addEventListener('DOMContentLoaded', function() {
     
       function renderMaxAttendanceInfo(data) {
         const maxAttendanceTeam = data.reduce((max, team) => (team.attend_game > max.attend_game ? team : max), data[0]);
-        const maxAttendanceText = `The average attendance to see the ${maxAttendanceTeam.team} at ${maxAttendanceTeam.name} so far this season is ${maxAttendanceTeam.attend_game.toLocaleString()}, more than another other franchise in Major League Baseball.`;
+        const maxAttendanceText = `The average attendance to see the ${maxAttendanceTeam.team} at ${maxAttendanceTeam.name} so far this season is ${maxAttendanceTeam.attend_game.toLocaleString()}, more than any other franchise in Major League Baseball.`;
         
         // Insert the text into a paragraph element
         d3.select('#max-attendance-info').text(maxAttendanceText);

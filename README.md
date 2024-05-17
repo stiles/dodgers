@@ -1,21 +1,28 @@
 # LA Dodgers team tracker
 
-This repository — which is a work in progress — maintains an automated workflow to fetch, process and store the LA Dodgers' current standings along with historical game-by-game performance records dating back to 1958. It also contains batting statistics by player and team for the same period.
+This repository - a growing work in progress — feeds [Dodgers Data Bot](https://dodgersdata.bot), a statistical dashboard about the LA Dodgers' performance.
 
-The data is sourced from the heroes at [Baseball Reference](https://www.baseball-reference.com/teams/LAD/2024-schedule-scores.shtml) and consolidated into a unified dataset for analysis and visualization purposes only. 
+The code executes an automated workflow to fetch, process and store the team's current standings along with historical game-by-game records dating back to 1958. It also collects batting and pitching data, among other statistics, for the same period. These records are processed and used to bake out the site using the Jekyll static site generator, in concert with Github Pages, and D3.js for charts. 
+
+The data is sourced from the heroes at [Baseball Reference](https://www.baseball-reference.com/teams/LAD/2024-schedule-scores.shtml) and consolidated into unified datasets for analysis and visualization purposes only. The resulting site is a non-commercial hobby project.
 
 ## How it works
 
-The repository includes several Python scripts that perform the following daily operations for team standings and batting by season, including:
+The repository includes numerous Python scripts that perform the following daily operations for team standings, pitching and batting, by season, including:
 
 ### Scripts:
 
-- `scripts/01_fetch_process_standings.py`
-- `scripts/02_fetch_process_batting.py`
-- `scripts/03_viz_standings.py`
-- `scripts/04_viz_batting.py`
-- `scripts/05_fetch_process_pitching.py`
-- `scripts/06-create-toplines-summary.py`
+- **Latest and historical standings:** `scripts/01_fetch_process_standings.py`
+- **Team batting (figures and league ranks):** `scripts/02_fetch_process_batting.py`
+- **Visual sketches for standings:** `scripts/03_viz_standings.py`
+- **Visual sketches for batting:** `scripts/04_viz_batting.py`
+- **Team pitching (figures and league ranks):** `scripts/05_fetch_process_pitching.py`
+- **Dashboard summary statistics:** `scripts/06-create-toplines-summary.py`
+- **Team post-season history:** `scripts/07_fetch_process_season_outcomes.py`
+- **Run differential for current season:** `scripts/08_fetch_process_wins_losses_current.py`
+- **Past/present team batting performance:** `scripts/09_fetch_process_historic_batting_gamelogs.py`
+- **Team attendance (all teams):** `scripts/10_fetch_process_attendance.py`
+- **Past/present team pitching performance:** `11_fetch_process_historic_pitching_gamelogs.py`
 
 ### What they do:
 
@@ -48,7 +55,7 @@ To utilize this repository for your own tracking or analysis on the Dodgers or a
 
 ## Data storage and access
 
-The processed datasets are available in the `data` directory within this repository and are also uploaded to an AWS S3 bucket.
+The processed datasets — which aren't all documented below yet — are uploaded to an AWS S3 bucket. 
 
 ### Standings
 
@@ -196,9 +203,13 @@ The processed datasets are available in the `data` directory within this reposit
 
 ---
 
+## Notes
+
+This project, which started as a few scrapers, has grown into a detailed project and outgrown its original documentation. More to come soon. If you have questions in the meantime, [please let me know](mailto:mattstiles@gmail.com). 
+
 ## Contributions
 
-Contributions, suggestions and enhancements are welcome! Please open an issue or submit a pull request if you have suggestions for improvement.
+Contributions, suggestions and enhancements are welcome! Please open an issue or submit a pull request if you have suggestions for improvement. 
 
 ## License
 
