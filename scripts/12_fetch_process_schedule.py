@@ -108,16 +108,16 @@ def fetch_clean_current_schedule(url, year):
     df['home_away'] = df['home_away'].apply(lambda i: 'away' if i == '@' else 'home')
     # df['result'] = df['result'].apply(lambda i: 'win' if i == 'W' else 'loss')
     # df['result'] = df['result'].apply(lambda i: 'win' if i == 'W' else 'loss')
-    df.loc[df["result"] == "W", "result"] = 'win'
-    df.loc[df["result"] == "L", "result"] = 'loss'
+    df.loc[df["result"] == "W", "result"] = 'Win'
+    df.loc[df["result"] == "L", "result"] = 'Loss'
     df.loc[~df["result"].str.contains("win|loss"), "result"] = '--'
     df = df.drop(["unnamed: 2", "streak", "orig. scheduled", 'inn', 'tm', 'r', 'ra', 'rank', 'gb', 'win', 'opp', 'loss', 'save', 'time', 'd/n', 'w-l', 'attendance'], axis=1)
     return df
 
 
 src = fetch_clean_current_schedule(url, year)
-next_five = src.query('cli.isnull()').head().drop(['cli', 'season'], axis=1).copy()
-last_five = src.query('~cli.isnull()').tail().drop(['cli', 'season'], axis=1).copy()
+next_five = src.query('cli.isnull()').head(10).drop(['cli', 'season'], axis=1).copy()
+last_five = src.query('~cli.isnull()').tail(10).drop(['cli', 'season'], axis=1).copy()
 next_five['placement'] = 'next'
 last_five['placement'] = 'last'
 

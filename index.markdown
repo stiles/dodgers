@@ -14,12 +14,14 @@ permalink: /
 
 
 <div class="container mt-4">
-<h2 class="stat-group"><span class="win">Wins</span>, <span class="loss">losses</span> and run differential</h2>
-
+<h2 class="stat-group">Performance and standings</h2>
+<h3 class="visual-subhead"><span class="win">Wins</span>, <span class="loss">losses</span> and run differential</h3>
 <div id="chart-container" style="position: relative;">
     <div id="results-chart"></div>
 </div>
-<h2 class="stat-group">Performance and standings</h2>
+
+
+
   <div class="row">
     {% for item in site.data.season_summary_latest %}
       {% if item.category == 'standings' %}
@@ -39,13 +41,13 @@ permalink: /
       {% endif %}
     {% endfor %}
   </div>
-  <h2 class="stat-group">Cumulative <span class="win">wins</span>: Then and now</h2>
+  <h3 class="visual-subhead">Cumulative <span class="win">wins</span>: Then and now</h3>
 
 <!-- <button id="toggle-view">Toggle: Just World Series wins</button> -->
 <!-- <button id="toggle-view" class="button-custom" role="button">Toggle: Just World Series wins</button> -->
 <div id="cumulative-wins-chart"></div>
 
-<h2 class="stat-group">Standings: Games <span class="win">up</span> or <span class="loss">back</span></h2>
+<h3 class="visual-subhead">Standings: Games <span class="win">up</span> or <span class="loss">back</span></h3>
 <div id="d3-container" style="width: 100%; padding-bottom: 20px;"></div>
 
 <h2 class="stat-group">Batting</h2>
@@ -70,12 +72,12 @@ permalink: /
   </div>
 
 <div class="chart-container">
-  <h2 class="stat-group">Cumulative <span class="win">doubles</span></h2>
+  <h3 class="visual-subhead">Cumulative <span class="win">doubles</span></h3>
   <div id="cumulative-doubles-chart" class="small-chart"></div>
 </div>
 
 <div class="chart-container">
-  <h2 class="stat-group">Cumulative <span class="win">home runs</span></h2>
+  <h3 class="visual-subhead">Cumulative <span class="win">home runs</span></h3>
   <div id="cumulative-homers-chart" class="small-chart"></div>
 </div>
 
@@ -100,33 +102,67 @@ permalink: /
     {% endfor %}
   </div>
 
-<h2 class="stat-group">Team <span class="win">ERA</span> over season: Then and now</h2>
+<h3 class="visual-subhead">Team <span class="win">ERA</span> over season: Then and now</h3>
 <div id="cumulative-era-chart"></div>
 
 
 <div class="chart-container">
-  <h2 class="stat-group">Cumulative <span class="win">strikeouts</span></h2>
+  <h3 class="visual-subhead">Cumulative <span class="win">strikeouts</span></h3>
   <div id="cumulative-strikeouts-chart" class="small-chart"></div>
 </div>
 
 <div class="chart-container">
-  <h2 class="stat-group">Cumulative <span class="win">hits</span> allowed</h2>
+  <h3 class="visual-subhead">Cumulative <span class="win">hits</span> allowed</h3>
   <div id="cumulative-hits-chart" class="small-chart"></div>
 </div>
 
+<h2 class="stat-group">Schedule</h2>
+  <div class="tables-container">
+    <div class="table-wrapper">
+        <h3 class="visual-subhead">Last 10 games</h3>
+        <table id="last-games" class="data-table">
+            <thead>
+                <tr>
+                    <th>Date</th>
+                    <th>Opponent</th>
+                    <th>Location</th>
+                    <th>Result</th>
+                </tr>
+            </thead>
+            <tbody></tbody>
+        </table>
+    </div>
+    <div class="table-wrapper">
+        <h3 class="visual-subhead">Next 10 games</h3>
+        <table id="next-games" class="data-table">
+            <thead>
+                <tr>
+                    <th>Date</th>
+                    <th>Opponent</th>
+                    <th>Location</th>
+                    <th>Result</th>
+                </tr>
+            </thead>
+            <tbody></tbody>
+        </table>
+    </div>
+  </div>
+
+</div>
 
 <h2 class="stat-group">Fan support</h2>
 <p id="max-attendance-info"></p>
-<div class="table-container">
-  <div class="table-wrapper">
-    <h2 class="league-name">National League</h2>
-    <table id="nl-table" class="data-table"></table>
-  </div>
+<div class="tables-container">
     <div class="table-wrapper">
-    <h2 class="league-name">American League</h2>
-    <table id="al-table" class="data-table"></table>
-  </div>
+        <h3 class="visual-subhead">National League</h3>
+        <table id="nl-table" class="data-table"></table>
+    </div>
+    <div class="table-wrapper">
+        <h3 class="visual-subhead">American League</h3>
+        <table id="al-table" class="data-table"></table>
+    </div>
 </div>
+
 
 </div>
 
@@ -139,4 +175,3 @@ permalink: /
 
 <script src="https://d3js.org/d3.v6.min.js"></script>
 <script src="{{ '/assets/js/dashboard.js' | relative_url }}"></script>
-
