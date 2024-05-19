@@ -272,13 +272,15 @@ function renderRunDiffChart(data) {
     .attr("fill", d => d.run_diff >= 0 ? "#005a9c" : "#ef3e42");
   
 }
-
-
-
-// Cumulative wins
 fetchGameData();
 
+
+
 document.addEventListener('DOMContentLoaded', function() {
+  const worldSeriesYears = [2020, 1988, 1981, 1965, 1963, 1959];
+  let showWorldSeriesYears = false;
+  let groupedByYear;
+
   async function fetchCumulativeWinsData() {
     try {
       const response = await d3.json(
@@ -287,7 +289,7 @@ document.addEventListener('DOMContentLoaded', function() {
       // Calculate cumulative wins for each game
       const dataWithCumulativeWins = calculateCumulativeWins(response);
       // Group data by year
-      const groupedByYear = d3.group(dataWithCumulativeWins, (d) => d.year);
+      groupedByYear = d3.group(dataWithCumulativeWins, (d) => d.year);
       renderCumulativeWinsChart(groupedByYear);
     } catch (error) {
       console.error('Failed to fetch data:', error);
@@ -320,6 +322,8 @@ document.addEventListener('DOMContentLoaded', function() {
     const height = isMobile 
       ? Math.round(width * 1) - margin.top - margin.bottom  // Taller for mobile
       : Math.round(width * 0.5) - margin.top - margin.bottom; // 2x1 ratio for desktop
+
+    container.selectAll('*').remove(); // Clear previous chart
 
     const svg = container
       .append('svg')
@@ -377,7 +381,8 @@ document.addEventListener('DOMContentLoaded', function() {
     const allLinesExceptCurrentYear = Array.from(data.entries()).filter(
       (d) => d[0] !== new Date().getFullYear().toString()
     );
-    svg
+
+    let lines = svg
       .selectAll('.line')
       .data(allLinesExceptCurrentYear, (d) => d[0])
       .enter()
@@ -385,21 +390,22 @@ document.addEventListener('DOMContentLoaded', function() {
       .attr('class', 'line')
       .attr('d', (d) => line(d[1]))
       .style('fill', 'none')
-      .style('stroke', '#ccc')
-      .style('stroke-width', 0.5);
+      .style('stroke', d => worldSeriesYears.includes(parseInt(d[0])) ? '#ccc' : '#ccc')
+      .style('stroke-width', d => worldSeriesYears.includes(parseInt(d[0])) ? 0.5 : 0.5);
 
     const currentYear = new Date().getFullYear().toString();
     const lineCurrentYear = Array.from(data.entries()).filter((d) => d[0] === currentYear);
-    svg
+    const currentYearLine = svg
       .selectAll('.line-current-year')
       .data(lineCurrentYear, (d) => d[0])
       .enter()
       .append('path')
-      .attr('class', 'line')
+      .attr('class', 'line line-current-year')
       .attr('d', (d) => line(d[1]))
       .style('fill', 'none')
       .style('stroke', '#005A9C')
       .style('stroke-width', 2);
+
     svg
       .append('text')
       .attr('x', isMobile ? xScale(80) : xScale(110)) // Adjusted for mobile
@@ -437,10 +443,45 @@ document.addEventListener('DOMContentLoaded', function() {
       .style('paint-order', 'stroke')
       .clone(true)
       .style('stroke', 'none');
+
+    d3.select('#toggle-view').on('click', function() {
+      showWorldSeriesYears = !showWorldSeriesYears;
+      updateChart();
+    });
+
+    function updateChart() {
+      const filteredLines = showWorldSeriesYears
+        ? allLinesExceptCurrentYear.filter(d => worldSeriesYears.includes(parseInt(d[0])))
+        : allLinesExceptCurrentYear;
+
+      lines = svg.selectAll('.line:not(.line-current-year)')
+        .data(filteredLines, d => d[0])
+        .join(
+          enter => enter.append('path')
+            .attr('class', 'line')
+            .attr('d', d => line(d[1]))
+            .style('fill', 'none')
+            .style('stroke', d => worldSeriesYears.includes(parseInt(d[0])) ? '#ccc' : '#ccc')
+            .style('stroke-width', d => worldSeriesYears.includes(parseInt(d[0])) ? 0.5 : 0.5),
+          update => update
+            .transition()
+            .duration(1000)
+            .attr('d', d => line(d[1]))
+            .style('stroke', d => worldSeriesYears.includes(parseInt(d[0])) ? '#ccc' : '#ccc')
+            .style('stroke-width', d => worldSeriesYears.includes(parseInt(d[0])) ? 0.5 : 0.5),
+          exit => exit.remove()
+        );
+    }
   }
 
   fetchCumulativeWinsData();
 });
+
+
+
+
+
+
 
 
 // Batting line charts: Doubles and homers

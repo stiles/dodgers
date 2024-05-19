@@ -41,6 +41,8 @@ permalink: /
   </div>
   <h2 class="stat-group">Cumulative <span class="win">wins</span>: Then and now</h2>
 
+<!-- <button id="toggle-view">Toggle: Just World Series wins</button> -->
+<!-- <button id="toggle-view" class="button-custom" role="button">Toggle: Just World Series wins</button> -->
 <div id="cumulative-wins-chart"></div>
 
 <h2 class="stat-group">Standings: Games <span class="win">up</span> or <span class="loss">back</span></h2>

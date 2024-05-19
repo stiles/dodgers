@@ -101,7 +101,6 @@ for col in ['h', 'hr', 'er', 'so']:
 MERGE
 """
 
-
 # Combine current and archive data
 df = (
     pd.concat([current_df, archive_df])
@@ -110,11 +109,9 @@ df = (
     .drop_duplicates()
 )
 
-
 """
 OUTPUT
 """
-
 
 # Optimize DataFrame for output
 optimized_df = df[['gtm', 'year', 'game_date', 'era_cum','h_cum', 'hr_cum', 'er_cum', 'so_cum']].copy()
@@ -145,11 +142,4 @@ file_path = os.path.join(data_dir, 'dodgers_historic_pitching_gamelogs_1958-pres
 formats = ["csv", "json", "parquet"]
 # save_dataframe(optimized_df, file_path, formats)
 save_to_s3(optimized_df, "dodgers/data/pitching/dodgers_historic_pitching_gamelogs_1958-present", "stilesdata.com", formats)
-
-
-# Save a copy of notebook as a python script
-get_ipython().system('jupyter nbconvert --to script --no-prompt --output ../scripts/11_fetch_process_historic_pitching_gamelogs 13_fetch_process_historic_pitching_gamelogs.ipynb')
-
-
-
 
