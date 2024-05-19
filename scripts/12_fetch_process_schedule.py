@@ -108,9 +108,10 @@ def fetch_clean_current_schedule(url, year):
     df['home_away'] = df['home_away'].apply(lambda i: 'away' if i == '@' else 'home')
     # df['result'] = df['result'].apply(lambda i: 'win' if i == 'W' else 'loss')
     # df['result'] = df['result'].apply(lambda i: 'win' if i == 'W' else 'loss')
+    df["result"] = df["result"].str.split('-', expand=True)[0]
     df.loc[df["result"] == "W", "result"] = 'Win'
     df.loc[df["result"] == "L", "result"] = 'Loss'
-    df.loc[~df["result"].str.contains("win|loss"), "result"] = '--'
+    df.loc[~df["result"].str.contains("Win|Loss"), "result"] = '--'
     df = df.drop(["unnamed: 2", "streak", "orig. scheduled", 'inn', 'tm', 'r', 'ra', 'rank', 'gb', 'win', 'opp', 'loss', 'save', 'time', 'd/n', 'w-l', 'attendance'], axis=1)
     return df
 
