@@ -1,6 +1,6 @@
 # LA Dodgers team tracker
 
-This repository - a growing work in progress — feeds [Dodgers Data Bot](https://dodgersdata.bot), a statistical dashboard about the LA Dodgers' performance.
+This repository — a growing work in progress — feeds [Dodgers Data Bot](https://dodgersdata.bot), a statistical dashboard about the LA Dodgers' performance.
 
 The code executes an automated workflow to fetch, process and store the team's current standings along with historical game-by-game records dating back to 1958. It also collects batting and pitching data, among other statistics, for the same period. These records are processed and used to bake out the site using the Jekyll static site generator, in concert with Github Pages, and D3.js for charts. 
 

@@ -2,7 +2,7 @@
     {
         "stat_label":"Wins",
         "stat":"wins",
-        "value":29,
+        "value":30,
         "category":"standings",
         "context_value":29,
         "context_value_label":"This point last season"
@@ -12,23 +12,23 @@
         "stat":"losses",
         "value":17,
         "category":"standings",
-        "context_value":17,
+        "context_value":18,
         "context_value_label":"This point last season"
     },
     {
         "stat_label":"Record",
         "stat":"record",
-        "value":"29-17",
+        "value":"30-17",
         "category":"standings",
-        "context_value":"29-17",
+        "context_value":"29-18",
         "context_value_label":"This point last season"
     },
     {
         "stat_label":"Win percentage",
         "stat":"win_pct",
-        "value":"63%",
+        "value":"64%",
         "category":"standings",
-        "context_value":"63%",
+        "context_value":"62%",
         "context_value_label":"This point last season"
     },
     {
@@ -42,15 +42,15 @@
     {
         "stat_label":"Avg. home attendance",
         "stat":"mean_attendance",
-        "value":"46,456",
+        "value":"46,471",
         "category":"standings",
-        "context_value":24,
+        "context_value":25,
         "context_value_label":"Home games this season"
     },
     {
         "stat_label":"Runs",
         "stat":"runs",
-        "value":239,
+        "value":246,
         "category":"standings",
         "context_value":"1",
         "context_value_label":"League rank"
@@ -58,17 +58,17 @@
     {
         "stat_label":"Runs against",
         "stat":"runs_against",
-        "value":163,
+        "value":166,
         "category":"standings",
-        "context_value":196,
+        "context_value":202,
         "context_value_label":"This point last season"
     },
     {
         "stat_label":"Run differential",
         "stat":"run_differential",
-        "value":76,
+        "value":80,
         "category":"standings",
-        "context_value":54,
+        "context_value":53,
         "context_value_label":"This point last season"
     },
     {
@@ -82,7 +82,7 @@
     {
         "stat_label":"Home runs",
         "stat":"home_runs",
-        "value":59,
+        "value":62,
         "category":"batting",
         "context_value":"1",
         "context_value_label":"League rank"
@@ -90,7 +90,7 @@
     {
         "stat_label":"Home runs\/game",
         "stat":"home_runs_game",
-        "value":1.28,
+        "value":1.32,
         "category":"batting",
         "context_value":1.36,
         "context_value_label":"Last decade average"
@@ -114,7 +114,7 @@
     {
         "stat_label":"Stolen bases\/game",
         "stat":"stolen_bases_game",
-        "value":0.65,
+        "value":0.64,
         "category":"batting",
         "context_value":0.65,
         "context_value_label":"Rate all last season"
@@ -122,7 +122,7 @@
     {
         "stat_label":"Strikeouts",
         "stat":"strikeouts",
-        "value":"385",
+        "value":"389",
         "category":"pitching",
         "context_value":"6",
         "context_value_label":"League rank"
@@ -146,7 +146,7 @@
     {
         "stat_label":"Last updated",
         "stat":"update_time",
-        "value":"May 17, 2024, 9:12 AM PT",
+        "value":"May 19, 2024, 12:03 AM PT",
         "category":"summary",
         "context_value":"",
         "context_value_label":""
@@ -154,7 +154,7 @@
     {
         "stat_label":"Team summary",
         "stat":"summary",
-        "value":"<span class='highlight'>May 17<\/span> \u2014 The Dodgers have played <span class='highlight'>46<\/span> games this season, compiling a <span class='highlight'>29-17<\/span> record and a winning percentage of <span class='highlight'>63%<\/span>. The team's latest game was a 2-7 home <span class='highlight'>loss<\/span> against the Cincinnati Reds in front of <span class='highlight'>53,527<\/span> fans. They've won <span class='highlight'>6 of the last 10 games<\/span>.",
+        "value":"<span class='highlight'>May 19<\/span> \u2014 The Dodgers have played <span class='highlight'>47<\/span> games this season, compiling a <span class='highlight'>30-17<\/span> record and a winning percentage of <span class='highlight'>64%<\/span>. The team's latest game was a 7-3 home <span class='highlight'>win<\/span> against the Cincinnati Reds in front of <span class='highlight'>46,832<\/span> fans. They've won <span class='highlight'>6 of the last 10 games<\/span>.",
         "category":"summary",
         "context_value":"",
         "context_value_label":""
