@@ -16,11 +16,9 @@ permalink: /
 <div class="container mt-4">
 <h2 class="stat-group">Performance and standings</h2>
 <h3 class="visual-subhead"><span class="win">Wins</span>, <span class="loss">losses</span> and run differential</h3>
-<div id="chart-container" style="position: relative;">
+<div id="chart-container" class="chart-container" style="position: relative;">
     <div id="results-chart"></div>
 </div>
-
-
 
   <div class="row">
     {% for item in site.data.season_summary_latest %}
@@ -71,12 +69,12 @@ permalink: /
     {% endfor %}
   </div>
 
-<div class="chart-container">
+<div class="small-chart-container">
   <h3 class="visual-subhead">Cumulative <span class="win">doubles</span></h3>
   <div id="cumulative-doubles-chart" class="small-chart"></div>
 </div>
 
-<div class="chart-container">
+<div class="small-chart-container">
   <h3 class="visual-subhead">Cumulative <span class="win">home runs</span></h3>
   <div id="cumulative-homers-chart" class="small-chart"></div>
 </div>
@@ -106,12 +104,12 @@ permalink: /
 <div id="cumulative-era-chart"></div>
 
 
-<div class="chart-container">
+<div class="small-chart-container">
   <h3 class="visual-subhead">Cumulative <span class="win">strikeouts</span></h3>
   <div id="cumulative-strikeouts-chart" class="small-chart"></div>
 </div>
 
-<div class="chart-container">
+<div class="small-chart-container">
   <h3 class="visual-subhead">Cumulative <span class="win">hits</span> allowed</h3>
   <div id="cumulative-hits-chart" class="small-chart"></div>
 </div>

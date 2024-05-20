@@ -562,13 +562,22 @@ a {
   color: white;
 }
 
-.chart-container {
+#chart-container {
+  width: 100%;
+  max-width: 900px;
+  margin: 0 auto;
+  display: inline-block;
+  vertical-align: top;
+  margin-bottom: 20px;
+}
+
+.small-chart-container {
   width: 100%;
   max-width: 400px;
   margin: 0 auto;
   display: inline-block;
   vertical-align: top;
-  margin-bottom: 20px;
+  margin-bottom: 40px;
 }
 
 @media (min-width: 768px) {
