@@ -59,6 +59,9 @@ def read_parquet_s3(url, sort_by=None):
         df.sort_values(sort_by, ascending=False, inplace=True)
     return df
 
+def to_ordinal(n):
+    return str(n) + {1: "st", 2: "nd", 3: "rd"}.get(n % 10, "th")
+
 # URLs for data
 standings_url = "https://stilesdata.com/dodgers/data/standings/dodgers_standings_1958_present.parquet"
 batting_url = "https://stilesdata.com/dodgers/data/batting/dodgers_team_batting_1958_present.parquet"
@@ -112,7 +115,9 @@ standings_now = standings.query("game_date == game_date.max()").copy()
 game_number = standings_now['gm'].iloc[0]
 standings_last = standings_past.query(f"gm == {game_number}").head(1).reset_index(drop=True).copy()
 standings_last_season = standings_past.query(f"gm <= {game_number} and year=='2023'").reset_index(drop=True).copy()
+standings["rank_ordinal"] = standings["rank"].map(to_ordinal)
 standings_division_rank = standings['rank'].iloc[0]
+standings_division_rank_ordinal = standings['rank_ordinal'].iloc[0]
 standings_division_rank_games_back = standings['gb'].iloc[0]
 
 # Batting
@@ -191,14 +196,13 @@ def batting_and_stolen_base_stats(batting_now, batting_past, games, batting_rank
 
 def generate_summary(standings_now, wins, losses, win_pct):
     last_game = standings_now.iloc[0]
+
     summary = (
-        f"<span class='highlight'>{update_date}</span> — The Dodgers have played <span class='highlight'>{games}</span> games this season, compiling a <span class='highlight'>{record}</span> record and "
-        f"a winning percentage of <span class='highlight'>{win_pct}%</span>. The team's latest game was a "
-        f"{last_game['r']}-{last_game['ra']} {last_game['home_away']} <span class='highlight'>{last_game['result_clean']}</span> "
-        f"against the {last_game['opp_name']} in front of <span class='highlight'>{'{:,}'.format(last_game['attendance'])}</span> fans. "
-        f"They've won <span class='highlight'>{win_count_trend} of the last 10 games</span>."
+        f"<span class='highlight'>LOS ANGELES</span> <span class='updated'>({update_date})</span> — After <span class='highlight'>{games}</span> games this season, the Dodgers are in <span class='highlight'>{standings_division_rank_ordinal}</span> place in the National League West division. The team has compiled a <span class='highlight'>{record}</span> record, winning <span class='highlight'>{win_pct}%</span> of its games so far. The last game was a <span class='highlight'>{last_game['r']}-{last_game['ra']}</span> {last_game['home_away']} <span class='highlight'>{last_game['result_clean']}</span> against the {last_game['opp_name']} in front of <span class='highlight'>{last_game['attendance']:,}</span> fans. They've won <span class='highlight'>{win_count_trend} of the last 10</span>."
     )
     return summary
+
+
 
 def recent_trend(standings):
     last_10 = standings.iloc[:10]['result']  # Ensuring the last 10 games are considered
