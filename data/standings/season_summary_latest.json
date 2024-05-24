@@ -74,7 +74,7 @@
     {
         "stat_label":"Batting average",
         "stat":"batting_average",
-        "value":".256",
+        "value":".255",
         "category":"batting",
         "context_value":".253",
         "context_value_label":"Last decade average"
@@ -132,7 +132,7 @@
         "stat":"walks",
         "value":"146",
         "category":"pitching",
-        "context_value":"4",
+        "context_value":"3",
         "context_value_label":"League rank"
     },
     {
@@ -140,13 +140,13 @@
         "stat":"era",
         "value":"3.29",
         "category":"pitching",
-        "context_value":"2",
+        "context_value":"3",
         "context_value_label":"League rank"
     },
     {
         "stat_label":"Last updated",
         "stat":"update_time",
-        "value":"May 24, 2024, 12:03 AM PT",
+        "value":"May 24, 2024, 4:03 AM PT",
         "category":"summary",
         "context_value":"",
         "context_value_label":""
