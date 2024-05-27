@@ -39,10 +39,13 @@ permalink: /
       {% endif %}
     {% endfor %}
   </div>
-  <h3 class="visual-subhead">Cumulative <span class="win">wins</span>: Then and now</h3>
 
-<!-- <button id="toggle-view">Toggle: Just World Series wins</button> -->
-<!-- <button id="toggle-view" class="button-custom" role="button">Toggle: Just World Series wins</button> -->
+
+<h3 class="visual-subhead">Cumulative <span class="win">wins</span>: Compare then and now</h3>
+<p class="chart-chatter">Since the moving to LA, the team has won the World Series six times: 2020, 1988, 1981, 1965, 1963 and 1959. Compare those and other past seasons with the trajectory this year.</p>
+<select id="year-select">
+  <option>Select a previous season</option>
+</select>
 <div id="cumulative-wins-chart"></div>
 
 <h3 class="visual-subhead">Standings: Games <span class="win">up</span> or <span class="loss">back</span></h3>
