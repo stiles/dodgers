@@ -7,9 +7,22 @@ permalink: /
 <div class="container">
 
 <div class="page-topper">
-  <h1 class="headline">{{ site.headline }}</h1>
-  <p class="subhead">{{ site.data.season_summary_latest | where: "stat", "summary" | map: "value" | first }} </p>
-<div>
+<div class="trend-icon">
+    {% assign last_game_result_array = site.data.season_summary_latest | where: "stat", "last_game_result" %}
+    {% assign last_game_result = last_game_result_array[0].value %}
+    {% if last_game_result == 'win' %}
+        <i class="fa-solid fa-arrow-trend-up" style="color: #005a9c;"></i>
+    {% else %}
+        <i class="fa-solid fa-arrow-trend-down" style="color: #ef3e42;"></i>
+    {% endif %}
+</div>
+<h1 class="headline">{{ site.headline }}</h1>
+<p class="subhead">
+    {% assign summary_info = site.data.season_summary_latest | where: "stat", "summary" %}
+    {% assign summary = summary_info[0].value %}
+    {{ summary }}
+</p>
+</div>
 
 
 
@@ -171,14 +184,14 @@ permalink: /
           </table>
       </div>
       <div class="table-wrapper">
-          <h3 class="visual-subhead">Next 10 games</h3>
+          <h3 class="visual-subhead">Next 10</h3>
           <table id="next-games" class="data-table">
               <thead>
                   <tr>
                       <th>Date</th>
                       <th>Opponent</th>
                       <th>Location</th>
-                      <th>Result</th>
+                      <th>Time</th>
                   </tr>
               </thead>
               <tbody></tbody>
@@ -208,8 +221,6 @@ permalink: /
 
 <p class="dated">Notes: Last updated {{ site.data.season_summary_latest | where: "stat", "update_time" | map: "value" | first }}. More <a href="https://github.com/stiles/dodgers/blob/main/README.md">about the data</a>.</p>
 
-
-</div>
 
 <script src="https://d3js.org/d3.v6.min.js"></script>
 <script src="{{ '/assets/js/dashboard.js' | relative_url }}"></script>

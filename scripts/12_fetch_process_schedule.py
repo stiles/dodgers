@@ -113,7 +113,7 @@ def fetch_clean_current_schedule(url, year):
     df.loc[df["result"] == "W", "result"] = 'win'
     df.loc[df["result"] == "L", "result"] = 'loss'
     df.loc[~df["result"].str.contains("win|loss"), "result"] = '--'
-    df = df.drop(["unnamed: 2", "streak", "orig. scheduled", 'inn', 'tm', 'r', 'ra', 'rank', 'gb', 'win', 'opp', 'loss', 'save', 'time', 'd/n', 'w-l', 'attendance'], axis=1)
+    df = df.drop(["unnamed: 2", "streak", "orig. scheduled", 'inn', 'tm', 'ra', 'rank', 'gb', 'win', 'opp', 'loss', 'save', 'time', 'd/n', 'w-l', 'attendance'], axis=1)
     return df
 
 
@@ -124,8 +124,8 @@ next_five['placement'] = 'next'
 last_five['placement'] = 'last'
 
 
-schedule_df = pd.concat([last_five, next_five])[['date', 'opp_name', 'home_away', 'result', 'placement', 'game_no']]
-
+schedule_df = pd.concat([last_five, next_five])[['date', 'opp_name', 'home_away', 'result', 'placement', 'r']].rename(columns={'r': 'game_start'})
+schedule_df.loc[schedule_df.result != '--', 'game_start'] = '--'
 
 # Function to save DataFrame to S3
 def save_to_s3(df, base_path, s3_bucket, formats):

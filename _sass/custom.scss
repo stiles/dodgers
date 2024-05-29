@@ -241,7 +241,7 @@ p,
 /* TYPOGRAPHY */
 .headline {
   font-size: 100px;
-  margin: 40px 0px;
+  margin: 0px 0px 20px 0px;
   text-align: center;
 }
 .subhead,
@@ -341,7 +341,12 @@ p {
 }
 
 td .home-icon {
-  color: #ccc;
+  color: c.$dodger-blue;
+  vertical-align: middle;
+}
+
+td .road-icon {
+  color: c.$dodger-silver;
   vertical-align: middle;
 }
 
@@ -798,6 +803,7 @@ h3.visual-subhead {
     flex: 1 1 100%;
     max-width: 100%;
   }
+  
 }
 
 td.win {
@@ -954,4 +960,35 @@ hr.style-eight:after {
   text-align: left;
   font-family: 'Roboto Slab';
   font-size: .9em;
+}
+
+@keyframes jump-up {
+  0%, 100% {
+      transform: translateY(0);
+  }
+  50% {
+      transform: translateY(-20px);
+  }
+}
+
+@keyframes jump-down {
+  0%, 100% {
+      transform: translateY(0);
+  }
+  50% {
+      transform: translateY(20px);
+  }
+}
+
+.fa-arrow-trend-up {
+  animation: jump-up 1s ease-in-out 3; /* Jumps up three times */
+}
+
+.fa-arrow-trend-down {
+  animation: jump-down 1s ease-in-out 3; /* Jumps down three times */
+}
+
+.trend-icon {
+  text-align: center; /* Centers the icon in the div */
+  margin-bottom: 0px; /* Adds space between the icon and the headline */
 }

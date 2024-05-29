@@ -235,7 +235,7 @@ function renderRunDiffChart(data) {
     .range([height, 0])
     .domain([d3.min(data, d => d.run_diff), d3.max(data, d => d.run_diff)]);
 
-  const xAxis = d3.axisBottom(xScale).tickValues(xScale.domain().filter(d => d % 5 === 0));
+  const xAxis = d3.axisBottom(xScale).tickValues(xScale.domain().filter(d => d % 10 === 0));
   const yAxis = d3.axisLeft(yScale).ticks(5);
 
   svg.append('g')
@@ -1040,12 +1040,21 @@ document.addEventListener('DOMContentLoaded', function () {
 
     games.forEach(game => {
       const row = document.createElement('tr');
-      row.innerHTML = `
-        <td>${game.date}</td>
-        <td>${game.opp_name}</td>
-        <td>${game.home_away === 'home' ? '<i class="fas fa-home home-icon"></i>' : ''}</td>
-        <td class="${game.result === 'win' ? 'win' : game.result === 'loss' ? 'loss' : ''}">${game.result}</td>
-      `;
+      if (tableId === 'last-games') {
+        row.innerHTML = `
+          <td>${game.date}</td>
+          <td>${game.opp_name}</td>
+          <td>${game.home_away === 'home' ? '<i class="fas fa-home home-icon"></i>' : '<i class="fas fa-road road-icon"></i>'}</td>
+          <td class="${game.result === 'win' ? 'win' : game.result === 'loss' ? 'loss' : ''}">${game.result}</td>
+        `;
+      } else if (tableId === 'next-games') {
+        row.innerHTML = `
+          <td>${game.date}</td>
+          <td>${game.opp_name}</td>
+          <td>${game.home_away === 'home' ? '<i class="fas fa-home home-icon"></i>' : '<i class="fas fa-road road-icon"></i>'}</td>
+          <td>${game.game_start}</td>  <!-- Display game_start time instead of result -->
+        `;
+      }
       tableBody.appendChild(row);
     });
   };
@@ -1067,6 +1076,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
   fetchDataAndRenderTables();
 });
+
 
 
 document.addEventListener('DOMContentLoaded', function () {
@@ -1260,8 +1270,6 @@ document.addEventListener('DOMContentLoaded', function () {
 
 
 
-// Attendance
-
 document.addEventListener('DOMContentLoaded', function () {
   async function fetchTableData() {
     try {
@@ -1277,9 +1285,8 @@ document.addEventListener('DOMContentLoaded', function () {
     const alTable = d3.select('#al-table');
     const nlTable = d3.select('#nl-table');
 
-    // Determine columns based on screen size
-    const isMobile = window.innerWidth <= 767;
-    const columns = isMobile ? ['Team', 'Fans/game'] : ['Team', 'Stadium', 'Fans/game'];
+    // Columns to display
+    const columns = ['Team', 'Stadium', 'Fans/game']; // Always display all three columns
 
     // Clear any existing headers
     alTable.select('thead').remove();
@@ -1302,21 +1309,19 @@ document.addEventListener('DOMContentLoaded', function () {
     const alData = data.filter(d => d.league === 'AL');
     const nlData = data.filter(d => d.league === 'NL');
 
-    appendTableRows(alTable, alData, isMobile);
-    appendTableRows(nlTable, nlData, isMobile);
+    appendTableRows(alTable, alData);
+    appendTableRows(nlTable, nlData);
   }
 
-  function appendTableRows(table, data, isMobile) {
+  function appendTableRows(table, data) {
     const maxAttendance = d3.max(data, d => d.attend_game);
 
     const rows = table.append('tbody').selectAll('tr')
       .data(data)
       .enter().append('tr');
 
-    rows.append('td').html(d => d.team === 'Los Angeles Dodgers' ? `<strong>${d.team}</strong>` : d.team);
-    if (!isMobile) {
-      rows.append('td').html(d => d.team === 'Los Angeles Dodgers' ? `<strong>${d.name}</strong>` : d.name);
-    }
+    rows.append('td').text(d => d.team);
+    rows.append('td').text(d => d.name); // Always include stadium name
     rows.append('td').append('div')
       .style('position', 'relative')
       .style('width', '100%')
@@ -1342,3 +1347,4 @@ document.addEventListener('DOMContentLoaded', function () {
 
   fetchTableData();
 });
+

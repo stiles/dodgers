@@ -252,7 +252,9 @@ summary_data = [
     {"stat_label": "Last updated", "stat": "update_time", "value": update_time, "category": "summary", "context_value": "", "context_value_label": ''}, 
     {"stat_label": "Team summary", "stat": "summary", "value": summary, "category": "summary", "context_value": "", "context_value_label": ''},
 ]
-
+summary_data.append(
+    {"stat_label": "Last game result", "stat": "last_game_result", "value": standings_now.iloc[0]['result_clean'], "category": "summary", "context_value": "", "context_value_label": ''}
+)
 summary_df = pd.DataFrame(summary_data)
 summary_df.to_csv(os.path.join(base_dir, 'data', 'standings', 'season_summary_latest.csv'), index=False)
 summary_df.to_json(os.path.join(base_dir, 'data', 'standings', 'season_summary_latest.json'), orient='records', indent=4, lines=False)
