@@ -64,6 +64,7 @@ jobs:
         python scripts/10_fetch_process_attendance.py
         python scripts/11_fetch_process_historic_pitching_gamelogs.py
         python scripts/12_fetch_process_schedule.py
+        python scripts/14_fetch_process_batting_mlb.py
 
     - name: Build Jekyll site
       run: bundle exec jekyll build

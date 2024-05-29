@@ -1,9 +1,6 @@
 #!/usr/bin/env python
 # coding: utf-8
 
-#!/usr/bin/env python
-# coding: utf-8
-
 import os
 import requests
 import datetime
@@ -49,7 +46,6 @@ profile_name = os.environ.get("AWS_PERSONAL_PROFILE")
 today = datetime.date.today()
 year = today.year
 
-
 # Headers for requests
 headers = {
     "sec-ch-ua": '"Chromium";v="124", "Google Chrome";v="124", "Not-A.Brand";v="99"',
@@ -57,12 +53,10 @@ headers = {
     "sec-ch-ua-platform": '"macOS"',
 }
 
-
 batter_list = requests.get(
     "https://bdfed.stitch.mlbinfra.com/bdfed/stats/player?&env=prod&season=2024&sportId=1&stats=season&group=hitting&gameType=R&offset=0&sortStat=plateAppearances&order=desc&teamId=119",
     headers=headers,
 )
-
 
 cols = [
     "playerName",
@@ -106,7 +100,6 @@ cols = [
     "rbi",
 ]
 
-
 df = pd.DataFrame(batter_list.json()["stats"])[cols].rename(
     columns={
         "playerName": "player",
@@ -117,9 +110,7 @@ df = pd.DataFrame(batter_list.json()["stats"])[cols].rename(
     }
 )
 
-
 df["fetched"] = today.strftime("%Y-%m-%d")
-
 
 # Function to save DataFrame to S3
 def save_to_s3(df, base_path, s3_bucket, formats):
@@ -154,8 +145,3 @@ save_to_s3(
     "stilesdata.com",
     formats,
 )
-
-
-# Save a copy of notebook as a python script
-get_ipython().system('jupyter nbconvert --to script --no-prompt --output ../scripts/14_fetch_process_batting_mlb 14_fetch_process_batting_mlb.ipynb')
-
