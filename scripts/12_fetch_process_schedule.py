@@ -103,6 +103,7 @@ def fetch_clean_current_schedule(url, year):
     df.columns = df.columns.str.lower()
     df['opp_name'] = df['opp'].map(mlb_teams)
     df['date'] = df['date'].dropna().str.split(', ', expand=True)[1]
+    df['date'] = df['date'].str.split(' \(', expand=True)[0]
     df['date'] = pd.to_datetime(df['date'].dropna() + " " + df['season'].astype(str))
     df['date'] = df['date'].dt.strftime('%b %-d')
     df['home_away'] = df['home_away'].apply(lambda i: 'away' if i == '@' else 'home')
