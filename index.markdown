@@ -41,10 +41,10 @@ permalink: /
   </div>
 
 
-<h3 class="visual-subhead">Cumulative <span class="win">wins</span>: Compare then and now</h3>
-<p class="chart-chatter">Since the moving to LA, the team has won the World Series six times: 2020, 1988, 1981, 1965, 1963 and 1959. Compare those and other past seasons with the trajectory this year.</p>
+<h3 class="visual-subhead">Cumulative <span class="win">wins</span>: Then and now</h3>
+<p class="chart-chatter">Since moving to LA, the Dodgers have won the World Series six times: 2020, 1988, 1981, 1965, 1963 and 1959. Compare this year's win trajectory with the past.</p>
 <select id="year-select">
-  <option>Select a previous season</option>
+  <option>Previous seasons</option>
 </select>
 <div id="cumulative-wins-chart"></div>
 
