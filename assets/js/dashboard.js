@@ -1068,6 +1068,198 @@ document.addEventListener('DOMContentLoaded', function () {
   fetchDataAndRenderTables();
 });
 
+
+document.addEventListener('DOMContentLoaded', function () {
+  const url = 'https://stilesdata.com/dodgers/data/batting/dodgers_player_batting_current_table.json';
+
+  const fetchDataAndRenderBattingTables = async () => {
+      try {
+          const response = await fetch(url);
+          const data = await response.json();
+          const limitedData = data.slice(0, 10); // Limit to the first 10 objects
+          // const limitedData = data; // Limit to the first 10 objects
+
+          renderTable(limitedData, 'table-1', ['player', 'postion', 'avg', 'obp', 'slg'], getColorScaleBlue);
+          renderTable(limitedData, 'table-2', ['player', 'plateAppearances', 'bbper', 'hrper', 'soper'], getColorScale);
+      } catch (error) {
+          console.error('Failed to fetch data:', error);
+      }
+  };
+
+  const renderTable = (data, tableId, fields, getColorScale) => {
+      const tableBody = document.querySelector(`#${tableId} tbody`);
+      tableBody.innerHTML = '';
+
+      // Calculate the min and max values for each column to set the color scale
+      const scales = fields.reduce((acc, field) => {
+          const values = data.map(item => parseFloat(item[field]));
+          acc[field] = {
+              min: Math.min(...values),
+              max: Math.max(...values)
+          };
+          return acc;
+      }, {});
+
+      data.forEach(player => {
+          const row = document.createElement('tr');
+          fields.forEach(field => {
+              const cell = document.createElement('td');
+              cell.textContent = player[field];
+
+              // Apply conditional coloring
+              if (field !== 'player' && field !== 'postion' && field !== 'plateAppearances') {
+                  const value = parseFloat(player[field]);
+                  const scale = scales[field];
+                  cell.style.backgroundColor = getColorScale(field, value, scale.min, scale.max);
+                  cell.style.color = getContrastYIQ(getColorScale(field, value, scale.min, scale.max));
+              }
+
+              row.appendChild(cell);
+          });
+          tableBody.appendChild(row);
+      });
+  };
+
+  const getColorScale = (field, value, min, max) => {
+      if (field === 'soper') {
+          // Red color scale for strikeouts, reversed scale
+          // return getColorFromScale(value, min, max, '#ffcccc', '#ff0000', true);
+          return getColorFromScale(value, min, max, '#005a9c', '#cce5ff', false);
+      } else {
+          // Blue color scale for other metrics
+          return getColorFromScale(value, min, max, '#cce5ff', '#005a9c', false);
+      }
+  };
+
+  const getColorScaleBlue = (field, value, min, max) => {
+      // Blue color scale for batting stats
+      return getColorFromScale(value, min, max, '#cce5ff', '#005a9c', false);
+  };
+
+  const getColorFromScale = (value, min, max, colorMin, colorMax, reverse = false) => {
+      const scale = (value - min) / (max - min);
+      const ratio = reverse ? 1 - scale : scale;
+      return interpolateColor(colorMin, colorMax, ratio);
+  };
+
+  const interpolateColor = (color1, color2, factor) => {
+      const result = color1.slice(1).match(/.{2}/g)
+          .map((hex, i) => Math.round(parseInt(hex, 16) + factor * (parseInt(color2.slice(1).match(/.{2}/g)[i], 16) - parseInt(hex, 16))))
+          .map(val => val.toString(16).padStart(2, '0'))
+          .join('');
+      return `#${result}`;
+  };
+
+  const getContrastYIQ = (hexcolor) => {
+      const r = parseInt(hexcolor.substr(1, 2), 16);
+      const g = parseInt(hexcolor.substr(3, 2), 16);
+      const b = parseInt(hexcolor.substr(5, 2), 16);
+      const yiq = ((r*299)+(g*587)+(b*114))/1000;
+      return (yiq >= 128) ? 'black' : 'white';
+  };
+
+  fetchDataAndRenderBattingTables();
+});
+
+
+
+// document.addEventListener('DOMContentLoaded', function () {
+//     const url = 'https://stilesdata.com/dodgers/data/batting/dodgers_player_batting_current_table.json';
+
+//     const fetchDataAndRenderBattingTables = async () => {
+//         try {
+//             const response = await fetch(url);
+//             const data = await response.json();
+//             const limitedData = data.slice(0, 10); // Limit to the first 10 objects
+
+//             renderTable(limitedData, 'table-1', ['player', 'postion', 'avg', 'obp', 'slg'], getColorScaleBlue, getContrastYIQ);
+//             renderTable(limitedData, 'table-2', ['player', 'plateAppearances', 'bbper', 'soper', 'hrper'], getColorScaleRedBlue, getContrastYIQ);
+//         } catch (error) {
+//             console.error('Failed to fetch data:', error);
+//         }
+//     };
+
+//     const renderTable = (data, tableId, fields, getColorScale, getContrast) => {
+//         const tableBody = document.querySelector(`#${tableId} tbody`);
+//         tableBody.innerHTML = '';
+
+//         // Calculate the min and max values for each column to set the color scale
+//         const scales = fields.reduce((acc, field) => {
+//             const values = data.map(item => parseFloat(item[field]));
+//             acc[field] = {
+//                 min: Math.min(...values),
+//                 max: Math.max(...values)
+//             };
+//             return acc;
+//         }, {});
+
+//         data.forEach(player => {
+//             const row = document.createElement('tr');
+//             fields.forEach(field => {
+//                 const cell = document.createElement('td');
+//                 cell.textContent = player[field];
+
+//                 // Apply conditional coloring
+//                 if (field !== 'player' && field !== 'postion' && field !== 'plateAppearances') {
+//                     const value = parseFloat(player[field]);
+//                     const scale = scales[field];
+//                     let color;
+
+//                     // Determine which color scale to use
+//                     if (field === 'soper') {
+//                         color = getColorScaleRedBlue(value, scale.min, scale.max, true); // Reverse color scale for soper
+//                     } else if (field === 'bbper' || field === 'hrper') {
+//                         color = getColorScaleRedBlue(value, scale.min, scale.max);
+//                     } else {
+//                         color = getColorScaleBlue(value, scale.min, scale.max);
+//                     }
+
+//                     cell.style.backgroundColor = color;
+//                     cell.style.color = getContrast(color);
+//                 }
+
+//                 cell.classList.add('table-value'); // Add the 'table-value' class for specific styles
+//                 row.appendChild(cell);
+//             });
+//             tableBody.appendChild(row);
+//         });
+//     };
+
+//     const getColorScaleBlue = (value, min, max) => {
+//         const normalizedValue = (value - min) / (max - min);
+//         const blueValue = Math.floor(255 - normalizedValue * 200);
+//         return `rgb(0, ${blueValue}, 255)`;
+//     };
+
+//     const getColorScaleRedBlue = (value, min, max, reverse = false) => {
+//         const normalizedValue = (value - min) / (max - min);
+//         if (reverse) {
+//             return `rgb(${255 - normalizedValue * 255}, ${100 + normalizedValue * 100}, ${100 + normalizedValue * 100})`;
+//         }
+//         return `rgb(${255 - normalizedValue * 255}, ${normalizedValue * 255}, ${normalizedValue * 255})`;
+//     };
+
+//     const getContrastYIQ = (hexcolor) => {
+//         const r = parseInt(hexcolor.substr(1, 2), 16);
+//         const g = parseInt(hexcolor.substr(3, 2), 16);
+//         const b = parseInt(hexcolor.substr(5, 2), 16);
+//         const yiq = ((r * 299) + (g * 587) + (b * 114)) / 1000;
+//         return (yiq >= 128) ? 'black' : 'white';
+//     };
+
+//     fetchDataAndRenderBattingTables();
+// });
+
+
+
+
+
+
+
+
+
+
+
 // Attendance
 
 document.addEventListener('DOMContentLoaded', function () {

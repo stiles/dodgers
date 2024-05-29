@@ -51,7 +51,7 @@ permalink: /
 <h3 class="visual-subhead">Standings: Games <span class="win">up</span> or <span class="loss">back</span></h3>
 <div id="d3-container" style="width: 100%; padding-bottom: 20px;"></div>
 
-<h2 class="stat-group">Batting</h2>
+<h2 class="stat-group">Team batting</h2>
   <div class="row">
     {% for item in site.data.season_summary_latest %}
       {% if item.category == 'batting' %}
@@ -81,6 +81,43 @@ permalink: /
   <h3 class="visual-subhead">Cumulative <span class="win">home runs</span></h3>
   <div id="cumulative-homers-chart" class="small-chart"></div>
 </div>
+
+<h2 class="stat-group">Player batting</h2>
+<p class="chart-chatter">Darker shades represent <span class="win">better</span> performance.</p>
+<div class="tables-container">
+  <div class="table-wrapper">
+      <h3 class="visual-subhead">Batting average and on-base and slugging percentages</h3>
+      <table id="table-1" class="data-table">
+          <thead>
+              <tr>
+                  <th>Player</th>
+                  <th>Pos</th>
+                  <th class="table-value">BA</th>
+                  <th class="table-value">OB%</th>
+                  <th class="table-value">SLG%</th>
+              </tr>
+          </thead>
+          <tbody></tbody>
+      </table>
+  </div>
+  <div class="table-wrapper">
+      <h3 class="visual-subhead">Walks, home runs and strikeouts per plate appearance</h3>
+      <table id="table-2" class="data-table">
+          <thead>
+              <tr>
+                  <th>Player</th>
+                  <th>PA</th>
+                  <th class="table-value">BB/A</th>
+                  <th class="table-value">HR/A</th>
+                  <th class="table-value">SO/A</th>
+              </tr>
+          </thead>
+          <tbody></tbody>
+      </table>
+  </div>
+  <p class="note">Note: Tables include top-10 batters in descending order of plate appearances. </p>
+</div>
+
 
   <h2 class="stat-group"> Pitching</h2>
   <div class="row">
@@ -117,37 +154,37 @@ permalink: /
   <div id="cumulative-hits-chart" class="small-chart"></div>
 </div>
 
-<h2 class="stat-group">Schedule</h2>
-  <div class="tables-container">
-    <div class="table-wrapper">
-        <h3 class="visual-subhead">Last 10 games</h3>
-        <table id="last-games" class="data-table">
-            <thead>
-                <tr>
-                    <th>Date</th>
-                    <th>Opponent</th>
-                    <th>Location</th>
-                    <th>Result</th>
-                </tr>
-            </thead>
-            <tbody></tbody>
-        </table>
+  <h2 class="stat-group">Schedule</h2>
+    <div class="tables-container">
+      <div class="table-wrapper">
+          <h3 class="visual-subhead">Last 10 games</h3>
+          <table id="last-games" class="data-table">
+              <thead>
+                  <tr>
+                      <th>Date</th>
+                      <th>Opponent</th>
+                      <th>Location</th>
+                      <th>Result</th>
+                  </tr>
+              </thead>
+              <tbody></tbody>
+          </table>
+      </div>
+      <div class="table-wrapper">
+          <h3 class="visual-subhead">Next 10 games</h3>
+          <table id="next-games" class="data-table">
+              <thead>
+                  <tr>
+                      <th>Date</th>
+                      <th>Opponent</th>
+                      <th>Location</th>
+                      <th>Result</th>
+                  </tr>
+              </thead>
+              <tbody></tbody>
+          </table>
+      </div>
     </div>
-    <div class="table-wrapper">
-        <h3 class="visual-subhead">Next 10 games</h3>
-        <table id="next-games" class="data-table">
-            <thead>
-                <tr>
-                    <th>Date</th>
-                    <th>Opponent</th>
-                    <th>Location</th>
-                    <th>Result</th>
-                </tr>
-            </thead>
-            <tbody></tbody>
-        </table>
-    </div>
-  </div>
 
 </div>
 

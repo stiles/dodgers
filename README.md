@@ -165,8 +165,13 @@ The processed datasets — which aren't all documented below yet — are uploade
 | `season`    | object      | Season                                                  |
 | `bats`      | object      | Player's batting side (right, left, unknown)            |
 
-
 \* *An at-bat is when a player reaches base via a fielder's choice, hit or an error — not including catcher's interference — or when a batter is put out on a non-sacrifice. A plate appearance refers to each completed turn batting, regardless of the result.*
+
+**Other current season player batting statistics:**
+- Batting average, on-base and slugging percentage and walks, home runs and strikeouts by plate appearance via [Baseball Savant](https://bdfed.stitch.mlbinfra.com/bdfed/stats/player?&env=prod&season=2024&sportId=1&stats=season&group=hitting&gameType=R&offset=0&sortStat=plateAppearances&order=desc&teamId=119).
+    - [JSON](https://stilesdata.com/dodgers/data/batting/dodgers_player_batting_current_table.json)
+    - [CSV](https://stilesdata.com/dodgers/data/batting/dodgers_player_batting_current_table.csv)
+    - [Parquet](https://stilesdata.com/dodgers/data/batting/dodgers_player_batting_current_table.parquet)
 
 **Season-by-season batting at the team level, 1958 to present:**
 - How the team ranks or ranked in the league by season

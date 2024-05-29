@@ -313,17 +313,7 @@ p {
   border: 0.2px solid #ddd;
   padding: 5px 10px;
   font-family: 'Roboto';
-  font-size: 12px;
-}
-
-.data-table th {
-  background-color: #fff;
-  border: 0;
-  padding: 5px 10px;
-  border-bottom: 1px solid #999;
-  text-align: left;
-  font-family: 'Roboto Slab';
-  font-size: 1em;
+  font-size: 11px;
 }
 
 .data-table td div {
@@ -633,16 +623,6 @@ thead {
   font-size: 12px;
 }
 
-.data-table th {
-  background-color: #fff;
-  border: 0;
-  padding: 5px 10px;
-  border-bottom: 1px solid #999;
-  text-align: left;
-  font-family: 'Roboto Slab';
-  font-size: 1em;
-}
-
 .data-table td div {
   padding: 0.25em;
   white-space: nowrap;
@@ -766,13 +746,6 @@ h2.stat-group {
   font-size: 1.3em;
 }
 
-.tables-container {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: space-between;
-  gap: 10px; 
-}
-
 .table-wrapper {
   flex: 1 1 calc(50% - 5px); 
   max-width: calc(50% - 5px);
@@ -792,8 +765,14 @@ h3 {
   margin: 1em 0 .5em;
 }
 
+.note {
+  color: #999;
+  font-family: 'Roboto', sans-serif;
+  font-size: .6em;
+}
+
 h3.visual-subhead {
-  margin: 20px 0px 20px 0px; // Reduced margins
+  margin: 10px 0px 20px 0px; // Reduced margins
   font-family: 'Roboto Slab', serif;
   font-size: .95em;
   color: #666;
@@ -896,4 +875,83 @@ hr.style-eight:after {
   font-weight: bold;
   font-size: 14px;
   font-family: 'Roboto Slab', serif;
+}
+
+// tables
+
+.table-wrapper {
+  flex: 1 1 calc(50% - 5px); 
+  max-width: calc(50% - 5px);
+  padding: 10px;
+  border-radius: 8px;
+  background-color: #fff;
+}
+
+.data-table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.data-table th,
+.data-table td {
+  border: 0.2px solid #ddd;
+  padding: 5px 10px;
+  font-family: 'Roboto';
+  font-size: 12px;
+}
+
+.data-table td div {
+  padding: 0.25em;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+
+@media (max-width: 900px) {
+  .table-wrapper {
+      flex: 1 1 100%;
+      max-width: 100%;
+  }
+}
+
+.tables-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: 10px; /* Adjust this to reduce gutter space */
+}
+
+.table-wrapper {
+  flex: 1 1 49%; /* Adjusted to ensure both tables are equal width on desktop */
+  max-width: 49%; /* Adjusted to ensure both tables are equal width on desktop */
+  padding: 10px;
+  border-radius: 8px;
+  background-color: #fff;
+}
+
+@media (max-width: 900px) {
+  .table-wrapper {
+    flex: 1 1 100%;
+    max-width: 100%;
+  }
+}
+
+.data-table th, .data-table td {
+  border: 0.2px solid #ddd;
+  padding: 5px 10px;
+  font-family: 'Roboto';
+  font-size: 12px;
+}
+
+.table-value {
+  width: 10%; /* Apply a common width to specific table cells */
+}
+
+.data-table th {
+  background-color: #fff;
+  border: 0;
+  padding: 5px 10px;
+  border-bottom: 1px solid #999;
+  text-align: left;
+  font-family: 'Roboto Slab';
+  font-size: .9em;
 }
