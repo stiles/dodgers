@@ -214,13 +214,9 @@ permalink: /
     </div>
 </div>
 
-
+  <p class="dated">Notes: Last updated {{ site.data.season_summary_latest | where: "stat", "update_time" | map: "value" | first }}. More <a href="https://github.com/stiles/dodgers/blob/main/README.md">about the data</a>.</p>
+  
 </div>
-
-
-
-<p class="dated">Notes: Last updated {{ site.data.season_summary_latest | where: "stat", "update_time" | map: "value" | first }}. More <a href="https://github.com/stiles/dodgers/blob/main/README.md">about the data</a>.</p>
-
 
 <script src="https://d3js.org/d3.v6.min.js"></script>
 <script src="{{ '/assets/js/dashboard.js' | relative_url }}"></script>
