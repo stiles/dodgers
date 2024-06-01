@@ -1,22 +1,22 @@
 stat_label,stat,value,category,context_value,context_value_label
 Wins,wins,36,standings,35,This point last season
-Losses,losses,22,standings,23,This point last season
-Record,record,36-22,standings,35-23,This point last season
-Win percentage,win_pct,62%,standings,60%,This point last season
-Games up/back,games_up_back,6.5,standings,1,Division rank
-Avg. home attendance,mean_attendance,"46,470",standings,30,Home games this season
-Runs,runs,288,standings,2,League rank
-Runs against,runs_against,206,standings,266,This point last season
-Run differential,run_differential,82,standings,61,This point last season
-Batting average,batting_average,.257,batting,.253,Last decade average
+Losses,losses,23,standings,24,This point last season
+Record,record,36-23,standings,35-24,This point last season
+Win percentage,win_pct,61%,standings,59%,This point last season
+Games up/back,games_up_back,5.5,standings,1,Division rank
+Avg. home attendance,mean_attendance,"46,504",standings,31,Home games this season
+Runs,runs,289,standings,3,League rank
+Runs against,runs_against,210,standings,272,This point last season
+Run differential,run_differential,79,standings,58,This point last season
+Batting average,batting_average,.255,batting,.253,Last decade average
 Home runs,home_runs,75,batting,1,League rank
-Home runs/game,home_runs_game,1.29,batting,1.36,Last decade average
-On-base percentage,on_base_pct,.333,batting,.332,Last decade average
-Stolen bases,stolen_bases,35,batting,7,League rank
-Stolen bases/game,stolen_bases_game,0.6,batting,0.65,Rate all last season
-Strikeouts,strikeouts,491,pitching,5,League rank
-Walks,walks,169,pitching,6,League rank
+Home runs/game,home_runs_game,1.27,batting,1.36,Last decade average
+On-base percentage,on_base_pct,.332,batting,.332,Last decade average
+Stolen bases,stolen_bases,35,batting,8,League rank
+Stolen bases/game,stolen_bases_game,0.59,batting,0.65,Rate all last season
+Strikeouts,strikeouts,499,pitching,5,League rank
+Walks,walks,175,pitching,8,League rank
 ERA,era,3.32,pitching,2,League rank
-Last updated,update_time,"May 31, 2024, 3:03 PM PT",summary,,
-Team summary,summary,"<span class='highlight'>LOS ANGELES</span> <span class='updated'>(May 31)</span> — After <span class='highlight'>58</span> games this season, the Dodgers are in <span class='highlight'>1st</span> place in the National League West division. The team has compiled a <span class='highlight'>36-22</span> record, winning <span class='highlight'>62%</span> of its games so far. The last game was a <span class='highlight'>10-3</span> away <span class='highlight'>win</span> against the New York Mets in front of <span class='highlight'>23,890</span> fans. They've won <span class='highlight'>5 of the last 10</span>.",summary,,
-Last game result,last_game_result,win,summary,,
+Last updated,update_time,"June 1, 2024, 4:03 AM PT",summary,,
+Team summary,summary,"<span class='highlight'>LOS ANGELES</span> <span class='updated'>(June 1)</span> — After <span class='highlight'>59</span> games this season, the Dodgers are in <span class='highlight'>1st</span> place in the National League West division. The team has compiled a <span class='highlight'>36-23</span> record, winning <span class='highlight'>61%</span> of its games so far. The last game was a <span class='highlight'>1-4</span> home <span class='highlight'>loss</span> against the Colorado Rockies in front of <span class='highlight'>47,542</span> fans. They've won <span class='highlight'>4 of the last 10</span>.",summary,,
+Last game result,last_game_result,loss,summary,,
