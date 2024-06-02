@@ -191,7 +191,7 @@ permalink: /
                       <th>Date</th>
                       <th>Opponent</th>
                       <th>Location</th>
-                      <th>Time</th>
+                      <th>Time (PT)</th>
                   </tr>
               </thead>
               <tbody></tbody>
