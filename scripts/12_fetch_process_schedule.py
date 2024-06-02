@@ -15,7 +15,7 @@ import boto3
 from io import StringIO
 from io import BytesIO
 import logging
-
+from datetime import datetime, timedelta
 
 # Set up basic configuration for logging
 logging.basicConfig(level=logging.INFO, format='%(asctime)s - %(levelname)s - %(message)s')
@@ -45,11 +45,9 @@ s3_resource = session.resource("s3")
 # Base directory settings
 base_dir = os.getcwd()
 data_dir = os.path.join(base_dir, 'data', 'standings')
-# os.makedirs(data_dir, exist_ok=True)
 
 profile_name = os.environ.get("AWS_PERSONAL_PROFILE")
 year = pd.Timestamp.today().year
-
 
 mlb_teams = {
     "ARI": "Arizona Diamondbacks",
@@ -84,7 +82,6 @@ mlb_teams = {
     "WSN": "Washington Nationals"
 }
 
-
 # Configuration
 year = 2024
 url = f"https://www.baseball-reference.com/teams/LAD/{year}-schedule-scores.shtml"
@@ -93,7 +90,6 @@ csv_file = f"{output_dir}/dodgers_schedule.csv"
 json_file = f"{output_dir}/dodgers_schedule.json"
 parquet_file = f"{output_dir}/dodgers_schedule.parquet"
 s3_bucket = "stilesdata.com"
-
 
 def fetch_clean_current_schedule(url, year):
     response = requests.get(url)
@@ -107,8 +103,6 @@ def fetch_clean_current_schedule(url, year):
     df['date'] = pd.to_datetime(df['date'].dropna() + " " + df['season'].astype(str))
     df['date'] = df['date'].dt.strftime('%b %-d')
     df['home_away'] = df['home_away'].apply(lambda i: 'away' if i == '@' else 'home')
-    # df['result'] = df['result'].apply(lambda i: 'win' if i == 'W' else 'loss')
-    # df['result'] = df['result'].apply(lambda i: 'win' if i == 'W' else 'loss')
     df["result"] = df["result"].str.split('-', expand=True)[0]
     df.loc[df["result"] == "W", "result"] = 'win'
     df.loc[df["result"] == "L", "result"] = 'loss'
@@ -116,6 +110,15 @@ def fetch_clean_current_schedule(url, year):
     df = df.drop(["unnamed: 2", "streak", "orig. scheduled", 'inn', 'tm', 'ra', 'rank', 'gb', 'win', 'opp', 'loss', 'save', 'time', 'd/n', 'w-l', 'attendance'], axis=1)
     return df
 
+# Convert time from Eastern to Pacific manually
+def convert_time_to_pacific_manual(time_str):
+    try:
+        time = datetime.strptime(time_str, '%I:%M %p')
+        time -= timedelta(hours=3)
+        return time.strftime('%-I:%M %p')
+    except Exception as e:
+        logging.error(f"Failed to convert time: {e}")
+        return time_str
 
 src = fetch_clean_current_schedule(url, year)
 next_five = src.query('cli.isnull()').head(10).drop(['cli', 'season'], axis=1).copy()
@@ -123,9 +126,11 @@ last_five = src.query('~cli.isnull()').tail(10).drop(['cli', 'season'], axis=1).
 next_five['placement'] = 'next'
 last_five['placement'] = 'last'
 
-
 schedule_df = pd.concat([last_five, next_five])[['date', 'opp_name', 'home_away', 'result', 'placement', 'r']].rename(columns={'r': 'game_start'})
 schedule_df.loc[schedule_df.result != '--', 'game_start'] = '--'
+
+# Convert game_start to Pacific Time if it's not '--'
+schedule_df['game_start'] = schedule_df['game_start'].apply(lambda x: convert_time_to_pacific_manual(x) if x != '--' else x)
 
 # Function to save DataFrame to S3
 def save_to_s3(df, base_path, s3_bucket, formats):
@@ -144,9 +149,7 @@ def save_to_s3(df, base_path, s3_bucket, formats):
         except Exception as e:
             logging.error(f"Failed to upload {fmt} to S3: {e}")
 
-
 # Saving files locally and to S3
 file_path = os.path.join(data_dir, 'dodgers_schedule')
 formats = ["csv", "json"]
-# save_dataframe(optimized_df, file_path, formats)
 save_to_s3(schedule_df, "dodgers/data/standings/dodgers_schedule", "stilesdata.com", formats)
