@@ -1,22 +1,22 @@
 stat_label,stat,value,category,context_value,context_value_label
-Wins,wins,38,standings,36,This point last season
-Losses,losses,25,standings,27,This point last season
-Record,record,38-25,standings,36-27,This point last season
-Win percentage,win_pct,60%,standings,56%,This point last season
-Games up/back,games_up_back,7.0,standings,1,Division rank
+Wins,wins,39,standings,36,This point last season
+Losses,losses,25,standings,28,This point last season
+Record,record,39-25,standings,36-28,This point last season
+Win percentage,win_pct,61%,standings,56%,This point last season
+Games up/back,games_up_back,8.0,standings,1,Division rank
 Avg. home attendance,mean_attendance,"46,669",standings,33,Home games this season
-Runs,runs,303,standings,3,League rank
-Runs against,runs_against,222,standings,293,This point last season
-Run differential,run_differential,81,standings,58,This point last season
-Batting average,batting_average,.255,batting,.253,Last decade average
-Home runs,home_runs,79,batting,1,League rank
-Home runs/game,home_runs_game,1.25,batting,1.36,Last decade average
-On-base percentage,on_base_pct,.333,batting,.332,Last decade average
-Stolen bases,stolen_bases,39,batting,8,League rank
-Stolen bases/game,stolen_bases_game,0.62,batting,0.65,Rate all last season
-Strikeouts,strikeouts,540,pitching,5,League rank
-Walks,walks,186,pitching,8,League rank
-ERA,era,3.28,pitching,2,League rank
-Last updated,update_time,"June 7, 2024, 12:03 AM PT",summary,,
-Team summary,summary,"<span class='highlight'>LOS ANGELES</span> <span class='updated'>(June 7)</span> — After <span class='highlight'>63</span> games this season, the Dodgers are in <span class='highlight'>1st</span> place in the National League West division. The team has compiled a <span class='highlight'>38-25</span> record, winning <span class='highlight'>60%</span> of its games so far. The last game was a <span class='highlight'>6-10</span> away <span class='highlight'>loss</span> against the Pittsburgh Pirates in front of <span class='highlight'>29,716</span> fans. They've won <span class='highlight'>5 of the last 10</span>.",summary,,
-Last game result,last_game_result,loss,summary,,
+Runs,runs,314,standings,2,League rank
+Runs against,runs_against,229,standings,298,This point last season
+Run differential,run_differential,85,standings,57,This point last season
+Batting average,batting_average,.257,batting,.253,Last decade average
+Home runs,home_runs,82,batting,1,League rank
+Home runs/game,home_runs_game,1.28,batting,1.36,Last decade average
+On-base percentage,on_base_pct,.335,batting,.332,Last decade average
+Stolen bases,stolen_bases,41,batting,8,League rank
+Stolen bases/game,stolen_bases_game,0.64,batting,0.65,Rate all last season
+Strikeouts,strikeouts,555,pitching,4,League rank
+Walks,walks,187,pitching,5,League rank
+ERA,era,3.32,pitching,2,League rank
+Last updated,update_time,"June 7, 2024, 4:03 AM PT",summary,,
+Team summary,summary,"<span class='highlight'>LOS ANGELES</span> <span class='updated'>(June 7)</span> — After <span class='highlight'>64</span> games this season, the Dodgers are in <span class='highlight'>1st</span> place in the National League West division. The team has compiled a <span class='highlight'>39-25</span> record, winning <span class='highlight'>61%</span> of its games so far. The last game was a <span class='highlight'>11-7</span> away <span class='highlight'>win</span> against the Pittsburgh Pirates in front of <span class='highlight'>22,752</span> fans. They've won <span class='highlight'>6 of the last 10</span>.",summary,,
+Last game result,last_game_result,win,summary,,
