@@ -1,22 +1,22 @@
 stat_label,stat,value,category,context_value,context_value_label
-Wins,wins,41,standings,38,This point last season
-Losses,losses,26,standings,29,This point last season
-Record,record,41-26,standings,38-29,This point last season
-Win percentage,win_pct,61%,standings,56%,This point last season
-Games up/back,games_up_back,8.0,standings,1,Division rank
-Avg. home attendance,mean_attendance,"46,669",standings,33,Home games this season
-Runs,runs,331,standings,2,League rank
-Runs against,runs_against,239,standings,306,This point last season
-Run differential,run_differential,92,standings,66,This point last season
-Batting average,batting_average,.256,batting,.253,Last decade average
-Home runs,home_runs,86,batting,1,League rank
-Home runs/game,home_runs_game,1.28,batting,1.36,Last decade average
-On-base percentage,on_base_pct,.335,batting,.332,Last decade average
-Stolen bases,stolen_bases,43,batting,8,League rank
-Stolen bases/game,stolen_bases_game,0.64,batting,0.65,Rate all last season
-Strikeouts,strikeouts,589,pitching,3,League rank
-Walks,walks,195,pitching,5,League rank
-ERA,era,3.30,pitching,2,League rank
-Last updated,update_time,"June 12, 2024, 12:03 AM PT",summary,,
-Team summary,summary,"<span class='highlight'>LOS ANGELES</span> <span class='updated'>(June 12)</span> — After <span class='highlight'>67</span> games this season, the Dodgers are in <span class='highlight'>1st</span> place in the National League West division. The team has compiled a <span class='highlight'>41-26</span> record, winning <span class='highlight'>61%</span> of its games so far. The last game was a <span class='highlight'>4-6</span> away <span class='highlight'>loss</span> against the New York Yankees in front of <span class='highlight'>48,023</span> fans. They've won <span class='highlight'>6 of the last 10</span>.",summary,,
-Last game result,last_game_result,loss,summary,,
+Wins,wins,42,standings,38,This point last season
+Losses,losses,26,standings,30,This point last season
+Record,record,42-26,standings,38-30,This point last season
+Win percentage,win_pct,62%,standings,56%,This point last season
+Games up/back,games_up_back,7.5,standings,1,Division rank
+Avg. home attendance,mean_attendance,"46,808",standings,34,Home games this season
+Runs,runs,346,standings,1,League rank
+Runs against,runs_against,241,standings,314,This point last season
+Run differential,run_differential,105,standings,62,This point last season
+Batting average,batting_average,.258,batting,.253,Last decade average
+Home runs,home_runs,91,batting,1,League rank
+Home runs/game,home_runs_game,1.34,batting,1.36,Last decade average
+On-base percentage,on_base_pct,.338,batting,.332,Last decade average
+Stolen bases,stolen_bases,44,batting,8,League rank
+Stolen bases/game,stolen_bases_game,0.65,batting,0.65,Rate all last season
+Strikeouts,strikeouts,594,pitching,3,League rank
+Walks,walks,197,pitching,5,League rank
+ERA,era,3.28,pitching,2,League rank
+Last updated,update_time,"June 12, 2024, 4:03 AM PT",summary,,
+Team summary,summary,"<span class='highlight'>LOS ANGELES</span> <span class='updated'>(June 12)</span> — After <span class='highlight'>68</span> games this season, the Dodgers are in <span class='highlight'>1st</span> place in the National League West division. The team has compiled a <span class='highlight'>42-26</span> record, winning <span class='highlight'>62%</span> of its games so far. The last game was a <span class='highlight'>15-2</span> home <span class='highlight'>win</span> against the Texas Rangers in front of <span class='highlight'>51,416</span> fans. They've won <span class='highlight'>6 of the last 10</span>.",summary,,
+Last game result,last_game_result,win,summary,,
