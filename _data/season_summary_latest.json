@@ -4,13 +4,13 @@
         "stat":"wins",
         "value":53,
         "category":"standings",
-        "context_value":49,
+        "context_value":50,
         "context_value_label":"This point last season"
     },
     {
         "stat_label":"Losses",
         "stat":"losses",
-        "value":34,
+        "value":35,
         "category":"standings",
         "context_value":38,
         "context_value_label":"This point last season"
@@ -18,15 +18,15 @@
     {
         "stat_label":"Record",
         "stat":"record",
-        "value":"53-34",
+        "value":"53-35",
         "category":"standings",
-        "context_value":"49-38",
+        "context_value":"50-38",
         "context_value_label":"This point last season"
     },
     {
         "stat_label":"Win percentage",
         "stat":"win_pct",
-        "value":"61%",
+        "value":"60%",
         "category":"standings",
         "context_value":"56%",
         "context_value_label":"This point last season"
@@ -34,7 +34,7 @@
     {
         "stat_label":"Games up\/back",
         "stat":"games_up_back",
-        "value":7.5,
+        "value":6.5,
         "category":"standings",
         "context_value":1,
         "context_value_label":"Division rank"
@@ -42,15 +42,15 @@
     {
         "stat_label":"Avg. home attendance",
         "stat":"mean_attendance",
-        "value":"47,659",
+        "value":"47,765",
         "category":"standings",
-        "context_value":43,
+        "context_value":44,
         "context_value_label":"Home games this season"
     },
     {
         "stat_label":"Runs",
         "stat":"runs",
-        "value":440,
+        "value":443,
         "category":"standings",
         "context_value":"1",
         "context_value_label":"League rank"
@@ -58,23 +58,23 @@
     {
         "stat_label":"Runs against",
         "stat":"runs_against",
-        "value":328,
+        "value":337,
         "category":"standings",
-        "context_value":409,
+        "context_value":413,
         "context_value_label":"This point last season"
     },
     {
         "stat_label":"Run differential",
         "stat":"run_differential",
-        "value":112,
+        "value":106,
         "category":"standings",
-        "context_value":64,
+        "context_value":71,
         "context_value_label":"This point last season"
     },
     {
         "stat_label":"Batting average",
         "stat":"batting_average",
-        "value":".256",
+        "value":".255",
         "category":"batting",
         "context_value":".253",
         "context_value_label":"Last decade average"
@@ -90,7 +90,7 @@
     {
         "stat_label":"Home runs\/game",
         "stat":"home_runs_game",
-        "value":1.33,
+        "value":1.32,
         "category":"batting",
         "context_value":1.36,
         "context_value_label":"Last decade average"
@@ -98,7 +98,7 @@
     {
         "stat_label":"On-base percentage",
         "stat":"on_base_pct",
-        "value":".335",
+        "value":".334",
         "category":"batting",
         "context_value":".332",
         "context_value_label":"Last decade average"
@@ -106,15 +106,15 @@
     {
         "stat_label":"Stolen bases",
         "stat":"stolen_bases",
-        "value":48,
+        "value":50,
         "category":"batting",
-        "context_value":"11",
+        "context_value":"10",
         "context_value_label":"League rank"
     },
     {
         "stat_label":"Stolen bases\/game",
         "stat":"stolen_bases_game",
-        "value":0.55,
+        "value":0.57,
         "category":"batting",
         "context_value":0.65,
         "context_value_label":"Rate all last season"
@@ -122,7 +122,7 @@
     {
         "stat_label":"Strikeouts",
         "stat":"strikeouts",
-        "value":"741",
+        "value":"750",
         "category":"pitching",
         "context_value":"5",
         "context_value_label":"League rank"
@@ -130,7 +130,7 @@
     {
         "stat_label":"Walks",
         "stat":"walks",
-        "value":"260",
+        "value":"265",
         "category":"pitching",
         "context_value":"7",
         "context_value_label":"League rank"
@@ -138,7 +138,7 @@
     {
         "stat_label":"ERA",
         "stat":"era",
-        "value":"3.48",
+        "value":"3.54",
         "category":"pitching",
         "context_value":"3",
         "context_value_label":"League rank"
@@ -146,7 +146,7 @@
     {
         "stat_label":"Last updated",
         "stat":"update_time",
-        "value":"July 5, 2024, 12:03 AM PT",
+        "value":"July 5, 2024, 4:03 AM PT",
         "category":"summary",
         "context_value":"",
         "context_value_label":""
@@ -154,7 +154,7 @@
     {
         "stat_label":"Team summary",
         "stat":"summary",
-        "value":"<span class='highlight'>LOS ANGELES<\/span> <span class='updated'>(July 5)<\/span> \u2014 After <span class='highlight'>87<\/span> games this season, the Dodgers are in <span class='highlight'>1st<\/span> place in the National League West division. The team has compiled a <span class='highlight'>53-34<\/span> record, winning <span class='highlight'>61%<\/span> of its games so far. The last game was a <span class='highlight'>4-12<\/span> home <span class='highlight'>loss<\/span> against the Arizona Diamondbacks in front of <span class='highlight'>47,965<\/span> fans. They've won <span class='highlight'>6 of the last 10<\/span>.",
+        "value":"<span class='highlight'>LOS ANGELES<\/span> <span class='updated'>(July 5)<\/span> \u2014 After <span class='highlight'>88<\/span> games this season, the Dodgers are in <span class='highlight'>1st<\/span> place in the National League West division. The team has compiled a <span class='highlight'>53-35<\/span> record, winning <span class='highlight'>60%<\/span> of its games so far. The last game was a <span class='highlight'>3-9<\/span> home <span class='highlight'>loss<\/span> against the Arizona Diamondbacks in front of <span class='highlight'>52,320<\/span> fans. They've won <span class='highlight'>6 of the last 10<\/span>.",
         "category":"summary",
         "context_value":"",
         "context_value_label":""
