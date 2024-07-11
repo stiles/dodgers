@@ -90,7 +90,7 @@
     {
         "stat_label":"Home runs\/game",
         "stat":"home_runs_game",
-        "value":1.36,
+        "value":1.34,
         "category":"batting",
         "context_value":1.36,
         "context_value_label":"Last decade average"
@@ -98,7 +98,7 @@
     {
         "stat_label":"On-base percentage",
         "stat":"on_base_pct",
-        "value":".335",
+        "value":".334",
         "category":"batting",
         "context_value":".332",
         "context_value_label":"Last decade average"
@@ -106,7 +106,7 @@
     {
         "stat_label":"Stolen bases",
         "stat":"stolen_bases",
-        "value":56,
+        "value":57,
         "category":"batting",
         "context_value":"8",
         "context_value_label":"League rank"
@@ -114,7 +114,7 @@
     {
         "stat_label":"Stolen bases\/game",
         "stat":"stolen_bases_game",
-        "value":0.61,
+        "value":0.62,
         "category":"batting",
         "context_value":0.65,
         "context_value_label":"Rate all last season"
@@ -122,7 +122,7 @@
     {
         "stat_label":"Strikeouts",
         "stat":"strikeouts",
-        "value":"782",
+        "value":"788",
         "category":"pitching",
         "context_value":"5",
         "context_value_label":"League rank"
@@ -132,13 +132,13 @@
         "stat":"walks",
         "value":"279",
         "category":"pitching",
-        "context_value":"8",
+        "context_value":"6",
         "context_value_label":"League rank"
     },
     {
         "stat_label":"ERA",
         "stat":"era",
-        "value":"3.69",
+        "value":"3.70",
         "category":"pitching",
         "context_value":"3",
         "context_value_label":"League rank"
@@ -146,7 +146,7 @@
     {
         "stat_label":"Last updated",
         "stat":"update_time",
-        "value":"July 11, 2024, 12:03 AM PT",
+        "value":"July 11, 2024, 4:03 AM PT",
         "category":"summary",
         "context_value":"",
         "context_value_label":""
