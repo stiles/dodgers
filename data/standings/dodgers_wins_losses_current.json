@@ -1,5 +1,13 @@
 [
     {
+        "gm":110,
+        "game_date":"2024-08-02",
+        "result":"L",
+        "r":5,
+        "ra":6,
+        "run_diff":-1
+    },
+    {
         "gm":109,
         "game_date":"2024-07-31",
         "result":"L",
@@ -416,19 +424,19 @@
         "run_diff":7
     },
     {
-        "gm":56,
-        "game_date":"2024-05-28",
-        "result":"W",
-        "r":5,
-        "ra":2,
-        "run_diff":3
-    },
-    {
         "gm":57,
         "game_date":"2024-05-28",
         "result":"W",
         "r":3,
         "ra":0,
+        "run_diff":3
+    },
+    {
+        "gm":56,
+        "game_date":"2024-05-28",
+        "result":"W",
+        "r":5,
+        "ra":2,
         "run_diff":3
     },
     {
