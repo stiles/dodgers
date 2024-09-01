@@ -128,9 +128,23 @@ permalink: /
           <tbody></tbody>
       </table>
   </div>
-  <p class="note">Note: Tables include top-10 batters in descending order of plate appearances. </p>
+
+<div id="event-selection">
+  <label for="event-select">Every plate appearance, with outcome. Select one:</label>
+  <select id="event-select"></select>
+</div>
+<div id="barcode-chart">
+  <svg></svg>
 </div>
 
+
+
+
+
+
+
+ <p class="note">Note: Tables and chart include top-10 batters by plate appearances. </p>
+</div>
 
   <h2 class="stat-group"> Pitching</h2>
   <div class="row">
@@ -153,9 +167,10 @@ permalink: /
     {% endfor %}
   </div>
 
+<div class="large-chart-container">
 <h3 class="visual-subhead">Team <span class="win">ERA</span> over season: Then and now</h3>
 <div id="cumulative-era-chart"></div>
-
+</div>
 
 <div class="small-chart-container">
   <h3 class="visual-subhead">Cumulative <span class="win">strikeouts</span></h3>

@@ -17,13 +17,13 @@ async function fetchData() {
 function renderChart(data) {
   const isMobile = window.innerWidth <= 767; // Example breakpoint for mobile devices
   const margin = isMobile 
-    ? { top: 20, right: 0, bottom: 60, left: 60 }  // Smaller margins for mobile
+    ? { top: 20, right: 0, bottom: 60, left: 50 }  // Smaller margins for mobile
     : { top: 20, right: 0, bottom: 50, left: 60 }; // Larger margins for desktop
   const container = d3.select('#d3-container');
   const containerWidth = container.node().getBoundingClientRect().width;
   const width = containerWidth - margin.left - margin.right;
   const height = isMobile 
-  ? Math.round(width * 1) - margin.top - margin.bottom  // Taller  for mobile
+  ? Math.round(width * 1) - margin.top - margin.bottom  // Taller for mobile
   : Math.round(width * 0.5) - margin.top - margin.bottom; // 2x1 ratio for desktop
 
   const svg = container
@@ -132,7 +132,7 @@ function renderChart(data) {
   // Add the 'Leading' annotation
   svg
     .append('text')
-    .attr('x', isMobile ? xScale(130) : xScale(150)) // Adjusted for mobile
+    .attr('x', isMobile ? xScale(75) : xScale(70)) // Adjusted for mobile
     .attr('y', yScale(0) - 10)
     .text('Leading ↑')
     .attr('class', 'anno-dark')
@@ -538,8 +538,8 @@ document.addEventListener('DOMContentLoaded', function() {
       function renderChart(config, data, maxYValue) {
         const isMobile = window.innerWidth <= 767;
         const margin = isMobile 
-          ? { top: 20, right: 0, bottom: 60, left: 60 } 
-          : { top: 20, right: 0, bottom: 50, left: 60 };
+          ? { top: 20, right: 20, bottom: 60, left: 60 } 
+          : { top: 20, right: 20, bottom: 50, left: 60 };
         const container = d3.select(`#${config.elementId}`);
         const containerWidth = container.node().getBoundingClientRect().width;
         const width = containerWidth - margin.left - margin.right;
@@ -715,8 +715,8 @@ document.addEventListener('DOMContentLoaded', function() {
   function renderChart(config, data, maxYValue) {
     const isMobile = window.innerWidth <= 767;
     const margin = isMobile 
-      ? { top: 20, right: 0, bottom: 60, left: 70 } 
-      : { top: 20, right: 0, bottom: 50, left: 70 };
+      ? { top: 20, right: 20, bottom: 60, left: 70 } 
+      : { top: 20, right: 20, bottom: 50, left: 70 };
     const container = d3.select(`#${config.elementId}`);
     const containerWidth = container.node().getBoundingClientRect().width;
     const width = containerWidth - margin.left - margin.right;
@@ -802,8 +802,8 @@ document.addEventListener('DOMContentLoaded', function() {
 
     svg
       .append('text')
-      .attr('x', isMobile ? xScale(100) : xScale(100))
-      .attr('y', yScale(1300))
+      .attr('x', isMobile ? xScale(90) : xScale(100))
+      .attr('y', yScale(1400))
       .attr('class', 'anno')
       .text(`Past: 1958-${currentYear - 1}`)
       .attr('text-anchor', 'start');
@@ -872,8 +872,8 @@ document.addEventListener('DOMContentLoaded', function() {
   function renderCumulativeERAChart(data) {
     const isMobile = window.innerWidth <= 767; // Example breakpoint for mobile devices
     const margin = isMobile 
-      ? { top: 20, right: 0, bottom: 60, left: 50 }  // Smaller margins for mobile
-      : { top: 20, right: 0, bottom: 50, left: 50 }; // Larger margins for desktop
+      ? { top: 20, right: 10, bottom: 60, left: 50 }  // Smaller margins for mobile
+      : { top: 20, right: 10, bottom: 50, left: 50 }; // Larger margins for desktop
     const container = d3.select('#cumulative-era-chart');
     const containerWidth = container.node().getBoundingClientRect().width;
     const width = containerWidth - margin.left - margin.right;
@@ -1002,7 +1002,7 @@ document.addEventListener('DOMContentLoaded', function() {
     svg
       .append('text')
       .attr('x', isMobile ? xScale(80) : xScale(110)) // Adjusted for mobile
-      .attr('y', yScale(5))
+      .attr('y', yScale(6))
       .attr('class', 'anno')
       .text(`Past seasons: 1958-${currentYear - 1}`)
       .attr('text-anchor', 'start');
@@ -1331,4 +1331,163 @@ document.addEventListener('DOMContentLoaded', function () {
 
   fetchTableData();
 });
+
+
+
+
+document.addEventListener('DOMContentLoaded', function() {
+  let eventsData = [];
+  const eventsSet = new Set();
+  const selectMenu = document.getElementById('event-select');
+
+  async function fetchPlayerAtBatData() {
+    try {
+      const response = await fetch('https://stilesdata.com/dodgers/data/batting/dodgers_player_atbat_lastpitch_outcome_current.json');
+      eventsData = await response.json();
+      
+      // Collect unique event types
+      eventsData.forEach(d => eventsSet.add(d.events));
+      populateEventSelect(Array.from(eventsSet));
+      
+      // Initially render the chart with the default event type
+      renderBarCodeChart('Home run');
+    } catch (error) {
+      console.error('Failed to fetch data:', error);
+    }
+  }
+
+  function populateEventSelect(events) {
+    events.forEach(event => {
+      const option = document.createElement('option');
+      option.value = event;
+      option.text = event;
+      selectMenu.appendChild(option);
+    });
+
+    selectMenu.addEventListener('change', function() {
+      renderBarCodeChart(this.value);
+    });
+  }
+
+  fetchPlayerAtBatData();
+  
+  function renderBarCodeChart(selectedEvent) {
+    const container = d3.select('#barcode-chart');
+    const svg = container.select('svg');
+    svg.selectAll('*').remove(); // Clear previous chart
+
+    const isMobile = window.innerWidth <= 767;
+
+    const margin = isMobile 
+    ? { top: 20, right: 0, bottom: 60, left: 120 }  // Smaller margins for mobile
+    : { top: 20, right: 0, bottom: 50, left: 120 }; // Larger margins for desktop
+
+    const containerWidth = container.node().getBoundingClientRect().width;
+    const width = containerWidth - margin.left - margin.right;
+    const height = 500 - margin.top - margin.bottom;
+
+    svg.attr('viewBox', `0 0 ${containerWidth} 500`).attr('preserveAspectRatio', 'xMinYMin meet');
+
+    // Filter and sort data by plate appearances
+    const sortedData = d3.rollups(eventsData, v => d3.max(v, d => d.pa_number), d => d.batter_name_clean)
+      .sort((a, b) => b[1] - a[1])
+      .slice(0, 10)
+      .map(d => d[0]);
+
+    const filteredData = eventsData.filter(d => sortedData.includes(d.batter_name_clean));
+
+    const x = d3.scaleLinear()
+      .domain([0, d3.max(filteredData, d => d.pa_number)])
+      .range([0, width]);
+
+    const y = d3.scaleBand()
+      .domain(filteredData.map(d => d.batter_name_clean).filter((v, i, a) => a.indexOf(v) === i))
+      .range([0, height])
+      .padding(0.1);
+
+    const g = svg.append('g').attr('transform', `translate(${margin.left},${margin.top})`);
+
+    const xAxis = d3.axisBottom(x).tickValues(x.ticks(isMobile ? 50 : 25).filter(tick => tick % (isMobile ? 50 : 25) === 0));
+
+    g.append('g')
+      .attr('class', 'axis axis--x')
+      .attr('transform', `translate(0,${height})`)
+      .call(xAxis);
+
+    g.append('g')
+      .attr('class', 'axis axis--y')
+      .call(d3.axisLeft(y));
+
+    // X-axis Label
+    g.append("text")
+      .attr("text-anchor", "middle")
+      .attr('class', 'anno-dark')
+      .attr("x", width / 2)
+      .attr("y", height + margin.bottom - 10)
+      .text("Plate appearance number");
+
+    // Draw gray lines for all events
+    g.selectAll('.line')
+      .data(filteredData)
+      .enter()
+      .append('line')
+      .attr('x1', d => x(d.pa_number))
+      .attr('x2', d => x(d.pa_number))
+      .attr('y1', d => y(d.batter_name_clean))
+      .attr('y2', d => y(d.batter_name_clean) + y.bandwidth())
+      .attr('stroke', '#ccc')
+      .attr('stroke-width', .3);
+
+    // Highlight selected event type with color based on positive_outcome
+    g.selectAll('.highlight')
+      .data(filteredData.filter(d => d.events === selectedEvent))
+      .enter()
+      .append('line')
+      .attr('x1', d => x(d.pa_number))
+      .attr('x2', d => x(d.pa_number))
+      .attr('y1', d => y(d.batter_name_clean))
+      .attr('y2', d => y(d.batter_name_clean) + y.bandwidth())
+      .attr('stroke', d => d.positive_outcome ? '#005A9C' : '#ef3e42')
+      .attr('stroke-width', 1);
+
+    // pitch annotation line and text
+    const annotationX = x(40); 
+    const annotationY = y('Freddie Freeman') + y.bandwidth() / 2;
+
+    g.append('line')
+      .attr('x1', annotationX)
+      .attr('x2', annotationX)
+      .attr('y1', annotationY - 40)
+      .attr('y2', annotationY - 25)
+      .attr('stroke', '#000')
+      .attr('stroke-width', 1)
+      .attr('marker-end', 'url(#arrow)');
+
+    g.append('text')
+      .attr('x', annotationX + 10)
+      .attr('y', annotationY - 30)
+      .attr('text-anchor', 'start')
+      .attr('font-size', '12px')
+      .attr('fill', '#222')
+      .text('Line = plate appearance')
+      .attr('class', 'anno-dark');
+
+    // Define the arrow marker
+    svg.append('defs')
+      .append('marker')
+      .attr('id', 'arrow')
+      .attr('viewBox', '0 0 10 10')
+      .attr('refX', 5)
+      .attr('refY', 5)
+      .attr('markerWidth', 6)
+      .attr('markerHeight', 6)
+      .attr('orient', 'auto')
+      .append('path')
+      .attr('d', 'M 0 0 L 10 5 L 0 10 z')
+      .attr('fill', '#000');
+  }
+
+  window.addEventListener('resize', () => renderBarCodeChart(selectMenu.value));
+});
+
 
