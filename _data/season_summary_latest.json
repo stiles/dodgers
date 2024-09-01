@@ -2,39 +2,39 @@
     {
         "stat_label":"Wins",
         "stat":"wins",
-        "value":68,
+        "value":82,
         "category":"standings",
-        "context_value":71,
+        "context_value":84,
         "context_value_label":"This point last season"
     },
     {
         "stat_label":"Losses",
         "stat":"losses",
-        "value":49,
+        "value":54,
         "category":"standings",
-        "context_value":46,
+        "context_value":52,
         "context_value_label":"This point last season"
     },
     {
         "stat_label":"Record",
         "stat":"record",
-        "value":"68-49",
+        "value":"82-54",
         "category":"standings",
-        "context_value":"71-46",
+        "context_value":"84-52",
         "context_value_label":"This point last season"
     },
     {
         "stat_label":"Win percentage",
         "stat":"win_pct",
-        "value":"57%",
+        "value":"60%",
         "category":"standings",
-        "context_value":"61%",
+        "context_value":"62%",
         "context_value_label":"This point last season"
     },
     {
         "stat_label":"Games up\/back",
         "stat":"games_up_back",
-        "value":2.5,
+        "value":6.0,
         "category":"standings",
         "context_value":1,
         "context_value_label":"Division rank"
@@ -42,15 +42,15 @@
     {
         "stat_label":"Avg. home attendance",
         "stat":"mean_attendance",
-        "value":"48,202",
+        "value":"48,475",
         "category":"standings",
-        "context_value":59,
+        "context_value":69,
         "context_value_label":"Home games this season"
     },
     {
         "stat_label":"Runs",
         "stat":"runs",
-        "value":576,
+        "value":680,
         "category":"standings",
         "context_value":"2",
         "context_value_label":"League rank"
@@ -58,23 +58,23 @@
     {
         "stat_label":"Runs against",
         "stat":"runs_against",
-        "value":480,
+        "value":557,
         "category":"standings",
-        "context_value":528,
+        "context_value":596,
         "context_value_label":"This point last season"
     },
     {
         "stat_label":"Run differential",
         "stat":"run_differential",
-        "value":96,
+        "value":123,
         "category":"standings",
-        "context_value":136,
+        "context_value":166,
         "context_value_label":"This point last season"
     },
     {
         "stat_label":"Batting average",
         "stat":"batting_average",
-        "value":".252",
+        "value":".254",
         "category":"batting",
         "context_value":".253",
         "context_value_label":"Last decade average"
@@ -82,7 +82,7 @@
     {
         "stat_label":"Home runs",
         "stat":"home_runs",
-        "value":156,
+        "value":187,
         "category":"batting",
         "context_value":"1",
         "context_value_label":"League rank"
@@ -90,7 +90,7 @@
     {
         "stat_label":"Home runs\/game",
         "stat":"home_runs_game",
-        "value":1.33,
+        "value":1.38,
         "category":"batting",
         "context_value":1.36,
         "context_value_label":"Last decade average"
@@ -98,7 +98,7 @@
     {
         "stat_label":"On-base percentage",
         "stat":"on_base_pct",
-        "value":".332",
+        "value":".330",
         "category":"batting",
         "context_value":".332",
         "context_value_label":"Last decade average"
@@ -106,15 +106,15 @@
     {
         "stat_label":"Stolen bases",
         "stat":"stolen_bases",
-        "value":77,
+        "value":102,
         "category":"batting",
-        "context_value":"9",
+        "context_value":"7",
         "context_value_label":"League rank"
     },
     {
         "stat_label":"Stolen bases\/game",
         "stat":"stolen_bases_game",
-        "value":0.66,
+        "value":0.75,
         "category":"batting",
         "context_value":0.65,
         "context_value_label":"Rate all last season"
@@ -122,15 +122,15 @@
     {
         "stat_label":"Strikeouts",
         "stat":"strikeouts",
-        "value":"1008",
+        "value":"1161",
         "category":"pitching",
-        "context_value":"7",
+        "context_value":"8",
         "context_value_label":"League rank"
     },
     {
         "stat_label":"Walks",
         "stat":"walks",
-        "value":"357",
+        "value":"412",
         "category":"pitching",
         "context_value":"9",
         "context_value_label":"League rank"
@@ -138,15 +138,15 @@
     {
         "stat_label":"ERA",
         "stat":"era",
-        "value":"3.78",
+        "value":"3.77",
         "category":"pitching",
-        "context_value":"5",
+        "context_value":"4",
         "context_value_label":"League rank"
     },
     {
         "stat_label":"Last updated",
         "stat":"update_time",
-        "value":"August 11, 2024, 9:03 AM PT",
+        "value":"September 1, 2024, 9:03 AM PT",
         "category":"summary",
         "context_value":"",
         "context_value_label":""
@@ -154,7 +154,7 @@
     {
         "stat_label":"Team summary",
         "stat":"summary",
-        "value":"<span class='highlight'>LOS ANGELES<\/span> <span class='updated'>(August 11)<\/span> \u2014 After <span class='highlight'>117<\/span> games this season, the Dodgers are in <span class='highlight'>1st<\/span> place in the National League West division. The team has compiled a <span class='highlight'>68-49<\/span> record, winning <span class='highlight'>57%<\/span> of its games so far. The last game was a <span class='highlight'>4-1<\/span> home <span class='highlight'>win<\/span> against the Pittsburgh Pirates in front of <span class='highlight'>50,697<\/span> fans. They've won <span class='highlight'>5 of the last 10<\/span>.",
+        "value":"<span class='highlight'>LOS ANGELES<\/span> <span class='updated'>(September 1)<\/span> \u2014 After <span class='highlight'>136<\/span> games this season, the Dodgers are in <span class='highlight'>1st<\/span> place in the National League West division. The team has compiled a <span class='highlight'>82-54<\/span> record, winning <span class='highlight'>60%<\/span> of its games so far. The last game was a <span class='highlight'>8-6<\/span> away <span class='highlight'>win<\/span> against the Arizona Diamondbacks in front of <span class='highlight'>50,041<\/span> fans. They've won <span class='highlight'>8 of the last 10<\/span>.",
         "category":"summary",
         "context_value":"",
         "context_value_label":""
