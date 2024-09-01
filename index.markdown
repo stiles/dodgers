@@ -129,15 +129,15 @@ permalink: /
       </table>
   </div>
 
-<!-- <div id="event-selection">
-  <label for="event-select">Every plate appearance, with outcome. Select one:</label>
-  <select id="event-select"></select>
+  <!-- <div id="event-selection">
+    <label for="event-select">Every plate appearance, with outcome. Select one:</label>
+    <select id="event-select"></select>
+  </div>
+  <div id="barcode-chart">
+    <svg></svg>
+  </div>
+ <p class="note">Note: Tables and chart include top-10 batters by plate appearances. </p> -->
 </div>
-<div id="barcode-chart">
-  <svg></svg>
-</div>
- <p class="note">Note: Tables and chart include top-10 batters by plate appearances. </p>
-</div> -->
 
   <h2 class="stat-group"> Pitching</h2>
   <div class="row">
