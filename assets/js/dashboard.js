@@ -17,8 +17,8 @@ async function fetchData() {
 function renderChart(data) {
   const isMobile = window.innerWidth <= 767; // Example breakpoint for mobile devices
   const margin = isMobile 
-    ? { top: 20, right: 20, bottom: 60, left: 50 }  // Smaller margins for mobile
-    : { top: 20, right: 20, bottom: 50, left: 60 }; // Larger margins for desktop
+    ? { top: 20, right: 40, bottom: 60, left: 50 }  // Smaller margins for mobile
+    : { top: 20, right: 40, bottom: 50, left: 60 }; // Larger margins for desktop
   const container = d3.select('#d3-container');
   const containerWidth = container.node().getBoundingClientRect().width;
   const width = containerWidth - margin.left - margin.right;
@@ -235,7 +235,7 @@ function renderRunDiffChart(data) {
     .range([height, 0])
     .domain([d3.min(data, d => d.run_diff), d3.max(data, d => d.run_diff)]);
 
-  const xAxis = d3.axisBottom(xScale).tickValues(xScale.domain().filter(d => d % 10 === 0));
+  const xAxis = d3.axisBottom(xScale).tickValues(xScale.domain().filter(d => d % 20 === 0));
   const yAxis = d3.axisLeft(yScale).ticks(5);
 
   svg.append('g')
@@ -428,8 +428,8 @@ document.addEventListener('DOMContentLoaded', function() {
   function renderCumulativeWinsChart(data) {
       const isMobile = window.innerWidth <= 767; // Example breakpoint for mobile devices
       const margin = isMobile 
-          ? { top: 20, right: 30, bottom: 60, left: 60 }  // Smaller margins for mobile
-          : { top: 20, right: 30, bottom: 50, left: 60 }; // Larger margins for desktop
+          ? { top: 20, right: 40, bottom: 60, left: 60 }  // Smaller margins for mobile
+          : { top: 20, right: 40, bottom: 50, left: 60 }; // Larger margins for desktop
       const container = d3.select('#cumulative-wins-chart');
       const containerWidth = container.node().getBoundingClientRect().width;
       const width = containerWidth - margin.left - margin.right;
@@ -538,8 +538,8 @@ document.addEventListener('DOMContentLoaded', function() {
       function renderChart(config, data, maxYValue) {
         const isMobile = window.innerWidth <= 767;
         const margin = isMobile 
-          ? { top: 20, right: 30, bottom: 60, left: 60 } 
-          : { top: 20, right: 30, bottom: 50, left: 60 };
+          ? { top: 20, right: 60, bottom: 60, left: 60 } 
+          : { top: 20, right: 60, bottom: 50, left: 60 };
         const container = d3.select(`#${config.elementId}`);
         const containerWidth = container.node().getBoundingClientRect().width;
         const width = containerWidth - margin.left - margin.right;
@@ -631,8 +631,8 @@ document.addEventListener('DOMContentLoaded', function() {
     
         svg
           .append('text')
-          .attr('x', isMobile ? xScale(100) : xScale(100))
-          .attr('y', yScale(300))
+          .attr('x', isMobile ? xScale(60) : xScale(60))
+          .attr('y', yScale(250))
           .attr('class', 'anno')
           .text(`Past: 1958-${currentYear - 1}`)
           .attr('text-anchor', 'start');
@@ -715,8 +715,8 @@ document.addEventListener('DOMContentLoaded', function() {
   function renderChart(config, data, maxYValue) {
     const isMobile = window.innerWidth <= 767;
     const margin = isMobile 
-      ? { top: 20, right: 30, bottom: 60, left: 70 } 
-      : { top: 20, right: 30, bottom: 50, left: 70 };
+      ? { top: 20, right: 80, bottom: 60, left: 70 } 
+      : { top: 20, right: 85, bottom: 50, left: 70 };
     const container = d3.select(`#${config.elementId}`);
     const containerWidth = container.node().getBoundingClientRect().width;
     const width = containerWidth - margin.left - margin.right;
@@ -802,7 +802,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
     svg
       .append('text')
-      .attr('x', isMobile ? xScale(90) : xScale(100))
+      .attr('x', isMobile ? xScale(70) : xScale(80))
       .attr('y', yScale(1400))
       .attr('class', 'anno')
       .text(`Past: 1958-${currentYear - 1}`)
@@ -872,8 +872,8 @@ document.addEventListener('DOMContentLoaded', function() {
   function renderCumulativeERAChart(data) {
     const isMobile = window.innerWidth <= 767; // Example breakpoint for mobile devices
     const margin = isMobile 
-      ? { top: 20, right: 20, bottom: 60, left: 50 }  // Smaller margins for mobile
-      : { top: 20, right: 20, bottom: 50, left: 50 }; // Larger margins for desktop
+      ? { top: 20, right: 44, bottom: 60, left: 50 }  // Smaller margins for mobile
+      : { top: 20, right: 30, bottom: 50, left: 50 }; // Larger margins for desktop
     const container = d3.select('#cumulative-era-chart');
     const containerWidth = container.node().getBoundingClientRect().width;
     const width = containerWidth - margin.left - margin.right;
@@ -1014,15 +1014,14 @@ document.addEventListener('DOMContentLoaded', function() {
 
 
 
-// TABLES
-// Schedule
-
 document.addEventListener('DOMContentLoaded', function () {
   const renderTable = (games, tableId) => {
     const tableBody = document.querySelector(`#${tableId} tbody`);
     tableBody.innerHTML = '';
 
     games.forEach(game => {
+      if (game.opp_name === null) return;  // Skip games with a null opponent name
+
       const row = document.createElement('tr');
       if (tableId === 'last-games') {
         row.innerHTML = `
