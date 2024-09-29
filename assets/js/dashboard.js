@@ -17,8 +17,8 @@ async function fetchData() {
 function renderChart(data) {
   const isMobile = window.innerWidth <= 767; // Example breakpoint for mobile devices
   const margin = isMobile 
-    ? { top: 20, right: 0, bottom: 60, left: 50 }  // Smaller margins for mobile
-    : { top: 20, right: 0, bottom: 50, left: 60 }; // Larger margins for desktop
+    ? { top: 20, right: 20, bottom: 60, left: 50 }  // Smaller margins for mobile
+    : { top: 20, right: 20, bottom: 50, left: 60 }; // Larger margins for desktop
   const container = d3.select('#d3-container');
   const containerWidth = container.node().getBoundingClientRect().width;
   const width = containerWidth - margin.left - margin.right;
@@ -214,7 +214,7 @@ async function fetchGameData() {
 
 function renderRunDiffChart(data) {
   const isMobile = window.innerWidth <= 767;
-  const margin = isMobile ? { top: 20, right: 10, bottom: 50, left: 30 } : { top: 20, right: 20, bottom: 40, left: 40 };
+  const margin = isMobile ? { top: 20, right: 30, bottom: 50, left: 30 } : { top: 20, right: 30, bottom: 40, left: 40 };
   const container = d3.select('#results-chart');
   const containerWidth = container.node().getBoundingClientRect().width;
   const width = containerWidth - margin.left - margin.right;
@@ -428,8 +428,8 @@ document.addEventListener('DOMContentLoaded', function() {
   function renderCumulativeWinsChart(data) {
       const isMobile = window.innerWidth <= 767; // Example breakpoint for mobile devices
       const margin = isMobile 
-          ? { top: 20, right: 20, bottom: 60, left: 60 }  // Smaller margins for mobile
-          : { top: 20, right: 20, bottom: 50, left: 60 }; // Larger margins for desktop
+          ? { top: 20, right: 30, bottom: 60, left: 60 }  // Smaller margins for mobile
+          : { top: 20, right: 30, bottom: 50, left: 60 }; // Larger margins for desktop
       const container = d3.select('#cumulative-wins-chart');
       const containerWidth = container.node().getBoundingClientRect().width;
       const width = containerWidth - margin.left - margin.right;
@@ -538,8 +538,8 @@ document.addEventListener('DOMContentLoaded', function() {
       function renderChart(config, data, maxYValue) {
         const isMobile = window.innerWidth <= 767;
         const margin = isMobile 
-          ? { top: 20, right: 20, bottom: 60, left: 60 } 
-          : { top: 20, right: 20, bottom: 50, left: 60 };
+          ? { top: 20, right: 30, bottom: 60, left: 60 } 
+          : { top: 20, right: 30, bottom: 50, left: 60 };
         const container = d3.select(`#${config.elementId}`);
         const containerWidth = container.node().getBoundingClientRect().width;
         const width = containerWidth - margin.left - margin.right;
@@ -715,8 +715,8 @@ document.addEventListener('DOMContentLoaded', function() {
   function renderChart(config, data, maxYValue) {
     const isMobile = window.innerWidth <= 767;
     const margin = isMobile 
-      ? { top: 20, right: 20, bottom: 60, left: 70 } 
-      : { top: 20, right: 20, bottom: 50, left: 70 };
+      ? { top: 20, right: 30, bottom: 60, left: 70 } 
+      : { top: 20, right: 30, bottom: 50, left: 70 };
     const container = d3.select(`#${config.elementId}`);
     const containerWidth = container.node().getBoundingClientRect().width;
     const width = containerWidth - margin.left - margin.right;
@@ -872,8 +872,8 @@ document.addEventListener('DOMContentLoaded', function() {
   function renderCumulativeERAChart(data) {
     const isMobile = window.innerWidth <= 767; // Example breakpoint for mobile devices
     const margin = isMobile 
-      ? { top: 20, right: 10, bottom: 60, left: 50 }  // Smaller margins for mobile
-      : { top: 20, right: 10, bottom: 50, left: 50 }; // Larger margins for desktop
+      ? { top: 20, right: 20, bottom: 60, left: 50 }  // Smaller margins for mobile
+      : { top: 20, right: 20, bottom: 50, left: 50 }; // Larger margins for desktop
     const container = d3.select('#cumulative-era-chart');
     const containerWidth = container.node().getBoundingClientRect().width;
     const width = containerWidth - margin.left - margin.right;
