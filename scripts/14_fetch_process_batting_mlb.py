@@ -55,7 +55,7 @@ headers = {
 }
 
 batter_list = requests.get(
-    "https://bdfed.stitch.mlbinfra.com/bdfed/stats/player?&env=prod&season=2024&sportId=1&stats=season&group=hitting&gameType=R&offset=0&sortStat=plateAppearances&order=desc&teamId=119",
+    f"https://bdfed.stitch.mlbinfra.com/bdfed/stats/player?&env=prod&season={year}&sportId=1&stats=season&group=hitting&gameType=R&offset=0&sortStat=plateAppearances&order=desc&teamId=119",
     headers=headers,
 )
 
