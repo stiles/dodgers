@@ -54,8 +54,8 @@ jobs:
       run: |
         python scripts/01_fetch_process_standings.py
         python scripts/02_fetch_process_batting.py
-        python scripts/03_viz_standings.py
-        python scripts/04_viz_batting.py
+        # python scripts/03_viz_standings.py
+        # python scripts/04_viz_batting.py
         python scripts/05_fetch_process_pitching.py
         python scripts/06_create_toplines_summary.py
         python scripts/07_fetch_process_season_outcomes.py

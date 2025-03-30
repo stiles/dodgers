@@ -1,10 +1,18 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9 http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd" xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 <url>
+<<<<<<< HEAD
 <loc>https://dodgersdata.bot/jekyll/update/2024/05/13/welcome-to-jekyll.html</loc>
 <lastmod>2024-05-13T15:40:21+00:00</lastmod>
 </url>
 <url>
 <loc>https://dodgersdata.bot/</loc>
+=======
+<loc>http://localhost:4000/jekyll/update/2024/05/13/welcome-to-jekyll.html</loc>
+<lastmod>2024-05-13T08:40:21-07:00</lastmod>
+</url>
+<url>
+<loc>http://localhost:4000/</loc>
+>>>>>>> afd3ee66 (fixing path to batting data for 2025)
 </url>
 </urlset>
