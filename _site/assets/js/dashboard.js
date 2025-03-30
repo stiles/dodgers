@@ -1284,17 +1284,18 @@ document.addEventListener('DOMContentLoaded', function () {
 
   function appendTableRows(table, data) {
     const maxAttendance = d3.max(data, d => d.attend_game);
-
+  
     const rows = table.append('tbody').selectAll('tr')
       .data(data)
       .enter().append('tr');
-
+  
     rows.append('td').text(d => d.team);
     rows.append('td').text(d => d.name); // Always include stadium name
+  
     rows.append('td').append('div')
       .style('position', 'relative')
       .style('width', '100%')
-      .each(function (d) {
+      .each(function(d) {
         const barWidth = (d.attend_game / maxAttendance) * 100;
         const isDodgers = d.team === 'Los Angeles Dodgers';
         d3.select(this).append('div')
@@ -1302,7 +1303,12 @@ document.addEventListener('DOMContentLoaded', function () {
           .style('width', `${barWidth}%`);
         d3.select(this).append('div')
           .attr('class', `attendance-bar-text ${isDodgers ? 'attendance-bar-dodgers' : ''}`)
-          .text(d.attend_game.toLocaleString());
+          .text(() => {
+            // Check if attend_game is a valid number; if not, use 0.
+            return (d.attend_game != null && !isNaN(d.attend_game))
+              ? Number(d.attend_game).toLocaleString()
+              : "0";
+          });
       });
   }
 
