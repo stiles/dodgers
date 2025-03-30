@@ -18,7 +18,7 @@ function renderChart(data) {
   const isMobile = window.innerWidth <= 767; // Example breakpoint for mobile devices
   const margin = isMobile 
     ? { top: 20, right: 40, bottom: 60, left: 50 }  // Smaller margins for mobile
-    : { top: 20, right: 70, bottom: 50, left: 60 }; // Larger margins for desktop
+    : { top: 20, right: 40, bottom: 50, left: 60 }; // Larger margins for desktop
   const container = d3.select('#d3-container');
   const containerWidth = container.node().getBoundingClientRect().width;
   const width = containerWidth - margin.left - margin.right;
@@ -296,7 +296,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
   function populateYearSelect(years) {
       const yearSelect = document.getElementById('year-select');
-      const currentYear = '2024' // Get the current year as a string
+      const currentYear = new Date().getFullYear().toString(); // Get the current year as a string
       years
           .filter(year => year !== currentYear) // Exclude the current year
           .forEach(year => {
@@ -313,8 +313,7 @@ document.addEventListener('DOMContentLoaded', function() {
   }
 
   function drawLines(svg, data) {
-      // const currentYear = new Date().getFullYear().toString();
-      const currentYear = '2024';
+      const currentYear = new Date().getFullYear().toString();
 
       // Draw all lines except the current year first
       const allLinesExceptCurrentYear = Array.from(data.entries()).filter(
@@ -612,8 +611,7 @@ document.addEventListener('DOMContentLoaded', function() {
           .style('stroke', '#ccc')
           .style('stroke-width', 0.5);
     
-        // const currentYear = new Date().getFullYear().toString();
-        const currentYear = '2024'
+        const currentYear = new Date().getFullYear().toString();
         const lineCurrentYear = Array.from(data.entries()).filter((d) => d[0] === currentYear);
         if (lineCurrentYear.length > 0) {
           svg
@@ -787,7 +785,7 @@ document.addEventListener('DOMContentLoaded', function() {
       .style('stroke', '#ccc')
       .style('stroke-width', 0.5);
 
-    const currentYear = '2024'
+    const currentYear = new Date().getFullYear().toString();
     const lineCurrentYear = Array.from(data.entries()).filter((d) => d[0] === currentYear);
     if (lineCurrentYear.length > 0) {
       svg
@@ -952,9 +950,8 @@ document.addEventListener('DOMContentLoaded', function() {
       .style('stroke', '#ccc')
       .style('stroke-width', 0.5);
 
-    // const currentYear = new Date().getFullYear().toString();
-    const currentYear = '2024'
-    console.log('Current year:', currentYear);
+    const currentYear = new Date().getFullYear().toString();
+    // console.log('Current year:', currentYear);
     const lineCurrentYear = data.get(currentYear);
     // console.log('Current year data:', lineCurrentYear);
 
@@ -971,7 +968,7 @@ document.addEventListener('DOMContentLoaded', function() {
         .style('stroke-width', 2);
 
       const lastDataCurrentYear = lineCurrentYear.slice(-1)[0];
-      console.log('Last data of current year:', lastDataCurrentYear);
+      // console.log('Last data of current year:', lastDataCurrentYear);
 
       svg
         .append('text')

@@ -1,5 +1,22 @@
 [
     {
+        "year":2025,
+        "games":4,
+        "wins":4,
+        "losses":0,
+        "ties":0,
+        "win_pct":1.0,
+        "finish":"1st of 5",
+        "games_back":0.0,
+        "playoffs":"",
+        "runs":23,
+        "runs_allowed":13,
+        "attendance":105624.0,
+        "batter_age":31.3,
+        "pitcher_age":29.6,
+        "league_place":"1st"
+    },
+    {
         "year":2024,
         "games":162,
         "wins":98,
@@ -8,7 +25,7 @@
         "win_pct":0.605,
         "finish":"1st of 5",
         "games_back":0.0,
-        "playoffs":"",
+        "playoffs":"Won\u00a0WS",
         "runs":842,
         "runs_allowed":686,
         "attendance":3941251.0,
