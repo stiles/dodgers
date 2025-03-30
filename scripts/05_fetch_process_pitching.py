@@ -3,7 +3,7 @@
 
 """
 LA Dodgers pitching
-This notebook downloads the team's current pitching table from [Baseball Reference](https://www.baseball-reference.com/teams/LAD/{YEAR}-pitching.shtml#all_team_pitching) and outputs the data to CSV, JSON and Parquet formats for later analysis and visualization.
+This script downloads the team's current pitching table from [Baseball Reference](https://www.baseball-reference.com/teams/LAD/{YEAR}-pitching.shtml#all_team_pitching) and outputs the data to CSV, JSON and Parquet formats for later analysis and visualization.
 """
 
 # Import Python tools
@@ -30,8 +30,11 @@ summary_df = (
     .query(f"Rk.isna() and Rk != 'Rk'")
     .dropna(thresh=7)
     .assign(season=year)
+    .rename(columns={'Player': 'name'})
 )
 summary_df.columns = summary_df.columns.str.lower()
+
+print(summary_df.columns)
 
 
 # Ranks

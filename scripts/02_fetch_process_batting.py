@@ -15,14 +15,8 @@ from io import StringIO
 aws_key_id = os.environ.get("AWS_ACCESS_KEY_ID")
 aws_secret_key = os.environ.get("AWS_SECRET_ACCESS_KEY")
 
-print("Current Working Directory: ", os.getcwd())
-print("Directory Contents: ", os.listdir())
-
-
 # Fetch
-
 # Statistics page URL for the current season
-
 year = pd.to_datetime("now").strftime("%Y")
 
 
@@ -30,41 +24,36 @@ url = f"https://www.baseball-reference.com/teams/LAD/{year}-batting.shtml"
 
 
 # Fetch batters table, excluding team totals
-
 player_totals_df = (
     pd.read_html(url)[0]
     .query(f"~Rk.isna() and Rk != 'Rk'")
     .dropna(thresh=7)
     .assign(season=year)
+    .rename(columns={'GIDP':'gdp'})
 )
 player_totals_df.columns = player_totals_df.columns.str.lower().str.replace(
     "+", "_plus"
 )
 
-
 # Team stats
-
 summary_df = (
     pd.read_html(url)[0]
     .query(f"Rk.isna() and Rk != 'Rk'")
     .dropna(thresh=7)
     .assign(season=year)
+    .rename(columns={'GIDP':'gdp', 'Player': 'name'})  # Rename 'name' column to avoid conflicts
 )
 summary_df.columns = summary_df.columns.str.lower().str.replace("+", "_plus")
 
 
 
 # Player stats
-
 # Remove injury details listed parenthetically next to some players' names
-
-player_totals_df["name"] = (
-    player_totals_df["name"].str.split("(", expand=True)[0].str.strip()
+player_totals_df["player"] = (
+    player_totals_df["player"].str.split("(", expand=True)[0].str.strip()
 )
 
-
 # Determine batter type, clean special characters from names
-
 def determine_and_clean_bats(name):
     # Determine batting stance
     if name.endswith("*"):
@@ -83,17 +72,14 @@ def determine_and_clean_bats(name):
 
 
 # Apply the function and separate the results into two columns
-
 player_totals_df["bats"], player_totals_df["name_clean"] = zip(
-    *player_totals_df["name"].apply(determine_and_clean_bats)
+    *player_totals_df["player"].apply(determine_and_clean_bats)
 )
 
 
 # Replace the original 'player' column with the cleaned names
-
-player_totals_df["name"] = player_totals_df["name_clean"]
+player_totals_df["player"] = player_totals_df["name_clean"]
 del player_totals_df["name_clean"]
-
 
 player_totals_df[
     [
@@ -148,35 +134,28 @@ player_totals_df[["ba", "obp", "slg", "ops", "ops_plus"]] = player_totals_df[
     ["ba", "obp", "slg", "ops", "ops_plus"]
 ].astype(float)
 
-
+player_totals_df = player_totals_df.rename(columns={'name_clean': 'name'})
 
 # Team stats
-# > The main batting table has totals for the team, with totals and ranks by season
+# The main batting table has totals for the team, with totals and ranks by season
 
 # Team totals
-
-team_totals_df = summary_df.query('name == "Team Totals"').dropna(axis=1)
-
+team_totals_df = summary_df[summary_df['name'] == "Team Totals"].dropna(axis=1)
 
 # Team ranks
-
 team_ranks_df = summary_df.query('name.str.contains("Rank")').dropna(axis=1)
 
-
-
 # Combine
-
 # Concatenate current season player totals with historical player archive
 
 player_totals_archive_df = pd.read_parquet(
     "https://stilesdata.com/dodgers/data/batting/archive/dodgers_player_batting_statistics_1958_2023.parquet"
 )
 
-
 players_full_df = (
     pd.concat([player_totals_df, player_totals_archive_df])
     .sort_values("season", ascending=False)
-    .reset_index(drop=True)
+    .reset_index(drop=True).rename(columns={'player': 'name'})
 )
 
 
@@ -203,10 +182,7 @@ team_ranks_full_df = (
     .reset_index(drop=True)
 )
 
-
-
 # Export
-
 # Function to save dataframes with different formats and file extensions
 
 def save_dataframe(df, path_without_extension, formats):
@@ -219,7 +195,6 @@ def save_dataframe(df, path_without_extension, formats):
             df.to_json(file_path, orient="records", lines=True)
         elif file_format == "parquet":
             df.to_parquet(file_path, index=False)
-
 
 # Save local files
 

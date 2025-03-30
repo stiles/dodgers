@@ -2,14 +2,7 @@
 # coding: utf-8
 
 # # LA Dodgers Standings, 1958-present
-# > This notebook downloads the team's current standings table from [Baseball Reference](https://www.baseball-reference.com/teams/LAD/2024-schedule-scores.shtml) and combines it with historic records for later analysis and visualization.
-
-# ---
-
-# #### Import Python tools and Jupyter config
-
-#!/usr/bin/env python
-# coding: utf-8
+# This script downloads the team's current standings table from [Baseball Reference](https://www.baseball-reference.com/teams/LAD/2024-schedule-scores.shtml) and combines it with historic records for later analysis and visualization.
 
 """
 LA Dodgers Standings, 1958-present
