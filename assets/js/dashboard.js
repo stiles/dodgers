@@ -273,6 +273,7 @@ document.addEventListener('DOMContentLoaded', function() {
           const response = await d3.json('https://stilesdata.com/dodgers/data/standings/dodgers_standings_1958_present.json');
           // Group data by year
           groupedByYear = d3.group(response, (d) => d.year);
+          console.log("Grouped years:", Array.from(groupedByYear.keys()));
           populateYearSelect(Array.from(groupedByYear.keys()));
           renderCumulativeWinsChart(groupedByYear);
       } catch (error) {
@@ -299,112 +300,121 @@ document.addEventListener('DOMContentLoaded', function() {
   }
 
   function drawLines(svg, data) {
-      const currentYear = new Date().getFullYear().toString();
-
-      // Draw all lines except the current year first
-      const allLinesExceptCurrentYear = Array.from(data.entries()).filter(
-          (d) => d[0] !== currentYear && d[0] !== selectedYear
-      );
-
-      svg.selectAll('.line').remove(); // Clear previous lines
-      svg.selectAll('.anno-selected-year').remove(); // Clear previous annotations
-
-      svg
-          .selectAll('.line')
-          .data(allLinesExceptCurrentYear, (d) => d[0])
+    const currentYear = new Date().getFullYear().toString();
+  
+    // Create the line generator with fallback conversion for wins and gm.
+    const line = d3.line()
+      .x((d) => {
+        const gm = Number(d.gm) || 0;
+        // Debug log
+        // console.log("gm:", d.gm, "converted:", gm);
+        return xScale(gm);
+      })
+      .y((d) => {
+        const wins = Number(d.wins);
+        // If wins is not a number, log an error and default to 0
+        if (isNaN(wins)) {
+          console.error("Invalid wins value for data point:", d);
+        }
+        return yScale(isNaN(wins) ? 0 : wins);
+      })
+      .curve(d3.curveMonotoneX);
+  
+    // Draw all lines except current and any selected year
+    const allLinesExceptCurrentYear = Array.from(data.entries()).filter(
+      (d) => d[0] !== currentYear && d[0] !== selectedYear
+    );
+  
+    svg.selectAll('.line').remove(); // Clear previous lines
+    svg.selectAll('.anno-selected-year').remove(); // Clear previous annotations
+  
+    svg.selectAll('.line')
+      .data(allLinesExceptCurrentYear, (d) => d[0])
+      .enter()
+      .append('path')
+      .attr('class', 'line')
+      .attr('d', (d) => line(d[1]))
+      .style('fill', 'none')
+      .style('stroke', '#ccc')
+      .style('stroke-width', 0.5);
+  
+    // Draw the selected year line if a year is selected
+    if (selectedYear) {
+      const selectedYearData = Array.from(data.entries()).filter((d) => d[0] === selectedYear);
+      if (selectedYearData.length > 0) {
+        selectedYearData[0][1].sort((a, b) => d3.ascending(Number(a.gm), Number(b.gm)));
+        const selectedYearLastData = selectedYearData[0][1].slice(-1)[0];
+  
+        svg.selectAll('.line-selected-year')
+          .data(selectedYearData, (d) => d[0])
           .enter()
           .append('path')
-          .attr('class', 'line')
+          .attr('class', 'line line-selected-year')
           .attr('d', (d) => line(d[1]))
           .style('fill', 'none')
-          .style('stroke', '#ccc')
-          .style('stroke-width', 0.5);
-
-      // Draw the selected year line if a year is selected
-      if (selectedYear) {
-          const selectedYearData = Array.from(data.entries()).filter((d) => d[0] === selectedYear);
-          // console.log('Selected Year Data:', selectedYearData);
-
-          if (selectedYearData.length > 0) {
-              // Sort the data to ensure we get the last game correctly
-              selectedYearData[0][1].sort((a, b) => d3.ascending(a.gm, b.gm));
-              const selectedYearLastData = selectedYearData[0][1].slice(-1)[0];
-              // console.log('Selected Year Last Data:', selectedYearLastData);
-
-              svg
-                  .selectAll('.line-selected-year')
-                  .data(selectedYearData, (d) => d[0])
-                  .enter()
-                  .append('path')
-                  .attr('class', 'line line-selected-year')
-                  .attr('d', (d) => line(d[1]))
-                  .style('fill', 'none')
-                  .style('stroke', '#ef3e42') // Dodger Red
-                  .style('stroke-width', 1.5);
-
-              // Add text annotation for the selected year
-              svg
-                  .append('text')
-                  .attr('x', xScale(selectedYearLastData.gm) - 10) // Adjusted x position
-                  .attr('y', yScale(selectedYearLastData.wins) - 10) // Adjusted y position
-                  .text(selectedYear)
-                  .attr('class', 'anno-selected-year')
-                  .style('stroke', '#fff')
-                  .style('stroke-width', '4px')
-                  .style('stroke-linejoin', 'round')
-                  .attr('text-anchor', 'start')
-                  .style('paint-order', 'stroke')
-                  .clone(true)
-                  .style('stroke', 'none');
-          }
+          .style('stroke', '#ef3e42')
+          .style('stroke-width', 1.5);
+  
+        svg.append('text')
+          .attr('x', xScale(Number(selectedYearLastData.gm)) - 10)
+          .attr('y', yScale(Number(selectedYearLastData.wins)) - 10)
+          .text(selectedYear)
+          .attr('class', 'anno-selected-year')
+          .style('stroke', '#fff')
+          .style('stroke-width', '4px')
+          .style('stroke-linejoin', 'round')
+          .attr('text-anchor', 'start')
+          .style('paint-order', 'stroke')
+          .clone(true)
+          .style('stroke', 'none');
       }
-
-      // Draw the current year line
-      const lineCurrentYear = Array.from(data.entries()).filter((d) => d[0] === currentYear);
-      svg
-          .selectAll('.line-current-year')
-          .data(lineCurrentYear, (d) => d[0])
-          .enter()
-          .append('path')
-          .attr('class', 'line line-current-year')
-          .attr('d', (d) => line(d[1]))
-          .style('fill', 'none')
-          .style('stroke', '#005A9C')
-          .style('stroke-width', 2);
-
-      // Ensure lastDataCurrentYear is set to the last game
-      lineCurrentYear[0][1].sort((a, b) => d3.ascending(a.gm, b.gm));
+    }
+  
+    // Draw the current year line
+    const lineCurrentYear = Array.from(data.entries()).filter((d) => d[0] === currentYear);
+    svg.selectAll('.line-current-year')
+      .data(lineCurrentYear, (d) => d[0])
+      .enter()
+      .append('path')
+      .attr('class', 'line line-current-year')
+      .attr('d', (d) => line(d[1]))
+      .style('fill', 'none')
+      .style('stroke', '#005A9C')
+      .style('stroke-width', 2);
+  
+    // Set lastDataCurrentYear safely
+    if (lineCurrentYear.length > 0) {
+      lineCurrentYear[0][1].sort((a, b) => d3.ascending(Number(a.gm), Number(b.gm)));
       const lastDataCurrentYear = lineCurrentYear[0][1].slice(-1)[0];
-      // console.log('Last Data Current Year:', lastDataCurrentYear);
-
-      svg
-          .append('text')
-          .attr('x', xScale(lastDataCurrentYear.gm) + 5) // Adjusted x position
-          .attr('y', yScale(lastDataCurrentYear.wins) - 10) // Adjusted y position
-          .text(currentYear)
-          .attr('class', 'anno-dodgers')
-          .style('stroke', '#fff')
-          .style('stroke-width', '4px')
-          .style('stroke-linejoin', 'round')
-          .attr('text-anchor', 'start')
-          .style('paint-order', 'stroke')
-          .clone(true)
-          .style('stroke', 'none');
-
-      svg
-          .append('text')
-          .attr('x', xScale(lastDataCurrentYear.gm) + 5) // Adjusted x position
-          .attr('y', yScale(lastDataCurrentYear.wins) + 2) // Adjusted y position
-          .text(`${lastDataCurrentYear.wins} wins`)
-          .attr('class', 'anno-dark')
-          .style('stroke', '#fff')
-          .style('stroke-width', '4px')
-          .style('stroke-linejoin', 'round')
-          .attr('text-anchor', 'start')
-          .style('paint-order', 'stroke')
-          .clone(true)
-          .style('stroke', 'none');
+  
+      svg.append('text')
+        .attr('x', xScale(Number(lastDataCurrentYear.gm)) + 5)
+        .attr('y', yScale(Number(lastDataCurrentYear.wins)) - 10)
+        .text(currentYear)
+        .attr('class', 'anno-dodgers')
+        .style('stroke', '#fff')
+        .style('stroke-width', '4px')
+        .style('stroke-linejoin', 'round')
+        .attr('text-anchor', 'start')
+        .style('paint-order', 'stroke')
+        .clone(true)
+        .style('stroke', 'none');
+  
+      svg.append('text')
+        .attr('x', xScale(Number(lastDataCurrentYear.gm)) + 5)
+        .attr('y', yScale(Number(lastDataCurrentYear.wins)) + 2)
+        .text(`${lastDataCurrentYear.wins} wins`)
+        .attr('class', 'anno-dark')
+        .style('stroke', '#fff')
+        .style('stroke-width', '4px')
+        .style('stroke-linejoin', 'round')
+        .attr('text-anchor', 'start')
+        .style('paint-order', 'stroke')
+        .clone(true)
+        .style('stroke', 'none');
+    }
   }
+  
 
   function updateChart() {
       const svg = d3.select('#cumulative-wins-chart svg g');
