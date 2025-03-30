@@ -1,0 +1,769 @@
+<!doctype html>
+<!--
+  Minimal Mistakes Jekyll Theme 4.26.1 by Michael Rose
+  Copyright 2013-2024 Michael Rose - mademistakes.com | @mmistakes
+  Free for personal and commercial use under the MIT license
+  https://github.com/mmistakes/minimal-mistakes/blob/master/LICENSE
+-->
+
+<html lang="en" class="no-js">
+  <head>
+    <meta charset="utf-8">
+
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-7JPCT3BCN6"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-7JPCT3BCN6');
+</script>
+
+<script src="https://d3js.org/d3.v6.min.js"></script>
+
+<!-- begin _includes/seo.html --><title>LA Dodgers Data Bot - A dashboard explaining the Dodgers’ season so far. - Dodgers Data Bot</title>
+<meta name="description" content="An auto-updating baseball statistics dashboard that answers the question: How are the Dodgers doing?">
+
+
+
+<meta property="og:type" content="website">
+<meta property="og:locale" content="en_US">
+<meta property="og:site_name" content="Dodgers Data Bot">
+<meta property="og:title" content="LA Dodgers Data Bot - A dashboard explaining the Dodgers’ season so far.">
+<meta property="og:url" content="http://localhost:4000/">
+
+
+  <meta property="og:description" content="An auto-updating baseball statistics dashboard that answers the question: How are the Dodgers doing?">
+
+
+
+  <meta property="og:image" content="https://dodgersdata.bot/assets/images/meta_card.png">
+
+
+
+  <meta name="twitter:site" content="@stiles">
+  <meta name="twitter:title" content="LA Dodgers Data Bot - A dashboard explaining the Dodgers’ season so far.">
+  <meta name="twitter:description" content="An auto-updating baseball statistics dashboard that answers the question: How are the Dodgers doing?">
+  <meta name="twitter:url" content="http://localhost:4000/">
+
+  
+    <meta name="twitter:card" content="summary">
+    
+      <meta name="twitter:image" content="https://dodgersdata.bot/assets/images/meta_card.png">
+    
+  
+
+  
+
+
+
+
+
+
+
+
+<link rel="canonical" href="http://localhost:4000/">
+
+
+
+
+
+  <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Person",
+    "name": null,
+    "url": "http://localhost:4000/"
+}
+</script>
+
+
+
+
+
+
+
+
+
+<!-- end _includes/seo.html -->
+
+
+
+  <link href="/feed.xml" type="application/atom+xml" rel="alternate" title="Dodgers Data Bot Feed">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<script type="text/javascript">
+  document.documentElement.className = document.documentElement.className.replace(/\bno-js\b/g, '') + ' js ';
+  
+</script>
+
+<!-- For all browsers -->
+<link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+<link rel="stylesheet" href="/assets/css/main.css">
+<link rel="preload" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@latest/css/all.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+<noscript><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@latest/css/all.min.css"></noscript>
+
+
+
+    <!-- start custom head snippets -->
+
+<!-- insert favicons. use https://realfavicongenerator.net/ -->
+
+<link rel="apple-touch-icon" sizes="144x144" href="assets/images/apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="assets/images//favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="assets/images//favicon-16x16.png">
+<link rel="manifest" href="assets/images/site.webmanifest">
+<link rel="mask-icon" href="assets/images/safari-pinned-tab.svg" color="#5bbad5">
+<meta name="msapplication-TileColor" content="#da532c">
+<meta name="theme-color" content="#ffffff">
+
+<!-- end custom head snippets -->
+
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@100..900&display=swap" rel="stylesheet">
+  </head>
+
+  <body class="layout--default">
+    <nav class="skip-links">
+  <ul>
+    <li><a href="#site-nav" class="screen-reader-shortcut">Skip to primary navigation</a></li>
+    <li><a href="#main" class="screen-reader-shortcut">Skip to content</a></li>
+    <li><a href="#footer" class="screen-reader-shortcut">Skip to footer</a></li>
+  </ul>
+</nav>
+
+    
+
+<div class="masthead">
+  <div class="masthead__inner-wrap">
+    <div class="masthead__menu">
+      <nav id="site-nav" class="greedy-nav">
+        
+        <a class="site-title" href="/">
+          Dodgers Data Bot
+          
+        </a>
+        <ul class="visible-links"><li class="masthead__menu-item">
+              <a
+                href="https://github.com/stiles/dodgers/blob/main/README.md"
+                
+                
+              >About</a>
+            </li><li class="masthead__menu-item">
+              <a
+                href="https://github.com/stiles/dodgers/tree/main/data"
+                
+                
+              >Data</a>
+            </li></ul>
+        
+        <button class="greedy-nav__toggle hidden" type="button">
+          <span class="visually-hidden">Toggle menu</span>
+          <div class="navicon"></div>
+        </button>
+        <ul class="hidden-links hidden"></ul>
+      </nav>
+    </div>
+  </div>
+</div>
+
+
+    <div class="initial-content">
+      <div class="container">
+
+<div class="page-topper">
+<div class="trend-icon">
+    
+    
+    
+        <i class="fa-solid fa-arrow-trend-up" style="color: #005a9c;"></i>
+    
+</div>
+<h1 class="headline">How are the Dodgers doing?</h1>
+<p class="subhead">
+    
+    
+    <span class="highlight">LOS ANGELES</span> <span class="updated">(Oct. 30, 2024)</span> — After <span class="highlight">162</span> games this season, the Dodgers finished in <span class="highlight">1st</span> place in the National League West division. The team compiled a <span class="highlight">98-64</span> record in the regular season, winning <span class="highlight">60%</span> of its games. The Dodgers finished the season by defeating the New York Yankees in the World Series.
+</p>
+</div>
+
+
+
+<div class="container mt-4">
+<h2 class="stat-group">Performance and standings</h2>
+<h3 class="visual-subhead"><span class="win">Wins</span>, <span class="loss">losses</span> and run differential</h3>
+<div id="chart-container" class="chart-container" style="position: relative;">
+    <div id="results-chart"></div>
+</div>
+
+  <div class="row">
+    
+      
+      <div class="col-md-4">
+        <div class="card mb-4">
+          <div class="card-header">
+            Wins
+          </div>
+          <div class="card-body">
+            <p class="card-text">98</p>
+          </div>
+          <div class="card-footer text-muted">
+        This point last season: 100
+          </div>
+        </div>
+      </div>
+      
+    
+      
+      <div class="col-md-4">
+        <div class="card mb-4">
+          <div class="card-header">
+            Losses
+          </div>
+          <div class="card-body">
+            <p class="card-text">64</p>
+          </div>
+          <div class="card-footer text-muted">
+        This point last season: 62
+          </div>
+        </div>
+      </div>
+      
+    
+      
+      <div class="col-md-4">
+        <div class="card mb-4">
+          <div class="card-header">
+            Record
+          </div>
+          <div class="card-body">
+            <p class="card-text">98-64</p>
+          </div>
+          <div class="card-footer text-muted">
+        This point last season: 100-62
+          </div>
+        </div>
+      </div>
+      
+    
+      
+      <div class="col-md-4">
+        <div class="card mb-4">
+          <div class="card-header">
+            Win percentage
+          </div>
+          <div class="card-body">
+            <p class="card-text">60%</p>
+          </div>
+          <div class="card-footer text-muted">
+        This point last season: 62%
+          </div>
+        </div>
+      </div>
+      
+    
+      
+      <div class="col-md-4">
+        <div class="card mb-4">
+          <div class="card-header">
+            Games up/back
+          </div>
+          <div class="card-body">
+            <p class="card-text">5.0</p>
+          </div>
+          <div class="card-footer text-muted">
+        Division rank: 1
+          </div>
+        </div>
+      </div>
+      
+    
+      
+      <div class="col-md-4">
+        <div class="card mb-4">
+          <div class="card-header">
+            Avg. home attendance
+          </div>
+          <div class="card-body">
+            <p class="card-text">48,657</p>
+          </div>
+          <div class="card-footer text-muted">
+        Home games this season: 81
+          </div>
+        </div>
+      </div>
+      
+    
+      
+      <div class="col-md-4">
+        <div class="card mb-4">
+          <div class="card-header">
+            Runs
+          </div>
+          <div class="card-body">
+            <p class="card-text">842</p>
+          </div>
+          <div class="card-footer text-muted">
+        League rank: 2
+          </div>
+        </div>
+      </div>
+      
+    
+      
+      <div class="col-md-4">
+        <div class="card mb-4">
+          <div class="card-header">
+            Runs against
+          </div>
+          <div class="card-body">
+            <p class="card-text">686</p>
+          </div>
+          <div class="card-footer text-muted">
+        This point last season: 699
+          </div>
+        </div>
+      </div>
+      
+    
+      
+      <div class="col-md-4">
+        <div class="card mb-4">
+          <div class="card-header">
+            Run differential
+          </div>
+          <div class="card-body">
+            <p class="card-text">156</p>
+          </div>
+          <div class="card-footer text-muted">
+        This point last season: 207
+          </div>
+        </div>
+      </div>
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+  </div>
+
+
+<h3 class="visual-subhead">Cumulative <span class="win">wins</span>: Then and now</h3>
+<p class="chart-chatter">Since moving to LA, the Dodgers have won the World Series seven times: 2024, 2020, 1988, 1981, 1965, 1963 and 1959. Compare this year's win trajectory with the past.</p>
+<select id="year-select">
+  <option>Previous seasons</option>
+</select>
+<div id="cumulative-wins-chart"></div>
+
+<h3 class="visual-subhead">Standings: Games <span class="win">up</span> or <span class="loss">back</span></h3>
+<div id="d3-container" style="width: 100%; padding-bottom: 20px;"></div>
+
+<h2 class="stat-group">Team batting</h2>
+  <div class="row">
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+      <div class="col-md-4">
+        <div class="card mb-4">
+          <div class="card-header">
+            Batting average
+          </div>
+          <div class="card-body">
+            <p class="card-text">.258</p>
+          </div>
+          <div class="card-footer text-muted">
+        Last decade average: .253
+          </div>
+        </div>
+      </div>
+      
+    
+      
+      <div class="col-md-4">
+        <div class="card mb-4">
+          <div class="card-header">
+            Home runs
+          </div>
+          <div class="card-body">
+            <p class="card-text">233</p>
+          </div>
+          <div class="card-footer text-muted">
+        League rank: 1
+          </div>
+        </div>
+      </div>
+      
+    
+      
+      <div class="col-md-4">
+        <div class="card mb-4">
+          <div class="card-header">
+            Home runs/game
+          </div>
+          <div class="card-body">
+            <p class="card-text">1.44</p>
+          </div>
+          <div class="card-footer text-muted">
+        Last decade average: 1.36
+          </div>
+        </div>
+      </div>
+      
+    
+      
+      <div class="col-md-4">
+        <div class="card mb-4">
+          <div class="card-header">
+            On-base percentage
+          </div>
+          <div class="card-body">
+            <p class="card-text">.335</p>
+          </div>
+          <div class="card-footer text-muted">
+        Last decade average: .332
+          </div>
+        </div>
+      </div>
+      
+    
+      
+      <div class="col-md-4">
+        <div class="card mb-4">
+          <div class="card-header">
+            Stolen bases
+          </div>
+          <div class="card-body">
+            <p class="card-text">136</p>
+          </div>
+          <div class="card-footer text-muted">
+        League rank: 6
+          </div>
+        </div>
+      </div>
+      
+    
+      
+      <div class="col-md-4">
+        <div class="card mb-4">
+          <div class="card-header">
+            Stolen bases/game
+          </div>
+          <div class="card-body">
+            <p class="card-text">0.84</p>
+          </div>
+          <div class="card-footer text-muted">
+        Rate all last season: 0.65
+          </div>
+        </div>
+      </div>
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+  </div>
+
+<div class="small-chart-container">
+  <h3 class="visual-subhead">Cumulative <span class="win">doubles</span></h3>
+  <div id="cumulative-doubles-chart" class="small-chart"></div>
+</div>
+
+<div class="small-chart-container">
+  <h3 class="visual-subhead">Cumulative <span class="win">home runs</span></h3>
+  <div id="cumulative-homers-chart" class="small-chart"></div>
+</div>
+
+<h2 class="stat-group">Player batting</h2>
+<p class="chart-chatter">Darker shades represent <span class="win">better</span> performance.</p>
+<div class="tables-container">
+  <div class="table-wrapper">
+      <h3 class="visual-subhead">Batting average and on-base and slugging percentages</h3>
+      <table id="table-1" class="data-table">
+          <thead>
+              <tr>
+                  <th>Player</th>
+                  <th>Pos</th>
+                  <th class="table-value">BA</th>
+                  <th class="table-value">OB%</th>
+                  <th class="table-value">SLG%</th>
+              </tr>
+          </thead>
+          <tbody></tbody>
+      </table>
+  </div>
+  <div class="table-wrapper">
+      <h3 class="visual-subhead">Walks, home runs and strikeouts per plate appearance</h3>
+      <table id="table-2" class="data-table">
+          <thead>
+              <tr>
+                  <th>Player</th>
+                  <th>PA</th>
+                  <th class="table-value">BB/A</th>
+                  <th class="table-value">HR/A</th>
+                  <th class="table-value">SO/A</th>
+              </tr>
+          </thead>
+          <tbody></tbody>
+      </table>
+  </div>
+
+  <!-- <div id="event-selection">
+    <label for="event-select">Every plate appearance, with outcome. Select one:</label>
+    <select id="event-select"></select>
+  </div>
+  <div id="barcode-chart">
+    <svg></svg>
+  </div>
+ <p class="note">Note: Tables and chart include top-10 batters by plate appearances. </p> -->
+</div>
+
+  <h2 class="stat-group"> Pitching</h2>
+  <div class="row">
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+      <div class="col-md-4">
+        <div class="card mb-4">
+          <div class="card-header">
+            Strikeouts
+          </div>
+          <div class="card-body">
+            <p class="card-text">1390</p>
+          </div>
+          <div class="card-footer text-muted">
+        League rank: 6
+          </div>
+        </div>
+      </div>
+      
+    
+      
+      <div class="col-md-4">
+        <div class="card mb-4">
+          <div class="card-header">
+            Walks
+          </div>
+          <div class="card-body">
+            <p class="card-text">501</p>
+          </div>
+          <div class="card-footer text-muted">
+        League rank: 10
+          </div>
+        </div>
+      </div>
+      
+    
+      
+      <div class="col-md-4">
+        <div class="card mb-4">
+          <div class="card-header">
+            ERA
+          </div>
+          <div class="card-body">
+            <p class="card-text">3.90</p>
+          </div>
+          <div class="card-footer text-muted">
+        League rank: 6
+          </div>
+        </div>
+      </div>
+      
+    
+      
+    
+      
+    
+      
+    
+  </div>
+
+<div class="large-chart-container">
+<h3 class="visual-subhead">Team <span class="win">ERA</span> over season: Then and now</h3>
+<div id="cumulative-era-chart"></div>
+</div>
+
+<div class="small-chart-container">
+  <h3 class="visual-subhead">Cumulative <span class="win">strikeouts</span></h3>
+  <div id="cumulative-strikeouts-chart" class="small-chart"></div>
+</div>
+
+<div class="small-chart-container">
+  <h3 class="visual-subhead">Cumulative <span class="win">hits</span> allowed</h3>
+  <div id="cumulative-hits-chart" class="small-chart"></div>
+</div>
+
+  <h2 class="stat-group">Schedule</h2>
+    <div class="tables-container">
+      <div class="table-wrapper">
+          <h3 class="visual-subhead">Last 10 games</h3>
+          <table id="last-games" class="data-table">
+              <thead>
+                  <tr>
+                      <th>Date</th>
+                      <th>Opponent</th>
+                      <th>Location</th>
+                      <th>Result</th>
+                  </tr>
+              </thead>
+              <tbody></tbody>
+          </table>
+      </div>
+      <div class="table-wrapper">
+          <h3 class="visual-subhead">Next 10</h3>
+          <table id="next-games" class="data-table">
+              <thead>
+                  <tr>
+                      <th>Date</th>
+                      <th>Opponent</th>
+                      <th>Location</th>
+                      <th>Time (PT)</th>
+                  </tr>
+              </thead>
+              <tbody></tbody>
+          </table>
+      </div>
+    </div>
+
+</div>
+
+<h2 class="stat-group">Fan support</h2>
+<p id="max-attendance-info"></p>
+<div class="tables-container">
+    <div class="table-wrapper">
+        <h3 class="visual-subhead">National League</h3>
+        <table id="nl-table" class="data-table"></table>
+    </div>
+    <div class="table-wrapper">
+        <h3 class="visual-subhead">American League</h3>
+        <table id="al-table" class="data-table"></table>
+    </div>
+</div>
+
+  <p class="dated">Notes: Last updated March 27, 2025, 2:05 PM PT. More <a href="https://github.com/stiles/dodgers/blob/main/README.md">about the data</a>.</p>
+  
+</div>
+
+<script src="https://d3js.org/d3.v6.min.js"></script>
+
+<script src="/assets/js/dashboard.js"></script>
+
+
+      
+    </div>
+
+
+    <div id="footer" class="page__footer">
+      <footer>
+        <!-- start custom footer snippets -->
+
+<!-- end custom footer snippets -->
+          <div class="page__footer-follow">
+    <ul class="list-inline">
+            
+      <li>
+        <a href="http://github.com/stiles/dodgers" class="btn-social btn-outline"><i class="fa-brands fa-fw fa-github"></i></a>
+      </li>
+      
+      <li>
+        <a href="http://twitter.com/stiles" class="btn-social btn-outline"><i class="fa-brands fa-fw fa-twitter"></i></a>
+      </li>
+      
+    </ul>
+  </div>
+
+<div class="page__footer-copyright">&copy; 2025 <a href="https://mattstiles.me">Matt Stiles</a>. Built with <a href="https://jekyllrb.com" rel="nofollow">Jekyll</a>. Buy me <a href="https://buymeacoffee.com/mattstiles">a coffee</a>?</div>
+
+
+      </footer>
+    </div>
+
+    
+  <script src="/assets/js/main.min.js"></script>
+
+
+
+
+
+
+
+
+
+  </body>
+</html>
