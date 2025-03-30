@@ -34,9 +34,6 @@ summary_df = (
 )
 summary_df.columns = summary_df.columns.str.lower()
 
-print(summary_df.columns)
-
-
 # Ranks
 ranks = (
     summary_df.query('name == "Rank in 15 NL teams"')

@@ -16,9 +16,8 @@ aws_key_id = os.environ.get("AWS_ACCESS_KEY_ID")
 aws_secret_key = os.environ.get("AWS_SECRET_ACCESS_KEY")
 
 # Fetch
-# Statistics page URL for the current season
-year = pd.to_datetime("now").strftime("%Y")
 
+year = pd.to_datetime("now").strftime("%Y")
 
 url = f"https://www.baseball-reference.com/teams/LAD/{year}-batting.shtml"
 
