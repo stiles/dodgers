@@ -2,15 +2,9 @@
     {
         "stat_label":"Wins",
         "stat":"wins",
-<<<<<<< HEAD
         "value":5,
         "category":"standings",
         "context_value":5,
-=======
-        "value":4,
-        "category":"standings",
-        "context_value":4,
->>>>>>> afd3ee66 (fixing path to batting data for 2025)
         "context_value_label":"This point last season"
     },
     {
@@ -24,15 +18,9 @@
     {
         "stat_label":"Record",
         "stat":"record",
-<<<<<<< HEAD
         "value":"5-0",
         "category":"standings",
         "context_value":"5-0",
-=======
-        "value":"4-0",
-        "category":"standings",
-        "context_value":"4-0",
->>>>>>> afd3ee66 (fixing path to batting data for 2025)
         "context_value_label":"This point last season"
     },
     {
@@ -54,25 +42,15 @@
     {
         "stat_label":"Avg. home attendance",
         "stat":"mean_attendance",
-<<<<<<< HEAD
         "value":"52,471",
         "category":"standings",
         "context_value":3,
-=======
-        "value":"52,812",
-        "category":"standings",
-        "context_value":2,
->>>>>>> afd3ee66 (fixing path to batting data for 2025)
         "context_value_label":"Home games this season"
     },
     {
         "stat_label":"Runs",
         "stat":"runs",
-<<<<<<< HEAD
         "value":30,
-=======
-        "value":23,
->>>>>>> afd3ee66 (fixing path to batting data for 2025)
         "category":"standings",
         "context_value":null,
         "context_value_label":"League rank"
@@ -80,11 +58,7 @@
     {
         "stat_label":"Runs against",
         "stat":"runs_against",
-<<<<<<< HEAD
         "value":16,
-=======
-        "value":13,
->>>>>>> afd3ee66 (fixing path to batting data for 2025)
         "category":"standings",
         "context_value":0,
         "context_value_label":"This point last season"
@@ -92,11 +66,7 @@
     {
         "stat_label":"Run differential",
         "stat":"run_differential",
-<<<<<<< HEAD
         "value":14,
-=======
-        "value":10,
->>>>>>> afd3ee66 (fixing path to batting data for 2025)
         "category":"standings",
         "context_value":0,
         "context_value_label":"This point last season"
@@ -104,11 +74,7 @@
     {
         "stat_label":"Batting average",
         "stat":"batting_average",
-<<<<<<< HEAD
         "value":".224",
-=======
-        "value":".223",
->>>>>>> afd3ee66 (fixing path to batting data for 2025)
         "category":"batting",
         "context_value":".253",
         "context_value_label":"Last decade average"
@@ -116,11 +82,7 @@
     {
         "stat_label":"Home runs",
         "stat":"home_runs",
-<<<<<<< HEAD
         "value":12,
-=======
-        "value":9,
->>>>>>> afd3ee66 (fixing path to batting data for 2025)
         "category":"batting",
         "context_value":null,
         "context_value_label":"League rank"
@@ -128,11 +90,7 @@
     {
         "stat_label":"Home runs\/game",
         "stat":"home_runs_game",
-<<<<<<< HEAD
         "value":2.4,
-=======
-        "value":2.25,
->>>>>>> afd3ee66 (fixing path to batting data for 2025)
         "category":"batting",
         "context_value":1.36,
         "context_value_label":"Last decade average"
@@ -140,11 +98,7 @@
     {
         "stat_label":"On-base percentage",
         "stat":"on_base_pct",
-<<<<<<< HEAD
         "value":".315",
-=======
-        "value":".320",
->>>>>>> afd3ee66 (fixing path to batting data for 2025)
         "category":"batting",
         "context_value":".332",
         "context_value_label":"Last decade average"
@@ -152,11 +106,7 @@
     {
         "stat_label":"Stolen bases",
         "stat":"stolen_bases",
-<<<<<<< HEAD
         "value":1,
-=======
-        "value":0,
->>>>>>> afd3ee66 (fixing path to batting data for 2025)
         "category":"batting",
         "context_value":null,
         "context_value_label":"League rank"
@@ -164,11 +114,7 @@
     {
         "stat_label":"Stolen bases\/game",
         "stat":"stolen_bases_game",
-<<<<<<< HEAD
         "value":0.2,
-=======
-        "value":0.0,
->>>>>>> afd3ee66 (fixing path to batting data for 2025)
         "category":"batting",
         "context_value":0.65,
         "context_value_label":"Rate all last season"
@@ -176,11 +122,7 @@
     {
         "stat_label":"Strikeouts",
         "stat":"strikeouts",
-<<<<<<< HEAD
         "value":"59",
-=======
-        "value":"46",
->>>>>>> afd3ee66 (fixing path to batting data for 2025)
         "category":"pitching",
         "context_value":null,
         "context_value_label":"League rank"
@@ -188,11 +130,7 @@
     {
         "stat_label":"Walks",
         "stat":"walks",
-<<<<<<< HEAD
         "value":"23",
-=======
-        "value":"19",
->>>>>>> afd3ee66 (fixing path to batting data for 2025)
         "category":"pitching",
         "context_value":null,
         "context_value_label":"League rank"
@@ -200,11 +138,7 @@
     {
         "stat_label":"ERA",
         "stat":"era",
-<<<<<<< HEAD
         "value":"2.93",
-=======
-        "value":"2.92",
->>>>>>> afd3ee66 (fixing path to batting data for 2025)
         "category":"pitching",
         "context_value":null,
         "context_value_label":"League rank"
@@ -212,11 +146,7 @@
     {
         "stat_label":"Last updated",
         "stat":"update_time",
-<<<<<<< HEAD
-        "value":"March 30, 2025, 3:04 AM PT",
-=======
-        "value":"March 29, 2025, 6:45 PM PT",
->>>>>>> afd3ee66 (fixing path to batting data for 2025)
+        "value":"March 30, 2025, 7:54 AM PT",
         "category":"summary",
         "context_value":"",
         "context_value_label":""
@@ -224,11 +154,7 @@
     {
         "stat_label":"Team summary",
         "stat":"summary",
-<<<<<<< HEAD
         "value":"<span class='highlight'>LOS ANGELES<\/span> <span class='updated'>(March 30)<\/span> \u2014 After <span class='highlight'>5<\/span> games this season, the Dodgers are in <span class='highlight'>1st<\/span> place in the National League West division. The team has compiled a <span class='highlight'>5-0<\/span> record, winning <span class='highlight'>100%<\/span> of its games so far. The last game was a <span class='highlight'>7-3<\/span> home <span class='highlight'>win<\/span> against the Detroit Tigers in front of <span class='highlight'>51,788<\/span> fans. They've won <span class='highlight'>5 of the last 10<\/span>.",
-=======
-        "value":"<span class='highlight'>LOS ANGELES<\/span> <span class='updated'>(March 29)<\/span> \u2014 After <span class='highlight'>4<\/span> games this season, the Dodgers are in <span class='highlight'>1st<\/span> place in the National League West division. The team has compiled a <span class='highlight'>4-0<\/span> record, winning <span class='highlight'>100%<\/span> of its games so far. The last game was a <span class='highlight'>8-5<\/span> home <span class='highlight'>win<\/span> against the Detroit Tigers in front of <span class='highlight'>52,029<\/span> fans. They've won <span class='highlight'>4 of the last 10<\/span>.",
->>>>>>> afd3ee66 (fixing path to batting data for 2025)
         "category":"summary",
         "context_value":"",
         "context_value_label":""
