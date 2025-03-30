@@ -60,7 +60,7 @@ headers = {
 
 
 # Fetch archive game logs
-archive_url = "https://stilesdata.com/dodgers/data/pitching/archive/dodgers_historic_pitching_gamelogs_1958_2023.parquet"
+archive_url = "https://stilesdata.com/dodgers/data/pitching/archive/dodgers_historic_pitching_gamelogs_1958_2024.parquet"
 archive_df = pd.read_parquet(archive_url)
 
 
