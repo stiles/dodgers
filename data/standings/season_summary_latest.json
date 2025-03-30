@@ -2,17 +2,17 @@
     {
         "stat_label":"Wins",
         "stat":"wins",
-        "value":5,
+        "value":5.0,
         "category":"standings",
-        "context_value":5,
+        "context_value":5.0,
         "context_value_label":"This point last season"
     },
     {
         "stat_label":"Losses",
         "stat":"losses",
-        "value":0,
+        "value":0.0,
         "category":"standings",
-        "context_value":0,
+        "context_value":0.0,
         "context_value_label":"This point last season"
     },
     {
@@ -92,7 +92,7 @@
         "stat":"home_runs_game",
         "value":2.4,
         "category":"batting",
-        "context_value":1.36,
+        "context_value":1.42,
         "context_value_label":"Last decade average"
     },
     {
@@ -100,7 +100,7 @@
         "stat":"on_base_pct",
         "value":".315",
         "category":"batting",
-        "context_value":".332",
+        "context_value":".333",
         "context_value_label":"Last decade average"
     },
     {
@@ -116,7 +116,7 @@
         "stat":"stolen_bases_game",
         "value":0.2,
         "category":"batting",
-        "context_value":0.65,
+        "context_value":0.84,
         "context_value_label":"Rate all last season"
     },
     {
@@ -146,7 +146,7 @@
     {
         "stat_label":"Last updated",
         "stat":"update_time",
-        "value":"March 30, 2025, 8:44 AM PT",
+        "value":"March 30, 2025, 10:49 AM PT",
         "category":"summary",
         "context_value":"",
         "context_value_label":""
