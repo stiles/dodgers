@@ -48,6 +48,7 @@ data_dir = os.path.join(base_dir, 'data', 'standings')
 
 profile_name = os.environ.get("AWS_PERSONAL_PROFILE")
 year = pd.Timestamp.today().year
+year = pd.to_datetime("now").strftime("%Y")
 
 mlb_teams = {
     "ARI": "Arizona Diamondbacks",

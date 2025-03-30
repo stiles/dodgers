@@ -45,6 +45,7 @@ data_dir = os.path.join(base_dir, "data", "batting")
 profile_name = os.environ.get("AWS_PERSONAL_PROFILE")
 today = datetime.date.today()
 year = today.year
+year = pd.to_datetime("now").strftime("%Y")
 
 # Headers for requests
 headers = {

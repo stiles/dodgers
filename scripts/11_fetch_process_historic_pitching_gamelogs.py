@@ -50,7 +50,7 @@ data_dir = os.path.join(base_dir, 'data', 'pitching')
 
 profile_name = os.environ.get("AWS_PERSONAL_PROFILE")
 today = datetime.date.today()
-year = today.year
+year = pd.to_datetime("now").strftime("%Y")
 
 
 # Headers to mimic a browser request

@@ -57,7 +57,7 @@ FETCH: MLB ATTENDANCE
 
 src_dfs = []
 
-year = pd.to_datetime("now").year.strftime("%Y")
+year = pd.to_datetime("now").strftime("%Y")
 
 leagues = ['AL', 'NL']
 for league in leagues:
