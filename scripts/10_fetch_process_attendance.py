@@ -57,9 +57,11 @@ FETCH: MLB ATTENDANCE
 
 src_dfs = []
 
+year = pd.to_datetime("now").year.strftime("%Y")
+
 leagues = ['AL', 'NL']
 for league in leagues:
-    url = f'https://www.baseball-reference.com/leagues/{league}/2024-misc.shtml'
+    url = f'https://www.baseball-reference.com/leagues/{league}/{year}-misc.shtml'
     src = (pd.read_html(url)[0])[['Tm', 'Attendance', 'Attend/G']].assign(league=league)
     src_dfs.append(src)
 

@@ -3,7 +3,7 @@
 
 """
 LA Dodgers pitching
-This notebook downloads the team's current pitching table from [Baseball Reference](https://www.baseball-reference.com/teams/LAD/2024-pitching.shtml#all_team_pitching) and outputs the data to CSV, JSON and Parquet formats for later analysis and visualization.
+This notebook downloads the team's current pitching table from [Baseball Reference](https://www.baseball-reference.com/teams/LAD/{YEAR}-pitching.shtml#all_team_pitching) and outputs the data to CSV, JSON and Parquet formats for later analysis and visualization.
 """
 
 # Import Python tools

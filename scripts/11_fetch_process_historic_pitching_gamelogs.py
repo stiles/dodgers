@@ -2,7 +2,7 @@
 # coding: utf-8
 
 # # LA Dodgers pitching logs by season, 1958-2024
-# > This notebook visusalizes current and past game-by-game and cumulative totals for strikeouts, walks, ERA, etc., using data from [Baseball Reference](https://www.baseball-reference.com/teams/tgl.cgi?team=LAD&t=p&year=2024).
+# > This script processes current and past game-by-game and cumulative totals for strikeouts, walks, ERA, etc., using data from [Baseball Reference](https://www.baseball-reference.com/teams/tgl.cgi?team=LAD&t=p&year=2024).
 
 # ---
 

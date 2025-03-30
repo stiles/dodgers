@@ -103,14 +103,15 @@ mlb_teams = {
 }
 
 # Load the data
+year = pd.to_datetime("now").strftime("%Y")
 
 # Standings
-standings = read_parquet_s3(standings_url, sort_by='game_date').query("year == '2024'")
+standings = read_parquet_s3(standings_url, sort_by='game_date').query(f"year == '{year}'")
 standings['result'] = standings['result'].str.split('-wo', expand=True)[0]
 standings['opp_name'] = standings['opp'].map(mlb_teams)
 standings.loc[standings.result == "L", "result_clean"] = "loss"
 standings.loc[standings.result == "W", "result_clean"] = "win"
-standings_past = read_parquet_s3(standings_url, sort_by='game_date').query("year != '2024'")
+standings_past = read_parquet_s3(standings_url, sort_by='game_date').query(f"year == '{year}'")
 standings_now = standings.query("game_date == game_date.max()").copy()
 game_number = standings_now['gm'].iloc[0]
 standings_last = standings_past.query(f"gm == {game_number}").head(1).reset_index(drop=True).copy()
@@ -122,9 +123,9 @@ standings_division_rank_games_back = standings['gb'].iloc[0]
 
 # Batting
 batting = read_parquet_s3(batting_url)
-batting_past = batting.query("season != '2024'").copy()
-batting_now = batting.query("season == '2024'").copy()
-batting_ranks = read_parquet_s3(batting_ranks_url, sort_by='game_date').query("season == '2024'")
+batting_past = batting.query(f"season != '{year}'").copy()
+batting_now = batting.query(f"season == '{year}'").copy()
+batting_ranks = read_parquet_s3(batting_ranks_url, sort_by='game_date').query(f"season == '{year}'")
 
 # Pitching
 pitching = read_parquet_s3(pitching_url)
@@ -197,14 +198,10 @@ def batting_and_stolen_base_stats(batting_now, batting_past, games, batting_rank
 def generate_summary(standings_now, wins, losses, win_pct):
     last_game = standings_now.iloc[0]
 
-    # summary = (
-    #     f"<span class='highlight'>LOS ANGELES</span> <span class='updated'>({update_date})</span> — After <span class='highlight'>{games}</span> games this season, the Dodgers are in <span class='highlight'>{standings_division_rank_ordinal}</span> place in the National League West division. The team has compiled a <span class='highlight'>{record}</span> record, winning <span class='highlight'>{win_pct}%</span> of its games so far. The last game was a <span class='highlight'>{last_game['r']}-{last_game['ra']}</span> {last_game['home_away']} <span class='highlight'>{last_game['result_clean']}</span> against the {last_game['opp_name']} in front of <span class='highlight'>{last_game['attendance']:,}</span> fans. They've won <span class='highlight'>{win_count_trend} of the last 10</span>."
-    # )
     summary = (
-        f"<span class='highlight'>LOS ANGELES</span> <span class='updated'>(Oct. 30, 2024)</span> — After <span class='highlight'>{games}</span> games this season, the Dodgers finished in <span class='highlight'>{standings_division_rank_ordinal}</span> place in the National League West division. The team compiled a <span class='highlight'>{record}</span> record in the regular season, winning <span class='highlight'>{win_pct}%</span> of its games. The Dodgers finished the season by defeating the New York Yankees in the World Series."
+        f"<span class='highlight'>LOS ANGELES</span> <span class='updated'>({update_date})</span> — After <span class='highlight'>{games}</span> games this season, the Dodgers are in <span class='highlight'>{standings_division_rank_ordinal}</span> place in the National League West division. The team has compiled a <span class='highlight'>{record}</span> record, winning <span class='highlight'>{win_pct}%</span> of its games so far. The last game was a <span class='highlight'>{last_game['r']}-{last_game['ra']}</span> {last_game['home_away']} <span class='highlight'>{last_game['result_clean']}</span> against the {last_game['opp_name']} in front of <span class='highlight'>{last_game['attendance']:,}</span> fans. They've won <span class='highlight'>{win_count_trend} of the last 10</span>."
     )
     return summary
-
 
 
 def recent_trend(standings):

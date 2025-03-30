@@ -105,9 +105,11 @@ anno_text = (
     .encode(y="y:Q", text="text:N")
 )
 
-# Extract the last point of the 2024 season
-last_point_df = df.query("year == '2024'").tail(1).copy()
-last_point_df["annotation"] = "2024"
+year = pd.to_datetime("now").strftime("%Y")
+
+# Extract the last point of the current season season
+last_point_df = df.query(f"year == '{year}'").tail(1).copy()
+last_point_df["annotation"] = year
 
 # Create a text annotation chart for the "current" line
 current_text_annotation = (

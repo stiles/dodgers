@@ -52,19 +52,19 @@ jobs:
 
     - name: Run scripts
       run: |
-        # python scripts/01_fetch_process_standings.py
-        # python scripts/02_fetch_process_batting.py
-        # python scripts/03_viz_standings.py
-        # python scripts/04_viz_batting.py
-        # python scripts/05_fetch_process_pitching.py
+        python scripts/01_fetch_process_standings.py
+        python scripts/02_fetch_process_batting.py
+        python scripts/03_viz_standings.py
+        python scripts/04_viz_batting.py
+        python scripts/05_fetch_process_pitching.py
         python scripts/06_create_toplines_summary.py
-        # python scripts/07_fetch_process_season_outcomes.py
-        # python scripts/08_fetch_process_wins_losses_current.py
-        # python scripts/09_fetch_process_historic_batting_gamelogs.py
-        # python scripts/10_fetch_process_attendance.py
-        # python scripts/11_fetch_process_historic_pitching_gamelogs.py
-        # python scripts/12_fetch_process_schedule.py
-        # python scripts/14_fetch_process_batting_mlb.py
+        python scripts/07_fetch_process_season_outcomes.py
+        python scripts/08_fetch_process_wins_losses_current.py
+        python scripts/09_fetch_process_historic_batting_gamelogs.py
+        python scripts/10_fetch_process_attendance.py
+        python scripts/11_fetch_process_historic_pitching_gamelogs.py
+        python scripts/12_fetch_process_schedule.py
+        python scripts/14_fetch_process_batting_mlb.py
 
     - name: Build Jekyll site
       run: bundle exec jekyll build

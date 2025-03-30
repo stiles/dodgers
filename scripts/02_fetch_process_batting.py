@@ -4,9 +4,7 @@
 # # LA Dodgers batting: Combine current season with historical archive
 # > This notebook downloads the team's current batting tables from [Baseball Reference](https://www.baseball-reference.com/teams/LAD/2024-batting.shtml), combines it with a historical archive to 1958 and outputs the data to CSV, JSON and Parquet formats for later analysis and visualization.
 
-# ---
-
-# #### Import Python tools and Jupyter config
+# Import Python tools and Jupyter config
 
 import os
 import boto3
@@ -20,11 +18,10 @@ aws_secret_key = os.environ.get("AWS_SECRET_ACCESS_KEY")
 print("Current Working Directory: ", os.getcwd())
 print("Directory Contents: ", os.listdir())
 
-# ---
 
-# ## Fetch
+# Fetch
 
-# #### Statistics page URL for the current season
+# Statistics page URL for the current season
 
 year = pd.to_datetime("now").strftime("%Y")
 
@@ -32,7 +29,7 @@ year = pd.to_datetime("now").strftime("%Y")
 url = f"https://www.baseball-reference.com/teams/LAD/{year}-batting.shtml"
 
 
-# #### Fetch batters table, excluding team totals
+# Fetch batters table, excluding team totals
 
 player_totals_df = (
     pd.read_html(url)[0]
@@ -45,7 +42,7 @@ player_totals_df.columns = player_totals_df.columns.str.lower().str.replace(
 )
 
 
-# #### Team stats
+# Team stats
 
 summary_df = (
     pd.read_html(url)[0]
@@ -56,18 +53,17 @@ summary_df = (
 summary_df.columns = summary_df.columns.str.lower().str.replace("+", "_plus")
 
 
-# ---
 
-# ## Player stats
+# Player stats
 
-# #### Remove injury details listed parenthetically next to some players' names
+# Remove injury details listed parenthetically next to some players' names
 
 player_totals_df["name"] = (
     player_totals_df["name"].str.split("(", expand=True)[0].str.strip()
 )
 
 
-# #### Determine batter type, clean special characters from names
+# Determine batter type, clean special characters from names
 
 def determine_and_clean_bats(name):
     # Determine batting stance
@@ -86,14 +82,14 @@ def determine_and_clean_bats(name):
     return bat, name
 
 
-# #### Apply the function and separate the results into two columns
+# Apply the function and separate the results into two columns
 
 player_totals_df["bats"], player_totals_df["name_clean"] = zip(
     *player_totals_df["name"].apply(determine_and_clean_bats)
 )
 
 
-# #### Replace the original 'player' column with the cleaned names
+# Replace the original 'player' column with the cleaned names
 
 player_totals_df["name"] = player_totals_df["name_clean"]
 del player_totals_df["name_clean"]
@@ -153,26 +149,24 @@ player_totals_df[["ba", "obp", "slg", "ops", "ops_plus"]] = player_totals_df[
 ].astype(float)
 
 
-# ---
 
-# ## Team stats
+# Team stats
 # > The main batting table has totals for the team, with totals and ranks by season
 
-# #### Team totals
+# Team totals
 
 team_totals_df = summary_df.query('name == "Team Totals"').dropna(axis=1)
 
 
-# #### Team ranks
+# Team ranks
 
 team_ranks_df = summary_df.query('name.str.contains("Rank")').dropna(axis=1)
 
 
-# ---
 
-# ## Combine
+# Combine
 
-# #### Concatenate current season player totals with historical player archive
+# Concatenate current season player totals with historical player archive
 
 player_totals_archive_df = pd.read_parquet(
     "https://stilesdata.com/dodgers/data/batting/archive/dodgers_player_batting_statistics_1958_2023.parquet"
@@ -210,11 +204,10 @@ team_ranks_full_df = (
 )
 
 
-# ---
 
-# ## Export
+# Export
 
-# #### Function to save dataframes with different formats and file extensions
+# Function to save dataframes with different formats and file extensions
 
 def save_dataframe(df, path_without_extension, formats):
     os.makedirs(os.path.dirname(path_without_extension), exist_ok=True)  # Ensure directory exists

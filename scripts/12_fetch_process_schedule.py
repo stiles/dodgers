@@ -83,7 +83,7 @@ mlb_teams = {
 }
 
 # Configuration
-year = 2024
+year = pd.to_datetime("now").strftime("%Y")
 url = f"https://www.baseball-reference.com/teams/LAD/{year}-schedule-scores.shtml"
 output_dir = "data/standings"
 csv_file = f"{output_dir}/dodgers_schedule.csv"
