@@ -134,7 +134,7 @@ player_totals_df[["ba", "obp", "slg", "ops", "ops_plus"]] = player_totals_df[
     ["ba", "obp", "slg", "ops", "ops_plus"]
 ].astype(float)
 
-player_totals_df = player_totals_df.rename(columns={'name_clean': 'name'})
+player_totals_df = player_totals_df.rename(columns={'player': 'name'})
 
 # Team stats
 # The main batting table has totals for the team, with totals and ranks by season
@@ -155,9 +155,8 @@ player_totals_archive_df = pd.read_parquet(
 players_full_df = (
     pd.concat([player_totals_df, player_totals_archive_df])
     .sort_values("season", ascending=False)
-    .reset_index(drop=True).rename(columns={'player': 'name'})
+    .reset_index(drop=True)
 )
-
 
 team_totals_archive_df = pd.read_parquet(
     "https://stilesdata.com/dodgers/data/batting/archive/dodgers_team_batting_statistics_1958_2023.parquet"
@@ -215,7 +214,6 @@ try:
     )
 except Exception as e:
     print(f"An error occurred: {e}")
-
 
 def save_to_s3(df, base_path, s3_bucket, formats=["csv", "json", "parquet"]):
     """
