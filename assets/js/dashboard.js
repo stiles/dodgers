@@ -197,7 +197,7 @@ async function fetchGameData() {
 
 function renderRunDiffChart(data) {
   const isMobile = window.innerWidth <= 767;
-  const margin = isMobile ? { top: 20, right: 30, bottom: 50, left: 30 } : { top: 20, right: 30, bottom: 40, left: 40 };
+  const margin = isMobile ? { top: 20, right: 20, bottom: 50, left: 30 } : { top: 20, right: 20, bottom: 40, left: 40 };
   const container = d3.select('#results-chart');
   const containerWidth = container.node().getBoundingClientRect().width;
   const width = containerWidth - margin.left - margin.right;
@@ -535,7 +535,7 @@ document.addEventListener('DOMContentLoaded', function() {
         const isMobile = window.innerWidth <= 767;
         const margin = isMobile 
           ? { top: 20, right: 0, bottom: 60, left: 60 } 
-          : { top: 20, right: 30, bottom: 50, left: 60 };
+          : { top: 20, right: 10, bottom: 50, left: 60 };
         const container = d3.select(`#${config.elementId}`);
         const containerWidth = container.node().getBoundingClientRect().width;
         const width = containerWidth - margin.left - margin.right;
@@ -712,7 +712,7 @@ document.addEventListener('DOMContentLoaded', function() {
     const isMobile = window.innerWidth <= 767;
     const margin = isMobile 
       ? { top: 20, right: 10, bottom: 60, left: 70 } 
-      : { top: 20, right: 20, bottom: 50, left: 70 };
+      : { top: 20, right: 10, bottom: 50, left: 70 };
     const container = d3.select(`#${config.elementId}`);
     const containerWidth = container.node().getBoundingClientRect().width;
     const width = containerWidth - margin.left - margin.right;
@@ -1380,8 +1380,8 @@ document.addEventListener('DOMContentLoaded', function() {
     const isMobile = window.innerWidth <= 767;
 
     const margin = isMobile 
-    ? { top: 20, right: 0, bottom: 60, left: 120 }  // Smaller margins for mobile
-    : { top: 20, right: 0, bottom: 50, left: 120 }; // Larger margins for desktop
+    ? { top: 20, right: 10, bottom: 60, left: 120 }  // Smaller margins for mobile
+    : { top: 20, right: 10, bottom: 50, left: 120 }; // Larger margins for desktop
 
     const containerWidth = container.node().getBoundingClientRect().width;
     const width = containerWidth - margin.left - margin.right;
