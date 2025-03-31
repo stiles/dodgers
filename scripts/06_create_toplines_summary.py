@@ -212,7 +212,9 @@ def generate_summary(standings_now, wins, losses, win_pct):
     last_game = standings_now.iloc[0]
 
     summary = (
-        f"<span class='highlight'>LOS ANGELES</span> <span class='updated'>({update_date})</span> — After <span class='highlight'>{games}</span> games this season, the Dodgers are in <span class='highlight'>{standings_division_rank_ordinal}</span> place in the National League West division. The team has compiled a <span class='highlight'>{record}</span> record, winning <span class='highlight'>{win_pct}%</span> of its games so far. The last game was a <span class='highlight'>{last_game['r']}-{last_game['ra']}</span> {last_game['home_away']} <span class='highlight'>{last_game['result_clean']}</span> against the {last_game['opp_name']} in front of <span class='highlight'>{last_game['attendance']:,}</span> fans. They've won <span class='highlight'>{win_count_trend} of the last 10</span>."
+        f"<span class='highlight'>LOS ANGELES</span> <span class='updated'>({update_date})</span> — After <span class='highlight'>{games}</span> games this season, the Dodgers are in <span class='highlight'>{standings_division_rank_ordinal}</span> place in the National League West division. The team has compiled a <span class='highlight'>{record}</span> record, winning <span class='highlight'>{win_pct}%</span> of its games so far. The last game was a <span class='highlight'>{last_game['r']}-{last_game['ra']}</span> {last_game['home_away']} <span class='highlight'>{last_game['result_clean']}</span> against the {last_game['opp_name']} in front of <span class='highlight'>{last_game['attendance']:,}</span> fans."
+
+        # They've won <span class='highlight'>{win_count_trend} of the last 10</span>.
     )
     return summary
 

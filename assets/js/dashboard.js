@@ -20,8 +20,8 @@ function renderChart(data) {
   const currentYear = new Date().getFullYear().toString();
   const isMobile = window.innerWidth <= 767; // Example breakpoint for mobile devices
   const margin = isMobile 
-    ? { top: 20, right: 40, bottom: 60, left: 50 }  // Smaller margins for mobile
-    : { top: 20, right: 40, bottom: 50, left: 60 }; // Larger margins for desktop
+    ? { top: 20, right: 10, bottom: 60, left: 60 }  // Smaller margins for mobile
+    : { top: 20, right: 10, bottom: 50, left: 60 }; // Larger margins for desktop
   const container = d3.select('#d3-container');
   const containerWidth = container.node().getBoundingClientRect().width;
   const width = containerWidth - margin.left - margin.right;
@@ -424,8 +424,8 @@ document.addEventListener('DOMContentLoaded', function() {
   function renderCumulativeWinsChart(data) {
       const isMobile = window.innerWidth <= 767; // Example breakpoint for mobile devices
       const margin = isMobile 
-          ? { top: 20, right: 40, bottom: 60, left: 60 }  // Smaller margins for mobile
-          : { top: 20, right: 40, bottom: 50, left: 60 }; // Larger margins for desktop
+          ? { top: 20, right: 20, bottom: 60, left: 60 }  // Smaller margins for mobile
+          : { top: 20, right: 10, bottom: 50, left: 60 }; // Larger margins for desktop
       const container = d3.select('#cumulative-wins-chart');
       const containerWidth = container.node().getBoundingClientRect().width;
       const width = containerWidth - margin.left - margin.right;
@@ -534,8 +534,8 @@ document.addEventListener('DOMContentLoaded', function() {
       function renderChart(config, data, maxYValue) {
         const isMobile = window.innerWidth <= 767;
         const margin = isMobile 
-          ? { top: 20, right: 60, bottom: 60, left: 60 } 
-          : { top: 20, right: 60, bottom: 50, left: 60 };
+          ? { top: 20, right: 0, bottom: 60, left: 60 } 
+          : { top: 20, right: 30, bottom: 50, left: 60 };
         const container = d3.select(`#${config.elementId}`);
         const containerWidth = container.node().getBoundingClientRect().width;
         const width = containerWidth - margin.left - margin.right;
@@ -711,8 +711,8 @@ document.addEventListener('DOMContentLoaded', function() {
   function renderChart(config, data, maxYValue) {
     const isMobile = window.innerWidth <= 767;
     const margin = isMobile 
-      ? { top: 20, right: 80, bottom: 60, left: 70 } 
-      : { top: 20, right: 85, bottom: 50, left: 70 };
+      ? { top: 20, right: 10, bottom: 60, left: 70 } 
+      : { top: 20, right: 20, bottom: 50, left: 70 };
     const container = d3.select(`#${config.elementId}`);
     const containerWidth = container.node().getBoundingClientRect().width;
     const width = containerWidth - margin.left - margin.right;
@@ -868,8 +868,8 @@ document.addEventListener('DOMContentLoaded', function() {
   function renderCumulativeERAChart(data) {
     const isMobile = window.innerWidth <= 767; // Example breakpoint for mobile devices
     const margin = isMobile 
-      ? { top: 20, right: 44, bottom: 60, left: 50 }  // Smaller margins for mobile
-      : { top: 20, right: 30, bottom: 50, left: 50 }; // Larger margins for desktop
+      ? { top: 20, right: 10, bottom: 60, left: 50 }  // Smaller margins for mobile
+      : { top: 20, right: 10, bottom: 50, left: 50 }; // Larger margins for desktop
     const container = d3.select('#cumulative-era-chart');
     const containerWidth = container.node().getBoundingClientRect().width;
     const width = containerWidth - margin.left - margin.right;
@@ -1000,7 +1000,7 @@ document.addEventListener('DOMContentLoaded', function() {
       .attr('x', isMobile ? xScale(80) : xScale(110)) // Adjusted for mobile
       .attr('y', yScale(6))
       .attr('class', 'anno')
-      .text(`Past seasons: 1958-${currentYear - 1}`)
+      .text(`Past: 1958-${currentYear - 1}`)
       .attr('text-anchor', 'start');
   }
 
