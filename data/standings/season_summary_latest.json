@@ -4,7 +4,7 @@
         "stat":"wins",
         "value":5,
         "category":"standings",
-        "context_value":5,
+        "context_value":3,
         "context_value_label":"This point last season"
     },
     {
@@ -12,7 +12,7 @@
         "stat":"losses",
         "value":0,
         "category":"standings",
-        "context_value":0,
+        "context_value":2,
         "context_value_label":"This point last season"
     },
     {
@@ -20,7 +20,7 @@
         "stat":"record",
         "value":"5-0",
         "category":"standings",
-        "context_value":"5-0",
+        "context_value":"3-2",
         "context_value_label":"This point last season"
     },
     {
@@ -28,7 +28,7 @@
         "stat":"win_pct",
         "value":"100%",
         "category":"standings",
-        "context_value":"100%",
+        "context_value":"60%",
         "context_value_label":"This point last season"
     },
     {
@@ -60,7 +60,7 @@
         "stat":"runs_against",
         "value":16,
         "category":"standings",
-        "context_value":0,
+        "context_value":27,
         "context_value_label":"This point last season"
     },
     {
@@ -68,7 +68,7 @@
         "stat":"run_differential",
         "value":14,
         "category":"standings",
-        "context_value":0,
+        "context_value":7,
         "context_value_label":"This point last season"
     },
     {
@@ -146,7 +146,7 @@
     {
         "stat_label":"Last updated",
         "stat":"update_time",
-        "value":"March 31, 2025, 2:06 PM PT",
+        "value":"March 31, 2025, 3:22 PM PT",
         "category":"summary",
         "context_value":"",
         "context_value_label":""

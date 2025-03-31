@@ -103,7 +103,9 @@ mlb_teams = {
 }
 
 # Load the data
-year = pd.to_datetime("now").strftime("%Y")
+now = pd.to_datetime("now")
+year = now.strftime("%Y")  # current year
+last_year = (now - pd.DateOffset(years=1)).strftime("%Y")  # subtract one year
 
 # Standings
 standings = read_parquet_s3(standings_url, sort_by='game_date').query(f"year == '{year}'")
@@ -111,11 +113,11 @@ standings['result'] = standings['result'].str.split('-wo', expand=True)[0]
 standings['opp_name'] = standings['opp'].map(mlb_teams)
 standings.loc[standings.result == "L", "result_clean"] = "loss"
 standings.loc[standings.result == "W", "result_clean"] = "win"
-standings_past = read_parquet_s3(standings_url, sort_by='game_date').query(f"year == '{year}'")
+standings_past = read_parquet_s3(standings_url, sort_by='game_date').query(f"year == '{last_year}'")
 standings_now = standings.query("game_date == game_date.max()").copy()
 game_number = standings_now['gm'].iloc[0]
 standings_last = standings_past.query(f"gm == {game_number}").head(1).reset_index(drop=True).copy()
-standings_last_season = standings_past.query(f"gm <= {game_number} and year=='2023'").reset_index(drop=True).copy()
+standings_last_season = standings_past.query(f"gm <= {game_number} and year=='{last_year}'").reset_index(drop=True).copy()
 standings["rank_ordinal"] = standings["rank"].map(to_ordinal)
 standings_division_rank = standings['rank'].iloc[0]
 standings_division_rank_ordinal = standings['rank_ordinal'].iloc[0]
@@ -179,7 +181,7 @@ def home_run_stats(batting_now, batting_past, batting_ranks):
     # home_runs_rank = batting_ranks['hr'].iloc[0]
     home_runs_game = round(home_runs / games, 2)
     batting_past["hr_game"] = batting_past["hr"].astype(int) / batting_past["g"].astype(int).round(2)
-    home_runs_game_last = batting_past.query('season == "2023"')["hr_game"].iloc[0]
+    home_runs_game_last = batting_past.query(f'season == "{last_year}"')["hr_game"].iloc[0]
     games_decade = batting_past.head(10)["g"].astype(int).sum()
     home_runs_decade = batting_past.head(10)["hr"].astype(int).sum()
     home_runs_game_decade = round(home_runs_decade / games_decade, 2)
