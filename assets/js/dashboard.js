@@ -1,5 +1,3 @@
-
-
 // Games back line chart
 
 async function fetchData() {
@@ -147,10 +145,16 @@ function renderChart(data) {
   // Get the last data point for the current year safely
   const currentDataArray = data.get(currentYear);
   if (currentDataArray && currentDataArray.length > 0) {
+    // Ensure data is sorted by game number before taking the last point
+    currentDataArray.sort((a, b) => a.gm - b.gm);
     const lastDataCurrent = currentDataArray.slice(-1)[0];
+    console.log('Last Data Point:', lastDataCurrent); // Check the data point object
+    console.log('Calculated X:', xScale(lastDataCurrent.gm + 3)); // Check calculated X coord (adjusted)
+    console.log('Calculated Y:', yScale(lastDataCurrent.gb));     // Check calculated Y coord
+
     svg.append('text')
-      .attr('x', xScale(lastDataCurrent.gm + 1))
-      .attr('y', yScale(lastDataCurrent.gb) - 12)
+      .attr('x', xScale(lastDataCurrent.gm + 1)) // Reduced horizontal offset
+      .attr('y', yScale(lastDataCurrent.gb) - 10)
       .text(currentYear)
       .attr('class', 'anno-dodgers')
       .style('stroke', '#fff')
@@ -162,9 +166,18 @@ function renderChart(data) {
       .style('stroke', 'none');
 
     svg.append('text')
-      .attr('x', xScale(lastDataCurrent.gm + 1))
-      .attr('y', yScale(lastDataCurrent.gb) + 2)
-      .text(`${lastDataCurrent.gb} games`)
+      .attr('x', xScale(lastDataCurrent.gm + 1.5)) // Reduced horizontal offset
+      .attr('y', yScale(lastDataCurrent.gb) + 1)
+      .text(() => {
+          const gb = lastDataCurrent.gb;
+          if (gb > 0) {
+              return `${gb} games up`;
+          } else if (gb < 0) {
+              return `${Math.abs(gb)} games back`;
+          } else {
+              return 'Even';
+          }
+      })
       .attr('class', 'anno-dark')
       .style('stroke', '#fff')
       .style('stroke-width', '4px')
