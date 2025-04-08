@@ -1,5 +1,61 @@
 [
     {
+        "gm":12,
+        "game_date":"2025-04-07",
+        "result":"L",
+        "r":4,
+        "ra":6,
+        "run_diff":-2
+    },
+    {
+        "gm":11,
+        "game_date":"2025-04-06",
+        "result":"L",
+        "r":7,
+        "ra":8,
+        "run_diff":-1
+    },
+    {
+        "gm":10,
+        "game_date":"2025-04-05",
+        "result":"W",
+        "r":3,
+        "ra":1,
+        "run_diff":2
+    },
+    {
+        "gm":9,
+        "game_date":"2025-04-04",
+        "result":"L",
+        "r":2,
+        "ra":3,
+        "run_diff":-1
+    },
+    {
+        "gm":8,
+        "game_date":"2025-04-02",
+        "result":"W",
+        "r":6,
+        "ra":5,
+        "run_diff":1
+    },
+    {
+        "gm":7,
+        "game_date":"2025-04-01",
+        "result":"W",
+        "r":3,
+        "ra":1,
+        "run_diff":2
+    },
+    {
+        "gm":6,
+        "game_date":"2025-03-31",
+        "result":"W",
+        "r":6,
+        "ra":1,
+        "run_diff":5
+    },
+    {
         "gm":5,
         "game_date":"2025-03-29",
         "result":"W",
