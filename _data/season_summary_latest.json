@@ -2,7 +2,7 @@
     {
         "stat_label":"Wins",
         "stat":"wins",
-        "value":10,
+        "value":11,
         "category":"standings",
         "context_value":10,
         "context_value_label":"This point last season"
@@ -12,23 +12,23 @@
         "stat":"losses",
         "value":4,
         "category":"standings",
-        "context_value":4,
+        "context_value":5,
         "context_value_label":"This point last season"
     },
     {
         "stat_label":"Record",
         "stat":"record",
-        "value":"10-4",
+        "value":"11-4",
         "category":"standings",
-        "context_value":"10-4",
+        "context_value":"10-5",
         "context_value_label":"This point last season"
     },
     {
         "stat_label":"Win percentage",
         "stat":"win_pct",
-        "value":"71%",
+        "value":"73%",
         "category":"standings",
-        "context_value":"71%",
+        "context_value":"67%",
         "context_value_label":"This point last season"
     },
     {
@@ -42,15 +42,15 @@
     {
         "stat_label":"Avg. home attendance",
         "stat":"mean_attendance",
-        "value":"51,448",
+        "value":"51,803",
         "category":"standings",
-        "context_value":6,
+        "context_value":7,
         "context_value_label":"Home games this season"
     },
     {
         "stat_label":"Runs",
         "stat":"runs",
-        "value":69,
+        "value":72,
         "category":"standings",
         "context_value":null,
         "context_value_label":"League rank"
@@ -60,21 +60,21 @@
         "stat":"runs_against",
         "value":54,
         "category":"standings",
-        "context_value":65,
+        "context_value":68,
         "context_value_label":"This point last season"
     },
     {
         "stat_label":"Run differential",
         "stat":"run_differential",
-        "value":15,
+        "value":18,
         "category":"standings",
-        "context_value":14,
+        "context_value":13,
         "context_value_label":"This point last season"
     },
     {
         "stat_label":"Batting average",
         "stat":"batting_average",
-        "value":".230",
+        "value":".228",
         "category":"batting",
         "context_value":".253",
         "context_value_label":"Last decade average"
@@ -82,7 +82,7 @@
     {
         "stat_label":"Home runs",
         "stat":"home_runs",
-        "value":28,
+        "value":29,
         "category":"batting",
         "context_value":null,
         "context_value_label":"League rank"
@@ -90,7 +90,7 @@
     {
         "stat_label":"Home runs\/game",
         "stat":"home_runs_game",
-        "value":2.0,
+        "value":1.93,
         "category":"batting",
         "context_value":1.42,
         "context_value_label":"Last decade average"
@@ -98,7 +98,7 @@
     {
         "stat_label":"On-base percentage",
         "stat":"on_base_pct",
-        "value":".314",
+        "value":".313",
         "category":"batting",
         "context_value":".333",
         "context_value_label":"Last decade average"
@@ -114,7 +114,7 @@
     {
         "stat_label":"Stolen bases\/game",
         "stat":"stolen_bases_game",
-        "value":0.57,
+        "value":0.53,
         "category":"batting",
         "context_value":0.84,
         "context_value_label":"Rate all last season"
@@ -122,7 +122,7 @@
     {
         "stat_label":"Strikeouts",
         "stat":"strikeouts",
-        "value":"129",
+        "value":"140",
         "category":"pitching",
         "context_value":null,
         "context_value_label":"League rank"
@@ -130,7 +130,7 @@
     {
         "stat_label":"Walks",
         "stat":"walks",
-        "value":"67",
+        "value":"68",
         "category":"pitching",
         "context_value":null,
         "context_value_label":"League rank"
@@ -138,7 +138,7 @@
     {
         "stat_label":"ERA",
         "stat":"era",
-        "value":"3.22",
+        "value":"3.00",
         "category":"pitching",
         "context_value":null,
         "context_value_label":"League rank"
@@ -146,7 +146,7 @@
     {
         "stat_label":"Last updated",
         "stat":"update_time",
-        "value":"April 12, 2025, 12:05 AM PT",
+        "value":"April 12, 2025, 4:04 AM PT",
         "category":"summary",
         "context_value":"",
         "context_value_label":""
@@ -154,7 +154,7 @@
     {
         "stat_label":"Team summary",
         "stat":"summary",
-        "value":"<span class='highlight'>LOS ANGELES<\/span> <span class='updated'>(April 12)<\/span> \u2014 After <span class='highlight'>14<\/span> games this season, the Dodgers are in <span class='highlight'>2nd<\/span> place in the National League West division. The team has compiled a <span class='highlight'>10-4<\/span> record, winning <span class='highlight'>71%<\/span> of its games so far. The last game was a <span class='highlight'>6-5<\/span> away <span class='highlight'>win<\/span> against the Washington Nationals in front of <span class='highlight'>21,014<\/span> fans.",
+        "value":"<span class='highlight'>LOS ANGELES<\/span> <span class='updated'>(April 12)<\/span> \u2014 After <span class='highlight'>15<\/span> games this season, the Dodgers are in <span class='highlight'>2nd<\/span> place in the National League West division. The team has compiled a <span class='highlight'>11-4<\/span> record, winning <span class='highlight'>73%<\/span> of its games so far. The last game was a <span class='highlight'>3-0<\/span> home <span class='highlight'>win<\/span> against the Chicago Cubs in front of <span class='highlight'>53,933<\/span> fans.",
         "category":"summary",
         "context_value":"",
         "context_value_label":""
