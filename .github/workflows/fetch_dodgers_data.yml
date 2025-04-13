@@ -33,8 +33,10 @@ jobs:
         pip install pytz pandas geopandas pyarrow fastparquet lxml requests beautifulsoup4 boto3 altair_saver altair-stiles vl-convert-python
     
     - name: Create necessary directories
-      run: mkdir -p data/pitching
-    
+      run: |
+        mkdir -p data/pitching
+        mkdir -p data/batting
+
     - name: Install Fonts
       run: |
         sudo apt-get update
