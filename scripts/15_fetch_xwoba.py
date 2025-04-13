@@ -50,11 +50,26 @@ PITCHERS_TO_SKIP = [
 ]
 
 # AWS session and S3 resource
-session = boto3.Session(
-    aws_access_key_id=os.getenv('AWS_ACCESS_KEY_ID'),
-    aws_secret_access_key=os.getenv('AWS_SECRET_ACCESS_KEY'),
-    profile_name='haekeo'
-)
+# Determine if running in a GitHub Actions environment
+is_github_actions = os.getenv('GITHUB_ACTIONS') == 'true'
+
+# AWS credentials and session initialization
+aws_key_id = os.environ.get("AWS_ACCESS_KEY_ID")
+aws_secret_key = os.environ.get("AWS_SECRET_ACCESS_KEY")
+aws_region = "us-west-1"
+
+# Conditional AWS session creation based on the environment
+if is_github_actions:
+    # In GitHub Actions, use environment variables directly
+    session = boto3.Session(
+        aws_access_key_id=aws_key_id,
+        aws_secret_access_key=aws_secret_key,
+        region_name=aws_region
+    )
+else:
+    # Locally, use a specific profile
+    session = boto3.Session(profile_name="haekeo", region_name=aws_region)
+
 s3 = session.resource('s3')
 
 headers = {
