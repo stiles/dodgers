@@ -127,19 +127,19 @@ permalink: /
           </thead>
           <tbody></tbody>
       </table>
+     
   </div>
-
-  <!-- <div id="event-selection">
-    <label for="event-select">Every plate appearance, with outcome. Select one:</label>
-    <select id="event-select"></select>
-  </div>
-  <div id="barcode-chart">
-    <svg></svg>
-  </div>
- <p class="note">Note: Tables and chart include top-10 batters by plate appearances. </p> -->
+   <p class="note">Note: Tables and charts include top batters by plate appearances.</p>
 </div>
 
-  <h2 class="stat-group"> Pitching</h2>
+  <h3 class="visual-subhead">Recent form: Expected weighted on-base average</h3>
+  <p class="chart-chatter">Rolling 50-plate appearance <span class='anno-xwoba'>xwOBA</span> for each Dodgers batter — vs. the <span class='anno-mean'>league average</span>. This stat predicts a player's offensive contributions based on the quality of contact they make with the ball.</p>
+  <div id="xwoba-grid" class="grid-container">
+    <!-- Charts will be inserted here by JavaScript -->
+  </div>
+  
+
+  <h2 class="stat-group">Pitching</h2>
   <div class="row">
     {% for item in site.data.season_summary_latest %}
       {% if item.category == 'pitching' %}
