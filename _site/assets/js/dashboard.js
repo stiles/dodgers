@@ -53,6 +53,15 @@ function renderChart(data) {
   
   svg.append('g').call(yAxis);
   
+  // Add zero line
+  svg.append('line')
+    .attr('x1', 0)
+    .attr('x2', width)
+    .attr('y1', yScale(0))
+    .attr('y2', yScale(0))
+    .attr('stroke', '#222')
+    .attr('stroke-width', 1);
+
   // X-axis Label
   svg.append("text")
     .attr("text-anchor", "middle")
@@ -114,7 +123,7 @@ function renderChart(data) {
   // Add a horizontal line at y = 0
   svg.append('line')
     .attr('x1', 0)
-    .attr('x2', isMobile ? width - 7 : width - 18)
+    .attr('x2', width)
     .attr('y1', yScale(0))
     .attr('y2', yScale(0))
     .attr('stroke', '#222')
@@ -245,6 +254,15 @@ function renderRunDiffChart(data) {
     .call(xAxis);
 
   svg.append('g').call(yAxis);
+  
+  // Add zero line
+  svg.append('line')
+    .attr('x1', 0)
+    .attr('x2', width)
+    .attr('y1', yScale(0))
+    .attr('y2', yScale(0))
+    .attr('stroke', '#bebebe')
+    .attr('stroke-width', 1);
 
       // X-axis Label
       svg.append("text")
