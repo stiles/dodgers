@@ -1517,6 +1517,17 @@ document.addEventListener('DOMContentLoaded', function() {
       .append('path')
       .attr('d', 'M 0 0 L 10 5 L 0 10 z')
       .attr('fill', '#000');
+
+    // Add indicator label for the first chart only
+    if (index === 0) {
+      svg.append('text')
+        .attr('x', 5)
+        .attr('y', -10)
+        .style('font-size', '11px')
+        .style('font-weight', 'bold')
+        .style('fill', '#444')
+        .text('▲/▼ vs. MLB avg');
+    }
   }
 
   window.addEventListener('resize', () => renderBarCodeChart(selectMenu.value));
@@ -1570,15 +1581,44 @@ async function fetchAndRenderXwoba() {
         .append('g')
         .attr('transform', `translate(${margin.left},${margin.top})`);
         
-      // Add title
-      svg.append('text')
+      // Add title and indicator group
+      const title = svg.append('g')
+        .attr('class', 'chart-title');
+      
+      // Calculate league comparison indicator
+      const latestXwoba = playerData[0].xwoba;
+      const leagueAvg = playerData[0].league_avg_xwoba;
+      
+      // Add player name and arrow in the same text element
+      const playerText = title.append('text')
         .attr('x', 0)
         .attr('y', -5)
         .attr('class', 'anno-player')
         .style('font-weight', 'bold')
-        .text(player);
-        
-      // Rest of the chart code remains the same
+        .text(player + ' ');
+      
+      // Add arrow indicator right after the name
+      if (latestXwoba > leagueAvg) {
+        playerText.append('tspan')
+          .attr('class', 'trend-indicator up')
+          .text('▲');
+      } else {
+        playerText.append('tspan')
+          .attr('class', 'trend-indicator down')
+          .text('▼');
+      }
+      
+      // Add indicator label for the first chart only
+      if (index === 0) {
+        svg.append('text')
+          .attr('x', 100)
+          .attr('y', -5)
+          .style('font-size', '11px')
+          .style('fill', '#999')
+          .style('font-style', 'italic')
+          .text('Above/below MLB avg');
+      }
+      
       const x = d3.scaleLinear()
         .domain([1, 50])
         .range([0, width]);
@@ -1587,60 +1627,64 @@ async function fetchAndRenderXwoba() {
         .domain(yDomain)
         .range([height, 0]);
         
-        // Add the line
-        const line = d3.line()
-          .x(d => x(d.rn_fwd))
-          .y(d => y(d.xwoba));
+      // Add the line
+      const line = d3.line()
+        .x(d => x(d.rn_fwd))
+        .y(d => y(d.xwoba))
+        .curve(d3.curveMonotoneX);
         
-        svg.append('path')
-          .datum(playerData)
-          .attr('fill', 'none')
-          .attr('stroke', '#005A9C')
-          .attr('stroke-width', 2)
-          .attr('d', line);
+      svg.append('path')
+        .datum(playerData)
+        .attr('fill', 'none')
+        .attr('stroke', '#005A9C')
+        .attr('stroke-width', 2)
+        .attr('d', line);
 
-        // Add invisible dots for tooltips
-        svg.selectAll('.dot')
-          .data(playerData)
-          .enter()
-          .append('circle')
-          .attr('class', 'dot')
-          .attr('cx', d => x(d.rn_fwd))
-          .attr('cy', d => y(d.xwoba))
-          .attr('r', 3)
-          .attr('fill', 'transparent')
-          .attr('stroke', 'none')
-          .append('title')
-          .text(d => `xwOBA: ${d.xwoba.toFixed(3).replace(/^0\./, '.')}\nPA: ${d.rn_fwd}`);
+      // Add invisible dots for tooltips
+      svg.selectAll('.dot')
+        .data(playerData)
+        .enter()
+        .append('circle')
+        .attr('class', 'dot')
+        .attr('cx', d => x(d.rn_fwd))
+        .attr('cy', d => y(d.xwoba))
+        .attr('r', 3)
+        .attr('fill', 'transparent')
+        .attr('stroke', 'none')
+        .append('title')
+        .text(d => `xwOBA: ${d.xwoba.toFixed(3).replace(/^0\./, '.')}\nPA: ${d.rn_fwd}`);
         
-        // Add axes with fewer ticks
-        svg.append('g')
-          .attr('transform', `translate(0,${height})`)
-          .call(d3.axisBottom(x).ticks(2));
+      // Add axes with fewer ticks
+      svg.append('g')
+        .attr('transform', `translate(0,${height})`)
+        .call(d3.axisBottom(x).ticks(2));
         
-        svg.append('g')
-          .call(d3.axisLeft(y).ticks(3).tickFormat(d => d.toFixed(3).replace(/^0\./, '.')));
+      svg.append('g')
+        .call(d3.axisLeft(y).ticks(3).tickFormat(d => d.toFixed(3).replace(/^0\./, '.')));
         
-        // Add league average line
-        const leagueAvg = playerData[0].league_avg_xwoba;
-        svg.append('line')
-          .attr('x1', 0)
-          .attr('x2', width)
-          .attr('y1', y(leagueAvg))
-          .attr('y2', y(leagueAvg))
-          .attr('stroke', '#EF3E42')
-          .attr('stroke-width', 1)
-          .attr('stroke-dasharray', '3,3');
+      // Add league average line
+      svg.append('line')
+        .attr('x1', 0)
+        .attr('x2', width)
+        .attr('y1', y(leagueAvg))
+        .attr('y2', y(leagueAvg))
+        .attr('stroke', '#EF3E42')
+        .attr('stroke-width', 1)
+        .attr('stroke-dasharray', '3,3');
 
-        // Add league average label only on first chart
-        if (index === 0) {
-          svg.append('text')
-            .attr('x', width - 5)
-            .attr('y', y(leagueAvg) - 5)
-            .attr('text-anchor', 'end')
-            .attr('font-size', '10px')
-            .text(`MLB avg: ${leagueAvg.toFixed(3).replace(/^0\./, '.')}`);
-        }
+      // Add league average label only on first chart
+      if (index === 0) {
+        svg.append('text')
+          .attr('x', width - 5)
+          .attr('y', y(leagueAvg) - 5)
+          .attr('text-anchor', 'end')
+          .attr('class', 'anno')
+          .attr('font-size', '10px')
+          .style('fill', '#999')
+          .style('stroke', 'none')
+          .style('opacity', 1)
+          .text(`MLB avg: ${leagueAvg.toFixed(3).replace(/^0\./, '.')}`);
+      }
     });
   } catch (error) {
     console.error('Error fetching xwOBA data:', error);
