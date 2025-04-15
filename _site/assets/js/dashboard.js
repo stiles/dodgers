@@ -1611,12 +1611,12 @@ async function fetchAndRenderXwoba() {
       // Add indicator label for the first chart only
       if (index === 0) {
         svg.append('text')
-          .attr('x', 100)
-          .attr('y', -5)
+          .attr('x', 5)
+          .attr('y', -10)
           .style('font-size', '11px')
-          .style('fill', '#999')
-          .style('font-style', 'italic')
-          .text('Above/below MLB avg');
+          .style('font-weight', 'bold')
+          .style('fill', '#444')
+          .text('▲/▼ vs. MLB avg');
       }
       
       const x = d3.scaleLinear()
