@@ -2,7 +2,7 @@ name: run_dodgers
 
 on:
   schedule:
-    - cron: '0 5,7,11,16,22 * * *'  # Adjusted for UTC (Daylight Saving Time)
+    - cron: '0 8,12,15,23 * 3-10 *'
   workflow_dispatch:
 
 jobs:
