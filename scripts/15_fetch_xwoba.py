@@ -16,8 +16,12 @@ import time
 import boto3
 import logging
 from io import StringIO
+from datetime import datetime
 
 logging.basicConfig(level=logging.INFO, format='%(asctime)s - %(levelname)s - %(message)s')
+
+# Get current year dynamically
+CURRENT_YEAR = datetime.now().year
 
 # Configuration
 output_dir = "data/batting"
@@ -88,9 +92,12 @@ def format_player_name(name):
     return name
 
 def fetch_player_ids():
-    """Scrape the Dodgers roster page to get all player IDs."""
-    logging.info("Fetching player IDs from roster page.")
-    team_url = 'https://baseballsavant.mlb.com/team/119?view=statcast&nav=hitting&season=2025'
+    """
+    Scrape the Dodgers roster page to get all player IDs.
+    Uses the current year dynamically to ensure we're getting the current roster.
+    """
+    logging.info(f"Fetching player IDs from roster page for {CURRENT_YEAR} season.")
+    team_url = f'https://baseballsavant.mlb.com/team/119?view=statcast&nav=hitting&season={CURRENT_YEAR}'
     logging.info(f"Making request to: {team_url}")
     
     try:
@@ -194,9 +201,17 @@ def fetch_player_xwoba(player_name, player_id):
         logging.error(f"Response object: {response if 'response' in locals() else 'No response object'}")
         return None
 
-def fetch_league_average_xwoba(year=2025):
-    """Fetch league average xwOBA from Baseball Savant."""
-    logging.info(f"Fetching league average xwOBA for {year}")
+def fetch_league_average_xwoba(year=CURRENT_YEAR):
+    """
+    Fetch league average xwOBA from Baseball Savant.
+    
+    Args:
+        year (int): The season year to fetch data for. Defaults to current year.
+        
+    Returns:
+        float or None: The league average xwOBA for qualified hitters (50+ PA), or None if fetch fails
+    """
+    logging.info(f"Fetching league average xwOBA for {year} season")
     url = (
         "https://baseballsavant.mlb.com/leaderboard/expected_statistics?"
         f"type=batter&year={year}&position=&team=&filterType=bip&min=q&csv=true"
@@ -214,9 +229,8 @@ def fetch_league_average_xwoba(year=2025):
         response.raise_for_status()
         df = pd.read_csv(StringIO(response.text))
         
-        # Filter for qualified hitters (50+ PA)
-        qualified = df[df["pa"] >= 50]
-        lg_avg_xwoba = qualified["est_woba"].mean()
+        # Calculate league average xwOBA
+        lg_avg_xwoba = df["est_woba"].mean()
         
         logging.info(f"League average xwOBA: {lg_avg_xwoba:.3f}")
         return lg_avg_xwoba
@@ -227,6 +241,7 @@ def fetch_league_average_xwoba(year=2025):
 
 def main():
     try:
+        logging.info(f"Starting xwOBA data collection for {CURRENT_YEAR} season")
         os.makedirs(output_dir, exist_ok=True)
         logging.info("Output directory checked/created.")
 
@@ -274,7 +289,7 @@ def main():
             
             # Save league average separately
             league_avg_data = {
-                'year': 2025,
+                'year': CURRENT_YEAR,
                 'league_avg_xwoba': lg_avg_xwoba,
                 'timestamp': pd.Timestamp.now().isoformat()
             }
