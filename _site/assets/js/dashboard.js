@@ -1,3 +1,27 @@
+// Remove DOM error prevention code
+// document.addEventListener('DOMContentLoaded', function() {
+//   // Intercept querySelectorAll calls on null elements
+//   const originalQuerySelectorAll = Element.prototype.querySelectorAll;
+//   Element.prototype.querySelectorAll = function(...args) {
+//     try {
+//       return originalQuerySelectorAll.apply(this, args);
+//     } catch (e) {
+//       console.warn('Prevented querySelectorAll error:', e);
+//       return [];
+//     }
+//   };
+//   
+//   // Disable any specific element interactions that might be causing issues
+//   // This is a more targeted approach if you know what element might be missing
+//   if (!document.getElementById('barcode-chart')) {
+//     // Create a dummy element to prevent errors
+//     const dummy = document.createElement('div');
+//     dummy.id = 'barcode-chart';
+//     dummy.style.display = 'none';
+//     document.body.appendChild(dummy);
+//   }
+// });
+
 // Games back line chart
 
 async function fetchData() {
@@ -157,9 +181,6 @@ function renderChart(data) {
     // Ensure data is sorted by game number before taking the last point
     currentDataArray.sort((a, b) => a.gm - b.gm);
     const lastDataCurrent = currentDataArray.slice(-1)[0];
-    console.log('Last Data Point:', lastDataCurrent); // Check the data point object
-    console.log('Calculated X:', xScale(lastDataCurrent.gm + 3)); // Check calculated X coord (adjusted)
-    console.log('Calculated Y:', yScale(lastDataCurrent.gb));     // Check calculated Y coord
 
     svg.append('text')
       .attr('x', xScale(lastDataCurrent.gm + 1)) // Reduced horizontal offset
@@ -304,7 +325,6 @@ document.addEventListener('DOMContentLoaded', function() {
           const response = await d3.json('https://stilesdata.com/dodgers/data/standings/dodgers_standings_1958_present.json');
           // Group data by year
           groupedByYear = d3.group(response, (d) => d.year);
-          console.log("Grouped years:", Array.from(groupedByYear.keys()));
           populateYearSelect(Array.from(groupedByYear.keys()));
           renderCumulativeWinsChart(groupedByYear);
       } catch (error) {
@@ -337,8 +357,6 @@ document.addEventListener('DOMContentLoaded', function() {
     const line = d3.line()
       .x((d) => {
         const gm = Number(d.gm) || 0;
-        // Debug log
-        // console.log("gm:", d.gm, "converted:", gm);
         return xScale(gm);
       })
       .y((d) => {
@@ -631,7 +649,6 @@ document.addEventListener('DOMContentLoaded', function() {
           .append('path')
           .attr('class', 'line')
           .attr('d', (d) => {
-            // console.log(`Rendering line for year ${d[0]} with data:`, d[1]);
             return line(d[1]);
           })
           .style('fill', 'none')
@@ -647,10 +664,7 @@ document.addEventListener('DOMContentLoaded', function() {
             .enter()
             .append('path')
             .attr('class', 'line')
-            .attr('d', (d) => {
-              // console.log(`Rendering current year line for year ${d[0]} with data:`, d[1]);
-              return line(d[1]);
-            })
+            .attr('d', (d) => line(d[1]))
             .style('fill', 'none')
             .style('stroke', '#005A9C')
             .style('stroke-width', 2);
@@ -886,10 +900,8 @@ document.addEventListener('DOMContentLoaded', function() {
       const response = await d3.json(
         'https://stilesdata.com/dodgers/data/pitching/dodgers_historic_pitching_gamelogs_1958-present.json'
       );
-      // console.log('Fetched data:', response);
       // Group data by year
       const groupedByYear = d3.group(response, (d) => d.year.toString());
-      // console.log('Grouped data by year:', groupedByYear);
       renderCumulativeERAChart(groupedByYear);
     } catch (error) {
       console.error('Failed to fetch data:', error);
@@ -964,7 +976,6 @@ document.addEventListener('DOMContentLoaded', function() {
     const allLinesExceptCurrentYear = Array.from(data.entries()).filter(
       (d) => d[0] !== new Date().getFullYear().toString()
     );
-    // console.log('All lines except current year:', allLinesExceptCurrentYear);
 
     svg
       .selectAll('.line')
@@ -978,9 +989,7 @@ document.addEventListener('DOMContentLoaded', function() {
       .style('stroke-width', 0.5);
 
     const currentYear = new Date().getFullYear().toString();
-    // console.log('Current year:', currentYear);
     const lineCurrentYear = data.get(currentYear);
-    // console.log('Current year data:', lineCurrentYear);
 
     if (lineCurrentYear) {
       svg
@@ -995,7 +1004,6 @@ document.addEventListener('DOMContentLoaded', function() {
         .style('stroke-width', 2);
 
       const lastDataCurrentYear = lineCurrentYear.slice(-1)[0];
-      // console.log('Last data of current year:', lastDataCurrentYear);
 
       svg
         .append('text')
@@ -1037,6 +1045,245 @@ document.addEventListener('DOMContentLoaded', function() {
 
   fetchCumulativeERAData();
 });
+
+
+
+
+document.addEventListener('DOMContentLoaded', function () {
+  const renderTable = (games, tableId) => {
+    const tableBody = document.querySelector(`#${tableId} tbody`);
+    tableBody.innerHTML = '';
+
+    games.forEach(game => {
+      if (game.opp_name === null) return;  // Skip games with a null opponent name
+
+      const row = document.createElement('tr');
+      if (tableId === 'last-games') {
+        row.innerHTML = `
+          <td>${game.date}</td>
+          <td>${game.opp_name}</td>
+          <td>${game.home_away === 'home' ? '<i class="fas fa-home home-icon"></i>' : '<i class="fas fa-road road-icon"></i>'}</td>
+          <td class="${game.result === 'win' ? 'win' : game.result === 'loss' ? 'loss' : ''}">${game.result}</td>
+        `;
+      } else if (tableId === 'next-games') {
+        row.innerHTML = `
+          <td>${game.date}</td>
+          <td>${game.opp_name}</td>
+          <td>${game.home_away === 'home' ? '<i class="fas fa-home home-icon"></i>' : '<i class="fas fa-road road-icon"></i>'}</td>
+          <td>${game.game_start}</td>  <!-- Display game_start time instead of result -->
+        `;
+      }
+      tableBody.appendChild(row);
+    });
+  };
+
+  const fetchDataAndRenderTables = async () => {
+    try {
+      const response = await fetch('https://stilesdata.com/dodgers/data/standings/dodgers_schedule.json');
+      const games = await response.json();
+
+      const lastGames = games.filter(game => game.placement === 'last');
+      const nextGames = games.filter(game => game.placement === 'next');
+
+      renderTable(lastGames, 'last-games');
+      renderTable(nextGames, 'next-games');
+    } catch (error) {
+      console.error('Failed to fetch data:', error);
+    }
+  };
+
+  fetchDataAndRenderTables();
+});
+
+
+
+document.addEventListener('DOMContentLoaded', function () {
+  const url = 'https://stilesdata.com/dodgers/data/batting/dodgers_player_batting_current_table.json';
+
+  const fetchDataAndRenderBattingTables = async () => {
+      try {
+          const response = await fetch(url);
+          const data = await response.json();
+          const limitedData = data.slice(0, 10); // Limit to the first 10 objects
+          // const limitedData = data; // Limit to the first 10 objects
+
+          renderTable(limitedData, 'table-1', ['player', 'postion', 'avg', 'obp', 'slg'], getColorScaleBlue);
+          renderTable(limitedData, 'table-2', ['player', 'plateAppearances', 'bbper', 'hrper', 'soper'], getColorScale);
+      } catch (error) {
+          console.error('Failed to fetch data:', error);
+      }
+  };
+
+  const renderTable = (data, tableId, fields, getColorScale) => {
+      const tableBody = document.querySelector(`#${tableId} tbody`);
+      tableBody.innerHTML = '';
+
+      // Calculate the min and max values for each column to set the color scale
+      const scales = fields.reduce((acc, field) => {
+          const values = data.map(item => parseFloat(item[field]));
+          acc[field] = {
+              min: Math.min(...values),
+              max: Math.max(...values)
+          };
+          return acc;
+      }, {});
+
+      data.forEach(player => {
+          const row = document.createElement('tr');
+          fields.forEach(field => {
+              const cell = document.createElement('td');
+              cell.textContent = player[field];
+
+              // Apply conditional coloring
+              if (field !== 'player' && field !== 'postion' && field !== 'plateAppearances') {
+                  const value = parseFloat(player[field]);
+                  const scale = scales[field];
+                  cell.style.backgroundColor = getColorScale(field, value, scale.min, scale.max);
+                  cell.style.color = getContrastYIQ(getColorScale(field, value, scale.min, scale.max));
+              }
+
+              row.appendChild(cell);
+          });
+          tableBody.appendChild(row);
+      });
+  };
+
+  const getColorScale = (field, value, min, max) => {
+      if (field === 'soper') {
+          // Red color scale for strikeouts, reversed scale
+          // return getColorFromScale(value, min, max, '#ffcccc', '#ff0000', true);
+          return getColorFromScale(value, min, max, '#005a9c', '#cce5ff', false);
+      } else {
+          // Blue color scale for other metrics
+          return getColorFromScale(value, min, max, '#cce5ff', '#005a9c', false);
+      }
+  };
+
+  const getColorScaleBlue = (field, value, min, max) => {
+      // Blue color scale for batting stats
+      return getColorFromScale(value, min, max, '#cce5ff', '#005a9c', false);
+  };
+
+  const getColorFromScale = (value, min, max, colorMin, colorMax, reverse = false) => {
+      const scale = (value - min) / (max - min);
+      const ratio = reverse ? 1 - scale : scale;
+      return interpolateColor(colorMin, colorMax, ratio);
+  };
+
+  const interpolateColor = (color1, color2, factor) => {
+      const result = color1.slice(1).match(/.{2}/g)
+          .map((hex, i) => Math.round(parseInt(hex, 16) + factor * (parseInt(color2.slice(1).match(/.{2}/g)[i], 16) - parseInt(hex, 16))))
+          .map(val => val.toString(16).padStart(2, '0'))
+          .join('');
+      return `#${result}`;
+  };
+
+  const getContrastYIQ = (hexcolor) => {
+      const r = parseInt(hexcolor.substr(1, 2), 16);
+      const g = parseInt(hexcolor.substr(3, 2), 16);
+      const b = parseInt(hexcolor.substr(5, 2), 16);
+      const yiq = ((r*299)+(g*587)+(b*114))/1000;
+      return (yiq >= 128) ? 'black' : 'white';
+  };
+
+  fetchDataAndRenderBattingTables();
+});
+
+
+
+// document.addEventListener('DOMContentLoaded', function () {
+//     const url = 'https://stilesdata.com/dodgers/data/batting/dodgers_player_batting_current_table.json';
+
+//     const fetchDataAndRenderBattingTables = async () => {
+//         try {
+//             const response = await fetch(url);
+//             const data = await response.json();
+//             const limitedData = data.slice(0, 10); // Limit to the first 10 objects
+
+//             renderTable(limitedData, 'table-1', ['player', 'postion', 'avg', 'obp', 'slg'], getColorScaleBlue, getContrastYIQ);
+//             renderTable(limitedData, 'table-2', ['player', 'plateAppearances', 'bbper', 'soper', 'hrper'], getColorScaleRedBlue, getContrastYIQ);
+//         } catch (error) {
+//             console.error('Failed to fetch data:', error);
+//         }
+//     };
+
+//     const renderTable = (data, tableId, fields, getColorScale, getContrast) => {
+//         const tableBody = document.querySelector(`#${tableId} tbody`);
+//         tableBody.innerHTML = '';
+
+//         // Calculate the min and max values for each column to set the color scale
+//         const scales = fields.reduce((acc, field) => {
+//             const values = data.map(item => parseFloat(item[field]));
+//             acc[field] = {
+//                 min: Math.min(...values),
+//                 max: Math.max(...values)
+//             };
+//             return acc;
+//         }, {});
+
+//         data.forEach(player => {
+//             const row = document.createElement('tr');
+//             fields.forEach(field => {
+//                 const cell = document.createElement('td');
+//                 cell.textContent = player[field];
+
+//                 // Apply conditional coloring
+//                 if (field !== 'player' && field !== 'postion' && field !== 'plateAppearances') {
+//                     const value = parseFloat(player[field]);
+//                     const scale = scales[field];
+//                     let color;
+
+//                     // Determine which color scale to use
+//                     if (field === 'soper') {
+//                         color = getColorScaleRedBlue(value, scale.min, scale.max, true); // Reverse color scale for soper
+//                     } else if (field === 'bbper' || field === 'hrper') {
+//                         color = getColorScaleRedBlue(value, scale.min, scale.max);
+//                     } else {
+//                         color = getColorScaleBlue(value, scale.min, scale.max);
+//                     }
+
+//                     cell.style.backgroundColor = color;
+//                     cell.style.color = getContrast(color);
+//                 }
+
+//                 cell.classList.add('table-value'); // Add the 'table-value' class for specific styles
+//                 row.appendChild(cell);
+//             });
+//             tableBody.appendChild(row);
+//         });
+//     };
+
+//     const getColorScaleBlue = (value, min, max) => {
+//         const normalizedValue = (value - min) / (max - min);
+//         const blueValue = Math.floor(255 - normalizedValue * 200);
+//         return `rgb(0, ${blueValue}, 255)`;
+//     };
+
+//     const getColorScaleRedBlue = (value, min, max, reverse = false) => {
+//         const normalizedValue = (value - min) / (max - min);
+//         if (reverse) {
+//             return `rgb(${255 - normalizedValue * 255}, ${100 + normalizedValue * 100}, ${100 + normalizedValue * 100})`;
+//         }
+//         return `rgb(${255 - normalizedValue * 255}, ${normalizedValue * 255}, ${normalizedValue * 255})`;
+//     };
+
+//     const getContrastYIQ = (hexcolor) => {
+//         const r = parseInt(hexcolor.substr(1, 2), 16);
+//         const g = parseInt(hexcolor.substr(3, 2), 16);
+//         const b = parseInt(hexcolor.substr(5, 2), 16);
+//         const yiq = ((r * 299) + (g * 587) + (b * 114)) / 1000;
+//         return (yiq >= 128) ? 'black' : 'white';
+//     };
+
+//     fetchDataAndRenderBattingTables();
+// });
+
+
+
+
+
+
+
 
 
 
@@ -1367,178 +1614,14 @@ document.addEventListener('DOMContentLoaded', function () {
 
 
 
-document.addEventListener('DOMContentLoaded', function() {
-  let eventsData = [];
-  const eventsSet = new Set();
-  const selectMenu = document.getElementById('event-select');
-
-  async function fetchPlayerAtBatData() {
-    try {
-      const response = await fetch('https://stilesdata.com/dodgers/data/batting/dodgers_player_atbat_lastpitch_outcome_current.json');
-      eventsData = await response.json();
-      
-      // Collect unique event types
-      eventsData.forEach(d => eventsSet.add(d.events));
-      populateEventSelect(Array.from(eventsSet));
-      
-      // Initially render the chart with the default event type
-      renderBarCodeChart('Home run');
-    } catch (error) {
-      console.error('Failed to fetch data:', error);
-    }
-  }
-
-  function populateEventSelect(events) {
-    events.forEach(event => {
-      const option = document.createElement('option');
-      option.value = event;
-      option.text = event;
-      selectMenu.appendChild(option);
-    });
-
-    selectMenu.addEventListener('change', function() {
-      renderBarCodeChart(this.value);
-    });
-  }
-
-  fetchPlayerAtBatData();
-  
-  function renderBarCodeChart(selectedEvent) {
-    const container = d3.select('#barcode-chart');
-    const svg = container.select('svg');
-    svg.selectAll('*').remove(); // Clear previous chart
-
-    const isMobile = window.innerWidth <= 767;
-
-    const margin = isMobile 
-    ? { top: 20, right: 10, bottom: 60, left: 120 }  // Smaller margins for mobile
-    : { top: 20, right: 10, bottom: 50, left: 120 }; // Larger margins for desktop
-
-    const containerWidth = container.node().getBoundingClientRect().width;
-    const width = containerWidth - margin.left - margin.right;
-    const height = 500 - margin.top - margin.bottom;
-
-    svg.attr('viewBox', `0 0 ${containerWidth} 500`).attr('preserveAspectRatio', 'xMinYMin meet');
-
-    // Filter and sort data by plate appearances
-    const sortedData = d3.rollups(eventsData, v => d3.max(v, d => d.pa_number), d => d.batter_name_clean)
-      .sort((a, b) => b[1] - a[1])
-      .slice(0, 10)
-      .map(d => d[0]);
-
-    const filteredData = eventsData.filter(d => sortedData.includes(d.batter_name_clean));
-
-    const x = d3.scaleLinear()
-      .domain([0, d3.max(filteredData, d => d.pa_number)])
-      .range([0, width]);
-
-    const y = d3.scaleBand()
-      .domain(filteredData.map(d => d.batter_name_clean).filter((v, i, a) => a.indexOf(v) === i))
-      .range([0, height])
-      .padding(0.1);
-
-    const g = svg.append('g').attr('transform', `translate(${margin.left},${margin.top})`);
-
-    const xAxis = d3.axisBottom(x).tickValues(x.ticks(isMobile ? 50 : 25).filter(tick => tick % (isMobile ? 50 : 25) === 0));
-
-    g.append('g')
-      .attr('class', 'axis axis--x')
-      .attr('transform', `translate(0,${height})`)
-      .call(xAxis);
-
-    g.append('g')
-      .attr('class', 'axis axis--y')
-      .call(d3.axisLeft(y));
-
-    // X-axis Label
-    g.append("text")
-      .attr("text-anchor", "middle")
-      .attr('class', 'anno-dark')
-      .attr("x", width / 2)
-      .attr("y", height + margin.bottom - 10)
-      .text("Plate appearance number");
-
-    // Draw gray lines for all events
-    g.selectAll('.line')
-      .data(filteredData)
-      .enter()
-      .append('line')
-      .attr('x1', d => x(d.pa_number))
-      .attr('x2', d => x(d.pa_number))
-      .attr('y1', d => y(d.batter_name_clean))
-      .attr('y2', d => y(d.batter_name_clean) + y.bandwidth())
-      .attr('stroke', '#ccc')
-      .attr('stroke-width', .3);
-
-    // Highlight selected event type with color based on positive_outcome
-    g.selectAll('.highlight')
-      .data(filteredData.filter(d => d.events === selectedEvent))
-      .enter()
-      .append('line')
-      .attr('x1', d => x(d.pa_number))
-      .attr('x2', d => x(d.pa_number))
-      .attr('y1', d => y(d.batter_name_clean))
-      .attr('y2', d => y(d.batter_name_clean) + y.bandwidth())
-      .attr('stroke', d => d.positive_outcome ? '#005A9C' : '#ef3e42')
-      .attr('stroke-width', 1);
-
-    // pitch annotation line and text
-    const annotationX = x(40); 
-    const annotationY = y('Freddie Freeman') + y.bandwidth() / 2;
-
-    g.append('line')
-      .attr('x1', annotationX)
-      .attr('x2', annotationX)
-      .attr('y1', annotationY - 40)
-      .attr('y2', annotationY - 25)
-      .attr('stroke', '#000')
-      .attr('stroke-width', 1)
-      .attr('marker-end', 'url(#arrow)');
-
-    g.append('text')
-      .attr('x', annotationX + 10)
-      .attr('y', annotationY - 30)
-      .attr('text-anchor', 'start')
-      .attr('font-size', '12px')
-      .attr('fill', '#222')
-      .text('Line = plate appearance')
-      .attr('class', 'anno-dark');
-
-    // Define the arrow marker
-    svg.append('defs')
-      .append('marker')
-      .attr('id', 'arrow')
-      .attr('viewBox', '0 0 10 10')
-      .attr('refX', 5)
-      .attr('refY', 5)
-      .attr('markerWidth', 6)
-      .attr('markerHeight', 6)
-      .attr('orient', 'auto')
-      .append('path')
-      .attr('d', 'M 0 0 L 10 5 L 0 10 z')
-      .attr('fill', '#000');
-
-    // Add indicator label for the first chart only
-    if (index === 0) {
-      svg.append('text')
-        .attr('x', 5)
-        .attr('y', -10)
-        .style('font-size', '11px')
-        .style('font-weight', 'bold')
-        .style('fill', '#444')
-        .text('▲/▼ vs. MLB avg');
-    }
-  }
-
-  window.addEventListener('resize', () => renderBarCodeChart(selectMenu.value));
-});
-
 
 
 // xwOBA charts
 async function fetchAndRenderXwoba() {
   try {
     const data = await d3.json('https://stilesdata.com/dodgers/data/batting/dodgers_xwoba_current.json');
+    
+    // Group data by player
     const playerGroups = d3.group(data, d => d.player_name);
     const players = Array.from(playerGroups.keys()).sort();
     
@@ -1562,7 +1645,12 @@ async function fetchAndRenderXwoba() {
     
     players.forEach((player, index) => {
       const playerData = playerGroups.get(player);
+      
+      // Sort data by PA number (ascending)
       playerData.sort((a, b) => a.rn_fwd - b.rn_fwd);
+      
+      // Get the most recent data point (should be the last PA) 
+      const mostRecentData = playerData[playerData.length - 1];
       
       const container = grid.append('div')
         .style('width', '100%')
@@ -1586,8 +1674,8 @@ async function fetchAndRenderXwoba() {
         .attr('class', 'chart-title');
       
       // Calculate league comparison indicator
-      const latestXwoba = playerData[0].xwoba;
-      const leagueAvg = playerData[0].league_avg_xwoba;
+      const latestXwoba = mostRecentData.xwoba;
+      const leagueAvg = mostRecentData.league_avg_xwoba;
       
       // Add player name and arrow in the same text element
       const playerText = title.append('text')
@@ -1598,24 +1686,30 @@ async function fetchAndRenderXwoba() {
         .text(player + ' ');
       
       // Add arrow indicator right after the name
+      const difference = latestXwoba - leagueAvg;
+      
+      // Explicitly check if below or above
       if (latestXwoba > leagueAvg) {
         playerText.append('tspan')
           .attr('class', 'trend-indicator up')
           .text('▲');
-      } else {
+      } else if (latestXwoba < leagueAvg) {
         playerText.append('tspan')
           .attr('class', 'trend-indicator down')
           .text('▼');
+      } else {
+        playerText.append('tspan')
+          .attr('class', 'trend-indicator neutral')
+          .text('▬');
       }
       
       // Add indicator label for the first chart only
       if (index === 0) {
         svg.append('text')
-          .attr('x', 5)
-          .attr('y', -10)
+          .attr('x', 105)
+          .attr('y', -5)
           .style('font-size', '11px')
-          .style('font-weight', 'bold')
-          .style('fill', '#444')
+          .style('fill', '#999')
           .text('▲/▼ vs. MLB avg');
       }
       
