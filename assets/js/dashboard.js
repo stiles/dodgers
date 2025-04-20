@@ -1649,8 +1649,16 @@ async function fetchAndRenderXwoba() {
       // Sort data by PA number (ascending)
       playerData.sort((a, b) => a.rn_fwd - b.rn_fwd);
       
-      // Get the most recent data point (should be the last PA) 
-      const mostRecentData = playerData[playerData.length - 1];
+      // Get the most recent data point (rn_fwd=1 is the most recent)
+      const mostRecentData = playerData.find(d => d.rn_fwd === 1) || playerData[0];
+      
+      // Add debugging to verify correct data point is used for indicators
+      if (player === 'Freddie Freeman' || player === 'Shohei Ohtani') {
+        console.log(`${player}'s most recent xwOBA:`, 
+          `value=${mostRecentData.xwoba.toFixed(3)}, `,
+          `league_avg=${mostRecentData.league_avg_xwoba.toFixed(3)}, `,
+          `rn_fwd=${mostRecentData.rn_fwd}`);
+      }
       
       const container = grid.append('div')
         .style('width', '100%')
@@ -1714,7 +1722,7 @@ async function fetchAndRenderXwoba() {
       }
       
       const x = d3.scaleLinear()
-        .domain([1, 50])
+        .domain([50, 1])  // Reversed domain: 50 (oldest) on left, 1 (newest) on right
         .range([0, width]);
         
       const y = d3.scaleLinear()
@@ -1723,7 +1731,7 @@ async function fetchAndRenderXwoba() {
         
       // Add the line
       const line = d3.line()
-        .x(d => x(d.rn_fwd))  // rn_fwd is the plate appearance number (1=most recent, 50=oldest)
+        .x(d => x(d.rn_fwd))  // rn_fwd values: 1=most recent, 50=oldest; chart shows oldest (left) to newest (right)
         .y(d => y(d.xwoba))
         .curve(d3.curveMonotoneX);
         
@@ -1748,10 +1756,19 @@ async function fetchAndRenderXwoba() {
         .append('title')
         .text(d => `xwOBA: ${d.xwoba.toFixed(3).replace(/^0\./, '.')}\nPA: ${d.rn_fwd}`);
         
+      // Add visible dot for the most recent data point
+      svg.append('circle')
+        .attr('cx', x(1)) // rn_fwd=1 is the most recent point
+        .attr('cy', y(mostRecentData.xwoba))
+        .attr('r', 3)
+        .attr('fill', latestXwoba > leagueAvg ? '#38761d' : '#cc0000') // Green if above league avg, red if below
+        .attr('stroke', '#ffffff')
+        .attr('stroke-width', 1);
+        
       // Add axes with fewer ticks
       svg.append('g')
         .attr('transform', `translate(0,${height})`)
-        .call(d3.axisBottom(x).ticks(2));
+        .call(d3.axisBottom(x).ticks(2).tickFormat(d => d === 50 ? 'Oldest' : d === 1 ? 'Newest' : d));
         
       svg.append('g')
         .call(d3.axisLeft(y).ticks(3).tickFormat(d => d.toFixed(3).replace(/^0\./, '.')));

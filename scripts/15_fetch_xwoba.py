@@ -230,8 +230,24 @@ def fetch_league_average_xwoba(year=CURRENT_YEAR):
         response.raise_for_status()
         df = pd.read_csv(StringIO(response.text))
         
-        # Calculate league average xwOBA
-        lg_avg_xwoba = df["est_woba"].mean()
+        # Calculate weighted average xwOBA based on plate appearances
+        # Only include players with at least some minimum PAs to avoid noise
+        # Using a weighted average ensures that players with more PAs have more influence on
+        # the league average calculation, which better represents the true league performance.
+        # A simple mean would give equal weight to a player with 10 PAs and a player with 500 PAs.
+        min_pa = 10  # Minimum plate appearances to include
+        filtered_df = df[df["pa"] >= min_pa]
+        
+        if 'pa' in filtered_df.columns and 'est_woba' in filtered_df.columns:
+            # Calculate weighted average based on number of plate appearances
+            total_pa = filtered_df['pa'].sum()
+            weighted_xwoba = (filtered_df['est_woba'] * filtered_df['pa']).sum() / total_pa
+            lg_avg_xwoba = weighted_xwoba
+            logging.info(f"Calculated weighted league average xwOBA: {lg_avg_xwoba:.3f} (based on {total_pa} plate appearances)")
+        else:
+            # Fallback to simple mean if columns are missing
+            lg_avg_xwoba = filtered_df["est_woba"].mean()
+            logging.info(f"Calculated simple league average xwOBA: {lg_avg_xwoba:.3f}")
         
         logging.info(f"League average xwOBA: {lg_avg_xwoba:.3f}")
         return lg_avg_xwoba
