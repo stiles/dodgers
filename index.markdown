@@ -133,9 +133,8 @@ permalink: /
 </div>
 
   <h3 class="visual-subhead">Recent form: Expected weighted on-base average</h3>
-  <p class="chart-chatter">Rolling 50-plate appearance <span class='anno-xwoba'>xwOBA</span> for each Dodgers batter — vs. the <span class='anno-mean'>league average</span>. This stat predicts a player's offensive contributions based on the quality of contact they make with the ball.</p>
+  <p class="chart-chatter">Rolling 50-plate appearance <span class='anno-xwoba'>xwOBA</span> for each Dodgers batter compared to the <span class='anno-mean'>league average</span>. This stat predicts a player's offensive contributions based on the quality of contact they make with the ball.</p>
   <div id="xwoba-grid" class="grid-container">
-    <!-- Charts will be inserted here by JavaScript -->
   </div>
   
 

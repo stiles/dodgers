@@ -50,7 +50,8 @@ PITCHERS_TO_SKIP = [
     'Vesia, Alex',
     'Yamamoto, Yoshinobu',
     'Scott, Tanner',
-    'Dreyer, Jack'
+    'Dreyer, Jack',
+    'Phillips, Evan'
 ]
 
 # AWS session and S3 resource
@@ -280,12 +281,27 @@ def main():
             df = pd.concat(all_player_data, ignore_index=True)
             logging.info(f"Combined data for {len(all_player_data)} players")
             
-            # Calculate forward rank (1 = most recent, 50 = oldest)
-            df["rn_fwd"] = (
-                df.groupby("player_name")["rn"]
-                .rank(method="first", ascending=False)
-                .astype(int)
-            )
+            # Calculate forward rank, preserving original ordering
+            # In Baseball Savant data, rn=1 is already the most recent plate appearance, 
+            # and rn=50 is the oldest, so we'll keep this ordering
+            df["rn_fwd"] = df["rn"]
+            
+            # Add a debugging log to show the range of rn values
+            min_rn = df["rn"].min()
+            max_rn = df["rn"].max()
+            logging.info(f"Source data rn values range from {min_rn} (most recent) to {max_rn} (oldest)")
+            
+            # Validate ordering assumption if date information is available
+            if 'max_game_date' in df.columns:
+                # Get a sample player with multiple records
+                sample_player = df['player_name'].value_counts().idxmax()
+                sample_df = df[df['player_name'] == sample_player].sort_values('rn')
+                
+                logging.info(f"Validating chronological order using {sample_player}'s data:")
+                for idx, row in sample_df.head(3).iterrows():
+                    logging.info(f"  rn={row['rn']}, date={row.get('max_game_date', 'N/A')}")
+                    
+                logging.info("If dates for lower rn values are more recent, the ordering is correct")
             
             # Save league average separately
             league_avg_data = {

@@ -1723,7 +1723,7 @@ async function fetchAndRenderXwoba() {
         
       // Add the line
       const line = d3.line()
-        .x(d => x(d.rn_fwd))
+        .x(d => x(d.rn_fwd))  // rn_fwd is the plate appearance number (1=most recent, 50=oldest)
         .y(d => y(d.xwoba))
         .curve(d3.curveMonotoneX);
         
