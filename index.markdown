@@ -136,6 +136,13 @@ permalink: /
   <p class="chart-chatter">Rolling 50-plate appearance <span class='anno-xwoba'>xwOBA</span> for each Dodgers batter compared to the <span class='anno-mean'>league average</span>. This stat predicts a player's offensive contributions based on the quality of contact they make with the ball.</p>
   <div id="xwoba-grid" class="grid-container">
   </div>
+
+  <h2 class="stat-group">Shohei stats: 50-50 watch</h2>
+  <p id="shohei-comparison-subhead" class="chart-chatter"></p>
+  <div class="charts-container">
+    <div id="shohei-homers-chart" class="small-chart-container"></div>
+    <div id="shohei-sb-chart" class="small-chart-container"></div>
+  </div>
   
 
   <h2 class="stat-group">Pitching</h2>
@@ -227,3 +234,15 @@ permalink: /
 
 <script src="https://d3js.org/d3.v6.min.js"></script>
 <script src="{{ '/assets/js/dashboard.js' | relative_url }}"></script>
+
+<style>
+@media (max-width: 767px) {
+  .row {
+    display: block;
+  }
+  .small-chart-container {
+    width: 100%;
+    margin-bottom: 30px;
+  }
+}
+</style>

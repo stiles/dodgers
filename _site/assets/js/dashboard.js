@@ -42,8 +42,8 @@ function renderChart(data) {
   const currentYear = new Date().getFullYear().toString();
   const isMobile = window.innerWidth <= 767; // Example breakpoint for mobile devices
   const margin = isMobile 
-    ? { top: 20, right: 10, bottom: 60, left: 60 }  // Smaller margins for mobile
-    : { top: 20, right: 10, bottom: 50, left: 60 }; // Larger margins for desktop
+    ? { top: 30, right: 20, bottom: 70, left: 70 }  // Smaller margins for mobile
+    : { top: 30, right: 20, bottom: 60, left: 70 }; // Larger margins for desktop
   const container = d3.select('#d3-container');
   const containerWidth = container.node().getBoundingClientRect().width;
   const width = containerWidth - margin.left - margin.right;
@@ -1765,10 +1765,13 @@ async function fetchAndRenderXwoba() {
         .attr('stroke', '#ffffff')
         .attr('stroke-width', 1);
         
-      // Add axes with fewer ticks
+      // Add axes with descriptive labels instead of numbers
       svg.append('g')
         .attr('transform', `translate(0,${height})`)
-        .call(d3.axisBottom(x).ticks(2).tickFormat(d => d === 50 ? 'Oldest' : d === 1 ? 'Newest' : d));
+        .call(d3.axisBottom(x)
+          .tickValues([50, 1]) // Explicitly set ticks at the ends
+          .tickFormat(d => d === 50 ? 'Oldest 50 PA' : 'Most Recent PA') // Use descriptive labels
+        );
         
       svg.append('g')
         .call(d3.axisLeft(y).ticks(3).tickFormat(d => d.toFixed(3).replace(/^0\./, '.')));
@@ -1786,11 +1789,11 @@ async function fetchAndRenderXwoba() {
       // Add league average label only on first chart
       if (index === 0) {
         svg.append('text')
-          .attr('x', width - 5)
+          .attr('x', width - 150)
           .attr('y', y(leagueAvg) - 5)
           .attr('text-anchor', 'end')
           .attr('class', 'anno')
-          .attr('font-size', '10px')
+          .attr('font-size', '9px')
           .style('fill', '#999')
           .style('stroke', 'none')
           .style('opacity', 1)
@@ -1803,5 +1806,257 @@ async function fetchAndRenderXwoba() {
 }
 
 document.addEventListener('DOMContentLoaded', fetchAndRenderXwoba);
+
+
+
+// Shohei 50-50 watch charts
+
+document.addEventListener('DOMContentLoaded', function () {
+  async function fetchShoheiData() {
+    const hrUrl = 'https://stilesdata.com/dodgers/data/batting/shohei_home_runs_cumulative_timeseries_combined.json';
+    const sbUrl = 'https://stilesdata.com/dodgers/data/batting/shohei_stolen_bases_cumulative_timeseries_combined.json';
+    const [hrData, sbData] = await Promise.all([d3.json(hrUrl), d3.json(sbUrl)]);
+    return { hrData, sbData };
+  }
+
+  function renderShoheiChart(config, data) {
+    const isMobile = window.innerWidth <= 767;
+    const margin = isMobile
+      ? { top: 20, right: 10, bottom: 60, left: 60 }
+      : { top: 20, right: 10, bottom: 50, left: 60 };
+    const container = d3.select(`#${config.elementId}`);
+    container.selectAll('*').remove();
+    const containerWidth = container.node().getBoundingClientRect().width;
+    const width = containerWidth - margin.left - margin.right;
+    const height = isMobile
+      ? Math.round(width * 1) - margin.top - margin.bottom
+      : Math.round(width * 1.2) - margin.top - margin.bottom;
+
+    const svg = container
+      .append('svg')
+      .attr('viewBox', `0 0 ${containerWidth} ${height + margin.top + margin.bottom}`)
+      .append('g')
+      .attr('transform', `translate(${margin.left}, ${margin.top})`);
+
+    // Filter for 2024 and 2025
+    const data2024 = data.filter(d => d.season === 2024);
+    const data2025 = data.filter(d => d.season === 2025);
+
+    const xMax = d3.max([...data2024, ...data2025], d => d.game_number);
+    const yMax = d3.max([...data2024, ...data2025], d => d[config.yField]);
+
+    const xScale = d3.scaleLinear().domain([0, xMax]).range([0, width]);
+    const yScale = d3.scaleLinear().domain([0, yMax]).range([height, 0]);
+
+    const xAxis = d3.axisBottom(xScale).ticks(6).tickFormat(d3.format('d'));
+    const yAxis = d3.axisLeft(yScale).ticks(6);
+
+    svg.append('g')
+      .attr('transform', `translate(0, ${height})`)
+      .call(xAxis);
+
+    svg.append('g').call(yAxis);
+
+    svg.append("text")
+      .attr("text-anchor", "middle")
+      .attr('class', 'anno-dark')
+      .attr("x", width / 2)
+      .attr("y", height + margin.bottom - 10)
+      .text("Game number in season");
+
+    svg.append("text")
+      .attr("text-anchor", "middle")
+      .attr('class', 'anno-dark')
+      .attr("transform", "rotate(-90)")
+      .attr("y", -margin.left + 20)
+      .attr("x", -height / 2)
+      .text(config.yAxisLabel);
+
+    // Draw 2024 line (gray)
+    const line2024 = d3.line()
+      .x(d => xScale(d.game_number))
+      .y(d => yScale(d[config.yField]))
+      .curve(d3.curveMonotoneX);
+
+    svg.append('path')
+      .datum(data2024)
+      .attr('fill', 'none')
+      .attr('stroke', '#bbb')
+      .attr('stroke-width', 1.5)
+      .attr('d', line2024);
+
+    // Draw 2025 line
+    const line2025 = d3.line()
+      .x(d => xScale(d.game_number))
+      .y(d => yScale(d[config.yField]))
+      .curve(d3.curveMonotoneX);
+
+    svg.append('path')
+      .datum(data2025)
+      .attr('fill', 'none')
+      .attr('stroke', '#005A9C')
+      .attr('stroke-width', 3)
+      .attr('d', line2025);
+
+    // Add labels for 2025 (current season)
+    if (data2025.length > 0) {
+      const last2025 = data2025[data2025.length - 1];
+      const xPosText2025 = xScale(last2025.game_number);
+      const yPosLabel2025 = yScale(last2025[config.yField]) - 60; // Position label much higher
+      const yPosStat2025 = yScale(last2025[config.yField]) - 46; // Position stat below label
+
+      svg.append('text')
+        .attr('x', xPosText2025)
+        .attr('y', yPosLabel2025)
+        .attr('class', 'anno-dodgers')
+        .attr('text-anchor', 'middle') // Center text
+        .style('stroke', '#fff')
+        .style('stroke-width', '3px')
+        .style('paint-order', 'stroke')
+        .text('2025')
+        .clone(true)
+        .style('stroke', 'none');
+      svg.append('text')
+        .attr('x', xPosText2025 - 10)
+        .attr('y', yPosStat2025)
+        .attr('class', 'anno-dark')
+        .attr('text-anchor', 'middle') // Center text
+        .style('stroke', '#fff')
+        .style('stroke-width', '3px')
+        .style('paint-order', 'stroke')
+        .text(`${last2025[config.yField]} ${config.labelText}`)
+        .clone(true)
+        .style('stroke', 'none');
+
+      // Leader line for 2025
+      svg.append('line')
+        .attr('x1', xPosText2025)
+        .attr('y1', yPosStat2025 + 6) 
+        .attr('x2', xPosText2025)
+        .attr('y2', yScale(last2025[config.yField])) 
+        .attr('stroke', '#999999')
+        .attr('stroke-width', 1)
+        .attr('stroke-dasharray', '3,3'); // Make dashed
+    }
+
+    // Add labels for 2024
+    if (data2024.length > 0) {
+      const last2024 = data2024[data2024.length - 1];
+      const xPosText2024 = xScale(last2024.game_number) - 30; // Position text further left
+      // Vertically center the text block with the leader line
+      const midYPoint = yScale(last2024[config.yField]);
+      const yPosLabel2024 = midYPoint - 7; // Position label slightly above midpoint Y
+      const yPosStat2024 = midYPoint + 7;  // Position stat slightly below midpoint Y
+
+      // Prevent labels going off-canvas
+      const effectiveXPos2024 = Math.max(40, xPosText2024); 
+
+      svg.append('text')
+        .attr('x', effectiveXPos2024 -10)
+        .attr('y', yPosLabel2024)
+        .attr('class', 'anno')
+        .attr('text-anchor', 'end')
+        .style('font-weight', 'bold') 
+        .style('stroke', '#fff')
+        .style('stroke-width', '3px')
+        .style('paint-order', 'stroke')
+        .text('2024')
+        .clone(true)
+        .style('stroke', 'none');
+      svg.append('text')
+        .attr('x', effectiveXPos2024 -10)
+        .attr('y', yPosStat2024)
+        .attr('class', 'anno-dark')
+        .attr('text-anchor', 'end') 
+        .style('stroke', '#fff')
+        .style('stroke-width', '3px')
+        .style('paint-order', 'stroke')
+        .text(`${last2024[config.yField]} ${config.labelText}`)
+        .clone(true)
+        .style('stroke', 'none');
+
+      // Leader line for 2024 
+      svg.append('line')
+        .attr('x1', effectiveXPos2024 -3) 
+        .attr('y1', midYPoint)
+        .attr('x2', xScale(last2024.game_number))
+        .attr('y2', midYPoint)
+        .attr('stroke', '#999999')
+        .attr('stroke-width', 1)
+        .attr('stroke-dasharray', '3,3'); // Make dashed
+    }
+  }
+
+  async function initializeShoheiCharts() {
+    const { hrData, sbData } = await fetchShoheiData();
+
+    // --- Start: Dynamic Subhead Logic ---
+    const data2025_hr = hrData.filter(d => d.season === 2025);
+    const data2024_hr = hrData.filter(d => d.season === 2024);
+    const data2024_sb = sbData.filter(d => d.season === 2024);
+
+    if (data2025_hr.length > 0 && data2024_hr.length > 0 && data2024_sb.length > 0) {
+        const lastGameEntry2025 = data2025_hr[data2025_hr.length - 1];
+        const lastGameNumber2025 = lastGameEntry2025.game_number;
+
+        // Find 2024 HR at that game number (or closest before)
+        let hr2024_at_point = 0;
+        const match2024_hr = data2024_hr.find(d => d.game_number === lastGameNumber2025);
+        if (match2024_hr) {
+            hr2024_at_point = match2024_hr.home_runs_cum;
+        } else {
+            const filtered_hr = data2024_hr.filter(d => d.game_number < lastGameNumber2025);
+            if (filtered_hr.length > 0) {
+                hr2024_at_point = filtered_hr[filtered_hr.length - 1].home_runs_cum;
+            }
+        }
+
+        // Find 2024 SB at that game number (or closest before)
+        let sb2024_at_point = 0;
+        const match2024_sb = data2024_sb.find(d => d.game_number === lastGameNumber2025);
+        if (match2024_sb) {
+            sb2024_at_point = match2024_sb.sb_cum;
+        } else {
+            const filtered_sb = data2024_sb.filter(d => d.game_number < lastGameNumber2025);
+            if (filtered_sb.length > 0) {
+                sb2024_at_point = filtered_sb[filtered_sb.length - 1].sb_cum;
+            }
+        }
+
+        // Construct the sentence with bold numbers
+        const subheadText = `At this point in the 50-50 season in 2024, Ohtani had <strong>${hr2024_at_point}</strong> home runs and <strong>${sb2024_at_point}</strong> stolen bases.`;
+
+        // Update the HTML
+        const subheadElement = document.getElementById('shohei-comparison-subhead');
+        if (subheadElement) {
+            subheadElement.innerHTML = subheadText; // Use innerHTML to render the strong tags
+        } else {
+            console.error("Element with ID 'shohei-comparison-subhead' not found.");
+        }
+    }
+    // --- End: Dynamic Subhead Logic ---
+
+    renderShoheiChart(
+      {
+        elementId: 'shohei-homers-chart',
+        yField: 'home_runs_cum',
+        yAxisLabel: 'Cumulative home runs',
+        labelText: 'home runs' // Use full text
+      },
+      hrData
+    );
+    renderShoheiChart(
+      {
+        elementId: 'shohei-sb-chart',
+        yField: 'sb_cum',
+        yAxisLabel: 'Cumulative stolen bases',
+        labelText: 'stolen bases' // Use full text
+      },
+      sbData
+    );
+  }
+
+  initializeShoheiCharts();
+});
 
 
