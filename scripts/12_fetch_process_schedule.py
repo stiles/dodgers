@@ -70,7 +70,7 @@ mlb_teams = {
     "MIN": "Minnesota Twins",
     "NYM": "New York Mets",
     "NYY": "New York Yankees",
-    "OAK": "Oakland Athletics",
+    "ATH": "Oakland Athletics",
     "PHI": "Philadelphia Phillies",
     "PIT": "Pittsburgh Pirates",
     "SDP": "San Diego Padres",
@@ -98,6 +98,7 @@ def fetch_clean_current_schedule(url, year):
     raw_df = pd.read_html(StringIO(str(html_content)))[0].rename(columns={"Gm#": "game_no", "Unnamed: 4": "home_away", 'W/L': 'result'}).assign(season=year)
     df = raw_df.query("Tm !='Tm'").copy()
     df.columns = df.columns.str.lower()
+    print(df.columns)
     df['opp_name'] = df['opp'].map(mlb_teams)
     df['date'] = df['date'].dropna().str.split(', ', expand=True)[1]
     df['date'] = df['date'].str.split(' \(', expand=True)[0]
