@@ -68,6 +68,7 @@ jobs:
         python scripts/12_fetch_process_schedule.py
         python scripts/14_fetch_process_batting_mlb.py
         python scripts/15_fetch_xwoba.py
+        python scripts/16_fetch_shohei.py
 
     - name: Build Jekyll site
       run: bundle exec jekyll build
