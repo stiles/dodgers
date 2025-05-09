@@ -1,22 +1,22 @@
 stat_label,stat,value,category,context_value,context_value_label
-Wins,wins,25,standings,24,This point last season
-Losses,losses,12,standings,13,This point last season
-Record,record,25-12,standings,24-13,This point last season
-Win percentage,win_pct,68%,standings,65%,This point last season
-Games up/back,games_up_back,1.5,standings,1,Division rank
+Wins,wins,25,standings,25,This point last season
+Losses,losses,13,standings,13,This point last season
+Record,record,25-13,standings,25-13,This point last season
+Win percentage,win_pct,66%,standings,66%,This point last season
+Games up/back,games_up_back,1.0,standings,1,Division rank
 Avg. home attendance,mean_attendance,"51,364",standings,18,Home games this season
-Runs,runs,203,standings,,League rank
-Runs against,runs_against,150,standings,137,This point last season
-Run differential,run_differential,53,standings,66,This point last season
+Runs,runs,206,standings,,League rank
+Runs against,runs_against,155,standings,139,This point last season
+Run differential,run_differential,51,standings,72,This point last season
 Batting average,batting_average,.259,batting,.253,Last decade average
-Home runs,home_runs,59,batting,,League rank
-Home runs/game,home_runs_game,1.59,batting,1.42,Last decade average
+Home runs,home_runs,60,batting,,League rank
+Home runs/game,home_runs_game,1.58,batting,1.42,Last decade average
 On-base percentage,on_base_pct,.336,batting,.333,Last decade average
 Stolen bases,stolen_bases,27,batting,,League rank
-Stolen bases/game,stolen_bases_game,0.73,batting,0.84,Rate all last season
-Strikeouts,strikeouts,352,pitching,,League rank
-Walks,walks,134,pitching,,League rank
-ERA,era,3.68,pitching,,League rank
-Last updated,update_time,"May 8, 2025, 4:07 PM PT",summary,,
-Team summary,summary,"<span class='highlight'>LOS ANGELES</span> <span class='updated'>(May 8)</span> — After <span class='highlight'>37</span> games this season, the Dodgers are in <span class='highlight'>1st</span> place in the National League West division. The team has compiled a <span class='highlight'>25-12</span> record, winning <span class='highlight'>68%</span> of its games so far. The last game was a <span class='highlight'>10-1</span> away <span class='highlight'>win</span> against the Miami Marlins in front of <span class='highlight'>13,635</span> fans. They've won <span class='highlight'>8 of the last 10</span>.",summary,,
-Last game result,last_game_result,win,summary,,
+Stolen bases/game,stolen_bases_game,0.71,batting,0.84,Rate all last season
+Strikeouts,strikeouts,357,pitching,,League rank
+Walks,walks,136,pitching,,League rank
+ERA,era,3.72,pitching,,League rank
+Last updated,update_time,"May 9, 2025, 1:09 AM PT",summary,,
+Team summary,summary,"<span class='highlight'>LOS ANGELES</span> <span class='updated'>(May 9)</span> — After <span class='highlight'>38</span> games this season, the Dodgers are in <span class='highlight'>1st</span> place in the National League West division. The team has compiled a <span class='highlight'>25-13</span> record, winning <span class='highlight'>66%</span> of its games so far. The last game was a <span class='highlight'>3-5</span> away <span class='highlight'>loss</span> against the Arizona Diamondbacks in front of <span class='highlight'>40,319</span> fans. They've won <span class='highlight'>7 of the last 10</span>.",summary,,
+Last game result,last_game_result,loss,summary,,
