@@ -70,7 +70,7 @@ mlb_teams = {
     "MIN": "Minnesota Twins",
     "NYM": "New York Mets",
     "NYY": "New York Yankees",
-    "ATH": "Oakland Athletics",
+    "ATH": "Athletics",
     "PHI": "Philadelphia Phillies",
     "PIT": "Pittsburgh Pirates",
     "SDP": "San Diego Padres",
