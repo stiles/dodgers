@@ -51,7 +51,7 @@ PITCHERS_TO_SKIP = [
     'Yamamoto, Yoshinobu',
     'Scott, Tanner',
     'Dreyer, Jack',
-    'Phillips, Evan'
+    'Phillips, Evan',
     'Kershaw, Clayton'
 ]
 
