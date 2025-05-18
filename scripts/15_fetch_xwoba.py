@@ -52,6 +52,7 @@ PITCHERS_TO_SKIP = [
     'Scott, Tanner',
     'Dreyer, Jack',
     'Phillips, Evan'
+    'Kershaw, Clayton'
 ]
 
 # AWS session and S3 resource
