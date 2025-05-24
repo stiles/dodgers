@@ -1,0 +1,9 @@
+{
+    "games_played": 51,
+    "current_wins": 32,
+    "current_losses": 19,
+    "projected_mean_wins": 101.6,
+    "projected_ci_lower": 92,
+    "projected_ci_upper": 111,
+    "message": "Projection based on bootstrapping past game outcomes."
+}

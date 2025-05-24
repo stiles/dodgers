@@ -70,6 +70,7 @@ jobs:
         python scripts/14_fetch_process_batting_mlb.py
         python scripts/15_fetch_xwoba.py
         python scripts/16_fetch_shohei.py
+        python scripts/18_generate_projection.py
 
     - name: Build Jekyll site
       run: bundle exec jekyll build

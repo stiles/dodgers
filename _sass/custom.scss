@@ -602,8 +602,8 @@ a {
 
 @media (min-width: 768px) {
   .chart-container {
-    max-width: 46%;
-    margin: 0 1%;
+    max-width: 100%; /* Allow chart to use full width of its parent */
+    margin: 0 auto 20px auto; /* Center the chart and add bottom margin for spacing */
   }
 }
 
@@ -1127,4 +1127,84 @@ label {
   &.neutral {
     fill: #7f7f7f;  // Gray
   }
+}
+
+// Styles for the Wins Projection CI Chart
+.axis-label {
+  font-family: 'Roboto', sans-serif;
+  fill: #777; // Consistent with .anno-dark
+  font-size: 12px; // Consistent with .anno-dark
+  text-anchor: middle;
+}
+
+.chart-title { // For titles inside SVG
+  font-family: 'Roboto Slab', serif;
+  font-weight: bold; // Similar to .chart-headline
+  fill: #444; // Dark grey for titles
+  font-size: 16px; // Default, can be overridden in JS for mobile
+  text-anchor: middle;
+}
+
+.legend-text {
+  font-family: 'Roboto', sans-serif;
+  fill: #555; // Readable dark grey
+  font-size: 11px; // Default, can be overridden in JS for mobile
+  text-anchor: start;
+  dominant-baseline: middle;
+}
+
+.anno-dark-small {
+  font-family: 'Roboto', sans-serif;
+  fill: #666;
+  font-size: 11px;
+  font-weight: 500; // Medium weight for emphasis
+}
+
+.anno-grey-small {
+  font-family: 'Roboto', sans-serif;
+  fill: #888; // Lighter grey for CI values
+  font-size: 10px;
+}
+
+.underline-wins {
+  text-decoration: underline;
+  text-decoration-color: #005A9C; /* Dodger blue for the underline */
+  -webkit-text-decoration-color: #005A9C; /* Safari */
+  text-decoration-thickness: 2px; /* Increased thickness */
+  text-underline-offset: 3px;
+}
+
+.underline-mean-projection {
+  text-decoration: underline;
+  text-decoration-style: dashed;
+  text-decoration-color: #4A4A4A; /* Grey to match mean projection line */
+  -webkit-text-decoration-color: #4A4A4A; /* Safari */
+  text-decoration-thickness: 2px; /* Increased thickness */
+  text-underline-offset: 3px;
+}
+
+.highlight-ci {
+  background-color: #005a9c26; // Light blue with alpha for background, matching chart area
+  padding: 0.1em 0.2em;
+  border-radius: 3px;
+}
+
+// Styling for the three-column standings tables
+.standings-tables .table-wrapper {
+  flex: 1 1 calc(33.333% - 7px); // Adjust gap (7px here is (10px * 2 inter-table gaps) / 3 tables)
+  max-width: calc(33.333% - 7px);
+}
+
+// Ensure on smaller screens they stack, if not already handled by existing @media query for .table-wrapper
+@media (max-width: 767px) { // Using 767px as it's common, adjust if your breakpoint is different
+  .standings-tables .table-wrapper {
+    flex: 1 1 100%;
+    max-width: 100%;
+  }
+}
+
+// Highlight for Dodgers row in standings
+.standings-tables .data-table tr.dodgers-row td {
+  color: c.$dodger-blue;
+  font-weight: bold;
 }

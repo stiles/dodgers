@@ -31,7 +31,7 @@
 <meta property="og:locale" content="en_US">
 <meta property="og:site_name" content="Dodgers Data Bot">
 <meta property="og:title" content="LA Dodgers Data Bot - A dashboard explaining the Dodgers’ season so far.">
-<meta property="og:url" content="https://dodgersdata.bot/">
+<meta property="og:url" content="http://localhost:4000/">
 
 
   <meta property="og:description" content="An auto-updating baseball statistics dashboard that answers the question: How are the Dodgers doing?">
@@ -45,7 +45,7 @@
   <meta name="twitter:site" content="@stiles">
   <meta name="twitter:title" content="LA Dodgers Data Bot - A dashboard explaining the Dodgers’ season so far.">
   <meta name="twitter:description" content="An auto-updating baseball statistics dashboard that answers the question: How are the Dodgers doing?">
-  <meta name="twitter:url" content="https://dodgersdata.bot/">
+  <meta name="twitter:url" content="http://localhost:4000/">
 
   
     <meta name="twitter:card" content="summary">
@@ -63,7 +63,7 @@
 
 
 
-<link rel="canonical" href="https://dodgersdata.bot/">
+<link rel="canonical" href="http://localhost:4000/">
 
 
 
@@ -74,7 +74,7 @@
   "@context": "https://schema.org",
   "@type": "Person",
     "name": null,
-    "url": "https://dodgersdata.bot/"
+    "url": "http://localhost:4000/"
 }
 </script>
 
@@ -194,9 +194,8 @@
 <h2 class="stat-group">Performance and standings</h2>
 <h3 class="visual-subhead"><span class="win">Wins</span>, <span class="loss">losses</span> and run differential</h3>
 <div id="chart-container" class="chart-container" style="position: relative;">
-    <div id="results-chart"></div>
+<div id="results-chart"></div>
 </div>
-
   <div class="row">
     
       
@@ -369,6 +368,10 @@
     
   </div>
 
+<h3 class="visual-subhead">Projected <span class="win">wins</span> this season</h3>
+<p class="chart-chatter">This chart shows the Dodgers' actual <span class="underline-wins">wins</span> so far, the projected <span class="underline-mean-projection">mean</span> number of final wins and the 95% <span class="highlight-ci">confidence interval</span> around that projection.</p>
+<div id="wins-projection-chart-ci" class="chart-container"></div>
+<p class="note">Note: The projection is based on 10,000 simulations. For games played, it shows actual wins. For future games, it simulates outcomes by randomly drawing from the Dodgers' win/loss results so far this season, then calculates the mean and a 95% confidence range.</p>
 
 <h3 class="visual-subhead">Cumulative <span class="win">wins</span>: Then and now</h3>
 <p class="chart-chatter">Since moving to LA, the Dodgers have won the World Series seven times: 2024, 2020, 1988, 1981, 1965, 1963 and 1959. Compare this year's win trajectory with the past.</p>
@@ -379,6 +382,164 @@
 
 <h3 class="visual-subhead">Standings: Games <span class="win">up</span> or <span class="loss">back</span></h3>
 <div id="d3-container" style="width: 100%; padding-bottom: 20px;"></div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<h3 class="visual-subhead">National League standings by division</h3>
+<div class="tables-container standings-tables">
+  <div class="table-wrapper">
+    <h3 class="visual-subhead">NL West</h3>
+    <table class="data-table">
+      <thead>
+        <tr>
+          <th>Team</th>
+          <th>Win %</th>
+          <th>GB</th>
+        </tr>
+      </thead>
+      <tbody>
+        
+        <tr class="dodgers-row">
+          <td>Los Angeles Dodgers</td>
+          <td>.627</td>
+          <td>-</td>
+        </tr>
+        
+        <tr>
+          <td>San Francisco Giants</td>
+          <td>.588</td>
+          <td>2.0</td>
+        </tr>
+        
+        <tr>
+          <td>San Diego Padres</td>
+          <td>.571</td>
+          <td>3.0</td>
+        </tr>
+        
+        <tr>
+          <td>Arizona Diamondbacks</td>
+          <td>.500</td>
+          <td>6.5</td>
+        </tr>
+        
+        <tr>
+          <td>Colorado Rockies</td>
+          <td>.176</td>
+          <td>23.0</td>
+        </tr>
+        
+      </tbody>
+    </table>
+  </div>
+  <div class="table-wrapper">
+    <h3 class="visual-subhead">NL Central</h3>
+    <table class="data-table">
+      <thead>
+        <tr>
+          <th>Team</th>
+          <th>Win %</th>
+          <th>GB</th>
+        </tr>
+      </thead>
+      <tbody>
+        
+        <tr>
+          <td>Chicago Cubs</td>
+          <td>.608</td>
+          <td>-</td>
+        </tr>
+        
+        <tr>
+          <td>St. Louis Cardinals</td>
+          <td>.558</td>
+          <td>2.5</td>
+        </tr>
+        
+        <tr>
+          <td>Cincinnati Reds</td>
+          <td>.481</td>
+          <td>6.5</td>
+        </tr>
+        
+        <tr>
+          <td>Milwaukee Brewers</td>
+          <td>.481</td>
+          <td>6.5</td>
+        </tr>
+        
+        <tr>
+          <td>Pittsburgh Pirates</td>
+          <td>.346</td>
+          <td>13.5</td>
+        </tr>
+        
+      </tbody>
+    </table>
+  </div>
+  <div class="table-wrapper">
+    <h3 class="visual-subhead">NL East</h3>
+    <table class="data-table">
+      <thead>
+        <tr>
+          <th>Team</th>
+          <th>Win %</th>
+          <th>GB</th>
+        </tr>
+      </thead>
+      <tbody>
+        
+        <tr>
+         <td>Philadelphia Phillies</td>
+          <td>.647</td>
+          <td>-</td>
+        </tr>
+        
+        <tr>
+         <td>New York Mets</td>
+          <td>.588</td>
+          <td>3.0</td>
+        </tr>
+        
+        <tr>
+         <td>Atlanta Braves</td>
+          <td>.480</td>
+          <td>8.5</td>
+        </tr>
+        
+        <tr>
+         <td>Washington Nationals</td>
+          <td>.451</td>
+          <td>10.0</td>
+        </tr>
+        
+        <tr>
+         <td>Miami Marlins</td>
+          <td>.388</td>
+          <td>13.0</td>
+        </tr>
+        
+      </tbody>
+    </table>
+  </div>
+</div>
 
 <h2 class="stat-group">Team batting</h2>
   <div class="row">

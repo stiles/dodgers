@@ -240,15 +240,20 @@ async function fetchGameData() {
 
 function renderRunDiffChart(data) {
   const isMobile = window.innerWidth <= 767;
-  const margin = isMobile ? { top: 20, right: 20, bottom: 50, left: 30 } : { top: 20, right: 20, bottom: 40, left: 40 };
+  const margin = isMobile ? { top: 20, right: 20, bottom: 50, left: 40 } : { top: 20, right: 20, bottom: 40, left: 50 };
   const container = d3.select('#results-chart');
+  if (container.empty()) {
+      console.error("Container #results-chart not found.");
+      return;
+  }
+  container.html(""); // Clear previous chart
+
   const containerWidth = container.node().getBoundingClientRect().width;
   const width = containerWidth - margin.left - margin.right;
-  const height = 200 - margin.top - margin.bottom;
+  const height = 200 - margin.top - margin.bottom; // Keeping height compact as it was
 
   const svg = container.append('svg')
-    .attr('width', containerWidth)
-    .attr('height', height + margin.top + margin.bottom)
+    .attr('viewBox', `0 0 ${containerWidth} ${height + margin.top + margin.bottom}`) // Use viewBox
     .append('g')
     .attr('transform', `translate(${margin.left},${margin.top})`);
 
@@ -256,28 +261,37 @@ function renderRunDiffChart(data) {
     .scaleBand()
     .range([0, width])
     .padding(0.1)
-    .domain(d3.range(1, 163));
+    .domain(d3.range(1, 163)); // Assuming max 162 games
 
-    const minRunDiff = d3.min(data, d => d.run_diff);
-    const maxRunDiff = d3.max(data, d => d.run_diff);
-    // Ensure 0 is included in the domain
-    const yDomain = [Math.min(0, minRunDiff), Math.max(0, maxRunDiff)];
+  const minRunDiff = d3.min(data, d => d.run_diff);
+  const maxRunDiff = d3.max(data, d => d.run_diff);
+  const yDomain = [Math.min(0, minRunDiff), Math.max(0, maxRunDiff)];
     
-    const yScale = d3.scaleLinear()
-      .range([height, 0])
-      .domain(yDomain);
+  const yScale = d3.scaleLinear()
+    .range([height, 0])
+    .domain(yDomain);
 
-  const xAxis = d3.axisBottom(xScale).tickValues(xScale.domain().filter(d => d % 20 === 0));
-  const yAxis = d3.axisLeft(yScale).ticks(5);
+  // Adjust X-axis ticks for less clutter on mobile
+  const xAxis = d3.axisBottom(xScale)
+    .tickValues(xScale.domain().filter(d => isMobile ? d % 30 === 0 || d === 1 : d % 20 === 0 || d === 1 )); 
+  
+  // Adjusted Y-axis ticks
+  const yAxis = d3.axisLeft(yScale)
+    .ticks(isMobile ? 4 : 5)
+    .tickPadding(5); // Added tickPadding 
 
   svg.append('g')
     .attr('transform', `translate(0,${height})`)
-    .call(xAxis);
+    .call(xAxis)
+    .selectAll('text')
+    .attr('class', 'axis-label'); // Apply class
 
-  svg.append('g').call(yAxis);
+  svg.append('g')
+    .call(yAxis) // yAxis already includes tickPadding
+    .selectAll('text')
+    .attr('class', 'axis-label'); // Apply class
 
-    // Add zero line
-    svg.append('line')
+  svg.append('line')
     .attr('x1', 0)
     .attr('x2', width)
     .attr('y1', yScale(0))
@@ -285,22 +299,22 @@ function renderRunDiffChart(data) {
     .attr('stroke', '#222')
     .attr('stroke-width', 1);
 
-      // X-axis Label
-      svg.append("text")
-      .attr("text-anchor", "middle")
-      .attr('class', 'anno-dark')
-      .attr("x", width / 2)
-      .attr("y", height + margin.bottom - 5)
-      .text("Game number");
+  svg.append("text") // X-axis Label
+    .attr("text-anchor", "middle")
+    .attr('class', 'axis-label') // Apply class
+    .attr("x", width / 2)
+    .attr("y", height + margin.bottom - (isMobile ? 15 : 10)) // Adjusted bottom spacing
+    .style('font-size', isMobile ? '10px' : '12px')
+    .text("Game number");
   
-    // Y-axis Label
-    svg.append("text")
-      .attr("text-anchor", "middle")
-      .attr('class', 'anno-dark')
-      .attr("transform", "rotate(-90)")
-      .attr("y", -margin.left + 10)
-      .attr("x", -height / 2)
-      .text("Run differential");
+  svg.append("text") // Y-axis Label
+    .attr("text-anchor", "middle")
+    .attr('class', 'axis-label') // Apply class
+    .attr("transform", "rotate(-90)")
+    .attr("y", -margin.left + 10) // MODIFIED: Consistent Y-axis title position
+    .attr("x", -height / 2)
+    .style('font-size', isMobile ? '10px' : '12px')
+    .text("Run differential");
 
   svg.selectAll(".bar")
     .data(data)
@@ -311,7 +325,6 @@ function renderRunDiffChart(data) {
     .attr("width", xScale.bandwidth())
     .attr("height", d => Math.abs(yScale(d.run_diff) - yScale(0)))
     .attr("fill", d => d.run_diff >= 0 ? "#005a9c" : "#ef3e42");
-  
 }
 fetchGameData();
 
@@ -523,8 +536,9 @@ document.addEventListener('DOMContentLoaded', function() {
           .attr("text-anchor", "middle")
           .attr('class', 'anno-dark')
           .attr("transform", "rotate(-90)")
-          .attr("y", -margin.left + 20)
+          .attr("y", -margin.left + 10) // MODIFIED: Shift Y-axis title further left
           .attr("x", -height / 2)
+          .style('font-size', isMobile ? '10px' : '12px')
           .text("Cumulative wins");
 
       line = d3
@@ -1621,11 +1635,9 @@ async function fetchAndRenderXwoba() {
   try {
     const data = await d3.json('https://stilesdata.com/dodgers/data/batting/dodgers_xwoba_current.json');
     
-    // Group data by player
     const playerGroups = d3.group(data, d => d.player_name);
     const players = Array.from(playerGroups.keys()).sort();
     
-    // Calculate global y-domain across all players
     const allXwoba = data.map(d => d.xwoba);
     const yDomain = [
       d3.min(allXwoba) * 0.95,
@@ -1633,172 +1645,151 @@ async function fetchAndRenderXwoba() {
     ];
     
     const grid = d3.select('#xwoba-grid');
-    grid.html(''); // Clear existing content
+    grid.html(''); 
     
-    // Add CSS for responsive grid
     grid.style('display', 'grid')
         .style('grid-template-columns', 'repeat(auto-fit, minmax(250px, 1fr))')
         .style('gap', '15px')
         .style('width', '100%')
-        .style('max-width', '1200px')  // Limit max width to ensure 4 columns
-        .style('margin', '0 auto');    // Center the grid
-    
-    players.forEach((player, index) => {
+        .style('max-width', '1200px')
+        .style('margin', '0 auto');
+
+    // First pass: Create all containers and store them with their data
+    const chartRenderQueue = [];
+    players.forEach(player => {
       const playerData = playerGroups.get(player);
-      
-      // Sort data by PA number (ascending)
-      playerData.sort((a, b) => a.rn_fwd - b.rn_fwd);
-      
-      // Get the most recent data point (rn_fwd=1 is the most recent)
-      const mostRecentData = playerData.find(d => d.rn_fwd === 1) || playerData[0];
-      
-      // Add debugging to verify correct data point is used for indicators
-      if (player === 'Freddie Freeman' || player === 'Shohei Ohtani') {
-        console.log(`${player}'s most recent xwOBA:`, 
-          `value=${mostRecentData.xwoba.toFixed(3)}, `,
-          `league_avg=${mostRecentData.league_avg_xwoba.toFixed(3)}, `,
-          `rn_fwd=${mostRecentData.rn_fwd}`);
-      }
-      
-      const container = grid.append('div')
-        .style('width', '100%')
-        .style('padding', '5px');
-      
-      // Make margins and dimensions responsive
-      const margin = {top: 20, right: 20, bottom: 30, left: 30};
-      const containerWidth = Math.min(300, window.innerWidth - 40); // Slightly smaller for 4 columns
-      const width = containerWidth - margin.left - margin.right;
-      const height = 150 - margin.top - margin.bottom;
-      
-      const svg = container.append('svg')
-        .style('width', '100%')
-        .style('height', 'auto')
-        .attr('viewBox', `0 0 ${containerWidth} ${height + margin.top + margin.bottom}`)
-        .append('g')
-        .attr('transform', `translate(${margin.left},${margin.top})`);
+      const chartDiv = grid.append('div').style('width', '100%');
+      chartRenderQueue.push({ chartDiv, playerData, player });
+    });
+
+    // Second pass: Measure and render after next animation frame (layout should be stable)
+    requestAnimationFrame(() => {
+      chartRenderQueue.forEach(({ chartDiv, playerData, player }, index) => {
+        const mostRecentData = playerData.sort((a, b) => a.rn_fwd - b.rn_fwd).find(d => d.rn_fwd === 1) || playerData[0];
         
-      // Add title and indicator group
-      const title = svg.append('g')
-        .attr('class', 'chart-title');
-      
-      // Calculate league comparison indicator
-      const latestXwoba = mostRecentData.xwoba;
-      const leagueAvg = mostRecentData.league_avg_xwoba;
-      
-      // Add player name and arrow in the same text element
-      const playerText = title.append('text')
-        .attr('x', 0)
-        .attr('y', -5)
-        .attr('class', 'anno-player')
-        .style('font-weight', 'bold')
-        .text(player + ' ');
-      
-      // Add arrow indicator right after the name
-      const difference = latestXwoba - leagueAvg;
-      
-      // Explicitly check if below or above
-      if (latestXwoba > leagueAvg) {
-        playerText.append('tspan')
-          .attr('class', 'trend-indicator up')
-          .text('▲');
-      } else if (latestXwoba < leagueAvg) {
-        playerText.append('tspan')
-          .attr('class', 'trend-indicator down')
-          .text('▼');
-      } else {
-        playerText.append('tspan')
-          .attr('class', 'trend-indicator neutral')
-          .text('▬');
-      }
-      
-      // Add indicator label for the first chart only
-      if (index === 0) {
-        svg.append('text')
-          .attr('x', 105)
+        const actualViewBoxWidth = chartDiv.node().getBoundingClientRect().width;
+        const margin = {top: 20, right: 20, bottom: 30, left: 30};
+        const viewBoxHeight = 150;
+        const drawingWidth = actualViewBoxWidth - margin.left - margin.right;
+        const drawingHeight = viewBoxHeight - margin.top - margin.bottom;
+        
+        const svg = chartDiv.append('svg')
+          .style('width', '100%')
+          .style('height', 'auto')
+          .attr('viewBox', `0 0 ${actualViewBoxWidth} ${viewBoxHeight}`)
+          .append('g')
+          .attr('transform', `translate(${margin.left},${margin.top})`);
+        
+        const title = svg.append('g')
+          .attr('class', 'chart-title');
+        
+        const playerText = title.append('text')
+          .attr('x', 0)
           .attr('y', -5)
-          .style('font-size', '11px')
-          .style('fill', '#999')
-          .text('▲/▼ vs. MLB avg');
-      }
-      
-      const x = d3.scaleLinear()
-        .domain([50, 1])  // Reversed domain: 50 (oldest) on left, 1 (newest) on right
-        .range([0, width]);
+          .attr('class', 'anno-player')
+          .style('font-weight', 'bold')
+          .attr('text-anchor', 'start') 
+          .text(player + ' ');
         
-      const y = d3.scaleLinear()
-        .domain(yDomain)
-        .range([height, 0]);
+        const latestXwoba = mostRecentData.xwoba;
+        const leagueAvg = mostRecentData.league_avg_xwoba;
         
-      // Add the line
-      const line = d3.line()
-        .x(d => x(d.rn_fwd))  // rn_fwd values: 1=most recent, 50=oldest; chart shows oldest (left) to newest (right)
-        .y(d => y(d.xwoba))
-        .curve(d3.curveMonotoneX);
+        if (latestXwoba > leagueAvg) {
+          playerText.append('tspan')
+            .attr('class', 'trend-indicator up')
+            .text('▲');
+        } else if (latestXwoba < leagueAvg) {
+          playerText.append('tspan')
+            .attr('class', 'trend-indicator down')
+            .text('▼');
+        } else {
+          playerText.append('tspan')
+            .attr('class', 'trend-indicator neutral')
+            .text('▬');
+        }
         
-      svg.append('path')
-        .datum(playerData)
-        .attr('fill', 'none')
-        .attr('stroke', '#005A9C')
-        .attr('stroke-width', 2)
-        .attr('d', line);
+        if (index === 0) {
+          svg.append('text')
+            .attr('x', 105)
+            .attr('y', -5)
+            .style('font-size', '11px')
+            .style('fill', '#999')
+            .text('▲/▼ vs. MLB avg');
+        }
+        
+        const x = d3.scaleLinear()
+          .domain([50, 1])
+          .range([0, drawingWidth]);
+          
+        const y = d3.scaleLinear()
+          .domain(yDomain)
+          .range([drawingHeight, 0]);
+          
+        const line = d3.line()
+          .x(d => x(d.rn_fwd))
+          .y(d => y(d.xwoba))
+          .curve(d3.curveMonotoneX);
+          
+        svg.append('path')
+          .datum(playerData)
+          .attr('fill', 'none')
+          .attr('stroke', '#005A9C')
+          .attr('stroke-width', 2)
+          .attr('d', line);
 
-      // Add invisible dots for tooltips
-      svg.selectAll('.dot')
-        .data(playerData)
-        .enter()
-        .append('circle')
-        .attr('class', 'dot')
-        .attr('cx', d => x(d.rn_fwd))
-        .attr('cy', d => y(d.xwoba))
-        .attr('r', 3)
-        .attr('fill', 'transparent')
-        .attr('stroke', 'none')
-        .append('title')
-        .text(d => `xwOBA: ${d.xwoba.toFixed(3).replace(/^0\./, '.')}\nPA: ${d.rn_fwd}`);
-        
-      // Add visible dot for the most recent data point
-      svg.append('circle')
-        .attr('cx', x(1)) // rn_fwd=1 is the most recent point
-        .attr('cy', y(mostRecentData.xwoba))
-        .attr('r', 3)
-        .attr('fill', latestXwoba > leagueAvg ? '#38761d' : '#cc0000') // Green if above league avg, red if below
-        .attr('stroke', '#ffffff')
-        .attr('stroke-width', 1);
-        
-      // Add axes with descriptive labels instead of numbers
-      svg.append('g')
-        .attr('transform', `translate(0,${height})`)
-        .call(d3.axisBottom(x)
-          .tickValues([50, 1]) // Explicitly set ticks at the ends
-          .tickFormat(d => d === 50 ? 'Oldest 50 PA' : 'Most Recent PA') // Use descriptive labels
-        );
-        
-      svg.append('g')
-        .call(d3.axisLeft(y).ticks(3).tickFormat(d => d.toFixed(3).replace(/^0\./, '.')));
-        
-      // Add league average line
-      svg.append('line')
-        .attr('x1', 0)
-        .attr('x2', width)
-        .attr('y1', y(leagueAvg))
-        .attr('y2', y(leagueAvg))
-        .attr('stroke', '#EF3E42')
-        .attr('stroke-width', 1)
-        .attr('stroke-dasharray', '3,3');
+        svg.selectAll('.dot')
+          .data(playerData)
+          .enter()
+          .append('circle')
+          .attr('class', 'dot')
+          .attr('cx', d => x(d.rn_fwd))
+          .attr('cy', d => y(d.xwoba))
+          .attr('r', 3)
+          .attr('fill', 'transparent')
+          .attr('stroke', 'none')
+          .append('title')
+          .text(d => `xwOBA: ${d.xwoba.toFixed(3).replace(/^0\./, '.')}\nPA: ${d.rn_fwd}`);
+          
+        svg.append('circle')
+          .attr('cx', x(1))
+          .attr('cy', y(mostRecentData.xwoba))
+          .attr('r', 3)
+          .attr('fill', latestXwoba > leagueAvg ? '#38761d' : '#cc0000')
+          .attr('stroke', '#ffffff')
+          .attr('stroke-width', 1);
+          
+        svg.append('g')
+          .attr('transform', `translate(0,${drawingHeight})`)
+          .call(d3.axisBottom(x)
+            .tickValues([50, 1])
+            .tickFormat(d => d === 50 ? 'Oldest 50 PA' : 'Most Recent PA')
+          );
+          
+        svg.append('g')
+          .call(d3.axisLeft(y).ticks(3).tickFormat(d => d.toFixed(3).replace(/^0\./, '.')));
+          
+        svg.append('line')
+          .attr('x1', 0)
+          .attr('x2', drawingWidth)
+          .attr('y1', y(leagueAvg))
+          .attr('y2', y(leagueAvg))
+          .attr('stroke', '#EF3E42')
+          .attr('stroke-width', 1)
+          .attr('stroke-dasharray', '3,3');
 
-      // Add league average label only on first chart
-      if (index === 0) {
-        svg.append('text')
-          .attr('x', width - 150)
-          .attr('y', y(leagueAvg) - 5)
-          .attr('text-anchor', 'end')
-          .attr('class', 'anno')
-          .attr('font-size', '9px')
-          .style('fill', '#999')
-          .style('stroke', 'none')
-          .style('opacity', 1)
-          .text(`MLB avg: ${leagueAvg.toFixed(3).replace(/^0\./, '.')}`);
-      }
+        if (index === 0) {
+          svg.append('text')
+            .attr('x', drawingWidth - 10) 
+            .attr('y', y(leagueAvg) + 13)
+            .attr('text-anchor', 'end')
+            .attr('class', 'anno')
+            .attr('font-size', '8px')
+            .style('fill', '#999')
+            .style('stroke', 'none')
+            .style('opacity', 1)
+            .text(`MLB avg: ${leagueAvg.toFixed(3).replace(/^0\./, '.')}`);
+        }
+      });
     });
   } catch (error) {
     console.error('Error fetching xwOBA data:', error);
@@ -2060,3 +2051,282 @@ document.addEventListener('DOMContentLoaded', function () {
 });
 
 
+
+// New Wins Projection Chart with Confidence Interval
+
+async function fetchWinsProjectionDataWithCI() {
+  try {
+    // Fetch data from the new single endpoint that includes timeseries data
+    const response = await d3.json('https://stilesdata.com/dodgers/data/standings/dodgers_wins_projection_timeseries.json');
+
+    if (!response || !response.timeseries) {
+        console.error('Invalid data structure received for wins projection CI chart.');
+        const container = d3.select('#wins-projection-chart-ci');
+        if (!container.empty()) {
+            container.html("<p class='error-message'>Could not load projection: Invalid data format.</p>");
+        }
+        return;
+    }
+    // Pass the entire response object which includes timeseries, games_played, message
+    renderWinsProjectionChartWithCI(response);
+
+  } catch (error) {
+    console.error('Failed to fetch wins projection data with CI from timeseries endpoint:', error);
+    const container = d3.select('#wins-projection-chart-ci');
+    if (!container.empty()) {
+        container.html("<p class='error-message'>Could not load wins projection data. Please check connection or try again later.</p>");
+    }
+  }
+}
+
+function renderWinsProjectionChartWithCI(data) {
+  const { timeseries, games_played, message } = data;
+
+  const container = d3.select('#wins-projection-chart-ci');
+  if (container.empty()) {
+    console.error("Container #wins-projection-chart-ci not found.");
+    return;
+  }
+  container.html(""); // Clear previous chart or messages
+
+  if (games_played < 10) { 
+    const displayMessage = message || "A wins projection will be available after 10 games have been played.";
+    console.warn("Projection info:", displayMessage);
+    container.html(`<p class='info-message'>${displayMessage}</p>`);
+    return;
+  }
+  
+  if (!timeseries || timeseries.length === 0) {
+    console.error("No timeseries data available for Wins Projection Chart with CI.");
+    container.html("<p class='error-message'>Wins projection data is currently unavailable or empty.</p>");
+    return;
+  }
+
+  const isMobile = window.innerWidth <= 767;
+  const margin = isMobile 
+    ? { top: 10, right: 40, bottom: 50, left: 40 } // Adjusted top and right for mobile
+    : { top: 40, right: 80, bottom: 60, left: 50 }; 
+  const containerWidth = container.node().getBoundingClientRect().width;
+  const width = containerWidth - margin.left - margin.right;
+  const height = (isMobile ? Math.round(width * 0.8) : Math.round(width * 0.5)) - margin.top - margin.bottom;
+
+  const svg = container.append('svg')
+    .attr('viewBox', `0 0 ${containerWidth} ${height + margin.top + margin.bottom}`)
+    .append('g')
+    .attr('transform', `translate(${margin.left},${margin.top})`);
+
+  const xScale = d3.scaleLinear()
+    .domain([1, 162])
+    .range([0, width]);
+
+  const maxWinsInSeries = timeseries.reduce((max, p) => Math.max(max, p.upper_ci_wins, p.mean_projected_wins), 0);
+  const yScale = d3.scaleLinear()
+    .domain([0, d3.max([100, maxWinsInSeries])]) 
+    .range([height, 0]);
+
+  svg.append('g')
+    .attr('transform', `translate(0,${height})`)
+    .call(d3.axisBottom(xScale).ticks(isMobile ? 6 : 12).tickFormat(d3.format('d')))
+    .selectAll('text')
+    .attr('class', 'axis-label');
+
+  svg.append('g')
+    .call(d3.axisLeft(yScale)
+      .ticks(isMobile ? 4 : 5) // MODIFIED: Consistent tick count
+      .tickPadding(5) // Added tickPadding
+    ) // yAxis already includes tickPadding
+    .selectAll('text')
+    .attr('class', 'axis-label');
+
+  const actualWinsData = timeseries.filter(d => d.game_number <= games_played);
+  const lastActualGameForProjectionStart = games_played > 0 ? 
+        timeseries.find(d => d.game_number === games_played) : 
+        { game_number: 0, mean_projected_wins: 0, lower_ci_wins: 0, upper_ci_wins: 0 }; 
+  const projectionDisplayPoints = timeseries.filter(d => d.game_number >= games_played);
+  
+  let meanProjectionPath = [];
+  let ciAreaPath = [];
+
+  if (games_played > 0 && lastActualGameForProjectionStart) {
+      meanProjectionPath.push({ game_number: lastActualGameForProjectionStart.game_number, value: lastActualGameForProjectionStart.mean_projected_wins });
+      ciAreaPath.push({ game_number: lastActualGameForProjectionStart.game_number, lower: lastActualGameForProjectionStart.mean_projected_wins, upper: lastActualGameForProjectionStart.mean_projected_wins });
+  }
+  
+  projectionDisplayPoints.forEach(d => {
+      if (d.game_number > games_played || (games_played === 0 && d.game_number >= 1)) {
+          meanProjectionPath.push({ game_number: d.game_number, value: d.mean_projected_wins });
+          ciAreaPath.push({ game_number: d.game_number, lower: d.lower_ci_wins, upper: d.upper_ci_wins });
+      }
+  });
+  
+  if (games_played === 0) {
+        const game1Data = timeseries.find(d => d.game_number === 1);
+        if (game1Data) {
+            if (!meanProjectionPath.some(p => p.game_number === 1)) {
+                 meanProjectionPath.unshift({ game_number: 1, value: game1Data.mean_projected_wins });
+            }
+            if (!ciAreaPath.some(p => p.game_number === 1)) {
+                ciAreaPath.unshift({ game_number: 1, lower: game1Data.lower_ci_wins, upper: game1Data.upper_ci_wins });
+            }
+        }
+    }
+
+  const lineActual = d3.line()
+    .x(d => xScale(d.game_number))
+    .y(d => yScale(d.mean_projected_wins));
+
+  if (actualWinsData.length > 0) {
+      svg.append('path')
+        .datum(actualWinsData)
+        .attr('fill', 'none')
+        .attr('stroke', '#005A9C')
+        .attr('stroke-width', 2.5)
+        .attr('d', lineActual);
+  }
+    
+  const areaGenerator = d3.area()
+    .x(d => xScale(d.game_number))
+    .y0(d => yScale(d.lower))
+    .y1(d => yScale(d.upper));
+
+  if (ciAreaPath.length > 1) {
+      svg.append('path')
+        .datum(ciAreaPath)
+        .attr('fill', '#005a9c')
+        .attr('opacity', 0.1)
+        .attr('d', areaGenerator);
+  }
+    
+  const projectionLine = d3.line()
+    .x(d => xScale(d.game_number))
+    .y(d => yScale(d.value));
+
+  if (meanProjectionPath.length > 1) {
+      svg.append('path')
+        .datum(meanProjectionPath)
+        .attr('fill', 'none')
+        .attr('stroke', '#4A4A4A') 
+        .attr('stroke-width', 2)
+        .attr('stroke-dasharray', '5,5')
+        .attr('d', projectionLine);
+  }
+
+  const finalProjectionPoint = timeseries.find(d => d.game_number === 162);
+  if (finalProjectionPoint && games_played >= 10) {
+      const finalMeanWins = finalProjectionPoint.mean_projected_wins;
+      const ciUpper = finalProjectionPoint.upper_ci_wins;
+      const ciLower = finalProjectionPoint.lower_ci_wins;
+
+      // Projected Mean Wins Annotation
+      svg.append('text')
+        .attr('x', isMobile ? xScale(162) - 5 : xScale(162) + 5)
+        .attr('y', yScale(finalMeanWins))
+        .attr('text-anchor', isMobile ? 'end' : 'start')
+        .attr('class', 'anno-dark-small')
+        .style('font-size', isMobile ? '9px' : '11px') // Adjusted font size for mobile
+        .text(isMobile ? `${finalMeanWins.toFixed(0)} wins` : `Proj: ${finalMeanWins.toFixed(0)} wins`);
+
+      // CI Upper Annotation
+      svg.append('text')
+        .attr('x', isMobile ? xScale(162) - 5 : xScale(162) + 5)
+        .attr('y', yScale(ciUpper) + (isMobile ? -2 : (yScale(finalMeanWins) > yScale(ciUpper) ? 5 : -3)))
+        .attr('text-anchor', isMobile ? 'end' : 'start')
+        .attr('class', 'anno-grey-small')
+        .style('font-size', isMobile ? '8px' : '10px') // Adjusted font size for mobile
+        .text(`${Math.round(ciUpper)}`);
+
+      // CI Lower Annotation
+      svg.append('text')
+        .attr('x', isMobile ? xScale(162) - 5 : xScale(162) + 5)
+        .attr('y', yScale(ciLower) + (isMobile ? 6 : (yScale(finalMeanWins) < yScale(ciLower) ? -5 : 3)))
+        .attr('text-anchor', isMobile ? 'end' : 'start')
+        .attr('class', 'anno-grey-small')
+        .style('font-size', isMobile ? '8px' : '10px') // Adjusted font size for mobile
+        .text(`${Math.round(ciLower)}`);
+        
+      // Vertical CI Line
+      if (Math.abs(yScale(ciUpper) - yScale(ciLower)) > (isMobile ? 8 : 10)) { // Adjust min difference for mobile
+        svg.append('line')
+            .attr('x1', isMobile ? xScale(162) - 2.5 : xScale(162) + 2.5)
+            .attr('x2', isMobile ? xScale(162) - 2.5 : xScale(162) + 2.5)
+            .attr('y1', yScale(ciUpper))
+            .attr('y2', yScale(ciLower))
+            .attr('stroke', '#A5ACAF')
+            .attr('stroke-width', 1);
+      }
+  }
+
+  svg.append('text') // X-axis Label
+    .attr('text-anchor', 'middle')
+    .attr('class', 'axis-label')
+    .attr('x', width / 2)
+    .attr('y', height + margin.bottom - (isMobile ? 10 : 15))
+    .style('font-size', isMobile ? '10px' : '12px')
+    .text('Game number');
+
+  svg.append('text') // Y-axis Label
+    .attr('text-anchor', 'middle')
+    .attr('class', 'axis-label')
+    .attr('transform', 'rotate(-90)')
+    .attr('y', -margin.left + 10) 
+    .attr('x', -height / 2)
+    .style('font-size', isMobile ? '10px' : '12px')
+    .text('Cumulative wins');
+
+        
+  // const legendData = [
+  //     { label: "Actual Wins", color: "#005A9C", type: "line" },
+  //     { label: "Mean Projection", color: "#4A4A4A", type: "dashed-line" },
+  //     { label: "95% confidence interval", color: "#005a9c", type: "area" }
+  // ];
+  //
+  // const legend = svg.append("g")
+  //     .attr("class", "legend")
+  //     .attr("transform", `translate(${isMobile ? 10 : 0}, ${isMobile ? -margin.top + 12 : -margin.top + 12})`);
+  //
+  // const legendItemWidth = isMobile ? 75 : 110;
+  // const legendItem = legend.selectAll(".legend-item")
+  //     .data(legendData)
+  //     .enter().append("g")
+  //     .attr("class", "legend-item")
+  //     .attr("transform", (d, i) => `translate(${i * legendItemWidth}, 0)`);
+  //
+  // legendItem.append("rect")
+  //     .attr("x", 0)
+  //     .attr("y", -7)
+  //     .attr("width", d => d.type === "area" ? 15 : 20)
+  //     .attr("height", d => d.type === "area" ? 10 : 2 )
+  //     .style("fill", d => d.color)
+  //     .style("stroke", d => d.type === "dashed-line" ? d.color : "none")
+  //     .style("stroke-width", d => d.type === "dashed-line" ? 2 : 0)
+  //     .style("stroke-dasharray", d => d.type === "dashed-line" ? "3,3" : "none")
+  //     .attr("opacity", d => d.type === "area" ? 0.3 : 1);
+  //
+  // legendItem.append("text")
+  //     .attr("x", d => d.type === "area" ? 20 : 25)
+  //     .attr("y", 0)
+  //     .attr("dy", "0.0em")
+  //     .attr("class","legend-text")
+  //     .style("text-anchor", "start")
+  //     .style("font-size", isMobile? "9px" : "11px")
+  //     .text(d => d.label);
+}
+
+async function initWinsProjectionChartWithCI() {
+  const container = d3.select('#wins-projection-chart-ci');
+  if (!container.empty()) {
+    // Clear any existing content (like old charts or error messages) before fetching
+    container.html(''); 
+    await fetchWinsProjectionDataWithCI();
+  } else {
+    console.log("Wins projection CI chart container (#wins-projection-chart-ci) not found on this page, skipping initialization.");
+  }
+}
+
+// Ensure this is the primary initialization for the CI chart
+// Remove or comment out other initializations for #wins-projection-chart-ci if they exist.
+if (document.readyState === 'loading') {
+  document.addEventListener('DOMContentLoaded', initWinsProjectionChartWithCI);
+} else {
+  initWinsProjectionChartWithCI(); // Call if DOM is already loaded
+}

@@ -30,9 +30,8 @@ permalink: /
 <h2 class="stat-group">Performance and standings</h2>
 <h3 class="visual-subhead"><span class="win">Wins</span>, <span class="loss">losses</span> and run differential</h3>
 <div id="chart-container" class="chart-container" style="position: relative;">
-    <div id="results-chart"></div>
+<div id="results-chart"></div>
 </div>
-
   <div class="row">
     {% for item in site.data.season_summary_latest %}
       {% if item.category == 'standings' %}
@@ -53,6 +52,10 @@ permalink: /
     {% endfor %}
   </div>
 
+<h3 class="visual-subhead">Projected <span class="win">wins</span> this season</h3>
+<p class="chart-chatter">This chart shows the Dodgers' actual <span class="underline-wins">wins</span> so far, the projected <span class="underline-mean-projection">mean</span> number of final wins and the 95% <span class="highlight-ci">confidence interval</span> around that projection.</p>
+<div id="wins-projection-chart-ci" class="chart-container"></div>
+<p class="note">Note: The projection is based on 10,000 simulations. For games played, it shows actual wins. For future games, it simulates outcomes by randomly drawing from the Dodgers' win/loss results so far this season, then calculates the mean and a 95% confidence range.</p>
 
 <h3 class="visual-subhead">Cumulative <span class="win">wins</span>: Then and now</h3>
 <p class="chart-chatter">Since moving to LA, the Dodgers have won the World Series seven times: 2024, 2020, 1988, 1981, 1965, 1963 and 1959. Compare this year's win trajectory with the past.</p>
@@ -63,6 +66,97 @@ permalink: /
 
 <h3 class="visual-subhead">Standings: Games <span class="win">up</span> or <span class="loss">back</span></h3>
 <div id="d3-container" style="width: 100%; padding-bottom: 20px;"></div>
+
+{% assign current_year_str = site.time | date: '%Y' %}
+{% assign dynamic_filename_key = "all_teams_standings_metrics_" | append: current_year_str %}
+
+{% comment %} Try to load current year's data using the dynamic filename key {% endcomment %}
+{% assign standings_data = site.data.standings[dynamic_filename_key] %}
+
+{% comment %} Fallback to 2024 data if current year's data is not found.
+    This also covers the case where the dynamic key was for 2024 but didn't load. {% endcomment %}
+{% if standings_data == nil %}
+  {% assign standings_data = site.data.standings.all_teams_standings_metrics_2024 %}
+{% endif %}
+
+{% comment %} If all potential data sources are nil, default to an empty array to prevent errors. {% endcomment %}
+{% if standings_data == nil %}
+  {% assign standings_data = "" | split: "" %}
+{% endif %}
+
+{% assign nl_teams = standings_data | where_exp: "item", "item.league_name == 'National League'" %}
+{% if nl_teams == nil %} {% assign nl_teams = "" | split: "" %} {% endif %}
+
+{% assign nl_west = nl_teams | where_exp: "item", "item.division_name == 'National League West'" | sort: "division_rank" %}
+{% assign nl_central = nl_teams | where_exp: "item", "item.division_name == 'National League Central'" | sort: "division_rank" %}
+{% assign nl_east = nl_teams | where_exp: "item", "item.division_name == 'National League East'" | sort: "division_rank" %}
+
+<h3 class="visual-subhead">National League standings by division</h3>
+<div class="tables-container standings-tables">
+  <div class="table-wrapper">
+    <h3 class="visual-subhead">NL West</h3>
+    <table class="data-table">
+      <thead>
+        <tr>
+          <th>Team</th>
+          <th>Win %</th>
+          <th>GB</th>
+        </tr>
+      </thead>
+      <tbody>
+        {% for team in nl_west %}
+        <tr {% if team.team_name == "Los Angeles Dodgers" %}class="dodgers-row"{% endif %}>
+          <td>{{ team.team_name }}</td>
+          <td>{{ team.winning_percentage }}</td>
+          <td>{{ team.games_back }}</td>
+        </tr>
+        {% endfor %}
+      </tbody>
+    </table>
+  </div>
+  <div class="table-wrapper">
+    <h3 class="visual-subhead">NL Central</h3>
+    <table class="data-table">
+      <thead>
+        <tr>
+          <th>Team</th>
+          <th>Win %</th>
+          <th>GB</th>
+        </tr>
+      </thead>
+      <tbody>
+        {% for team in nl_central %}
+        <tr>
+          <td>{{ team.team_name }}</td>
+          <td>{{ team.winning_percentage }}</td>
+          <td>{{ team.games_back }}</td>
+        </tr>
+        {% endfor %}
+      </tbody>
+    </table>
+  </div>
+  <div class="table-wrapper">
+    <h3 class="visual-subhead">NL East</h3>
+    <table class="data-table">
+      <thead>
+        <tr>
+          <th>Team</th>
+          <th>Win %</th>
+          <th>GB</th>
+        </tr>
+      </thead>
+      <tbody>
+        {% for team in nl_east %}
+        <tr>
+         <td>{{ team.team_name }}</td>
+          <td>{{ team.winning_percentage }}</td>
+          <td>{{ team.games_back }}</td>
+        </tr>
+        {% endfor %}
+      </tbody>
+    </table>
+  </div>
+</div>
 
 <h2 class="stat-group">Team batting</h2>
   <div class="row">
