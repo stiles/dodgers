@@ -40,6 +40,8 @@ if is_github_actions:
 else:
     # Locally, use a specific profile
     session = boto3.Session(profile_name="haekeo", region_name=aws_region)
+    # session = boto3.Session(region_name=aws_region)
+
 
 s3_resource = session.resource("s3")
 
@@ -66,8 +68,16 @@ archive_df = pd.read_parquet(archive_url)
 
 # Fetch Current game logs
 current_url = f"https://www.baseball-reference.com/teams/tgl.cgi?team=LAD&t=p&year={year}"
-current_src = pd.read_html(current_url)[1].assign(year=year).query('SO != "SO"')
+# Use index [0] for the main table and assign year
+current_src = pd.read_html(current_url)[0].assign(year=year)
+# Drop the top level of the MultiIndex columns
+current_src.columns = current_src.columns.droplevel(0)
+# Lowercase column names
 current_src.columns = current_src.columns.str.lower()
+# Rename the column that was ('year', '') and became '' to 'year'
+current_src = current_src.rename(columns={'': 'year'})
+# Filter out header/summary rows by ensuring 'gtm' is a numeric value
+current_src = current_src[pd.to_numeric(current_src['gtm'], errors='coerce').notna()]
 
 
 # Process current game logs

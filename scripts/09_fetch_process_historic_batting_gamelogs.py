@@ -34,8 +34,8 @@ if is_github_actions:
     )
 else:
     # Locally, use a specific profile
-    # session = boto3.Session(profile_name="haekeo", region_name=aws_region)
-    session = boto3.Session(region_name=aws_region)
+    session = boto3.Session(profile_name="haekeo", region_name=aws_region)
+    # session = boto3.Session(region_name=aws_region)
 
 s3_resource = session.resource("s3")
 
