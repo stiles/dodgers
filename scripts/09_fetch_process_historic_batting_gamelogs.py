@@ -34,7 +34,8 @@ if is_github_actions:
     )
 else:
     # Locally, use a specific profile
-    session = boto3.Session(profile_name="haekeo", region_name=aws_region)
+    # session = boto3.Session(profile_name="haekeo", region_name=aws_region)
+    session = boto3.Session(region_name=aws_region)
 
 s3_resource = session.resource("s3")
 
@@ -57,8 +58,15 @@ archive_df = pd.read_parquet(archive_url)
 
 # Fetch Current game logs
 current_url = f"https://www.baseball-reference.com/teams/tgl.cgi?team=LAD&t=b&year={year}"
-current_df = pd.read_html(current_url)[0].assign(year=year).query('HR != "HR"')
+current_df = pd.read_html(current_url)[0].assign(year=year)
+# Drop the top level of the MultiIndex columns
+current_df.columns = current_df.columns.droplevel(0)
+# Restore column lowercasing
 current_df.columns = current_df.columns.str.lower()
+# Rename the column that was ('year', '') and became '' to 'year'
+current_df = current_df.rename(columns={'': 'year'})
+# Filter out header/summary rows by ensuring 'gtm' is a numeric value
+current_df = current_df[pd.to_numeric(current_df['gtm'], errors='coerce').notna()]
 
 # Process current game logs
 current_df["game_date"] = pd.to_datetime(
@@ -71,18 +79,23 @@ current_df["game_date"] = pd.to_datetime(
 drop_cols = [
     "rk", "date", "unnamed: 3", "opp", "rslt", "ba", "obp", "slg", "ops", "lob", "#", "thr", "opp. starter (gmesc)"
 ]
-current_df = current_df.drop(drop_cols, axis=1).copy()
+# Only attempt to drop columns that actually exist in the DataFrame
+cols_to_actually_drop = [col for col in drop_cols if col in current_df.columns]
+current_df = current_df.drop(cols_to_actually_drop, axis=1).copy()
 
 # Define value columns
 val_cols = [
     "gtm", "pa", "ab", "r", "h", "2b", "3b", "hr", "rbi", "bb", "ibb", "so", "hbp", "sh", "sf", "roe", "gdp", "sb", "cs"
 ]
 
-# Convert value columns to integers
-current_df[val_cols] = current_df[val_cols].astype(int)
+# Filter val_cols to only include columns present in the DataFrame
+existing_val_cols = [col for col in val_cols if col in current_df.columns]
 
-# Calculate cumulative columns
-for col in val_cols:
+# Convert existing value columns to integers
+current_df[existing_val_cols] = current_df[existing_val_cols].astype(int)
+
+# Calculate cumulative columns for existing value columns
+for col in existing_val_cols:
     current_df[f"{col}_cum"] = current_df.groupby("year")[col].cumsum()
 current_df = current_df.drop("gtm_cum", axis=1)
 
