@@ -36,7 +36,7 @@
         "stat":"games_up_back",
         "value":2.0,
         "category":"standings",
-        "context_value":"1st",
+        "context_value":1,
         "context_value_label":"Division rank"
     },
     {
@@ -52,7 +52,7 @@
         "stat":"runs",
         "value":291,
         "category":"standings",
-        "context_value":"2nd",
+        "context_value":null,
         "context_value_label":"League rank"
     },
     {
@@ -84,7 +84,7 @@
         "stat":"home_runs",
         "value":81,
         "category":"batting",
-        "context_value":"2nd",
+        "context_value":null,
         "context_value_label":"League rank"
     },
     {
@@ -108,7 +108,7 @@
         "stat":"stolen_bases",
         "value":34,
         "category":"batting",
-        "context_value":"19th",
+        "context_value":null,
         "context_value_label":"League rank"
     },
     {
@@ -124,7 +124,7 @@
         "stat":"strikeouts",
         "value":"474",
         "category":"pitching",
-        "context_value":"3rd",
+        "context_value":null,
         "context_value_label":"League rank"
     },
     {
@@ -132,7 +132,7 @@
         "stat":"walks",
         "value":"179",
         "category":"pitching",
-        "context_value":"9th",
+        "context_value":null,
         "context_value_label":"League rank"
     },
     {
@@ -140,13 +140,13 @@
         "stat":"era",
         "value":"4.12",
         "category":"pitching",
-        "context_value":"21st",
+        "context_value":null,
         "context_value_label":"League rank"
     },
     {
         "stat_label":"Last updated",
         "stat":"update_time",
-        "value":"May 24, 2025, 8:18 AM PT",
+        "value":"May 24, 2025, 8:06 AM PT",
         "category":"summary",
         "context_value":"",
         "context_value_label":""
@@ -154,7 +154,7 @@
     {
         "stat_label":"Team summary",
         "stat":"summary",
-        "value":"<span class='highlight'>LOS ANGELES<\/span> <span class='updated'>(May 24)<\/span> \u2014 After <span class='highlight'>51<\/span> games this season, the Dodgers are in <span class='highlight'>1st<\/span> place in the National League West division. The team has compiled a <span class='highlight'>32-19<\/span> record, winning <span class='highlight'>63%<\/span> of its games so far. The last game was a <span class='highlight'>7-5<\/span> away <span class='highlight'>win<\/span> against the New York Mets in front of <span class='highlight'>40,449<\/span> fans. They've won <span class='highlight'>5 of the last 10<\/span> and are on pace to win about <span class='highlight'>102<\/span> games in the regular season.",
+        "value":"<span class='highlight'>LOS ANGELES<\/span> <span class='updated'>(May 24)<\/span> \u2014 After <span class='highlight'>51<\/span> games this season, the Dodgers are in <span class='highlight'>1st<\/span> place in the National League West division. The team has compiled a <span class='highlight'>32-19<\/span> record, winning <span class='highlight'>63%<\/span> of its games so far. The last game was a <span class='highlight'>7-5<\/span> away <span class='highlight'>win<\/span> against the New York Mets in front of <span class='highlight'>40,449<\/span> fans. They've won <span class='highlight'>5 of the last 10<\/span>.",
         "category":"summary",
         "context_value":"",
         "context_value_label":""
