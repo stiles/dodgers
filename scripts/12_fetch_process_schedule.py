@@ -123,8 +123,13 @@ def convert_time_to_pacific_manual(time_str):
         return time_str
 
 src = fetch_clean_current_schedule(url, year)
-next_five = src.query('cli.isnull()').head(10).drop(['cli', 'season'], axis=1).copy()
-last_five = src.query('~cli.isnull()').tail(10).drop(['cli', 'season'], axis=1).copy()
+
+# Create a more robust indicator for completed games
+# A game is completed if either cli is not null OR result is 'win' or 'loss'
+src['game_completed'] = (~src['cli'].isnull()) | (src['result'].isin(['win', 'loss']))
+
+next_five = src.query('~game_completed').head(10).drop(['cli', 'season', 'game_completed'], axis=1).copy()
+last_five = src.query('game_completed').tail(10).drop(['cli', 'season', 'game_completed'], axis=1).copy()
 next_five['placement'] = 'next'
 last_five['placement'] = 'last'
 
