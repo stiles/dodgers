@@ -6,22 +6,22 @@ permalink: /
 
 <div class="container">
 
-<div class="page-topper">
-<div class="trend-icon">
-    {% assign last_game_result_array = site.data.season_summary_latest | where: "stat", "last_game_result" %}
-    {% assign last_game_result = last_game_result_array[0].value %}
+<div class="minimal-header">
+  {% assign last_game_result_array = site.data.season_summary_latest | where: "stat", "last_game_result" %}
+  {% assign last_game_result = last_game_result_array[0].value %}
+  <div class="minimal-trend-icon">
     {% if last_game_result == 'win' %}
-        <i class="fa-solid fa-arrow-trend-up" style="color: #005a9c;"></i>
+        <i class="fa-solid fa-arrow-trend-up"></i>
     {% else %}
-        <i class="fa-solid fa-arrow-trend-down" style="color: #ef3e42;"></i>
+        <i class="fa-solid fa-arrow-trend-down"></i>
     {% endif %}
-</div>
-<h1 class="headline">{{ site.headline }}</h1>
-<p class="subhead">
+  </div>
+  <h1 class="minimal-headline">{{ site.headline }}</h1>
+  <p class="minimal-subhead">
     {% assign summary_info = site.data.season_summary_latest | where: "stat", "summary" %}
     {% assign summary = summary_info[0].value %}
     {{ summary }}
-</p>
+  </p>
 </div>
 
 
@@ -36,16 +36,10 @@ permalink: /
     {% for item in site.data.season_summary_latest %}
       {% if item.category == 'standings' %}
       <div class="col-md-4">
-        <div class="card mb-4">
-          <div class="card-header">
-            {{ item.stat_label }}
-          </div>
-          <div class="card-body">
-            <p class="card-text">{{ item.value }}</p>
-          </div>
-          <div class="card-footer text-muted">
-        {{ item.context_value_label }}: {{ item.context_value }}
-          </div>
+        <div class="stat-card mb-4">
+          <div class="stat-card-label">{{ item.stat_label }}</div>
+          <div class="stat-card-value">{{ item.value }}</div>
+          <p class="stat-card-context">{{ item.context_value_label }}: {{ item.context_value }}</p>
         </div>
       </div>
       {% endif %}
@@ -163,16 +157,10 @@ permalink: /
     {% for item in site.data.season_summary_latest %}
       {% if item.category == 'batting' %}
       <div class="col-md-4">
-        <div class="card mb-4">
-          <div class="card-header">
-            {{ item.stat_label }}
-          </div>
-          <div class="card-body">
-            <p class="card-text">{{ item.value }}</p>
-          </div>
-          <div class="card-footer text-muted">
-        {{ item.context_value_label }}: {{ item.context_value }}
-          </div>
+        <div class="stat-card mb-4">
+          <div class="stat-card-label">{{ item.stat_label }}</div>
+          <div class="stat-card-value">{{ item.value }}</div>
+          <p class="stat-card-context">{{ item.context_value_label }}: {{ item.context_value }}</p>
         </div>
       </div>
       {% endif %}
@@ -228,10 +216,10 @@ permalink: /
 
   <h3 class="visual-subhead">Recent form: Expected weighted on-base average</h3>
   <p class="chart-chatter">Rolling 50-plate appearance <span class='anno-xwoba'>xwOBA</span> for each Dodgers batter compared to the <span class='anno-mean'>league average</span>. This stat predicts a player's offensive contributions based on the quality of contact they make with the ball.</p>
-  <div id="xwoba-grid" class="grid-container">
+  <div id="xwoba-grid" class="xwoba-grid-container">
   </div>
 
-  <h2 class="stat-group">Shohei stats: 50-50 watch</h2>
+  <h3 class="visual-subhead">Shohei stats: 50-50 watch</h3>
   <p id="shohei-comparison-subhead" class="chart-chatter"></p>
   <div class="charts-container">
     <div id="shohei-homers-chart" class="small-chart-container"></div>
@@ -244,21 +232,16 @@ permalink: /
     {% for item in site.data.season_summary_latest %}
       {% if item.category == 'pitching' %}
       <div class="col-md-4">
-        <div class="card mb-4">
-          <div class="card-header">
-            {{ item.stat_label }}
-          </div>
-          <div class="card-body">
-            <p class="card-text">{{ item.value }}</p>
-          </div>
-          <div class="card-footer text-muted">
-        {{ item.context_value_label }}: {{ item.context_value }}
-          </div>
+        <div class="stat-card mb-4">
+          <div class="stat-card-label">{{ item.stat_label }}</div>
+          <div class="stat-card-value">{{ item.value }}</div>
+          <p class="stat-card-context">{{ item.context_value_label }}: {{ item.context_value }}</p>
         </div>
       </div>
       {% endif %}
     {% endfor %}
   </div>
+
 
 <div class="large-chart-container">
 <h3 class="visual-subhead">Team <span class="win">ERA</span> over season: Then and now</h3>
@@ -307,8 +290,6 @@ permalink: /
       </div>
     </div>
 
-</div>
-
 <h2 class="stat-group">Fan support</h2>
 <p id="max-attendance-info"></p>
 <div class="tables-container">
@@ -322,8 +303,6 @@ permalink: /
     </div>
 </div>
 
-  <p class="dated">Notes: Last updated {{ site.data.season_summary_latest | where: "stat", "update_time" | map: "value" | first }}. More <a href="https://github.com/stiles/dodgers/blob/main/README.md">about the data</a>.</p>
-  
 </div>
 
 <script src="https://d3js.org/d3.v6.min.js"></script>

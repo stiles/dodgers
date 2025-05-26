@@ -155,7 +155,7 @@ function renderChart(data) {
 
   // Add the 'Leading' annotation
   svg.append('text')
-    .attr('x', isMobile ? xScale(75) : xScale(70))
+    .attr('x', isMobile ? xScale(120) : xScale(120))
     .attr('y', yScale(0) - 10)
     .text('Leading ↑')
     .attr('class', 'anno-dark')

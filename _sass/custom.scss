@@ -410,6 +410,16 @@ td .road-icon {
   margin-left: -15px;
 }
 
+.xwoba-grid-container {
+  display: flex;
+  flex-wrap: wrap;
+  margin-right: -15px;
+  margin-left: -15px;
+  
+}
+
+
+
 .grid-column {
   padding-right: 15px;
   padding-left: 15px;
@@ -458,6 +468,10 @@ a {
 
 .masthead {
   background-color: c.$dodger-blue;
+  
+  &__inner-wrap {
+    padding: 0.5em 1em; // Reduced from default 1em to make it shorter
+  }
 }
 
 .greedy-nav {
@@ -770,9 +784,27 @@ textarea {
 }
 
 h2.stat-group {
-  margin: 30px 0px 20px 0px;
+  margin: 40px 0px 20px 0px;
   font-family: "Roboto Slab", serif;
   font-size: 1.3em;
+  padding-top: 40px;
+  border-top: 1px solid #e9ecef;
+  
+  // First stat-group shouldn't have the top border/padding
+  &:first-of-type {
+    border-top: none;
+    padding-top: 0;
+    margin-top: 30px;
+  }
+  
+  @media (max-width: 767px) {
+    margin: 60px 0px 20px 0px;
+    padding-top: 30px;
+    
+    &:first-of-type {
+      margin-top: 20px;
+    }
+  }
 }
 
 .table-wrapper {
@@ -1112,6 +1144,11 @@ label {
   }
 }
 
+// Add space between xwoba grid and Shohei stats
+#xwoba-grid + h3.visual-subhead {
+  margin-top: 40px;
+}
+
 .trend-indicator {
   font-size: 14px;
   font-weight: bold;
@@ -1207,4 +1244,325 @@ label {
 .standings-tables .data-table tr.dodgers-row td {
   color: c.$dodger-blue;
   font-weight: bold;
+}
+
+// Modern minimal card styling
+.stat-card {
+  background: #fff;
+  border: 1px solid #e8e8e8;
+  border-radius: 8px;
+  padding: 24px 20px;
+  text-align: center;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.04);
+  transition: box-shadow 0.2s ease;
+  
+  &:hover {
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+  }
+}
+
+.stat-card-label {
+  font-family: 'Roboto', sans-serif;
+  font-size: 14px;
+  color: #666;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  margin-bottom: 8px;
+  font-weight: 500;
+}
+
+.stat-card-value {
+  font-family: 'Roboto Slab', serif;
+  font-size: 48px;
+  font-weight: 700;
+  color: c.$dodger-blue;
+  line-height: 1;
+  margin-bottom: 8px;
+}
+
+.stat-card-context {
+  font-family: 'Roboto', sans-serif;
+  font-size: 12px;
+  color: #888;
+  margin: 0;
+}
+
+// Modern header styling
+.hero-header {
+  background: linear-gradient(135deg, #005a9c 0%, #003d6b 100%);
+  color: white;
+  padding: 60px 0;
+  margin: -30px -30px 40px -30px;
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+  
+  @media (max-width: 767px) {
+    margin: -15px -15px 30px -15px;
+    padding: 40px 20px;
+  }
+}
+
+.hero-header::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><defs><pattern id="grain" width="100" height="100" patternUnits="userSpaceOnUse"><circle cx="25" cy="25" r="1" fill="white" opacity="0.1"/><circle cx="75" cy="75" r="1" fill="white" opacity="0.1"/><circle cx="50" cy="10" r="0.5" fill="white" opacity="0.1"/><circle cx="10" cy="60" r="0.5" fill="white" opacity="0.1"/><circle cx="90" cy="40" r="0.5" fill="white" opacity="0.1"/></pattern></defs><rect width="100" height="100" fill="url(%23grain)"/></svg>');
+  pointer-events: none;
+}
+
+.hero-content {
+  position: relative;
+  z-index: 1;
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.hero-trend-icon {
+  font-size: 48px;
+  margin-bottom: 20px;
+  display: block;
+  
+  @media (max-width: 767px) {
+    font-size: 36px;
+    margin-bottom: 15px;
+  }
+}
+
+.hero-headline {
+  font-family: 'Roboto Slab', serif;
+  font-weight: 700;
+  font-size: 72px;
+  margin: 0 0 20px 0;
+  line-height: 1.1;
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+  
+  @media (max-width: 767px) {
+    font-size: 48px;
+    margin-bottom: 15px;
+  }
+}
+
+.hero-subhead {
+  font-family: 'Roboto', sans-serif;
+  font-size: 20px;
+  font-weight: 300;
+  margin: 0;
+  opacity: 0.95;
+  line-height: 1.4;
+  
+  @media (max-width: 767px) {
+    font-size: 18px;
+  }
+}
+
+// Modern footer styling
+.site-footer {
+  background: #f8f9fa;
+  border-top: 1px solid #e9ecef;
+  margin-top: 60px;
+  padding: 40px 0 0 0;
+  
+  @media (max-width: 767px) {
+    margin-top: 40px;
+    padding: 30px 0 0 0;
+  }
+}
+
+.footer-content {
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 0 30px;
+  
+  @media (max-width: 767px) {
+    padding: 0 15px;
+  }
+}
+
+.footer-main {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin-bottom: 30px;
+  gap: 30px;
+  
+  @media (max-width: 767px) {
+    flex-direction: column;
+    gap: 25px;
+    margin-bottom: 25px;
+  }
+}
+
+.footer-info {
+  flex: 1;
+}
+
+.footer-title {
+  font-family: 'Roboto Slab', serif;
+  font-size: 18px;
+  font-weight: 600;
+  color: #333;
+  margin: 0 0 10px 0;
+}
+
+.footer-description {
+  font-family: 'Roboto', sans-serif;
+  font-size: 14px;
+  color: #666;
+  line-height: 1.5;
+  margin: 0 0 15px 0;
+}
+
+.footer-links {
+  display: flex;
+  gap: 20px;
+  
+  @media (max-width: 767px) {
+    flex-direction: column;
+    gap: 10px;
+  }
+}
+
+.footer-link {
+  font-family: 'Roboto', sans-serif;
+  font-size: 14px;
+  color: c.$dodger-blue;
+  text-decoration: none;
+  font-weight: 500;
+  
+  &:hover {
+    text-decoration: underline;
+  }
+}
+
+.footer-stats {
+  margin-top: 20px;
+  
+  @media (max-width: 767px) {
+    margin-top: 15px;
+  }
+}
+
+.footer-update {
+  font-family: 'Roboto', sans-serif;
+  font-size: 13px;
+  color: #888;
+  margin: 0 0 8px 0;
+}
+
+.footer-meta {
+  font-family: 'Roboto', sans-serif;
+  font-size: 12px;
+  color: #aaa;
+  margin: 0;
+}
+
+.footer-bottom {
+  border-top: 1px solid #e9ecef;
+  padding: 20px 0 30px 0;
+  text-align: center;
+  
+  @media (max-width: 767px) {
+    padding: 20px 0 25px 0;
+  }
+}
+
+.footer-copyright {
+  font-family: 'Roboto', sans-serif;
+  font-size: 12px;
+  color: #999;
+  margin: 0;
+}
+
+.footer-social {
+  display: flex;
+  gap: 15px;
+  justify-content: flex-end;
+  align-items: flex-start;
+  
+  @media (max-width: 767px) {
+    justify-content: flex-start;
+    margin-top: 15px;
+  }
+}
+
+.footer-social-link {
+  color: #666;
+  font-size: 20px;
+  transition: color 0.2s ease;
+  
+  &:hover {
+    color: c.$dodger-blue;
+    text-decoration: none;
+  }
+  
+  i {
+    width: 20px;
+    text-align: center;
+  }
+}
+
+// Minimal header styling (alternative to hero)
+.minimal-header {
+  text-align: center;
+  padding: 20px 0 25px 0;
+  border-bottom: 1px solid #e9ecef;
+  margin-bottom: 40px;
+  
+  @media (max-width: 767px) {
+    padding: 15px 0 20px 0;
+    margin-bottom: 30px;
+  }
+}
+
+.minimal-trend-icon {
+  font-size: 24px;
+  margin-bottom: 20px;
+  display: block;
+  
+  .fa-arrow-trend-up {
+    color: #005a9c;
+  }
+  
+  .fa-arrow-trend-down {
+    color: #ef3e42;
+  }
+  
+  @media (max-width: 767px) {
+    font-size: 20px;
+    margin-bottom: 8px;
+  }
+}
+
+.minimal-headline {
+  font-family: 'Roboto Slab', serif;
+  font-weight: 700;
+  font-size: 60px;
+  margin: 0 0 25px 0;
+  color: #333;
+  line-height: 1.1;
+  
+  @media (max-width: 767px) {
+    font-size: 48px;
+    margin-bottom: 25px;
+  }
+}
+
+.minimal-subhead {
+  font-family: 'Roboto', sans-serif;
+  font-size: 18px;
+  font-weight: 400;
+  color: #666;
+  margin: 0;
+  line-height: 1.5;
+  max-width: 100%;
+  text-align: left;
+  max-width: 800px;
+  
+  @media (max-width: 767px) {
+    font-size: 16px;
+  }
 }
