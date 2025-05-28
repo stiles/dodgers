@@ -124,7 +124,7 @@
         "stat":"strikeouts",
         "value":"507",
         "category":"pitching",
-        "context_value":"3rd",
+        "context_value":"4th",
         "context_value_label":"League rank"
     },
     {
@@ -132,7 +132,7 @@
         "stat":"walks",
         "value":"189",
         "category":"pitching",
-        "context_value":"10th",
+        "context_value":"9th",
         "context_value_label":"League rank"
     },
     {
@@ -140,13 +140,13 @@
         "stat":"era",
         "value":"4.03",
         "category":"pitching",
-        "context_value":"19th",
+        "context_value":"21st",
         "context_value_label":"League rank"
     },
     {
         "stat_label":"Last updated",
         "stat":"update_time",
-        "value":"May 28, 2025, 8:07 AM PT",
+        "value":"May 28, 2025, 4:07 PM PT",
         "category":"summary",
         "context_value":"",
         "context_value_label":""
