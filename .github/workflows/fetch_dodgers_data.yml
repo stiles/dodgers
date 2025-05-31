@@ -54,6 +54,7 @@ jobs:
 
     - name: Run scripts
       run: |
+        python scripts/00_fetch_league_standings.py
         python scripts/00_scrape_league_ranks.py
         python scripts/01_fetch_process_standings.py
         python scripts/02_fetch_process_batting.py
