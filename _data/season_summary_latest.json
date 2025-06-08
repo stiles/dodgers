@@ -84,7 +84,7 @@
         "stat":"home_runs",
         "value":101,
         "category":"batting",
-        "context_value":"1st",
+        "context_value":"2nd",
         "context_value_label":"League rank"
     },
     {
@@ -146,7 +146,7 @@
     {
         "stat_label":"Last updated",
         "stat":"update_time",
-        "value":"June 7, 2025, 4:15 PM PT",
+        "value":"June 7, 2025, 7:20 PM PT",
         "category":"summary",
         "context_value":"",
         "context_value_label":""
