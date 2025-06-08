@@ -52,7 +52,7 @@
         "stat":"runs",
         "value":360,
         "category":"standings",
-        "context_value":"2nd",
+        "context_value":"1st",
         "context_value_label":"League rank"
     },
     {
@@ -84,7 +84,7 @@
         "stat":"home_runs",
         "value":101,
         "category":"batting",
-        "context_value":"2nd",
+        "context_value":"1st",
         "context_value_label":"League rank"
     },
     {
@@ -132,7 +132,7 @@
         "stat":"walks",
         "value":"230",
         "category":"pitching",
-        "context_value":"6th",
+        "context_value":"7th",
         "context_value_label":"League rank"
     },
     {
@@ -140,13 +140,13 @@
         "stat":"era",
         "value":"4.13",
         "category":"pitching",
-        "context_value":"23rd",
+        "context_value":"22nd",
         "context_value_label":"League rank"
     },
     {
         "stat_label":"Last updated",
         "stat":"update_time",
-        "value":"June 8, 2025, 8:07 AM PT",
+        "value":"June 8, 2025, 4:07 PM PT",
         "category":"summary",
         "context_value":"",
         "context_value_label":""
