@@ -2,7 +2,7 @@
     {
         "stat_label":"Wins",
         "stat":"wins",
-        "value":39,
+        "value":40,
         "category":"standings",
         "context_value":41,
         "context_value_label":"This point last season"
@@ -12,29 +12,29 @@
         "stat":"losses",
         "value":27,
         "category":"standings",
-        "context_value":25,
+        "context_value":26,
         "context_value_label":"This point last season"
     },
     {
         "stat_label":"Record",
         "stat":"record",
-        "value":"39-27",
+        "value":"40-27",
         "category":"standings",
-        "context_value":"41-25",
+        "context_value":"41-26",
         "context_value_label":"This point last season"
     },
     {
         "stat_label":"Win percentage",
         "stat":"win_pct",
-        "value":"59%",
+        "value":"60%",
         "category":"standings",
-        "context_value":"62%",
+        "context_value":"61%",
         "context_value_label":"This point last season"
     },
     {
         "stat_label":"Games up\/back",
         "stat":"games_up_back",
-        "value":1.0,
+        "value":1.5,
         "category":"standings",
         "context_value":"1st",
         "context_value_label":"Division rank"
@@ -50,7 +50,7 @@
     {
         "stat_label":"Runs",
         "stat":"runs",
-        "value":367,
+        "value":375,
         "category":"standings",
         "context_value":"1st",
         "context_value_label":"League rank"
@@ -58,17 +58,17 @@
     {
         "stat_label":"Runs against",
         "stat":"runs_against",
-        "value":293,
+        "value":300,
         "category":"standings",
-        "context_value":233,
+        "context_value":239,
         "context_value_label":"This point last season"
     },
     {
         "stat_label":"Run differential",
         "stat":"run_differential",
-        "value":74,
+        "value":75,
         "category":"standings",
-        "context_value":94,
+        "context_value":92,
         "context_value_label":"This point last season"
     },
     {
@@ -114,7 +114,7 @@
     {
         "stat_label":"Stolen bases\/game",
         "stat":"stolen_bases_game",
-        "value":0.64,
+        "value":0.63,
         "category":"batting",
         "context_value":0.84,
         "context_value_label":"Rate all last season"
@@ -146,7 +146,7 @@
     {
         "stat_label":"Last updated",
         "stat":"update_time",
-        "value":"June 10, 2025, 1:10 AM PT",
+        "value":"June 10, 2025, 5:13 AM PT",
         "category":"summary",
         "context_value":"",
         "context_value_label":""
@@ -154,7 +154,7 @@
     {
         "stat_label":"Team summary",
         "stat":"summary",
-        "value":"<span class='highlight'>LOS ANGELES<\/span> <span class='updated'>(June 10)<\/span> \u2014 After <span class='highlight'>66<\/span> games this season, the Dodgers are in <span class='highlight'>1st<\/span> place in the National League West division. The team has compiled a <span class='highlight'>39-27<\/span> record, winning <span class='highlight'>59%<\/span> of its games so far. The last game was a <span class='highlight'>7-3<\/span> away <span class='highlight'>win<\/span> against the St. Louis Cardinals in front of <span class='highlight'>42,255<\/span> fans. They've won <span class='highlight'>5 of the last 10<\/span> and are on pace to win about <span class='highlight'>96<\/span> games in the regular season.",
+        "value":"<span class='highlight'>LOS ANGELES<\/span> <span class='updated'>(June 10)<\/span> \u2014 After <span class='highlight'>67<\/span> games this season, the Dodgers are in <span class='highlight'>1st<\/span> place in the National League West division. The team has compiled a <span class='highlight'>40-27<\/span> record, winning <span class='highlight'>60%<\/span> of its games so far. The last game was a <span class='highlight'>8-7<\/span> away <span class='highlight'>win<\/span> against the San Diego Padres in front of <span class='highlight'>45,678<\/span> fans. They've won <span class='highlight'>5 of the last 10<\/span> and are on pace to win about <span class='highlight'>97<\/span> games in the regular season.",
         "category":"summary",
         "context_value":"",
         "context_value_label":""
