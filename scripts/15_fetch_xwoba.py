@@ -217,7 +217,7 @@ def fetch_league_average_xwoba(year=CURRENT_YEAR):
     logging.info(f"Fetching league average xwOBA for {year} season")
     url = (
         "https://baseballsavant.mlb.com/leaderboard/expected_statistics?"
-        f"type=batter&year={year}&position=&team=&filterType=bip&min=q&csv=true"
+        f"type=batter&year={year}&position=&team=&filterType=pa&min=q&csv=true"
     )
     headers = {
         "User-Agent": (
