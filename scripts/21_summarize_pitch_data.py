@@ -106,7 +106,7 @@ def analyze_pitches(file_path):
             "bad_calls_count": season_bad_calls
         },
         "last_game_summary": {
-            "date": most_recent_date.strftime('%Y-%m-%d'),
+            "date": most_recent_date.strftime("%B %-d, %Y"),
             "correct_strikes_pct": game_correct_pct,
             "incorrect_strikes_pct": game_incorrect_pct,
             "total_called_strikes": game_total_strikes,

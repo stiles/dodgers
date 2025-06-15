@@ -2376,10 +2376,7 @@ if (document.readyState === 'loading') {
       // Format the date as 'Month Day, Year'
       let lastGameLabel = 'Last game';
       if (gameData.date) {
-        const dateObj = new Date(gameData.date + 'T00:00:00Z');
-        const options = { year: 'numeric', month: 'long', day: 'numeric' };
-        const formattedDate = dateObj.toLocaleDateString('en-US', options);
-        lastGameLabel += `: ${formattedDate}`;
+        lastGameLabel += `: ${gameData.date}`;
       }
       gameLabelLine.append('div').attr('class', 'chart-label').text(lastGameLabel);
       // Show raw totals above the bar
