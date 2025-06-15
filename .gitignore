@@ -8,3 +8,10 @@ videos/
 processed_videos/
 
 .DS_Store
+
+# Ignore all data files and images
+data/
+_data/
+!_data/navigation.yml
+!_data/roster/
+!_data/ui-text.yml
