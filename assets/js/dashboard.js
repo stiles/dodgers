@@ -1,27 +1,3 @@
-// Remove DOM error prevention code
-// document.addEventListener('DOMContentLoaded', function() {
-//   // Intercept querySelectorAll calls on null elements
-//   const originalQuerySelectorAll = Element.prototype.querySelectorAll;
-//   Element.prototype.querySelectorAll = function(...args) {
-//     try {
-//       return originalQuerySelectorAll.apply(this, args);
-//     } catch (e) {
-//       console.warn('Prevented querySelectorAll error:', e);
-//       return [];
-//     }
-//   };
-//   
-//   // Disable any specific element interactions that might be causing issues
-//   // This is a more targeted approach if you know what element might be missing
-//   if (!document.getElementById('barcode-chart')) {
-//     // Create a dummy element to prevent errors
-//     const dummy = document.createElement('div');
-//     dummy.id = 'barcode-chart';
-//     dummy.style.display = 'none';
-//     document.body.appendChild(dummy);
-//   }
-// });
-
 // Games back line chart
 
 async function fetchData() {
@@ -1718,7 +1694,7 @@ async function fetchAndRenderXwoba() {
         }
         
         const x = d3.scaleLinear()
-          .domain([50, 1])
+          .domain([100, 1])
           .range([0, drawingWidth]);
           
         const y = d3.scaleLinear()
@@ -1761,8 +1737,8 @@ async function fetchAndRenderXwoba() {
         svg.append('g')
           .attr('transform', `translate(0,${drawingHeight})`)
           .call(d3.axisBottom(x)
-            .tickValues([50, 1])
-            .tickFormat(d => d === 50 ? 'Oldest 50 PA' : 'Most Recent PA')
+            .tickValues([100, 1])
+            .tickFormat(d => d === 100 ? 'Oldest 100' : 'Most Recent PA')
           );
           
         svg.append('g')
