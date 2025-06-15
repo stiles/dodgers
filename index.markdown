@@ -238,7 +238,7 @@ permalink: /
     <div id="umpire-worst-calls"></div>
   </div>
 </div>
- <p class="note">Note: Strike zone calls are determined by Baseball Savant and collected from its gamefeed API. Download the data <a href="https://stilesdata.com/dodgers/data/pitches/dodgers_pitches_2025.json">here</a>.</p>
+ <p class="note">Note: Strike zone calls are determined by Baseball Savant and <a href="https://github.com/stiles/dodgers/blob/main/scripts/20_fetch_game_pitches.py">collected</a> after each game from its gamefeed API. Download the data <a href="https://stilesdata.com/dodgers/data/pitches/dodgers_pitches_2025.json">here</a>.</p>
   
 
   <h2 class="stat-group">Pitching</h2>

@@ -73,6 +73,8 @@ jobs:
         python scripts/16_fetch_shohei.py
         python scripts/18_generate_projection.py
         python scripts/19_fetch_roster.py
+        python scripts/20_fetch_game_pitches.py
+        python scripts/21_summarize_pitch_data.py
 
     - name: Build Jekyll site
       run: bundle exec jekyll build
