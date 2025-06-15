@@ -53,7 +53,14 @@ PITCHERS_TO_SKIP = [
     'Dreyer, Jack',
     'Phillips, Evan',
     'Kershaw, Clayton',
-    'Stratton, Chris'
+    'Stratton, Chris',
+    'Feduccia, Hunter',
+    'Trivino, Lou',
+    'Kopech, Michael',
+    'Miller, Bobby',
+    'Davis, Noah',
+    'Gonsolin, Tony'
+    'Díaz, Alexis'
 ]
 
 # AWS session and S3 resource
@@ -169,13 +176,13 @@ def fetch_player_xwoba(player_name, player_id):
             return None
             
         player_data = response.json()
-        if 'plate50' not in player_data:
-            logging.warning(f"No plate50 data found for {player_name} - likely a pitcher")
+        if 'plate100' not in player_data:
+            logging.warning(f"No plate100 data found for {player_name} - likely a pitcher")
             return None
             
-        player_data_list = player_data['plate50']
+        player_data_list = player_data['plate100']
         if not player_data_list:
-            logging.warning(f"No data in plate50 for {player_name}")
+            logging.warning(f"No data in plate100 for {player_name}")
             return None
             
         player_df = pd.DataFrame(player_data_list)
@@ -212,7 +219,7 @@ def fetch_league_average_xwoba(year=CURRENT_YEAR):
         year (int): The season year to fetch data for. Defaults to current year.
         
     Returns:
-        float or None: The league average xwOBA for qualified hitters (50+ PA), or None if fetch fails
+        float or None: The league average xwOBA for qualified hitters (100+ PA), or None if fetch fails
     """
     logging.info(f"Fetching league average xwOBA for {year} season")
     url = (

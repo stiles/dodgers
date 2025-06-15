@@ -36,7 +36,6 @@ plugins:
   - jekyll-feed
 
 exclude:
-  - data
   - notebooks
   - scripts
   - any_other_directory_or_file

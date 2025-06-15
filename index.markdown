@@ -214,10 +214,10 @@ permalink: /
    <p class="note">Note: Tables and charts include top batters by plate appearances.</p>
 </div>
 
-  <!-- <h3 class="visual-subhead">Recent form: Expected weighted on-base average</h3>
-  <p class="chart-chatter">Rolling 50-plate appearance <span class='anno-xwoba'>xwOBA</span> for each Dodgers batter compared to the <span class='anno-mean'>league average</span>. This stat predicts a player's offensive contributions based on the quality of contact they make with the ball.</p>
+  <h3 class="visual-subhead">Recent form: Expected weighted on-base average</h3>
+  <p class="chart-chatter">Rolling 100-plate appearance <span class='anno-xwoba'>xwOBA</span> for each Dodgers batter compared to the <span class='anno-mean'>league average</span>. This stat predicts a player's offensive contributions based on the quality of contact they make with the ball.</p>
   <div id="xwoba-grid" class="xwoba-grid-container">
-  </div> -->
+  </div>
 
   <h3 class="visual-subhead">Shohei stats: 50-50 watch</h3>
   <p id="shohei-comparison-subhead" class="chart-chatter"></p>

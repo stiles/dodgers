@@ -406,8 +406,8 @@ td .road-icon {
 .grid-container {
   display: flex;
   flex-wrap: wrap;
-  margin-right: -15px;
-  margin-left: -15px;
+  gap: 10px;
+  margin-bottom: 20px;
 }
 
 .xwoba-grid-container {
@@ -417,8 +417,6 @@ td .road-icon {
   margin-left: -15px;
   
 }
-
-
 
 .grid-column {
   padding-right: 15px;
@@ -1565,4 +1563,232 @@ label {
   @media (max-width: 767px) {
     font-size: 16px;
   }
+}
+
+// Player card styles for roster page
+.stat-card.player-card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 28px 18px 18px 18px;
+  border-radius: 12px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.06);
+  margin-bottom: 24px;
+  background: #fff;
+  transition: box-shadow 0.2s;
+  min-width: 100px;
+  max-width: 200px;
+  position: relative;
+}
+.stat-card.player-card:hover {
+  box-shadow: 0 4px 16px rgba(0,0,0,0.10);
+}
+.player-avatar {
+  width: 96px;
+  height: 96px;
+  border-radius: 50%;
+  object-fit: cover;
+  margin-bottom: 14px;
+  border: 2px solid #e8e8e8;
+}
+.player-name {
+  flex-direction: "Roboto", sans-serif;
+    font-size: 14px;
+    color: #666;
+    text-transform: uppercase;
+    letter-spacing: .5px;
+    margin-bottom: 8px;
+    font-weight: 500;
+}
+.player-meta {
+  font-family: "Roboto", sans-serif;
+    font-size: 12px;
+    color: #888;
+    margin: 0;
+}
+.player-details {
+  font-family: "Roboto", sans-serif;
+  font-size: 12px;
+  color: #888;
+  margin: 0;
+}
+.player-status {
+  font-size: 0.92em;
+  color: #005A9C;
+  margin-top: 4px;
+  text-transform: lowercase;
+  text-align: center;
+}
+
+.player-flag {
+  position: absolute;
+  top: 10px;
+  left: -18px;
+  font-family: 'Roboto Slab', serif;
+  font-size: 0.6em;
+  font-weight: 600;
+  padding: 1px 16px;
+  transform: rotate(-45deg);
+  letter-spacing: 1px;
+  z-index: 2;
+  pointer-events: none;
+  opacity: 1;
+  box-shadow: none;
+}
+
+.player-flag-active {
+  background: #eaf7e6; // very light green
+  color: #7bb661;      // soft green text
+  border: 1px solid #b6e2b1; // thin, soft green border
+}
+
+.player-flag-injured {
+  background: #fbeaea; // very light red
+  color: #e57373;     // soft red text
+  border: 1px solid #f5bcbc;
+}
+
+.player-flag-minors {
+  background: #f2f2f2; // very light gray
+  color: #aaa;
+  border: 1px solid #ddd;
+}
+
+.stat-card.player-card {
+  position: relative;
+}
+
+// Mobile override for roster grid
+.roster-tab-content {
+  .grid-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 15px;
+    margin: 0;
+  }
+  .grid-column {
+    flex: 1 1 calc(50% - 8px);
+    max-width: calc(50% - 8px);
+    padding: 0;
+    margin: 0;
+  }
+}
+
+@media (max-width: 767px) {
+  .roster-tab-content .grid-container {
+    gap: 12px;
+  }
+  .roster-tab-content .grid-column {
+    flex: 1 1 calc(50% - 6px);
+    max-width: calc(50% - 6px);
+    padding: 0;
+    margin: 0;
+  }
+  .stat-card.player-card {
+    padding: 16px 8px;
+  }
+  .player-avatar {
+    width: 72px;
+    height: 72px;
+  }
+  .player-name {
+    font-size: 1em;
+  }
+  .player-flag {
+    display: block;
+    top: 8px;
+    left: -22px;
+    font-size: 0.65em;
+    padding: 1px 18px;
+  }
+}
+
+@media (max-width: 420px) {
+  .roster-tab-content .grid-column {
+    flex: 1 1 100%;
+    max-width: 100%;
+  }
+}
+
+.player-badge {
+  display: none;
+  margin-bottom: 8px;
+  font-size: 0.85em;
+  font-weight: 600;
+  padding: 2px 10px;
+  border-radius: 6px;
+  letter-spacing: 1px;
+}
+.player-badge-active {
+  background: #eaf7e6;
+  color: #7bb661;
+  border: 1px solid #b6e2b1;
+}
+.player-badge-injured {
+  background: #fbeaea;
+  color: #e57373;
+  border: 1px solid #f5bcbc;
+}
+.player-badge-minors {
+  background: #f2f2f2;
+  color: #aaa;
+  border: 1px solid #ddd;
+}
+
+// Grid for Roster Page
+.roster-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(190px, 1fr));
+  gap: 15px;
+  margin-bottom: 20px;
+}
+
+// On mobile, force two columns
+@media (max-width: 767px) {
+  .roster-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 12px;
+  }
+  .stat-card.player-card {
+    padding: 16px 8px;
+  }
+  .player-avatar {
+    width: 72px;
+    height: 72px;
+  }
+  .player-name {
+    font-size: 1em;
+  }
+  .player-flag {
+    display: block;
+    top: 8px;
+    left: -22px;
+    font-size: 0.65em;
+    padding: 1px 18px;
+  }
+}
+
+// On very small mobile, go back to one column
+@media (max-width: 350px) {
+  .roster-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+// Hide badge on desktop
+@media (min-width: 768px) {
+  .player-badge {
+    display: none;
+  }
+}
+
+.button-custom.active {
+  background-color: #005A9C;
+  color: white;
+  font-weight: bold;
+  border-color: #005A9C;
+}
+
+.tabs {
+  margin-bottom: 20px;
 }

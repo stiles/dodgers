@@ -72,6 +72,7 @@ jobs:
         python scripts/15_fetch_xwoba.py
         python scripts/16_fetch_shohei.py
         python scripts/18_generate_projection.py
+        python scripts/19_fetch_roster.py
 
     - name: Build Jekyll site
       run: bundle exec jekyll build

@@ -2,5 +2,9 @@
 main:
   # - title: "About"
   #   url: https://github.com/stiles/dodgers/blob/main/README.md
-  - title: ""
-    url: 
+  - title: "Home"
+    url: /
+  - title: "About"
+    url: https://github.com/stiles/dodgers/blob/main/README.md
+  - title: "Roster"
+    url: /roster/
