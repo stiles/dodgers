@@ -109,8 +109,6 @@ def parse_player_row(row, position_group):
 def main():
     os.makedirs(output_dir, exist_ok=True)
     os.makedirs(jekyll_data_dir, exist_ok=True)
-    photo_dir = os.path.join(output_dir, "photos")
-    os.makedirs(photo_dir, exist_ok=True)
     url = "https://www.mlb.com/dodgers/roster/40-man"
     response = requests.get(url)
     soup = BeautifulSoup(response.text, 'html.parser')
@@ -128,24 +126,9 @@ def main():
         tbody = table.find('tbody')
         for row in tbody.find_all('tr'):
             player = parse_player_row(row, position_group)
-            # Download player photo if not already present, using slugified name
             name = player.get('name')
-            thumb_url = player.get('thumb_url')
-            if name and thumb_url:
-                slug = sluggify(name)
-                player['slug'] = slug
-                photo_path = os.path.join(photo_dir, f"{slug}.jpg")
-                if not os.path.exists(photo_path):
-                    try:
-                        resp = requests.get(thumb_url)
-                        if resp.status_code == 200:
-                            with open(photo_path, "wb") as f:
-                                f.write(resp.content)
-                            logging.info(f"Downloaded photo for {slug}")
-                        else:
-                            logging.warning(f"Failed to download photo for {slug} from {thumb_url}")
-                    except Exception as e:
-                        logging.warning(f"Error downloading photo for {slug}: {e}")
+            if name:
+                player['slug'] = sluggify(name)
             all_players.append(player)
 
     df = pd.DataFrame(all_players)

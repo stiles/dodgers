@@ -7,7 +7,7 @@ permalink: /roster/
 
 <div class="container">
   <div class="minimal-header">
-    <img src="/data/roster/avatars/placeholder-avatar.png" alt="Dodgers Player" style="width: 50px; height: 50px; display: block; margin: 0 auto 20px auto; border-radius: 50%;" />
+    <img src="{{ '/data/roster/avatars/placeholder-avatar.png' | relative_url }}" alt="Dodgers Player" style="width: 50px; height: 50px; display: block; margin: 0 auto 20px auto; border-radius: 50%;" />
     <h1 class="minimal-headline">Who's on the roster?</h1>
     <p class="minimal-subhead">The Dodgers' active roster holds up to 26 players who can take the field in regular-season games. The 40-man roster includes those players but also prospects, injured starters or minor leaguers with contracts who are eligible to be called up. The 40-man is the full team; the active roster is the portion currently available for big-league games. The latest breakdown: </p>
   </div>
@@ -35,7 +35,7 @@ permalink: /roster/
             {% elsif player.is_minors %}
               <div class="player-flag player-flag-minors">MINORS</div>
             {% endif %}
-            <img src="/data/roster/avatars/{{ slug }}.png" alt="{{ player.name }}" class="player-avatar" onerror="this.onerror=null;this.src='/data/roster/avatars/placeholder-avatar.png';" />
+            <img src="{{ '/data/roster/avatars/' | append: player.slug | append: '.png' | relative_url }}" alt="{{ player.name }}" class="player-avatar" onerror="this.onerror=null;this.src='{{ '/data/roster/avatars/placeholder-avatar.png' | relative_url }}';" />
             <div class="player-name">{{ player.name }}</div>
             <div class="player-details">{{ player.bat_throw }} | {{ player.height }}, {{ player.weight }} lbs</div>
           </div>
@@ -61,7 +61,7 @@ permalink: /roster/
             {% elsif player.is_minors %}
               <div class="player-flag player-flag-minors">MINORS</div>
             {% endif %}
-            <img src="/data/roster/avatars/{{ slug }}.png" alt="{{ player.name }}" class="player-avatar" onerror="this.onerror=null;this.src='/data/roster/avatars/placeholder-avatar.png';" />
+            <img src="{{ '/data/roster/avatars/' | append: player.slug | append: '.png' | relative_url }}" alt="{{ player.name }}" class="player-avatar" onerror="this.onerror=null;this.src='{{ '/data/roster/avatars/placeholder-avatar.png' | relative_url }}';" />
             <div class="player-name">{{ player.name }}</div>
             <div class="player-details">{{ player.bat_throw }} | {{ player.height }}, {{ player.weight }} lbs</div>
           </div>
