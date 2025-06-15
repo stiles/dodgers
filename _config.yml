@@ -53,3 +53,7 @@ destination: ./_site
 twitter:
   username               : stiles
 og_image                 :  "https://dodgersdata.bot/assets/images/meta_card.png"
+
+# Production settings
+production:
+  url: "https://dodgersdata.bot"
