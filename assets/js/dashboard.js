@@ -2306,3 +2306,138 @@ if (document.readyState === 'loading') {
 } else {
   initWinsProjectionChartWithCI(); // Call if DOM is already loaded
 }
+
+
+// Umpire Scorecard
+(function () {
+  async function fetchUmpireData() {
+    try {
+      const response = await d3.json('https://stilesdata.com/dodgers/data/summary/umpire_summary.json');
+      renderUmpireScorecard(response);
+    } catch (error) {
+      console.error('Failed to fetch umpire scorecard data:', error);
+    }
+  }
+
+  function renderUmpireScorecard(data) {
+    // Left column: bars
+    const chartDiv = d3.select('#umpire-scorecard-chart');
+    chartDiv.html('');
+
+    // Season Chart
+    const seasonData = data.season_summary;
+
+    const seasonActualStrikes = seasonData.total_called_strikes - seasonData.bad_calls_count;
+    const seasonBadCalls = seasonData.bad_calls_count;
+
+    console.log(seasonActualStrikes);
+    console.log(seasonBadCalls);
+
+    if (seasonData && seasonData.correct_strikes_pct !== undefined && seasonData.incorrect_strikes_pct !== undefined) {
+      const seasonBarWrapper = chartDiv.append('div').attr('class', 'chart-bar-wrapper');
+      const seasonLabelLine = seasonBarWrapper.append('div').attr('class', 'chart-label-line');
+      seasonLabelLine.append('div').attr('class', 'chart-label').text('This season');
+      // Show raw totals above the bar
+      seasonLabelLine.append('div').attr('class', 'chart-percentages').html(
+        `<span class="good-calls-label">${seasonActualStrikes.toLocaleString()} </span> good calls / <span class="bad-calls-label">${seasonBadCalls} </span> bad calls`
+      );
+      const seasonBarInner = seasonBarWrapper.append('div').attr('class', 'chart-bar');
+      
+      // Add segments with proper widths
+      const correctPct = seasonData.correct_strikes_pct;
+      const incorrectPct = seasonData.incorrect_strikes_pct;
+      
+      if (correctPct > 0) {
+        seasonBarInner.append('div')
+          .attr('class', 'chart-segment strikes')
+          .style('width', `${correctPct}%`)
+          // Show percentage inside the bar if wide enough
+          .text(correctPct >= 15 ? `${correctPct.toFixed(0)}%` : '');
+      }
+      
+      if (incorrectPct > 0) {
+        seasonBarInner.append('div')
+          .attr('class', 'chart-segment balls')
+          .style('width', `${incorrectPct}%`)
+          // Show percentage inside the bar if wide enough
+          .text(incorrectPct >= 15 ? `${incorrectPct.toFixed(0)}%` : '');
+      }
+    }
+
+    // Last Game Chart
+    const gameData = data.last_game_summary;
+
+    const gameActualStrikes = gameData.total_called_strikes - gameData.bad_calls_count;
+    const gameBadCalls = gameData.bad_calls_count;
+
+    if (gameData && gameData.correct_strikes_pct !== undefined && gameData.incorrect_strikes_pct !== undefined) {
+      const gameBarWrapper = chartDiv.append('div').attr('class', 'chart-bar-wrapper');
+      const gameLabelLine = gameBarWrapper.append('div').attr('class', 'chart-label-line');
+      // Format the date as 'Month Day, Year'
+      let lastGameLabel = 'Last game';
+      if (gameData.date) {
+        const dateObj = new Date(gameData.date);
+        const options = { year: 'numeric', month: 'long', day: 'numeric' };
+        const formattedDate = dateObj.toLocaleDateString('en-US', options);
+        lastGameLabel += `: ${formattedDate}`;
+      }
+      gameLabelLine.append('div').attr('class', 'chart-label').text(lastGameLabel);
+      // Show raw totals above the bar
+      gameLabelLine.append('div').attr('class', 'chart-percentages').html(
+        `<span class="good-calls-label">${gameActualStrikes} </span> / <span class="bad-calls-label">${gameBadCalls} </span>`
+      );
+      const gameBarInner = gameBarWrapper.append('div').attr('class', 'chart-bar');
+      
+      // Add segments with proper widths
+      const correctPct = gameData.correct_strikes_pct;
+      const incorrectPct = gameData.incorrect_strikes_pct;
+      
+      if (correctPct > 0) {
+        gameBarInner.append('div')
+          .attr('class', 'chart-segment strikes')
+          // Show percentage inside the bar if wide enough
+          .style('width', `${correctPct}%`)
+          .text(correctPct >= 15 ? `${correctPct.toFixed(0)}%` : ''); 
+      }
+      
+      if (incorrectPct > 0) {
+        gameBarInner.append('div')
+          .attr('class', 'chart-segment balls')
+          // Show percentage inside the bar if wide enough
+          .style('width', `${incorrectPct}%`)
+          .text(incorrectPct >= 15 ? `${incorrectPct.toFixed(0)}%` : ''); 
+      }
+    }
+
+    // Right column: worst calls
+    const worstCallsDiv = d3.select('#umpire-worst-calls');
+    worstCallsDiv.html('');
+    const worstCallsList = worstCallsDiv.append('ul').attr('class', 'worst-calls-list');
+    
+    if (data.worst_calls_of_season && data.worst_calls_of_season.length > 0) {
+      data.worst_calls_of_season.slice(0, 4).forEach(call => { // Limit to top 5 worst calls
+        const listItem = worstCallsList.append('li');
+        listItem.html(`
+          <div class="call-distance">
+            ${call.distance_inches.toFixed(2)}" from zone
+            <a href="${call.video_link}" target="_blank" class="video-link" aria-label="Watch video replay">
+              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M4 6.5C4 5.11929 5.11929 4 6.5 4H17.5C18.8807 4 20 5.11929 20 6.5V17.5C20 18.8807 18.8807 20 17.5 20H6.5C5.11929 20 4 18.8807 4 17.5V6.5Z" stroke="#ef3e42" stroke-width="1.5" fill="none"/>
+                <path d="M14.5 12L10 14.5V9.5L14.5 12Z" fill="#ef3e42"/>
+              </svg>
+            </a>
+          </div>
+          <div class="call-details">
+            ${call.batter} vs. ${call.pitcher} &bull; ${call.velocity_mph.toFixed(0)} mph &bull; <em>${call.pitch_type}</em>
+          </div>
+        `);
+      });
+    } else {
+      worstCallsList.append('li').html('<div class="call-details" style="font-style: italic; color: #999;">No incorrect calls data available.</div>');
+    }
+  }
+
+  if (document.getElementById('umpire-scorecard-chart')) {
+    fetchUmpireData();
+  }
+})();

@@ -225,6 +225,20 @@ permalink: /
     <div id="shohei-homers-chart" class="small-chart-container"></div>
     <div id="shohei-sb-chart" class="small-chart-container"></div>
   </div>
+
+  <h2 class="stat-group">Umpire scorecard</h2>
+<div class="scorecard-row">
+  <div class="scorecard-left">
+  <h3 class="visual-subhead">Strike zone analysis</h3>
+  <p class="chart-chatter">How often do Dodgers batters get called strikes on pitches outside the strike zone? Correctly called <span style="background-color: #53A796; color: #fff; font-weight: bold; padding: 1px 6px; border-radius: 5px;">strikes</span> vs. pitches that were actually <span style="background-color: #F18851; color: #fff; font-weight: bold; padding: 1px 6px; border-radius: 5px;">balls</span>:</p>
+    <div id="umpire-scorecard-chart"></div>
+  </div>
+  <div class="scorecard-right">
+    <h3 class="visual-subhead">Worst calls of the season</h3>
+    <div id="umpire-worst-calls"></div>
+  </div>
+</div>
+ <p class="note">Note: Strike zone calls are determined by Baseball Savant and collected from its gamefeed API. Download the data <a href="https://stilesdata.com/dodgers/data/pitches/dodgers_pitches_2025.json">here</a>.</p>
   
 
   <h2 class="stat-group">Pitching</h2>

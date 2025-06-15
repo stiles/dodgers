@@ -12,6 +12,7 @@ processed_videos/
 # Ignore all data files and images
 data/*
 !data/roster/
+!data/pitches/
 data/roster/*
 !data/roster/avatars/
 _data/

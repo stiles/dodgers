@@ -1054,16 +1054,8 @@ hr.style-eight:after {
 h3.visual-subhead {
   margin: 10px 0px 20px 0px; // Reduced margins
   font-family: 'Roboto Slab', serif;
-  font-size: .95em;
+  font-size: 1em;
   color: #666;
-}
-
-.visual-subhead {
-  margin: 10px 0px 10px 0px; /* Reduced margins */
-  font-family: 'Roboto Slab', serif;
-  font-size: 1.2em; /* Adjust font size as needed */
-  color: #666;
-  display: block; /* Ensure the subhead is displayed as a block element */
 }
 
 label {
@@ -1793,3 +1785,151 @@ label {
 .tabs {
   margin-bottom: 20px;
 }
+
+// Umpire Scorecard
+.scorecard-row {
+  display: flex;
+  align-items: flex-start;
+  gap: 60px;
+  margin-bottom: 40px;
+}
+
+.scorecard-left {
+  flex: 1;
+  min-width: 0;
+}
+
+.scorecard-right {
+  flex: 1;
+  min-width: 0;
+}
+
+@media (max-width: 900px) {
+  .scorecard-row {
+    flex-direction: column;
+    gap: 40px;
+  }
+}
+
+.chart-bar-wrapper {
+  margin-bottom: 30px;
+}
+
+.chart-label-line {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  margin-bottom: 12px;
+}
+
+.chart-label {
+  font-family: 'Roboto Slab', serif;
+  font-size: 16px;
+  color: #333;
+  font-weight: 600;
+}
+
+.chart-percentages {
+  font-family: 'Roboto', sans-serif;
+  font-size: 14px;
+  color: #666;
+  // font-weight: 600;
+}
+
+.chart-bar {
+  display: flex;
+  height: 40px;
+  width: 100%;
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+  border: 1px solid #e0e0e0;
+}
+
+.chart-segment {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  font-size: 14px;
+  font-weight: 700;
+  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.2);
+}
+
+.chart-segment.strikes {
+  background-color: #53A796;
+}
+
+.chart-segment.balls {
+  background-color: #F18851;
+}
+
+.worst-calls-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.worst-calls-list li {
+  padding: 5px 0;
+  border-bottom: 1px solid #e9ecef;
+}
+
+.worst-calls-list li:last-child {
+  border-bottom: none;
+}
+
+.worst-calls-list li:first-child {
+  padding-top: 0;
+}
+
+.call-distance {
+  // font-family: 'Roboto Slab', serif;
+  font-size: 15px;
+  font-weight: 600;
+  color: #666;
+  margin-bottom: 6px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.video-link {
+  color: #005A9C;
+  text-decoration: none;
+  display: inline-flex;
+  align-items: center;
+  transition: all 0.2s ease;
+  padding: 4px;
+  border-radius: 4px;
+}
+
+.video-link:hover {
+  background-color: rgba(0, 90, 156, 0.1);
+  text-decoration: none;
+  transform: scale(1.1);
+}
+
+.video-link svg {
+  display: block;
+}
+
+.call-details {
+  font-family: 'Roboto', sans-serif;
+  font-size: 14px;
+  color: #666;
+  line-height: 1.5;
+}
+
+.good-calls-label {
+  color: #53A796;
+  font-weight: bold;
+  font-size: 14px;
+}
+
+.bad-calls-label {
+  color: #F18851;
+  font-weight: bold;
+  font-size: 14px;
+}
+
