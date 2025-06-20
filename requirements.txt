@@ -4,4 +4,5 @@ tqdm
 matplotlib
 seaborn
 boto3
-tweepy>=4.10.0 
+tweepy>=4.10.0
+beautifulsoup4
