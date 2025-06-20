@@ -17,6 +17,7 @@ import boto3
 import logging
 from io import StringIO
 from datetime import datetime
+import re
 
 logging.basicConfig(level=logging.INFO, format='%(asctime)s - %(levelname)s - %(message)s')
 
@@ -211,59 +212,65 @@ def fetch_player_xwoba(player_name, player_id):
         logging.error(f"Response object: {response if 'response' in locals() else 'No response object'}")
         return None
 
-def fetch_league_average_xwoba(year=CURRENT_YEAR):
+def fetch_league_average_xwoba(year=None):
     """
-    Fetch league average xwOBA from Baseball Savant.
-    
-    Args:
-        year (int): The season year to fetch data for. Defaults to current year.
-        
-    Returns:
-        float or None: The league average xwOBA for qualified hitters (100+ PA), or None if fetch fails
+    Fetches the league average xwOBA from the rolling leaderboard on Baseball Savant.
+    It finds the inline script data, parses it, and averages the xwOBA for all batters.
     """
-    logging.info(f"Fetching league average xwOBA for {year} season")
-    url = (
-        "https://baseballsavant.mlb.com/leaderboard/expected_statistics?"
-        f"type=batter&year={year}&position=&team=&filterType=pa&min=q&csv=true"
-    )
-    headers = {
-        "User-Agent": (
-            "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) "
-            "AppleWebKit/537.36 (KHTML, like Gecko) "
-            "Chrome/132.0.0.0 Safari/537.36"
-        )
-    }
-
+    logging.info("Fetching league average xwOBA from rolling leaderboard.")
+    url = 'https://baseballsavant.mlb.com/leaderboard/rolling'
     try:
         response = requests.get(url, headers=headers)
         response.raise_for_status()
-        df = pd.read_csv(StringIO(response.text))
-        
-        # Calculate weighted average xwOBA based on plate appearances
-        # Only include players with at least some minimum PAs to avoid noise
-        # Using a weighted average ensures that players with more PAs have more influence on
-        # the league average calculation, which better represents the true league performance.
-        # A simple mean would give equal weight to a player with 10 PAs and a player with 500 PAs.
-        min_pa = 10  # Minimum plate appearances to include
-        filtered_df = df[df["pa"] >= min_pa]
-        
-        if 'pa' in filtered_df.columns and 'est_woba' in filtered_df.columns:
-            # Calculate weighted average based on number of plate appearances
-            total_pa = filtered_df['pa'].sum()
-            weighted_xwoba = (filtered_df['est_woba'] * filtered_df['pa']).sum() / total_pa
-            lg_avg_xwoba = weighted_xwoba
-            logging.info(f"Calculated weighted league average xwOBA: {lg_avg_xwoba:.3f} (based on {total_pa} plate appearances)")
-        else:
-            # Fallback to simple mean if columns are missing
-            lg_avg_xwoba = filtered_df["est_woba"].mean()
-            logging.info(f"Calculated simple league average xwOBA: {lg_avg_xwoba:.3f}")
-        
-        logging.info(f"League average xwOBA: {lg_avg_xwoba:.3f}")
-        return lg_avg_xwoba
-        
-    except Exception as e:
-        logging.error(f"Error fetching league average xwOBA: {str(e)}")
+    except requests.exceptions.RequestException as e:
+        logging.error(f"Error fetching URL: {e}")
         return None
+
+    soup = BeautifulSoup(response.text, 'html.parser')
+
+    script_tags = soup.find_all('script')
+    
+    data = None
+    for script in script_tags:
+        if script.string and 'var rolling =' in script.string:
+            script_content = script.string
+            match = re.search(r'var rolling = (\{.*?\});', script_content, re.DOTALL)
+            if match:
+                json_data_str = match.group(1)
+                try:
+                    data = json.loads(json_data_str)
+                    break 
+                except json.JSONDecodeError:
+                    continue 
+
+    if data is None:
+        logging.error("Could not find and parse rolling data from any script tag.")
+        return None
+
+    if 'Batter100' not in data:
+        logging.error("Could not find 'Batter100' key in the data.")
+        return None
+
+    player_data = data['Batter100']
+
+    if not player_data:
+        logging.warning("No player data found under 'Batter100'.")
+        return None
+
+    df = pd.DataFrame(player_data)
+    xwoba_column = 'last_x_xwoba'
+
+    if xwoba_column not in df.columns:
+        logging.error(f"Could not find '{xwoba_column}' column in the player data.")
+        return None
+
+    df[xwoba_column] = pd.to_numeric(df[xwoba_column], errors='coerce')
+    df.dropna(subset=[xwoba_column], inplace=True)
+
+    average_xwoba = df[xwoba_column].mean()
+    logging.info(f"Calculated league average xwOBA: {average_xwoba:.3f}")
+    
+    return average_xwoba
 
 def main():
     try:
