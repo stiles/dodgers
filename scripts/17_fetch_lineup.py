@@ -15,12 +15,22 @@ from io import StringIO, BytesIO
 import logging
 from datetime import datetime, date
 import re
+import argparse
+import tweepy
+from botocore.exceptions import ClientError
 
 # Set up basic configuration for logging
 logging.basicConfig(level=logging.INFO, format='%(asctime)s - %(levelname)s - %(message)s')
 
 # Determine if running in a GitHub Actions environment
 is_github_actions = os.getenv('GITHUB_ACTIONS') == 'true'
+
+# Twitter API credentials from environment variables
+DODGERS_TWITTER_API_KEY = os.environ.get("DODGERS_TWITTER_API_KEY")
+DODGERS_TWITTER_API_SECRET = os.environ.get("DODGERS_TWITTER_API_SECRET")
+DODGERS_TWITTER_API_BEARER = os.environ.get("DODGERS_TWITTER_API_BEARER")
+DODGERS_TWITTER_API_ACCESS_TOKEN = os.environ.get("DODGERS_TWITTER_API_ACCESS_TOKEN")
+DODGERS_TWITTER_API_ACCESS_SECRET = os.environ.get("DODGERS_TWITTER_API_ACCESS_SECRET")
 
 # AWS credentials and session initialization
 aws_key_id = os.environ.get("AWS_ACCESS_KEY_ID")
@@ -42,6 +52,31 @@ else:
     logging.info(f"Running locally. Using AWS profile: {profile_name}")
 
 s3_resource = session.resource("s3")
+
+def get_last_tweet_date():
+    """Reads the last tweet date from S3."""
+    try:
+        obj = s3_resource.Object(s3_bucket_name, "dodgers/data/lineups/last_tweet_date.txt")
+        last_date_str = obj.get()['Body'].read().decode('utf-8').strip()
+        logging.info(f"Last tweet date found in S3: {last_date_str}")
+        return last_date_str
+    except ClientError as e:
+        if e.response['Error']['Code'] == 'NoSuchKey':
+            logging.info("last_tweet_date.txt not found. This is expected for the first run of the day.")
+            return None
+        else:
+            # For other S3-related errors, we should know about them.
+            logging.error(f"An unexpected S3 error occurred in get_last_tweet_date: {e}")
+            raise
+
+def set_last_tweet_date(date_str):
+    """Writes the last tweet date to S3."""
+    try:
+        obj = s3_resource.Object(s3_bucket_name, "dodgers/data/lineups/last_tweet_date.txt")
+        obj.put(Body=date_str)
+        logging.info(f"Successfully updated last tweet date in S3 to: {date_str}")
+    except Exception as e:
+        logging.error(f"Failed to write last tweet date to S3: {e}")
 
 def get_player_details(player_element_text):
     """
@@ -261,7 +296,32 @@ def save_to_s3(df, base_s3_path, formats=["csv", "json"]):
         except Exception as e:
             logging.error(f"Failed to upload {fmt} to S3 for {base_s3_path}: {e}")
 
+def post_tweet(tweet_text, current_date_str):
+    """
+    Posts a tweet to the authenticated Twitter account.
+    """
+    if not all([DODGERS_TWITTER_API_KEY, DODGERS_TWITTER_API_SECRET, DODGERS_TWITTER_API_ACCESS_TOKEN, DODGERS_TWITTER_API_ACCESS_SECRET]):
+        logging.error("Twitter API credentials are not fully set in environment variables. Cannot post tweet.")
+        return
+
+    try:
+        client = tweepy.Client(
+            consumer_key=DODGERS_TWITTER_API_KEY,
+            consumer_secret=DODGERS_TWITTER_API_SECRET,
+            access_token=DODGERS_TWITTER_API_ACCESS_TOKEN,
+            access_token_secret=DODGERS_TWITTER_API_ACCESS_SECRET
+        )
+        response = client.create_tweet(text=tweet_text)
+        logging.info(f"Tweet posted successfully: {response.data['id']}")
+        set_last_tweet_date(current_date_str)
+    except Exception as e:
+        logging.error(f"Failed to post tweet: {e}")
+
 def main():
+    parser = argparse.ArgumentParser(description="Fetch Dodgers lineup and optionally post pitching matchup to Twitter.")
+    parser.add_argument("--post-tweet", action="store_true", help="Post the pitching matchup to Twitter if available.")
+    args = parser.parse_args()
+
     today_date = date.today() # Temporarily commented out
     current_date_str = today_date.strftime("%Y-%m-%d") 
     # current_date_str = "2025-05-15" # Test date
@@ -311,6 +371,41 @@ def main():
 
         # Upload to S3
         save_to_s3(lineup_df, s3_base_path, formats=["csv", "json"])
+
+        # Twitter logic
+        pitchers_df = lineup_df[lineup_df['role'] == 'Pitcher'].copy()
+        if len(pitchers_df) == 2:
+            dodgers_pitcher = pitchers_df[pitchers_df['team_tricode'] == 'LAD']
+            opponent_pitcher = pitchers_df[pitchers_df['team_tricode'] != 'LAD']
+
+            if not dodgers_pitcher.empty and not opponent_pitcher.empty:
+                dodgers_pitcher = dodgers_pitcher.iloc[0]
+                opponent_pitcher = opponent_pitcher.iloc[0]
+
+                # Format date for the tweet
+                game_date = datetime.strptime(dodgers_pitcher['game_date'], '%Y-%m-%d').strftime('%B %d')
+
+                line1 = "The next game's pitching matchup is set! 🌟"
+                line2 = f"{dodgers_pitcher['throwing_hand']} {dodgers_pitcher['player_name']} ({dodgers_pitcher['team_tricode']}) takes the mound against {opponent_pitcher['throwing_hand']} {opponent_pitcher['player_name']} ({opponent_pitcher['team_tricode']}) tonight, {game_date}. ⚾️🔥"
+                line3 = f"More: https://DodgersData.bot"
+                tweet_text = f"{line1}\n\n{line2}\n\n{line3}"
+
+                logging.info("Generated tweet text:")
+                print(tweet_text)
+
+                if args.post_tweet:
+                    last_tweet_date = get_last_tweet_date()
+                    if last_tweet_date == current_date_str:
+                        logging.info(f"Already tweeted for {current_date_str}. Skipping.")
+                    else:
+                        logging.info("Attempting to post tweet...")
+                        post_tweet(tweet_text, current_date_str)
+                else:
+                    logging.info("Dry run: --post-tweet flag not provided. Not posting to Twitter.")
+            else:
+                logging.warning("Could not identify both Dodgers and opponent pitcher.")
+        else:
+            logging.info("Not enough pitcher data to generate a tweet.")
     else:
         logging.info(f"No lineup data processed for {current_date_str}. No files will be saved or uploaded.")
 
