@@ -6,6 +6,14 @@ The code executes an automated workflow to fetch, process and store the team's c
 
 The data is sourced from the heroes at [Baseball Reference](https://www.baseball-reference.com/teams/LAD/2024-schedule-scores.shtml) and [Baseball Savant](https://baseballsavant.mlb.com/) and consolidated into unified datasets for analysis and visualization purposes only. The resulting site is a non-commercial fan project.
 
+## Automated tweets
+
+In addition to the data processing scripts, the repository contains scripts that generate and post daily updates to Twitter.
+
+- **Daily summaries**: The `scripts/23_post_daily_summaries.py` script fetches the latest team summary data and posts tweets about the team's overall performance, batting and pitching statistics. This is automated by the `.github/workflows/post_summaries.yml` workflow, which runs at different times throughout the day to provide timely updates.
+
+- **News roundup**: The `scripts/24_fetch_news.py` script fetches the top Dodgers-related headlines from the LA Times, Dodgers Nation and MLB.com. It then formats these into a single tweet. This is automated by the `.github/workflows/post_news.yml` workflow, which runs every day at 1 p.m. PT.
+
 ## How it works
 
 The repository includes numerous Python scripts that perform the following daily operations for team standings, pitching and batting, by season, including:
@@ -165,7 +173,7 @@ The processed datasets — which aren't all documented below yet — are uploade
 | `season`    | object      | Season                                                  |
 | `bats`      | object      | Player's batting side (right, left, unknown)            |
 
-\* *An at-bat is when a player reaches base via a fielder's choice, hit or an error — not including catcher's interference — or when a batter is put out on a non-sacrifice. A plate appearance refers to each completed turn batting, regardless of the result.*
+\* *An at-bat is when a player reaches base via a fielder's choice, hit or an error — not including catcher's interference — or when a batter is put out on a non-sacrifice. A plate appearance refers to each completed turn batting, regardless of the result.*
 
 **Other current season player batting statistics:**
 - Batting average, on-base and slugging percentage and walks, home runs and strikeouts by plate appearance via [Baseball Savant](https://bdfed.stitch.mlbinfra.com/bdfed/stats/player?&env=prod&season=2024&sportId=1&stats=season&group=hitting&gameType=R&offset=0&sortStat=plateAppearances&order=desc&teamId=119).

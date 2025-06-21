@@ -2195,12 +2195,12 @@ function renderWinsProjectionChartWithCI(data) {
 
       // Projected Mean Wins Annotation
       svg.append('text')
-        .attr('x', isMobile ? xScale(162) - 5 : xScale(162) + 5)
-        .attr('y', yScale(finalMeanWins))
+        .attr('x', isMobile ? xScale(162) - 5 : xScale(162) - 95)
+        .attr('y', isMobile ? yScale(finalMeanWins) : yScale(finalMeanWins) - 5)
         .attr('text-anchor', isMobile ? 'end' : 'start')
         .attr('class', 'anno-dark-small')
         .style('font-size', isMobile ? '9px' : '11px') // Adjusted font size for mobile
-        .text(isMobile ? `${finalMeanWins.toFixed(0)} wins` : `Proj: ${finalMeanWins.toFixed(0)} wins`);
+        .text(isMobile ? `${finalMeanWins.toFixed(0)} wins` : `Projected: ${finalMeanWins.toFixed(0)} wins`);
 
       // CI Upper Annotation
       svg.append('text')
@@ -2248,44 +2248,6 @@ function renderWinsProjectionChartWithCI(data) {
     .attr('x', -height / 2)
     .style('font-size', isMobile ? '10px' : '12px')
     .text('Cumulative wins');
-
-        
-  // const legendData = [
-  //     { label: "Actual Wins", color: "#005A9C", type: "line" },
-  //     { label: "Mean Projection", color: "#4A4A4A", type: "dashed-line" },
-  //     { label: "95% confidence interval", color: "#005a9c", type: "area" }
-  // ];
-  //
-  // const legend = svg.append("g")
-  //     .attr("class", "legend")
-  //     .attr("transform", `translate(${isMobile ? 10 : 0}, ${isMobile ? -margin.top + 12 : -margin.top + 12})`);
-  //
-  // const legendItemWidth = isMobile ? 75 : 110;
-  // const legendItem = legend.selectAll(".legend-item")
-  //     .data(legendData)
-  //     .enter().append("g")
-  //     .attr("class", "legend-item")
-  //     .attr("transform", (d, i) => `translate(${i * legendItemWidth}, 0)`);
-  //
-  // legendItem.append("rect")
-  //     .attr("x", 0)
-  //     .attr("y", -7)
-  //     .attr("width", d => d.type === "area" ? 15 : 20)
-  //     .attr("height", d => d.type === "area" ? 10 : 2 )
-  //     .style("fill", d => d.color)
-  //     .style("stroke", d => d.type === "dashed-line" ? d.color : "none")
-  //     .style("stroke-width", d => d.type === "dashed-line" ? 2 : 0)
-  //     .style("stroke-dasharray", d => d.type === "dashed-line" ? "3,3" : "none")
-  //     .attr("opacity", d => d.type === "area" ? 0.3 : 1);
-  //
-  // legendItem.append("text")
-  //     .attr("x", d => d.type === "area" ? 20 : 25)
-  //     .attr("y", 0)
-  //     .attr("dy", "0.0em")
-  //     .attr("class","legend-text")
-  //     .style("text-anchor", "start")
-  //     .style("font-size", isMobile? "9px" : "11px")
-  //     .text(d => d.label);
 }
 
 async function initWinsProjectionChartWithCI() {
