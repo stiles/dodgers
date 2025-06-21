@@ -1183,7 +1183,7 @@ label {
 .anno-dark-small {
   font-family: 'Roboto', sans-serif;
   fill: #666;
-  font-size: 11px;
+  font-size: 12px;
   font-weight: 500; // Medium weight for emphasis
 }
 
@@ -1942,6 +1942,16 @@ label {
 .text-container {
     max-width: 900px;
     margin: 0 auto;
+}
+
+.text-container a {
+    color: #005a9c;
+    font-weight: 500;
+}
+
+.footer-copyright a {
+  color: #005a9c;
+  font-weight: 500;
 }
 
 .author-section::after {
