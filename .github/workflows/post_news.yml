@@ -1,0 +1,38 @@
+name: Post News Roundup
+
+on:
+  schedule:
+    # Runs at 1 PM PT (20:00 UTC during PDT, 21:00 UTC during PST)
+    - cron: '0 20 * * *'
+  workflow_dispatch:
+
+jobs:
+  post_news:
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v2
+
+    - name: Set up Python
+      uses: actions/setup-python@v2
+      with:
+        python-version: '3.9'
+
+    - name: Set up AWS Credentials
+      uses: aws-actions/configure-aws-credentials@v1
+      with:
+        aws-access-key-id: ${{ secrets.AWS_ACCESS_KEY_ID }}
+        aws-secret-access-key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
+        aws-region: us-west-1
+
+    - name: Install dependencies
+      run: |
+        python -m pip install --upgrade pip
+        pip install -r requirements.txt
+
+    - name: Run news fetch and tweet
+      env:
+        DODGERS_TWITTER_API_KEY: ${{ secrets.DODGERS_TWITTER_API_KEY }}
+        DODGERS_TWITTER_API_SECRET: ${{ secrets.DODGERS_TWITTER_API_SECRET }}
+        DODGERS_TWITTER_ACCESS_TOKEN: ${{ secrets.DODGERS_TWITTER_ACCESS_TOKEN }}
+        DODGERS_TWITTER_ACCESS_SECRET: ${{ secrets.DODGERS_TWITTER_ACCESS_SECRET }}
+      run: python scripts/24_fetch_news.py --post-tweet 
