@@ -131,7 +131,7 @@ function renderChart(data) {
 
   // Add the 'Leading' annotation
   svg.append('text')
-    .attr('x', isMobile ? xScale(120) : xScale(120))
+    .attr('x', isMobile ? xScale(10) : xScale(10))
     .attr('y', yScale(0) - 10)
     .text('Leading ↑')
     .attr('class', 'anno-dark')
@@ -160,7 +160,7 @@ function renderChart(data) {
 
     svg.append('text')
       .attr('x', xScale(lastDataCurrent.gm + 1)) // Reduced horizontal offset
-      .attr('y', yScale(lastDataCurrent.gb) - 10)
+      .attr('y', yScale(lastDataCurrent.gb) - 12)
       .text(currentYear)
       .attr('class', 'anno-dodgers')
       .style('stroke', '#fff')
@@ -427,7 +427,7 @@ document.addEventListener('DOMContentLoaded', function() {
   
       svg.append('text')
         .attr('x', xScale(Number(lastDataCurrentYear.gm)) + 5)
-        .attr('y', yScale(Number(lastDataCurrentYear.wins)) - 10)
+        .attr('y', yScale(Number(lastDataCurrentYear.wins)) - 12)
         .text(currentYear)
         .attr('class', 'anno-dodgers')
         .style('stroke', '#fff')
