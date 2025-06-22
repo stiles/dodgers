@@ -386,7 +386,7 @@ def main():
                 game_date = datetime.strptime(dodgers_pitcher['game_date'], '%Y-%m-%d').strftime('%B %d')
 
                 line1 = "The next game's pitching matchup is set! 🌟"
-                line2 = f"{dodgers_pitcher['throwing_hand']} {dodgers_pitcher['player_name']} ({dodgers_pitcher['team_tricode']}) takes the mound against {opponent_pitcher['throwing_hand']} {opponent_pitcher['player_name']} ({opponent_pitcher['team_tricode']}) tonight, {game_date}. ⚾️🔥"
+                line2 = f"{dodgers_pitcher['throwing_hand']} {dodgers_pitcher['player_name']} ({dodgers_pitcher['team_tricode']}) takes the mound against {opponent_pitcher['throwing_hand']} {opponent_pitcher['player_name']} ({opponent_pitcher['team_tricode']}) on {game_date}. ⚾️🔥"
                 line3 = f"More: https://DodgersData.bot"
                 tweet_text = f"{line1}\n\n{line2}\n\n{line3}"
 
