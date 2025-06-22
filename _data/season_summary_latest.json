@@ -10,31 +10,31 @@
     {
         "stat_label":"Losses",
         "stat":"losses",
-        "value":30,
+        "value":31,
         "category":"standings",
-        "context_value":30,
+        "context_value":31,
         "context_value_label":"This point last season"
     },
     {
         "stat_label":"Record",
         "stat":"record",
-        "value":"47-30",
+        "value":"47-31",
         "category":"standings",
-        "context_value":"47-30",
+        "context_value":"47-31",
         "context_value_label":"This point last season"
     },
     {
         "stat_label":"Win percentage",
         "stat":"win_pct",
-        "value":"61%",
+        "value":"60%",
         "category":"standings",
-        "context_value":"61%",
+        "context_value":"60%",
         "context_value_label":"This point last season"
     },
     {
         "stat_label":"Games up\/back",
         "stat":"games_up_back",
-        "value":4.5,
+        "value":3.5,
         "category":"standings",
         "context_value":"1st",
         "context_value_label":"Division rank"
@@ -42,15 +42,15 @@
     {
         "stat_label":"Avg. home attendance",
         "stat":"mean_attendance",
-        "value":"50,621",
+        "value":"50,703",
         "category":"standings",
-        "context_value":42,
+        "context_value":43,
         "context_value_label":"Home games this season"
     },
     {
         "stat_label":"Runs",
         "stat":"runs",
-        "value":426,
+        "value":429,
         "category":"standings",
         "context_value":"1st",
         "context_value_label":"League rank"
@@ -58,17 +58,17 @@
     {
         "stat_label":"Runs against",
         "stat":"runs_against",
-        "value":350,
+        "value":357,
         "category":"standings",
-        "context_value":281,
+        "context_value":284,
         "context_value_label":"This point last season"
     },
     {
         "stat_label":"Run differential",
         "stat":"run_differential",
-        "value":76,
+        "value":72,
         "category":"standings",
-        "context_value":108,
+        "context_value":107,
         "context_value_label":"This point last season"
     },
     {
@@ -114,7 +114,7 @@
     {
         "stat_label":"Stolen bases\/game",
         "stat":"stolen_bases_game",
-        "value":0.57,
+        "value":0.56,
         "category":"batting",
         "context_value":0.84,
         "context_value_label":"Rate all last season"
@@ -146,7 +146,7 @@
     {
         "stat_label":"Last updated",
         "stat":"update_time",
-        "value":"June 22, 2025, 1:09 AM PT",
+        "value":"June 22, 2025, 5:11 AM PT",
         "category":"summary",
         "context_value":"",
         "context_value_label":""
@@ -154,7 +154,7 @@
     {
         "stat_label":"Team summary",
         "stat":"summary",
-        "value":"<span class='highlight'>LOS ANGELES<\/span> <span class='updated'>(June 22)<\/span> \u2014 After <span class='highlight'>77<\/span> games this season, the Dodgers are in <span class='highlight'>1st<\/span> place in the National League West division. The team has compiled a <span class='highlight'>47-30<\/span> record, winning <span class='highlight'>61%<\/span> of its games so far. The last game was a <span class='highlight'>6-5<\/span> home <span class='highlight'>win<\/span> against the Washington Nationals in front of <span class='highlight'>46,558<\/span> fans. They've won <span class='highlight'>7 of the last 10<\/span> and are on pace to win about <span class='highlight'>99<\/span> games in the regular season.",
+        "value":"<span class='highlight'>LOS ANGELES<\/span> <span class='updated'>(June 22)<\/span> \u2014 After <span class='highlight'>78<\/span> games this season, the Dodgers are in <span class='highlight'>1st<\/span> place in the National League West division. The team has compiled a <span class='highlight'>47-31<\/span> record, winning <span class='highlight'>60%<\/span> of its games so far. The last game was a <span class='highlight'>3-7<\/span> home <span class='highlight'>loss<\/span> against the Washington Nationals in front of <span class='highlight'>54,154<\/span> fans. They've won <span class='highlight'>7 of the last 10<\/span> and are on pace to win about <span class='highlight'>98<\/span> games in the regular season.",
         "category":"summary",
         "context_value":"",
         "context_value_label":""
@@ -162,7 +162,7 @@
     {
         "stat_label":"Last game result",
         "stat":"last_game_result",
-        "value":"win",
+        "value":"loss",
         "category":"summary",
         "context_value":"",
         "context_value_label":""
