@@ -1,10 +1,10 @@
 # main links
 main:
-  - title: "Home"
-    url: /
-  - title: "Roster"
+  - title: "Team"
     url: /roster/
+  - title: "Moves"
+    url: /transactions/
   - title: "About"
     url: /about/
-  - title: "Code"
-    url: https://github.com/stiles/dodgers
+  # - title: "Code"
+  #   url: https://github.com/stiles/dodgers

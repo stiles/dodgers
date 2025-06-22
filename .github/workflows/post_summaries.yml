@@ -33,8 +33,8 @@ jobs:
         env:
           DODGERS_TWITTER_API_KEY: ${{ secrets.DODGERS_TWITTER_API_KEY }}
           DODGERS_TWITTER_API_SECRET: ${{ secrets.DODGERS_TWITTER_API_SECRET }}
-          DODGERS_TWITTER_ACCESS_TOKEN: ${{ secrets.DODGERS_TWITTER_ACCESS_TOKEN }}
-          DODGERS_TWITTER_ACCESS_SECRET: ${{ secrets.DODGERS_TWITTER_ACCESS_SECRET }}
+          DODGERS_TWITTER_ACCESS_TOKEN: ${{ secrets.DODGERS_TWITTER_API_ACCESS_TOKEN }}
+          DODGERS_TWITTER_ACCESS_SECRET: ${{ secrets.DODGERS_TWITTER_API_ACCESS_SECRET }}
         run: python scripts/23_post_daily_summaries.py --type summary
 
   post_batting:
@@ -58,8 +58,8 @@ jobs:
         env:
           DODGERS_TWITTER_API_KEY: ${{ secrets.DODGERS_TWITTER_API_KEY }}
           DODGERS_TWITTER_API_SECRET: ${{ secrets.DODGERS_TWITTER_API_SECRET }}
-          DODGERS_TWITTER_ACCESS_TOKEN: ${{ secrets.DODGERS_TWITTER_ACCESS_TOKEN }}
-          DODGERS_TWITTER_ACCESS_SECRET: ${{ secrets.DODGERS_TWITTER_ACCESS_SECRET }}
+          DODGERS_TWITTER_ACCESS_TOKEN: ${{ secrets.DODGERS_TWITTER_API_ACCESS_TOKEN }}
+          DODGERS_TWITTER_ACCESS_SECRET: ${{ secrets.DODGERS_TWITTER_API_ACCESS_SECRET }}
         run: python scripts/23_post_daily_summaries.py --type batting
 
   post_pitching:
@@ -83,6 +83,6 @@ jobs:
         env:
           DODGERS_TWITTER_API_KEY: ${{ secrets.DODGERS_TWITTER_API_KEY }}
           DODGERS_TWITTER_API_SECRET: ${{ secrets.DODGERS_TWITTER_API_SECRET }}
-          DODGERS_TWITTER_ACCESS_TOKEN: ${{ secrets.DODGERS_TWITTER_ACCESS_TOKEN }}
-          DODGERS_TWITTER_ACCESS_SECRET: ${{ secrets.DODGERS_TWITTER_ACCESS_SECRET }}
+          DODGERS_TWITTER_ACCESS_TOKEN: ${{ secrets.DODGERS_TWITTER_API_ACCESS_TOKEN }}
+          DODGERS_TWITTER_ACCESS_SECRET: ${{ secrets.DODGERS_TWITTER_API_ACCESS_SECRET }}
         run: python scripts/23_post_daily_summaries.py --type pitching

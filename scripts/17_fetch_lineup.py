@@ -322,7 +322,7 @@ def main():
     parser.add_argument("--post-tweet", action="store_true", help="Post the pitching matchup to Twitter if available.")
     args = parser.parse_args()
 
-    today_date = date.today() # Temporarily commented out
+    today_date = date.today()
     current_date_str = today_date.strftime("%Y-%m-%d") 
     # current_date_str = "2025-05-15" # Test date
     
@@ -351,6 +351,13 @@ def main():
     lineup_df = fetch_lineup_data(current_date_str)
     
     if not lineup_df.empty:
+        # Check if the fetched lineup is for today
+        fetched_game_date_str = lineup_df['game_date'].iloc[0]
+        fetched_game_date = datetime.strptime(fetched_game_date_str, '%Y-%m-%d').date()
+        if fetched_game_date != today_date:
+            logging.info(f"Lineup data found is for {fetched_game_date}, which is not today. Halting operations.")
+            return
+
         logging.info(f"Successfully fetched and parsed lineup data for {current_date_str}. Shape: {lineup_df.shape}")
         
         # Define base file name and S3 path
@@ -385,8 +392,8 @@ def main():
                 # Format date for the tweet
                 game_date = datetime.strptime(dodgers_pitcher['game_date'], '%Y-%m-%d').strftime('%B %d')
 
-                line1 = "The next game's pitching matchup is set! 🌟"
-                line2 = f"{dodgers_pitcher['throwing_hand']} {dodgers_pitcher['player_name']} ({dodgers_pitcher['team_tricode']}) takes the mound against {opponent_pitcher['throwing_hand']} {opponent_pitcher['player_name']} ({opponent_pitcher['team_tricode']}) on {game_date}. ⚾️🔥"
+                line1 = "Tonight's pitching matchup is set! 🌟"
+                line2 = f"{dodgers_pitcher['throwing_hand']} {dodgers_pitcher['player_name']} ({dodgers_pitcher['team_tricode']}) takes the mound against {opponent_pitcher['throwing_hand']} {opponent_pitcher['player_name']} ({opponent_pitcher['team_tricode']}) tonight. ⚾️🔥"
                 line3 = f"More: https://DodgersData.bot"
                 tweet_text = f"{line1}\n\n{line2}\n\n{line3}"
 

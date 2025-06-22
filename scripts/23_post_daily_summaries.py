@@ -45,7 +45,7 @@ s3_resource = session.resource("s3")
 # --- Twitter & S3 Functions ---
 def get_last_tweet_date(tweet_type):
     """Reads the last tweet date for a given type from S3."""
-    s3_key = f"dodgers/data/lineups/last_tweet_date_{tweet_type}.txt"
+    s3_key = f"dodgers/data/tweets/last_tweet_date_{tweet_type}.txt"
     try:
         obj = s3_resource.Object(s3_bucket_name, s3_key)
         last_date_str = obj.get()['Body'].read().decode('utf-8').strip()
@@ -61,7 +61,7 @@ def get_last_tweet_date(tweet_type):
 
 def set_last_tweet_date(date_str, tweet_type):
     """Writes the last tweet date for a given type to S3."""
-    s3_key = f"dodgers/data/lineups/last_tweet_date_{tweet_type}.txt"
+    s3_key = f"dodgers/data/tweets/last_tweet_date_{tweet_type}.txt"
     try:
         obj = s3_resource.Object(s3_bucket_name, s3_key)
         obj.put(Body=date_str)
@@ -118,6 +118,19 @@ def main():
     # Format tweet based on type
     if args.type == 'summary':
         summary_html = stats.get('summary', {}).get('value', 'No summary available.')
+        
+        # Extract date from summary to ensure we're not posting about a future game
+        date_match = re.search(r"\((\w+\s\d+)\)", summary_html)
+        if date_match:
+            game_date_str = date_match.group(1)
+            # Get current year since it's not in the string
+            current_year = datetime.today().year
+            game_date = datetime.strptime(f"{game_date_str} {current_year}", "%B %d %Y").date()
+            
+            if game_date != datetime.today().date():
+                logging.info(f"Game date ({game_date}) is not today. Halting tweet.")
+                return
+
         summary_text = re.sub('<[^<]+?>', '', summary_html).replace('\\/','/')
         tweet_text = f"⚾️ Dodgers daily summary ⚾️\n\n{summary_text}\n\nMore: https://DodgersData.bot"
 

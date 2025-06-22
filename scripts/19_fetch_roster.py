@@ -9,6 +9,8 @@ import boto3
 import re
 import unicodedata
 import shutil
+from datetime import datetime
+from dateutil.relativedelta import relativedelta
 
 logging.basicConfig(level=logging.INFO, format='%(asctime)s - %(levelname)s - %(message)s')
 
@@ -19,11 +21,13 @@ csv_file = f"{output_dir}/dodgers_roster_current.csv"
 json_file = f"{output_dir}/dodgers_roster_current.json"
 transactions_csv_file = f"{output_dir}/dodgers_transactions_current.csv"
 transactions_json_file = f"{output_dir}/dodgers_transactions_current.json"
+transactions_archive_json_file = f"{output_dir}/dodgers_transactions_archive.json"
 s3_bucket = "stilesdata.com"
 s3_key_csv = "dodgers/data/roster/dodgers_roster_current.csv"
 s3_key_json = "dodgers/data/roster/dodgers_roster_current.json"
 s3_key_transactions_csv = "dodgers/data/roster/dodgers_transactions_current.csv"
 s3_key_transactions_json = "dodgers/data/roster/dodgers_transactions_current.json"
+s3_key_transactions_archive_json = "dodgers/data/roster/dodgers_transactions_archive.json"
 
 # AWS session (same logic as your other scripts)
 is_github_actions = os.getenv('GITHUB_ACTIONS') == 'true'
@@ -118,47 +122,89 @@ def parse_player_row(row, position_group):
     }
 
 def fetch_transactions():
-    """Fetches and processes recent team transactions."""
-    logging.info("Fetching transactions...")
-    url = 'https://www.mlb.com/dodgers/roster/transactions'
-    try:
-        df = pd.read_html(url)[0]
-        df.columns = df.columns.str.lower()
-        df['transaction'] = df['transaction'].str.replace('Los Angeles Dodgers', 'Dodgers')
-        df['date'] = pd.to_datetime(df['date'], format='%m/%d/%y').dt.strftime('%Y-%m-%d')
+    """
+    Fetches team transactions for the current and previous 3 months,
+    merges them with a historical archive, and saves the full archive
+    as well as a separate file with the 100 most recent transactions.
+    """
+    logging.info("Fetching and archiving transactions...")
 
-        # Updated regex logic to find player names
-        positions = [
-            "RHP", "LHP", "P", "C", "1B", "2B", "3B", "SS",
-            "INF", "OF", "LF", "CF", "RF", "DH"
-        ]
-        position_regex = r'(?:' + '|'.join(positions) + r')\s'
-        name_regex = r"([A-Z][a-zA-Zà-úÀ-Ú\.\-']+(?:\s[A-Z][a-zA-Zà-úÀ-Ú\.\-']+)+)"
-        full_regex = position_regex + name_regex
+    # Determine the URLs to fetch (current month and previous 3)
+    today = datetime.now()
+    urls_to_fetch = []
+    for i in range(4):
+        target_date = today - relativedelta(months=i)
+        year = target_date.year
+        month = target_date.strftime('%m')
+        urls_to_fetch.append(f'https://www.mlb.com/dodgers/roster/transactions/{year}/{month}')
 
-        def extract_names(transaction_text):
-            names = re.findall(full_regex, transaction_text)
-            if not names:
-                return None
-            # Clean up names: remove trailing periods and strip whitespace
-            cleaned_names = [name.strip().rstrip('.') for name in names]
-            return cleaned_names
+    # Fetch new data
+    new_transactions_list = []
+    for url in urls_to_fetch:
+        try:
+            df_list = pd.read_html(url)
+            if df_list:
+                new_transactions_list.append(df_list[0])
+                logging.info(f"Successfully fetched {url}")
+        except Exception as e:
+            logging.warning(f"Could not fetch or parse {url}. It might be a month with no transactions. Error: {e}")
+            continue
 
-        df['players'] = df['transaction'].apply(extract_names)
+    if not new_transactions_list:
+        logging.info("No new transactions found in the last 4 months. Exiting transaction fetch.")
+        return
 
-        df.to_csv(transactions_csv_file, index=False)
-        with open(transactions_json_file, 'w', encoding='utf-8') as f:
-            df.to_json(f, indent=2, orient="records", force_ascii=False)
+    # Combine all newly fetched dataframes
+    new_df = pd.concat(new_transactions_list, ignore_index=True)
+    new_df.columns = new_df.columns.str.lower()
+    new_df.dropna(subset=['date', 'transaction'], inplace=True)
 
-        shutil.copy(transactions_json_file, jekyll_data_dir)
-        logging.info(f"Transactions data copied to {jekyll_data_dir}")
+    # Process new data
+    new_df['transaction'] = new_df['transaction'].str.replace('Los Angeles Dodgers', 'Dodgers', regex=False)
+    new_df['date'] = pd.to_datetime(new_df['date'], format='%m/%d/%y')
 
-        s3.Bucket(s3_bucket).upload_file(transactions_csv_file, s3_key_transactions_csv)
-        s3.Bucket(s3_bucket).upload_file(transactions_json_file, s3_key_transactions_json)
-        logging.info("Transactions data written and uploaded to S3.")
+    positions = ["RHP", "LHP", "P", "C", "1B", "2B", "3B", "SS", "INF", "OF", "LF", "CF", "RF", "DH"]
+    position_regex = r'(?:' + '|'.join(positions) + r')\s'
+    name_regex = r"([A-Z][a-zA-Zà-úÀ-Ú\.\-']+(?:\s[A-Z][a-zA-Zà-úÀ-Ú\.\-']+)+)"
+    full_regex = position_regex + name_regex
 
-    except Exception as e:
-        logging.error(f"Failed to fetch or process transactions: {e}")
+    def extract_names(transaction_text):
+        names = re.findall(full_regex, transaction_text)
+        return [name.strip().rstrip('.') for name in names] if names else None
+
+    new_df['players'] = new_df['transaction'].apply(extract_names)
+
+    # Load archive
+    archive_df = pd.DataFrame()
+    if os.path.exists(transactions_archive_json_file):
+        archive_df = pd.read_json(transactions_archive_json_file)
+        if not archive_df.empty:
+            archive_df['date'] = pd.to_datetime(archive_df['date'])
+
+    # Combine, de-duplicate, and sort
+    combined_df = pd.concat([archive_df, new_df], ignore_index=True)
+    combined_df.drop_duplicates(subset=['date', 'transaction'], keep='last', inplace=True)
+    combined_df.sort_values(by='date', ascending=False, inplace=True)
+    combined_df['date'] = combined_df['date'].dt.strftime('%Y-%m-%d')
+
+    # Save full archive
+    with open(transactions_archive_json_file, 'w', encoding='utf-8') as f:
+        combined_df.to_json(f, indent=2, orient="records", force_ascii=False)
+    logging.info(f"Full transaction archive saved to {transactions_archive_json_file}")
+    s3.Bucket(s3_bucket).upload_file(transactions_archive_json_file, s3_key_transactions_archive_json)
+
+    # Save current view (top 100)
+    current_df = combined_df.head(100)
+    current_df.to_csv(transactions_csv_file, index=False)
+    with open(transactions_json_file, 'w', encoding='utf-8') as f:
+        current_df.to_json(f, indent=2, orient="records", force_ascii=False)
+
+    shutil.copy(transactions_json_file, jekyll_data_dir)
+    logging.info(f"Top 100 transactions copied to {jekyll_data_dir}")
+
+    s3.Bucket(s3_bucket).upload_file(transactions_csv_file, s3_key_transactions_csv)
+    s3.Bucket(s3_bucket).upload_file(transactions_json_file, s3_key_transactions_json)
+    logging.info("Current transactions data written and uploaded to S3.")
 
 def main():
     os.makedirs(output_dir, exist_ok=True)
