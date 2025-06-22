@@ -17,9 +17,13 @@ output_dir = "data/roster"
 jekyll_data_dir = "_data/roster"
 csv_file = f"{output_dir}/dodgers_roster_current.csv"
 json_file = f"{output_dir}/dodgers_roster_current.json"
+transactions_csv_file = f"{output_dir}/dodgers_transactions_current.csv"
+transactions_json_file = f"{output_dir}/dodgers_transactions_current.json"
 s3_bucket = "stilesdata.com"
 s3_key_csv = "dodgers/data/roster/dodgers_roster_current.csv"
 s3_key_json = "dodgers/data/roster/dodgers_roster_current.json"
+s3_key_transactions_csv = "dodgers/data/roster/dodgers_transactions_current.csv"
+s3_key_transactions_json = "dodgers/data/roster/dodgers_transactions_current.json"
 
 # AWS session (same logic as your other scripts)
 is_github_actions = os.getenv('GITHUB_ACTIONS') == 'true'
@@ -106,6 +110,29 @@ def parse_player_row(row, position_group):
         "is_40_man": is_40_man
     }
 
+def fetch_transactions():
+    """Fetches and processes recent team transactions."""
+    logging.info("Fetching transactions...")
+    url = 'https://www.mlb.com/dodgers/roster/transactions'
+    try:
+        df = pd.read_html(url)[0]
+        df.columns = df.columns.str.lower()
+        df['transaction'] = df['transaction'].str.replace('Los Angeles Dodgers', 'Dodgers')
+        df['date'] = pd.to_datetime(df['date'], format='%m/%d/%y').dt.strftime('%Y-%m-%d')
+
+        df.to_csv(transactions_csv_file, index=False)
+        df.to_json(transactions_json_file, indent=2, orient="records")
+
+        shutil.copy(transactions_json_file, jekyll_data_dir)
+        logging.info(f"Transactions data copied to {jekyll_data_dir}")
+
+        s3.Bucket(s3_bucket).upload_file(transactions_csv_file, s3_key_transactions_csv)
+        s3.Bucket(s3_bucket).upload_file(transactions_json_file, s3_key_transactions_json)
+        logging.info("Transactions data written and uploaded to S3.")
+
+    except Exception as e:
+        logging.error(f"Failed to fetch or process transactions: {e}")
+
 def main():
     os.makedirs(output_dir, exist_ok=True)
     os.makedirs(jekyll_data_dir, exist_ok=True)
@@ -143,6 +170,8 @@ def main():
     s3.Bucket(s3_bucket).upload_file(csv_file, s3_key_csv)
     s3.Bucket(s3_bucket).upload_file(json_file, s3_key_json)
     logging.info("Roster data written and uploaded to S3.")
+
+    fetch_transactions()
 
 if __name__ == "__main__":
     main()
