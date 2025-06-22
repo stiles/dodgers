@@ -47,6 +47,13 @@ def sluggify(name):
     name = re.sub(r'[^a-z0-9\-]', '', name)
     return name
 
+def find_players_in_transaction(transaction, player_names):
+    found_players = []
+    for player in player_names:
+        if re.search(r'\b' + re.escape(player) + r'\b', transaction):
+            found_players.append(player)
+    return found_players if found_players else None
+
 def parse_player_row(row, position_group):
     tds = row.find_all('td')
     # Player thumb and image
@@ -120,8 +127,28 @@ def fetch_transactions():
         df['transaction'] = df['transaction'].str.replace('Los Angeles Dodgers', 'Dodgers')
         df['date'] = pd.to_datetime(df['date'], format='%m/%d/%y').dt.strftime('%Y-%m-%d')
 
+        # Updated regex logic to find player names
+        positions = [
+            "RHP", "LHP", "P", "C", "1B", "2B", "3B", "SS",
+            "INF", "OF", "LF", "CF", "RF", "DH"
+        ]
+        position_regex = r'(?:' + '|'.join(positions) + r')\s'
+        name_regex = r"([A-Z][a-zA-Zà-úÀ-Ú\.\-']+(?:\s[A-Z][a-zA-Zà-úÀ-Ú\.\-']+)+)"
+        full_regex = position_regex + name_regex
+
+        def extract_names(transaction_text):
+            names = re.findall(full_regex, transaction_text)
+            if not names:
+                return None
+            # Clean up names: remove trailing periods and strip whitespace
+            cleaned_names = [name.strip().rstrip('.') for name in names]
+            return cleaned_names
+
+        df['players'] = df['transaction'].apply(extract_names)
+
         df.to_csv(transactions_csv_file, index=False)
-        df.to_json(transactions_json_file, indent=2, orient="records")
+        with open(transactions_json_file, 'w', encoding='utf-8') as f:
+            df.to_json(f, indent=2, orient="records", force_ascii=False)
 
         shutil.copy(transactions_json_file, jekyll_data_dir)
         logging.info(f"Transactions data copied to {jekyll_data_dir}")
@@ -160,7 +187,8 @@ def main():
 
     df = pd.DataFrame(all_players)
     df.to_csv(csv_file, index=False)
-    df.to_json(json_file, indent=2, orient="records")
+    with open(json_file, 'w', encoding='utf-8') as f:
+        df.to_json(f, indent=2, orient="records", force_ascii=False)
 
     # Copy to Jekyll data dir
     shutil.copy(json_file, jekyll_data_dir)
