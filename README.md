@@ -8,7 +8,7 @@ The data is sourced from the heroes at [Baseball Reference](https://www.baseball
 
 ## Automated tweets
 
-In addition to the data processing scripts, the repository contains scripts that generate and post daily updates to Twitter.
+In addition to the data processing scripts, the repository contains scripts that generate and post daily updates to an account on Twitter, [@DodgersDataBot](https://x.com/DodgersDataBot).
 
 - **Daily summaries**: The `scripts/23_post_daily_summaries.py` script fetches the latest team summary data and posts tweets about the team's overall performance, batting and pitching statistics. This is automated by the `.github/workflows/post_summaries.yml` workflow, which runs at different times throughout the day to provide timely updates.
 - **Lineup and pitching matchup**: The `scripts/17_fetch_lineup.py` script fetches the daily starting lineup and tweets the pitching matchup once it's announced. This is automated by the `.github/workflows/tweet_lineup.yml` workflow.
@@ -49,6 +49,7 @@ The repository includes numerous Python scripts that perform the following daily
 
 The repository uses GitHub Actions to automate the execution of the scripts each day, ensuring the datasets remains up-to-date throughout the baseball season. The key workflows include:
 
+- **`fetch_dodgers_data.yml`**: This is the main data pipeline, running multiple times a day during the season. It executes all the Python scripts responsible for fetching, processing, and saving the core team and player statistics needed to build the site.
 - **`build_site.yml`**: Fetches and processes all core team data (standings, batting, pitching, etc.) and rebuilds the site. Runs daily.
 - **`post_summaries.yml`**: Posts statistical summaries to Twitter at 8am, 10am, and 12pm PT.
 - **`tweet_lineup.yml`**: Checks hourly for the day's lineup and posts the pitching matchup to Twitter once available.
