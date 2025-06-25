@@ -228,12 +228,12 @@ permalink: /
     <div id="shohei-sb-chart" class="small-chart-container"></div>
   </div>
 
-  <h3 class="visual-subhead">Pitching breakdown</h3>
+  <!-- <h3 class="visual-subhead">Pitching breakdown</h3>
 <p class="chart-chatter">A detailed look at Ohtani's pitches this season, showing his pitch mix, average velocity and locations.</p>
 <div id="shohei-pitching-container">
   <div id="shohei-pitch-mix-chart"></div>
   <div id="shohei-pitch-location-chart"></div>
-</div>
+</div> -->
 
   <h2 class="stat-group">Umpire scorecard</h2>
 <div class="scorecard-row">
