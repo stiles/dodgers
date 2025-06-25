@@ -8,10 +8,10 @@ The data is sourced from the heroes at [Baseball Reference](https://www.baseball
 
 ## Automated tweets
 
-In addition to the data processing scripts, the repository contains scripts that generate and post daily updates to Twitter.
+In addition to the data processing scripts, the repository contains scripts that generate and post daily updates to an account on Twitter, [@DodgersDataBot](https://x.com/DodgersDataBot).
 
 - **Daily summaries**: The `scripts/23_post_daily_summaries.py` script fetches the latest team summary data and posts tweets about the team's overall performance, batting and pitching statistics. This is automated by the `.github/workflows/post_summaries.yml` workflow, which runs at different times throughout the day to provide timely updates.
-
+- **Lineup and pitching matchup**: The `scripts/17_fetch_lineup.py` script fetches the daily starting lineup and tweets the pitching matchup once it's announced. This is automated by the `.github/workflows/tweet_lineup.yml` workflow.
 - **News roundup**: The `scripts/24_fetch_news.py` script fetches the top Dodgers-related headlines from the LA Times, Dodgers Nation and MLB.com. It then formats these into a single tweet. This is automated by the `.github/workflows/post_news.yml` workflow, which runs every day at 1 p.m. PT.
 
 ## How it works
@@ -31,6 +31,10 @@ The repository includes numerous Python scripts that perform the following daily
 - **Past/present team batting performance:** `scripts/09_fetch_process_historic_batting_gamelogs.py`
 - **Team attendance (all teams):** `scripts/10_fetch_process_attendance.py`
 - **Past/present team pitching performance:** `11_fetch_process_historic_pitching_gamelogs.py`
+- **Starting lineups:** `scripts/17_fetch_lineup.py`
+- **Daily summary tweets:** `scripts/23_post_daily_summaries.py`
+- **News roundup tweets:** `scripts/24_fetch_news.py`
+- **Shohei Ohtani pitching data:** `scripts/25_fetch_shohei_pitches.py`
 
 ### What they do:
 
@@ -43,12 +47,13 @@ The repository includes numerous Python scripts that perform the following daily
 
 ## GitHub Actions workflow
 
-The repository uses GitHub Actions to automate the execution of the scripts each day, ensuring the datasets remains up-to-date throughout the baseball season. The workflow includes the following steps:
+The repository uses GitHub Actions to automate the execution of the scripts each day, ensuring the datasets remains up-to-date throughout the baseball season. The key workflows include:
 
-1. **Set up Python environment**: Prepares the runtime environment with the necessary Python version and dependencies. 
-2. **Checkout repository**: Clones the repository's content to the GitHub Actions runner if changes are necessary (a new game is added). 
-3. **Configure AWS credentials**: Securely configures AWS access credentials stored in GitHub Secrets, enabling the script to upload files to the S3 bucket.
-4. **Execute scripts**: Runs the Python scripts to fetch the latest standings, process the data and perform the exports and uploads as configured.
+- **`fetch_dodgers_data.yml`**: This is the main data pipeline, running multiple times a day during the season. It executes all the Python scripts responsible for fetching, processing, and saving the core team and player statistics needed to build the site.
+- **`build_site.yml`**: Fetches and processes all core team data (standings, batting, pitching, etc.) and rebuilds the site. Runs daily.
+- **`post_summaries.yml`**: Posts statistical summaries to Twitter at 8am, 10am, and 12pm PT.
+- **`tweet_lineup.yml`**: Checks hourly for the day's lineup and posts the pitching matchup to Twitter once available.
+- **`post_news.yml`**: Fetches and posts a news roundup to Twitter at 1pm PT.
 
 ## Configuration and usage
 
@@ -198,13 +203,41 @@ The processed datasets — which aren't all documented below yet — are uploade
 
 ### Pitching
 
+**Shohei Ohtani's pitches (current season):**
+- [JSON](https://stilesdata.com/dodgers/data/pitching/shohei_ohtani_pitches.json)
+- [CSV](https://stilesdata.com/dodgers/data/pitching/shohei_ohtani_pitches.csv)
+
+**Data structure:**
+*Each row represents a single pitch thrown by Shohei Ohtani*
+
+| column_name     | column_description                   |
+|-----------------|--------------------------------------|
+| `x`             | Horizontal location of the pitch (feet) |
+| `z`             | Vertical location of the pitch (feet) |
+| `vel`           | Pitch velocity (mph)                 |
+| `pitch_type_abbr` | Two-letter pitch type abbreviation (e.g., FF, ST) |
+| `gd`            | Game date and timestamp              |
+| `pid`           | Unique pitch identifier              |
+
+**Shohei Ohtani's pitch mix (current season):**
+- [JSON](https://stilesdata.com/dodgers/data/pitching/shohei_ohtani_pitch_mix.json)
+- [CSV](https://stilesdata.com/dodgers/data/pitching/shohei_ohtani_pitch_mix.csv)
+
+**Data structure:**
+*Each row represents a pitch type in his arsenal*
+
+| column_name | column_description          |
+|-------------|-----------------------------|
+| `pitchType` | Two-letter abbreviation     |
+| `name`      | Full name of the pitch type |
+| `percent`   | Usage percentage            |
+| `count`     | Total number of pitches thrown |
+
 **Current season pitching:**
 - Team aggregates for major pitching stats: runs, ERA, etc.
     - [JSON](https://stilesdata.com/dodgers/data/pitching/dodgers_pitching_totals_current.json)
     - [CSV](https://stilesdata.com/dodgers/data/pitching/dodgers_pitching_totals_current.csv)
     - [Parquet](https://stilesdata.com/dodgers/data/pitching/dodgers_pitching_totals_current.parquet)
-
-*Data structure coming soon*
 
 - Team's league ranking for major pitching stats: runs, ERA, etc.
 
