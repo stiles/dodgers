@@ -18,6 +18,7 @@ import re
 import argparse
 import tweepy
 from botocore.exceptions import ClientError
+from zoneinfo import ZoneInfo
 
 # Set up basic configuration for logging
 logging.basicConfig(level=logging.INFO, format='%(asctime)s - %(levelname)s - %(message)s')
@@ -322,8 +323,10 @@ def main():
     parser.add_argument("--post-tweet", action="store_true", help="Post the pitching matchup to Twitter if available.")
     args = parser.parse_args()
 
-    today_date = date.today()
-    current_date_str = today_date.strftime("%Y-%m-%d") 
+    # Get current date in Los Angeles timezone to handle UTC on server
+    la_tz = ZoneInfo("America/Los_Angeles")
+    today_date = datetime.now(la_tz).date()
+    current_date_str = today_date.strftime("%Y-%m-%d")
     # current_date_str = "2025-05-15" # Test date
     
     # Define paths - relative to the script's location to reach project root, then into data/lineups
@@ -390,10 +393,10 @@ def main():
                 opponent_pitcher = opponent_pitcher.iloc[0]
 
                 # Format date for the tweet
-                game_date = datetime.strptime(dodgers_pitcher['game_date'], '%Y-%m-%d').strftime('%B %d')
+                game_date = datetime.strptime(dodgers_pitcher['game_date'], '%Y-%m-%d').strftime('%B %-d')
 
-                line1 = "Tonight's pitching matchup is set! 🌟"
-                line2 = f"{dodgers_pitcher['throwing_hand']} {dodgers_pitcher['player_name']} ({dodgers_pitcher['team_tricode']}) takes the mound against {opponent_pitcher['throwing_hand']} {opponent_pitcher['player_name']} ({opponent_pitcher['team_tricode']}) tonight. ⚾️🔥"
+                line1 = f"The pitching matchup for {game_date} is set! 🌟"
+                line2 = f"{dodgers_pitcher['throwing_hand']} {dodgers_pitcher['player_name']} ({dodgers_pitcher['team_tricode']}) takes the mound against {opponent_pitcher['throwing_hand']} {opponent_pitcher['player_name']} ({opponent_pitcher['team_tricode']}). ⚾️🔥"
                 line3 = f"More: https://DodgersData.bot"
                 tweet_text = f"{line1}\n\n{line2}\n\n{line3}"
 

@@ -2,87 +2,57 @@ name: Post Daily Summaries
 
 on:
   schedule:
-    # Schedule runs in UTC.
-    # 8 AM PT is 15:00 UTC during PDT, 16:00 UTC during PST. Using 15:00 UTC.
-    - cron: '0 15 * * *'
-    # 10 AM PT is 17:00 UTC during PDT, 18:00 UTC during PST. Using 17:00 UTC.
-    - cron: '0 17 * * *'
-    # 12 PM PT is 19:00 UTC during PDT, 20:00 UTC during PST. Using 19:00 UTC.
-    - cron: '0 19 * * *'
+    # Runs hourly. The job logic determines which summary to post.
+    - cron: '0 15-20 * * *'
   workflow_dispatch:
 
 jobs:
   post_summary:
-    if: github.event.schedule == '0 15 * * *'
-    name: 'Post 8 AM Summary'
+    name: Post Daily Summary Updates
     runs-on: ubuntu-latest
+    env:
+      DODGERS_TWITTER_API_KEY: ${{ secrets.DODGERS_TWITTER_API_KEY }}
+      DODGERS_TWITTER_API_SECRET: ${{ secrets.DODGERS_TWITTER_API_SECRET }}
+      DODGERS_TWITTER_ACCESS_TOKEN: ${{ secrets.DODGERS_TWITTER_API_ACCESS_TOKEN }}
+      DODGERS_TWITTER_ACCESS_SECRET: ${{ secrets.DODGERS_TWITTER_API_ACCESS_SECRET }}
     steps:
-      - uses: actions/checkout@v2
-      - name: Set up Python
-        uses: actions/setup-python@v2
-        with: { python-version: '3.9' }
-      - name: Set up AWS Credentials
-        uses: aws-actions/configure-aws-credentials@v1
-        with:
-          aws-access-key-id: ${{ secrets.AWS_ACCESS_KEY_ID }}
-          aws-secret-access-key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
-          aws-region: us-west-1
-      - name: Install dependencies
-        run: pip install -r requirements.txt
-      - name: Run summary post
-        env:
-          DODGERS_TWITTER_API_KEY: ${{ secrets.DODGERS_TWITTER_API_KEY }}
-          DODGERS_TWITTER_API_SECRET: ${{ secrets.DODGERS_TWITTER_API_SECRET }}
-          DODGERS_TWITTER_ACCESS_TOKEN: ${{ secrets.DODGERS_TWITTER_API_ACCESS_TOKEN }}
-          DODGERS_TWITTER_ACCESS_SECRET: ${{ secrets.DODGERS_TWITTER_API_ACCESS_SECRET }}
-        run: python scripts/23_post_daily_summaries.py --type summary
+      - name: Check Time in Los Angeles
+        id: time_check
+        run: |
+          la_hour=$(TZ="America/Los_Angeles" date +'%H')
+          echo "Current hour in Los Angeles: $la_hour"
+          if [[ $la_hour -eq 8 ]]; then
+            echo "task_type=summary" >> $GITHUB_OUTPUT
+          elif [[ $la_hour -eq 10 ]]; then
+            echo "task_type=batting" >> $GITHUB_OUTPUT
+          elif [[ $la_hour -eq 12 ]]; then
+            echo "task_type=pitching" >> $GITHUB_OUTPUT
+          else
+            echo "task_type=none" >> $GITHUB_OUTPUT
+          fi
 
-  post_batting:
-    if: github.event.schedule == '0 17 * * *'
-    name: 'Post 10 AM Batting Update'
-    runs-on: ubuntu-latest
-    steps:
-      - uses: actions/checkout@v2
-      - name: Set up Python
-        uses: actions/setup-python@v2
-        with: { python-version: '3.9' }
-      - name: Set up AWS Credentials
-        uses: aws-actions/configure-aws-credentials@v1
-        with:
-          aws-access-key-id: ${{ secrets.AWS_ACCESS_KEY_ID }}
-          aws-secret-access-key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
-          aws-region: us-west-1
-      - name: Install dependencies
-        run: pip install -r requirements.txt
-      - name: Run batting post
-        env:
-          DODGERS_TWITTER_API_KEY: ${{ secrets.DODGERS_TWITTER_API_KEY }}
-          DODGERS_TWITTER_API_SECRET: ${{ secrets.DODGERS_TWITTER_API_SECRET }}
-          DODGERS_TWITTER_ACCESS_TOKEN: ${{ secrets.DODGERS_TWITTER_API_ACCESS_TOKEN }}
-          DODGERS_TWITTER_ACCESS_SECRET: ${{ secrets.DODGERS_TWITTER_API_ACCESS_SECRET }}
-        run: python scripts/23_post_daily_summaries.py --type batting
+      - name: Checkout repository
+        if: steps.time_check.outputs.task_type != 'none'
+        uses: actions/checkout@v2
 
-  post_pitching:
-    if: github.event.schedule == '0 19 * * *'
-    name: 'Post 12 PM Pitching Update'
-    runs-on: ubuntu-latest
-    steps:
-      - uses: actions/checkout@v2
       - name: Set up Python
+        if: steps.time_check.outputs.task_type != 'none'
         uses: actions/setup-python@v2
-        with: { python-version: '3.9' }
+        with:
+          python-version: '3.9'
+
       - name: Set up AWS Credentials
+        if: steps.time_check.outputs.task_type != 'none'
         uses: aws-actions/configure-aws-credentials@v1
         with:
           aws-access-key-id: ${{ secrets.AWS_ACCESS_KEY_ID }}
           aws-secret-access-key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
           aws-region: us-west-1
+
       - name: Install dependencies
+        if: steps.time_check.outputs.task_type != 'none'
         run: pip install -r requirements.txt
-      - name: Run pitching post
-        env:
-          DODGERS_TWITTER_API_KEY: ${{ secrets.DODGERS_TWITTER_API_KEY }}
-          DODGERS_TWITTER_API_SECRET: ${{ secrets.DODGERS_TWITTER_API_SECRET }}
-          DODGERS_TWITTER_ACCESS_TOKEN: ${{ secrets.DODGERS_TWITTER_API_ACCESS_TOKEN }}
-          DODGERS_TWITTER_ACCESS_SECRET: ${{ secrets.DODGERS_TWITTER_API_ACCESS_SECRET }}
-        run: python scripts/23_post_daily_summaries.py --type pitching
+
+      - name: Run Post Summary Script
+        if: steps.time_check.outputs.task_type != 'none'
+        run: python scripts/23_post_daily_summaries.py --type ${{ steps.time_check.outputs.task_type }}

@@ -15,6 +15,7 @@ import requests
 import tweepy
 import boto3
 from botocore.exceptions import ClientError
+from zoneinfo import ZoneInfo
 
 # --- Setup ---
 logging.basicConfig(level=logging.INFO, format='%(asctime)s - %(levelname)s - %(message)s')
@@ -84,7 +85,10 @@ def post_tweet(tweet_text, tweet_type):
         )
         response = client.create_tweet(text=tweet_text)
         logging.info(f"Tweet posted successfully: {response.data['id']}")
-        set_last_tweet_date(datetime.today().strftime('%Y-%m-%d'), tweet_type)
+        # Use timezone-aware date for setting last tweet
+        la_tz = ZoneInfo("America/Los_Angeles")
+        today_str = datetime.now(la_tz).strftime('%Y-%m-%d')
+        set_last_tweet_date(today_str, tweet_type)
     except Exception as e:
         logging.error(f"Failed to post tweet: {e}")
 
@@ -94,8 +98,12 @@ def main():
     parser.add_argument("--type", type=str, required=True, choices=['summary', 'batting', 'pitching'], help="The type of update to post.")
     args = parser.parse_args()
 
+    # Use timezone-aware date for all checks
+    la_tz = ZoneInfo("America/Los_Angeles")
+    today_date = datetime.now(la_tz).date()
+    today_str = today_date.strftime('%Y-%m-%d')
+
     # Check if we've already tweeted this type of update today
-    today_str = datetime.today().strftime('%Y-%m-%d')
     last_tweet_date = get_last_tweet_date(args.type)
     if last_tweet_date == today_str:
         logging.info(f"An update of type '{args.type}' has already been posted today. Skipping.")
@@ -124,10 +132,10 @@ def main():
         if date_match:
             game_date_str = date_match.group(1)
             # Get current year since it's not in the string
-            current_year = datetime.today().year
+            current_year = today_date.year
             game_date = datetime.strptime(f"{game_date_str} {current_year}", "%B %d %Y").date()
             
-            if game_date != datetime.today().date():
+            if game_date != today_date:
                 logging.info(f"Game date ({game_date}) is not today. Halting tweet.")
                 return
 
