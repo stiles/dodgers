@@ -219,12 +219,21 @@ permalink: /
   <div id="xwoba-grid" class="xwoba-grid-container">
   </div>
 
-  <h3 class="visual-subhead">Shohei stats: 50-50 watch</h3>
+  <h2 class="stat-group">Shohei stats</h2>
+
+  <h3 class="visual-subhead">50-50 trend</h3>
   <p id="shohei-comparison-subhead" class="chart-chatter"></p>
   <div class="charts-container">
     <div id="shohei-homers-chart" class="small-chart-container"></div>
     <div id="shohei-sb-chart" class="small-chart-container"></div>
   </div>
+
+  <h3 class="visual-subhead">Pitching breakdown</h3>
+<p class="chart-chatter">A detailed look at Ohtani's pitches this season, showing his pitch mix, average velocity and locations.</p>
+<div id="shohei-pitching-container">
+  <div id="shohei-pitch-mix-chart"></div>
+  <div id="shohei-pitch-location-chart"></div>
+</div>
 
   <h2 class="stat-group">Umpire scorecard</h2>
 <div class="scorecard-row">

@@ -1793,6 +1793,33 @@ label {
   margin-bottom: 20px;
 }
 
+#shohei-pitching-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  margin-bottom: 40px;
+  align-items: flex-start;
+}
+
+#shohei-pitch-mix-chart {
+  flex: 1;
+  min-width: 300px;
+  overflow: hidden;
+}
+
+#shohei-pitch-location-chart {
+  flex: 1;
+  min-width: 300px;
+  position: relative;
+}
+
+.strike-zone {
+  stroke: #666;
+  stroke-width: 2px;
+  fill: none;
+  stroke-dasharray: 4,4;
+}
+
 // Umpire Scorecard
 .scorecard-row {
   display: flex;
