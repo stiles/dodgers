@@ -1,12 +1,13 @@
 ---
 layout: default
-title: About | LA Dodgers Stats Dashboard
+title: About | LA Dodgers stats dashboard
+headline: About this project
 permalink: /about/
 ---
 
 <div class="container">
     <div class="minimal-header">
-        <h1 class="minimal-headline">{{ page.title }}</h1>
+        <h1 class="minimal-headline">{{ page.headline }}</h1>
     </div>
     <div class="text-container">
         <h2 class="about-subhead">What's going on here?</h2>
