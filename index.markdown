@@ -1,9 +1,11 @@
 ---
 layout: default
-title: "Dodgers Data Bot"
-description: "An auto-updating baseball statistics dashboard that answers the question: How are the Dodgers doing?"
+title: "Los Angeles Dodgers stats dashboard | Updated data & analysis"
+description: "An auto-updating team dashboard that answers the question: How are the Dodgers doing?"
 permalink: /
-og_image: "/assets/images/meta_card.png"
+canonical_url: https://dodgersdata.bot/
+header:
+  og_image: /assets/images/meta_card.png
 twitter:
   card: summary_large_image
 ---

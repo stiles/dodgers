@@ -19,6 +19,7 @@
 # in the templates via {{ site.myvariable }}.
 
 title: Dodgers Data Bot
+name: Dodgers Data Bot
 owner: Matt Stiles
 owner_url: https://mattstiles.me
 headline: How are the Dodgers doing?
@@ -27,13 +28,22 @@ description: >- # this means to ignore newlines until "baseurl:"
   An auto-updating baseball statistics dashboard that answers the question: How are the Dodgers doing?
 baseurl: ""
 url: "https://dodgersdata.bot"
+
+# SEO and social settings
+logo: "/assets/images/meta_card.png"
+og_image: "/assets/images/meta_card.png"
 twitter_username: stiles
 github_username:  stiles
 
+# Site Author
+author: stiles
+
 # Build settings
 theme: minimal-mistakes-jekyll
+minimal_mistakes_skin: "default"
 plugins:
   - jekyll-feed
+  - jekyll-sitemap
 
 exclude:
   - notebooks
@@ -52,12 +62,39 @@ destination: ./_site
 # Social Sharing
 twitter:
   username: stiles
-og_image: "/assets/images/meta_card.png"
-
-# SEO settings
-author: Matt Stiles
-logo: "/assets/images/meta_card.png"
 
 # Production settings
-production:
-  url: "https://dodgersdata.bot"
+# Masthead title and subtitle
+masthead_title: "Dodgers Data Bot"
+
+# Defaults
+defaults:
+  # _posts
+  - scope:
+      path: ""
+      type: posts
+    values:
+      layout: single
+      author_profile: true
+      read_time: true
+      comments: true
+      share: true
+      related: true
+  # Homepage
+  - scope:
+      path: "index.markdown"
+    values:
+      layout: default
+
+# Footer
+footer:
+  links:
+    - label: "Twitter"
+      icon: "fab fa-fw fa-twitter-square"
+      url: "https://twitter.com/stiles"
+    - label: "GitHub"
+      icon: "fab fa-fw fa-github"
+      url: "https://github.com/stiles"
+    - label: "Email"
+      icon: "fas fa-fw fa-envelope-square"
+      url: "mailto:mattstiles@gmail.com"

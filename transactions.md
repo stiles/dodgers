@@ -1,7 +1,7 @@
 ---
 layout: default
-title: Dodgers Transactions
-description: A log of recent Dodgers player transactions.
+title: Transactions | Los Angeles Dodgers moves & trades
+description: An auto-updating log of recent Dodgers player transactions.
 permalink: /transactions/
 ---
 

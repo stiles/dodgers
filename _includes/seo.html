@@ -1,13 +1,27 @@
 <!-- begin _includes/seo.html -->
+<!-- DEBUG: page.path={{ page.path }}, page.url={{ page.url }}, page.permalink={{ page.permalink }}, page.name={{ page.name }} -->
 {%- assign title_separator = site.title_separator | default: '-' -%}
 
-{%- assign page_title = page.title | default: site.title | replace: '|', '&#124;' -%}
-{%- assign seo_title = page_title | append: " " | append: title_separator | append: " " | append: site.title | replace: '|', '&#124;' -%}
+{%- if page.path == 'index.markdown' or page.name == 'index.markdown' -%}
+  {%- assign page_title = site.title | replace: '|', '&#124;' -%}
+  {%- assign seo_title = site.title | replace: '|', '&#124;' -%}
+  {%- assign is_homepage = true -%}
+{%- else -%}
+  {%- assign page_title = page.title | default: site.title | replace: '|', '&#124;' -%}
+  {%- assign seo_title = page_title | append: " " | append: title_separator | append: " " | append: site.title | replace: '|', '&#124;' -%}
+  {%- assign is_homepage = false -%}
+{%- endif -%}
 
 {%- assign page_title = page_title | markdownify | strip_html | strip_newlines | escape_once -%}
 {%- assign seo_title  = seo_title  | markdownify | strip_html | strip_newlines | escape_once -%}
 
-{%- assign canonical_url = page.canonical_url | default: page.url | replace: "/index.html", "/" | absolute_url %}
+{%- if page.canonical_url -%}
+  {%- assign canonical_url = page.canonical_url -%}
+{%- elsif is_homepage -%}
+  {%- assign canonical_url = site.url | append: "/" -%}
+{%- else -%}
+  {%- assign canonical_url = page.url | replace: "/index.html", "/" | absolute_url -%}
+{%- endif -%}
 
 {%- assign seo_description = page.description | default: page.excerpt | default: site.description -%}
 {%- if seo_description -%}
@@ -66,11 +80,16 @@
   {% if page_large_image %}
     <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:image" content="{{ page_large_image }}">
+  {% elsif page_teaser_image %}
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:image" content="{{ page_teaser_image }}">
+  {% elsif page.twitter.card %}
+    <meta name="twitter:card" content="{{ page.twitter.card }}">
+    {% if site_og_image %}
+      <meta name="twitter:image" content="{{ site_og_image }}">
+    {% endif %}
   {% else %}
     <meta name="twitter:card" content="summary">
-    {% if page_teaser_image %}
-      <meta name="twitter:image" content="{{ page_teaser_image }}">
-    {% endif %}
   {% endif %}
 
   {% if author_twitter %}
