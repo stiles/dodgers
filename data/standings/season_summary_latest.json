@@ -108,7 +108,7 @@
         "stat":"stolen_bases",
         "value":44,
         "category":"batting",
-        "context_value":"21st",
+        "context_value":"22nd",
         "context_value_label":"League rank"
     },
     {
@@ -124,7 +124,7 @@
         "stat":"strikeouts",
         "value":"713",
         "category":"pitching",
-        "context_value":"5th",
+        "context_value":"4th",
         "context_value_label":"League rank"
     },
     {
@@ -140,13 +140,13 @@
         "stat":"era",
         "value":"4.24",
         "category":"pitching",
-        "context_value":"23rd",
+        "context_value":"22nd",
         "context_value_label":"League rank"
     },
     {
         "stat_label":"Last updated",
         "stat":"update_time",
-        "value":"June 26, 2025, 8:08 AM PT",
+        "value":"June 26, 2025, 2:18 PM PT",
         "category":"summary",
         "context_value":"",
         "context_value_label":""
