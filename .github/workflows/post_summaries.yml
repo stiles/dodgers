@@ -21,11 +21,11 @@ jobs:
         run: |
           la_hour=$(TZ="America/Los_Angeles" date +'%H')
           echo "Current hour in Los Angeles: $la_hour"
-          if [[ $la_hour -eq 8 ]]; then
+          if [[ $la_hour -ge 8 && $la_hour -lt 10 ]]; then
             echo "task_type=summary" >> $GITHUB_OUTPUT
-          elif [[ $la_hour -eq 10 ]]; then
+          elif [[ $la_hour -ge 10 && $la_hour -lt 12 ]]; then
             echo "task_type=batting" >> $GITHUB_OUTPUT
-          elif [[ $la_hour -eq 12 ]]; then
+          elif [[ $la_hour -ge 12 && $la_hour -lt 14 ]]; then
             echo "task_type=pitching" >> $GITHUB_OUTPUT
           else
             echo "task_type=none" >> $GITHUB_OUTPUT

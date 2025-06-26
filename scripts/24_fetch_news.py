@@ -5,18 +5,56 @@ import os
 import tweepy
 import argparse
 import logging
+from datetime import datetime
+from zoneinfo import ZoneInfo
+import boto3
+from botocore.exceptions import ClientError
 
 # --- Setup ---
 logging.basicConfig(level=logging.INFO, format='%(asctime)s - %(levelname)s - %(message)s')
 
-# --- Environment Variables ---
+# --- Environment Variables & AWS/S3 ---
 DODGERS_TWITTER_API_KEY = os.environ.get("DODGERS_TWITTER_API_KEY")
 DODGERS_TWITTER_API_SECRET = os.environ.get("DODGERS_TWITTER_API_SECRET")
 DODGERS_TWITTER_ACCESS_TOKEN = os.environ.get("DODGERS_TWITTER_API_ACCESS_TOKEN")
 DODGERS_TWITTER_ACCESS_SECRET = os.environ.get("DODGERS_TWITTER_API_ACCESS_SECRET")
 
-def post_tweet(tweet_text):
-    """Posts a tweet."""
+is_github_actions = os.getenv('GITHUB_ACTIONS') == 'true'
+s3_bucket_name = "stilesdata.com"
+
+if is_github_actions:
+    session = boto3.Session(
+        aws_access_key_id=os.environ.get("AWS_ACCESS_KEY_ID"),
+        aws_secret_access_key=os.environ.get("AWS_SECRET_ACCESS_KEY"),
+        region_name="us-west-1"
+    )
+else:
+    profile_name = os.environ.get("AWS_PERSONAL_PROFILE", "haekeo")
+    session = boto3.Session(profile_name=profile_name, region_name="us-west-1")
+
+s3_resource = session.resource("s3")
+
+def get_last_tweet_date(tweet_type):
+    """Reads the last tweet date for a given type from S3."""
+    s3_key = f"dodgers/data/tweets/last_tweet_date_{tweet_type}.txt"
+    try:
+        obj = s3_resource.Object(s3_bucket_name, s3_key)
+        last_date_str = obj.get()['Body'].read().decode('utf-8').strip()
+        return last_date_str
+    except ClientError as e:
+        if e.response['Error']['Code'] == 'NoSuchKey':
+            return None
+        raise
+
+def set_last_tweet_date(date_str, tweet_type):
+    """Writes the last tweet date for a given type to S3."""
+    s3_key = f"dodgers/data/tweets/last_tweet_date_{tweet_type}.txt"
+    obj = s3_resource.Object(s3_bucket_name, s3_key)
+    obj.put(Body=date_str)
+    logging.info(f"Successfully updated last tweet date for '{tweet_type}' to: {date_str}")
+
+def post_tweet(tweet_text, tweet_type):
+    """Posts a tweet and updates the last tweet date on success."""
     if not all([DODGERS_TWITTER_API_KEY, DODGERS_TWITTER_API_SECRET, DODGERS_TWITTER_ACCESS_TOKEN, DODGERS_TWITTER_ACCESS_SECRET]):
         logging.error("Twitter API credentials are not fully set. Cannot post tweet.")
         return
@@ -30,6 +68,9 @@ def post_tweet(tweet_text):
         )
         response = client.create_tweet(text=tweet_text)
         logging.info(f"Tweet posted successfully: {response.data['id']}")
+        la_tz = ZoneInfo("America/Los_Angeles")
+        today_str = datetime.now(la_tz).strftime('%Y-%m-%d')
+        set_last_tweet_date(today_str, tweet_type)
     except Exception as e:
         logging.error(f"Failed to post tweet: {e}")
 
@@ -197,6 +238,15 @@ if __name__ == '__main__':
     parser.add_argument("--post-tweet", action="store_true", help="Post the news roundup to Twitter.")
     args = parser.parse_args()
 
+    tweet_type = "news"
+    la_tz = ZoneInfo("America/Los_Angeles")
+    today_str = datetime.now(la_tz).strftime('%Y-%m-%d')
+
+    last_tweet_date = get_last_tweet_date(tweet_type)
+    if last_tweet_date == today_str:
+        logging.info(f"An update of type '{tweet_type}' has already been posted today. Skipping.")
+        exit()
+
     articles = []
     
     latimes_news = fetch_latimes_news()
@@ -217,7 +267,7 @@ if __name__ == '__main__':
         print(tweet_text)
 
         if args.post_tweet:
-            post_tweet(tweet_text)
+            post_tweet(tweet_text, tweet_type)
         else:
             logging.info("Dry run: --post-tweet flag not provided. Not posting to Twitter.")
     else:

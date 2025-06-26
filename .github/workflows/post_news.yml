@@ -2,22 +2,28 @@ name: Post News Roundup
 
 on:
   schedule:
-    # Runs hourly, but will only proceed at 1 PM PT.
-    - cron: '0 20-21 * * *'
+    # Runs hourly between 1 PM and 3 PM PT. The script logic prevents duplicate posts.
+    - cron: '0 20-22 * * *'
   workflow_dispatch:
 
 jobs:
   post_news:
     runs-on: ubuntu-latest
+    env:
+      DODGERS_TWITTER_API_KEY: ${{ secrets.DODGERS_TWITTER_API_KEY }}
+      DODGERS_TWITTER_API_SECRET: ${{ secrets.DODGERS_TWITTER_API_SECRET }}
+      DODGERS_TWITTER_ACCESS_TOKEN: ${{ secrets.DODGERS_TWITTER_API_ACCESS_TOKEN }}
+      DODGERS_TWITTER_ACCESS_SECRET: ${{ secrets.DODGERS_TWITTER_API_ACCESS_SECRET }}
     steps:
       - name: Check Time in Los Angeles
         id: time_check
         run: |
-          if [[ $(TZ="America/Los_Angeles" date +'%H') -eq 13 ]]; then
-            echo "Proceeding, it is 1 PM PT."
+          la_hour=$(TZ="America/Los_Angeles" date +'%H')
+          if [[ $la_hour -ge 13 && $la_hour -lt 15 ]]; then
+            echo "Proceeding, it is between 1 PM and 3 PM PT."
             echo "proceed=true" >> $GITHUB_OUTPUT
           else
-            echo "Stopping, it is not 1 PM PT."
+            echo "Stopping, it is outside the 1-3 PM PT window."
             echo "proceed=false" >> $GITHUB_OUTPUT
           fi
 
@@ -46,9 +52,4 @@ jobs:
 
       - name: Run news fetch and tweet
         if: steps.time_check.outputs.proceed == 'true'
-        env:
-          DODGERS_TWITTER_API_KEY: ${{ secrets.DODGERS_TWITTER_API_KEY }}
-          DODGERS_TWITTER_API_SECRET: ${{ secrets.DODGERS_TWITTER_API_SECRET }}
-          DODGERS_TWITTER_ACCESS_TOKEN: ${{ secrets.DODGERS_TWITTER_ACCESS_TOKEN }}
-          DODGERS_TWITTER_ACCESS_SECRET: ${{ secrets.DODGERS_TWITTER_API_ACCESS_SECRET }}
         run: python scripts/24_fetch_news.py --post-tweet 
