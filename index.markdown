@@ -1,7 +1,11 @@
 ---
 layout: default
-title: LA Dodgers Data Bot - A dashboard explaining the Dodgers' season so far. 
+title: "Dodgers Data Bot"
+description: "An auto-updating baseball statistics dashboard that answers the question: How are the Dodgers doing?"
 permalink: /
+og_image: "/assets/images/meta_card.png"
+twitter:
+  card: summary_large_image
 ---
 
 <div class="container">

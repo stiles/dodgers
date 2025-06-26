@@ -51,8 +51,12 @@ destination: ./_site
 
 # Social Sharing
 twitter:
-  username               : stiles
-og_image                 :  "https://dodgersdata.bot/assets/images/meta_card.png"
+  username: stiles
+og_image: "/assets/images/meta_card.png"
+
+# SEO settings
+author: Matt Stiles
+logo: "/assets/images/meta_card.png"
 
 # Production settings
 production:

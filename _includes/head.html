@@ -21,10 +21,6 @@
 
 {% include_cached seo.html %}
 
-<meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:image" content="{{ '/assets/images/placeholder-avatar.png' | absolute_url }}">
-<meta property="og:image" content="{{ '/assets/images/placeholder-avatar.png' | absolute_url }}">
-
 {% unless site.atom_feed.hide %}
   <link href="{% if site.atom_feed.path %}{{ site.atom_feed.path }}{% else %}{{ '/feed.xml' | relative_url }}{% endif %}" type="application/atom+xml" rel="alternate" title="{{ site.title }} Feed">
 {% endunless %}
