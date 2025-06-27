@@ -2,9 +2,9 @@
     {
         "stat_label":"Wins",
         "stat":"wins",
-        "value":50,
+        "value":51,
         "category":"standings",
-        "context_value":50,
+        "context_value":51,
         "context_value_label":"This point last season"
     },
     {
@@ -18,9 +18,9 @@
     {
         "stat_label":"Record",
         "stat":"record",
-        "value":"50-31",
+        "value":"51-31",
         "category":"standings",
-        "context_value":"50-31",
+        "context_value":"51-31",
         "context_value_label":"This point last season"
     },
     {
@@ -34,7 +34,7 @@
     {
         "stat_label":"Games up\/back",
         "stat":"games_up_back",
-        "value":5.5,
+        "value":6.0,
         "category":"standings",
         "context_value":"1st",
         "context_value_label":"Division rank"
@@ -50,7 +50,7 @@
     {
         "stat_label":"Runs",
         "stat":"runs",
-        "value":459,
+        "value":462,
         "category":"standings",
         "context_value":"1st",
         "context_value_label":"League rank"
@@ -58,7 +58,7 @@
     {
         "stat_label":"Runs against",
         "stat":"runs_against",
-        "value":372,
+        "value":373,
         "category":"standings",
         "context_value":289,
         "context_value_label":"This point last season"
@@ -66,9 +66,9 @@
     {
         "stat_label":"Run differential",
         "stat":"run_differential",
-        "value":87,
+        "value":89,
         "category":"standings",
-        "context_value":116,
+        "context_value":120,
         "context_value_label":"This point last season"
     },
     {
@@ -82,7 +82,7 @@
     {
         "stat_label":"Home runs",
         "stat":"home_runs",
-        "value":127,
+        "value":128,
         "category":"batting",
         "context_value":"1st",
         "context_value_label":"League rank"
@@ -90,7 +90,7 @@
     {
         "stat_label":"Home runs\/game",
         "stat":"home_runs_game",
-        "value":1.57,
+        "value":1.56,
         "category":"batting",
         "context_value":1.42,
         "context_value_label":"Last decade average"
@@ -122,15 +122,15 @@
     {
         "stat_label":"Strikeouts",
         "stat":"strikeouts",
-        "value":"713",
+        "value":"721",
         "category":"pitching",
-        "context_value":"4th",
+        "context_value":"5th",
         "context_value_label":"League rank"
     },
     {
         "stat_label":"Walks",
         "stat":"walks",
-        "value":"286",
+        "value":"289",
         "category":"pitching",
         "context_value":"5th",
         "context_value_label":"League rank"
@@ -138,7 +138,7 @@
     {
         "stat_label":"ERA",
         "stat":"era",
-        "value":"4.24",
+        "value":"4.20",
         "category":"pitching",
         "context_value":"23rd",
         "context_value_label":"League rank"
@@ -146,7 +146,7 @@
     {
         "stat_label":"Last updated",
         "stat":"update_time",
-        "value":"June 26, 2025, 4:08 PM PT",
+        "value":"June 27, 2025, 1:10 AM PT",
         "category":"summary",
         "context_value":"",
         "context_value_label":""
@@ -154,7 +154,7 @@
     {
         "stat_label":"Team summary",
         "stat":"summary",
-        "value":"<span class='highlight'>LOS ANGELES<\/span> <span class='updated'>(June 26)<\/span> \u2014 After <span class='highlight'>81<\/span> games this season, the Dodgers are in <span class='highlight'>1st<\/span> place in the National League West division. The team has compiled a <span class='highlight'>50-31<\/span> record, winning <span class='highlight'>62%<\/span> of its games so far. The last game was a <span class='highlight'>8-1<\/span> away <span class='highlight'>win<\/span> against the Colorado Rockies in front of <span class='highlight'>43,881<\/span> fans. They've won <span class='highlight'>8 of the last 10<\/span> and are on pace to win about <span class='highlight'>100<\/span> games in the regular season.",
+        "value":"<span class='highlight'>LOS ANGELES<\/span> <span class='updated'>(June 27)<\/span> \u2014 After <span class='highlight'>82<\/span> games this season, the Dodgers are in <span class='highlight'>1st<\/span> place in the National League West division. The team has compiled a <span class='highlight'>51-31<\/span> record, winning <span class='highlight'>62%<\/span> of its games so far. The last game was a <span class='highlight'>3-1<\/span> away <span class='highlight'>win<\/span> against the Colorado Rockies in front of <span class='highlight'>38,091<\/span> fans. They've won <span class='highlight'>8 of the last 10<\/span> and are on pace to win about <span class='highlight'>101<\/span> games in the regular season.",
         "category":"summary",
         "context_value":"",
         "context_value_label":""
