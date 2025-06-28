@@ -38,12 +38,24 @@ jobs:
           python -m pip install --upgrade pip
           pip install -r requirements.txt
 
+      - name: Check environment variables
+        run: |
+          echo "API_KEY length: ${#DODGERS_TWITTER_API_KEY}"
+          echo "API_SECRET length: ${#DODGERS_TWITTER_API_SECRET}"
+          echo "ACCESS_TOKEN length: ${#DODGERS_TWITTER_ACCESS_TOKEN}"
+          echo "ACCESS_SECRET length: ${#DODGERS_TWITTER_ACCESS_SECRET}"
+        env:
+          DODGERS_TWITTER_API_KEY: ${{ secrets.DODGERS_TWITTER_API_KEY }}
+          DODGERS_TWITTER_API_SECRET: ${{ secrets.DODGERS_TWITTER_API_SECRET }}
+          DODGERS_TWITTER_ACCESS_TOKEN: ${{ secrets.DODGERS_TWITTER_ACCESS_TOKEN }}
+          DODGERS_TWITTER_ACCESS_SECRET: ${{ secrets.DODGERS_TWITTER_ACCESS_SECRET }}
+
       - name: Run news fetch and tweet
         env:
           DODGERS_TWITTER_API_KEY: ${{ secrets.DODGERS_TWITTER_API_KEY }}
           DODGERS_TWITTER_API_SECRET: ${{ secrets.DODGERS_TWITTER_API_SECRET }}
-          DODGERS_TWITTER_ACCESS_TOKEN: ${{ secrets.DODGERS_TWITTER_API_ACCESS_TOKEN }}
-          DODGERS_TWITTER_ACCESS_SECRET: ${{ secrets.DODGERS_TWITTER_API_ACCESS_SECRET }}
+          DODGERS_TWITTER_ACCESS_TOKEN: ${{ secrets.DODGERS_TWITTER_ACCESS_TOKEN }}
+          DODGERS_TWITTER_ACCESS_SECRET: ${{ secrets.DODGERS_TWITTER_ACCESS_SECRET }}
         run: |
           if [ "${{ github.event.inputs.force }}" = "true" ]; then
             python scripts/24_fetch_news.py --post-tweet --force
