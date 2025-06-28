@@ -2,9 +2,18 @@ name: Post News Roundup
 
 on:
   schedule:
-    # Runs hourly between 1 PM and 3 PM PT. The script logic prevents duplicate posts.
-    - cron: '0 20-22 * * *'
+    # Runs every 3 hours during daytime hours PT (converted to UTC)
+    - cron: '0 15,18,21,0 * * *'  # 8 AM, 11 AM, 2 PM, 5 PM PT
   workflow_dispatch:
+    inputs:
+      force:
+        description: 'Force posting regardless of time constraints'
+        required: false
+        default: 'false'
+        type: choice
+        options:
+          - 'false'
+          - 'true'
 
 jobs:
   post_news:
@@ -15,29 +24,14 @@ jobs:
       DODGERS_TWITTER_ACCESS_TOKEN: ${{ secrets.DODGERS_TWITTER_API_ACCESS_TOKEN }}
       DODGERS_TWITTER_ACCESS_SECRET: ${{ secrets.DODGERS_TWITTER_API_ACCESS_SECRET }}
     steps:
-      - name: Check Time in Los Angeles
-        id: time_check
-        run: |
-          la_hour=$(TZ="America/Los_Angeles" date +'%H')
-          if [[ $la_hour -ge 13 && $la_hour -lt 15 ]]; then
-            echo "Proceeding, it is between 1 PM and 3 PM PT."
-            echo "proceed=true" >> $GITHUB_OUTPUT
-          else
-            echo "Stopping, it is outside the 1-3 PM PT window."
-            echo "proceed=false" >> $GITHUB_OUTPUT
-          fi
-
       - uses: actions/checkout@v2
-        if: steps.time_check.outputs.proceed == 'true'
 
       - name: Set up Python
-        if: steps.time_check.outputs.proceed == 'true'
         uses: actions/setup-python@v2
         with:
           python-version: '3.9'
 
       - name: Set up AWS Credentials
-        if: steps.time_check.outputs.proceed == 'true'
         uses: aws-actions/configure-aws-credentials@v1
         with:
           aws-access-key-id: ${{ secrets.AWS_ACCESS_KEY_ID }}
@@ -45,11 +39,14 @@ jobs:
           aws-region: us-west-1
 
       - name: Install dependencies
-        if: steps.time_check.outputs.proceed == 'true'
         run: |
           python -m pip install --upgrade pip
           pip install -r requirements.txt
 
       - name: Run news fetch and tweet
-        if: steps.time_check.outputs.proceed == 'true'
-        run: python scripts/24_fetch_news.py --post-tweet 
+        run: |
+          if [ "${{ github.event.inputs.force }}" = "true" ]; then
+            python scripts/24_fetch_news.py --post-tweet --force
+          else
+            python scripts/24_fetch_news.py --post-tweet
+          fi 

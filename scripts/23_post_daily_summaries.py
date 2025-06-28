@@ -93,9 +93,35 @@ def post_tweet(tweet_text, tweet_type):
         logging.error(f"Failed to post tweet: {e}")
 
 # --- Main Logic ---
+def determine_summary_type():
+    """Determines which type of summary to post based on current time in LA."""
+    la_tz = ZoneInfo("America/Los_Angeles")
+    current_hour = datetime.now(la_tz).hour
+    
+    if 8 <= current_hour < 11:
+        return 'summary'
+    elif 11 <= current_hour < 14:
+        return 'batting'
+    elif 14 <= current_hour < 17:
+        return 'pitching'
+    else:
+        # Outside prime hours, check what hasn't been posted today
+        today_str = datetime.now(la_tz).strftime('%Y-%m-%d')
+        
+        # Check in order of priority: summary, batting, pitching
+        for tweet_type in ['summary', 'batting', 'pitching']:
+            last_tweet_date = get_last_tweet_date(tweet_type)
+            if last_tweet_date != today_str:
+                logging.info(f"Outside prime hours, posting {tweet_type} (not yet posted today)")
+                return tweet_type
+        
+        # All have been posted today
+        logging.info("All summary types have been posted today")
+        return None
+
 def main():
     parser = argparse.ArgumentParser(description="Post daily Dodgers summary updates to Twitter.")
-    parser.add_argument("--type", type=str, required=True, choices=['summary', 'batting', 'pitching'], help="The type of update to post.")
+    parser.add_argument("--type", type=str, required=True, choices=['auto', 'summary', 'batting', 'pitching'], help="The type of update to post. Use 'auto' to determine based on time.")
     args = parser.parse_args()
 
     # Use timezone-aware date for all checks
@@ -103,11 +129,22 @@ def main():
     today_date = datetime.now(la_tz).date()
     today_str = today_date.strftime('%Y-%m-%d')
 
+    # Determine the summary type to post
+    if args.type == 'auto':
+        summary_type = determine_summary_type()
+        if summary_type is None:
+            logging.info("No summary type determined for posting. Exiting.")
+            return
+    else:
+        summary_type = args.type
+
     # Check if we've already tweeted this type of update today
-    last_tweet_date = get_last_tweet_date(args.type)
+    last_tweet_date = get_last_tweet_date(summary_type)
     if last_tweet_date == today_str:
-        logging.info(f"An update of type '{args.type}' has already been posted today. Skipping.")
+        logging.info(f"An update of type '{summary_type}' has already been posted today. Skipping.")
         return
+
+    logging.info(f"Proceeding to post summary of type: {summary_type}")
 
     # Fetch data
     url = "https://stilesdata.com/dodgers/data/standings/season_summary_latest.json"
@@ -124,7 +161,7 @@ def main():
     tweet_text = ""
 
     # Format tweet based on type
-    if args.type == 'summary':
+    if summary_type == 'summary':
         summary_html = stats.get('summary', {}).get('value', 'No summary available.')
         
         # Extract date from summary to ensure we're not posting about a future game
@@ -140,9 +177,9 @@ def main():
                 return
 
         summary_text = re.sub('<[^<]+?>', '', summary_html).replace('\\/','/')
-        tweet_text = f"⚾️ Dodgers daily summary ⚾️\n\n{summary_text}\n\nMore: https://DodgersData.bot"
+        tweet_text = f"⚾️ Dodgers daily summary ⚾️\n\n{summary_text}"
 
-    elif args.type == 'batting':
+    elif summary_type == 'batting':
         ba = stats.get('batting_average', {}).get('value', 'N/A')
         obp = stats.get('on_base_pct', {}).get('value', 'N/A')
         hr = stats.get('home_runs', {})
@@ -160,7 +197,7 @@ def main():
             f"More: https://DodgersData.bot"
         )
 
-    elif args.type == 'pitching':
+    elif summary_type == 'pitching':
         era = stats.get('era', {})
         era_val = era.get('value', 'N/A')
         era_rank = era.get('context_value', 'N/A')
@@ -179,8 +216,8 @@ def main():
         )
 
     if tweet_text:
-        logging.info(f"Generated tweet for type '{args.type}':\n{tweet_text}")
-        post_tweet(tweet_text, args.type)
+        logging.info(f"Generated tweet for type '{summary_type}':\n{tweet_text}")
+        post_tweet(tweet_text, summary_type)
     else:
         logging.error("Failed to generate tweet text.")
 

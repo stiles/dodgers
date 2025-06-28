@@ -233,18 +233,38 @@ def format_news_tweet(articles):
             tweet_lines.append(f"- {article['source']}: {article['title']} {article['url']}")
     return "\n\n".join(tweet_lines)
 
+def should_post_news():
+    """Determines if news should be posted based on time and whether it's been posted today."""
+    la_tz = ZoneInfo("America/Los_Angeles")
+    current_hour = datetime.now(la_tz).hour
+    today_str = datetime.now(la_tz).strftime('%Y-%m-%d')
+    
+    # Check if already posted today
+    last_tweet_date = get_last_tweet_date("news")
+    if last_tweet_date == today_str:
+        logging.info("News has already been posted today. Skipping.")
+        return False
+    
+    # Post news during reasonable hours (8 AM to 6 PM PT)
+    if 8 <= current_hour <= 18:
+        logging.info(f"Good time to post news (hour: {current_hour})")
+        return True
+    else:
+        logging.info(f"Outside prime news hours (hour: {current_hour}). Skipping news post.")
+        return False
+
 if __name__ == '__main__':
     parser = argparse.ArgumentParser(description="Fetch Dodgers news and optionally post to Twitter.")
     parser.add_argument("--post-tweet", action="store_true", help="Post the news roundup to Twitter.")
+    parser.add_argument("--force", action="store_true", help="Force posting regardless of time (still respects daily limit).")
     args = parser.parse_args()
 
     tweet_type = "news"
     la_tz = ZoneInfo("America/Los_Angeles")
     today_str = datetime.now(la_tz).strftime('%Y-%m-%d')
 
-    last_tweet_date = get_last_tweet_date(tweet_type)
-    if last_tweet_date == today_str:
-        logging.info(f"An update of type '{tweet_type}' has already been posted today. Skipping.")
+    # Check if we should post (unless forced)
+    if not args.force and not should_post_news():
         exit()
 
     articles = []

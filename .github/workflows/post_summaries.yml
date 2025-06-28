@@ -2,9 +2,14 @@ name: Post Daily Summaries
 
 on:
   schedule:
-    # Runs hourly. The job logic determines which summary to post.
-    - cron: '0 15-20 * * *'
+    # Runs every 2 hours during daytime hours PT (converted to UTC)
+    - cron: '0 15,17,19,21,23 * * *'  # 8 AM, 10 AM, 12 PM, 2 PM, 4 PM PT
   workflow_dispatch:
+    inputs:
+      summary_type:
+        description: 'Type of summary to post (auto, summary, batting, pitching)'
+        required: false
+        default: 'auto'
 
 jobs:
   post_summary:
@@ -16,33 +21,15 @@ jobs:
       DODGERS_TWITTER_ACCESS_TOKEN: ${{ secrets.DODGERS_TWITTER_API_ACCESS_TOKEN }}
       DODGERS_TWITTER_ACCESS_SECRET: ${{ secrets.DODGERS_TWITTER_API_ACCESS_SECRET }}
     steps:
-      - name: Check Time in Los Angeles
-        id: time_check
-        run: |
-          la_hour=$(TZ="America/Los_Angeles" date +'%H')
-          echo "Current hour in Los Angeles: $la_hour"
-          if [[ $la_hour -ge 8 && $la_hour -lt 10 ]]; then
-            echo "task_type=summary" >> $GITHUB_OUTPUT
-          elif [[ $la_hour -ge 10 && $la_hour -lt 12 ]]; then
-            echo "task_type=batting" >> $GITHUB_OUTPUT
-          elif [[ $la_hour -ge 12 && $la_hour -lt 14 ]]; then
-            echo "task_type=pitching" >> $GITHUB_OUTPUT
-          else
-            echo "task_type=none" >> $GITHUB_OUTPUT
-          fi
-
       - name: Checkout repository
-        if: steps.time_check.outputs.task_type != 'none'
         uses: actions/checkout@v2
 
       - name: Set up Python
-        if: steps.time_check.outputs.task_type != 'none'
         uses: actions/setup-python@v2
         with:
           python-version: '3.9'
 
       - name: Set up AWS Credentials
-        if: steps.time_check.outputs.task_type != 'none'
         uses: aws-actions/configure-aws-credentials@v1
         with:
           aws-access-key-id: ${{ secrets.AWS_ACCESS_KEY_ID }}
@@ -50,9 +37,12 @@ jobs:
           aws-region: us-west-1
 
       - name: Install dependencies
-        if: steps.time_check.outputs.task_type != 'none'
         run: pip install -r requirements.txt
 
       - name: Run Post Summary Script
-        if: steps.time_check.outputs.task_type != 'none'
-        run: python scripts/23_post_daily_summaries.py --type ${{ steps.time_check.outputs.task_type }}
+        run: |
+          if [ "${{ github.event.inputs.summary_type }}" = "" ]; then
+            python scripts/23_post_daily_summaries.py --type auto
+          else
+            python scripts/23_post_daily_summaries.py --type ${{ github.event.inputs.summary_type }}
+          fi
