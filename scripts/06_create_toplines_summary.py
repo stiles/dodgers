@@ -12,8 +12,9 @@ import pandas as pd
 import boto3
 from io import BytesIO
 import logging
-from datetime import datetime, timezone, timedelta
+from datetime import datetime, timezone, timedelta, date
 import json
+import requests
 
 # Configure logging
 logging.basicConfig(level=logging.INFO, format='%(asctime)s - %(levelname)s - %(message)s')
@@ -228,17 +229,45 @@ def calculate_projected_wins(current_wins, games_played_so_far, total_season_gam
 
 def generate_summary(
     update_date_str,
-    games_played_count,
-    division_rank_ord_str,
-    team_record_str,
-    team_win_pct_val,
-    last_game_info_series, # Expects a Pandas Series, e.g., standings_now.iloc[0]
-    win_trend_count,
-    current_wins_total
+    last_game_info_series,  # Expects a Pandas Series, e.g., standings_now.iloc[0]
 ):
-    """Generates a narrative summary of the team's current status."""
-    projected_total_wins = calculate_projected_wins(current_wins_total, games_played_count)
-    
+    """Generates a narrative summary of the team's current status using live data."""
+    # Headers for MLB API
+    headers = {
+        "sec-ch-ua-platform": '"macOS"',
+        "Referer": "https://www.mlb.com/",
+        "User-Agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/137.0.0.0 Safari/537.36",
+        "sec-ch-ua": '"Google Chrome";v="137", "Chromium";v="137", "Not/A)Brand";v="24"',
+        "sec-ch-ua-mobile": "?0",
+    }
+    current_year = datetime.now().year
+    today_str = date.today().strftime("%Y-%m-%d")
+    # Fetch standings data
+    url = f"https://bdfed.stitch.mlbinfra.com/bdfed/transform-mlb-standings?&splitPcts=false&numberPcts=false&standingsView=division&sortTemplate=3&season={current_year}&leagueIds=103&&leagueIds=104&standingsTypes=regularSeason&contextTeamId=&teamId=&date={today_str}&hydrateAlias=noSchedule&favoriteTeams=119&sortDivisions=201,202,200,204,205,203&sortLeagues=103,104,115,114&sortSports=1"
+
+    try:
+        response = requests.get(url, headers=headers)
+        response.raise_for_status()
+        json_data = response.json()
+        team_records = []
+        for record in json_data["records"]:
+            team_records.extend(record["teamRecords"])
+        df = pd.json_normalize(team_records, sep="_")
+        row = df.query('abbreviation == "LAD"').iloc[0]
+
+        # Parse variables from live data
+        games_played = row["wins"] + row["losses"]
+        division_place = int(row["divisionRank"])
+        division_place_ord = to_ordinal(division_place)
+        record = f"{row['wins']}-{row['losses']}"
+        win_pct = float(row["pct"]) * 100
+        last_10_wins = int(row["record_lastTen"].split("-")[0])
+        projected_wins = calculate_projected_wins(row['wins'], games_played)
+
+    except (requests.exceptions.RequestException, KeyError, IndexError) as e:
+        logging.warning(f"Could not fetch or parse live data, using stale data for summary: {e}")
+        return "Summary could not be generated due to a data fetching issue."
+
     # Handle cases where last_game_info_series might be None or empty if no games played
     if last_game_info_series is None or last_game_info_series.empty:
         last_game_summary_fragment = "The season is yet to begin or data is not available for the last game."
@@ -251,10 +280,10 @@ def generate_summary(
 
     summary = (
         f"<span class='highlight'>LOS ANGELES</span> <span class='updated'>({update_date_str})</span> — "
-        f"After <span class='highlight'>{games_played_count}</span> games this season, the Dodgers are in <span class='highlight'>{division_rank_ord_str}</span> place in the National League West division. "
-        f"The team has compiled a <span class='highlight'>{team_record_str}</span> record, winning <span class='highlight'>{team_win_pct_val}%</span> of its games so far. "
+        f"After <span class='highlight'>{games_played}</span> games this season, the Dodgers are in <span class='highlight'>{division_place_ord}</span> place in the National League West division. "
+        f"The team has compiled a <span class='highlight'>{record}</span> record, winning <span class='highlight'>{win_pct:.0f}%</span> of its games so far. "
         f"{last_game_summary_fragment} "
-        f"They've won <span class='highlight'>{win_trend_count} of the last 10</span> and are on pace to win about <span class='highlight'>{projected_total_wins}</span> games in the regular season."
+        f"They've won <span class='highlight'>{last_10_wins} of the last 10</span> and are on pace to win at least <span class='highlight'>{projected_wins}</span> games in the regular season."
     )
     return summary
 
@@ -278,13 +307,7 @@ if not standings_now.empty:
 
 summary = generate_summary(
     update_date, 
-    games, 
-    standings_division_rank_ordinal, 
-    record, 
-    win_pct, 
     last_game_data, # Use the potentially None series
-    win_count_trend, 
-    wins
 )
 
 summary_data = [
