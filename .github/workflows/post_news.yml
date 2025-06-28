@@ -18,11 +18,6 @@ on:
 jobs:
   post_news:
     runs-on: ubuntu-latest
-    env:
-      DODGERS_TWITTER_API_KEY: ${{ secrets.DODGERS_TWITTER_API_KEY }}
-      DODGERS_TWITTER_API_SECRET: ${{ secrets.DODGERS_TWITTER_API_SECRET }}
-      DODGERS_TWITTER_ACCESS_TOKEN: ${{ secrets.DODGERS_TWITTER_API_ACCESS_TOKEN }}
-      DODGERS_TWITTER_ACCESS_SECRET: ${{ secrets.DODGERS_TWITTER_API_ACCESS_SECRET }}
     steps:
       - uses: actions/checkout@v2
 
@@ -44,6 +39,11 @@ jobs:
           pip install -r requirements.txt
 
       - name: Run news fetch and tweet
+        env:
+          DODGERS_TWITTER_API_KEY: ${{ secrets.DODGERS_TWITTER_API_KEY }}
+          DODGERS_TWITTER_API_SECRET: ${{ secrets.DODGERS_TWITTER_API_SECRET }}
+          DODGERS_TWITTER_ACCESS_TOKEN: ${{ secrets.DODGERS_TWITTER_API_ACCESS_TOKEN }}
+          DODGERS_TWITTER_ACCESS_SECRET: ${{ secrets.DODGERS_TWITTER_API_ACCESS_SECRET }}
         run: |
           if [ "${{ github.event.inputs.force }}" = "true" ]; then
             python scripts/24_fetch_news.py --post-tweet --force

@@ -14,18 +14,11 @@ from botocore.exceptions import ClientError
 logging.basicConfig(level=logging.INFO, format='%(asctime)s - %(levelname)s - %(message)s')
 
 # --- Environment Variables & AWS/S3 ---
-DODGERS_TWITTER_API_KEY = os.environ.get("DODGERS_TWITTER_API_KEY")
-DODGERS_TWITTER_API_SECRET = os.environ.get("DODGERS_TWITTER_API_SECRET")
-DODGERS_TWITTER_ACCESS_TOKEN = os.environ.get("DODGERS_TWITTER_API_ACCESS_TOKEN")
-DODGERS_TWITTER_ACCESS_SECRET = os.environ.get("DODGERS_TWITTER_API_ACCESS_SECRET")
-
 is_github_actions = os.getenv('GITHUB_ACTIONS') == 'true'
 s3_bucket_name = "stilesdata.com"
 
 if is_github_actions:
     session = boto3.Session(
-        aws_access_key_id=os.environ.get("AWS_ACCESS_KEY_ID"),
-        aws_secret_access_key=os.environ.get("AWS_SECRET_ACCESS_KEY"),
         region_name="us-west-1"
     )
 else:
@@ -55,6 +48,11 @@ def set_last_tweet_date(date_str, tweet_type):
 
 def post_tweet(tweet_text, tweet_type):
     """Posts a tweet and updates the last tweet date on success."""
+    DODGERS_TWITTER_API_KEY = os.environ.get("DODGERS_TWITTER_API_KEY")
+    DODGERS_TWITTER_API_SECRET = os.environ.get("DODGERS_TWITTER_API_SECRET")
+    DODGERS_TWITTER_ACCESS_TOKEN = os.environ.get("DODGERS_TWITTER_API_ACCESS_TOKEN")
+    DODGERS_TWITTER_ACCESS_SECRET = os.environ.get("DODGERS_TWITTER_API_ACCESS_SECRET")
+    
     if not all([DODGERS_TWITTER_API_KEY, DODGERS_TWITTER_API_SECRET, DODGERS_TWITTER_ACCESS_TOKEN, DODGERS_TWITTER_ACCESS_SECRET]):
         logging.error("Twitter API credentials are not fully set. Cannot post tweet.")
         return
