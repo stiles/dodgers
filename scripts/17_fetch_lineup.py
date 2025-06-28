@@ -318,6 +318,35 @@ def post_tweet(tweet_text, current_date_str):
     except Exception as e:
         logging.error(f"Failed to post tweet: {e}")
 
+def fetch_schedule_data():
+    """
+    Fetches the Dodgers schedule from the JSON endpoint and finds the next game.
+    Returns the next game info or None if no upcoming game found.
+    """
+    schedule_url = "https://stilesdata.com/dodgers/data/standings/dodgers_schedule.json"
+    logging.info(f"Fetching schedule from: {schedule_url}")
+    
+    try:
+        response = requests.get(schedule_url, timeout=10)
+        response.raise_for_status()
+        schedule_data = response.json()
+        
+        # Find the next game where game_start is not "--"
+        for game in schedule_data:
+            if game.get('game_start') and game['game_start'] != "--":
+                logging.info(f"Found next game: {game['date']} vs {game['opp_name']} at {game['game_start']}")
+                return game
+        
+        logging.warning("No upcoming games found with valid start times")
+        return None
+        
+    except requests.exceptions.RequestException as e:
+        logging.error(f"Error fetching schedule from {schedule_url}: {e}")
+        return None
+    except Exception as e:
+        logging.error(f"Error parsing schedule data: {e}")
+        return None
+
 def main():
     parser = argparse.ArgumentParser(description="Fetch Dodgers lineup and optionally post pitching matchup to Twitter.")
     parser.add_argument("--post-tweet", action="store_true", help="Post the pitching matchup to Twitter if available.")
@@ -392,13 +421,23 @@ def main():
                 dodgers_pitcher = dodgers_pitcher.iloc[0]
                 opponent_pitcher = opponent_pitcher.iloc[0]
 
+                # Fetch schedule data to get game start time
+                next_game = fetch_schedule_data()
+
                 # Format date for the tweet
                 game_date = datetime.strptime(dodgers_pitcher['game_date'], '%Y-%m-%d').strftime('%B %-d')
 
                 line1 = f"The pitching matchup for {game_date} is set! 🌟"
                 line2 = f"{dodgers_pitcher['throwing_hand']} {dodgers_pitcher['player_name']} ({dodgers_pitcher['team_tricode']}) takes the mound against {opponent_pitcher['throwing_hand']} {opponent_pitcher['player_name']} ({opponent_pitcher['team_tricode']}). ⚾️🔥"
-                line3 = f"More: https://DodgersData.bot"
-                tweet_text = f"{line1}\n\n{line2}\n\n{line3}"
+                
+                # Add game start time if available
+                if next_game and next_game.get('game_start'):
+                    line3 = f"First pitch: {next_game['game_start']} (PT)."
+                    line4 = f"More: https://DodgersData.bot"
+                    tweet_text = f"{line1}\n\n{line2}\n\n{line3}"
+                else:
+                    line3 = f"More: https://DodgersData.bot"
+                    tweet_text = f"{line1}\n\n{line2}"
 
                 logging.info("Generated tweet text:")
                 print(tweet_text)
