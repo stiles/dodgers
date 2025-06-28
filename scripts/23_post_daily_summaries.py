@@ -70,6 +70,11 @@ def post_tweet(tweet_text, tweet_type):
     DODGERS_TWITTER_ACCESS_TOKEN = os.environ.get("DODGERS_TWITTER_API_ACCESS_TOKEN")
     DODGERS_TWITTER_ACCESS_SECRET = os.environ.get("DODGERS_TWITTER_API_ACCESS_SECRET")
 
+    logging.info(f"Checking for Twitter API Key: {DODGERS_TWITTER_API_KEY is not None}")
+    logging.info(f"Checking for Twitter API Secret: {DODGERS_TWITTER_API_SECRET is not None}")
+    logging.info(f"Checking for Twitter Access Token: {DODGERS_TWITTER_ACCESS_TOKEN is not None}")
+    logging.info(f"Checking for Twitter Access Secret: {DODGERS_TWITTER_ACCESS_SECRET is not None}")
+
     if not all([DODGERS_TWITTER_API_KEY, DODGERS_TWITTER_API_SECRET, DODGERS_TWITTER_ACCESS_TOKEN, DODGERS_TWITTER_ACCESS_SECRET]):
         logging.error("Twitter API credentials are not fully set. Cannot post tweet.")
         return
