@@ -190,9 +190,9 @@
     "height":"6' 4\"",
     "weight":"200",
     "dob":"06\/24\/2002",
-    "status":"IL-60",
-    "is_minors":false,
-    "is_il":true,
+    "status":"MINORS",
+    "is_minors":true,
+    "is_il":false,
     "is_active_roster":false,
     "is_40_man":true,
     "slug":"edgardo-henriquez"
