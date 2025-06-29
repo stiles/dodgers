@@ -46,10 +46,10 @@
     "height":"6' 2\"",
     "weight":"195",
     "dob":"04\/22\/1997",
-    "status":"MINORS",
-    "is_minors":true,
+    "status":"ACTIVE",
+    "is_minors":false,
     "is_il":false,
-    "is_active_roster":false,
+    "is_active_roster":true,
     "is_40_man":true,
     "slug":"noah-davis"
   },
@@ -106,24 +106,6 @@
     "is_active_roster":false,
     "is_40_man":true,
     "slug":"nick-frasso"
-  },
-  {
-    "player_id":"472610",
-    "thumb_url":"https:\/\/img.mlbstatic.com\/mlb-photos\/image\/upload\/d_people:generic:headshot:silo:current.png\/r_max\/q_auto:best\/v1\/people\/472610\/headshot\/silo\/current",
-    "name":"Luis García",
-    "player_url":"\/player\/472610",
-    "jersey":"57",
-    "position_group":"Pitchers",
-    "bat_throw":"R\/R",
-    "height":"6' 2\"",
-    "weight":"240",
-    "dob":"01\/30\/1987",
-    "status":"ACTIVE",
-    "is_minors":false,
-    "is_il":false,
-    "is_active_roster":true,
-    "is_40_man":true,
-    "slug":"luis-garcia"
   },
   {
     "player_id":"607192",
