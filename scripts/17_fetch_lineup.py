@@ -26,31 +26,19 @@ logging.basicConfig(level=logging.INFO, format='%(asctime)s - %(levelname)s - %(
 # Determine if running in a GitHub Actions environment
 is_github_actions = os.getenv('GITHUB_ACTIONS') == 'true'
 
-# Twitter API credentials from environment variables
-DODGERS_TWITTER_API_KEY = os.environ.get("DODGERS_TWITTER_API_KEY")
-DODGERS_TWITTER_API_SECRET = os.environ.get("DODGERS_TWITTER_API_SECRET")
-DODGERS_TWITTER_API_BEARER = os.environ.get("DODGERS_TWITTER_API_BEARER")
-DODGERS_TWITTER_API_ACCESS_TOKEN = os.environ.get("DODGERS_TWITTER_API_ACCESS_TOKEN")
-DODGERS_TWITTER_API_ACCESS_SECRET = os.environ.get("DODGERS_TWITTER_API_ACCESS_SECRET")
-
 # AWS credentials and session initialization
-aws_key_id = os.environ.get("AWS_ACCESS_KEY_ID")
-aws_secret_key = os.environ.get("AWS_SECRET_ACCESS_KEY")
 aws_region = "us-west-1"
 s3_bucket_name = "stilesdata.com" # Consistent with other scripts
 
 # Conditional AWS session creation based on the environment
 if is_github_actions:
     session = boto3.Session(
-        aws_access_key_id=aws_key_id,
-        aws_secret_access_key=aws_secret_key,
         region_name=aws_region
     )
     logging.info("Running in GitHub Actions environment. Using environment variables for AWS credentials.")
 else:
     profile_name = os.environ.get("AWS_PERSONAL_PROFILE", "haekeo")
     session = boto3.Session(profile_name=profile_name, region_name=aws_region)
-    logging.info(f"Running locally. Using AWS profile: {profile_name}")
 
 s3_resource = session.resource("s3")
 
@@ -301,7 +289,12 @@ def post_tweet(tweet_text, current_date_str):
     """
     Posts a tweet to the authenticated Twitter account.
     """
-    if not all([DODGERS_TWITTER_API_KEY, DODGERS_TWITTER_API_SECRET, DODGERS_TWITTER_API_ACCESS_TOKEN, DODGERS_TWITTER_API_ACCESS_SECRET]):
+    DODGERS_TWITTER_API_KEY = os.environ.get("DODGERS_TWITTER_API_KEY")
+    DODGERS_TWITTER_API_SECRET = os.environ.get("DODGERS_TWITTER_API_SECRET")
+    DODGERS_TWITTER_TOKEN = os.environ.get("DODGERS_TWITTER_TOKEN")
+    DODGERS_TWITTER_TOKEN_SECRET = os.environ.get("DODGERS_TWITTER_TOKEN_SECRET")
+
+    if not all([DODGERS_TWITTER_API_KEY, DODGERS_TWITTER_API_SECRET, DODGERS_TWITTER_TOKEN, DODGERS_TWITTER_TOKEN_SECRET]):
         logging.error("Twitter API credentials are not fully set in environment variables. Cannot post tweet.")
         return
 
@@ -309,8 +302,8 @@ def post_tweet(tweet_text, current_date_str):
         client = tweepy.Client(
             consumer_key=DODGERS_TWITTER_API_KEY,
             consumer_secret=DODGERS_TWITTER_API_SECRET,
-            access_token=DODGERS_TWITTER_API_ACCESS_TOKEN,
-            access_token_secret=DODGERS_TWITTER_API_ACCESS_SECRET
+            access_token=DODGERS_TWITTER_TOKEN,
+            access_token_secret=DODGERS_TWITTER_TOKEN_SECRET
         )
         response = client.create_tweet(text=tweet_text)
         logging.info(f"Tweet posted successfully: {response.data['id']}")

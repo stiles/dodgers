@@ -13,15 +13,15 @@ jobs:
         working-directory: ${{github.workspace}}  # This sets the working directory for all run commands
     
     steps:
-    - uses: actions/checkout@v2
+    - uses: actions/checkout@v4
     
     - name: Set up Python
-      uses: actions/setup-python@v2
+      uses: actions/setup-python@v5
       with:
         python-version: '3.9'
 
     - name: Set up AWS Credentials
-      uses: aws-actions/configure-aws-credentials@v1
+      uses: aws-actions/configure-aws-credentials@v4
       with:
         aws-access-key-id: ${{ secrets.AWS_ACCESS_KEY_ID }}
         aws-secret-access-key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
@@ -80,9 +80,11 @@ jobs:
 
     - name: Build Jekyll site
       run: bundle exec jekyll build
+      env:
+        TZ: America/Los_Angeles
 
     - name: Deploy to GitHub Pages
-      uses: peaceiris/actions-gh-pages@v3
+      uses: peaceiris/actions-gh-pages@v4
       with:
         github_token: ${{ secrets.GITHUB_TOKEN }}
         publish_dir: ./_site  # The output folder of Jekyll build
@@ -92,7 +94,7 @@ jobs:
       id: changes
       run: |
         git add .
-        git diff --staged --quiet || echo "::set-output name=changes::true"
+        git diff --staged --quiet || echo "changes=true" >> $GITHUB_OUTPUT
   
     - name: Commit updated files
       if: steps.changes.outputs.changes == 'true'

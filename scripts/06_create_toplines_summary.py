@@ -140,7 +140,11 @@ standings_last_season = standings_past.query(f"gm <= {game_number} and year=='{l
 standings["rank_ordinal"] = standings["rank"].map(to_ordinal)
 standings_division_rank = standings['rank'].iloc[0]
 standings_division_rank_ordinal = standings['rank_ordinal'].iloc[0]
-standings_division_rank_games_back = standings['gb'].iloc[0]
+games_back_raw = standings['gb'].iloc[0]
+if isinstance(games_back_raw, float) and games_back_raw.is_integer():
+    standings_division_rank_games_back = int(games_back_raw)
+else:
+    standings_division_rank_games_back = games_back_raw
 
 # Batting
 batting = read_parquet_s3(batting_url)
