@@ -231,9 +231,56 @@ def calculate_projected_wins(current_wins, games_played_so_far, total_season_gam
     projected_wins_val = round(win_rate * total_season_games)
     return projected_wins_val
 
+def get_live_last_game_summary():
+    """Fetches live game data to find the last completed game and returns a summary fragment."""
+    headers = {
+        "User-Agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/91.0.4472.114 Safari/537.36"
+    }
+    
+    # Fetch data for today and yesterday to find the last completed game
+    today = date.today()
+    yesterday = today - timedelta(days=1)
+    
+    url = f"https://statsapi.mlb.com/api/v1/schedule?sportId=1&teamId=119&startDate={yesterday.strftime('%Y-%m-%d')}&endDate={today.strftime('%Y-%m-%d')}&hydrate=team,linescore"
+    
+    try:
+        response = requests.get(url, headers=headers)
+        response.raise_for_status()
+        data = response.json()
+        
+        # Iterate backwards through dates and games to find the most recent final game
+        for day in reversed(data.get('dates', [])):
+            for game in reversed(day.get('games', [])):
+                if game['status']['abstractGameState'] == 'Final':
+                    teams = game['teams']
+                    
+                    if teams.get('away', {}).get('team', {}).get('abbreviation') == 'LAD':
+                        home_away = "away"
+                        result_clean = "win" if teams['away'].get('isWinner') else "loss"
+                        r = teams['away'].get('score', 'N/A')
+                        ra = teams['home'].get('score', 'N/A')
+                        opp_name = teams.get('home', {}).get('team', {}).get('name', 'N/A')
+                    else:
+                        home_away = "home"
+                        result_clean = "win" if teams['home'].get('isWinner') else "loss"
+                        r = teams['home'].get('score', 'N/A')
+                        ra = teams['away'].get('score', 'N/A')
+                        opp_name = teams.get('away', {}).get('team', {}).get('name', 'N/A')
+                        
+                    return (
+                        f"The last game was a <span class='highlight'>{r}-{ra}</span> "
+                        f"{home_away} <span class='highlight'>{result_clean}</span> "
+                        f"against the {opp_name}."
+                    )
+        return "The last game's result is not yet available."
+        
+    except (requests.exceptions.RequestException, KeyError, IndexError) as e:
+        logging.error(f"Could not fetch or parse live last game data: {e}")
+        return "Could not retrieve the result of the last game."
+
+
 def generate_summary(
     update_date_str,
-    last_game_info_series,  # Expects a Pandas Series, e.g., standings_now.iloc[0]
 ):
     """Generates a narrative summary of the team's current status using live data."""
     # Headers for MLB API
@@ -273,14 +320,7 @@ def generate_summary(
         return "Summary could not be generated due to a data fetching issue."
 
     # Handle cases where last_game_info_series might be None or empty if no games played
-    if last_game_info_series is None or last_game_info_series.empty:
-        last_game_summary_fragment = "The season is yet to begin or data is not available for the last game."
-    else:
-        last_game_summary_fragment = (
-            f"The last game was a <span class='highlight'>{last_game_info_series.get('r', 'N/A')}-{last_game_info_series.get('ra', 'N/A')}</span> "
-            f"{last_game_info_series.get('home_away', 'N/A')} <span class='highlight'>{last_game_info_series.get('result_clean', 'N/A')}</span> "
-            f"against the {last_game_info_series.get('opp_name', 'N/A')} in front of <span class='highlight'>{last_game_info_series.get('attendance', 0):,}</span> fans."
-        )
+    last_game_summary_fragment = get_live_last_game_summary()
 
     summary = (
         f"<span class='highlight'>LOS ANGELES</span> <span class='updated'>({update_date_str})</span> — "
@@ -311,7 +351,6 @@ if not standings_now.empty:
 
 summary = generate_summary(
     update_date, 
-    last_game_data, # Use the potentially None series
 )
 
 summary_data = [
