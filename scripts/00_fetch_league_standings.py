@@ -51,6 +51,19 @@ s3_resource = session.resource("s3")
 
 CURRENT_YEAR = datetime.now().year
 
+def format_games_back(gb_value):
+    """Formats games back to be an int if a whole number, otherwise a float."""
+    try:
+        # Try to convert to a float first
+        gb_float = float(gb_value)
+        # Check if it's an integer
+        if gb_float.is_integer():
+            return int(gb_float)
+        return gb_float
+    except (ValueError, TypeError):
+        # Return original value if conversion fails (e.g., '-')
+        return gb_value
+
 def get_all_teams_standings_metrics() -> Optional[List[Dict[str, Any]]]:
     """
     Fetches MLB standings data for all teams.
@@ -82,9 +95,9 @@ def get_all_teams_standings_metrics() -> Optional[List[Dict[str, Any]]]:
                         "division_rank": team_record.get("divisionRank"),
                         "league_rank": team_record.get("leagueRank"),
                         "sport_rank": team_record.get("sportRank"),
-                        "games_back": team_record.get("gamesBack", "-"),
-                        "division_games_back": team_record.get("divisionGamesBack", "-"),
-                        "league_games_back": team_record.get("leagueGamesBack", "-"),
+                        "games_back": format_games_back(team_record.get("gamesBack", "-")),
+                        "division_games_back": format_games_back(team_record.get("divisionGamesBack", "-")),
+                        "league_games_back": format_games_back(team_record.get("leagueGamesBack", "-")),
                         "streak_type": team_record.get("streak", {}).get("streakType"),
                         "streak_number": team_record.get("streak", {}).get("streakNumber"),
                         "magic_number": team_record.get("magicNumber"),
