@@ -666,6 +666,24 @@
     "slug":"will-smith"
   },
   {
+    "player_id":"680769",
+    "thumb_url":"https:\/\/img.mlbstatic.com\/mlb-photos\/image\/upload\/d_people:generic:headshot:silo:current.png\/r_max\/q_auto:best\/v1\/people\/680769\/headshot\/silo\/current",
+    "name":"CJ Alexander",
+    "player_url":"\/player\/680769",
+    "jersey":"",
+    "position_group":"Infielders",
+    "bat_throw":"L\/R",
+    "height":"6' 4\"",
+    "weight":"215",
+    "dob":"07\/17\/1996",
+    "status":"MINORS",
+    "is_minors":true,
+    "is_il":false,
+    "is_active_roster":false,
+    "is_40_man":true,
+    "slug":"cj-alexander"
+  },
+  {
     "player_id":"605141",
     "thumb_url":"https:\/\/img.mlbstatic.com\/mlb-photos\/image\/upload\/d_people:generic:headshot:silo:current.png\/r_max\/q_auto:best\/v1\/people\/605141\/headshot\/silo\/current",
     "name":"Mookie Betts",
@@ -784,10 +802,10 @@
     "height":"5' 10\"",
     "weight":"215",
     "dob":"08\/25\/1990",
-    "status":"ACTIVE",
+    "status":"IL-10",
     "is_minors":false,
-    "is_il":false,
-    "is_active_roster":true,
+    "is_il":true,
+    "is_active_roster":false,
     "is_40_man":true,
     "slug":"max-muncy"
   },
@@ -808,24 +826,6 @@
     "is_active_roster":true,
     "is_40_man":true,
     "slug":"miguel-rojas"
-  },
-  {
-    "player_id":"672642",
-    "thumb_url":"https:\/\/img.mlbstatic.com\/mlb-photos\/image\/upload\/d_people:generic:headshot:silo:current.png\/r_max\/q_auto:best\/v1\/people\/672642\/headshot\/silo\/current",
-    "name":"Steward Berroa",
-    "player_url":"\/player\/672642",
-    "jersey":"",
-    "position_group":"Outfielders",
-    "bat_throw":"S\/R",
-    "height":"5' 9\"",
-    "weight":"178",
-    "dob":"06\/05\/1999",
-    "status":"MINORS",
-    "is_minors":true,
-    "is_il":false,
-    "is_active_roster":false,
-    "is_40_man":true,
-    "slug":"steward-berroa"
   },
   {
     "player_id":"624424",
@@ -910,10 +910,10 @@
     "height":"5' 10\"",
     "weight":"169",
     "dob":"02\/15\/1999",
-    "status":"MINORS",
-    "is_minors":true,
+    "status":"ACTIVE",
+    "is_minors":false,
     "is_il":false,
-    "is_active_roster":false,
+    "is_active_roster":true,
     "is_40_man":true,
     "slug":"esteury-ruiz"
   }
