@@ -1,8 +1,14 @@
 ---
 layout: default
 title: About | LA Dodgers stats dashboard
+description: Learn about the Dodgers Data Bot dashboard, an auto-updating tracker for Los Angeles Dodgers stats and performance.
 headline: About this project
 permalink: /about/
+canonical_url: https://dodgersdata.bot/about/
+header:
+  og_image: /assets/images/meta_card.png
+twitter:
+  card: summary_large_image
 ---
 
 <div class="container">

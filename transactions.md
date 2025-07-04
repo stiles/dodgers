@@ -3,6 +3,11 @@ layout: default
 title: Transactions | Los Angeles Dodgers moves & trades
 description: An auto-updating log of recent Dodgers player transactions.
 permalink: /transactions/
+canonical_url: https://dodgersdata.bot/transactions/
+header:
+  og_image: /assets/images/meta_card.png
+twitter:
+  card: summary_large_image
 ---
 
 <div class="container">

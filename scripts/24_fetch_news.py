@@ -225,7 +225,7 @@ def fetch_mlb_news():
 
 def format_news_tweet(articles):
     """Formats a list of articles into a tweet."""
-    tweet_lines = ["Dodgers news update:"]
+    tweet_lines = []
     for article in articles:
         if article and article.get('title') and article.get('url'):
             tweet_lines.append(f"- {article['source']}: {article['title']} {article['url']}")

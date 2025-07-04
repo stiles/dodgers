@@ -3,6 +3,11 @@ layout: default
 title: Current roster | Los Angeles Dodgers player details
 description: Full Dodgers roster, including active and 40-man players, with photos and details.
 permalink: /roster/
+canonical_url: https://dodgersdata.bot/roster/
+header:
+  og_image: /assets/images/meta_card.png
+twitter:
+  card: summary_large_image
 ---
 
 <div class="container">
