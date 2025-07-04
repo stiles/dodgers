@@ -1,0 +1,52 @@
+name: Post Transaction Updates
+
+on:
+  schedule:
+    # Runs every 2 hours during daytime hours PT (converted to UTC)
+    - cron: '0 14,16,18,20,22,0,2 * * *'  # 7 AM, 9 AM, 11 AM, 1 PM, 3 PM, 5 PM, 7 PM PT
+  workflow_dispatch:
+    inputs:
+      force:
+        description: 'Force posting regardless of time constraints'
+        required: false
+        default: 'false'
+        type: choice
+        options:
+          - 'false'
+          - 'true'
+
+jobs:
+  post_transactions:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.9'
+
+      - name: Set up AWS Credentials
+        uses: aws-actions/configure-aws-credentials@v4
+        with:
+          aws-access-key-id: ${{ secrets.AWS_ACCESS_KEY_ID }}
+          aws-secret-access-key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
+          aws-region: us-west-1
+
+      - name: Install dependencies
+        run: |
+          python -m pip install --upgrade pip
+          pip install -r requirements.txt
+
+      - name: Run transaction fetch and tweet
+        env:
+          DODGERS_TWITTER_API_KEY: ${{ secrets.DODGERS_TWITTER_API_KEY }}
+          DODGERS_TWITTER_API_SECRET: ${{ secrets.DODGERS_TWITTER_API_SECRET }}
+          DODGERS_TWITTER_TOKEN: ${{ secrets.DODGERS_TWITTER_TOKEN }}
+          DODGERS_TWITTER_TOKEN_SECRET: ${{ secrets.DODGERS_TWITTER_TOKEN_SECRET }}
+        run: |
+          if [ "${{ github.event.inputs.force }}" = "true" ]; then
+            python scripts/25_post_transactions.py --post-tweet --force
+          else
+            python scripts/25_post_transactions.py --post-tweet
+          fi 
