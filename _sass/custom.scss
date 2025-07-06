@@ -356,12 +356,14 @@ p {
   background: c.$dodger-blue;
   padding: 1px 4px;
   color: white;
+  border-radius: 4px;
 }
 
 .loss {
   background: c.$dodger-red;
   padding: 1px 4px;
   color: white;
+  border-radius: 4px;
 }
 
 td .home-icon {
@@ -1061,7 +1063,7 @@ hr.style-eight:after {
 h3.visual-subhead {
   margin: 10px 0px 20px 0px; // Reduced margins
   font-family: 'Roboto Slab', serif;
-  font-size: 1.1em;
+  font-size: 1.2em;
   color: #666;
 }
 
@@ -2117,8 +2119,119 @@ label {
   }
 }
 
-// Nav on mobile
-@media (max-width: ($large - 1px)) {
+// Custom mobile navigation - completely override theme behavior below 500px
+@media (max-width: 500px) {
+  // Hide all visible navigation links
+  .masthead .greedy-nav .visible-links,
+  .masthead__menu .greedy-nav .visible-links,
+  .greedy-nav .visible-links {
+    display: none !important;
+  }
+  
+  // Add custom mobile menu toggle
+  .masthead .greedy-nav {
+    position: relative;
+    
+    // Custom mobile toggle button
+    &:after {
+      content: '';
+      position: absolute;
+      right: 1rem;
+      top: 50%;
+      transform: translateY(-50%);
+      width: 24px;
+      height: 18px;
+      background: linear-gradient(to bottom, 
+        white 0%, white 20%, 
+        transparent 20%, transparent 40%, 
+        white 40%, white 60%, 
+        transparent 60%, transparent 80%, 
+        white 80%, white 100%);
+      cursor: pointer;
+      z-index: 1001;
+    }
+  }
+  
+  // Custom mobile menu
+  .custom-mobile-menu {
+    position: absolute;
+    top: 100%;
+    right: 0;
+    margin-top: 15px;
+    padding: 5px;
+    border: 1px solid #005a9c;
+    border-radius: 4px;
+    background: #005a9c;
+    box-shadow: 0 2px 4px 0 rgba(0, 0, 0, .16), 0 2px 10px 0 rgba(0, 0, 0, .12);
+    z-index: 1000;
+    min-width: 200px;
+    display: none;
+    
+    &.show {
+      display: block !important;
+    }
+    
+    // Arrow pointing up
+    &:before {
+      content: "";
+      position: absolute;
+      top: -11px;
+      right: 10px;
+      width: 0;
+      border-style: solid;
+      border-width: 0 10px 10px;
+      border-color: #005a9c transparent;
+      display: block;
+      z-index: 0;
+    }
+
+    &:after {
+      content: "";
+      position: absolute;
+      top: -10px;
+      right: 10px;
+      width: 0;
+      border-style: solid;
+      border-width: 0 10px 10px;
+      border-color: #005a9c transparent;
+      display: block;
+      z-index: 1;
+    }
+    
+    ul {
+      list-style: none;
+      margin: 0;
+      padding: 0;
+      
+      li {
+        display: block;
+        border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+        
+        &:last-child {
+          border-bottom: none;
+        }
+        
+        a {
+          display: block;
+          margin: 0;
+          padding: 10px 20px;
+          color: white;
+          font-family: "Roboto Slab", serif;
+          font-size: 16px;
+          text-decoration: none;
+          
+          &:hover {
+            color: rgb(182, 181, 181);
+            background: rgba(255, 255, 255, 0.1);
+          }
+        }
+      }
+    }
+  }
+}
+
+// Regular responsive behavior for larger screens
+@media (min-width: 501px) and (max-width: ($large - 1px)) {
   .greedy-nav {
     .visible-links {
       flex-wrap: wrap;
