@@ -1,22 +1,22 @@
 stat_label,stat,value,category,context_value,context_value_label
-Wins,wins,56,standings,54,This point last season
-Losses,losses,33,standings,35,This point last season
-Record,record,56-33,standings,54-35,This point last season
-Win percentage,win_pct,63%,standings,61%,This point last season
+Wins,wins,56,standings,55,This point last season
+Losses,losses,34,standings,35,This point last season
+Record,record,56-34,standings,55-35,This point last season
+Win percentage,win_pct,62%,standings,61%,This point last season
 Games up/back,games_up_back,8,standings,1st,Division rank
-Avg. home attendance,mean_attendance,"50,838",standings,48,Home games this season
-Runs,runs,495,standings,1st,League rank
-Runs against,runs_against,412,standings,342,This point last season
-Run differential,run_differential,83,standings,109,This point last season
+Avg. home attendance,mean_attendance,"50,816",standings,49,Home games this season
+Runs,runs,499,standings,1st,League rank
+Runs against,runs_against,418,standings,345,This point last season
+Run differential,run_differential,81,standings,111,This point last season
 Batting average,batting_average,.261,batting,.253,Last decade average
 Home runs,home_runs,141,batting,1st,League rank
 Home runs/game,home_runs_game,1.57,batting,1.42,Last decade average
 On-base percentage,on_base_pct,.337,batting,.333,Last decade average
 Stolen bases,stolen_bases,49,batting,21st,League rank
-Stolen bases/game,stolen_bases_game,0.55,batting,0.84,Rate all last season
+Stolen bases/game,stolen_bases_game,0.54,batting,0.84,Rate all last season
 Strikeouts,strikeouts,794,pitching,5th,League rank
 Walks,walks,313,pitching,6th,League rank
 ERA,era,4.32,pitching,23rd,League rank
-Last updated,update_time,"July 6, 2025, 1:09 AM PT",summary,,
+Last updated,update_time,"July 6, 2025, 5:11 AM PT",summary,,
 Team summary,summary,"<span class='highlight'>LOS ANGELES</span> <span class='updated'>(July 6)</span> — After <span class='highlight'>90</span> games this season, the Dodgers are in <span class='highlight'>1st</span> place in the National League West division. The team has compiled a <span class='highlight'>56-34</span> record, winning <span class='highlight'>62%</span> of its games so far. The last game was a <span class='highlight'>4-6</span> home <span class='highlight'>loss</span> against the Houston Astros. They've won <span class='highlight'>7 of the last 10</span> and are on pace to win at least <span class='highlight'>101</span> games in the regular season.",summary,,
 Last game result,last_game_result,loss,summary,,
