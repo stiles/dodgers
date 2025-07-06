@@ -92,6 +92,7 @@ def analyze_pitches(file_path):
             "pitch_type": row['pitch_name'],
             "velocity_mph": row['pitch_velocity'],
             "date": row['game_date'].strftime('%Y-%m-%d'),
+            "date_formatted": row['game_date'].strftime('%B %-d, %Y'),
             "video_link": f"https://baseballsavant.mlb.com/sporty-videos?playId={row['pitch_id']}"
         }
         for _, row in df_worst.iterrows()

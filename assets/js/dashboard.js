@@ -3106,6 +3106,9 @@ if (document.readyState === 'loading') {
           <div class="call-details">
             ${call.batter} vs. ${call.pitcher} &bull; ${call.velocity_mph.toFixed(0)} mph &bull; <em>${call.pitch_type}</em>
           </div>
+          <div class="call-date">
+            ${call.date_formatted || call.date}
+          </div>
         `);
       });
       } else {
