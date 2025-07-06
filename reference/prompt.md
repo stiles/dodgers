@@ -1,6 +1,6 @@
 # .prompt.md
 
-## 🧠 Project Overview
+## Project Overview
 This project is the **Dodgers Data Bot** — a daily auto-updating dashboard and tweet engine built in Python + Jekyll.
 
 It fetches Dodgers data (game logs, lineups, standings, batting, pitching, projections) from MLB sources and processes them into clean visualizations and structured datasets. It uses GitHub Actions to regenerate the site and post summaries on social media.
