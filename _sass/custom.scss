@@ -1061,7 +1061,7 @@ hr.style-eight:after {
 h3.visual-subhead {
   margin: 10px 0px 20px 0px; // Reduced margins
   font-family: 'Roboto Slab', serif;
-  font-size: 1em;
+  font-size: 1.1em;
   color: #666;
 }
 
@@ -1917,12 +1917,12 @@ label {
   padding-top: 0;
 }
 
-.call-distance {
+.call-headline {
   // font-family: 'Roboto Slab', serif;
   font-size: 15px;
   font-weight: 600;
   color: #666;
-  margin-bottom: 6px;
+  // margin-bottom: 6px;
   display: flex;
   align-items: center;
   gap: 10px;
@@ -1939,7 +1939,7 @@ label {
 }
 
 .video-link:hover {
-  background-color: rgba(0, 90, 156, 0.1);
+  background-color: rgba(255, 255, 255, 0.1);
   text-decoration: none;
   transform: scale(1.1);
 }
@@ -1950,9 +1950,9 @@ label {
 
 .call-details {
   font-family: 'Roboto', sans-serif;
-  font-size: 14px;
-  color: #666;
-  line-height: 1.5;
+  font-size: 12px;
+  color: #999;
+  // line-height: 1.5;
 }
 
 .good-calls-label {
@@ -2128,4 +2128,12 @@ label {
       display: block;
     }
   }
+}
+
+.call-date {
+  font-family: 'Roboto', sans-serif;
+  font-size: 12px;
+  color: #999;
+  font-weight: 300;
+  margin-bottom: -10px;
 }

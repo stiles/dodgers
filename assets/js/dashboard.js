@@ -3094,21 +3094,35 @@ if (document.readyState === 'loading') {
       data.worst_calls_of_season.slice(0, 4).forEach(call => { // Limit to top 5 worst calls
         const listItem = worstCallsList.append('li');
         listItem.html(`
-          <div class="call-distance">
-            ${call.distance_inches.toFixed(2)}" from zone
-            <a href="${call.video_link}" target="_blank" class="video-link" aria-label="Watch video replay">
-              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                <path d="M4 6.5C4 5.11929 5.11929 4 6.5 4H17.5C18.8807 4 20 5.11929 20 6.5V17.5C20 18.8807 18.8807 20 17.5 20H6.5C5.11929 20 4 18.8807 4 17.5V6.5Z" stroke="#ef3e42" stroke-width="1.5" fill="none"/>
-                <path d="M14.5 12L10 14.5V9.5L14.5 12Z" fill="#ef3e42"/>
-              </svg>
-            </a>
-          </div>
-          <div class="call-details">
-            ${call.batter} vs. ${call.pitcher} &bull; ${call.velocity_mph.toFixed(0)} mph &bull; <em>${call.pitch_type}</em>
-          </div>
           <div class="call-date">
             ${call.date_formatted || call.date}
           </div>
+          <div class="call-headline">
+          ${call.batter} vs. ${call.pitcher}
+            <a href="${call.video_link}" target="_blank" class="video-link" aria-label="Watch video replay">
+              <svg width="32" height="32" viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <!-- Outer red circle with white fill -->
+            <circle cx="32" cy="32" r="30" fill="#ffffff" stroke="#ef3e42" stroke-width="4"/>
+            
+            <!-- Inner soft circle for subtle elevation -->
+            <circle cx="32" cy="32" r="28" fill="#fefefe" filter="url(#shadow)" />
+
+            <!-- Play icon in the center -->
+            <path d="M26 20L44 32L26 44V20Z" fill="#ef3e42"/>
+
+            <!-- Drop shadow definition -->
+            <defs>
+              <filter id="shadow" x="0" y="0" width="64" height="64" filterUnits="userSpaceOnUse">
+                <feDropShadow dx="0" dy="2" stdDeviation="2" flood-color="#000000" flood-opacity="0.1"/>
+              </filter>
+            </defs>
+          </svg>
+            </a>
+          </div>
+          <div class="call-details">
+             <b>${call.distance_inches.toFixed(2)}"</b> from zone &bull; <b>${call.velocity_mph.toFixed(0)}</b> mph &bull; <em>${call.pitch_type}</em>
+          </div>
+          
         `);
       });
       } else {
