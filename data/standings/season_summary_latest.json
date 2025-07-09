@@ -74,7 +74,7 @@
     {
         "stat_label":"Batting average",
         "stat":"batting_average",
-        "value":".260",
+        "value":".258",
         "category":"batting",
         "context_value":".253",
         "context_value_label":"Last decade average"
@@ -82,9 +82,9 @@
     {
         "stat_label":"Home runs",
         "stat":"home_runs",
-        "value":141,
+        "value":142,
         "category":"batting",
-        "context_value":"1st",
+        "context_value":"2nd",
         "context_value_label":"League rank"
     },
     {
@@ -98,7 +98,7 @@
     {
         "stat_label":"On-base percentage",
         "stat":"on_base_pct",
-        "value":".335",
+        "value":".333",
         "category":"batting",
         "context_value":".333",
         "context_value_label":"Last decade average"
@@ -124,7 +124,7 @@
         "stat":"strikeouts",
         "value":"808",
         "category":"pitching",
-        "context_value":"6th",
+        "context_value":"5th",
         "context_value_label":"League rank"
     },
     {
@@ -146,7 +146,7 @@
     {
         "stat_label":"Last updated",
         "stat":"update_time",
-        "value":"July 8, 2025, 4:07 PM PT",
+        "value":"July 9, 2025, 1:10 AM PT",
         "category":"summary",
         "context_value":"",
         "context_value_label":""
@@ -154,7 +154,7 @@
     {
         "stat_label":"Team summary",
         "stat":"summary",
-        "value":"<span class='highlight'>LOS ANGELES<\/span> <span class='updated'>(July 8)<\/span> \u2014 After <span class='highlight'>92<\/span> games this season, the Dodgers are in <span class='highlight'>1st<\/span> place in the National League West division. The team has compiled a <span class='highlight'>56-36<\/span> record, winning <span class='highlight'>61%<\/span> of its games so far. The last game was a <span class='highlight'>1-9<\/span> away <span class='highlight'>loss<\/span> against the Milwaukee Brewers. They've won <span class='highlight'>5 of the last 10<\/span> and are on pace to win at least <span class='highlight'>99<\/span> games in the regular season.",
+        "value":"<span class='highlight'>LOS ANGELES<\/span> <span class='updated'>(July 9)<\/span> \u2014 After <span class='highlight'>93<\/span> games this season, the Dodgers are in <span class='highlight'>1st<\/span> place in the National League West division. The team has compiled a <span class='highlight'>56-37<\/span> record, winning <span class='highlight'>60%<\/span> of its games so far. The last game was a <span class='highlight'>1-3<\/span> away <span class='highlight'>loss<\/span> against the Milwaukee Brewers. They've won <span class='highlight'>4 of the last 10<\/span> and are on pace to win at least <span class='highlight'>98<\/span> games in the regular season.",
         "category":"summary",
         "context_value":"",
         "context_value_label":""
