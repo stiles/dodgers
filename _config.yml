@@ -86,6 +86,10 @@ defaults:
     values:
       layout: default
 
+# Scripts
+after_footer_scripts:
+  - "/assets/js/mobile-nav.js"
+
 # Footer
 footer:
   links:
