@@ -605,19 +605,19 @@
         },
         {
             "game_number": 101,
-            "mean_projected_wins": 60.2,
+            "mean_projected_wins": 60.1,
             "lower_ci_wins": 58,
-            "upper_ci_wins": 63
+            "upper_ci_wins": 62
         },
         {
             "game_number": 102,
-            "mean_projected_wins": 60.8,
+            "mean_projected_wins": 60.7,
             "lower_ci_wins": 58,
             "upper_ci_wins": 63
         },
         {
             "game_number": 103,
-            "mean_projected_wins": 61.4,
+            "mean_projected_wins": 61.3,
             "lower_ci_wins": 58,
             "upper_ci_wins": 64
         },
@@ -684,7 +684,7 @@
         {
             "game_number": 114,
             "mean_projected_wins": 67.9,
-            "lower_ci_wins": 63,
+            "lower_ci_wins": 64,
             "upper_ci_wins": 72
         },
         {
@@ -696,7 +696,7 @@
         {
             "game_number": 116,
             "mean_projected_wins": 69.1,
-            "lower_ci_wins": 64,
+            "lower_ci_wins": 65,
             "upper_ci_wins": 73
         },
         {
@@ -708,60 +708,60 @@
         {
             "game_number": 118,
             "mean_projected_wins": 70.3,
-            "lower_ci_wins": 65,
-            "upper_ci_wins": 75
-        },
-        {
-            "game_number": 119,
-            "mean_projected_wins": 70.9,
             "lower_ci_wins": 66,
             "upper_ci_wins": 75
         },
         {
+            "game_number": 119,
+            "mean_projected_wins": 70.8,
+            "lower_ci_wins": 66,
+            "upper_ci_wins": 76
+        },
+        {
             "game_number": 120,
-            "mean_projected_wins": 71.5,
+            "mean_projected_wins": 71.4,
             "lower_ci_wins": 66,
             "upper_ci_wins": 76
         },
         {
             "game_number": 121,
-            "mean_projected_wins": 72.1,
+            "mean_projected_wins": 72.0,
             "lower_ci_wins": 67,
             "upper_ci_wins": 77
         },
         {
             "game_number": 122,
-            "mean_projected_wins": 72.7,
+            "mean_projected_wins": 72.6,
             "lower_ci_wins": 67,
             "upper_ci_wins": 78
         },
         {
             "game_number": 123,
-            "mean_projected_wins": 73.3,
+            "mean_projected_wins": 73.2,
             "lower_ci_wins": 68,
             "upper_ci_wins": 78
         },
         {
             "game_number": 124,
-            "mean_projected_wins": 73.9,
+            "mean_projected_wins": 73.8,
             "lower_ci_wins": 68,
             "upper_ci_wins": 79
         },
         {
             "game_number": 125,
-            "mean_projected_wins": 74.5,
+            "mean_projected_wins": 74.4,
             "lower_ci_wins": 69,
             "upper_ci_wins": 80
         },
         {
             "game_number": 126,
-            "mean_projected_wins": 75.1,
-            "lower_ci_wins": 70,
+            "mean_projected_wins": 75.0,
+            "lower_ci_wins": 69,
             "upper_ci_wins": 80
         },
         {
             "game_number": 127,
-            "mean_projected_wins": 75.7,
+            "mean_projected_wins": 75.6,
             "lower_ci_wins": 70,
             "upper_ci_wins": 81
         },
@@ -780,7 +780,7 @@
         {
             "game_number": 130,
             "mean_projected_wins": 77.4,
-            "lower_ci_wins": 71,
+            "lower_ci_wins": 72,
             "upper_ci_wins": 83
         },
         {
@@ -829,7 +829,7 @@
             "game_number": 138,
             "mean_projected_wins": 82.2,
             "lower_ci_wins": 76,
-            "upper_ci_wins": 89
+            "upper_ci_wins": 88
         },
         {
             "game_number": 139,
@@ -847,7 +847,7 @@
             "game_number": 141,
             "mean_projected_wins": 84.0,
             "lower_ci_wins": 77,
-            "upper_ci_wins": 91
+            "upper_ci_wins": 90
         },
         {
             "game_number": 142,
@@ -865,7 +865,7 @@
             "game_number": 144,
             "mean_projected_wins": 85.8,
             "lower_ci_wins": 79,
-            "upper_ci_wins": 93
+            "upper_ci_wins": 92
         },
         {
             "game_number": 145,
@@ -883,7 +883,7 @@
             "game_number": 147,
             "mean_projected_wins": 87.6,
             "lower_ci_wins": 81,
-            "upper_ci_wins": 95
+            "upper_ci_wins": 94
         },
         {
             "game_number": 148,
@@ -972,7 +972,7 @@
         {
             "game_number": 162,
             "mean_projected_wins": 96.5,
-            "lower_ci_wins": 89,
+            "lower_ci_wins": 88,
             "upper_ci_wins": 104
         }
     ],
