@@ -36,24 +36,6 @@
     "slug":"ben-casparius"
   },
   {
-    "player_id":"663562",
-    "thumb_url":"https:\/\/img.mlbstatic.com\/mlb-photos\/image\/upload\/d_people:generic:headshot:silo:current.png\/r_max\/q_auto:best\/v1\/people\/663562\/headshot\/silo\/current",
-    "name":"Noah Davis",
-    "player_url":"\/player\/663562",
-    "jersey":"56",
-    "position_group":"Pitchers",
-    "bat_throw":"R\/R",
-    "height":"6' 2\"",
-    "weight":"195",
-    "dob":"04\/22\/1997",
-    "status":"MINORS",
-    "is_minors":true,
-    "is_il":false,
-    "is_active_roster":false,
-    "is_40_man":true,
-    "slug":"noah-davis"
-  },
-  {
     "player_id":"664747",
     "thumb_url":"https:\/\/img.mlbstatic.com\/mlb-photos\/image\/upload\/d_people:generic:headshot:silo:current.png\/r_max\/q_auto:best\/v1\/people\/664747\/headshot\/silo\/current",
     "name":"Alexis Díaz",
@@ -358,6 +340,24 @@
     "is_active_roster":false,
     "is_40_man":true,
     "slug":"bobby-miller"
+  },
+  {
+    "player_id":"680897",
+    "thumb_url":"https:\/\/img.mlbstatic.com\/mlb-photos\/image\/upload\/d_people:generic:headshot:silo:current.png\/r_max\/q_auto:best\/v1\/people\/680897\/headshot\/silo\/current",
+    "name":"Nick Nastrini",
+    "player_url":"\/player\/680897",
+    "jersey":"",
+    "position_group":"Pitchers",
+    "bat_throw":"R\/R",
+    "height":"6' 3\"",
+    "weight":"220",
+    "dob":"02\/18\/2000",
+    "status":"ACTIVE",
+    "is_minors":false,
+    "is_il":false,
+    "is_active_roster":true,
+    "is_40_man":true,
+    "slug":"nick-nastrini"
   },
   {
     "player_id":"683068",
