@@ -1,16 +1,16 @@
 {
     "season_summary": {
-        "correct_strikes_pct": 90.25332760841563,
-        "incorrect_strikes_pct": 9.746672391584369,
-        "total_called_strikes": 2329,
-        "bad_calls_count": 227
+        "correct_strikes_pct": 89.99151823579304,
+        "incorrect_strikes_pct": 10.008481764206962,
+        "total_called_strikes": 2358,
+        "bad_calls_count": 236
     },
     "last_game_summary": {
-        "date": "July 9, 2025",
-        "correct_strikes_pct": 96.66666666666667,
-        "incorrect_strikes_pct": 3.3333333333333286,
-        "total_called_strikes": 30,
-        "bad_calls_count": 1
+        "date": "July 11, 2025",
+        "correct_strikes_pct": 68.96551724137932,
+        "incorrect_strikes_pct": 31.034482758620683,
+        "total_called_strikes": 29,
+        "bad_calls_count": 9
     },
     "worst_calls_of_season": [
         {
@@ -22,6 +22,16 @@
             "date": "2025-05-15",
             "date_formatted": "May 15, 2025",
             "video_link": "https://baseballsavant.mlb.com/sporty-videos?playId=6cbf4e93-5c3c-351e-9d5b-8adc21a49abf"
+        },
+        {
+            "distance_inches": 4.3183692803,
+            "batter": "Michael Conforto",
+            "pitcher": "Tyler Rogers",
+            "pitch_type": "Slider",
+            "velocity_mph": 75.3,
+            "date": "2025-07-11",
+            "date_formatted": "July 11, 2025",
+            "video_link": "https://baseballsavant.mlb.com/sporty-videos?playId=9d667a8c-1bc4-30e3-a487-cc72d7609d1d"
         },
         {
             "distance_inches": 3.9558434401,
@@ -42,16 +52,6 @@
             "date": "2025-05-30",
             "date_formatted": "May 30, 2025",
             "video_link": "https://baseballsavant.mlb.com/sporty-videos?playId=c72ea268-56ec-3792-9953-b810ff1fc61e"
-        },
-        {
-            "distance_inches": 3.5022574066,
-            "batter": "Tommy Edman",
-            "pitcher": "Luis Peralta",
-            "pitch_type": "Curveball",
-            "velocity_mph": 79.0,
-            "date": "2025-04-16",
-            "date_formatted": "April 16, 2025",
-            "video_link": "https://baseballsavant.mlb.com/sporty-videos?playId=9783e72f-9675-3228-9635-d71254ea8bc8"
         }
     ]
 }
