@@ -190,10 +190,10 @@
     "height":"6' 4\"",
     "weight":"200",
     "dob":"06\/24\/2002",
-    "status":"MINORS",
-    "is_minors":true,
+    "status":"ACTIVE",
+    "is_minors":false,
     "is_il":false,
-    "is_active_roster":false,
+    "is_active_roster":true,
     "is_40_man":true,
     "slug":"edgardo-henriquez"
   },
@@ -520,24 +520,6 @@
     "is_active_roster":false,
     "is_40_man":true,
     "slug":"blake-treinen"
-  },
-  {
-    "player_id":"642152",
-    "thumb_url":"https:\/\/img.mlbstatic.com\/mlb-photos\/image\/upload\/d_people:generic:headshot:silo:current.png\/r_max\/q_auto:best\/v1\/people\/642152\/headshot\/silo\/current",
-    "name":"Lou Trivino",
-    "player_url":"\/player\/642152",
-    "jersey":"58",
-    "position_group":"Pitchers",
-    "bat_throw":"R\/R",
-    "height":"6' 5\"",
-    "weight":"232",
-    "dob":"10\/01\/1991",
-    "status":"ACTIVE",
-    "is_minors":false,
-    "is_il":false,
-    "is_active_roster":true,
-    "is_40_man":true,
-    "slug":"lou-trivino"
   },
   {
     "player_id":"681911",
