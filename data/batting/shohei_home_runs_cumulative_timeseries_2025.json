@@ -45,7 +45,7 @@
         "season":2025,
         "game_date":"2025-04-29T00:00:00.000",
         "game_number":28,
-        "pa_number":127,
+        "pa_number":128,
         "home_runs_cum":7
     },
     {
@@ -80,14 +80,14 @@
         "season":2025,
         "game_date":"2025-05-09T00:00:00.000",
         "game_number":37,
-        "pa_number":171,
+        "pa_number":168,
         "home_runs_cum":12
     },
     {
         "season":2025,
         "game_date":"2025-05-14T00:00:00.000",
         "game_number":41,
-        "pa_number":185,
+        "pa_number":184,
         "home_runs_cum":13
     },
     {
@@ -115,42 +115,42 @@
         "season":2025,
         "game_date":"2025-05-25T00:00:00.000",
         "game_number":51,
-        "pa_number":231,
+        "pa_number":234,
         "home_runs_cum":18
     },
     {
         "season":2025,
         "game_date":"2025-05-26T00:00:00.000",
         "game_number":52,
-        "pa_number":238,
+        "pa_number":235,
         "home_runs_cum":19
     },
     {
         "season":2025,
         "game_date":"2025-05-27T00:00:00.000",
         "game_number":53,
-        "pa_number":243,
+        "pa_number":240,
         "home_runs_cum":20
     },
     {
         "season":2025,
         "game_date":"2025-05-30T00:00:00.000",
         "game_number":55,
-        "pa_number":251,
+        "pa_number":252,
         "home_runs_cum":22
     },
     {
         "season":2025,
         "game_date":"2025-06-02T00:00:00.000",
         "game_number":58,
-        "pa_number":263,
+        "pa_number":262,
         "home_runs_cum":23
     },
     {
         "season":2025,
         "game_date":"2025-06-14T00:00:00.000",
         "game_number":69,
-        "pa_number":311,
+        "pa_number":313,
         "home_runs_cum":25
     },
     {
@@ -171,7 +171,7 @@
         "season":2025,
         "game_date":"2025-06-26T00:00:00.000",
         "game_number":80,
-        "pa_number":361,
+        "pa_number":363,
         "home_runs_cum":28
     },
     {
@@ -185,7 +185,7 @@
         "season":2025,
         "game_date":"2025-07-01T00:00:00.000",
         "game_number":84,
-        "pa_number":379,
+        "pa_number":376,
         "home_runs_cum":30
     },
     {
@@ -199,7 +199,7 @@
         "season":2025,
         "game_date":"2025-07-11T00:00:00.000",
         "game_number":93,
-        "pa_number":418,
+        "pa_number":416,
         "home_runs_cum":32
     },
     {
@@ -215,5 +215,12 @@
         "game_number":98,
         "pa_number":439,
         "home_runs_cum":34
+    },
+    {
+        "season":2025,
+        "game_date":"2025-07-21T00:00:00.000",
+        "game_number":99,
+        "pa_number":441,
+        "home_runs_cum":35
     }
 ]
