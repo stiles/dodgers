@@ -4,13 +4,13 @@
         "stat":"wins",
         "value":59,
         "category":"standings",
-        "context_value":60,
+        "context_value":61,
         "context_value_label":"This point last season"
     },
     {
         "stat_label":"Losses",
         "stat":"losses",
-        "value":42,
+        "value":43,
         "category":"standings",
         "context_value":41,
         "context_value_label":"This point last season"
@@ -18,9 +18,9 @@
     {
         "stat_label":"Record",
         "stat":"record",
-        "value":"59-42",
+        "value":"59-43",
         "category":"standings",
-        "context_value":"60-41",
+        "context_value":"61-41",
         "context_value_label":"This point last season"
     },
     {
@@ -28,7 +28,7 @@
         "stat":"win_pct",
         "value":"57%",
         "category":"standings",
-        "context_value":"59%",
+        "context_value":"60%",
         "context_value_label":"This point last season"
     },
     {
@@ -42,15 +42,15 @@
     {
         "stat_label":"Avg. home attendance",
         "stat":"mean_attendance",
-        "value":"50,474",
+        "value":"50,375",
         "category":"standings",
-        "context_value":54,
+        "context_value":55,
         "context_value_label":"Home games this season"
     },
     {
         "stat_label":"Runs",
         "stat":"runs",
-        "value":535,
+        "value":542,
         "category":"standings",
         "context_value":"1st",
         "context_value_label":"League rank"
@@ -58,17 +58,17 @@
     {
         "stat_label":"Runs against",
         "stat":"runs_against",
-        "value":467,
+        "value":477,
         "category":"standings",
-        "context_value":406,
+        "context_value":408,
         "context_value_label":"This point last season"
     },
     {
         "stat_label":"Run differential",
         "stat":"run_differential",
-        "value":68,
+        "value":65,
         "category":"standings",
-        "context_value":96,
+        "context_value":99,
         "context_value_label":"This point last season"
     },
     {
@@ -82,7 +82,7 @@
     {
         "stat_label":"Home runs",
         "stat":"home_runs",
-        "value":154,
+        "value":156,
         "category":"batting",
         "context_value":"2nd",
         "context_value_label":"League rank"
@@ -90,7 +90,7 @@
     {
         "stat_label":"Home runs\/game",
         "stat":"home_runs_game",
-        "value":1.52,
+        "value":1.53,
         "category":"batting",
         "context_value":1.42,
         "context_value_label":"Last decade average"
@@ -98,7 +98,7 @@
     {
         "stat_label":"On-base percentage",
         "stat":"on_base_pct",
-        "value":".328",
+        "value":".329",
         "category":"batting",
         "context_value":".333",
         "context_value_label":"Last decade average"
@@ -106,7 +106,7 @@
     {
         "stat_label":"Stolen bases",
         "stat":"stolen_bases",
-        "value":57,
+        "value":58,
         "category":"batting",
         "context_value":"20th",
         "context_value_label":"League rank"
@@ -114,7 +114,7 @@
     {
         "stat_label":"Stolen bases\/game",
         "stat":"stolen_bases_game",
-        "value":0.56,
+        "value":0.57,
         "category":"batting",
         "context_value":0.84,
         "context_value_label":"Rate all last season"
@@ -122,7 +122,7 @@
     {
         "stat_label":"Strikeouts",
         "stat":"strikeouts",
-        "value":"880",
+        "value":"893",
         "category":"pitching",
         "context_value":"5th",
         "context_value_label":"League rank"
@@ -130,7 +130,7 @@
     {
         "stat_label":"Walks",
         "stat":"walks",
-        "value":"354",
+        "value":"361",
         "category":"pitching",
         "context_value":"5th",
         "context_value_label":"League rank"
@@ -138,7 +138,7 @@
     {
         "stat_label":"ERA",
         "stat":"era",
-        "value":"4.28",
+        "value":"4.30",
         "category":"pitching",
         "context_value":"23rd",
         "context_value_label":"League rank"
@@ -146,7 +146,7 @@
     {
         "stat_label":"Last updated",
         "stat":"update_time",
-        "value":"July 23, 2025, 1:11 AM PT",
+        "value":"July 23, 2025, 5:13 AM PT",
         "category":"summary",
         "context_value":"",
         "context_value_label":""
@@ -162,7 +162,7 @@
     {
         "stat_label":"Last game result",
         "stat":"last_game_result",
-        "value":"win",
+        "value":"loss",
         "category":"summary",
         "context_value":"",
         "context_value_label":""
