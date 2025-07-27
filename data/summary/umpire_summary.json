@@ -1,16 +1,16 @@
 {
     "season_summary": {
-        "correct_strikes_pct": 89.73858759266484,
-        "incorrect_strikes_pct": 10.261412407335158,
-        "total_called_strikes": 2563,
-        "bad_calls_count": 263
+        "correct_strikes_pct": 89.70189701897019,
+        "incorrect_strikes_pct": 10.298102981029814,
+        "total_called_strikes": 2583,
+        "bad_calls_count": 266
     },
     "last_game_summary": {
-        "date": "July 25, 2025",
-        "correct_strikes_pct": 96.0,
-        "incorrect_strikes_pct": 4.0,
-        "total_called_strikes": 25,
-        "bad_calls_count": 1
+        "date": "July 26, 2025",
+        "correct_strikes_pct": 85.0,
+        "incorrect_strikes_pct": 15.0,
+        "total_called_strikes": 20,
+        "bad_calls_count": 3
     },
     "worst_calls_of_season": [
         {
@@ -34,6 +34,16 @@
             "video_link": "https://baseballsavant.mlb.com/sporty-videos?playId=9d667a8c-1bc4-30e3-a487-cc72d7609d1d"
         },
         {
+            "distance_inches": 3.9623487855,
+            "batter": "Hyeseong Kim",
+            "pitcher": "Justin Wilson",
+            "pitch_type": "4-Seam Fastball",
+            "velocity_mph": 94.4,
+            "date": "2025-07-26",
+            "date_formatted": "July 26, 2025",
+            "video_link": "https://baseballsavant.mlb.com/sporty-videos?playId=4d5cc748-0222-3426-93bf-42a52b41e4b0"
+        },
+        {
             "distance_inches": 3.9558434401,
             "batter": "Hyeseong Kim",
             "pitcher": "Ryne Nelson",
@@ -42,16 +52,6 @@
             "date": "2025-05-20",
             "date_formatted": "May 20, 2025",
             "video_link": "https://baseballsavant.mlb.com/sporty-videos?playId=7d823fde-e2d2-31c3-9ad0-5ac721a15015"
-        },
-        {
-            "distance_inches": 3.710501493,
-            "batter": "Michael Conforto",
-            "pitcher": "Max Fried",
-            "pitch_type": "Sinker",
-            "velocity_mph": 94.7,
-            "date": "2025-05-30",
-            "date_formatted": "May 30, 2025",
-            "video_link": "https://baseballsavant.mlb.com/sporty-videos?playId=c72ea268-56ec-3792-9953-b810ff1fc61e"
         }
     ]
 }
