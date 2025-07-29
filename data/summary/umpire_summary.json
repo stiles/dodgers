@@ -1,16 +1,16 @@
 {
     "season_summary": {
-        "correct_strikes_pct": 89.74751338944147,
-        "incorrect_strikes_pct": 10.252486610558535,
-        "total_called_strikes": 2614,
-        "bad_calls_count": 268
+        "correct_strikes_pct": 89.78739559605164,
+        "incorrect_strikes_pct": 10.212604403948362,
+        "total_called_strikes": 2634,
+        "bad_calls_count": 269
     },
     "last_game_summary": {
         "date": "July 28, 2025",
-        "correct_strikes_pct": 0,
-        "incorrect_strikes_pct": 100,
-        "total_called_strikes": 0,
-        "bad_calls_count": 0
+        "correct_strikes_pct": 95.0,
+        "incorrect_strikes_pct": 5.0,
+        "total_called_strikes": 20,
+        "bad_calls_count": 1
     },
     "worst_calls_of_season": [
         {
@@ -34,6 +34,16 @@
             "video_link": "https://baseballsavant.mlb.com/sporty-videos?playId=9d667a8c-1bc4-30e3-a487-cc72d7609d1d"
         },
         {
+            "distance_inches": 4.0686646471,
+            "batter": "Hyeseong Kim",
+            "pitcher": "Chase Burns",
+            "pitch_type": "4-Seam Fastball",
+            "velocity_mph": 98.5,
+            "date": "2025-07-28",
+            "date_formatted": "July 28, 2025",
+            "video_link": "https://baseballsavant.mlb.com/sporty-videos?playId=ef3dc075-0ac2-3228-b6f1-58553558849e"
+        },
+        {
             "distance_inches": 3.962329804,
             "batter": "Hyeseong Kim",
             "pitcher": "Justin Wilson",
@@ -42,16 +52,6 @@
             "date": "2025-07-26",
             "date_formatted": "July 26, 2025",
             "video_link": "https://baseballsavant.mlb.com/sporty-videos?playId=4d5cc748-0222-3426-93bf-42a52b41e4b0"
-        },
-        {
-            "distance_inches": 3.9558434401,
-            "batter": "Hyeseong Kim",
-            "pitcher": "Ryne Nelson",
-            "pitch_type": "4-Seam Fastball",
-            "velocity_mph": 94.8,
-            "date": "2025-05-20",
-            "date_formatted": "May 20, 2025",
-            "video_link": "https://baseballsavant.mlb.com/sporty-videos?playId=7d823fde-e2d2-31c3-9ad0-5ac721a15015"
         }
     ]
 }
