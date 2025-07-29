@@ -702,6 +702,24 @@
     "slug":"hunter-feduccia"
   },
   {
+    "player_id":"690976",
+    "thumb_url":"https:\/\/img.mlbstatic.com\/mlb-photos\/image\/upload\/d_people:generic:headshot:silo:current.png\/r_max\/q_auto:best\/v1\/people\/690976\/headshot\/silo\/current",
+    "name":"Alex Freeland",
+    "player_url":"\/player\/690976",
+    "jersey":"76",
+    "position_group":"Infielders",
+    "bat_throw":"S\/R",
+    "height":"6' 0\"",
+    "weight":"200",
+    "dob":"08\/24\/2001",
+    "status":"ACTIVE",
+    "is_minors":false,
+    "is_il":false,
+    "is_active_roster":true,
+    "is_40_man":true,
+    "slug":"alex-freeland"
+  },
+  {
     "player_id":"518692",
     "thumb_url":"https:\/\/img.mlbstatic.com\/mlb-photos\/image\/upload\/d_people:generic:headshot:silo:current.png\/r_max\/q_auto:best\/v1\/people\/518692\/headshot\/silo\/current",
     "name":"Freddie Freeman",
@@ -748,10 +766,10 @@
     "height":"5' 10\"",
     "weight":"175",
     "dob":"01\/27\/1999",
-    "status":"ACTIVE",
+    "status":"IL-10",
     "is_minors":false,
-    "is_il":false,
-    "is_active_roster":true,
+    "is_il":true,
+    "is_active_roster":false,
     "is_40_man":true,
     "slug":"hyeseong-kim"
   },
