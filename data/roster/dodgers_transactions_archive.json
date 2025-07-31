@@ -1,23 +1,48 @@
 [
   {
     "date":"2025-07-31",
-    "transaction":"Tampa Bay Rays traded RHP Zack Littell to Cincinnati Reds for LHP Adam Serwinowski and RHP Brian Van Belle.",
+    "transaction":"Washington Nationals traded RF Alex Call to Dodgers for RHP Sean Paul Liñan and RHP Eriq Swan.",
     "players":[
-      "Zack Littell",
+      "Alex Call",
+      "Sean Paul Liñan",
+      "Eriq Swan"
+    ]
+  },
+  {
+    "date":"2025-07-31",
+    "transaction":"Minnesota Twins traded RHP Brock Stewart to Dodgers for CF James Outman.",
+    "players":[
+      "Brock Stewart",
+      "James Outman"
+    ]
+  },
+  {
+    "date":"2025-07-31",
+    "transaction":"Tampa Bay Rays traded RHP Paul Gervase, LHP Adam Serwinowski and C Ben Rortvedt to Dodgers for 1B Hunter Feduccia.",
+    "players":[
+      "Paul Gervase",
       "Adam Serwinowski",
-      "Brian Van Belle"
+      "Ben Rortvedt",
+      "Hunter Feduccia"
     ]
   },
   {
     "date":"2025-07-29",
-    "transaction":"Dodgers activated SS Alex Freeland.",
+    "transaction":"Dodgers sent 3B Max Muncy on a rehab assignment to Oklahoma City Comets.",
+    "players":[
+      "Max Muncy"
+    ]
+  },
+  {
+    "date":"2025-07-29",
+    "transaction":"Dodgers selected the contract of SS Alex Freeland from Oklahoma City Comets.",
     "players":[
       "Alex Freeland"
     ]
   },
   {
     "date":"2025-07-29",
-    "transaction":"Dodgers selected the contract of SS Alex Freeland from Oklahoma City Comets.",
+    "transaction":"Dodgers activated SS Alex Freeland.",
     "players":[
       "Alex Freeland"
     ]
@@ -30,24 +55,10 @@
     ]
   },
   {
-    "date":"2025-07-29",
-    "transaction":"Dodgers sent 3B Max Muncy on a rehab assignment to Oklahoma City Comets.",
-    "players":[
-      "Max Muncy"
-    ]
-  },
-  {
     "date":"2025-07-27",
-    "transaction":"Dodgers signed SS Aidan West.",
+    "transaction":"Dodgers signed RHP Dylan Tate.",
     "players":[
-      "Aidan West"
-    ]
-  },
-  {
-    "date":"2025-07-27",
-    "transaction":"Dodgers signed RHP Sam Horn.",
-    "players":[
-      "Sam Horn"
+      "Dylan Tate"
     ]
   },
   {
@@ -59,16 +70,16 @@
   },
   {
     "date":"2025-07-27",
-    "transaction":"Dodgers released RHP Lou Trivino.",
+    "transaction":"Dodgers signed SS Aidan West.",
     "players":[
-      "Lou Trivino"
+      "Aidan West"
     ]
   },
   {
     "date":"2025-07-27",
-    "transaction":"Dodgers recalled LHP Justin Wrobleski from Oklahoma City Comets.",
+    "transaction":"Dodgers released RHP Lou Trivino.",
     "players":[
-      "Justin Wrobleski"
+      "Lou Trivino"
     ]
   },
   {
@@ -87,23 +98,16 @@
   },
   {
     "date":"2025-07-27",
-    "transaction":"Dodgers signed RHP Dylan Tate.",
+    "transaction":"Dodgers recalled LHP Justin Wrobleski from Oklahoma City Comets.",
     "players":[
-      "Dylan Tate"
+      "Justin Wrobleski"
     ]
   },
   {
-    "date":"2025-07-24",
-    "transaction":"Dodgers signed OF AJ Soldra.",
+    "date":"2025-07-27",
+    "transaction":"Dodgers signed RHP Sam Horn.",
     "players":[
-      "AJ Soldra"
-    ]
-  },
-  {
-    "date":"2025-07-24",
-    "transaction":"Dodgers signed RHP Davion Hickson.",
-    "players":[
-      "Davion Hickson"
+      "Sam Horn"
     ]
   },
   {
@@ -115,23 +119,9 @@
   },
   {
     "date":"2025-07-24",
-    "transaction":"Dodgers signed RHP Davis Chastain.",
-    "players":[
-      "Davis Chastain"
-    ]
-  },
-  {
-    "date":"2025-07-24",
     "transaction":"Dodgers signed C Anson Aroz.",
     "players":[
       "Anson Aroz"
-    ]
-  },
-  {
-    "date":"2025-07-24",
-    "transaction":"Dodgers signed RHP Cam Leiter.",
-    "players":[
-      "Cam Leiter"
     ]
   },
   {
@@ -143,30 +133,37 @@
   },
   {
     "date":"2025-07-24",
+    "transaction":"Dodgers signed RHP Davis Chastain.",
+    "players":[
+      "Davis Chastain"
+    ]
+  },
+  {
+    "date":"2025-07-24",
+    "transaction":"Dodgers signed RHP Cam Leiter.",
+    "players":[
+      "Cam Leiter"
+    ]
+  },
+  {
+    "date":"2025-07-24",
+    "transaction":"Dodgers signed RHP Davion Hickson.",
+    "players":[
+      "Davion Hickson"
+    ]
+  },
+  {
+    "date":"2025-07-24",
+    "transaction":"Dodgers signed OF AJ Soldra.",
+    "players":[
+      "AJ Soldra"
+    ]
+  },
+  {
+    "date":"2025-07-24",
     "transaction":"Dodgers signed LHP Zachary Root.",
     "players":[
       "Zachary Root"
-    ]
-  },
-  {
-    "date":"2025-07-23",
-    "transaction":"Dodgers signed RHP Cullen McKay.",
-    "players":[
-      "Cullen McKay"
-    ]
-  },
-  {
-    "date":"2025-07-23",
-    "transaction":"Dodgers signed free agent 1B Matt Gorski to a minor league contract.",
-    "players":[
-      "Matt Gorski"
-    ]
-  },
-  {
-    "date":"2025-07-23",
-    "transaction":"Dodgers signed RHP Jack O'Connor.",
-    "players":[
-      "Jack O'Connor"
     ]
   },
   {
@@ -178,9 +175,23 @@
   },
   {
     "date":"2025-07-23",
+    "transaction":"Dodgers signed free agent 1B Matt Gorski to a minor league contract.",
+    "players":[
+      "Matt Gorski"
+    ]
+  },
+  {
+    "date":"2025-07-23",
     "transaction":"Dodgers signed LHP Matt Lanzendorfer.",
     "players":[
       "Matt Lanzendorfer"
+    ]
+  },
+  {
+    "date":"2025-07-23",
+    "transaction":"Dodgers signed OF Charles Davalan.",
+    "players":[
+      "Charles Davalan"
     ]
   },
   {
@@ -192,9 +203,16 @@
   },
   {
     "date":"2025-07-23",
-    "transaction":"Dodgers signed OF Charles Davalan.",
+    "transaction":"Dodgers signed RHP Jack O'Connor.",
     "players":[
-      "Charles Davalan"
+      "Jack O'Connor"
+    ]
+  },
+  {
+    "date":"2025-07-23",
+    "transaction":"Dodgers signed RHP Cullen McKay.",
+    "players":[
+      "Cullen McKay"
     ]
   },
   {
@@ -269,16 +287,16 @@
   },
   {
     "date":"2025-07-14",
-    "transaction":"Dodgers signed free agent RHP Roimer Rosas to a minor league contract.",
+    "transaction":"Dodgers sent RHP Blake Treinen on a rehab assignment to ACL Dodgers.",
     "players":[
-      "Roimer Rosas"
+      "Blake Treinen"
     ]
   },
   {
     "date":"2025-07-14",
-    "transaction":"Dodgers sent RHP Blake Treinen on a rehab assignment to ACL Dodgers.",
+    "transaction":"Dodgers signed free agent RHP Roimer Rosas to a minor league contract.",
     "players":[
-      "Blake Treinen"
+      "Roimer Rosas"
     ]
   },
   {
@@ -297,14 +315,14 @@
   },
   {
     "date":"2025-07-11",
-    "transaction":"Dodgers claimed RHP Nick Nastrini off waivers from Miami Marlins.",
+    "transaction":"Dodgers optioned RHP Nick Nastrini to ACL Dodgers.",
     "players":[
       "Nick Nastrini"
     ]
   },
   {
     "date":"2025-07-11",
-    "transaction":"Dodgers optioned RHP Nick Nastrini to ACL Dodgers.",
+    "transaction":"Dodgers claimed RHP Nick Nastrini off waivers from Miami Marlins.",
     "players":[
       "Nick Nastrini"
     ]
@@ -318,9 +336,9 @@
   },
   {
     "date":"2025-07-09",
-    "transaction":"Dodgers sent RHP Blake Treinen on a rehab assignment to Oklahoma City Comets.",
+    "transaction":"Dodgers activated RHP Tyler Glasnow from the 60-day injured list.",
     "players":[
-      "Blake Treinen"
+      "Tyler Glasnow"
     ]
   },
   {
@@ -332,16 +350,16 @@
   },
   {
     "date":"2025-07-09",
-    "transaction":"Dodgers sent 1B CJ Alexander outright to Oklahoma City Comets.",
+    "transaction":"Dodgers optioned RHP Alexis Díaz to Oklahoma City Comets.",
     "players":[
-      "CJ Alexander"
+      "Alexis Díaz"
     ]
   },
   {
     "date":"2025-07-09",
-    "transaction":"Dodgers activated RHP Tyler Glasnow from the 60-day injured list.",
+    "transaction":"Dodgers sent RHP Blake Treinen on a rehab assignment to Oklahoma City Comets.",
     "players":[
-      "Tyler Glasnow"
+      "Blake Treinen"
     ]
   },
   {
@@ -353,9 +371,9 @@
   },
   {
     "date":"2025-07-09",
-    "transaction":"Dodgers optioned RHP Alexis Díaz to Oklahoma City Comets.",
+    "transaction":"Dodgers sent 1B CJ Alexander outright to Oklahoma City Comets.",
     "players":[
-      "Alexis Díaz"
+      "CJ Alexander"
     ]
   },
   {
@@ -374,13 +392,6 @@
   },
   {
     "date":"2025-07-07",
-    "transaction":"Dodgers designated 1B CJ Alexander for assignment.",
-    "players":[
-      "CJ Alexander"
-    ]
-  },
-  {
-    "date":"2025-07-07",
     "transaction":"Dodgers placed 1B Enrique Hernández on the 10-day injured list retroactive to July 6, 2025. Left elbow inflammation.",
     "players":[
       "Enrique Hernández"
@@ -388,9 +399,16 @@
   },
   {
     "date":"2025-07-07",
-    "transaction":"Dodgers recalled CF James Outman from Oklahoma City Comets.",
+    "transaction":"Dodgers designated 1B CJ Alexander for assignment.",
     "players":[
-      "James Outman"
+      "CJ Alexander"
+    ]
+  },
+  {
+    "date":"2025-07-07",
+    "transaction":"Dodgers optioned LHP Justin Wrobleski to Oklahoma City Comets.",
+    "players":[
+      "Justin Wrobleski"
     ]
   },
   {
@@ -402,16 +420,9 @@
   },
   {
     "date":"2025-07-07",
-    "transaction":"Dodgers optioned LHP Justin Wrobleski to Oklahoma City Comets.",
+    "transaction":"Dodgers recalled CF James Outman from Oklahoma City Comets.",
     "players":[
-      "Justin Wrobleski"
-    ]
-  },
-  {
-    "date":"2025-07-06",
-    "transaction":"Dodgers optioned RHP Jack Little to Oklahoma City Comets.",
-    "players":[
-      "Jack Little"
+      "James Outman"
     ]
   },
   {
@@ -419,6 +430,13 @@
     "transaction":"Dodgers recalled RHP Emmet Sheehan from Oklahoma City Comets.",
     "players":[
       "Emmet Sheehan"
+    ]
+  },
+  {
+    "date":"2025-07-06",
+    "transaction":"Dodgers optioned RHP Jack Little to Oklahoma City Comets.",
+    "players":[
+      "Jack Little"
     ]
   },
   {
@@ -444,16 +462,16 @@
   },
   {
     "date":"2025-07-03",
-    "transaction":"Dodgers claimed 1B CJ Alexander off waivers from New York Yankees.",
+    "transaction":"Dodgers recalled LF Esteury Ruiz from Oklahoma City Comets.",
     "players":[
-      "CJ Alexander"
+      "Esteury Ruiz"
     ]
   },
   {
     "date":"2025-07-03",
-    "transaction":"Dodgers recalled LF Esteury Ruiz from Oklahoma City Comets.",
+    "transaction":"Dodgers claimed 1B CJ Alexander off waivers from New York Yankees.",
     "players":[
-      "Esteury Ruiz"
+      "CJ Alexander"
     ]
   },
   {
@@ -472,9 +490,9 @@
   },
   {
     "date":"2025-07-01",
-    "transaction":"Dodgers placed RHP Michael Kopech on the 15-day injured list retroactive to June 28, 2025. Right knee inflammation.",
+    "transaction":"Dodgers recalled RHP Will Klein from Oklahoma City Comets.",
     "players":[
-      "Michael Kopech"
+      "Will Klein"
     ]
   },
   {
@@ -486,21 +504,21 @@
   },
   {
     "date":"2025-07-01",
-    "transaction":"Dodgers recalled RHP Will Klein from Oklahoma City Comets.",
+    "transaction":"Dodgers placed RHP Michael Kopech on the 15-day injured list retroactive to June 28, 2025. Right knee inflammation.",
     "players":[
-      "Will Klein"
-    ]
-  },
-  {
-    "date":"2025-06-29",
-    "transaction":"Dodgers designated RHP Luis García for assignment.",
-    "players":[
-      "Luis García"
+      "Michael Kopech"
     ]
   },
   {
     "date":"2025-06-29",
     "transaction":"Dodgers activated RHP Edgardo Henriquez from the 60-day injured list.",
+    "players":[
+      "Edgardo Henriquez"
+    ]
+  },
+  {
+    "date":"2025-06-29",
+    "transaction":"Dodgers optioned RHP Edgardo Henriquez to Oklahoma City Comets.",
     "players":[
       "Edgardo Henriquez"
     ]
@@ -514,9 +532,9 @@
   },
   {
     "date":"2025-06-29",
-    "transaction":"Dodgers optioned RHP Edgardo Henriquez to Oklahoma City Comets.",
+    "transaction":"Dodgers designated RHP Luis García for assignment.",
     "players":[
-      "Edgardo Henriquez"
+      "Luis García"
     ]
   },
   {
@@ -549,23 +567,23 @@
   },
   {
     "date":"2025-06-22",
-    "transaction":"Dodgers sent RHP Luis García on a rehab assignment to Rancho Cucamonga Quakes.",
-    "players":[
-      "Luis García"
-    ]
-  },
-  {
-    "date":"2025-06-22",
     "transaction":"Dodgers sent RHP Tyler Glasnow on a rehab assignment to Oklahoma City Comets.",
     "players":[
       "Tyler Glasnow"
     ]
   },
   {
-    "date":"2025-06-20",
-    "transaction":"Dodgers recalled RHP Will Klein from Oklahoma City Comets.",
+    "date":"2025-06-22",
+    "transaction":"Dodgers sent RHP Luis García on a rehab assignment to Rancho Cucamonga Quakes.",
     "players":[
-      "Will Klein"
+      "Luis García"
+    ]
+  },
+  {
+    "date":"2025-06-20",
+    "transaction":"Boston Red Sox traded LHP Zach Penrod to Dodgers for cash.",
+    "players":[
+      "Zach Penrod"
     ]
   },
   {
@@ -577,16 +595,16 @@
   },
   {
     "date":"2025-06-20",
-    "transaction":"Dodgers transferred RHP Roki Sasaki from the 15-day injured list to the 60-day injured list. Right shoulder impingement.",
+    "transaction":"Dodgers recalled RHP Will Klein from Oklahoma City Comets.",
     "players":[
-      "Roki Sasaki"
+      "Will Klein"
     ]
   },
   {
     "date":"2025-06-20",
-    "transaction":"Boston Red Sox traded LHP Zach Penrod to Dodgers for cash.",
+    "transaction":"Dodgers transferred RHP Roki Sasaki from the 15-day injured list to the 60-day injured list. Right shoulder impingement.",
     "players":[
-      "Zach Penrod"
+      "Roki Sasaki"
     ]
   },
   {
@@ -654,16 +672,16 @@
   },
   {
     "date":"2025-06-10",
-    "transaction":"Dodgers recalled RHP Matt Sauer from Oklahoma City Comets.",
+    "transaction":"Washington Nationals claimed RHP Ryan Loutos off waivers from Dodgers.",
     "players":[
-      "Matt Sauer"
+      "Ryan Loutos"
     ]
   },
   {
     "date":"2025-06-10",
-    "transaction":"Washington Nationals claimed RHP Ryan Loutos off waivers from Dodgers.",
+    "transaction":"Dodgers recalled RHP Matt Sauer from Oklahoma City Comets.",
     "players":[
-      "Ryan Loutos"
+      "Matt Sauer"
     ]
   },
   {
@@ -675,13 +693,6 @@
   },
   {
     "date":"2025-06-07",
-    "transaction":"Dodgers sent RHP Emmet Sheehan on a rehab assignment to Oklahoma City Comets.",
-    "players":[
-      "Emmet Sheehan"
-    ]
-  },
-  {
-    "date":"2025-06-07",
     "transaction":"Dodgers activated RHP Michael Kopech from the 60-day injured list.",
     "players":[
       "Michael Kopech"
@@ -689,9 +700,16 @@
   },
   {
     "date":"2025-06-07",
-    "transaction":"Dodgers placed RHP Tony Gonsolin on the 15-day injured list. Right elbow discomfort.",
+    "transaction":"Dodgers sent RHP Emmet Sheehan on a rehab assignment to Oklahoma City Comets.",
     "players":[
-      "Tony Gonsolin"
+      "Emmet Sheehan"
+    ]
+  },
+  {
+    "date":"2025-06-07",
+    "transaction":"Dodgers activated RHP Kirby Yates from the 15-day injured list.",
+    "players":[
+      "Kirby Yates"
     ]
   },
   {
@@ -703,16 +721,9 @@
   },
   {
     "date":"2025-06-07",
-    "transaction":"Dodgers activated RHP Kirby Yates from the 15-day injured list.",
+    "transaction":"Dodgers placed RHP Tony Gonsolin on the 15-day injured list. Right elbow discomfort.",
     "players":[
-      "Kirby Yates"
-    ]
-  },
-  {
-    "date":"2025-06-06",
-    "transaction":"Dodgers designated RHP Ryan Loutos for assignment.",
-    "players":[
-      "Ryan Loutos"
+      "Tony Gonsolin"
     ]
   },
   {
@@ -724,9 +735,9 @@
   },
   {
     "date":"2025-06-06",
-    "transaction":"Dodgers recalled LHP Justin Wrobleski from Oklahoma City Comets.",
+    "transaction":"Dodgers designated RHP Ryan Loutos for assignment.",
     "players":[
-      "Justin Wrobleski"
+      "Ryan Loutos"
     ]
   },
   {
@@ -734,6 +745,13 @@
     "transaction":"Dodgers optioned RHP Landon Knack to Oklahoma City Comets.",
     "players":[
       "Landon Knack"
+    ]
+  },
+  {
+    "date":"2025-06-06",
+    "transaction":"Dodgers recalled LHP Justin Wrobleski from Oklahoma City Comets.",
+    "players":[
+      "Justin Wrobleski"
     ]
   },
   {
@@ -759,16 +777,16 @@
   },
   {
     "date":"2025-06-03",
-    "transaction":"Dodgers signed free agent RHP José Ureña.",
+    "transaction":"Dodgers designated C Chuckie Robinson for assignment.",
     "players":[
-      "José Ureña"
+      "Chuckie Robinson"
     ]
   },
   {
     "date":"2025-06-03",
-    "transaction":"Dodgers designated C Chuckie Robinson for assignment.",
+    "transaction":"Dodgers signed free agent RHP José Ureña.",
     "players":[
-      "Chuckie Robinson"
+      "José Ureña"
     ]
   },
   {
@@ -787,10 +805,9 @@
   },
   {
     "date":"2025-06-02",
-    "transaction":"Seattle Mariners traded RHP Will Klein to Dodgers for LHP Joe Jacques.",
+    "transaction":"Dodgers recalled RHP Ryan Loutos from Oklahoma City Comets.",
     "players":[
-      "Will Klein",
-      "Joe Jacques"
+      "Ryan Loutos"
     ]
   },
   {
@@ -802,9 +819,10 @@
   },
   {
     "date":"2025-06-02",
-    "transaction":"Dodgers recalled RHP Ryan Loutos from Oklahoma City Comets.",
+    "transaction":"Seattle Mariners traded RHP Will Klein to Dodgers for LHP Joe Jacques.",
     "players":[
-      "Ryan Loutos"
+      "Will Klein",
+      "Joe Jacques"
     ]
   },
   {
@@ -816,23 +834,16 @@
   },
   {
     "date":"2025-06-01",
-    "transaction":"Dodgers sent RHP Emmet Sheehan on a rehab assignment to Oklahoma City Comets.",
-    "players":[
-      "Emmet Sheehan"
-    ]
-  },
-  {
-    "date":"2025-06-01",
     "transaction":"Dodgers placed RHP Luis García on the 15-day injured list retroactive to May 29, 2025. Right adductor strain.",
     "players":[
       "Luis García"
     ]
   },
   {
-    "date":"2025-05-31",
-    "transaction":"Dodgers transferred RHP Tyler Glasnow from the 15-day injured list to the 60-day injured list. Right shoulder inflammation.",
+    "date":"2025-06-01",
+    "transaction":"Dodgers sent RHP Emmet Sheehan on a rehab assignment to Oklahoma City Comets.",
     "players":[
-      "Tyler Glasnow"
+      "Emmet Sheehan"
     ]
   },
   {
@@ -843,24 +854,10 @@
     ]
   },
   {
-    "date":"2025-05-29",
-    "transaction":"Dodgers signed free agent RHP Logan Tinkam to a minor league contract.",
+    "date":"2025-05-31",
+    "transaction":"Dodgers transferred RHP Tyler Glasnow from the 15-day injured list to the 60-day injured list. Right shoulder inflammation.",
     "players":[
-      "Logan Tinkam"
-    ]
-  },
-  {
-    "date":"2025-05-29",
-    "transaction":"Dodgers transferred RHP Evan Phillips from the 15-day injured list to the 60-day injured list. Right forearm discomfort.",
-    "players":[
-      "Evan Phillips"
-    ]
-  },
-  {
-    "date":"2025-05-29",
-    "transaction":"Dodgers sent RHP Edgardo Henriquez on a rehab assignment to Oklahoma City Comets.",
-    "players":[
-      "Edgardo Henriquez"
+      "Tyler Glasnow"
     ]
   },
   {
@@ -872,6 +869,14 @@
   },
   {
     "date":"2025-05-29",
+    "transaction":"Cincinnati Reds traded RHP Alexis Díaz to Dodgers for RHP Mike Villani.",
+    "players":[
+      "Alexis Díaz",
+      "Mike Villani"
+    ]
+  },
+  {
+    "date":"2025-05-29",
     "transaction":"Dodgers optioned RHP Alexis Díaz to ACL Dodgers.",
     "players":[
       "Alexis Díaz"
@@ -879,10 +884,23 @@
   },
   {
     "date":"2025-05-29",
-    "transaction":"Cincinnati Reds traded RHP Alexis Díaz to Dodgers for RHP Mike Villani.",
+    "transaction":"Dodgers sent RHP Edgardo Henriquez on a rehab assignment to Oklahoma City Comets.",
     "players":[
-      "Alexis Díaz",
-      "Mike Villani"
+      "Edgardo Henriquez"
+    ]
+  },
+  {
+    "date":"2025-05-29",
+    "transaction":"Dodgers transferred RHP Evan Phillips from the 15-day injured list to the 60-day injured list. Right forearm discomfort.",
+    "players":[
+      "Evan Phillips"
+    ]
+  },
+  {
+    "date":"2025-05-29",
+    "transaction":"Dodgers signed free agent RHP Logan Tinkam to a minor league contract.",
+    "players":[
+      "Logan Tinkam"
     ]
   },
   {
@@ -901,16 +919,16 @@
   },
   {
     "date":"2025-05-25",
-    "transaction":"Dodgers signed free agent RHP Chris Stratton.",
+    "transaction":"Dodgers designated RHP J.P. Feyereisen for assignment.",
     "players":[
-      "Chris Stratton"
+      "J.P. Feyereisen"
     ]
   },
   {
     "date":"2025-05-25",
-    "transaction":"Dodgers designated RHP J.P. Feyereisen for assignment.",
+    "transaction":"Dodgers signed free agent RHP Chris Stratton.",
     "players":[
-      "J.P. Feyereisen"
+      "Chris Stratton"
     ]
   },
   {
@@ -936,23 +954,16 @@
   },
   {
     "date":"2025-05-20",
-    "transaction":"Dodgers released C Austin Barnes.",
-    "players":[
-      "Austin Barnes"
-    ]
-  },
-  {
-    "date":"2025-05-20",
     "transaction":"Dodgers signed free agent RHP Albert Feliz to a minor league contract.",
     "players":[
       "Albert Feliz"
     ]
   },
   {
-    "date":"2025-05-19",
-    "transaction":"Dodgers optioned CF James Outman to Oklahoma City Comets.",
+    "date":"2025-05-20",
+    "transaction":"Dodgers released C Austin Barnes.",
     "players":[
-      "James Outman"
+      "Austin Barnes"
     ]
   },
   {
@@ -960,6 +971,13 @@
     "transaction":"Dodgers activated RF Teoscar Hernández from the 10-day injured list.",
     "players":[
       "Teoscar Hernández"
+    ]
+  },
+  {
+    "date":"2025-05-19",
+    "transaction":"Dodgers optioned CF James Outman to Oklahoma City Comets.",
+    "players":[
+      "James Outman"
     ]
   },
   {
@@ -971,9 +989,9 @@
   },
   {
     "date":"2025-05-18",
-    "transaction":"Dodgers released LF Chris Taylor.",
+    "transaction":"Dodgers placed RHP Kirby Yates on the 15-day injured list. Right hamstring strain.",
     "players":[
-      "Chris Taylor"
+      "Kirby Yates"
     ]
   },
   {
@@ -985,9 +1003,9 @@
   },
   {
     "date":"2025-05-18",
-    "transaction":"Dodgers placed RHP Kirby Yates on the 15-day injured list. Right hamstring strain.",
+    "transaction":"Dodgers released LF Chris Taylor.",
     "players":[
-      "Kirby Yates"
+      "Chris Taylor"
     ]
   },
   {
@@ -1020,16 +1038,16 @@
   },
   {
     "date":"2025-05-16",
-    "transaction":"Dodgers recalled RHP Ryan Loutos from Oklahoma City Comets.",
+    "transaction":"Dodgers optioned LHP Justin Wrobleski to Oklahoma City Comets.",
     "players":[
-      "Ryan Loutos"
+      "Justin Wrobleski"
     ]
   },
   {
     "date":"2025-05-16",
-    "transaction":"Dodgers optioned LHP Justin Wrobleski to Oklahoma City Comets.",
+    "transaction":"Dodgers recalled RHP Ryan Loutos from Oklahoma City Comets.",
     "players":[
-      "Justin Wrobleski"
+      "Ryan Loutos"
     ]
   },
   {
@@ -1041,16 +1059,16 @@
   },
   {
     "date":"2025-05-15",
-    "transaction":"Dodgers optioned RHP J.P. Feyereisen to Oklahoma City Comets.",
+    "transaction":"Dodgers recalled LHP Justin Wrobleski from Oklahoma City Comets.",
     "players":[
-      "J.P. Feyereisen"
+      "Justin Wrobleski"
     ]
   },
   {
     "date":"2025-05-15",
-    "transaction":"Dodgers recalled LHP Justin Wrobleski from Oklahoma City Comets.",
+    "transaction":"Dodgers optioned RHP J.P. Feyereisen to Oklahoma City Comets.",
     "players":[
-      "Justin Wrobleski"
+      "J.P. Feyereisen"
     ]
   },
   {
@@ -1090,16 +1108,16 @@
   },
   {
     "date":"2025-05-11",
-    "transaction":"Dodgers signed free agent RHP Lou Trivino to a minor league contract.",
+    "transaction":"Dodgers sent LHP Clayton Kershaw on a rehab assignment to Oklahoma City Comets.",
     "players":[
-      "Lou Trivino"
+      "Clayton Kershaw"
     ]
   },
   {
     "date":"2025-05-11",
-    "transaction":"Dodgers sent LHP Clayton Kershaw on a rehab assignment to Oklahoma City Comets.",
+    "transaction":"Dodgers signed free agent RHP Lou Trivino to a minor league contract.",
     "players":[
-      "Clayton Kershaw"
+      "Lou Trivino"
     ]
   },
   {
@@ -1146,16 +1164,16 @@
   },
   {
     "date":"2025-05-06",
-    "transaction":"Dodgers recalled CF James Outman from Oklahoma City Comets.",
+    "transaction":"Dodgers recalled RHP J.P. Feyereisen from Oklahoma City Comets.",
     "players":[
-      "James Outman"
+      "J.P. Feyereisen"
     ]
   },
   {
     "date":"2025-05-06",
-    "transaction":"Dodgers recalled RHP J.P. Feyereisen from Oklahoma City Comets.",
+    "transaction":"Dodgers recalled CF James Outman from Oklahoma City Comets.",
     "players":[
-      "J.P. Feyereisen"
+      "James Outman"
     ]
   },
   {
@@ -1195,6 +1213,13 @@
   },
   {
     "date":"2025-05-01",
+    "transaction":"Dodgers transferred RHP Michael Kopech from the 15-day injured list to the 60-day injured list. Right shoulder impingement.",
+    "players":[
+      "Michael Kopech"
+    ]
+  },
+  {
+    "date":"2025-05-01",
     "transaction":"Dodgers claimed RHP J.P. Feyereisen off waivers from Arizona Diamondbacks.",
     "players":[
       "J.P. Feyereisen"
@@ -1222,10 +1247,10 @@
     ]
   },
   {
-    "date":"2025-05-01",
-    "transaction":"Dodgers transferred RHP Michael Kopech from the 15-day injured list to the 60-day injured list. Right shoulder impingement.",
+    "date":"2025-04-30",
+    "transaction":"Dodgers activated RHP Tony Gonsolin from the 15-day injured list.",
     "players":[
-      "Michael Kopech"
+      "Tony Gonsolin"
     ]
   },
   {
@@ -1233,13 +1258,6 @@
     "transaction":"Dodgers sent LHP Clayton Kershaw on a rehab assignment to Oklahoma City Comets.",
     "players":[
       "Clayton Kershaw"
-    ]
-  },
-  {
-    "date":"2025-04-30",
-    "transaction":"Dodgers activated RHP Tony Gonsolin from the 15-day injured list.",
-    "players":[
-      "Tony Gonsolin"
     ]
   },
   {
@@ -1293,16 +1311,16 @@
   },
   {
     "date":"2025-04-25",
-    "transaction":"Dodgers claimed RHP Yoendrys Gómez off waivers from New York Yankees.",
+    "transaction":"Dodgers sent OF Eddie Rosario outright to Oklahoma City Comets.",
     "players":[
-      "Yoendrys Gómez"
+      "Eddie Rosario"
     ]
   },
   {
     "date":"2025-04-25",
-    "transaction":"Dodgers sent OF Eddie Rosario outright to Oklahoma City Comets.",
+    "transaction":"Dodgers claimed RHP Yoendrys Gómez off waivers from New York Yankees.",
     "players":[
-      "Eddie Rosario"
+      "Yoendrys Gómez"
     ]
   },
   {
@@ -1314,23 +1332,16 @@
   },
   {
     "date":"2025-04-20",
-    "transaction":"Dodgers designated OF Eddie Rosario for assignment.",
-    "players":[
-      "Eddie Rosario"
-    ]
-  },
-  {
-    "date":"2025-04-20",
     "transaction":"Dodgers activated TWP Shohei Ohtani from the paternity list.",
     "players":[
       "Shohei Ohtani"
     ]
   },
   {
-    "date":"2025-04-19",
-    "transaction":"Dodgers placed RHP Blake Treinen on the 15-day injured list. Right forearm tightness.",
+    "date":"2025-04-20",
+    "transaction":"Dodgers designated OF Eddie Rosario for assignment.",
     "players":[
-      "Blake Treinen"
+      "Eddie Rosario"
     ]
   },
   {
@@ -1338,6 +1349,13 @@
     "transaction":"Dodgers activated RHP Evan Phillips from the 15-day injured list.",
     "players":[
       "Evan Phillips"
+    ]
+  },
+  {
+    "date":"2025-04-19",
+    "transaction":"Dodgers placed RHP Blake Treinen on the 15-day injured list. Right forearm tightness.",
+    "players":[
+      "Blake Treinen"
     ]
   },
   {
@@ -1356,16 +1374,16 @@
   },
   {
     "date":"2025-04-18",
-    "transaction":"Dodgers transferred RHP Edgardo Henriquez from the 15-day injured list to the 60-day injured list.",
+    "transaction":"Dodgers placed TWP Shohei Ohtani on the paternity list.",
     "players":[
-      "Edgardo Henriquez"
+      "Shohei Ohtani"
     ]
   },
   {
     "date":"2025-04-18",
-    "transaction":"Dodgers placed TWP Shohei Ohtani on the paternity list.",
+    "transaction":"Dodgers transferred RHP Edgardo Henriquez from the 15-day injured list to the 60-day injured list.",
     "players":[
-      "Shohei Ohtani"
+      "Edgardo Henriquez"
     ]
   },
   {
@@ -1447,23 +1465,16 @@
   },
   {
     "date":"2025-04-16",
+    "transaction":"C Will Smith changed number to 16.",
+    "players":[
+      "Will Smith"
+    ]
+  },
+  {
+    "date":"2025-04-16",
     "transaction":"3B Max Muncy changed number to 13.",
     "players":[
       "Max Muncy"
-    ]
-  },
-  {
-    "date":"2025-04-16",
-    "transaction":"SS Mookie Betts changed number to 50.",
-    "players":[
-      "Mookie Betts"
-    ]
-  },
-  {
-    "date":"2025-04-16",
-    "transaction":"Dodgers optioned RHP Landon Knack to Oklahoma City Comets.",
-    "players":[
-      "Landon Knack"
     ]
   },
   {
@@ -1475,6 +1486,13 @@
   },
   {
     "date":"2025-04-16",
+    "transaction":"Dodgers optioned RHP Landon Knack to Oklahoma City Comets.",
+    "players":[
+      "Landon Knack"
+    ]
+  },
+  {
+    "date":"2025-04-16",
     "transaction":"RHP Landon Knack changed number to 96.",
     "players":[
       "Landon Knack"
@@ -1482,9 +1500,9 @@
   },
   {
     "date":"2025-04-16",
-    "transaction":"RHP Roki Sasaki changed number to 11.",
+    "transaction":"RHP Ben Casparius changed number to 78.",
     "players":[
-      "Roki Sasaki"
+      "Ben Casparius"
     ]
   },
   {
@@ -1492,48 +1510,6 @@
     "transaction":"RHP Blake Treinen changed number to 49.",
     "players":[
       "Blake Treinen"
-    ]
-  },
-  {
-    "date":"2025-04-16",
-    "transaction":"LF Teoscar Hernández changed number to 37.",
-    "players":[
-      "Teoscar Hernández"
-    ]
-  },
-  {
-    "date":"2025-04-16",
-    "transaction":"Dodgers placed 1B Enrique Hernández on the 10-day injured list. Left elbow inflammation.",
-    "players":[
-      "Enrique Hernández"
-    ]
-  },
-  {
-    "date":"2025-04-16",
-    "transaction":"C Austin Barnes changed number to 15.",
-    "players":[
-      "Austin Barnes"
-    ]
-  },
-  {
-    "date":"2025-04-16",
-    "transaction":"RHP Dustin May changed number to 85.",
-    "players":[
-      "Dustin May"
-    ]
-  },
-  {
-    "date":"2025-04-16",
-    "transaction":"Dodgers sent LHP Clayton Kershaw on a rehab assignment to Oklahoma City Comets.",
-    "players":[
-      "Clayton Kershaw"
-    ]
-  },
-  {
-    "date":"2025-04-16",
-    "transaction":"C Will Smith changed number to 16.",
-    "players":[
-      "Will Smith"
     ]
   },
   {
@@ -1552,9 +1528,58 @@
   },
   {
     "date":"2025-04-16",
-    "transaction":"3B Enrique Hernández changed number to 8.",
+    "transaction":"C Austin Barnes changed number to 15.",
+    "players":[
+      "Austin Barnes"
+    ]
+  },
+  {
+    "date":"2025-04-16",
+    "transaction":"Dodgers placed 1B Enrique Hernández on the 10-day injured list. Left elbow inflammation.",
     "players":[
       "Enrique Hernández"
+    ]
+  },
+  {
+    "date":"2025-04-16",
+    "transaction":"SS Mookie Betts changed number to 50.",
+    "players":[
+      "Mookie Betts"
+    ]
+  },
+  {
+    "date":"2025-04-16",
+    "transaction":"RHP Dustin May changed number to 85.",
+    "players":[
+      "Dustin May"
+    ]
+  },
+  {
+    "date":"2025-04-16",
+    "transaction":"RHP Roki Sasaki changed number to 11.",
+    "players":[
+      "Roki Sasaki"
+    ]
+  },
+  {
+    "date":"2025-04-16",
+    "transaction":"Dodgers sent LHP Clayton Kershaw on a rehab assignment to Oklahoma City Comets.",
+    "players":[
+      "Clayton Kershaw"
+    ]
+  },
+  {
+    "date":"2025-04-16",
+    "transaction":"LF Teoscar Hernández changed number to 37.",
+    "players":[
+      "Teoscar Hernández"
+    ]
+  },
+  {
+    "date":"2025-04-16",
+    "transaction":"LHP Tanner Scott changed number to 66.",
+    "players":[
+      "Tanner Scott"
     ]
   },
   {
@@ -1562,13 +1587,6 @@
     "transaction":"LF Michael Conforto changed number to 23.",
     "players":[
       "Michael Conforto"
-    ]
-  },
-  {
-    "date":"2025-04-16",
-    "transaction":"RHP Ben Casparius changed number to 78.",
-    "players":[
-      "Ben Casparius"
     ]
   },
   {
@@ -1587,23 +1605,44 @@
   },
   {
     "date":"2025-04-16",
-    "transaction":"LHP Tanner Scott changed number to 66.",
+    "transaction":"3B Enrique Hernández changed number to 8.",
     "players":[
-      "Tanner Scott"
+      "Enrique Hernández"
     ]
   },
   {
     "date":"2025-04-15",
-    "transaction":"LHP Alex Vesia changed number to 42.",
+    "transaction":"TWP Shohei Ohtani changed number to 42.",
     "players":[
-      "Alex Vesia"
+      "Shohei Ohtani"
     ]
   },
   {
     "date":"2025-04-15",
-    "transaction":"RHP Landon Knack changed number to 42.",
+    "transaction":"LF Teoscar Hernández changed number to 42.",
     "players":[
-      "Landon Knack"
+      "Teoscar Hernández"
+    ]
+  },
+  {
+    "date":"2025-04-15",
+    "transaction":"C Will Smith changed number to 42.",
+    "players":[
+      "Will Smith"
+    ]
+  },
+  {
+    "date":"2025-04-15",
+    "transaction":"CF Tommy Edman changed number to 42.",
+    "players":[
+      "Tommy Edman"
+    ]
+  },
+  {
+    "date":"2025-04-15",
+    "transaction":"RHP Tyler Glasnow changed number to 42.",
+    "players":[
+      "Tyler Glasnow"
     ]
   },
   {
@@ -1611,6 +1650,20 @@
     "transaction":"SS Miguel Rojas changed number to 42.",
     "players":[
       "Miguel Rojas"
+    ]
+  },
+  {
+    "date":"2025-04-15",
+    "transaction":"LHP Jack Dreyer changed number to 42.",
+    "players":[
+      "Jack Dreyer"
+    ]
+  },
+  {
+    "date":"2025-04-15",
+    "transaction":"RHP Landon Knack changed number to 42.",
+    "players":[
+      "Landon Knack"
     ]
   },
   {
@@ -1629,128 +1682,9 @@
   },
   {
     "date":"2025-04-15",
-    "transaction":"LF Chris Taylor changed number to 42.",
+    "transaction":"LHP Alex Vesia changed number to 42.",
     "players":[
-      "Chris Taylor"
-    ]
-  },
-  {
-    "date":"2025-04-15",
-    "transaction":"1B Freddie Freeman changed number to 42.",
-    "players":[
-      "Freddie Freeman"
-    ]
-  },
-  {
-    "date":"2025-04-15",
-    "transaction":"SS Mookie Betts changed number to 42.",
-    "players":[
-      "Mookie Betts"
-    ]
-  },
-  {
-    "date":"2025-04-15",
-    "transaction":"3B Max Muncy changed number to 42.",
-    "players":[
-      "Max Muncy"
-    ]
-  },
-  {
-    "date":"2025-04-15",
-    "transaction":"C Will Smith changed number to 42.",
-    "players":[
-      "Will Smith"
-    ]
-  },
-  {
-    "date":"2025-04-15",
-    "transaction":"RHP Dustin May changed number to 42.",
-    "players":[
-      "Dustin May"
-    ]
-  },
-  {
-    "date":"2025-04-15",
-    "transaction":"LHP Jack Dreyer changed number to 42.",
-    "players":[
-      "Jack Dreyer"
-    ]
-  },
-  {
-    "date":"2025-04-15",
-    "transaction":"TWP Shohei Ohtani changed number to 42.",
-    "players":[
-      "Shohei Ohtani"
-    ]
-  },
-  {
-    "date":"2025-04-15",
-    "transaction":"CF Tommy Edman changed number to 42.",
-    "players":[
-      "Tommy Edman"
-    ]
-  },
-  {
-    "date":"2025-04-15",
-    "transaction":"RHP Blake Treinen changed number to 42.",
-    "players":[
-      "Blake Treinen"
-    ]
-  },
-  {
-    "date":"2025-04-15",
-    "transaction":"RHP Kirby Yates changed number to 42.",
-    "players":[
-      "Kirby Yates"
-    ]
-  },
-  {
-    "date":"2025-04-15",
-    "transaction":"LHP Anthony Banda changed number to 42.",
-    "players":[
-      "Anthony Banda"
-    ]
-  },
-  {
-    "date":"2025-04-15",
-    "transaction":"C Austin Barnes changed number to 42.",
-    "players":[
-      "Austin Barnes"
-    ]
-  },
-  {
-    "date":"2025-04-15",
-    "transaction":"RHP Ben Casparius changed number to 42.",
-    "players":[
-      "Ben Casparius"
-    ]
-  },
-  {
-    "date":"2025-04-15",
-    "transaction":"LF Michael Conforto changed number to 42.",
-    "players":[
-      "Michael Conforto"
-    ]
-  },
-  {
-    "date":"2025-04-15",
-    "transaction":"LHP Tanner Scott changed number to 42.",
-    "players":[
-      "Tanner Scott"
-    ]
-  },
-  {
-    "date":"2025-04-15",
-    "transaction":"3B Enrique Hernández changed number to 42.",
-    "players":[
-      "Enrique Hernández"
-    ]
-  },
-  {
-    "date":"2025-04-15",
-    "transaction":"RHP Roki Sasaki changed number to 42.",
-    "players":[
-      "Roki Sasaki"
+      "Alex Vesia"
     ]
   },
   {
@@ -1762,16 +1696,100 @@
   },
   {
     "date":"2025-04-15",
-    "transaction":"LF Teoscar Hernández changed number to 42.",
+    "transaction":"RHP Roki Sasaki changed number to 42.",
     "players":[
-      "Teoscar Hernández"
+      "Roki Sasaki"
     ]
   },
   {
     "date":"2025-04-15",
-    "transaction":"RHP Tyler Glasnow changed number to 42.",
+    "transaction":"3B Enrique Hernández changed number to 42.",
     "players":[
-      "Tyler Glasnow"
+      "Enrique Hernández"
+    ]
+  },
+  {
+    "date":"2025-04-15",
+    "transaction":"LHP Tanner Scott changed number to 42.",
+    "players":[
+      "Tanner Scott"
+    ]
+  },
+  {
+    "date":"2025-04-15",
+    "transaction":"LF Michael Conforto changed number to 42.",
+    "players":[
+      "Michael Conforto"
+    ]
+  },
+  {
+    "date":"2025-04-15",
+    "transaction":"RHP Ben Casparius changed number to 42.",
+    "players":[
+      "Ben Casparius"
+    ]
+  },
+  {
+    "date":"2025-04-15",
+    "transaction":"C Austin Barnes changed number to 42.",
+    "players":[
+      "Austin Barnes"
+    ]
+  },
+  {
+    "date":"2025-04-15",
+    "transaction":"LHP Anthony Banda changed number to 42.",
+    "players":[
+      "Anthony Banda"
+    ]
+  },
+  {
+    "date":"2025-04-15",
+    "transaction":"RHP Kirby Yates changed number to 42.",
+    "players":[
+      "Kirby Yates"
+    ]
+  },
+  {
+    "date":"2025-04-15",
+    "transaction":"RHP Dustin May changed number to 42.",
+    "players":[
+      "Dustin May"
+    ]
+  },
+  {
+    "date":"2025-04-15",
+    "transaction":"RHP Blake Treinen changed number to 42.",
+    "players":[
+      "Blake Treinen"
+    ]
+  },
+  {
+    "date":"2025-04-15",
+    "transaction":"3B Max Muncy changed number to 42.",
+    "players":[
+      "Max Muncy"
+    ]
+  },
+  {
+    "date":"2025-04-15",
+    "transaction":"LF Chris Taylor changed number to 42.",
+    "players":[
+      "Chris Taylor"
+    ]
+  },
+  {
+    "date":"2025-04-15",
+    "transaction":"SS Mookie Betts changed number to 42.",
+    "players":[
+      "Mookie Betts"
+    ]
+  },
+  {
+    "date":"2025-04-15",
+    "transaction":"1B Freddie Freeman changed number to 42.",
+    "players":[
+      "Freddie Freeman"
     ]
   },
   {
@@ -1790,14 +1808,21 @@
   },
   {
     "date":"2025-04-09",
+    "transaction":"Dodgers optioned LHP Justin Wrobleski to Oklahoma City Comets.",
+    "players":[
+      "Justin Wrobleski"
+    ]
+  },
+  {
+    "date":"2025-04-09",
     "transaction":"Dodgers recalled RHP Landon Knack from Oklahoma City Comets.",
     "players":[
       "Landon Knack"
     ]
   },
   {
-    "date":"2025-04-09",
-    "transaction":"Dodgers optioned LHP Justin Wrobleski to Oklahoma City Comets.",
+    "date":"2025-04-08",
+    "transaction":"Dodgers recalled LHP Justin Wrobleski from Oklahoma City Comets.",
     "players":[
       "Justin Wrobleski"
     ]
@@ -1807,13 +1832,6 @@
     "transaction":"Dodgers optioned RHP Matt Sauer to Oklahoma City Comets.",
     "players":[
       "Matt Sauer"
-    ]
-  },
-  {
-    "date":"2025-04-08",
-    "transaction":"Dodgers recalled LHP Justin Wrobleski from Oklahoma City Comets.",
-    "players":[
-      "Justin Wrobleski"
     ]
   },
   {
@@ -1839,6 +1857,13 @@
   },
   {
     "date":"2025-04-03",
+    "transaction":"Dodgers sent RHP Tony Gonsolin on a rehab assignment to Oklahoma City Comets.",
+    "players":[
+      "Tony Gonsolin"
+    ]
+  },
+  {
+    "date":"2025-04-03",
     "transaction":"Dodgers sent RHP Evan Phillips on a rehab assignment to Oklahoma City Comets.",
     "players":[
       "Evan Phillips"
@@ -1852,13 +1877,6 @@
     ]
   },
   {
-    "date":"2025-04-03",
-    "transaction":"Dodgers sent RHP Tony Gonsolin on a rehab assignment to Oklahoma City Comets.",
-    "players":[
-      "Tony Gonsolin"
-    ]
-  },
-  {
     "date":"2025-04-02",
     "transaction":"Dodgers transferred RHP Kyle Hurt from the 15-day injured list to the 60-day injured list. Right elbow surgery.",
     "players":[
@@ -1867,17 +1885,17 @@
   },
   {
     "date":"2025-04-02",
-    "transaction":"Athletics traded LF Esteury Ruiz to Dodgers for RHP Carlos Duran.",
+    "transaction":"Dodgers optioned LF Esteury Ruiz to Oklahoma City Comets.",
     "players":[
-      "Esteury Ruiz",
-      "Carlos Duran"
+      "Esteury Ruiz"
     ]
   },
   {
     "date":"2025-04-02",
-    "transaction":"Dodgers optioned LF Esteury Ruiz to Oklahoma City Comets.",
+    "transaction":"Athletics traded LF Esteury Ruiz to Dodgers for RHP Carlos Duran.",
     "players":[
-      "Esteury Ruiz"
+      "Esteury Ruiz",
+      "Carlos Duran"
     ]
   }
 ]
