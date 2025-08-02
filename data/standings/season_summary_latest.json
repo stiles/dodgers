@@ -2,7 +2,7 @@
     {
         "stat_label":"Wins",
         "stat":"wins",
-        "value":63,
+        "value":64,
         "category":"standings",
         "context_value":63,
         "context_value_label":"This point last season"
@@ -12,15 +12,15 @@
         "stat":"losses",
         "value":46,
         "category":"standings",
-        "context_value":46,
+        "context_value":47,
         "context_value_label":"This point last season"
     },
     {
         "stat_label":"Record",
         "stat":"record",
-        "value":"63-46",
+        "value":"64-46",
         "category":"standings",
-        "context_value":"63-46",
+        "context_value":"63-47",
         "context_value_label":"This point last season"
     },
     {
@@ -28,7 +28,7 @@
         "stat":"win_pct",
         "value":"57%",
         "category":"standings",
-        "context_value":"57%",
+        "context_value":"56%",
         "context_value_label":"This point last season"
     },
     {
@@ -50,7 +50,7 @@
     {
         "stat_label":"Runs",
         "stat":"runs",
-        "value":568,
+        "value":573,
         "category":"standings",
         "context_value":"2nd",
         "context_value_label":"League rank"
@@ -60,15 +60,15 @@
         "stat":"runs_against",
         "value":501,
         "category":"standings",
-        "context_value":448,
+        "context_value":454,
         "context_value_label":"This point last season"
     },
     {
         "stat_label":"Run differential",
         "stat":"run_differential",
-        "value":67,
+        "value":72,
         "category":"standings",
-        "context_value":86,
+        "context_value":85,
         "context_value_label":"This point last season"
     },
     {
@@ -114,7 +114,7 @@
     {
         "stat_label":"Stolen bases\/game",
         "stat":"stolen_bases_game",
-        "value":0.58,
+        "value":0.57,
         "category":"batting",
         "context_value":0.84,
         "context_value_label":"Rate all last season"
@@ -122,7 +122,7 @@
     {
         "stat_label":"Strikeouts",
         "stat":"strikeouts",
-        "value":"958",
+        "value":"966",
         "category":"pitching",
         "context_value":"6th",
         "context_value_label":"League rank"
@@ -138,7 +138,7 @@
     {
         "stat_label":"ERA",
         "stat":"era",
-        "value":"4.24",
+        "value":"4.20",
         "category":"pitching",
         "context_value":"20th",
         "context_value_label":"League rank"
@@ -146,7 +146,7 @@
     {
         "stat_label":"Last updated",
         "stat":"update_time",
-        "value":"August 2, 2025, 1:10 AM PT",
+        "value":"August 2, 2025, 5:12 AM PT",
         "category":"summary",
         "context_value":"",
         "context_value_label":""
@@ -162,7 +162,7 @@
     {
         "stat_label":"Last game result",
         "stat":"last_game_result",
-        "value":"loss",
+        "value":"win",
         "category":"summary",
         "context_value":"",
         "context_value_label":""
