@@ -1,22 +1,22 @@
 stat_label,stat,value,category,context_value,context_value_label
-Wins,wins,63,standings,63,This point last season
-Losses,losses,46,standings,46,This point last season
-Record,record,63-46,standings,63-46,This point last season
-Win percentage,win_pct,57%,standings,57%,This point last season
+Wins,wins,64,standings,63,This point last season
+Losses,losses,46,standings,47,This point last season
+Record,record,64-46,standings,63-47,This point last season
+Win percentage,win_pct,57%,standings,56%,This point last season
 Games up/back,games_up_back,3,standings,1st,Division rank
 Avg. home attendance,mean_attendance,"50,192",standings,56,Home games this season
-Runs,runs,568,standings,2nd,League rank
-Runs against,runs_against,501,standings,448,This point last season
-Run differential,run_differential,67,standings,86,This point last season
+Runs,runs,573,standings,2nd,League rank
+Runs against,runs_against,501,standings,454,This point last season
+Run differential,run_differential,72,standings,85,This point last season
 Batting average,batting_average,.255,batting,.253,Last decade average
 Home runs,home_runs,164,batting,2nd,League rank
 Home runs/game,home_runs_game,1.49,batting,1.42,Last decade average
 On-base percentage,on_base_pct,.330,batting,.333,Last decade average
 Stolen bases,stolen_bases,63,batting,20th,League rank
-Stolen bases/game,stolen_bases_game,0.58,batting,0.84,Rate all last season
-Strikeouts,strikeouts,958,pitching,6th,League rank
+Stolen bases/game,stolen_bases_game,0.57,batting,0.84,Rate all last season
+Strikeouts,strikeouts,966,pitching,6th,League rank
 Walks,walks,386,pitching,5th,League rank
-ERA,era,4.24,pitching,20th,League rank
-Last updated,update_time,"August 2, 2025, 1:10 AM PT",summary,,
+ERA,era,4.20,pitching,20th,League rank
+Last updated,update_time,"August 2, 2025, 5:12 AM PT",summary,,
 Team summary,summary,"<span class='highlight'>LOS ANGELES</span> <span class='updated'>(August 2)</span> — After <span class='highlight'>110</span> games this season, the Dodgers are in <span class='highlight'>1st</span> place in the National League West division. The team has compiled a <span class='highlight'>64-46</span> record, winning <span class='highlight'>58%</span> of its games so far. The last game was a <span class='highlight'>5-0</span> away <span class='highlight'>win</span> against the Tampa Bay Rays. They've won <span class='highlight'>6 of the last 10</span> and are on pace to win at least <span class='highlight'>94</span> games in the regular season.",summary,,
-Last game result,last_game_result,loss,summary,,
+Last game result,last_game_result,win,summary,,
