@@ -2,9 +2,9 @@
     {
         "stat_label":"Wins",
         "stat":"wins",
-        "value":64,
+        "value":65,
         "category":"standings",
-        "context_value":64,
+        "context_value":65,
         "context_value_label":"This point last season"
     },
     {
@@ -18,9 +18,9 @@
     {
         "stat_label":"Record",
         "stat":"record",
-        "value":"64-47",
+        "value":"65-47",
         "category":"standings",
-        "context_value":"64-47",
+        "context_value":"65-47",
         "context_value_label":"This point last season"
     },
     {
@@ -50,7 +50,7 @@
     {
         "stat_label":"Runs",
         "stat":"runs",
-        "value":573,
+        "value":576,
         "category":"standings",
         "context_value":"3rd",
         "context_value_label":"League rank"
@@ -60,15 +60,15 @@
         "stat":"runs_against",
         "value":505,
         "category":"standings",
-        "context_value":454,
+        "context_value":456,
         "context_value_label":"This point last season"
     },
     {
         "stat_label":"Run differential",
         "stat":"run_differential",
-        "value":68,
+        "value":71,
         "category":"standings",
-        "context_value":95,
+        "context_value":96,
         "context_value_label":"This point last season"
     },
     {
@@ -146,7 +146,7 @@
     {
         "stat_label":"Last updated",
         "stat":"update_time",
-        "value":"August 4, 2025, 5:14 AM PT",
+        "value":"August 4, 2025, 8:09 AM PT",
         "category":"summary",
         "context_value":"",
         "context_value_label":""
@@ -162,7 +162,7 @@
     {
         "stat_label":"Last game result",
         "stat":"last_game_result",
-        "value":"loss",
+        "value":"win",
         "category":"summary",
         "context_value":"",
         "context_value_label":""
