@@ -4,13 +4,13 @@
         "stat":"wins",
         "value":64,
         "category":"standings",
-        "context_value":63,
+        "context_value":64,
         "context_value_label":"This point last season"
     },
     {
         "stat_label":"Losses",
         "stat":"losses",
-        "value":46,
+        "value":47,
         "category":"standings",
         "context_value":47,
         "context_value_label":"This point last season"
@@ -18,9 +18,9 @@
     {
         "stat_label":"Record",
         "stat":"record",
-        "value":"64-46",
+        "value":"64-47",
         "category":"standings",
-        "context_value":"63-47",
+        "context_value":"64-47",
         "context_value_label":"This point last season"
     },
     {
@@ -28,7 +28,7 @@
         "stat":"win_pct",
         "value":"57%",
         "category":"standings",
-        "context_value":"56%",
+        "context_value":"57%",
         "context_value_label":"This point last season"
     },
     {
@@ -58,7 +58,7 @@
     {
         "stat_label":"Runs against",
         "stat":"runs_against",
-        "value":501,
+        "value":505,
         "category":"standings",
         "context_value":454,
         "context_value_label":"This point last season"
@@ -66,15 +66,15 @@
     {
         "stat_label":"Run differential",
         "stat":"run_differential",
-        "value":72,
+        "value":68,
         "category":"standings",
-        "context_value":85,
+        "context_value":95,
         "context_value_label":"This point last season"
     },
     {
         "stat_label":"Batting average",
         "stat":"batting_average",
-        "value":".255",
+        "value":".254",
         "category":"batting",
         "context_value":".253",
         "context_value_label":"Last decade average"
@@ -98,7 +98,7 @@
     {
         "stat_label":"On-base percentage",
         "stat":"on_base_pct",
-        "value":".330",
+        "value":".329",
         "category":"batting",
         "context_value":".333",
         "context_value_label":"Last decade average"
@@ -122,7 +122,7 @@
     {
         "stat_label":"Strikeouts",
         "stat":"strikeouts",
-        "value":"966",
+        "value":"979",
         "category":"pitching",
         "context_value":"5th",
         "context_value_label":"League rank"
@@ -138,7 +138,7 @@
     {
         "stat_label":"ERA",
         "stat":"era",
-        "value":"4.20",
+        "value":"4.21",
         "category":"pitching",
         "context_value":"19th",
         "context_value_label":"League rank"
@@ -146,7 +146,7 @@
     {
         "stat_label":"Last updated",
         "stat":"update_time",
-        "value":"August 3, 2025, 4:08 PM PT",
+        "value":"August 4, 2025, 1:11 AM PT",
         "category":"summary",
         "context_value":"",
         "context_value_label":""
@@ -154,7 +154,7 @@
     {
         "stat_label":"Team summary",
         "stat":"summary",
-        "value":"<span class='highlight'>LOS ANGELES<\/span> <span class='updated'>(August 3)<\/span> \u2014 After <span class='highlight'>112<\/span> games this season, the Dodgers are in <span class='highlight'>1st<\/span> place in the National League West division. The team has compiled a <span class='highlight'>65-47<\/span> record, winning <span class='highlight'>58%<\/span> of its games so far. The last game was a <span class='highlight'>3-0<\/span> away <span class='highlight'>win<\/span> against the Tampa Bay Rays. They've won <span class='highlight'>6 of the last 10<\/span> and are on pace to win at least <span class='highlight'>94<\/span> games in the regular season.",
+        "value":"<span class='highlight'>LOS ANGELES<\/span> <span class='updated'>(August 4)<\/span> \u2014 After <span class='highlight'>112<\/span> games this season, the Dodgers are in <span class='highlight'>1st<\/span> place in the National League West division. The team has compiled a <span class='highlight'>65-47<\/span> record, winning <span class='highlight'>58%<\/span> of its games so far. The last game was a <span class='highlight'>3-0<\/span> away <span class='highlight'>win<\/span> against the Tampa Bay Rays. They've won <span class='highlight'>6 of the last 10<\/span> and are on pace to win at least <span class='highlight'>94<\/span> games in the regular season.",
         "category":"summary",
         "context_value":"",
         "context_value_label":""
@@ -162,7 +162,7 @@
     {
         "stat_label":"Last game result",
         "stat":"last_game_result",
-        "value":"win",
+        "value":"loss",
         "category":"summary",
         "context_value":"",
         "context_value_label":""
