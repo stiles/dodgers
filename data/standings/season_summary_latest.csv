@@ -1,13 +1,13 @@
 stat_label,stat,value,category,context_value,context_value_label
-Wins,wins,64,standings,64,This point last season
+Wins,wins,65,standings,65,This point last season
 Losses,losses,47,standings,47,This point last season
-Record,record,64-47,standings,64-47,This point last season
+Record,record,65-47,standings,65-47,This point last season
 Win percentage,win_pct,57%,standings,57%,This point last season
 Games up/back,games_up_back,3,standings,1st,Division rank
 Avg. home attendance,mean_attendance,"50,192",standings,56,Home games this season
-Runs,runs,573,standings,3rd,League rank
-Runs against,runs_against,505,standings,454,This point last season
-Run differential,run_differential,68,standings,95,This point last season
+Runs,runs,576,standings,3rd,League rank
+Runs against,runs_against,505,standings,456,This point last season
+Run differential,run_differential,71,standings,96,This point last season
 Batting average,batting_average,.254,batting,.253,Last decade average
 Home runs,home_runs,164,batting,2nd,League rank
 Home runs/game,home_runs_game,1.46,batting,1.42,Last decade average
@@ -17,6 +17,6 @@ Stolen bases/game,stolen_bases_game,0.6,batting,0.84,Rate all last season
 Strikeouts,strikeouts,988,pitching,5th,League rank
 Walks,walks,388,pitching,7th,League rank
 ERA,era,4.17,pitching,19th,League rank
-Last updated,update_time,"August 4, 2025, 5:14 AM PT",summary,,
+Last updated,update_time,"August 4, 2025, 8:09 AM PT",summary,,
 Team summary,summary,"<span class='highlight'>LOS ANGELES</span> <span class='updated'>(August 4)</span> — After <span class='highlight'>112</span> games this season, the Dodgers are in <span class='highlight'>1st</span> place in the National League West division. The team has compiled a <span class='highlight'>65-47</span> record, winning <span class='highlight'>58%</span> of its games so far. The last game was a <span class='highlight'>3-0</span> away <span class='highlight'>win</span> against the Tampa Bay Rays. They've won <span class='highlight'>6 of the last 10</span> and are on pace to win at least <span class='highlight'>94</span> games in the regular season.",summary,,
-Last game result,last_game_result,loss,summary,,
+Last game result,last_game_result,win,summary,,
