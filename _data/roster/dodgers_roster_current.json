@@ -874,10 +874,10 @@
     "height":"5' 10\"",
     "weight":"169",
     "dob":"02\/15\/1999",
-    "status":"ACTIVE",
-    "is_minors":false,
+    "status":"MINORS",
+    "is_minors":true,
     "is_il":false,
-    "is_active_roster":true,
+    "is_active_roster":false,
     "is_40_man":true,
     "slug":"esteury-ruiz"
   }
