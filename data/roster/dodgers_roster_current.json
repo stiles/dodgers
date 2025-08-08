@@ -630,24 +630,6 @@
     "slug":"will-smith"
   },
   {
-    "player_id":"663609",
-    "thumb_url":"https:\/\/img.mlbstatic.com\/mlb-photos\/image\/upload\/d_people:generic:headshot:silo:current.png\/r_max\/q_auto:best\/v1\/people\/663609\/headshot\/silo\/current",
-    "name":"Luken Baker",
-    "player_url":"\/player\/663609",
-    "jersey":"",
-    "position_group":"Infielders",
-    "bat_throw":"R\/R",
-    "height":"6' 4\"",
-    "weight":"285",
-    "dob":"03\/10\/1997",
-    "status":"MINORS",
-    "is_minors":true,
-    "is_il":false,
-    "is_active_roster":false,
-    "is_40_man":true,
-    "slug":"luken-baker"
-  },
-  {
     "player_id":"605141",
     "thumb_url":"https:\/\/img.mlbstatic.com\/mlb-photos\/image\/upload\/d_people:generic:headshot:silo:current.png\/r_max\/q_auto:best\/v1\/people\/605141\/headshot\/silo\/current",
     "name":"Mookie Betts",
@@ -826,6 +808,24 @@
     "is_active_roster":true,
     "is_40_man":true,
     "slug":"michael-conforto"
+  },
+  {
+    "player_id":"681909",
+    "thumb_url":"https:\/\/img.mlbstatic.com\/mlb-photos\/image\/upload\/d_people:generic:headshot:silo:current.png\/r_max\/q_auto:best\/v1\/people\/681909\/headshot\/silo\/current",
+    "name":"Justin Dean",
+    "player_url":"\/player\/681909",
+    "jersey":"75",
+    "position_group":"Outfielders",
+    "bat_throw":"R\/R",
+    "height":"5' 8\"",
+    "weight":"185",
+    "dob":"12\/06\/1996",
+    "status":"ACTIVE",
+    "is_minors":false,
+    "is_il":false,
+    "is_active_roster":true,
+    "is_40_man":true,
+    "slug":"justin-dean"
   },
   {
     "player_id":"606192",
