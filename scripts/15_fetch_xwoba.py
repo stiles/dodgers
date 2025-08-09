@@ -18,6 +18,7 @@ import logging
 from io import StringIO
 from datetime import datetime
 import re
+import unicodedata
 
 logging.basicConfig(level=logging.INFO, format='%(asctime)s - %(levelname)s - %(message)s')
 
@@ -34,35 +35,30 @@ s3_key_csv = "dodgers/data/batting/dodgers_xwoba_current.csv"
 s3_key_json = "dodgers/data/batting/dodgers_xwoba_current.json"
 s3_key_parquet = "dodgers/data/batting/dodgers_xwoba_current.parquet"
 
-# List of known pitchers to skip
-PITCHERS_TO_SKIP = [
-    'Sasaki, Roki',
-    'Snell, Blake',
-    'Treinen, Blake',
-    'Casparius, Ben',
-    'May, Dustin',
-    'Sauer, Matt',
-    'García, Luis',
-    'Glasnow, Tyler',
-    'Wrobleski, Justin',
-    'Banda, Anthony',
-    'Yates, Kirby',
-    'Knack, Landon',
-    'Vesia, Alex',
-    'Yamamoto, Yoshinobu',
-    'Scott, Tanner',
-    'Dreyer, Jack',
-    'Phillips, Evan',
-    'Kershaw, Clayton',
-    'Stratton, Chris',
-    'Feduccia, Hunter',
-    'Trivino, Lou',
-    'Kopech, Michael',
-    'Miller, Bobby',
-    'Davis, Noah',
-    'Gonsolin, Tony'
-    'Díaz, Alexis'
+# Allowlist of batter names to include (expected input: "First Last")
+ALLOWED_BATTERS = [
+    "Shohei Ohtani",
+    "Mookie Betts",
+    "Will Smith",
+    "Freddie Freeman",
+    "Andy Pages",
+    "Teo Hernandex",  # will be normalized/matched to Teoscar Hernández
+    "Max Muncy",
+    "Miguel Rojas",
+    "Tommy Edman",
+    "Hyeseong Kim",
+    "Michael Conforto",
+    "Alex Call",
 ]
+
+# Known corrections to help match allowlist typos or alternate spellings
+NAME_CORRECTIONS = {
+    # normalized "first last" -> corrected normalized "first last"
+    "teo hernandex": "teoscar hernandez",
+    "teo hernandez": "teoscar hernandez",
+    "teo hern1ndez": "teoscar hernandez",
+    "hyeseong kim": "hyeseong kim",  # keep as-is; normalization handles hyphens/accents
+}
 
 # AWS session and S3 resource
 # Determine if running in a GitHub Actions environment
@@ -102,6 +98,59 @@ def format_player_name(name):
         return f"{first.strip()} {last.strip()}"
     return name
 
+def strip_accents(text: str) -> str:
+    """Remove diacritics from text."""
+    text_norm = unicodedata.normalize('NFD', text)
+    return ''.join(ch for ch in text_norm if not unicodedata.combining(ch))
+
+def normalize_name(name: str) -> str:
+    """
+    Normalize a player name for comparison:
+    - lower case
+    - remove accents
+    - remove punctuation, commas, periods
+    - collapse whitespace
+    - remove hyphens
+    Output as "first last" order regardless of input.
+    """
+    if not name:
+        return ""
+    name = name.strip()
+    # If "Last, First" flip to "First Last"
+    if ',' in name:
+        parts = [p.strip() for p in name.split(',')]
+        if len(parts) >= 2:
+            name = f"{parts[1]} {parts[0]}"
+    # Remove accents
+    name = strip_accents(name)
+    # Remove punctuation and hyphens
+    name = re.sub(r"[\-\.]+", " ", name)
+    name = re.sub(r"[^a-zA-Z\s]", " ", name)
+    # Collapse whitespace
+    name = re.sub(r"\s+", " ", name).strip()
+    return name.lower()
+
+def to_last_first(name: str) -> str:
+    """Convert "First Last" to "Last, First" for display."""
+    if not name:
+        return name
+    tokens = name.strip().split()
+    if len(tokens) >= 2:
+        first = " ".join(tokens[:-1])
+        last = tokens[-1]
+        return f"{last}, {first}"
+    return name
+
+def build_allowed_set(raw_names: list[str]) -> set[str]:
+    normalized = set()
+    for nm in raw_names:
+        key = normalize_name(nm)
+        key = NAME_CORRECTIONS.get(key, key)
+        normalized.add(key)
+    return normalized
+
+ALLOWED_NORMALIZED = build_allowed_set(ALLOWED_BATTERS)
+
 def fetch_player_ids():
     """
     Scrape the Dodgers roster page to get all player IDs.
@@ -135,15 +184,35 @@ def fetch_player_ids():
                 # Skip team totals and MLB totals rows
                 if player_id in ['119', '999999']:
                     continue
-                player_name = row.find('a').text.strip()
-                # Skip known pitchers before name formatting
-                if player_name in PITCHERS_TO_SKIP:
-                    logging.debug(f"Skipping known pitcher: {player_name}")
-                    continue
-                # Format name after pitcher check
-                formatted_name = format_player_name(player_name)
+                player_name_raw = row.find('a').text.strip()
+                # Format to "First Last" then filter by allowlist
+                formatted_name = format_player_name(player_name_raw)
+                normalized = normalize_name(formatted_name)
+                # Apply corrections map before comparison
+                normalized = NAME_CORRECTIONS.get(normalized, normalized)
+                # Check allowlist: require last name exact match and loose first-name prefix match
+                if normalized not in ALLOWED_NORMALIZED:
+                    # try prefix match on first name with exact last name
+                    # split to first/last for both candidate and allowed
+                    cand_tokens = normalized.split()
+                    if len(cand_tokens) >= 2:
+                        cand_first = " ".join(cand_tokens[:-1])
+                        cand_last = cand_tokens[-1]
+                        matched = False
+                        for allowed in ALLOWED_NORMALIZED:
+                            a_tokens = allowed.split()
+                            if len(a_tokens) >= 2:
+                                a_first = " ".join(a_tokens[:-1])
+                                a_last = a_tokens[-1]
+                                if cand_last == a_last and (cand_first.startswith(a_first) or a_first.startswith(cand_first)):
+                                    matched = True
+                                    break
+                        if not matched:
+                            continue
+                    else:
+                        continue
                 player_lookup[formatted_name] = player_id
-                logging.debug(f"Added player: {formatted_name} (ID: {player_id})")
+                logging.debug(f"Added allowed player: {formatted_name} (ID: {player_id})")
             except Exception as e:
                 logging.warning(f"Skipping row with ID {row.get('id', 'unknown')}: {str(e)}")
                 continue
@@ -201,7 +270,8 @@ def fetch_player_xwoba(player_name, player_id):
             player_df['max_game_date'] = player_df['max_game_date'].dt.strftime('%Y-%m-%d %H:%M:%S %Z')
             
         player_df['xwoba'] = player_df['xwoba'].astype(float)
-        player_df['player_name'] = player_name
+        # Display name as "Last, First"
+        player_df['player_name'] = to_last_first(player_name)
         player_df['player_id'] = player_id
         
         logging.info(f"Successfully processed data for {player_name}")
