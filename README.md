@@ -35,6 +35,7 @@ The repository includes numerous Python scripts that perform the following daily
 - **Daily summary tweets:** `scripts/23_post_daily_summaries.py`
 - **News roundup tweets:** `scripts/24_fetch_news.py`
 - **Shohei Ohtani pitching data:** `scripts/25_fetch_shohei_pitches.py`
+- **xwOBA rolling windows (current season):** `scripts/15_fetch_xwoba.py`
 
 ### What they do:
 
@@ -200,6 +201,39 @@ The processed datasets — which aren't all documented below yet — are uploade
     - [Parquet](https://stilesdata.com/dodgers/data/batting/dodgers_team_batting_1958_present.parquet)
 
 *Data structure coming soon*
+
+#### xwOBA (current season)
+
+Back end
+
+- `scripts/15_fetch_xwoba.py` fetches rolling 100 plate appearance xwOBA series per batter from Baseball Savant
+- Filters to a maintained allowlist of regular batters (`ALLOWED_BATTERS`) and normalizes names to match roster output
+- Emits player names as "First Last"
+- Writes outputs and uploads to S3
+  - Current timeseries per allowed batter
+    - [JSON](https://stilesdata.com/dodgers/data/batting/dodgers_xwoba_current.json)
+    - [CSV](https://stilesdata.com/dodgers/data/batting/dodgers_xwoba_current.csv)
+    - [Parquet](https://stilesdata.com/dodgers/data/batting/dodgers_xwoba_current.parquet)
+  - League average xwOBA snapshot
+    - [JSON](https://stilesdata.com/dodgers/data/batting/league_avg_xwoba.json)
+
+Columns (primary)
+
+| column_name        | description                                   |
+|--------------------|-----------------------------------------------|
+| `rn`               | Rolling window rank from most recent to oldest |
+| `rn_fwd`           | Same as `rn` preserved for plotting            |
+| `xwoba`            | Expected wOBA for the rolling window           |
+| `player_name`      | Batter name in "First Last"                    |
+| `player_id`        | Savant player id                               |
+| `max_game_date`    | Last game date in the window (Pacific time)    |
+| `league_avg_xwoba` | MLB average xwOBA used for comparison          |
+
+Front end
+
+- `assets/js/dashboard.js` reads `dodgers_xwoba_current.json` and renders a grid of small multiples on `index.markdown`
+- Each panel plots `xwoba` over the last up to 100 plate appearances (x axis from 100 → 1)
+- The title shows an up or down arrow colored against MLB average, and a dashed reference line marks the average; the label includes a halo for legibility
 
 ### Pitching
 
