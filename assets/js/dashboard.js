@@ -2592,12 +2592,23 @@ document.addEventListener('DOMContentLoaded', function () {
       .attr('stroke-width', 3)
       .attr('d', line2025);
 
+    // Track 2025 label position for basic collision checks with 2024
+    const label2025 = { x: null, yLabel: null, yStat: null };
+
     // Add labels for 2025 (current season)
     if (data2025.length > 0) {
       const last2025 = data2025[data2025.length - 1];
       const xPosText2025 = xScale(last2025.game_number);
-      const yPosLabel2025 = yScale(last2025[config.yField]) - 60; // Position label much higher
-      const yPosStat2025 = yScale(last2025[config.yField]) - 46; // Position stat below label
+      let yPosLabel2025 = yScale(last2025[config.yField]) - (isMobile ? 44 : 60); // slightly less offset on mobile
+      let yPosStat2025 = yScale(last2025[config.yField]) - (isMobile ? 30 : 46); // Position stat below label
+      // Clamp to keep inside chart area
+      yPosLabel2025 = Math.max(12, yPosLabel2025);
+      yPosStat2025 = Math.max(26, yPosStat2025);
+
+      // Save for later overlap checks
+      label2025.x = xPosText2025;
+      label2025.yLabel = yPosLabel2025;
+      label2025.yStat = yPosStat2025;
 
       svg.append('text')
         .attr('x', xPosText2025)
@@ -2606,6 +2617,7 @@ document.addEventListener('DOMContentLoaded', function () {
         .attr('text-anchor', 'middle') // Center text
         .style('stroke', '#fff')
         .style('stroke-width', '3px')
+        .style('stroke-linejoin', 'round')
         .style('paint-order', 'stroke')
         .text('2025')
         .clone(true)
@@ -2617,6 +2629,7 @@ document.addEventListener('DOMContentLoaded', function () {
         .attr('text-anchor', 'middle') // Center text
         .style('stroke', '#fff')
         .style('stroke-width', '3px')
+        .style('stroke-linejoin', 'round')
         .style('paint-order', 'stroke')
         .text(`${last2025[config.yField]} ${config.labelText}`)
         .clone(true)
@@ -2636,48 +2649,194 @@ document.addEventListener('DOMContentLoaded', function () {
     // Add labels for 2024
     if (data2024.length > 0) {
       const last2024 = data2024[data2024.length - 1];
-      const xPosText2024 = xScale(last2024.game_number) - 30; // Position text further left
-      // Vertically center the text block with the leader line
-      const midYPoint = yScale(last2024[config.yField]);
-      const yPosLabel2024 = midYPoint - 7; // Position label slightly above midpoint Y
-      const yPosStat2024 = midYPoint + 7;  // Position stat slightly below midpoint Y
+      const xPoint2024 = xScale(last2024.game_number);
+      const yPoint2024 = yScale(last2024[config.yField]);
 
-      // Prevent labels going off-canvas
-      const effectiveXPos2024 = Math.max(40, xPosText2024); 
+      // Simple collision heuristic with 2025 label area
+      const nearX2025 = label2025.x !== null && Math.abs(xPoint2024 - label2025.x) < 42;
+      const nearY2025 = label2025.yStat !== null && Math.abs(yPoint2024 - label2025.yStat) < 28;
+      const overlaps2025 = nearX2025 && nearY2025;
 
-      svg.append('text')
-        .attr('x', effectiveXPos2024 -10)
-        .attr('y', yPosLabel2024)
-        .attr('class', 'anno')
-        .attr('text-anchor', 'end')
-        .style('font-weight', 'bold') 
-        .style('stroke', '#fff')
-        .style('stroke-width', '3px')
-        .style('paint-order', 'stroke')
-        .text('2024')
-        .clone(true)
-        .style('stroke', 'none');
-      svg.append('text')
-        .attr('x', effectiveXPos2024 -10)
-        .attr('y', yPosStat2024)
-        .attr('class', 'anno-dark')
-        .attr('text-anchor', 'end') 
-        .style('stroke', '#fff')
-        .style('stroke-width', '3px')
-        .style('paint-order', 'stroke')
-        .text(`${last2024[config.yField]} ${config.labelText}`)
-        .clone(true)
-        .style('stroke', 'none');
+      if (isMobile || overlaps2025) {
+        const isHR = config.elementId === 'shohei-homers-chart';
+        const isSB = config.elementId === 'shohei-sb-chart';
 
-      // Leader line for 2024 
-      svg.append('line')
-        .attr('x1', effectiveXPos2024 -3) 
-        .attr('y1', midYPoint)
-        .attr('x2', xScale(last2024.game_number))
-        .attr('y2', midYPoint)
-        .attr('stroke', '#999999')
-        .attr('stroke-width', 1)
-        .attr('stroke-dasharray', '3,3'); // Make dashed
+        if (isHR) {
+          // 6 o'clock: vertical leader downward, centered text below
+          const yOffset = overlaps2025 ? 34 : 30;
+          let yTarget = Math.min(height - 12, yPoint2024 + yOffset);
+          // Nudge further down if close to 2025 stat
+          if (label2025.yStat !== null && Math.abs(yTarget - label2025.yStat) < 18) {
+            yTarget = Math.min(height - 12, label2025.yStat + 22);
+          }
+
+          svg.append('text')
+            .attr('x', xPoint2024)
+            .attr('y', yTarget + 10)
+            .attr('class', 'anno')
+            .attr('text-anchor', 'end')
+            .style('font-weight', 'bold')
+            .style('stroke', '#fff')
+            .style('stroke-width', '3px')
+            .style('stroke-linejoin', 'round')
+            .style('paint-order', 'stroke')
+            .text('2024')
+            .clone(true)
+            .style('stroke', 'none');
+
+          svg.append('text')
+            .attr('x', xPoint2024)
+            .attr('y', yTarget + 20)
+            .attr('class', 'anno-dark')
+            .attr('text-anchor', 'end')
+            .style('stroke', '#fff')
+            .style('stroke-width', '3px')
+            .style('stroke-linejoin', 'round')
+            .style('paint-order', 'stroke')
+            .text(`${last2024[config.yField]} ${config.labelText}`)
+            .clone(true)
+            .style('stroke', 'none');
+
+          svg.append('line')
+            .attr('x1', xPoint2024)
+            .attr('y1', yPoint2024)
+            .attr('x2', xPoint2024)
+            .attr('y2', yTarget - 6)
+            .attr('stroke', '#999999')
+            .attr('stroke-width', 1)
+            .attr('stroke-dasharray', '3,3');
+        } else if (isSB) {
+          // 9 o'clock: horizontal leader left, text aligned to the left of the point
+          const xEdgePadding = 10;
+          const xOffset = overlaps2025 ? 40 : 34;
+          const xTarget = Math.max(xEdgePadding, xPoint2024 - xOffset);
+          const yTarget = Math.min(height - 12, Math.max(12, yPoint2024));
+
+          svg.append('text')
+            .attr('x', xTarget)
+            .attr('y', yTarget - 12)
+            .attr('class', 'anno')
+            .attr('text-anchor', 'end')
+            .style('font-weight', 'bold')
+            .style('stroke', '#fff')
+            .style('stroke-width', '3px')
+            .style('stroke-linejoin', 'round')
+            .style('paint-order', 'stroke')
+            .text('2024')
+            .clone(true)
+            .style('stroke', 'none');
+
+          svg.append('text')
+            .attr('x', xTarget)
+            .attr('y', yTarget + 3)
+            .attr('class', 'anno-dark')
+            .attr('text-anchor', 'end')
+            .style('stroke', '#fff')
+            .style('stroke-width', '3px')
+            .style('stroke-linejoin', 'round')
+            .style('paint-order', 'stroke')
+            .text(`${last2024[config.yField]} ${config.labelText}`)
+            .clone(true)
+            .style('stroke', 'none');
+
+          svg.append('line')
+            .attr('x1', xTarget + 6)
+            .attr('y1', yPoint2024)
+            .attr('x2', xPoint2024)
+            .attr('y2', yPoint2024)
+            .attr('stroke', '#999999')
+            .attr('stroke-width', 1)
+            .attr('stroke-dasharray', '3,3');
+        } else {
+          // Fallback: diagonal placement similar to previous behavior
+          const xEdgePadding = 10;
+          const xOffset = 18;
+          const yOffset = 28;
+          const placeRight = xPoint2024 <= width * 0.7;
+          const xTarget = Math.max(
+            xEdgePadding,
+            Math.min(width - xEdgePadding, xPoint2024 + (placeRight ? xOffset : -xOffset))
+          );
+          const yTarget = Math.min(height - 12, yPoint2024 + yOffset);
+
+          svg.append('text')
+            .attr('x', xTarget)
+            .attr('y', yTarget - 12)
+            .attr('class', 'anno')
+            .attr('text-anchor', placeRight ? 'start' : 'end')
+            .style('font-weight', 'bold')
+            .style('stroke', '#fff')
+            .style('stroke-width', '3px')
+            .style('paint-order', 'stroke')
+            .text('2024')
+            .clone(true)
+            .style('stroke', 'none');
+
+          svg.append('text')
+            .attr('x', xTarget)
+            .attr('y', yTarget)
+            .attr('class', 'anno-dark')
+            .attr('text-anchor', placeRight ? 'start' : 'end')
+            .style('stroke', '#fff')
+            .style('stroke-width', '3px')
+            .style('paint-order', 'stroke')
+            .text(`${last2024[config.yField]} ${config.labelText}`)
+            .clone(true)
+            .style('stroke', 'none');
+
+          svg.append('line')
+            .attr('x1', xPoint2024)
+            .attr('y1', yPoint2024)
+            .attr('x2', xTarget)
+            .attr('y2', yTarget - 14)
+            .attr('stroke', '#999999')
+            .attr('stroke-width', 1)
+            .attr('stroke-dasharray', '3,3');
+        }
+      } else {
+        // Desktop: keep label to the left, centered vertically on the point
+        const xPosText2024 = xPoint2024 - 30; // Position text further left
+        const midYPoint = yPoint2024;
+        const yPosLabel2024 = midYPoint - 7;
+        const yPosStat2024 = midYPoint + 7;
+        const effectiveXPos2024 = Math.max(40, xPosText2024);
+
+        svg.append('text')
+          .attr('x', effectiveXPos2024 - 10)
+          .attr('y', yPosLabel2024)
+          .attr('class', 'anno')
+          .attr('text-anchor', 'end')
+          .style('font-weight', 'bold')
+          .style('stroke', '#fff')
+          .style('stroke-width', '3px')
+          .style('stroke-linejoin', 'round')
+          .style('paint-order', 'stroke')
+          .text('2024')
+          .clone(true)
+          .style('stroke', 'none');
+
+        svg.append('text')
+          .attr('x', effectiveXPos2024 - 10)
+          .attr('y', yPosStat2024)
+          .attr('class', 'anno-dark')
+          .attr('text-anchor', 'end')
+          .style('stroke', '#fff')
+          .style('stroke-width', '3px')
+          .style('stroke-linejoin', 'round')
+          .style('paint-order', 'stroke')
+          .text(`${last2024[config.yField]} ${config.labelText}`)
+          .clone(true)
+          .style('stroke', 'none');
+
+        svg.append('line')
+          .attr('x1', effectiveXPos2024 - 3)
+          .attr('y1', midYPoint)
+          .attr('x2', xPoint2024)
+          .attr('y2', midYPoint)
+          .attr('stroke', '#999999')
+          .attr('stroke-width', 1)
+          .attr('stroke-dasharray', '3,3');
+      }
     }
   }
 
@@ -2735,7 +2894,7 @@ document.addEventListener('DOMContentLoaded', function () {
         elementId: 'shohei-homers-chart',
         yField: 'home_runs_cum',
         yAxisLabel: 'Cumulative home runs',
-        labelText: 'home runs' // Use full text
+        labelText: 'homers' // Use full text
       },
       hrData
     );
@@ -2744,7 +2903,7 @@ document.addEventListener('DOMContentLoaded', function () {
         elementId: 'shohei-sb-chart',
         yField: 'sb_cum',
         yAxisLabel: 'Cumulative stolen bases',
-        labelText: 'stolen bases' // Use full text
+        labelText: 'stolen' // Use full text
       },
       sbData
     );
