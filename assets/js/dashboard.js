@@ -2402,12 +2402,16 @@ async function fetchAndRenderXwoba() {
         }
         
         if (index === 0) {
-          svg.append('text')
-            .attr('x', 105)
+          const legend = svg.append('text')
+            .attr('x', 125)
             .attr('y', -5)
-            .style('font-size', '11px')
-            .style('fill', '#999')
-            .text('▲/▼ vs. MLB avg');
+            .style('font-size', '12px')
+            .style('fill', '#999');
+          legend.append('tspan').text('');
+          legend.append('tspan').text('▲').style('fill', '#38761d');
+          legend.append('tspan').text(' / ').style('fill', '#999');
+          legend.append('tspan').text('▼').style('fill', '#cc0000');
+          legend.append('tspan').text(' vs. MLB avg').style('fill', '#999');
         }
         
         const x = d3.scaleLinear()
@@ -2471,16 +2475,22 @@ async function fetchAndRenderXwoba() {
           .attr('stroke-dasharray', '3,3');
 
         if (index === 0) {
-          svg.append('text')
-            .attr('x', drawingWidth - 10) 
-            .attr('y', y(leagueAvg) + 13)
+          const mlbAvgYOffset = latestXwoba >= leagueAvg ? -5 : 13; // prefer above the line when applicable
+          const mlbAvg = `MLB avg: ${leagueAvg.toFixed(3).replace(/^0\./, '.')}`;
+          const label = svg.append('text')
+            .attr('x', drawingWidth - 10)
+            .attr('y', y(leagueAvg) + mlbAvgYOffset)
             .attr('text-anchor', 'end')
             .attr('class', 'anno')
-            .attr('font-size', '8px')
-            .style('fill', '#999')
-            .style('stroke', 'none')
-            .style('opacity', 1)
-            .text(`MLB avg: ${leagueAvg.toFixed(3).replace(/^0\./, '.')}`);
+            .attr('font-size', '10px')
+            .style('fill', '#b1b1b1')
+            .style('stroke', '#fff')
+            .style('stroke-width', '3px')
+            .style('stroke-linejoin', 'round')
+            .style('paint-order', 'stroke')
+            .text(mlbAvg)
+            .clone(true)
+            .style('stroke', 'none');
         }
       });
     });

@@ -56,7 +56,6 @@ NAME_CORRECTIONS = {
     # normalized "first last" -> corrected normalized "first last"
     "teo hernandex": "teoscar hernandez",
     "teo hernandez": "teoscar hernandez",
-    "teo hern1ndez": "teoscar hernandez",
     "hyeseong kim": "hyeseong kim",  # keep as-is; normalization handles hyphens/accents
 }
 
@@ -270,8 +269,8 @@ def fetch_player_xwoba(player_name, player_id):
             player_df['max_game_date'] = player_df['max_game_date'].dt.strftime('%Y-%m-%d %H:%M:%S %Z')
             
         player_df['xwoba'] = player_df['xwoba'].astype(float)
-        # Display name as "Last, First"
-        player_df['player_name'] = to_last_first(player_name)
+        # Display name as "First Last"
+        player_df['player_name'] = player_name
         player_df['player_id'] = player_id
         
         logging.info(f"Successfully processed data for {player_name}")
@@ -417,7 +416,7 @@ def main():
             df.drop(columns=['savant_batter_id'], inplace=True)
             # Save to various formats
             df.to_csv(csv_file, index=False)
-            df.to_json(json_file, orient="records")
+            df.to_json(json_file, orient="records", indent=2)
             df.to_parquet(parquet_file, index=False)
             logging.info("Data written to JSON, CSV, and Parquet files.")
             
