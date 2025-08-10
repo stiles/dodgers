@@ -2,9 +2,9 @@
     {
         "stat_label":"Wins",
         "stat":"wins",
-        "value":67,
+        "value":68,
         "category":"standings",
-        "context_value":67,
+        "context_value":68,
         "context_value_label":"This point last season"
     },
     {
@@ -18,9 +18,9 @@
     {
         "stat_label":"Record",
         "stat":"record",
-        "value":"67-49",
+        "value":"68-49",
         "category":"standings",
-        "context_value":"67-49",
+        "context_value":"68-49",
         "context_value_label":"This point last season"
     },
     {
@@ -42,15 +42,15 @@
     {
         "stat_label":"Avg. home attendance",
         "stat":"mean_attendance",
-        "value":"50,105",
+        "value":"50,017",
         "category":"standings",
-        "context_value":60,
+        "context_value":61,
         "context_value_label":"Home games this season"
     },
     {
         "stat_label":"Runs",
         "stat":"runs",
-        "value":598,
+        "value":607,
         "category":"standings",
         "context_value":"1st",
         "context_value_label":"League rank"
@@ -58,23 +58,23 @@
     {
         "stat_label":"Runs against",
         "stat":"runs_against",
-        "value":520,
+        "value":521,
         "category":"standings",
-        "context_value":479,
+        "context_value":480,
         "context_value_label":"This point last season"
     },
     {
         "stat_label":"Run differential",
         "stat":"run_differential",
-        "value":78,
+        "value":86,
         "category":"standings",
-        "context_value":93,
+        "context_value":96,
         "context_value_label":"This point last season"
     },
     {
         "stat_label":"Batting average",
         "stat":"batting_average",
-        "value":".254",
+        "value":".255",
         "category":"batting",
         "context_value":".253",
         "context_value_label":"Last decade average"
@@ -82,7 +82,7 @@
     {
         "stat_label":"Home runs",
         "stat":"home_runs",
-        "value":171,
+        "value":173,
         "category":"batting",
         "context_value":"2nd",
         "context_value_label":"League rank"
@@ -90,7 +90,7 @@
     {
         "stat_label":"Home runs\/game",
         "stat":"home_runs_game",
-        "value":1.47,
+        "value":1.48,
         "category":"batting",
         "context_value":1.42,
         "context_value_label":"Last decade average"
@@ -98,7 +98,7 @@
     {
         "stat_label":"On-base percentage",
         "stat":"on_base_pct",
-        "value":".329",
+        "value":".330",
         "category":"batting",
         "context_value":".333",
         "context_value_label":"Last decade average"
@@ -122,7 +122,7 @@
     {
         "stat_label":"Strikeouts",
         "stat":"strikeouts",
-        "value":"1024",
+        "value":"1038",
         "category":"pitching",
         "context_value":"4th",
         "context_value_label":"League rank"
@@ -130,7 +130,7 @@
     {
         "stat_label":"Walks",
         "stat":"walks",
-        "value":"397",
+        "value":"402",
         "category":"pitching",
         "context_value":"8th",
         "context_value_label":"League rank"
@@ -138,7 +138,7 @@
     {
         "stat_label":"ERA",
         "stat":"era",
-        "value":"4.13",
+        "value":"4.10",
         "category":"pitching",
         "context_value":"18th",
         "context_value_label":"League rank"
@@ -146,7 +146,7 @@
     {
         "stat_label":"Last updated",
         "stat":"update_time",
-        "value":"August 9, 2025, 11:37 PM PT",
+        "value":"August 10, 2025, 1:09 AM PT",
         "category":"summary",
         "context_value":"",
         "context_value_label":""
@@ -154,7 +154,7 @@
     {
         "stat_label":"Team summary",
         "stat":"summary",
-        "value":"<span class='highlight'>LOS ANGELES<\/span> <span class='updated'>(August 9)<\/span> \u2014 After <span class='highlight'>117<\/span> games this season, the Dodgers are in <span class='highlight'>1st<\/span> place in the National League West division. The team has compiled a <span class='highlight'>68-49<\/span> record, winning <span class='highlight'>58%<\/span> of its games so far. The last game was a <span class='highlight'>9-1<\/span> home <span class='highlight'>win<\/span> against the Toronto Blue Jays. They've won <span class='highlight'>6 of the last 10<\/span> and are on pace to win at least <span class='highlight'>94<\/span> games in the regular season.",
+        "value":"<span class='highlight'>LOS ANGELES<\/span> <span class='updated'>(August 10)<\/span> \u2014 After <span class='highlight'>117<\/span> games this season, the Dodgers are in <span class='highlight'>1st<\/span> place in the National League West division. The team has compiled a <span class='highlight'>68-49<\/span> record, winning <span class='highlight'>58%<\/span> of its games so far. The last game was a <span class='highlight'>9-1<\/span> home <span class='highlight'>win<\/span> against the Toronto Blue Jays. They've won <span class='highlight'>6 of the last 10<\/span> and are on pace to win at least <span class='highlight'>94<\/span> games in the regular season.",
         "category":"summary",
         "context_value":"",
         "context_value_label":""
