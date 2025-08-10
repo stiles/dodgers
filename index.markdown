@@ -288,7 +288,7 @@ twitter:
 </div>
 
   <h2 class="stat-group">Schedule</h2>
-    <div class="tables-container">
+    <div id="schedule-section" class="schedule-tables">
       <div class="table-wrapper">
           <h3 class="visual-subhead">Last 10 games</h3>
           <table id="last-games" class="data-table">
@@ -296,7 +296,7 @@ twitter:
                   <tr>
                       <th>Date</th>
                       <th>Opponent</th>
-                      <th>Location</th>
+                      <th>Place</th>
                       <th>Result</th>
                   </tr>
               </thead>
@@ -310,8 +310,8 @@ twitter:
                   <tr>
                       <th>Date</th>
                       <th>Opponent</th>
-                      <th>Location</th>
-                      <th>Time (PT)</th>
+                      <th>Place</th>
+                      <th>Time PT</th>
                   </tr>
               </thead>
               <tbody></tbody>
@@ -345,6 +345,71 @@ twitter:
   .small-chart-container {
     width: 100%;
     margin-bottom: 30px;
+  }
+}
+
+/* Desktop - force equal width distribution */
+@media (min-width: 901px) {
+  #schedule-section {
+    display: flex !important;
+    gap: 20px !important;
+    justify-content: space-between !important;
+  }
+  #schedule-section .table-wrapper {
+    flex: 1 1 calc(50% - 10px) !important;
+    width: calc(50% - 10px) !important;
+    max-width: calc(50% - 10px) !important;
+    min-width: 0 !important;
+    box-sizing: border-box !important;
+  }
+  #schedule-section .table-wrapper table {
+    width: 100% !important;
+    table-layout: fixed !important;
+  }
+}
+
+@media (max-width: 900px) {
+  #schedule-section {
+    display: block !important;
+    width: 100% !important;
+    max-width: 100% !important;
+  }
+  #schedule-section .table-wrapper {
+    display: block !important;
+    width: 100% !important;
+    max-width: 100% !important;
+    padding: 0 !important;
+    margin: 0 0 20px 0 !important;
+    background: transparent !important;
+    border-radius: 0 !important;
+    box-sizing: border-box !important;
+  }
+  #schedule-section .table-wrapper:last-child {
+    margin-bottom: 0 !important;
+  }
+  #last-games,
+  #next-games {
+    width: 100% !important;
+    max-width: 100% !important;
+    min-width: 100% !important;
+    margin: 0 !important;
+    table-layout: fixed !important;
+    box-sizing: border-box !important;
+  }
+  #last-games *,
+  #next-games * {
+    box-sizing: border-box !important;
+  }
+  /* Force override any external CSS */
+  body #schedule-section table {
+    width: 100% !important;
+    max-width: 100% !important;
+  }
+  #schedule-section h3.visual-subhead {
+    margin: 15px 0 10px 0 !important;
+  }
+  #schedule-section h3.visual-subhead:first-child {
+    margin-top: 0 !important;
   }
 }
 </style>

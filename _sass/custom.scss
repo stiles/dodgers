@@ -663,7 +663,7 @@ thead {
   border: 0.2px solid #ddd;
   padding: 5px 10px;
   font-family: 'Roboto';
-  font-size: 12px;
+  font-size: 11px;
 }
 
 .data-table td div {
@@ -826,6 +826,7 @@ h2.about-subhead {
   .table-wrapper {
     flex: 1 1 100%;
     max-width: 100%;
+    padding: 10px 0; // tighter vertical spacing on mobile
   }
 }
 
@@ -839,34 +840,7 @@ h3 {
   font-size: .6em;
 }
 
-.tables-container {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: space-between;
-  gap: 10px; 
-}
-
-.table-wrapper {
-  flex: 1 1 calc(50% - 5px); 
-  max-width: calc(50% - 5px);
-  padding: 10px;
-  border-radius: 8px;
-  background-color: #fff;
-}
-
-@media (max-width: 900px) {
-  .table-wrapper {
-    flex: 1 1 100%;
-    max-width: 100%;
-  }
-
-  .note {
-    color: #999;
-    font-family: 'Roboto', sans-serif;
-    font-size: .8em;
-  }
-  
-}
+/* REMOVED DUPLICATE - keeping the consolidated version below */
 
 td.win {
   text-align: center;
@@ -978,6 +952,45 @@ hr.style-eight:after {
   .table-wrapper {
       flex: 1 1 100%;
       max-width: 100%;
+    padding: 8px 0; // compressed vertical spacing for all table wrappers
+  }
+}
+
+// Specific tweaks for the schedule tables section
+.schedule-tables {
+  gap: 10px;
+}
+
+@media (max-width: 900px) {
+  .tables-container.schedule-tables { 
+    gap: 0px !important; 
+    justify-content: flex-start !important; 
+    display: flex !important;
+    flex-direction: column !important;
+    flex-wrap: nowrap !important;
+  }
+  .tables-container.schedule-tables .table-wrapper { 
+    padding: 0 !important; 
+    margin-bottom: 15px !important;
+    flex: 0 0 100% !important; 
+    max-width: 100% !important; 
+    width: 100% !important; 
+    background-color: transparent !important;
+    box-sizing: border-box !important;
+  }
+  .tables-container.schedule-tables .table-wrapper:last-child {
+    margin-bottom: 0 !important;
+  }
+  .tables-container.schedule-tables .data-table { 
+    width: 100% !important; 
+    margin-bottom: 0 !important;
+    table-layout: fixed !important;
+  }
+  .tables-container.schedule-tables h3.visual-subhead {
+    margin: 15px 0 10px 0 !important;
+  }
+  .tables-container.schedule-tables h3.visual-subhead:first-child {
+    margin-top: 0 !important;
   }
 }
 
@@ -2249,4 +2262,104 @@ label {
   color: #999;
   font-weight: 300;
   margin-bottom: -10px;
+}
+
+/* schedule section layout */
+#schedule-section {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 20px;
+}
+
+@media (min-width: 901px) {
+  #schedule-section {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+#schedule-section .table-wrapper {
+  width: 100%;
+  max-width: 100%;
+  padding: 0; /* remove inner padding to avoid fake right gap */
+}
+
+/* Override theme table defaults inside schedule to ensure true 100% width */
+#schedule-section .data-table {
+  display: table; /* theme sets table to display:block; force table for width calc */
+  width: 100%;
+  max-width: 100%;
+  table-layout: fixed;
+  border-collapse: collapse;
+}
+
+#schedule-section .data-table thead,
+#schedule-section .data-table tbody,
+#schedule-section .data-table tr {
+  width: 100%;
+}
+
+/* Column widths for consistent desktop alignment */
+#schedule-section .data-table th:nth-child(1),
+#schedule-section .data-table td:nth-child(1) {
+  width: 18%;
+}
+#schedule-section .data-table th:nth-child(2),
+#schedule-section .data-table td:nth-child(2) {
+  width: 40%;
+  white-space: normal;
+  overflow: visible;
+  text-overflow: unset;
+}
+#schedule-section .data-table th:nth-child(3),
+#schedule-section .data-table td:nth-child(3) {
+  width: 18%;
+}
+#schedule-section .data-table th:nth-child(4),
+#schedule-section .data-table td:nth-child(4) {
+  width: 20%;
+}
+
+// Ensure global flex container styles do not affect schedule section
+#schedule-section.tables-container,
+#schedule-section .tables-container,
+#schedule-section .table-wrapper {
+  display: initial;
+}
+
+/* standings tables: align columns across divisions */
+.standings-tables .data-table {
+  display: table; /* override theme's display:block */
+  width: 100%;
+  table-layout: fixed; /* ensure consistent column sizing */
+}
+
+.standings-tables .data-table th:nth-child(1),
+.standings-tables .data-table td:nth-child(1) { /* Team */
+  width: 60%;
+  white-space: normal; /* allow wrapping for long names */
+}
+
+.standings-tables .data-table th:nth-child(2),
+.standings-tables .data-table td:nth-child(2) { /* Win % */
+  width: 25%;
+}
+
+.standings-tables .data-table th:nth-child(3),
+.standings-tables .data-table td:nth-child(3) { /* GB */
+  width: 15%;
+}
+
+@media (max-width: 767px) {
+  .standings-tables .data-table th:nth-child(1),
+  .standings-tables .data-table td:nth-child(1) { /* Team */
+    width: 58%;
+  }
+  .standings-tables .data-table th:nth-child(2),
+  .standings-tables .data-table td:nth-child(2) { /* Win % */
+    width: 22%;
+  }
+  .standings-tables .data-table th:nth-child(3),
+  .standings-tables .data-table td:nth-child(3) { /* GB */
+    width: 20%;
+  }
 }
