@@ -1,22 +1,22 @@
 stat_label,stat,value,category,context_value,context_value_label
 Wins,wins,68,standings,71,This point last season
-Losses,losses,52,standings,49,This point last season
-Record,record,68-52,standings,71-49,This point last season
+Losses,losses,53,standings,50,This point last season
+Record,record,68-53,standings,71-50,This point last season
 Win percentage,win_pct,56%,standings,59%,This point last season
-Games up/back,games_up_back,0,standings,1st,Division rank
+Games up/back,games_up_back,-1,standings,2nd,Division rank
 Avg. home attendance,mean_attendance,"49,880",standings,62,Home games this season
-Runs,runs,621,standings,1st,League rank
-Runs against,runs_against,540,standings,489,This point last season
-Run differential,run_differential,81,standings,105,This point last season
+Runs,runs,626,standings,1st,League rank
+Runs against,runs_against,546,standings,494,This point last season
+Run differential,run_differential,80,standings,104,This point last season
 Batting average,batting_average,.255,batting,.253,Last decade average
 Home runs,home_runs,180,batting,2nd,League rank
 Home runs/game,home_runs_game,1.49,batting,1.42,Last decade average
 On-base percentage,on_base_pct,.332,batting,.333,Last decade average
 Stolen bases,stolen_bases,72,batting,20th,League rank
 Stolen bases/game,stolen_bases_game,0.6,batting,0.84,Rate all last season
-Strikeouts,strikeouts,1069,pitching,3rd,League rank
-Walks,walks,418,pitching,5th,League rank
-ERA,era,4.15,pitching,19th,League rank
-Last updated,update_time,"August 14, 2025, 1:11 AM PT",summary,,
+Strikeouts,strikeouts,1079,pitching,3rd,League rank
+Walks,walks,422,pitching,5th,League rank
+ERA,era,4.17,pitching,19th,League rank
+Last updated,update_time,"August 14, 2025, 5:13 AM PT",summary,,
 Team summary,summary,"<span class='highlight'>LOS ANGELES</span> <span class='updated'>(August 14)</span> — After <span class='highlight'>121</span> games this season, the Dodgers are in <span class='highlight'>2nd</span> place in the National League West division. The team has compiled a <span class='highlight'>68-53</span> record, winning <span class='highlight'>56%</span> of its games so far. The last game was a <span class='highlight'>5-6</span> away <span class='highlight'>loss</span> against the Los Angeles Angels. They've won <span class='highlight'>4 of the last 10</span> and are on pace to win at least <span class='highlight'>91</span> games in the regular season.",summary,,
 Last game result,last_game_result,loss,summary,,
