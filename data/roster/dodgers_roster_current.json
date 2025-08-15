@@ -72,24 +72,6 @@
     "slug":"jack-dreyer"
   },
   {
-    "player_id":"642759",
-    "thumb_url":"https:\/\/img.mlbstatic.com\/mlb-photos\/image\/upload\/d_people:generic:headshot:silo:current.png\/r_max\/q_auto:best\/v1\/people\/642759\/headshot\/silo\/current",
-    "name":"Julian Fernández",
-    "player_url":"\/player\/642759",
-    "jersey":"62",
-    "position_group":"Pitchers",
-    "bat_throw":"R\/R",
-    "height":"6' 6\"",
-    "weight":"230",
-    "dob":"12\/05\/1995",
-    "status":"MINORS",
-    "is_minors":true,
-    "is_il":false,
-    "is_active_roster":false,
-    "is_40_man":true,
-    "slug":"julian-fernandez"
-  },
-  {
     "player_id":"693308",
     "thumb_url":"https:\/\/img.mlbstatic.com\/mlb-photos\/image\/upload\/d_people:generic:headshot:silo:current.png\/r_max\/q_auto:best\/v1\/people\/693308\/headshot\/silo\/current",
     "name":"Nick Frasso",
@@ -718,6 +700,24 @@
     "is_active_roster":false,
     "is_40_man":true,
     "slug":"enrique-hernandez"
+  },
+  {
+    "player_id":"671083",
+    "thumb_url":"https:\/\/img.mlbstatic.com\/mlb-photos\/image\/upload\/d_people:generic:headshot:silo:current.png\/r_max\/q_auto:best\/v1\/people\/671083\/headshot\/silo\/current",
+    "name":"Buddy Kennedy",
+    "player_url":"\/player\/671083",
+    "jersey":"",
+    "position_group":"Infielders",
+    "bat_throw":"R\/R",
+    "height":"5' 10\"",
+    "weight":"190",
+    "dob":"10\/05\/1998",
+    "status":"ACTIVE",
+    "is_minors":false,
+    "is_il":false,
+    "is_active_roster":true,
+    "is_40_man":true,
+    "slug":"buddy-kennedy"
   },
   {
     "player_id":"808975",
