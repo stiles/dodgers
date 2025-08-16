@@ -68,6 +68,14 @@ def to_ordinal(n):
         return str(n_int) + {1: "st", 2: "nd", 3: "rd"}.get(n_int % 10 if n_int % 100 not in (11, 12, 13) else 99, "th")
     return str(n) # Return as string if not a number or if NaN
 
+def format_int_with_commas(value):
+    """Format an integer-like value with thousands separators.
+    Returns original value if it cannot be parsed as int."""
+    try:
+        return f"{int(value):,}"
+    except Exception:
+        return value
+
 # URLs for data
 standings_live_url = "https://stilesdata.com/dodgers/data/standings/all_teams_standings_metrics_2025.json"
 standings_url = "https://stilesdata.com/dodgers/data/standings/dodgers_standings_1958_present.parquet"
@@ -419,7 +427,7 @@ summary_data = [
     {"stat_label": "Stolen bases/game", "stat": "stolen_bases_game", "value": stolen_bases_game, "category": "batting", "context_value": stolen_bases_last_rate, "context_value_label": "Rate all last season"},
     
     # Pitching
-    {"stat_label": "Strikeouts", "stat": "strikeouts", "value": strikeouts, "category": "pitching", "context_value": strikeouts_rank, "context_value_label": "League rank"},
+    {"stat_label": "Strikeouts", "stat": "strikeouts", "value": format_int_with_commas(strikeouts), "category": "pitching", "context_value": strikeouts_rank, "context_value_label": "League rank"},
     {"stat_label": "Walks", "stat": "walks", "value": walks, "category": "pitching", "context_value": walks_rank, "context_value_label": "League rank"},
     # {"stat_label": "Home runs allowed", "stat": "home_runs_allowed", "value": home_runs_allowed, "category": "pitching", "context_value": home_runs_allowed_rank, "context_value_label": "League rank"}, # Rank not available in current JSON
     {"stat_label": "ERA", "stat": "era", "value": era, "category": "pitching", "context_value": era_rank, "context_value_label": "League rank"},
