@@ -22,8 +22,6 @@ The repository includes numerous Python scripts that perform the following daily
 
 - **Latest and historical standings:** `scripts/01_fetch_process_standings.py`
 - **Team batting (figures and league ranks):** `scripts/02_fetch_process_batting.py`
-- **Visual sketches for standings:** `scripts/03_viz_standings.py`
-- **Visual sketches for batting:** `scripts/04_viz_batting.py`
 - **Team pitching (figures and league ranks):** `scripts/05_fetch_process_pitching.py`
 - **Dashboard summary statistics:** `scripts/06-create-toplines-summary.py`
 - **Team post-season history:** `scripts/07_fetch_process_season_outcomes.py`
@@ -42,7 +40,6 @@ The repository includes numerous Python scripts that perform the following daily
 1. **Fetch current season, batting and pitching data**: Download the current season's game-by-game standings for the LA Dodgers from [Baseball Reference](https://www.baseball-reference.com/teams/LAD/2024-schedule-scores.shtml). The latest season's batting statitics for each player also fetched, as are the latest season's pitching statistics for each pitcher and the team as a whole. A to-date season summary with standings information and major batting statistics is also created.
 2. **Process data**: Cleans and formats the fetched standings and batting data for consistency with the historical dataset.
 3. **Concatenate with historic data**: Merges the current season's data for batting and standings with pre-existing datasets containing records for the 1958 to 2023 seasons.
-4. **Create three basic *standings* visualizations**: Reads the standings archive and produces a multi-series [line chart](/visuals/standings.png) comparing the current season with previous seasons. A horizontal [bar chart](/visuals/runs.png) is also produced showing the number of runs produced in each season to the current point for comparison. The script also creates a [facet barcode chart](/visuals/batting_rates.png) showing the per-bat rates for various categories (hits, homers, etc.) over the years. Both rely on the [Altair visualization library](https://altair-viz.github.io/) to create and save the charts into a `visuals` directory.
 5. **Save and export data**: Outputs the combined datasets in CSV, JSON and Parquet formats.
 6. **Upload to AWS S3**: Uploads the files to an AWS S3 bucket for use and archiving.
 

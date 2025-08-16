@@ -69,6 +69,7 @@ def to_ordinal(n):
     return str(n) # Return as string if not a number or if NaN
 
 # URLs for data
+standings_live_url = "https://stilesdata.com/dodgers/data/standings/all_teams_standings_metrics_2025.json"
 standings_url = "https://stilesdata.com/dodgers/data/standings/dodgers_standings_1958_present.parquet"
 batting_url = "https://stilesdata.com/dodgers/data/batting/dodgers_team_batting_1958_present.parquet"
 pitching_url = 'https://stilesdata.com/dodgers/data/pitching/dodgers_pitching_totals_current.parquet'
@@ -134,6 +135,21 @@ standings.loc[standings.result == "L", "result_clean"] = "loss"
 standings.loc[standings.result == "W", "result_clean"] = "win"
 standings_past = read_parquet_s3(standings_url, sort_by='game_date').query(f"year == '{last_year}'")
 standings_now = standings.query("game_date == game_date.max()").copy()
+standings_live = pd.read_json(standings_live_url)
+standings_live_lad = standings_live.query("team_name == 'Los Angeles Dodgers'")
+print(standings_live_lad.iloc[0])
+
+# Derive last game result from live standings (streak_type)
+last_game_result_live = None
+try:
+    if not standings_live_lad.empty:
+        streak_type_val = standings_live_lad.iloc[0].get('streak_type', None)
+#if streak type is 'wins' then the most recent game was a win, else a loss
+        if isinstance(streak_type_val, str):
+            last_game_result_live = 'win' if streak_type_val.lower() == 'wins' else 'loss'
+except Exception as _:
+    last_game_result_live = None
+
 game_number = standings_now['gm'].iloc[0]
 standings_last = standings_past.query(f"gm == {game_number}").head(1).reset_index(drop=True).copy()
 standings_last_season = standings_past.query(f"gm <= {game_number} and year=='{last_year}'").reset_index(drop=True).copy()
@@ -279,6 +295,32 @@ def get_live_last_game_summary():
         return "Could not retrieve the result of the last game."
 
 
+def get_live_last_game_result():
+    """Returns 'win' or 'loss' for the most recent completed Dodgers game using MLB Stats API.
+    Returns None if it cannot be determined."""
+    headers = {
+        "User-Agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/91.0.4472.114 Safari/537.36"
+    }
+    today = date.today()
+    yesterday = today - timedelta(days=1)
+    url = f"https://statsapi.mlb.com/api/v1/schedule?sportId=1&teamId=119&startDate={yesterday.strftime('%Y-%m-%d')}&endDate={today.strftime('%Y-%m-%d')}&hydrate=team,linescore"
+    try:
+        response = requests.get(url, headers=headers)
+        response.raise_for_status()
+        data = response.json()
+        for day in reversed(data.get('dates', [])):
+            for game in reversed(day.get('games', [])):
+                if game['status']['abstractGameState'] == 'Final':
+                    teams = game['teams']
+                    # Determine result for LAD
+                    if teams.get('away', {}).get('team', {}).get('abbreviation') == 'LAD':
+                        return 'win' if teams['away'].get('isWinner') else 'loss'
+                    else:
+                        return 'win' if teams['home'].get('isWinner') else 'loss'
+        return None
+    except (requests.exceptions.RequestException, KeyError, IndexError):
+        return None
+
 def generate_summary(
     update_date_str,
 ):
@@ -386,10 +428,27 @@ summary_data = [
     {"stat_label": "Last updated", "stat": "update_time", "value": update_time, "category": "summary", "context_value": "", "context_value_label": ''}, 
     {"stat_label": "Team summary", "stat": "summary", "value": summary, "category": "summary", "context_value": "", "context_value_label": ''},
 ]
-summary_data.append(
-    {"stat_label": "Last game result", "stat": "last_game_result", "value": standings_now.iloc[0]['result_clean'], "category": "summary", "context_value": "", "context_value_label": ''}
-)
 summary_df = pd.DataFrame(summary_data)
+
+# Determine last game result, preferring live standings, then MLB API, then BR fallback
+last_game_result_final = None
+if last_game_result_live is not None:
+    last_game_result_final = last_game_result_live
+else:
+    last_game_result_api = get_live_last_game_result()
+    if last_game_result_api is not None:
+        last_game_result_final = last_game_result_api
+    else:
+        try:
+            last_game_result_final = standings_now.iloc[0]['result_clean']
+        except Exception:
+            last_game_result_final = None
+
+if last_game_result_final is not None:
+    summary_df = pd.concat([
+        summary_df,
+        pd.DataFrame([{ "stat_label": "Last game result", "stat": "last_game_result", "value": last_game_result_final, "category": "summary", "context_value": "", "context_value_label": '' }])
+    ], ignore_index=True)
 summary_df.to_csv(os.path.join(base_dir, 'data', 'standings', 'season_summary_latest.csv'), index=False)
 summary_df.to_json(os.path.join(base_dir, 'data', 'standings', 'season_summary_latest.json'), orient='records', indent=4, lines=False)
 summary_df.to_json(os.path.join(base_dir, '_data', 'season_summary_latest.json'), orient='records', indent=4, lines=False)
