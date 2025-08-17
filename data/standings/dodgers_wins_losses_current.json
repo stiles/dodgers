@@ -1,986 +1,1010 @@
 [
-    {
-        "gm":123,
-        "game_date":"2025-08-16",
-        "result":"W",
-        "r":6,
-        "ra":0,
-        "run_diff":6
-    },
-    {
-        "gm":122,
-        "game_date":"2025-08-15",
-        "result":"W",
-        "r":3,
-        "ra":2,
-        "run_diff":1
-    },
-    {
-        "gm":121,
-        "game_date":"2025-08-13",
-        "result":"L",
-        "r":5,
-        "ra":6,
-        "run_diff":-1
-    },
-    {
-        "gm":120,
-        "game_date":"2025-08-12",
-        "result":"L",
-        "r":6,
-        "ra":7,
-        "run_diff":-1
-    },
-    {
-        "gm":119,
-        "game_date":"2025-08-11",
-        "result":"L",
-        "r":4,
-        "ra":7,
-        "run_diff":-3
-    },
-    {
-        "gm":118,
-        "game_date":"2025-08-10",
-        "result":"L",
-        "r":4,
-        "ra":5,
-        "run_diff":-1
-    },
-    {
-        "gm":117,
-        "game_date":"2025-08-09",
-        "result":"W",
-        "r":9,
-        "ra":1,
-        "run_diff":8
-    },
-    {
-        "gm":116,
-        "game_date":"2025-08-08",
-        "result":"W",
-        "r":5,
-        "ra":1,
-        "run_diff":4
-    },
-    {
-        "gm":115,
-        "game_date":"2025-08-06",
-        "result":"L",
-        "r":3,
-        "ra":5,
-        "run_diff":-2
-    },
-    {
-        "gm":114,
-        "game_date":"2025-08-05",
-        "result":"W",
-        "r":12,
-        "ra":6,
-        "run_diff":6
-    },
-    {
-        "gm":113,
-        "game_date":"2025-08-04",
-        "result":"L",
-        "r":2,
-        "ra":3,
-        "run_diff":-1
-    },
-    {
-        "gm":112,
-        "game_date":"2025-08-03",
-        "result":"W",
-        "r":3,
-        "ra":0,
-        "run_diff":3
-    },
-    {
-        "gm":111,
-        "game_date":"2025-08-02",
-        "result":"L",
-        "r":0,
-        "ra":4,
-        "run_diff":-4
-    },
-    {
-        "gm":110,
-        "game_date":"2025-08-01",
-        "result":"W",
-        "r":5,
-        "ra":0,
-        "run_diff":5
-    },
-    {
-        "gm":109,
-        "game_date":"2025-07-30",
-        "result":"L",
-        "r":2,
-        "ra":5,
-        "run_diff":-3
-    },
-    {
-        "gm":108,
-        "game_date":"2025-07-29",
-        "result":"W",
-        "r":5,
-        "ra":4,
-        "run_diff":1
-    },
-    {
-        "gm":107,
-        "game_date":"2025-07-28",
-        "result":"W",
-        "r":5,
-        "ra":2,
-        "run_diff":3
-    },
-    {
-        "gm":106,
-        "game_date":"2025-07-27",
-        "result":"L",
-        "r":3,
-        "ra":4,
-        "run_diff":-1
-    },
-    {
-        "gm":105,
-        "game_date":"2025-07-26",
-        "result":"L",
-        "r":2,
-        "ra":4,
-        "run_diff":-2
-    },
-    {
-        "gm":104,
-        "game_date":"2025-07-25",
-        "result":"W",
-        "r":5,
-        "ra":2,
-        "run_diff":3
-    },
-    {
-        "gm":103,
-        "game_date":"2025-07-23",
-        "result":"W",
-        "r":4,
-        "ra":3,
-        "run_diff":1
-    },
-    {
-        "gm":102,
-        "game_date":"2025-07-22",
-        "result":"L",
-        "r":7,
-        "ra":10,
-        "run_diff":-3
-    },
-    {
-        "gm":101,
-        "game_date":"2025-07-21",
-        "result":"W",
-        "r":5,
-        "ra":2,
-        "run_diff":3
-    },
-    {
-        "gm":100,
-        "game_date":"2025-07-20",
-        "result":"L",
-        "r":5,
-        "ra":6,
-        "run_diff":-1
-    },
-    {
-        "gm":99,
-        "game_date":"2025-07-19",
-        "result":"L",
-        "r":7,
-        "ra":8,
-        "run_diff":-1
-    },
-    {
-        "gm":98,
-        "game_date":"2025-07-18",
-        "result":"L",
-        "r":0,
-        "ra":2,
-        "run_diff":-2
-    },
-    {
-        "gm":97,
-        "game_date":"2025-07-13",
-        "result":"W",
-        "r":5,
-        "ra":2,
-        "run_diff":3
-    },
-    {
-        "gm":96,
-        "game_date":"2025-07-12",
-        "result":"W",
-        "r":2,
-        "ra":1,
-        "run_diff":1
-    },
-    {
-        "gm":95,
-        "game_date":"2025-07-11",
-        "result":"L",
-        "r":7,
-        "ra":8,
-        "run_diff":-1
-    },
-    {
-        "gm":94,
-        "game_date":"2025-07-09",
-        "result":"L",
-        "r":2,
-        "ra":3,
-        "run_diff":-1
-    },
-    {
-        "gm":93,
-        "game_date":"2025-07-08",
-        "result":"L",
-        "r":1,
-        "ra":3,
-        "run_diff":-2
-    },
-    {
-        "gm":92,
-        "game_date":"2025-07-07",
-        "result":"L",
-        "r":1,
-        "ra":9,
-        "run_diff":-8
-    },
-    {
-        "gm":91,
-        "game_date":"2025-07-06",
-        "result":"L",
-        "r":1,
-        "ra":5,
-        "run_diff":-4
-    },
-    {
-        "gm":90,
-        "game_date":"2025-07-05",
-        "result":"L",
-        "r":4,
-        "ra":6,
-        "run_diff":-2
-    },
-    {
-        "gm":89,
-        "game_date":"2025-07-04",
-        "result":"L",
-        "r":1,
-        "ra":18,
-        "run_diff":-17
-    },
-    {
-        "gm":88,
-        "game_date":"2025-07-03",
-        "result":"W",
-        "r":6,
-        "ra":2,
-        "run_diff":4
-    },
-    {
-        "gm":87,
-        "game_date":"2025-07-02",
-        "result":"W",
-        "r":5,
-        "ra":4,
-        "run_diff":1
-    },
-    {
-        "gm":86,
-        "game_date":"2025-07-01",
-        "result":"W",
-        "r":6,
-        "ra":1,
-        "run_diff":5
-    },
-    {
-        "gm":85,
-        "game_date":"2025-06-29",
-        "result":"W",
-        "r":5,
-        "ra":1,
-        "run_diff":4
-    },
-    {
-        "gm":84,
-        "game_date":"2025-06-28",
-        "result":"L",
-        "r":5,
-        "ra":9,
-        "run_diff":-4
-    },
-    {
-        "gm":83,
-        "game_date":"2025-06-27",
-        "result":"W",
-        "r":5,
-        "ra":4,
-        "run_diff":1
-    },
-    {
-        "gm":82,
-        "game_date":"2025-06-26",
-        "result":"W",
-        "r":3,
-        "ra":1,
-        "run_diff":2
-    },
-    {
-        "gm":81,
-        "game_date":"2025-06-25",
-        "result":"W",
-        "r":8,
-        "ra":1,
-        "run_diff":7
-    },
-    {
-        "gm":80,
-        "game_date":"2025-06-24",
-        "result":"W",
-        "r":9,
-        "ra":7,
-        "run_diff":2
-    },
-    {
-        "gm":79,
-        "game_date":"2025-06-22",
-        "result":"W",
-        "r":13,
-        "ra":7,
-        "run_diff":6
-    },
-    {
-        "gm":78,
-        "game_date":"2025-06-21",
-        "result":"L",
-        "r":3,
-        "ra":7,
-        "run_diff":-4
-    },
-    {
-        "gm":77,
-        "game_date":"2025-06-20",
-        "result":"W",
-        "r":6,
-        "ra":5,
-        "run_diff":1
-    },
-    {
-        "gm":76,
-        "game_date":"2025-06-19",
-        "result":"L",
-        "r":3,
-        "ra":5,
-        "run_diff":-2
-    },
-    {
-        "gm":75,
-        "game_date":"2025-06-18",
-        "result":"W",
-        "r":4,
-        "ra":3,
-        "run_diff":1
-    },
-    {
-        "gm":74,
-        "game_date":"2025-06-17",
-        "result":"W",
-        "r":8,
-        "ra":6,
-        "run_diff":2
-    },
-    {
-        "gm":73,
-        "game_date":"2025-06-16",
-        "result":"W",
-        "r":6,
-        "ra":3,
-        "run_diff":3
-    },
-    {
-        "gm":72,
-        "game_date":"2025-06-15",
-        "result":"W",
-        "r":5,
-        "ra":4,
-        "run_diff":1
-    },
-    {
-        "gm":71,
-        "game_date":"2025-06-14",
-        "result":"W",
-        "r":11,
-        "ra":5,
-        "run_diff":6
-    },
-    {
-        "gm":70,
-        "game_date":"2025-06-13",
-        "result":"L",
-        "r":2,
-        "ra":6,
-        "run_diff":-4
-    },
-    {
-        "gm":69,
-        "game_date":"2025-06-11",
-        "result":"W",
-        "r":5,
-        "ra":2,
-        "run_diff":3
-    },
-    {
-        "gm":68,
-        "game_date":"2025-06-10",
-        "result":"L",
-        "r":1,
-        "ra":11,
-        "run_diff":-10
-    },
-    {
-        "gm":67,
-        "game_date":"2025-06-09",
-        "result":"W",
-        "r":8,
-        "ra":7,
-        "run_diff":1
-    },
-    {
-        "gm":66,
-        "game_date":"2025-06-08",
-        "result":"W",
-        "r":7,
-        "ra":3,
-        "run_diff":4
-    },
-    {
-        "gm":65,
-        "game_date":"2025-06-07",
-        "result":"L",
-        "r":1,
-        "ra":2,
-        "run_diff":-1
-    },
-    {
-        "gm":64,
-        "game_date":"2025-06-06",
-        "result":"L",
-        "r":0,
-        "ra":5,
-        "run_diff":-5
-    },
-    {
-        "gm":63,
-        "game_date":"2025-06-05",
-        "result":"W",
-        "r":6,
-        "ra":5,
-        "run_diff":1
-    },
-    {
-        "gm":62,
-        "game_date":"2025-06-04",
-        "result":"L",
-        "r":1,
-        "ra":6,
-        "run_diff":-5
-    },
-    {
-        "gm":61,
-        "game_date":"2025-06-03",
-        "result":"W",
-        "r":6,
-        "ra":5,
-        "run_diff":1
-    },
-    {
-        "gm":60,
-        "game_date":"2025-06-02",
-        "result":"L",
-        "r":3,
-        "ra":4,
-        "run_diff":-1
-    },
-    {
-        "gm":59,
-        "game_date":"2025-06-01",
-        "result":"L",
-        "r":3,
-        "ra":7,
-        "run_diff":-4
-    },
-    {
-        "gm":58,
-        "game_date":"2025-05-31",
-        "result":"W",
-        "r":18,
-        "ra":2,
-        "run_diff":16
-    },
-    {
-        "gm":57,
-        "game_date":"2025-05-30",
-        "result":"W",
-        "r":8,
-        "ra":5,
-        "run_diff":3
-    },
-    {
-        "gm":56,
-        "game_date":"2025-05-28",
-        "result":"L",
-        "r":4,
-        "ra":7,
-        "run_diff":-3
-    },
-    {
-        "gm":55,
-        "game_date":"2025-05-27",
-        "result":"W",
-        "r":9,
-        "ra":5,
-        "run_diff":4
-    },
-    {
-        "gm":54,
-        "game_date":"2025-05-26",
-        "result":"W",
-        "r":7,
-        "ra":2,
-        "run_diff":5
-    },
-    {
-        "gm":53,
-        "game_date":"2025-05-25",
-        "result":"L",
-        "r":1,
-        "ra":3,
-        "run_diff":-2
-    },
-    {
-        "gm":52,
-        "game_date":"2025-05-24",
-        "result":"L",
-        "r":2,
-        "ra":5,
-        "run_diff":-3
-    },
-    {
-        "gm":51,
-        "game_date":"2025-05-23",
-        "result":"W",
-        "r":7,
-        "ra":5,
-        "run_diff":2
-    },
-    {
-        "gm":50,
-        "game_date":"2025-05-21",
-        "result":"W",
-        "r":3,
-        "ra":1,
-        "run_diff":2
-    },
-    {
-        "gm":49,
-        "game_date":"2025-05-20",
-        "result":"W",
-        "r":4,
-        "ra":3,
-        "run_diff":1
-    },
-    {
-        "gm":48,
-        "game_date":"2025-05-19",
-        "result":"L",
-        "r":5,
-        "ra":9,
-        "run_diff":-4
-    },
-    {
-        "gm":47,
-        "game_date":"2025-05-18",
-        "result":"L",
-        "r":4,
-        "ra":6,
-        "run_diff":-2
-    },
-    {
-        "gm":46,
-        "game_date":"2025-05-17",
-        "result":"L",
-        "r":9,
-        "ra":11,
-        "run_diff":-2
-    },
-    {
-        "gm":45,
-        "game_date":"2025-05-16",
-        "result":"L",
-        "r":2,
-        "ra":6,
-        "run_diff":-4
-    },
-    {
-        "gm":44,
-        "game_date":"2025-05-15",
-        "result":"W",
-        "r":19,
-        "ra":2,
-        "run_diff":17
-    },
-    {
-        "gm":43,
-        "game_date":"2025-05-14",
-        "result":"W",
-        "r":9,
-        "ra":3,
-        "run_diff":6
-    },
-    {
-        "gm":42,
-        "game_date":"2025-05-13",
-        "result":"L",
-        "r":1,
-        "ra":11,
-        "run_diff":-10
-    },
-    {
-        "gm":41,
-        "game_date":"2025-05-11",
-        "result":"W",
-        "r":8,
-        "ra":1,
-        "run_diff":7
-    },
-    {
-        "gm":40,
-        "game_date":"2025-05-10",
-        "result":"L",
-        "r":0,
-        "ra":3,
-        "run_diff":-3
-    },
-    {
-        "gm":39,
-        "game_date":"2025-05-09",
-        "result":"W",
-        "r":14,
-        "ra":11,
-        "run_diff":3
-    },
-    {
-        "gm":38,
-        "game_date":"2025-05-08",
-        "result":"L",
-        "r":3,
-        "ra":5,
-        "run_diff":-2
-    },
-    {
-        "gm":37,
-        "game_date":"2025-05-07",
-        "result":"W",
-        "r":10,
-        "ra":1,
-        "run_diff":9
-    },
-    {
-        "gm":36,
-        "game_date":"2025-05-06",
-        "result":"L",
-        "r":4,
-        "ra":5,
-        "run_diff":-1
-    },
-    {
-        "gm":35,
-        "game_date":"2025-05-05",
-        "result":"W",
-        "r":7,
-        "ra":4,
-        "run_diff":3
-    },
-    {
-        "gm":34,
-        "game_date":"2025-05-04",
-        "result":"L",
-        "r":3,
-        "ra":4,
-        "run_diff":-1
-    },
-    {
-        "gm":33,
-        "game_date":"2025-05-03",
-        "result":"W",
-        "r":10,
-        "ra":3,
-        "run_diff":7
-    },
-    {
-        "gm":32,
-        "game_date":"2025-05-02",
-        "result":"W",
-        "r":2,
-        "ra":1,
-        "run_diff":1
-    },
-    {
-        "gm":31,
-        "game_date":"2025-04-30",
-        "result":"W",
-        "r":12,
-        "ra":7,
-        "run_diff":5
-    },
-    {
-        "gm":30,
-        "game_date":"2025-04-29",
-        "result":"W",
-        "r":15,
-        "ra":2,
-        "run_diff":13
-    },
-    {
-        "gm":29,
-        "game_date":"2025-04-28",
-        "result":"W",
-        "r":7,
-        "ra":6,
-        "run_diff":1
-    },
-    {
-        "gm":28,
-        "game_date":"2025-04-27",
-        "result":"W",
-        "r":9,
-        "ra":2,
-        "run_diff":7
-    },
-    {
-        "gm":27,
-        "game_date":"2025-04-26",
-        "result":"W",
-        "r":8,
-        "ra":4,
-        "run_diff":4
-    },
-    {
-        "gm":26,
-        "game_date":"2025-04-25",
-        "result":"L",
-        "r":0,
-        "ra":3,
-        "run_diff":-3
-    },
-    {
-        "gm":25,
-        "game_date":"2025-04-23",
-        "result":"L",
-        "r":6,
-        "ra":7,
-        "run_diff":-1
-    },
-    {
-        "gm":24,
-        "game_date":"2025-04-22",
-        "result":"L",
-        "r":10,
-        "ra":11,
-        "run_diff":-1
-    },
-    {
-        "gm":23,
-        "game_date":"2025-04-20",
-        "result":"W",
-        "r":1,
-        "ra":0,
-        "run_diff":1
-    },
-    {
-        "gm":22,
-        "game_date":"2025-04-19",
-        "result":"L",
-        "r":3,
-        "ra":4,
-        "run_diff":-1
-    },
-    {
-        "gm":21,
-        "game_date":"2025-04-18",
-        "result":"W",
-        "r":3,
-        "ra":0,
-        "run_diff":3
-    },
-    {
-        "gm":20,
-        "game_date":"2025-04-16",
-        "result":"W",
-        "r":8,
-        "ra":7,
-        "run_diff":1
-    },
-    {
-        "gm":19,
-        "game_date":"2025-04-15",
-        "result":"W",
-        "r":6,
-        "ra":2,
-        "run_diff":4
-    },
-    {
-        "gm":18,
-        "game_date":"2025-04-14",
-        "result":"W",
-        "r":5,
-        "ra":3,
-        "run_diff":2
-    },
-    {
-        "gm":17,
-        "game_date":"2025-04-13",
-        "result":"L",
-        "r":2,
-        "ra":4,
-        "run_diff":-2
-    },
-    {
-        "gm":16,
-        "game_date":"2025-04-12",
-        "result":"L",
-        "r":0,
-        "ra":16,
-        "run_diff":-16
-    },
-    {
-        "gm":15,
-        "game_date":"2025-04-11",
-        "result":"W",
-        "r":3,
-        "ra":0,
-        "run_diff":3
-    },
-    {
-        "gm":14,
-        "game_date":"2025-04-09",
-        "result":"W",
-        "r":6,
-        "ra":5,
-        "run_diff":1
-    },
-    {
-        "gm":13,
-        "game_date":"2025-04-08",
-        "result":"L",
-        "r":2,
-        "ra":8,
-        "run_diff":-6
-    },
-    {
-        "gm":12,
-        "game_date":"2025-04-07",
-        "result":"L",
-        "r":4,
-        "ra":6,
-        "run_diff":-2
-    },
-    {
-        "gm":11,
-        "game_date":"2025-04-06",
-        "result":"L",
-        "r":7,
-        "ra":8,
-        "run_diff":-1
-    },
-    {
-        "gm":10,
-        "game_date":"2025-04-05",
-        "result":"W",
-        "r":3,
-        "ra":1,
-        "run_diff":2
-    },
-    {
-        "gm":9,
-        "game_date":"2025-04-04",
-        "result":"L",
-        "r":2,
-        "ra":3,
-        "run_diff":-1
-    },
-    {
-        "gm":8,
-        "game_date":"2025-04-02",
-        "result":"W",
-        "r":6,
-        "ra":5,
-        "run_diff":1
-    },
-    {
-        "gm":7,
-        "game_date":"2025-04-01",
-        "result":"W",
-        "r":3,
-        "ra":1,
-        "run_diff":2
-    },
-    {
-        "gm":6,
-        "game_date":"2025-03-31",
-        "result":"W",
-        "r":6,
-        "ra":1,
-        "run_diff":5
-    },
-    {
-        "gm":5,
-        "game_date":"2025-03-29",
-        "result":"W",
-        "r":7,
-        "ra":3,
-        "run_diff":4
-    },
-    {
-        "gm":4,
-        "game_date":"2025-03-28",
-        "result":"W",
-        "r":8,
-        "ra":5,
-        "run_diff":3
-    },
-    {
-        "gm":3,
-        "game_date":"2025-03-27",
-        "result":"W",
-        "r":5,
-        "ra":4,
-        "run_diff":1
-    },
-    {
-        "gm":2,
-        "game_date":"2025-03-19",
-        "result":"W",
-        "r":6,
-        "ra":3,
-        "run_diff":3
-    },
-    {
-        "gm":1,
-        "game_date":"2025-03-18",
-        "result":"W",
-        "r":4,
-        "ra":1,
-        "run_diff":3
-    }
+  {
+    "gm": 1,
+    "game_date": "2025-03-18",
+    "result": "W",
+    "r": 4,
+    "ra": 1,
+    "run_diff": 3
+  },
+  {
+    "gm": 2,
+    "game_date": "2025-03-19",
+    "result": "W",
+    "r": 6,
+    "ra": 3,
+    "run_diff": 3
+  },
+  {
+    "gm": 3,
+    "game_date": "2025-03-23",
+    "result": "W",
+    "r": 7,
+    "ra": 1,
+    "run_diff": 6
+  },
+  {
+    "gm": 4,
+    "game_date": "2025-03-24",
+    "result": "L",
+    "r": 4,
+    "ra": 5,
+    "run_diff": -1
+  },
+  {
+    "gm": 5,
+    "game_date": "2025-03-25",
+    "result": "W",
+    "r": 4,
+    "ra": 1,
+    "run_diff": 3
+  },
+  {
+    "gm": 6,
+    "game_date": "2025-03-27",
+    "result": "W",
+    "r": 5,
+    "ra": 4,
+    "run_diff": 1
+  },
+  {
+    "gm": 7,
+    "game_date": "2025-03-28",
+    "result": "W",
+    "r": 8,
+    "ra": 5,
+    "run_diff": 3
+  },
+  {
+    "gm": 8,
+    "game_date": "2025-03-29",
+    "result": "W",
+    "r": 7,
+    "ra": 3,
+    "run_diff": 4
+  },
+  {
+    "gm": 9,
+    "game_date": "2025-03-31",
+    "result": "W",
+    "r": 6,
+    "ra": 1,
+    "run_diff": 5
+  },
+  {
+    "gm": 10,
+    "game_date": "2025-04-01",
+    "result": "W",
+    "r": 3,
+    "ra": 1,
+    "run_diff": 2
+  },
+  {
+    "gm": 11,
+    "game_date": "2025-04-02",
+    "result": "W",
+    "r": 6,
+    "ra": 5,
+    "run_diff": 1
+  },
+  {
+    "gm": 12,
+    "game_date": "2025-04-04",
+    "result": "L",
+    "r": 2,
+    "ra": 3,
+    "run_diff": -1
+  },
+  {
+    "gm": 13,
+    "game_date": "2025-04-05",
+    "result": "W",
+    "r": 3,
+    "ra": 1,
+    "run_diff": 2
+  },
+  {
+    "gm": 14,
+    "game_date": "2025-04-06",
+    "result": "L",
+    "r": 7,
+    "ra": 8,
+    "run_diff": -1
+  },
+  {
+    "gm": 15,
+    "game_date": "2025-04-07",
+    "result": "L",
+    "r": 4,
+    "ra": 6,
+    "run_diff": -2
+  },
+  {
+    "gm": 16,
+    "game_date": "2025-04-08",
+    "result": "L",
+    "r": 2,
+    "ra": 8,
+    "run_diff": -6
+  },
+  {
+    "gm": 17,
+    "game_date": "2025-04-09",
+    "result": "W",
+    "r": 6,
+    "ra": 5,
+    "run_diff": 1
+  },
+  {
+    "gm": 18,
+    "game_date": "2025-04-11",
+    "result": "W",
+    "r": 3,
+    "ra": 0,
+    "run_diff": 3
+  },
+  {
+    "gm": 19,
+    "game_date": "2025-04-12",
+    "result": "L",
+    "r": 0,
+    "ra": 16,
+    "run_diff": -16
+  },
+  {
+    "gm": 20,
+    "game_date": "2025-04-13",
+    "result": "L",
+    "r": 2,
+    "ra": 4,
+    "run_diff": -2
+  },
+  {
+    "gm": 21,
+    "game_date": "2025-04-14",
+    "result": "W",
+    "r": 5,
+    "ra": 3,
+    "run_diff": 2
+  },
+  {
+    "gm": 22,
+    "game_date": "2025-04-15",
+    "result": "W",
+    "r": 6,
+    "ra": 2,
+    "run_diff": 4
+  },
+  {
+    "gm": 23,
+    "game_date": "2025-04-16",
+    "result": "W",
+    "r": 8,
+    "ra": 7,
+    "run_diff": 1
+  },
+  {
+    "gm": 24,
+    "game_date": "2025-04-18",
+    "result": "W",
+    "r": 3,
+    "ra": 0,
+    "run_diff": 3
+  },
+  {
+    "gm": 25,
+    "game_date": "2025-04-19",
+    "result": "L",
+    "r": 3,
+    "ra": 4,
+    "run_diff": -1
+  },
+  {
+    "gm": 26,
+    "game_date": "2025-04-20",
+    "result": "W",
+    "r": 1,
+    "ra": 0,
+    "run_diff": 1
+  },
+  {
+    "gm": 27,
+    "game_date": "2025-04-22",
+    "result": "L",
+    "r": 10,
+    "ra": 11,
+    "run_diff": -1
+  },
+  {
+    "gm": 28,
+    "game_date": "2025-04-23",
+    "result": "L",
+    "r": 6,
+    "ra": 7,
+    "run_diff": -1
+  },
+  {
+    "gm": 29,
+    "game_date": "2025-04-25",
+    "result": "L",
+    "r": 0,
+    "ra": 3,
+    "run_diff": -3
+  },
+  {
+    "gm": 30,
+    "game_date": "2025-04-26",
+    "result": "W",
+    "r": 8,
+    "ra": 4,
+    "run_diff": 4
+  },
+  {
+    "gm": 31,
+    "game_date": "2025-04-27",
+    "result": "W",
+    "r": 9,
+    "ra": 2,
+    "run_diff": 7
+  },
+  {
+    "gm": 32,
+    "game_date": "2025-04-28",
+    "result": "W",
+    "r": 7,
+    "ra": 6,
+    "run_diff": 1
+  },
+  {
+    "gm": 33,
+    "game_date": "2025-04-29",
+    "result": "W",
+    "r": 15,
+    "ra": 2,
+    "run_diff": 13
+  },
+  {
+    "gm": 34,
+    "game_date": "2025-04-30",
+    "result": "W",
+    "r": 12,
+    "ra": 7,
+    "run_diff": 5
+  },
+  {
+    "gm": 35,
+    "game_date": "2025-05-02",
+    "result": "W",
+    "r": 2,
+    "ra": 1,
+    "run_diff": 1
+  },
+  {
+    "gm": 36,
+    "game_date": "2025-05-03",
+    "result": "W",
+    "r": 10,
+    "ra": 3,
+    "run_diff": 7
+  },
+  {
+    "gm": 37,
+    "game_date": "2025-05-04",
+    "result": "L",
+    "r": 3,
+    "ra": 4,
+    "run_diff": -1
+  },
+  {
+    "gm": 38,
+    "game_date": "2025-05-05",
+    "result": "W",
+    "r": 7,
+    "ra": 4,
+    "run_diff": 3
+  },
+  {
+    "gm": 39,
+    "game_date": "2025-05-06",
+    "result": "L",
+    "r": 4,
+    "ra": 5,
+    "run_diff": -1
+  },
+  {
+    "gm": 40,
+    "game_date": "2025-05-07",
+    "result": "W",
+    "r": 10,
+    "ra": 1,
+    "run_diff": 9
+  },
+  {
+    "gm": 41,
+    "game_date": "2025-05-08",
+    "result": "L",
+    "r": 3,
+    "ra": 5,
+    "run_diff": -2
+  },
+  {
+    "gm": 42,
+    "game_date": "2025-05-09",
+    "result": "W",
+    "r": 14,
+    "ra": 11,
+    "run_diff": 3
+  },
+  {
+    "gm": 43,
+    "game_date": "2025-05-10",
+    "result": "L",
+    "r": 0,
+    "ra": 3,
+    "run_diff": -3
+  },
+  {
+    "gm": 44,
+    "game_date": "2025-05-11",
+    "result": "W",
+    "r": 8,
+    "ra": 1,
+    "run_diff": 7
+  },
+  {
+    "gm": 45,
+    "game_date": "2025-05-13",
+    "result": "L",
+    "r": 1,
+    "ra": 11,
+    "run_diff": -10
+  },
+  {
+    "gm": 46,
+    "game_date": "2025-05-14",
+    "result": "W",
+    "r": 9,
+    "ra": 3,
+    "run_diff": 6
+  },
+  {
+    "gm": 47,
+    "game_date": "2025-05-15",
+    "result": "W",
+    "r": 19,
+    "ra": 2,
+    "run_diff": 17
+  },
+  {
+    "gm": 48,
+    "game_date": "2025-05-16",
+    "result": "L",
+    "r": 2,
+    "ra": 6,
+    "run_diff": -4
+  },
+  {
+    "gm": 49,
+    "game_date": "2025-05-17",
+    "result": "L",
+    "r": 9,
+    "ra": 11,
+    "run_diff": -2
+  },
+  {
+    "gm": 50,
+    "game_date": "2025-05-18",
+    "result": "L",
+    "r": 4,
+    "ra": 6,
+    "run_diff": -2
+  },
+  {
+    "gm": 51,
+    "game_date": "2025-05-19",
+    "result": "L",
+    "r": 5,
+    "ra": 9,
+    "run_diff": -4
+  },
+  {
+    "gm": 52,
+    "game_date": "2025-05-20",
+    "result": "W",
+    "r": 4,
+    "ra": 3,
+    "run_diff": 1
+  },
+  {
+    "gm": 53,
+    "game_date": "2025-05-21",
+    "result": "W",
+    "r": 3,
+    "ra": 1,
+    "run_diff": 2
+  },
+  {
+    "gm": 54,
+    "game_date": "2025-05-23",
+    "result": "W",
+    "r": 7,
+    "ra": 5,
+    "run_diff": 2
+  },
+  {
+    "gm": 55,
+    "game_date": "2025-05-24",
+    "result": "L",
+    "r": 2,
+    "ra": 5,
+    "run_diff": -3
+  },
+  {
+    "gm": 56,
+    "game_date": "2025-05-25",
+    "result": "L",
+    "r": 1,
+    "ra": 3,
+    "run_diff": -2
+  },
+  {
+    "gm": 57,
+    "game_date": "2025-05-26",
+    "result": "W",
+    "r": 7,
+    "ra": 2,
+    "run_diff": 5
+  },
+  {
+    "gm": 58,
+    "game_date": "2025-05-27",
+    "result": "W",
+    "r": 9,
+    "ra": 5,
+    "run_diff": 4
+  },
+  {
+    "gm": 59,
+    "game_date": "2025-05-28",
+    "result": "L",
+    "r": 4,
+    "ra": 7,
+    "run_diff": -3
+  },
+  {
+    "gm": 60,
+    "game_date": "2025-05-30",
+    "result": "W",
+    "r": 8,
+    "ra": 5,
+    "run_diff": 3
+  },
+  {
+    "gm": 61,
+    "game_date": "2025-05-31",
+    "result": "W",
+    "r": 18,
+    "ra": 2,
+    "run_diff": 16
+  },
+  {
+    "gm": 62,
+    "game_date": "2025-06-01",
+    "result": "L",
+    "r": 3,
+    "ra": 7,
+    "run_diff": -4
+  },
+  {
+    "gm": 63,
+    "game_date": "2025-06-02",
+    "result": "L",
+    "r": 3,
+    "ra": 4,
+    "run_diff": -1
+  },
+  {
+    "gm": 64,
+    "game_date": "2025-06-03",
+    "result": "W",
+    "r": 6,
+    "ra": 5,
+    "run_diff": 1
+  },
+  {
+    "gm": 65,
+    "game_date": "2025-06-04",
+    "result": "L",
+    "r": 1,
+    "ra": 6,
+    "run_diff": -5
+  },
+  {
+    "gm": 66,
+    "game_date": "2025-06-05",
+    "result": "W",
+    "r": 6,
+    "ra": 5,
+    "run_diff": 1
+  },
+  {
+    "gm": 67,
+    "game_date": "2025-06-06",
+    "result": "L",
+    "r": 0,
+    "ra": 5,
+    "run_diff": -5
+  },
+  {
+    "gm": 68,
+    "game_date": "2025-06-07",
+    "result": "L",
+    "r": 1,
+    "ra": 2,
+    "run_diff": -1
+  },
+  {
+    "gm": 69,
+    "game_date": "2025-06-08",
+    "result": "W",
+    "r": 7,
+    "ra": 3,
+    "run_diff": 4
+  },
+  {
+    "gm": 70,
+    "game_date": "2025-06-09",
+    "result": "W",
+    "r": 8,
+    "ra": 7,
+    "run_diff": 1
+  },
+  {
+    "gm": 71,
+    "game_date": "2025-06-10",
+    "result": "L",
+    "r": 1,
+    "ra": 11,
+    "run_diff": -10
+  },
+  {
+    "gm": 72,
+    "game_date": "2025-06-11",
+    "result": "W",
+    "r": 5,
+    "ra": 2,
+    "run_diff": 3
+  },
+  {
+    "gm": 73,
+    "game_date": "2025-06-13",
+    "result": "L",
+    "r": 2,
+    "ra": 6,
+    "run_diff": -4
+  },
+  {
+    "gm": 74,
+    "game_date": "2025-06-14",
+    "result": "W",
+    "r": 11,
+    "ra": 5,
+    "run_diff": 6
+  },
+  {
+    "gm": 75,
+    "game_date": "2025-06-15",
+    "result": "W",
+    "r": 5,
+    "ra": 4,
+    "run_diff": 1
+  },
+  {
+    "gm": 76,
+    "game_date": "2025-06-16",
+    "result": "W",
+    "r": 6,
+    "ra": 3,
+    "run_diff": 3
+  },
+  {
+    "gm": 77,
+    "game_date": "2025-06-17",
+    "result": "W",
+    "r": 8,
+    "ra": 6,
+    "run_diff": 2
+  },
+  {
+    "gm": 78,
+    "game_date": "2025-06-18",
+    "result": "W",
+    "r": 4,
+    "ra": 3,
+    "run_diff": 1
+  },
+  {
+    "gm": 79,
+    "game_date": "2025-06-19",
+    "result": "L",
+    "r": 3,
+    "ra": 5,
+    "run_diff": -2
+  },
+  {
+    "gm": 80,
+    "game_date": "2025-06-20",
+    "result": "W",
+    "r": 6,
+    "ra": 5,
+    "run_diff": 1
+  },
+  {
+    "gm": 81,
+    "game_date": "2025-06-21",
+    "result": "L",
+    "r": 3,
+    "ra": 7,
+    "run_diff": -4
+  },
+  {
+    "gm": 82,
+    "game_date": "2025-06-22",
+    "result": "W",
+    "r": 13,
+    "ra": 7,
+    "run_diff": 6
+  },
+  {
+    "gm": 83,
+    "game_date": "2025-06-24",
+    "result": "W",
+    "r": 9,
+    "ra": 7,
+    "run_diff": 2
+  },
+  {
+    "gm": 84,
+    "game_date": "2025-06-25",
+    "result": "W",
+    "r": 8,
+    "ra": 1,
+    "run_diff": 7
+  },
+  {
+    "gm": 85,
+    "game_date": "2025-06-26",
+    "result": "W",
+    "r": 3,
+    "ra": 1,
+    "run_diff": 2
+  },
+  {
+    "gm": 86,
+    "game_date": "2025-06-27",
+    "result": "W",
+    "r": 5,
+    "ra": 4,
+    "run_diff": 1
+  },
+  {
+    "gm": 87,
+    "game_date": "2025-06-28",
+    "result": "L",
+    "r": 5,
+    "ra": 9,
+    "run_diff": -4
+  },
+  {
+    "gm": 88,
+    "game_date": "2025-06-29",
+    "result": "W",
+    "r": 5,
+    "ra": 1,
+    "run_diff": 4
+  },
+  {
+    "gm": 89,
+    "game_date": "2025-07-01",
+    "result": "W",
+    "r": 6,
+    "ra": 1,
+    "run_diff": 5
+  },
+  {
+    "gm": 90,
+    "game_date": "2025-07-02",
+    "result": "W",
+    "r": 5,
+    "ra": 4,
+    "run_diff": 1
+  },
+  {
+    "gm": 91,
+    "game_date": "2025-07-03",
+    "result": "W",
+    "r": 6,
+    "ra": 2,
+    "run_diff": 4
+  },
+  {
+    "gm": 92,
+    "game_date": "2025-07-04",
+    "result": "L",
+    "r": 1,
+    "ra": 18,
+    "run_diff": -17
+  },
+  {
+    "gm": 93,
+    "game_date": "2025-07-05",
+    "result": "L",
+    "r": 4,
+    "ra": 6,
+    "run_diff": -2
+  },
+  {
+    "gm": 94,
+    "game_date": "2025-07-06",
+    "result": "L",
+    "r": 1,
+    "ra": 5,
+    "run_diff": -4
+  },
+  {
+    "gm": 95,
+    "game_date": "2025-07-07",
+    "result": "L",
+    "r": 1,
+    "ra": 9,
+    "run_diff": -8
+  },
+  {
+    "gm": 96,
+    "game_date": "2025-07-08",
+    "result": "L",
+    "r": 1,
+    "ra": 3,
+    "run_diff": -2
+  },
+  {
+    "gm": 97,
+    "game_date": "2025-07-09",
+    "result": "L",
+    "r": 2,
+    "ra": 3,
+    "run_diff": -1
+  },
+  {
+    "gm": 98,
+    "game_date": "2025-07-11",
+    "result": "L",
+    "r": 7,
+    "ra": 8,
+    "run_diff": -1
+  },
+  {
+    "gm": 99,
+    "game_date": "2025-07-12",
+    "result": "W",
+    "r": 2,
+    "ra": 1,
+    "run_diff": 1
+  },
+  {
+    "gm": 100,
+    "game_date": "2025-07-13",
+    "result": "W",
+    "r": 5,
+    "ra": 2,
+    "run_diff": 3
+  },
+  {
+    "gm": 101,
+    "game_date": "2025-07-18",
+    "result": "L",
+    "r": 0,
+    "ra": 2,
+    "run_diff": -2
+  },
+  {
+    "gm": 102,
+    "game_date": "2025-07-19",
+    "result": "L",
+    "r": 7,
+    "ra": 8,
+    "run_diff": -1
+  },
+  {
+    "gm": 103,
+    "game_date": "2025-07-20",
+    "result": "L",
+    "r": 5,
+    "ra": 6,
+    "run_diff": -1
+  },
+  {
+    "gm": 104,
+    "game_date": "2025-07-21",
+    "result": "W",
+    "r": 5,
+    "ra": 2,
+    "run_diff": 3
+  },
+  {
+    "gm": 105,
+    "game_date": "2025-07-22",
+    "result": "L",
+    "r": 7,
+    "ra": 10,
+    "run_diff": -3
+  },
+  {
+    "gm": 106,
+    "game_date": "2025-07-23",
+    "result": "W",
+    "r": 4,
+    "ra": 3,
+    "run_diff": 1
+  },
+  {
+    "gm": 107,
+    "game_date": "2025-07-25",
+    "result": "W",
+    "r": 5,
+    "ra": 2,
+    "run_diff": 3
+  },
+  {
+    "gm": 108,
+    "game_date": "2025-07-26",
+    "result": "L",
+    "r": 2,
+    "ra": 4,
+    "run_diff": -2
+  },
+  {
+    "gm": 109,
+    "game_date": "2025-07-27",
+    "result": "L",
+    "r": 3,
+    "ra": 4,
+    "run_diff": -1
+  },
+  {
+    "gm": 110,
+    "game_date": "2025-07-28",
+    "result": "W",
+    "r": 5,
+    "ra": 2,
+    "run_diff": 3
+  },
+  {
+    "gm": 111,
+    "game_date": "2025-07-29",
+    "result": "W",
+    "r": 5,
+    "ra": 4,
+    "run_diff": 1
+  },
+  {
+    "gm": 112,
+    "game_date": "2025-07-30",
+    "result": "L",
+    "r": 2,
+    "ra": 5,
+    "run_diff": -3
+  },
+  {
+    "gm": 113,
+    "game_date": "2025-08-01",
+    "result": "W",
+    "r": 5,
+    "ra": 0,
+    "run_diff": 5
+  },
+  {
+    "gm": 114,
+    "game_date": "2025-08-02",
+    "result": "L",
+    "r": 0,
+    "ra": 4,
+    "run_diff": -4
+  },
+  {
+    "gm": 115,
+    "game_date": "2025-08-03",
+    "result": "W",
+    "r": 3,
+    "ra": 0,
+    "run_diff": 3
+  },
+  {
+    "gm": 116,
+    "game_date": "2025-08-04",
+    "result": "L",
+    "r": 2,
+    "ra": 3,
+    "run_diff": -1
+  },
+  {
+    "gm": 117,
+    "game_date": "2025-08-05",
+    "result": "W",
+    "r": 12,
+    "ra": 6,
+    "run_diff": 6
+  },
+  {
+    "gm": 118,
+    "game_date": "2025-08-06",
+    "result": "L",
+    "r": 3,
+    "ra": 5,
+    "run_diff": -2
+  },
+  {
+    "gm": 119,
+    "game_date": "2025-08-08",
+    "result": "W",
+    "r": 5,
+    "ra": 1,
+    "run_diff": 4
+  },
+  {
+    "gm": 120,
+    "game_date": "2025-08-09",
+    "result": "W",
+    "r": 9,
+    "ra": 1,
+    "run_diff": 8
+  },
+  {
+    "gm": 121,
+    "game_date": "2025-08-10",
+    "result": "L",
+    "r": 4,
+    "ra": 5,
+    "run_diff": -1
+  },
+  {
+    "gm": 122,
+    "game_date": "2025-08-11",
+    "result": "L",
+    "r": 4,
+    "ra": 7,
+    "run_diff": -3
+  },
+  {
+    "gm": 123,
+    "game_date": "2025-08-12",
+    "result": "L",
+    "r": 6,
+    "ra": 7,
+    "run_diff": -1
+  },
+  {
+    "gm": 124,
+    "game_date": "2025-08-13",
+    "result": "L",
+    "r": 5,
+    "ra": 6,
+    "run_diff": -1
+  },
+  {
+    "gm": 125,
+    "game_date": "2025-08-15",
+    "result": "W",
+    "r": 3,
+    "ra": 2,
+    "run_diff": 1
+  },
+  {
+    "gm": 126,
+    "game_date": "2025-08-16",
+    "result": "W",
+    "r": 6,
+    "ra": 0,
+    "run_diff": 6
+  }
 ]
