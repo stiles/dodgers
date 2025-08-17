@@ -1,6 +1,7 @@
 import argparse
 import json
 import os
+from datetime import datetime
 from typing import List, Optional
 from urllib.parse import urlparse, parse_qs
 
@@ -9,6 +10,7 @@ from botocore.exceptions import ClientError
 import pandas as pd
 import requests
 from bs4 import BeautifulSoup
+from zoneinfo import ZoneInfo
 
 
 DODGERS_TEAM_ID = 119
@@ -20,16 +22,24 @@ LOCAL_ARCHIVE_CSV = os.path.join("data", "standings", "dodgers_boxscores.csv")
 
 
 def get_s3_client(profile_name: Optional[str] = None):
-    """Return an S3 client.
+    """Return an S3 client with sensible local/CI behavior.
 
-    - If a profile is provided (via CLI or AWS_PROFILE), use it.
-    - Otherwise, fall back to default credential resolution (env vars/role),
-      which is what GitHub Actions provides via its credential action.
+    Priority:
+    1) Explicit CLI profile
+    2) If running in GitHub Actions, use default chain (env/role)
+    3) AWS_PROFILE env var
+    4) Local fallback profile 'haekeo'
     """
-    resolved_profile = profile_name or os.environ.get("AWS_PROFILE")
-    if not resolved_profile:
+    if profile_name:
+        session = boto3.session.Session(profile_name=profile_name)
+        return session.client("s3")
+
+    if os.environ.get("GITHUB_ACTIONS") == "true":
         return boto3.client("s3")
-    session = boto3.session.Session(profile_name=resolved_profile)
+
+    env_profile = os.environ.get("AWS_PROFILE")
+    resolved = env_profile or "haekeo"
+    session = boto3.session.Session(profile_name=resolved)
     return session.client("s3")
 
 
@@ -83,6 +93,39 @@ def parse_game_log_rows(table: BeautifulSoup) -> pd.DataFrame:
             }
         )
     return pd.DataFrame(parsed_rows)
+
+
+def get_los_angeles_date_iso() -> str:
+    """Return today's date string in America/Los_Angeles as YYYY-MM-DD."""
+    la_now = datetime.now(ZoneInfo("America/Los_Angeles"))
+    return la_now.strftime("%Y-%m-%d")
+
+
+def get_dodgers_final_gamepks_for_date(date_iso: str) -> List[int]:
+    """Query MLB Stats API schedule for the given local date and return any
+    Dodgers gamePk values that are Final.
+    """
+    url = (
+        f"https://statsapi.mlb.com/api/v1/schedule?timeZone=America/Los_Angeles&sportId=1&date={date_iso}"
+    )
+    try:
+        payload = fetch_json(url)
+    except Exception:
+        return []
+
+    dodgers_pks: List[int] = []
+    for day in payload.get("dates", []):
+        for game in day.get("games", []):
+            teams = game.get("teams", {})
+            home_id = teams.get("home", {}).get("team", {}).get("id")
+            away_id = teams.get("away", {}).get("team", {}).get("id")
+            status = game.get("status", {}).get("detailedState")
+            if status == "Final" and (home_id == DODGERS_TEAM_ID or away_id == DODGERS_TEAM_ID):
+                try:
+                    dodgers_pks.append(int(game.get("gamePk")))
+                except (TypeError, ValueError):
+                    continue
+    return dodgers_pks
 
 
 def extract_runs_by_inning(linescore_innings: List[dict], side: str) -> List[int]:
@@ -216,7 +259,7 @@ def main() -> None:
     parser.add_argument(
         "--profile",
         default=os.environ.get("AWS_PROFILE"),
-        help="AWS profile to use for S3 (omit on GitHub Actions)",
+        help="AWS profile to use for S3 (omit on GitHub Actions; locally defaults to 'haekeo')",
     )
     args = parser.parse_args()
 
@@ -232,7 +275,15 @@ def main() -> None:
     existing_pks = set(archive_df["game_pk"].astype(int).tolist()) if not archive_df.empty else set()
 
     new_rows = []
-    for game_pk in logs_df["game_pk"].dropna().astype(int).tolist():
+    # Candidate ids from Savant gamelog table
+    candidate_pks = set(logs_df["game_pk"].dropna().astype(int).tolist())
+
+    # Augment with same-day Final games from MLB schedule (LA local date)
+    la_date = get_los_angeles_date_iso()
+    schedule_pks = set(get_dodgers_final_gamepks_for_date(la_date))
+    candidate_pks.update(schedule_pks)
+
+    for game_pk in sorted(candidate_pks):
         if game_pk in existing_pks:
             continue
         gf_url = f"https://baseballsavant.mlb.com/gf?game_pk={game_pk}"
