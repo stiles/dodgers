@@ -46,7 +46,7 @@ jobs:
           DODGERS_TWITTER_TOKEN_SECRET: ${{ secrets.DODGERS_TWITTER_TOKEN_SECRET }}
         run: |
           if [ "${{ github.event.inputs.force }}" = "true" ]; then
-            python scripts/25_post_transactions.py --post-tweet --force
+            python scripts/26_post_transactions.py --post-tweet --force
           else
-            python scripts/25_post_transactions.py --post-tweet
+            python scripts/26_post_transactions.py --post-tweet
           fi 
