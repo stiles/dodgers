@@ -20,21 +20,27 @@ The repository includes numerous Python scripts that perform the following daily
 
 ### Scripts:
 
-- **Latest and historical standings:** `scripts/01_fetch_process_standings.py`
-- **Team batting (figures and league ranks):** `scripts/02_fetch_process_batting.py`
-- **Team pitching (figures and league ranks):** `scripts/05_fetch_process_pitching.py`
-- **Dashboard summary statistics:** `scripts/06-create-toplines-summary.py`
-- **Team post-season history:** `scripts/07_fetch_process_season_outcomes.py`
-- **Run differential for current season:** `scripts/08_fetch_process_wins_losses_current.py`
-- **Past/present team batting performance:** `scripts/09_fetch_process_historic_batting_gamelogs.py`
-- **Team attendance (all teams):** `scripts/10_fetch_process_attendance.py`
-- **Past/present team pitching performance:** `11_fetch_process_historic_pitching_gamelogs.py`
-- **Starting lineups:** `scripts/17_fetch_lineup.py`
-- **Daily summary tweets:** `scripts/23_post_daily_summaries.py`
-- **News roundup tweets:** `scripts/24_fetch_news.py`
-- **Shohei Ohtani pitching data:** `scripts/25_fetch_shohei_pitches.py`
+- **League standings (reference for rankings):** `scripts/00_fetch_league_standings.py`
+- **Update Savant boxscores archive (discovers new games, fetches only new finals):** `scripts/02_update_boxscores_archive.py`
+- **League ranks (scraped):** `scripts/03_scrape_league_ranks.py`
+- **Latest and historical standings:** `scripts/04_fetch_process_standings.py`
+- **Team batting (figures and league ranks):** `scripts/05_fetch_process_batting.py`
+- **Team pitching (figures and league ranks):** `scripts/06_fetch_process_pitching.py`
+- **Dashboard summary statistics:** `scripts/07_create_toplines_summary.py`
+- **Team post-season history:** `scripts/08_fetch_process_season_outcomes.py`
+- **Run differential for current season (from Savant boxscores):** `scripts/09_build_wins_losses_from_boxscores.py`
+- **Past/present team batting performance:** `scripts/10_fetch_process_historic_batting_gamelogs.py`
+- **Team attendance (all teams):** `scripts/11_fetch_process_attendance.py`
+- **Past/present team pitching performance:** `scripts/12_fetch_process_historic_pitching_gamelogs.py`
+- **Team schedule:** `scripts/13_fetch_process_schedule.py`
+- **MLB batting (league-level tables):** `scripts/14_fetch_process_batting_mlb.py`
 - **xwOBA rolling windows (current season):** `scripts/15_fetch_xwoba.py`
-
+- **Shohei Ohtani season data:** `scripts/16_fetch_shohei.py`
+- **Roster:** `scripts/19_fetch_roster.py`
+- **Game pitch-by-pitch:** `scripts/20_fetch_game_pitches.py`
+- **Pitch summaries:** `scripts/21_summarize_pitch_data.py`
+  
+Separate tweet/automation scripts are documented in the sections below (lineups, daily summaries, news, etc.).
 ### What they do:
 
 1. **Fetch current season, batting and pitching data**: Download the current season's game-by-game standings for the LA Dodgers from [Baseball Reference](https://www.baseball-reference.com/teams/LAD/2024-schedule-scores.shtml). The latest season's batting statitics for each player also fetched, as are the latest season's pitching statistics for each pitcher and the team as a whole. A to-date season summary with standings information and major batting statistics is also created.
@@ -47,7 +53,7 @@ The repository includes numerous Python scripts that perform the following daily
 
 The repository uses GitHub Actions to automate the execution of the scripts each day, ensuring the datasets remains up-to-date throughout the baseball season. The key workflows include:
 
-- **`fetch_dodgers_data.yml`**: This is the main data pipeline, running multiple times a day during the season. It executes all the Python scripts responsible for fetching, processing, and saving the core team and player statistics needed to build the site.
+- **`fetch.yml`**: This is the main data pipeline, running multiple times a day during the season. It executes all the Python scripts responsible for fetching, processing, and saving the core team and player statistics needed to build the site.
 - **`build_site.yml`**: Fetches and processes all core team data (standings, batting, pitching, etc.) and rebuilds the site. Runs daily.
 - **`post_summaries.yml`**: Posts statistical summaries to Twitter at 8am, 10am, and 12pm PT.
 - **`tweet_lineup.yml`**: Checks hourly for the day's lineup and posts the pitching matchup to Twitter once available.
