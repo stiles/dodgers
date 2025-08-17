@@ -2599,8 +2599,9 @@ document.addEventListener('DOMContentLoaded', function () {
     if (data2025.length > 0) {
       const last2025 = data2025[data2025.length - 1];
       const xPosText2025 = xScale(last2025.game_number);
-      let yPosLabel2025 = yScale(last2025[config.yField]) - (isMobile ? 44 : 60); // slightly less offset on mobile
-      let yPosStat2025 = yScale(last2025[config.yField]) - (isMobile ? 30 : 46); // Position stat below label
+      // On desktop, lift the 2025 label slightly higher to avoid collisions with 2024
+      let yPosLabel2025 = yScale(last2025[config.yField]) - (isMobile ? 44 : 64);
+      let yPosStat2025 = yScale(last2025[config.yField]) - (isMobile ? 30 : 50);
       // Clamp to keep inside chart area
       yPosLabel2025 = Math.max(12, yPosLabel2025);
       yPosStat2025 = Math.max(26, yPosStat2025);
@@ -2653,21 +2654,22 @@ document.addEventListener('DOMContentLoaded', function () {
       const yPoint2024 = yScale(last2024[config.yField]);
 
       // Simple collision heuristic with 2025 label area
-      const nearX2025 = label2025.x !== null && Math.abs(xPoint2024 - label2025.x) < 42;
-      const nearY2025 = label2025.yStat !== null && Math.abs(yPoint2024 - label2025.yStat) < 28;
+      // Loosen thresholds to capture more near-overlap scenarios on desktop
+      const nearX2025 = label2025.x !== null && Math.abs(xPoint2024 - label2025.x) < (isMobile ? 42 : 60);
+      const nearY2025 = label2025.yStat !== null && Math.abs(yPoint2024 - label2025.yStat) < (isMobile ? 28 : 36);
       const overlaps2025 = nearX2025 && nearY2025;
 
-      if (isMobile || overlaps2025) {
+      if (isMobile || overlaps2025 || (config.elementId === 'shohei-homers-chart' && !isMobile)) {
         const isHR = config.elementId === 'shohei-homers-chart';
         const isSB = config.elementId === 'shohei-sb-chart';
 
         if (isHR) {
           // 6 o'clock: vertical leader downward, centered text below
-          const yOffset = overlaps2025 ? 34 : 30;
+          const yOffset = overlaps2025 ? 42 : 36;
           let yTarget = Math.min(height - 12, yPoint2024 + yOffset);
           // Nudge further down if close to 2025 stat
-          if (label2025.yStat !== null && Math.abs(yTarget - label2025.yStat) < 18) {
-            yTarget = Math.min(height - 12, label2025.yStat + 22);
+          if (label2025.yStat !== null && Math.abs(yTarget - label2025.yStat) < 26) {
+            yTarget = Math.min(height - 12, label2025.yStat + 30);
           }
 
           svg.append('text')
