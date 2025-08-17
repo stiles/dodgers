@@ -18,8 +18,10 @@ LOCAL_OUT_JSON = os.path.join("data", "standings", "dodgers_wins_losses_current.
 
 
 def get_s3_client(profile_name: Optional[str]) -> boto3.client:
-    profile = profile_name or os.environ.get("AWS_PROFILE") or "haekeo"
-    session = boto3.session.Session(profile_name=profile)
+    resolved_profile = profile_name or os.environ.get("AWS_PROFILE")
+    if not resolved_profile:
+        return boto3.client("s3")
+    session = boto3.session.Session(profile_name=resolved_profile)
     return session.client("s3")
 
 
@@ -97,8 +99,8 @@ def main() -> None:
     parser = argparse.ArgumentParser(description="Build wins/losses JSON from Savant boxscores archive")
     parser.add_argument(
         "--profile",
-        default=os.environ.get("AWS_PROFILE", "haekeo"),
-        help="AWS profile for S3 (default: haekeo)",
+        default=os.environ.get("AWS_PROFILE"),
+        help="AWS profile for S3 (omit on GitHub Actions)",
     )
     args = parser.parse_args()
 

@@ -20,8 +20,16 @@ LOCAL_ARCHIVE_CSV = os.path.join("data", "standings", "dodgers_boxscores.csv")
 
 
 def get_s3_client(profile_name: Optional[str] = None):
-    profile = profile_name or os.environ.get("AWS_PROFILE") or "haekeo"
-    session = boto3.session.Session(profile_name=profile)
+    """Return an S3 client.
+
+    - If a profile is provided (via CLI or AWS_PROFILE), use it.
+    - Otherwise, fall back to default credential resolution (env vars/role),
+      which is what GitHub Actions provides via its credential action.
+    """
+    resolved_profile = profile_name or os.environ.get("AWS_PROFILE")
+    if not resolved_profile:
+        return boto3.client("s3")
+    session = boto3.session.Session(profile_name=resolved_profile)
     return session.client("s3")
 
 
@@ -207,8 +215,8 @@ def main() -> None:
     parser = argparse.ArgumentParser(description="Update Dodgers boxscore archive from Baseball Savant")
     parser.add_argument(
         "--profile",
-        default=os.environ.get("AWS_PROFILE", "haekeo"),
-        help="AWS profile to use for S3 (default: haekeo)",
+        default=os.environ.get("AWS_PROFILE"),
+        help="AWS profile to use for S3 (omit on GitHub Actions)",
     )
     args = parser.parse_args()
 
