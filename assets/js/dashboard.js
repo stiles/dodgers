@@ -177,9 +177,9 @@ function renderChart(data) {
       .text(() => {
           const gb = lastDataCurrent.gb;
           if (gb > 0) {
-              return `${gb} games up`;
+              return `Games up: ${gb}`;
           } else if (gb < 0) {
-              return `${Math.abs(gb)} games back`;
+              return `Games back: ${Math.abs(gb)}`;
           } else {
               return 'Even';
           }
