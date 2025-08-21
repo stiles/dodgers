@@ -8,6 +8,7 @@ This notebook extracts key statistics from the project's processed tables for di
 """
 
 import os
+from typing import Union
 import pandas as pd
 import boto3
 from io import BytesIO
@@ -87,7 +88,7 @@ def parse_games_back(value):
     except Exception:
         return 0
 
-def compute_games_up_back_from_live(live_df: pd.DataFrame, team_name: str) -> int | float:
+def compute_games_up_back_from_live(live_df: pd.DataFrame, team_name: str) -> Union[int, float]:
     """Compute a positive 'games up/back' value from live standings for the given team.
     - If the team is in 1st, return the 2nd-place team's games_back
     - Otherwise, return the team's own games_back
