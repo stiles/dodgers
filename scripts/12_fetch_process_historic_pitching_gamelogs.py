@@ -111,9 +111,19 @@ for col in ['h', 'hr', 'er', 'so']:
 MERGE
 """
 
+# Normalize dtypes before merge to avoid mixed object types in Parquet
+archive_df = archive_df.copy()
+try:
+    archive_df['year'] = archive_df['year'].astype(int)
+except Exception:
+    archive_df['year'] = pd.to_numeric(archive_df['year'], errors='coerce').fillna(0).astype(int)
+
+current_df['year'] = pd.to_numeric(current_df['year'], errors='coerce').fillna(0).astype(int)
+current_df['gtm'] = pd.to_numeric(current_df['gtm'], errors='coerce').fillna(0).astype(int)
+
 # Combine current and archive data
 df = (
-    pd.concat([current_df, archive_df])
+    pd.concat([current_df, archive_df], ignore_index=True)
     .sort_values(["year", "gtm"], ascending=[False, True])
     .reset_index(drop=True)
     .drop_duplicates()
@@ -125,6 +135,14 @@ OUTPUT
 
 # Optimize DataFrame for output
 optimized_df = df[['gtm', 'year', 'game_date', 'era_cum','h_cum', 'hr_cum', 'er_cum', 'so_cum']].copy()
+
+# Final dtype enforcement for Parquet
+optimized_df['year'] = optimized_df['year'].astype(int)
+optimized_df['gtm'] = optimized_df['gtm'].astype(int)
+for c in ['h_cum', 'hr_cum', 'er_cum', 'so_cum']:
+    optimized_df[c] = pd.to_numeric(optimized_df[c], errors='coerce').fillna(0).astype(int)
+optimized_df['era_cum'] = pd.to_numeric(optimized_df['era_cum'], errors='coerce')
+optimized_df['game_date'] = optimized_df['game_date'].astype(str)
 
 
 # Function to save DataFrame to S3
@@ -139,7 +157,7 @@ def save_to_s3(df, base_path, s3_bucket, formats):
                 df.to_json(buffer, indent=4, orient="records", lines=False)
                 content_type = "application/json"
             elif fmt == "parquet":
-                df.to_parquet(buffer, index=False)
+                df.to_parquet(buffer, index=False, engine="pyarrow")
                 content_type = "application/octet-stream"
             buffer.seek(0)
             s3_resource.Bucket(s3_bucket).put_object(Key=f"{base_path}.{fmt}", Body=buffer, ContentType=content_type)

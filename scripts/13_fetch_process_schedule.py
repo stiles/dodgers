@@ -105,10 +105,17 @@ def fetch_clean_current_schedule(url, year):
     df['date'] = pd.to_datetime(df['date'].dropna() + " " + df['season'].astype(str))
     df['date'] = df['date'].dt.strftime('%b %-d')
     df['home_away'] = df['home_away'].apply(lambda i: 'away' if i == '@' else 'home')
-    df["result"] = df["result"].str.split('-', expand=True)[0]
-    df.loc[df["result"] == "W", "result"] = 'win'
-    df.loc[df["result"] == "L", "result"] = 'loss'
-    df.loc[~df["result"].str.contains("win|loss"), "result"] = '--'
+    # Parse result with score to preserve last game's score string
+    # Example values: 'W-5-3', 'L-2-4', 'W', 'L', None
+    df['result_raw'] = df['result'].astype(str)
+    df['result_letter'] = df['result_raw'].str[0]
+    df['result_letter'] = df['result_letter'].where(df['result_letter'].isin(['W','L']), None)
+    df['result'] = df['result_letter'].map({'W':'win','L':'loss'})
+    # Extract score part after first dash
+    score_part = df['result_raw'].str.extract(r'^[WL]-(.+)$')[0]
+    df['score'] = score_part.where(df['result'].notna(), None)
+    # Where result is neither win nor loss, set placeholder
+    df.loc[df['result'].isna(), 'result'] = '--'
     df = df.drop(["unnamed: 2", "streak", "orig. scheduled", 'inn', 'tm', 'ra', 'rank', 'gb', 'win', 'opp', 'loss', 'save', 'time', 'd/n', 'w-l', 'attendance'], axis=1)
     return df
 
@@ -133,11 +140,23 @@ last_five = src.query('game_completed').tail(10).drop(['cli', 'season', 'game_co
 next_five['placement'] = 'next'
 last_five['placement'] = 'last'
 
-schedule_df = pd.concat([last_five, next_five])[['date', 'opp_name', 'home_away', 'result', 'placement', 'r']].rename(columns={'r': 'game_start'})
-schedule_df.loc[schedule_df.result != '--', 'game_start'] = '--'
+schedule_df = pd.concat([last_five, next_five], ignore_index=True)
+# For completed games, show score instead of time; for upcoming, show time
+schedule_df['game_start'] = schedule_df.apply(
+    lambda row: row['score'] if row['result'] in ['win', 'loss'] and isinstance(row.get('score'), str) and row['score'] else row.get('r', '--'),
+    axis=1
+)
+schedule_df = schedule_df[['date', 'opp_name', 'home_away', 'result', 'placement', 'game_start']]
 
-# Convert game_start to Pacific Time if it's not '--'
-schedule_df['game_start'] = schedule_df['game_start'].apply(lambda x: convert_time_to_pacific_manual(x) if x != '--' else x)
+# Convert time-like strings to Pacific Time; ignore scores like '5-3'
+def is_time_string(s: str) -> bool:
+    if not isinstance(s, str):
+        return False
+    return bool(pd.Series([s]).str.match(r'^\d{1,2}:\d{2}\s?(AM|PM)$', case=False, na=False).iloc[0])
+
+schedule_df['game_start'] = schedule_df['game_start'].apply(
+    lambda x: convert_time_to_pacific_manual(x) if isinstance(x, str) and is_time_string(x) else x
+)
 
 # Function to save DataFrame to S3
 def save_to_s3(df, base_path, s3_bucket, formats):

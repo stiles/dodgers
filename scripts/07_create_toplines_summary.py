@@ -76,6 +76,41 @@ def format_int_with_commas(value):
     except Exception:
         return value
 
+def parse_games_back(value):
+    """Parse games-back values which may be '-', None, strings, floats."""
+    if value in (None, '-', '—', ''):
+        return 0
+    try:
+        num = float(value)
+        # Coerce .0 to int for cleaner display
+        return int(num) if num.is_integer() else num
+    except Exception:
+        return 0
+
+def compute_games_up_back_from_live(live_df: pd.DataFrame, team_name: str) -> int | float:
+    """Compute a positive 'games up/back' value from live standings for the given team.
+    - If the team is in 1st, return the 2nd-place team's games_back
+    - Otherwise, return the team's own games_back
+    Falls back to 0 when values are unavailable.
+    """
+    try:
+        lad_row = live_df.query("team_name == @team_name").iloc[0]
+        division = lad_row.get('division_name')
+        division_rank = lad_row.get('division_rank')
+        division_df = live_df.query("division_name == @division").copy()
+        if division_df.empty:
+            return 0
+        division_df = division_df.sort_values('division_rank')
+        if int(division_rank) == 1:
+            if len(division_df) >= 2:
+                second_row = division_df.iloc[1]
+                return parse_games_back(second_row.get('games_back'))
+            return 0
+        else:
+            return parse_games_back(lad_row.get('games_back'))
+    except Exception:
+        return 0
+
 # URLs for data
 standings_live_url = "https://stilesdata.com/dodgers/data/standings/all_teams_standings_metrics_2025.json"
 standings_url = "https://stilesdata.com/dodgers/data/standings/dodgers_standings_1958_present.parquet"
@@ -164,11 +199,19 @@ standings_last_season = standings_past.query(f"gm <= {game_number} and year=='{l
 standings["rank_ordinal"] = standings["rank"].map(to_ordinal)
 standings_division_rank = standings['rank'].iloc[0]
 standings_division_rank_ordinal = standings['rank_ordinal'].iloc[0]
-games_back_raw = standings['gb'].iloc[0]
-if isinstance(games_back_raw, float) and games_back_raw.is_integer():
-    standings_division_rank_games_back = int(games_back_raw)
-else:
-    standings_division_rank_games_back = games_back_raw
+
+# Prefer live standings to compute a positive 'games up/back' value
+games_up_back_value = compute_games_up_back_from_live(standings_live, 'Los Angeles Dodgers')
+if games_up_back_value == 0:
+    # Fallback: use historical table's gb (may be 0 when in first)
+    games_back_raw = standings['gb'].iloc[0]
+    if isinstance(games_back_raw, float) and games_back_raw.is_integer():
+        games_up_back_value = int(games_back_raw)
+    else:
+        try:
+            games_up_back_value = int(games_back_raw)
+        except Exception:
+            games_up_back_value = games_back_raw
 
 # Batting
 batting = read_parquet_s3(batting_url)
@@ -410,7 +453,7 @@ summary_data = [
     {"stat_label": "Record", "stat": "record", "value": record, "category": "standings", "context_value": record_last, "context_value_label": "This point last season"},
    
     {"stat_label": "Win percentage", "stat": "win_pct", "value": f"{win_pct}%", "category": "standings", "context_value": f"{win_pct_last}%", "context_value_label": "This point last season"},
-    {"stat_label": "Games up/back", "stat": "games_up_back", "value": standings_division_rank_games_back, "category": "standings", "context_value": standings_division_rank_ordinal, "context_value_label": 'Division rank'},
+    {"stat_label": "Games up/back", "stat": "games_up_back", "value": games_up_back_value, "category": "standings", "context_value": standings_division_rank_ordinal, "context_value_label": 'Division rank'},
     {"stat_label": "Avg. home attendance", "stat": "mean_attendance", "value": formatted_mean_attendance, "category": "standings", "context_value": home_games_count, "context_value_label": 'Home games this season'},
     
     {"stat_label": "Runs", "stat": "runs", "value": runs, "category": "standings", "context_value": runs_rank, "context_value_label": "League rank"},

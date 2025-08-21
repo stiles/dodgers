@@ -34,7 +34,7 @@
     {
         "stat_label":"Games up\/back",
         "stat":"games_up_back",
-        "value":2,
+        "value":1,
         "category":"standings",
         "context_value":"1st",
         "context_value_label":"Division rank"
@@ -124,7 +124,7 @@
         "stat":"strikeouts",
         "value":"1,109",
         "category":"pitching",
-        "context_value":"5th",
+        "context_value":"4th",
         "context_value_label":"League rank"
     },
     {
@@ -146,7 +146,7 @@
     {
         "stat_label":"Last updated",
         "stat":"update_time",
-        "value":"August 21, 2025, 8:07 AM PT",
+        "value":"August 21, 2025, 12:39 PM PT",
         "category":"summary",
         "context_value":"",
         "context_value_label":""
