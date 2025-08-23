@@ -550,10 +550,10 @@
     "height":"5' 10\"",
     "weight":"205",
     "dob":"03\/25\/1987",
-    "status":"IL-15",
+    "status":"ACTIVE",
     "is_minors":false,
-    "is_il":true,
-    "is_active_roster":false,
+    "is_il":false,
+    "is_active_roster":true,
     "is_40_man":true,
     "slug":"kirby-yates"
   },
