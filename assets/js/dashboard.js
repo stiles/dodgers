@@ -3306,6 +3306,111 @@ if (document.readyState === 'loading') {
   }
 })();
 
+// Umpire Scorecard - Pitching (balls called in-zone)
+(function () {
+  async function fetchUmpireDataPitching() {
+    try {
+      const response = await d3.json('https://stilesdata.com/dodgers/data/summary/umpire_summary.json');
+      renderUmpireScorecardPitching(response);
+    } catch (error) {
+      console.error('Failed to fetch umpire scorecard pitching data:', error);
+    }
+  }
+
+  function renderUmpireScorecardPitching(data) {
+    const chartDiv = d3.select('#umpire-scorecard-pitching-chart');
+    if (chartDiv.empty()) return;
+    chartDiv.html('');
+
+    const pitchingSeason = data.pitching_season_summary;
+    const pitchingLast = data.pitching_last_game_summary;
+
+    if (pitchingSeason) {
+      const seasonBarWrapper = chartDiv.append('div').attr('class', 'chart-bar-wrapper');
+      const seasonLabelLine = seasonBarWrapper.append('div').attr('class', 'chart-label-line');
+      seasonLabelLine.append('div').attr('class', 'chart-label').text('This season');
+      seasonLabelLine.append('div').attr('class', 'chart-percentages').html(
+        `<span class="good-calls-label">${(pitchingSeason.correct_balls_pct || 0).toFixed(0)}%</span> correct / <span class="bad-calls-label">${(pitchingSeason.incorrect_balls_pct || 0).toFixed(0)}%</span> incorrect`
+      );
+
+      const seasonBarInner = seasonBarWrapper.append('div').attr('class', 'chart-bar');
+      const correctPct = pitchingSeason.correct_balls_pct || 0;
+      const incorrectPct = pitchingSeason.incorrect_balls_pct || 0;
+      if (correctPct > 0) {
+        seasonBarInner.append('div')
+          .attr('class', 'chart-segment strikes')
+          .style('width', `${correctPct}%`)
+          .text(correctPct >= 15 ? `${correctPct.toFixed(0)}%` : '');
+      }
+      if (incorrectPct > 0) {
+        seasonBarInner.append('div')
+          .attr('class', 'chart-segment balls')
+          .style('width', `${incorrectPct}%`)
+          .text(incorrectPct >= 15 ? `${incorrectPct.toFixed(0)}%` : '');
+      }
+    }
+
+    if (pitchingLast) {
+      const gameBarWrapper = chartDiv.append('div').attr('class', 'chart-bar-wrapper');
+      const gameLabelLine = gameBarWrapper.append('div').attr('class', 'chart-label-line');
+      gameLabelLine.append('div').attr('class', 'chart-label').text(`Last game: ${pitchingLast.date}`);
+      gameLabelLine.append('div').attr('class', 'chart-percentages').html(
+        `<span class="good-calls-label">${(pitchingLast.correct_balls_pct || 0).toFixed(0)}%</span> / <span class="bad-calls-label">${(pitchingLast.incorrect_balls_pct || 0).toFixed(0)}%</span>`
+      );
+
+      const gameBarInner = gameBarWrapper.append('div').attr('class', 'chart-bar');
+      const correctPct = pitchingLast.correct_balls_pct || 0;
+      const incorrectPct = pitchingLast.incorrect_balls_pct || 0;
+      if (correctPct > 0) {
+        gameBarInner.append('div')
+          .attr('class', 'chart-segment strikes')
+          .style('width', `${correctPct}%`)
+          .text(correctPct >= 15 ? `${correctPct.toFixed(0)}%` : '');
+      }
+      if (incorrectPct > 0) {
+        gameBarInner.append('div')
+          .attr('class', 'chart-segment balls')
+          .style('width', `${incorrectPct}%`)
+          .text(incorrectPct >= 15 ? `${incorrectPct.toFixed(0)}%` : '');
+      }
+    }
+
+    // Worst calls list
+    const worstCallsDiv = d3.select('#umpire-worst-calls-pitching');
+    if (worstCallsDiv.empty()) return;
+    worstCallsDiv.html('');
+    const list = worstCallsDiv.append('ul').attr('class', 'worst-calls-list');
+    const worst = data.pitching_worst_calls_of_season || [];
+    if (worst.length > 0) {
+      worst.slice(0, 4).forEach(call => {
+        const item = list.append('li');
+        item.html(`
+          <div class="call-date">${call.date_formatted || call.date}</div>
+          <div class="call-headline">
+            ${call.batter} vs. ${call.pitcher}
+            <a href="${call.video_link}" target="_blank" class="video-link" aria-label="Watch video replay">
+              <svg width="32" height="32" viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <circle cx="32" cy="32" r="30" fill="#ffffff" stroke="#ef3e42" stroke-width="4"/>
+                <circle cx="32" cy="32" r="28" fill="#fefefe" />
+                <path d="M26 20L44 32L26 44V20Z" fill="#ef3e42"/>
+              </svg>
+            </a>
+          </div>
+          <div class="call-details">
+             <b>${(call.distance_inches || 0).toFixed(2)}"</b> inside zone • <b>${(call.velocity_mph || 0).toFixed(0)}</b> mph • <em>${call.pitch_type || ''}</em>
+          </div>
+        `);
+      });
+    } else {
+      list.append('li').html('<div class="call-details" style="font-style: italic; color: #999;">No incorrect ball calls data available.</div>');
+    }
+  }
+
+  if (document.getElementById('umpire-scorecard-pitching-chart')) {
+    fetchUmpireDataPitching();
+  }
+})();
+
 // Shohei Ohtani Pitching Visualization
 document.addEventListener('DOMContentLoaded', function () {
   if (!document.getElementById('shohei-pitching-container')) {

@@ -1,15 +1,15 @@
 {
     "season_summary": {
-        "correct_strikes_pct": 90.1246105919003,
-        "incorrect_strikes_pct": 9.875389408099693,
-        "total_called_strikes": 3210,
-        "bad_calls_count": 317
+        "correct_strikes_pct": 90.136476426799,
+        "incorrect_strikes_pct": 9.863523573200993,
+        "total_called_strikes": 3224,
+        "bad_calls_count": 318
     },
     "last_game_summary": {
-        "date": "August 22, 2025",
-        "correct_strikes_pct": 95.65217391304348,
-        "incorrect_strikes_pct": 4.347826086956516,
-        "total_called_strikes": 23,
+        "date": "August 23, 2025",
+        "correct_strikes_pct": 92.85714285714286,
+        "incorrect_strikes_pct": 7.142857142857139,
+        "total_called_strikes": 14,
         "bad_calls_count": 1
     },
     "worst_calls_of_season": [
@@ -52,6 +52,61 @@
             "date": "2025-05-20",
             "date_formatted": "May 20, 2025",
             "video_link": "https://baseballsavant.mlb.com/sporty-videos?playId=7d823fde-e2d2-31c3-9ad0-5ac721a15015"
+        }
+    ],
+    "pitching_season_summary": {
+        "correct_balls_pct": 92.55956956187548,
+        "incorrect_balls_pct": 7.4404304381245225,
+        "total_called_balls": 6505,
+        "bad_calls_count": 484
+    },
+    "pitching_last_game_summary": {
+        "date": "August 23, 2025",
+        "correct_balls_pct": 81.81818181818183,
+        "incorrect_balls_pct": 18.181818181818173,
+        "total_called_balls": 33,
+        "bad_calls_count": 6
+    },
+    "pitching_worst_calls_of_season": [
+        {
+            "distance_inches": 1.45,
+            "batter": "Fernando Tatis Jr.",
+            "pitcher": "Tyler Glasnow",
+            "pitch_type": "Curveball",
+            "velocity_mph": 80.4,
+            "date": "2025-08-23",
+            "date_formatted": "August 23, 2025",
+            "video_link": "https://baseballsavant.mlb.com/sporty-videos?playId=bc5a3c53-b404-313a-83a3-125603482d31"
+        },
+        {
+            "distance_inches": 1.45,
+            "batter": "Jackson Merrill",
+            "pitcher": "Clayton Kershaw",
+            "pitch_type": "4-Seam Fastball",
+            "velocity_mph": 89.2,
+            "date": "2025-08-15",
+            "date_formatted": "August 15, 2025",
+            "video_link": "https://baseballsavant.mlb.com/sporty-videos?playId=12ea3950-ea1b-3436-915f-bd0c8a71641b"
+        },
+        {
+            "distance_inches": 1.45,
+            "batter": "Luis Arraez",
+            "pitcher": "Anthony Banda",
+            "pitch_type": "Slider",
+            "velocity_mph": 85.5,
+            "date": "2025-08-16",
+            "date_formatted": "August 16, 2025",
+            "video_link": "https://baseballsavant.mlb.com/sporty-videos?playId=251afc65-859f-3ddc-9257-29eaddb36e8c"
+        },
+        {
+            "distance_inches": 1.45,
+            "batter": "Matt Olson",
+            "pitcher": "Blake Snell",
+            "pitch_type": "4-Seam Fastball",
+            "velocity_mph": 94.7,
+            "date": "2025-04-02",
+            "date_formatted": "April 2, 2025",
+            "video_link": "https://baseballsavant.mlb.com/sporty-videos?playId=707c1373-f1f0-34ba-853f-e027407a0bb0"
         }
     ]
 }

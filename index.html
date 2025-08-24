@@ -215,7 +215,7 @@
   <p class="minimal-subhead">
     
     
-    <span class="highlight">LOS ANGELES</span> <span class="updated">(August 23)</span> — After <span class="highlight">129</span> games this season, the Dodgers are in <span class="highlight">1st</span> place in the National League West division. The team has compiled a <span class="highlight">73-56</span> record, winning <span class="highlight">57%</span> of its games so far. The last game was a <span class="highlight">1-2</span> away <span class="highlight">loss</span> against the San Diego Padres. They've won <span class="highlight">5 of the last 10</span> and are on pace to win at least <span class="highlight">92</span> games in the regular season.
+    <span class="highlight">LOS ANGELES</span> <span class="updated">(August 23)</span> — After <span class="highlight">129</span> games this season, the Dodgers are in <span class="highlight">1st</span> place in the National League West division. The team has compiled a <span class="highlight">73-56</span> record, winning <span class="highlight">57%</span> of its games so far. The last game's result is not yet available. They've won <span class="highlight">5 of the last 10</span> and are on pace to win at least <span class="highlight">92</span> games in the regular season.
   </p>
 </div>
 
@@ -413,14 +413,14 @@
         
         <tr>
           <td>San Francisco Giants</td>
-          <td>.473</td>
-          <td>12</td>
+          <td>.477</td>
+          <td>11.5</td>
         </tr>
         
         <tr>
           <td>Colorado Rockies</td>
-          <td>.287</td>
-          <td>36</td>
+          <td>.285</td>
+          <td>36.5</td>
         </tr>
         
       </tbody>
@@ -440,32 +440,32 @@
         
         <tr>
           <td>Milwaukee Brewers</td>
-          <td>.628</td>
+          <td>.623</td>
           <td>-</td>
         </tr>
         
         <tr>
           <td>Chicago Cubs</td>
           <td>.574</td>
-          <td>7</td>
+          <td>6.5</td>
         </tr>
         
         <tr>
           <td>Cincinnati Reds</td>
           <td>.519</td>
-          <td>14</td>
+          <td>13.5</td>
         </tr>
         
         <tr>
           <td>St. Louis Cardinals</td>
           <td>.492</td>
-          <td>17.5</td>
+          <td>17</td>
         </tr>
         
         <tr>
           <td>Pittsburgh Pirates</td>
-          <td>.426</td>
-          <td>26</td>
+          <td>.431</td>
+          <td>25</td>
         </tr>
         
       </tbody>
@@ -485,32 +485,32 @@
         
         <tr>
          <td>Philadelphia Phillies</td>
-          <td>.578</td>
+          <td>.581</td>
           <td>-</td>
         </tr>
         
         <tr>
          <td>New York Mets</td>
-          <td>.531</td>
+          <td>.535</td>
           <td>6</td>
         </tr>
         
         <tr>
          <td>Miami Marlins</td>
-          <td>.469</td>
-          <td>14</td>
+          <td>.465</td>
+          <td>15</td>
         </tr>
         
         <tr>
          <td>Atlanta Braves</td>
-          <td>.453</td>
-          <td>16</td>
+          <td>.450</td>
+          <td>17</td>
         </tr>
         
         <tr>
          <td>Washington Nationals</td>
-          <td>.414</td>
-          <td>21</td>
+          <td>.411</td>
+          <td>22</td>
         </tr>
         
       </tbody>
@@ -674,14 +674,7 @@
     <div id="shohei-sb-chart" class="small-chart-container"></div>
   </div>
 
-  <!-- <h3 class="visual-subhead">Pitching breakdown</h3>
-<p class="chart-chatter">A detailed look at Ohtani's pitches this season, showing his pitch mix, average velocity and locations.</p>
-<div id="shohei-pitching-container">
-  <div id="shohei-pitch-mix-chart"></div>
-  <div id="shohei-pitch-location-chart"></div>
-</div> -->
-
-  <h2 class="stat-group">Umpire scorecard</h2>
+  <h2 class="stat-group">Umpire scorecard (batting)</h2>
 <div class="scorecard-row">
   <div class="scorecard-left">
   <h3 class="visual-subhead">Strike zone analysis</h3>
@@ -782,6 +775,20 @@
   <h3 class="visual-subhead">Cumulative <span class="win">hits</span> allowed</h3>
   <div id="cumulative-hits-chart" class="small-chart"></div>
 </div>
+
+  <h2 class="stat-group">Umpire scorecard (pitching)</h2>
+<div class="scorecard-row">
+  <div class="scorecard-left">
+  <h3 class="visual-subhead">Pitching strike zone analysis</h3>
+  <p class="chart-chatter">How often are Dodgers pitchers charged with <span style="background-color: #F18851; color: #fff; font-weight: bold; padding: 1px 6px; border-radius: 5px;">balls</span> that were actually <span style="background-color: #53A796; color: #fff; font-weight: bold; padding: 1px 6px; border-radius: 5px;">strikes</span>?</p>
+    <div id="umpire-scorecard-pitching-chart"></div>
+  </div>
+  <div class="scorecard-right">
+    <h3 class="visual-subhead">Worst calls against Dodgers pitchers</h3>
+    <div id="umpire-worst-calls-pitching"></div>
+  </div>
+</div>
+ <p class="note">Note: Strike zone calls are determined by Baseball Savant and <a href="https://github.com/stiles/dodgers/blob/main/scripts/20_fetch_game_pitches.py">collected</a> after each game from its gamefeed API. Download the data <a href="https://stilesdata.com/dodgers/data/pitches/dodgers_pitches_thrown_2025.json">here</a>.</p>
 
   <h2 class="stat-group">Schedule</h2>
     <div id="schedule-section" class="schedule-tables">
@@ -930,7 +937,7 @@
           <a href="https://buymeacoffee.com/mattstiles" class="footer-link">Buy me coffee?</a>
         </div>
         <div class="footer-stats">
-          <div class="footer-meta">Updated: August 23, 2025 at 4 PM</div>
+          <div class="footer-meta">Updated: August 23, 2025 at 7 PM</div>
           <div class="footer-meta">Sources: MLB/Baseball Savant, Baseball Reference</div>
         </div>
       </div>
