@@ -3329,8 +3329,11 @@ if (document.readyState === 'loading') {
       const seasonBarWrapper = chartDiv.append('div').attr('class', 'chart-bar-wrapper');
       const seasonLabelLine = seasonBarWrapper.append('div').attr('class', 'chart-label-line');
       seasonLabelLine.append('div').attr('class', 'chart-label').text('This season');
+      const totalBallsSeason = pitchingSeason.total_called_balls || 0;
+      const badBallsSeason = pitchingSeason.bad_calls_count || 0;
+      const goodBallsSeason = Math.max(0, totalBallsSeason - badBallsSeason);
       seasonLabelLine.append('div').attr('class', 'chart-percentages').html(
-        `<span class="good-calls-label">${(pitchingSeason.correct_balls_pct || 0).toFixed(0)}%</span> correct / <span class="bad-calls-label">${(pitchingSeason.incorrect_balls_pct || 0).toFixed(0)}%</span> incorrect`
+        `<span class="good-calls-label">${goodBallsSeason.toLocaleString()} </span> good calls / <span class="bad-calls-label">${badBallsSeason.toLocaleString()} </span> bad calls`
       );
 
       const seasonBarInner = seasonBarWrapper.append('div').attr('class', 'chart-bar');
@@ -3354,8 +3357,11 @@ if (document.readyState === 'loading') {
       const gameBarWrapper = chartDiv.append('div').attr('class', 'chart-bar-wrapper');
       const gameLabelLine = gameBarWrapper.append('div').attr('class', 'chart-label-line');
       gameLabelLine.append('div').attr('class', 'chart-label').text(`Last game: ${pitchingLast.date}`);
+      const totalBallsGame = pitchingLast.total_called_balls || 0;
+      const badBallsGame = pitchingLast.bad_calls_count || 0;
+      const goodBallsGame = Math.max(0, totalBallsGame - badBallsGame);
       gameLabelLine.append('div').attr('class', 'chart-percentages').html(
-        `<span class="good-calls-label">${(pitchingLast.correct_balls_pct || 0).toFixed(0)}%</span> / <span class="bad-calls-label">${(pitchingLast.incorrect_balls_pct || 0).toFixed(0)}%</span>`
+        `<span class="good-calls-label">${goodBallsGame.toLocaleString()} </span> / <span class="bad-calls-label">${badBallsGame.toLocaleString()} </span>`
       );
 
       const gameBarInner = gameBarWrapper.append('div').attr('class', 'chart-bar');
