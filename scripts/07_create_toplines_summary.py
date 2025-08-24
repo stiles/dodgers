@@ -179,7 +179,15 @@ standings.loc[standings.result == "L", "result_clean"] = "loss"
 standings.loc[standings.result == "W", "result_clean"] = "win"
 standings_past = read_parquet_s3(standings_url, sort_by='game_date').query(f"year == '{last_year}'")
 standings_now = standings.query("game_date == game_date.max()").copy()
-standings_live = pd.read_json(standings_live_url)
+# Prefer local _data standings file (same one the site tables use); fallback to remote
+local_live_path = os.path.join(base_dir, '_data', 'standings', f'all_teams_standings_metrics_{year}.json')
+try:
+    if os.path.exists(local_live_path):
+        standings_live = pd.read_json(local_live_path)
+    else:
+        standings_live = pd.read_json(standings_live_url)
+except Exception:
+    standings_live = pd.read_json(standings_live_url)
 standings_live_lad = standings_live.query("team_name == 'Los Angeles Dodgers'")
 print(standings_live_lad.iloc[0])
 
@@ -198,11 +206,23 @@ game_number = standings_now['gm'].iloc[0]
 standings_last = standings_past.query(f"gm == {game_number}").head(1).reset_index(drop=True).copy()
 standings_last_season = standings_past.query(f"gm <= {game_number} and year=='{last_year}'").reset_index(drop=True).copy()
 standings["rank_ordinal"] = standings["rank"].map(to_ordinal)
-standings_division_rank = standings['rank'].iloc[0]
-standings_division_rank_ordinal = standings['rank_ordinal'].iloc[0]
+# Use live standings for division rank to match NL tables
+try:
+    live_division_rank = int(standings_live_lad.iloc[0].get('division_rank'))
+    standings_division_rank = live_division_rank
+    standings_division_rank_ordinal = to_ordinal(live_division_rank)
+except Exception:
+    standings_division_rank = standings['rank'].iloc[0]
+    standings_division_rank_ordinal = standings['rank_ordinal'].iloc[0]
 
 # Prefer live standings to compute a positive 'games up/back' value
 games_up_back_value = compute_games_up_back_from_live(standings_live, 'Los Angeles Dodgers')
+# Ensure non-negative display value
+try:
+    if isinstance(games_up_back_value, (int, float)):
+        games_up_back_value = abs(games_up_back_value)
+except Exception:
+    pass
 if games_up_back_value == 0:
     # Fallback: use historical table's gb (may be 0 when in first)
     games_back_raw = standings['gb'].iloc[0]

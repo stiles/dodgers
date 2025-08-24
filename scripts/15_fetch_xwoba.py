@@ -46,9 +46,10 @@ ALLOWED_BATTERS = [
     "Max Muncy",
     "Miguel Rojas",
     "Tommy Edman",
-    "Hyeseong Kim",
+    # "Hyeseong Kim",  # not enough plate appearances
     "Michael Conforto",
     "Alex Call",
+    # "Alex Freeland",  # not enough plate appearances
 ]
 
 # Known corrections to help match allowlist typos or alternate spellings
