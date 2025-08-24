@@ -99,7 +99,7 @@ twitter:
       <thead>
         <tr>
           <th>Team</th>
-          <th>Win %</th>
+          <th>W%</th>
           <th>GB</th>
         </tr>
       </thead>
@@ -120,7 +120,7 @@ twitter:
       <thead>
         <tr>
           <th>Team</th>
-          <th>Win %</th>
+          <th>W%</th>
           <th>GB</th>
         </tr>
       </thead>
@@ -141,7 +141,7 @@ twitter:
       <thead>
         <tr>
           <th>Team</th>
-          <th>Win %</th>
+          <th>W%</th>
           <th>GB</th>
         </tr>
       </thead>

@@ -3172,15 +3172,11 @@ if (document.readyState === 'loading') {
 
       const contextText = contextEl.textContent || '';
       const inFirst = /\b1st\b/i.test(contextText);
-      if (inFirst) {
-        labelEl.textContent = 'Games up';
-        valueEl.style.color = '';
-        valueEl.classList.remove('loss');
-      } else {
-        labelEl.textContent = 'Game back';
-        valueEl.style.color = '#ef3e42';
-        valueEl.classList.add('loss');
-      }
+      // Update label based on rank
+      labelEl.textContent = inFirst ? 'Games up' : 'Game back';
+      // Only color the number when not in first
+      valueEl.classList.remove('loss');
+      valueEl.style.color = inFirst ? '' : '#ef3e42';
     });
   }
 
