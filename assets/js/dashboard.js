@@ -3158,6 +3158,40 @@ if (document.readyState === 'loading') {
 }
 
 
+// Adjust "Games up/back" stat card labeling and color based on division rank
+(function () {
+  function updateGamesUpBackCard() {
+    const cards = document.querySelectorAll('.stat-card');
+    cards.forEach(card => {
+      const labelEl = card.querySelector('.stat-card-label');
+      const valueEl = card.querySelector('.stat-card-value');
+      const contextEl = card.querySelector('.stat-card-context');
+      if (!labelEl || !valueEl || !contextEl) return;
+      const labelText = labelEl.textContent.trim().toLowerCase();
+      if (labelText !== 'games up/back') return;
+
+      const contextText = contextEl.textContent || '';
+      const inFirst = /\b1st\b/i.test(contextText);
+      if (inFirst) {
+        labelEl.textContent = 'Games up';
+        valueEl.style.color = '';
+        valueEl.classList.remove('loss');
+      } else {
+        labelEl.textContent = 'Game back';
+        valueEl.style.color = '#ef3e42';
+        valueEl.classList.add('loss');
+      }
+    });
+  }
+
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', updateGamesUpBackCard);
+  } else {
+    updateGamesUpBackCard();
+  }
+})();
+
+
 // Umpire Scorecard
 (function () {
   async function fetchUmpireData() {
