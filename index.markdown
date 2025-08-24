@@ -234,14 +234,7 @@ twitter:
     <div id="shohei-sb-chart" class="small-chart-container"></div>
   </div>
 
-  <!-- <h3 class="visual-subhead">Pitching breakdown</h3>
-<p class="chart-chatter">A detailed look at Ohtani's pitches this season, showing his pitch mix, average velocity and locations.</p>
-<div id="shohei-pitching-container">
-  <div id="shohei-pitch-mix-chart"></div>
-  <div id="shohei-pitch-location-chart"></div>
-</div> -->
-
-  <h2 class="stat-group">Umpire scorecard</h2>
+  <h2 class="stat-group">Umpire scorecard (batting)</h2>
 <div class="scorecard-row">
   <div class="scorecard-left">
   <h3 class="visual-subhead">Strike zone analysis</h3>
@@ -286,6 +279,20 @@ twitter:
   <h3 class="visual-subhead">Cumulative <span class="win">hits</span> allowed</h3>
   <div id="cumulative-hits-chart" class="small-chart"></div>
 </div>
+
+  <h2 class="stat-group">Umpire scorecard (pitching)</h2>
+<div class="scorecard-row">
+  <div class="scorecard-left">
+  <h3 class="visual-subhead">Pitching strike zone analysis</h3>
+  <p class="chart-chatter">How often are Dodgers pitchers charged with <span style="background-color: #F18851; color: #fff; font-weight: bold; padding: 1px 6px; border-radius: 5px;">balls</span> that were actually <span style="background-color: #53A796; color: #fff; font-weight: bold; padding: 1px 6px; border-radius: 5px;">strikes</span>?</p>
+    <div id="umpire-scorecard-pitching-chart"></div>
+  </div>
+  <div class="scorecard-right">
+    <h3 class="visual-subhead">Worst calls against Dodgers pitchers</h3>
+    <div id="umpire-worst-calls-pitching"></div>
+  </div>
+</div>
+ <p class="note">Note: Strike zone calls are determined by Baseball Savant and <a href="https://github.com/stiles/dodgers/blob/main/scripts/20_fetch_game_pitches.py">collected</a> after each game from its gamefeed API. Download the data <a href="https://stilesdata.com/dodgers/data/pitches/dodgers_pitches_thrown_2025.json">here</a>.</p>
 
   <h2 class="stat-group">Schedule</h2>
     <div id="schedule-section" class="schedule-tables">

@@ -87,9 +87,18 @@ def fetch_game_pitches(game_pk):
     resp.raise_for_status()
     return resp.json()
 
-def analyze_pitches(game_info):
+def load_existing_json(url: str) -> pd.DataFrame:
+    try:
+        resp = requests.get(url, timeout=15)
+        if resp.status_code == 200 and resp.content:
+            return pd.DataFrame(resp.json())
+    except Exception:
+        pass
+    return pd.DataFrame()
+
+def analyze_pitches(game_info, batting_side_override: str = None, team_role: str = None):
     game_pk = game_info["gamePk"]
-    team_side = game_info["team_side"]
+    team_side = batting_side_override if batting_side_override else game_info["team_side"]
     game_date = game_info.get("game_date")
     try:
         data = fetch_game_pitches(game_pk)
@@ -145,6 +154,7 @@ def analyze_pitches(game_info):
                 "pz": pz,
                 "sz_bot": sz_bot,
                 "sz_top": sz_top,
+                "team_role": team_role or "thrown_to_dodgers",
             })
     rows.sort(key=lambda p: (p.get('inning', 0), p.get('ab_number', 0), p.get('pitch_number', 0)))
     return rows
@@ -160,21 +170,75 @@ for day in tqdm(daterange(start_date, end_date), total=total_days, desc="Fetchin
 print(f"\nTotal Dodgers games found: {len(all_dodgers_games)}")
 
 all_pitches = []
+all_pitches_thrown_by_dodgers = []
+
+# Load existing datasets from public URLs to support incremental updates
+public_to_url = f"https://stilesdata.com/{S3_KEY_JSON}"
+public_by_url = f"https://stilesdata.com/dodgers/data/pitches/dodgers_pitches_thrown_{current_year_for_paths}.json"
+existing_to_df = load_existing_json(public_to_url)
+existing_by_df = load_existing_json(public_by_url)
+processed_gamepks_to = set(existing_to_df['game_pk'].unique()) if not existing_to_df.empty and 'game_pk' in existing_to_df.columns else set()
+processed_gamepks_by = set(existing_by_df['game_pk'].unique()) if not existing_by_df.empty and 'game_pk' in existing_by_df.columns else set()
+
 for game_info in tqdm(all_dodgers_games, desc="Analyzing games"):
-    all_pitches.extend(analyze_pitches(game_info))
+    gpk = game_info.get('gamePk')
+
+    # Pitches thrown to Dodgers batters (skip if already processed)
+    if gpk not in processed_gamepks_to:
+        all_pitches.extend(analyze_pitches(game_info, team_role="thrown_to_dodgers"))
+
+    # Pitches thrown BY Dodgers pitchers (skip if already processed)
+    if gpk not in processed_gamepks_by:
+        ts = game_info.get("team_side")
+        other_side = "away_batters" if ts == "home_batters" else "home_batters"
+        all_pitches_thrown_by_dodgers.extend(
+            analyze_pitches(game_info, batting_side_override=other_side, team_role="thrown_by_dodgers")
+        )
 
 # === Results ===
 df = pd.DataFrame(all_pitches)
+df_by_dodgers = pd.DataFrame(all_pitches_thrown_by_dodgers)
+
+# Append to existing and dedupe
+def combine_and_dedupe(existing: pd.DataFrame, new: pd.DataFrame) -> pd.DataFrame:
+    if existing is None or existing.empty:
+        combined = new.copy()
+    elif new is None or new.empty:
+        combined = existing.copy()
+    else:
+        combined = pd.concat([existing, new], ignore_index=True)
+    if combined is None or combined.empty:
+        return pd.DataFrame()
+    subset_cols = [c for c in ['game_pk', 'ab_number', 'pitch_number'] if c in combined.columns]
+    if subset_cols:
+        combined = combined.drop_duplicates(subset=subset_cols)
+    else:
+        if 'pitch_id' in combined.columns:
+            combined = combined.drop_duplicates(subset=['pitch_id'])
+        else:
+            combined = combined.drop_duplicates()
+    return combined
+
+df = combine_and_dedupe(existing_to_df, df)
+df_by_dodgers = combine_and_dedupe(existing_by_df, df_by_dodgers)
 
 # === Export the data ===
 os.makedirs(OUTPUT_DIR, exist_ok=True)
 csv_path = os.path.join(OUTPUT_DIR, f"dodgers_pitches_{current_year}.csv")
 json_path = os.path.join(OUTPUT_DIR, f"dodgers_pitches_{current_year}.json")
+csv_path_by = os.path.join(OUTPUT_DIR, f"dodgers_pitches_thrown_{current_year}.csv")
+json_path_by = os.path.join(OUTPUT_DIR, f"dodgers_pitches_thrown_{current_year}.json")
 
 df.to_csv(csv_path, index=False)
 print(f"Pitch data saved locally to {csv_path}")
 df.to_json(json_path, indent=4, orient="records")
 print(f"Pitch data saved locally to {json_path}")
+
+# Save pitches thrown by Dodgers
+df_by_dodgers.to_csv(csv_path_by, index=False)
+print(f"Pitch data (thrown by Dodgers) saved locally to {csv_path_by}")
+df_by_dodgers.to_json(json_path_by, indent=4, orient="records")
+print(f"Pitch data (thrown by Dodgers) saved locally to {json_path_by}")
 
 # === Upload to S3 ===
 try:
@@ -182,5 +246,13 @@ try:
     print(f"Successfully uploaded {os.path.basename(csv_path)} to {S3_BUCKET}/{S3_KEY_CSV}")
     s3.Bucket(S3_BUCKET).upload_file(json_path, S3_KEY_JSON)
     print(f"Successfully uploaded {os.path.basename(json_path)} to {S3_BUCKET}/{S3_KEY_JSON}")
+
+    # Upload thrown-by-Dodgers files
+    s3_key_csv_by = f"dodgers/data/pitches/dodgers_pitches_thrown_{current_year_for_paths}.csv"
+    s3_key_json_by = f"dodgers/data/pitches/dodgers_pitches_thrown_{current_year_for_paths}.json"
+    s3.Bucket(S3_BUCKET).upload_file(csv_path_by, s3_key_csv_by)
+    print(f"Successfully uploaded {os.path.basename(csv_path_by)} to {S3_BUCKET}/{s3_key_csv_by}")
+    s3.Bucket(S3_BUCKET).upload_file(json_path_by, s3_key_json_by)
+    print(f"Successfully uploaded {os.path.basename(json_path_by)} to {S3_BUCKET}/{s3_key_json_by}")
 except Exception as e:
     print(f"An error occurred during S3 upload: {e}")

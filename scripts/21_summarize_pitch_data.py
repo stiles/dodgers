@@ -40,7 +40,7 @@ def upload_to_s3(file_path):
     except Exception as e:
         print(f"An error occurred during S3 upload: {e}")
 
-def analyze_pitches(file_path):
+def analyze_pitches(file_path, thrown_by_file_path=None):
     """
     Analyzes pitch data and saves a JSON summary locally and to S3.
     """
@@ -98,6 +98,74 @@ def analyze_pitches(file_path):
         for _, row in df_worst.iterrows()
     ]
     
+    # --- Optional: Pitching-side analysis (balls called in zone against Dodgers pitchers) ---
+    pitching_summary = None
+    pitching_last_game = None
+    pitching_worst_calls_list = []
+    if thrown_by_file_path:
+        try:
+            with open(thrown_by_file_path, 'r') as f:
+                pitches_by = json.load(f)
+            if pitches_by:
+                df_by = pd.DataFrame(pitches_by)
+                df_by['game_date'] = pd.to_datetime(df_by['game_date'])
+                df_by['dist_from_sz_edge_inches'] = pd.to_numeric(df_by['dist_from_sz_edge_inches'], errors='coerce')
+
+                # Bad calls for pitching: balls called inside the zone
+                df_called_balls = df_by[df_by['pitch_call'] == 'ball'].copy()
+                df_bad_pitch_calls = df_called_balls[df_called_balls['pitch_in_zone']].copy()
+
+                season_total_balls = len(df_called_balls)
+                season_bad_balls = len(df_bad_pitch_calls)
+                season_correct_balls = season_total_balls - season_bad_balls
+                season_correct_pct_balls = (season_correct_balls / season_total_balls * 100) if season_total_balls > 0 else 0
+                season_incorrect_pct_balls = 100 - season_correct_pct_balls
+
+                # Last game summary (by game date)
+                most_recent_date_by = df_by['game_date'].max()
+                df_game_by = df_by[df_by['game_date'] == most_recent_date_by]
+                game_called_balls = df_game_by[df_game_by['pitch_call'] == 'ball']
+                game_bad_balls = game_called_balls[game_called_balls['pitch_in_zone']]
+                game_total_balls = len(game_called_balls)
+                game_bad_balls_count = len(game_bad_balls)
+                game_correct_balls = game_total_balls - game_bad_balls_count
+                game_correct_pct_balls = (game_correct_balls / game_total_balls * 100) if game_total_balls > 0 else 0
+                game_incorrect_pct_balls = 100 - game_correct_pct_balls
+
+                # Worst calls (how off): magnitude inside zone
+                df_rankable_by = df_bad_pitch_calls.dropna(subset=['dist_from_sz_edge_inches']).copy()
+                df_rankable_by['inside_inches'] = df_rankable_by['dist_from_sz_edge_inches'].abs()
+                df_worst_by = df_rankable_by.sort_values(by='inside_inches', ascending=False).head(4)
+                pitching_worst_calls_list = [
+                    {
+                        "distance_inches": row['inside_inches'],
+                        "batter": row['batter'],
+                        "pitcher": row['pitcher'],
+                        "pitch_type": row['pitch_name'],
+                        "velocity_mph": row['pitch_velocity'],
+                        "date": row['game_date'].strftime('%Y-%m-%d'),
+                        "date_formatted": row['game_date'].strftime('%B %-d, %Y'),
+                        "video_link": f"https://baseballsavant.mlb.com/sporty-videos?playId={row['pitch_id']}"
+                    }
+                    for _, row in df_worst_by.iterrows()
+                ]
+
+                pitching_summary = {
+                    "correct_balls_pct": season_correct_pct_balls,
+                    "incorrect_balls_pct": season_incorrect_pct_balls,
+                    "total_called_balls": season_total_balls,
+                    "bad_calls_count": season_bad_balls
+                }
+                pitching_last_game = {
+                    "date": most_recent_date_by.strftime('%B %-d, %Y'),
+                    "correct_balls_pct": game_correct_balls and game_correct_pct_balls or 0,
+                    "incorrect_balls_pct": game_incorrect_pct_balls,
+                    "total_called_balls": game_total_balls,
+                    "bad_calls_count": game_bad_balls_count
+                }
+        except (FileNotFoundError, json.JSONDecodeError):
+            pass
+
     # --- Create Summary Object ---
     summary_data = {
         "season_summary": {
@@ -116,6 +184,11 @@ def analyze_pitches(file_path):
         "worst_calls_of_season": worst_calls_list
     }
 
+    if pitching_summary is not None and pitching_last_game is not None:
+        summary_data["pitching_season_summary"] = pitching_summary
+        summary_data["pitching_last_game_summary"] = pitching_last_game
+        summary_data["pitching_worst_calls_of_season"] = pitching_worst_calls_list
+
     # --- Save and Upload ---
     os.makedirs(os.path.dirname(LOCAL_JSON_PATH), exist_ok=True)
     with open(LOCAL_JSON_PATH, 'w') as f:
@@ -125,4 +198,5 @@ def analyze_pitches(file_path):
     upload_to_s3(LOCAL_JSON_PATH)
 
 if __name__ == "__main__":
-    analyze_pitches('data/pitches/dodgers_pitches_2025.json') 
+    year = pd.to_datetime("now").strftime("%Y")
+    analyze_pitches(f'data/pitches/dodgers_pitches_{year}.json', thrown_by_file_path=f'data/pitches/dodgers_pitches_thrown_{year}.json') 
