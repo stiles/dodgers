@@ -1,16 +1,16 @@
 {
     "season_summary": {
-        "correct_strikes_pct": 90.136476426799,
-        "incorrect_strikes_pct": 9.863523573200993,
-        "total_called_strikes": 3224,
-        "bad_calls_count": 318
+        "correct_strikes_pct": 90.15639374425022,
+        "incorrect_strikes_pct": 9.843606255749776,
+        "total_called_strikes": 3261,
+        "bad_calls_count": 321
     },
     "last_game_summary": {
-        "date": "August 23, 2025",
-        "correct_strikes_pct": 92.85714285714286,
-        "incorrect_strikes_pct": 7.142857142857139,
-        "total_called_strikes": 14,
-        "bad_calls_count": 1
+        "date": "August 24, 2025",
+        "correct_strikes_pct": 91.8918918918919,
+        "incorrect_strikes_pct": 8.108108108108098,
+        "total_called_strikes": 37,
+        "bad_calls_count": 3
     },
     "worst_calls_of_season": [
         {
@@ -55,19 +55,29 @@
         }
     ],
     "pitching_season_summary": {
-        "correct_balls_pct": 92.55956956187548,
-        "incorrect_balls_pct": 7.4404304381245225,
-        "total_called_balls": 6505,
-        "bad_calls_count": 484
+        "correct_balls_pct": 92.57448433919022,
+        "incorrect_balls_pct": 7.425515660809779,
+        "total_called_balls": 6545,
+        "bad_calls_count": 486
     },
     "pitching_last_game_summary": {
-        "date": "August 23, 2025",
-        "correct_balls_pct": 81.81818181818183,
-        "incorrect_balls_pct": 18.181818181818173,
-        "total_called_balls": 33,
-        "bad_calls_count": 6
+        "date": "August 24, 2025",
+        "correct_balls_pct": 95.0,
+        "incorrect_balls_pct": 5.0,
+        "total_called_balls": 40,
+        "bad_calls_count": 2
     },
     "pitching_worst_calls_of_season": [
+        {
+            "distance_inches": 1.45,
+            "batter": "Kyle Karros",
+            "pitcher": "Yoshinobu Yamamoto",
+            "pitch_type": "Cutter",
+            "velocity_mph": 88.2,
+            "date": "2025-08-18",
+            "date_formatted": "August 18, 2025",
+            "video_link": "https://baseballsavant.mlb.com/sporty-videos?playId=9e318464-08db-398b-bc4d-6a92e04aaa08"
+        },
         {
             "distance_inches": 1.45,
             "batter": "Fernando Tatis Jr.",
@@ -97,16 +107,6 @@
             "date": "2025-08-16",
             "date_formatted": "August 16, 2025",
             "video_link": "https://baseballsavant.mlb.com/sporty-videos?playId=251afc65-859f-3ddc-9257-29eaddb36e8c"
-        },
-        {
-            "distance_inches": 1.45,
-            "batter": "Matt Olson",
-            "pitcher": "Blake Snell",
-            "pitch_type": "4-Seam Fastball",
-            "velocity_mph": 94.7,
-            "date": "2025-04-02",
-            "date_formatted": "April 2, 2025",
-            "video_link": "https://baseballsavant.mlb.com/sporty-videos?playId=707c1373-f1f0-34ba-853f-e027407a0bb0"
         }
     ]
 }
