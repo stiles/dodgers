@@ -90,7 +90,7 @@ def parse_games_back(value):
 
 def compute_games_up_back_from_live(live_df: pd.DataFrame, team_name: str) -> Union[int, float, None]:
     """Compute a positive 'games up/back' value from live standings for the given team.
-    - If the team is in 1st, return the 2nd-place team's games_back
+    - If the team is in 1st, return the lead over the closest trailing team
     - Otherwise, return the team's own games_back
     Falls back to 0 when values are unavailable.
     """
@@ -105,11 +105,14 @@ def compute_games_up_back_from_live(live_df: pd.DataFrame, team_name: str) -> Un
         division_df['__rank_num'] = pd.to_numeric(division_df['division_rank'], errors='coerce')
         division_df = division_df.sort_values(['__rank_num', '__gb_num']).reset_index(drop=True)
         lad_rank = int(lad_row.get('division_rank')) if pd.notna(lad_row.get('division_rank')) else 99
+        
         if lad_rank == 1:
-            # If tie for first, second row GB will be 0; else positive
-            if len(division_df) >= 2:
-                gb = division_df.iloc[1]['__gb_num']
-                return int(gb) if float(gb).is_integer() else gb
+            # Find the first team that's actually behind (not tied)
+            for i in range(1, len(division_df)):
+                other_gb = division_df.iloc[i]['__gb_num']
+                if other_gb > 0:  # This team is actually behind
+                    return int(other_gb) if float(other_gb).is_integer() else other_gb
+            # If no team is behind (all tied), return 0
             return 0
         else:
             gb = parse_games_back(lad_row.get('games_back'))
