@@ -107,13 +107,17 @@ def compute_games_up_back_from_live(live_df: pd.DataFrame, team_name: str) -> Un
         lad_rank = int(lad_row.get('division_rank')) if pd.notna(lad_row.get('division_rank')) else 99
         
         if lad_rank == 1:
-            # Find the first team that's actually behind (not tied)
-            for i in range(1, len(division_df)):
-                other_gb = division_df.iloc[i]['__gb_num']
-                if other_gb > 0:  # This team is actually behind
-                    return int(other_gb) if float(other_gb).is_integer() else other_gb
-            # If no team is behind (all tied), return 0
-            return 0
+            # Check if there are any teams tied for first (GB = 0)
+            tied_teams = division_df[division_df['__gb_num'] == 0]
+            if len(tied_teams) > 1:
+                # Multiple teams tied for first = 0 games up/back
+                return 0
+            else:
+                # Sole first place, find lead over 2nd place
+                if len(division_df) >= 2:
+                    second_place_gb = division_df.iloc[1]['__gb_num']
+                    return int(second_place_gb) if float(second_place_gb).is_integer() else second_place_gb
+                return 0
         else:
             gb = parse_games_back(lad_row.get('games_back'))
             return int(gb) if isinstance(gb, (int, float)) and float(gb).is_integer() else gb
@@ -242,16 +246,7 @@ if isinstance(games_up_back_value, (int, float)):
     if abs(val) < 1e-9:
         val = 0
     games_up_back_value = int(val) if float(val).is_integer() else val
-if games_up_back_value == 0:
-    # Fallback: use historical table's gb (may be 0 when in first)
-    games_back_raw = standings['gb'].iloc[0]
-    if isinstance(games_back_raw, float) and games_back_raw.is_integer():
-        games_up_back_value = int(games_back_raw)
-    else:
-        try:
-            games_up_back_value = int(games_back_raw)
-        except Exception:
-            games_up_back_value = games_back_raw
+# Note: Removed problematic secondary fallback that was overriding correct 0 values for ties
 
 # Batting
 batting = read_parquet_s3(batting_url)
