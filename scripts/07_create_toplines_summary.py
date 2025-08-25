@@ -88,7 +88,7 @@ def parse_games_back(value):
     except Exception:
         return 0
 
-def compute_games_up_back_from_live(live_df: pd.DataFrame, team_name: str) -> Union[int, float]:
+def compute_games_up_back_from_live(live_df: pd.DataFrame, team_name: str) -> Union[int, float, None]:
     """Compute a positive 'games up/back' value from live standings for the given team.
     - If the team is in 1st, return the 2nd-place team's games_back
     - Otherwise, return the team's own games_back
@@ -97,20 +97,25 @@ def compute_games_up_back_from_live(live_df: pd.DataFrame, team_name: str) -> Un
     try:
         lad_row = live_df.query("team_name == @team_name").iloc[0]
         division = lad_row.get('division_name')
-        division_rank = lad_row.get('division_rank')
         division_df = live_df.query("division_name == @division").copy()
         if division_df.empty:
             return 0
-        division_df = division_df.sort_values('division_rank')
-        if int(division_rank) == 1:
+        # Normalize GB to numeric
+        division_df['__gb_num'] = division_df['games_back'].apply(parse_games_back)
+        division_df['__rank_num'] = pd.to_numeric(division_df['division_rank'], errors='coerce')
+        division_df = division_df.sort_values(['__rank_num', '__gb_num']).reset_index(drop=True)
+        lad_rank = int(lad_row.get('division_rank')) if pd.notna(lad_row.get('division_rank')) else 99
+        if lad_rank == 1:
+            # If tie for first, second row GB will be 0; else positive
             if len(division_df) >= 2:
-                second_row = division_df.iloc[1]
-                return parse_games_back(second_row.get('games_back'))
+                gb = division_df.iloc[1]['__gb_num']
+                return int(gb) if float(gb).is_integer() else gb
             return 0
         else:
-            return parse_games_back(lad_row.get('games_back'))
+            gb = parse_games_back(lad_row.get('games_back'))
+            return int(gb) if isinstance(gb, (int, float)) and float(gb).is_integer() else gb
     except Exception:
-        return 0
+        return None
 
 # URLs for data
 standings_live_url = "https://stilesdata.com/dodgers/data/standings/all_teams_standings_metrics_2025.json"
@@ -217,12 +222,23 @@ except Exception:
 
 # Prefer live standings to compute a positive 'games up/back' value
 games_up_back_value = compute_games_up_back_from_live(standings_live, 'Los Angeles Dodgers')
-# Ensure non-negative display value
-try:
-    if isinstance(games_up_back_value, (int, float)):
-        games_up_back_value = abs(games_up_back_value)
-except Exception:
-    pass
+# If live data couldn't compute, fall back; otherwise keep live (including 0 for ties)
+if games_up_back_value is None:
+    games_back_raw = standings['gb'].iloc[0]
+    try:
+        games_up_back_value = int(float(games_back_raw))
+    except Exception:
+        try:
+            games_up_back_value = int(games_back_raw)
+        except Exception:
+            games_up_back_value = 0
+
+# Ensure non-negative display value (treat "games up" as positive)
+if isinstance(games_up_back_value, (int, float)):
+    val = abs(float(games_up_back_value))
+    if abs(val) < 1e-9:
+        val = 0
+    games_up_back_value = int(val) if float(val).is_integer() else val
 if games_up_back_value == 0:
     # Fallback: use historical table's gb (may be 0 when in first)
     games_back_raw = standings['gb'].iloc[0]
