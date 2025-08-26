@@ -1,16 +1,16 @@
 {
     "season_summary": {
-        "correct_strikes_pct": 90.15639374425022,
-        "incorrect_strikes_pct": 9.843606255749776,
-        "total_called_strikes": 3261,
-        "bad_calls_count": 321
+        "correct_strikes_pct": 90.19786910197868,
+        "incorrect_strikes_pct": 9.802130898021318,
+        "total_called_strikes": 3285,
+        "bad_calls_count": 322
     },
     "last_game_summary": {
-        "date": "August 24, 2025",
-        "correct_strikes_pct": 91.8918918918919,
-        "incorrect_strikes_pct": 8.108108108108098,
-        "total_called_strikes": 37,
-        "bad_calls_count": 3
+        "date": "August 25, 2025",
+        "correct_strikes_pct": 95.83333333333334,
+        "incorrect_strikes_pct": 4.166666666666657,
+        "total_called_strikes": 24,
+        "bad_calls_count": 1
     },
     "worst_calls_of_season": [
         {
@@ -55,28 +55,28 @@
         }
     ],
     "pitching_season_summary": {
-        "correct_balls_pct": 92.57448433919022,
-        "incorrect_balls_pct": 7.425515660809779,
-        "total_called_balls": 6545,
-        "bad_calls_count": 486
+        "correct_balls_pct": 92.6055268751898,
+        "incorrect_balls_pct": 7.3944731248102045,
+        "total_called_balls": 6586,
+        "bad_calls_count": 487
     },
     "pitching_last_game_summary": {
-        "date": "August 24, 2025",
-        "correct_balls_pct": 95.0,
-        "incorrect_balls_pct": 5.0,
-        "total_called_balls": 40,
-        "bad_calls_count": 2
+        "date": "August 25, 2025",
+        "correct_balls_pct": 97.5609756097561,
+        "incorrect_balls_pct": 2.439024390243901,
+        "total_called_balls": 41,
+        "bad_calls_count": 1
     },
     "pitching_worst_calls_of_season": [
         {
             "distance_inches": 1.45,
-            "batter": "Kyle Karros",
-            "pitcher": "Yoshinobu Yamamoto",
-            "pitch_type": "Cutter",
-            "velocity_mph": 88.2,
-            "date": "2025-08-18",
-            "date_formatted": "August 18, 2025",
-            "video_link": "https://baseballsavant.mlb.com/sporty-videos?playId=9e318464-08db-398b-bc4d-6a92e04aaa08"
+            "batter": "Matt McLain",
+            "pitcher": "Emmet Sheehan",
+            "pitch_type": "Slider",
+            "velocity_mph": 89.8,
+            "date": "2025-08-25",
+            "date_formatted": "August 25, 2025",
+            "video_link": "https://baseballsavant.mlb.com/sporty-videos?playId=c4bd0d5d-2dac-3e24-af10-1efedffe3512"
         },
         {
             "distance_inches": 1.45,
@@ -90,16 +90,6 @@
         },
         {
             "distance_inches": 1.45,
-            "batter": "Jackson Merrill",
-            "pitcher": "Clayton Kershaw",
-            "pitch_type": "4-Seam Fastball",
-            "velocity_mph": 89.2,
-            "date": "2025-08-15",
-            "date_formatted": "August 15, 2025",
-            "video_link": "https://baseballsavant.mlb.com/sporty-videos?playId=12ea3950-ea1b-3436-915f-bd0c8a71641b"
-        },
-        {
-            "distance_inches": 1.45,
             "batter": "Luis Arraez",
             "pitcher": "Anthony Banda",
             "pitch_type": "Slider",
@@ -107,6 +97,16 @@
             "date": "2025-08-16",
             "date_formatted": "August 16, 2025",
             "video_link": "https://baseballsavant.mlb.com/sporty-videos?playId=251afc65-859f-3ddc-9257-29eaddb36e8c"
+        },
+        {
+            "distance_inches": 1.45,
+            "batter": "Jackson Merrill",
+            "pitcher": "Clayton Kershaw",
+            "pitch_type": "4-Seam Fastball",
+            "velocity_mph": 89.2,
+            "date": "2025-08-15",
+            "date_formatted": "August 15, 2025",
+            "video_link": "https://baseballsavant.mlb.com/sporty-videos?playId=12ea3950-ea1b-3436-915f-bd0c8a71641b"
         }
     ]
 }
