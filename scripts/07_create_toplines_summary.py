@@ -333,6 +333,42 @@ def calculate_projected_wins(current_wins, games_played_so_far, total_season_gam
     projected_wins_val = round(win_rate * total_season_games)
     return projected_wins_val
 
+
+def get_projection_final_mean(local_path: str, remote_url: str) -> int:
+    """Return the rounded final projected wins from the projection timeseries JSON.
+    Attempts local first, then remote. Returns None when unavailable or malformed.
+    """
+    data = None
+    try:
+        if os.path.exists(local_path):
+            with open(local_path, "r", encoding="utf-8") as f:
+                data = json.load(f)
+    except Exception:
+        data = None
+
+    if data is None:
+        try:
+            resp = requests.get(remote_url, timeout=20)
+            resp.raise_for_status()
+            data = resp.json()
+        except Exception:
+            data = None
+
+    try:
+        if not data or "timeseries" not in data:
+            return None
+        ts = data.get("timeseries") or []
+        if not ts:
+            return None
+        # Prefer game_number 162 if present; otherwise use the last element
+        final_point = next((p for p in ts if int(p.get("game_number", 0)) == 162), ts[-1])
+        mean_val = final_point.get("mean_projected_wins")
+        if mean_val is None:
+            return None
+        return int(round(float(mean_val)))
+    except Exception:
+        return None
+
 def get_live_last_game_summary():
     """Fetches live game data to find the last completed game and returns a summary fragment."""
     headers = {
@@ -441,7 +477,12 @@ def generate_summary(
         record = f"{row['wins']}-{row['losses']}"
         win_pct = float(row["pct"]) * 100
         last_10_wins = int(row["record_lastTen"].split("-")[0])
-        projected_wins = calculate_projected_wins(row['wins'], games_played)
+        # Prefer the bootstrap projection timeseries' final mean to keep site consistent
+        projection_local = os.path.join(base_dir, 'data', 'standings', 'dodgers_wins_projection_timeseries.json')
+        projection_remote = 'https://stilesdata.com/dodgers/data/standings/dodgers_wins_projection_timeseries.json'
+        projected_wins = get_projection_final_mean(projection_local, projection_remote)
+        if projected_wins is None:
+            projected_wins = calculate_projected_wins(row['wins'], games_played)
 
     except (requests.exceptions.RequestException, KeyError, IndexError) as e:
         logging.warning(f"Could not fetch or parse live data, using stale data for summary: {e}")
