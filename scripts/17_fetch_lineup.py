@@ -311,28 +311,43 @@ def post_tweet(tweet_text, current_date_str):
     except Exception as e:
         logging.error(f"Failed to post tweet: {e}")
 
-def fetch_schedule_data():
+def fetch_schedule_data(target_date_iso: str):
     """
-    Fetches the Dodgers schedule from the JSON endpoint and finds the next game.
-    Returns the next game info or None if no upcoming game found.
+    Fetch the Dodgers schedule and return the row matching the provided ISO date (YYYY-MM-DD)
+    with placement == 'next'. Only returns the row if game_start looks like a real time.
     """
     schedule_url = "https://stilesdata.com/dodgers/data/standings/dodgers_schedule.json"
     logging.info(f"Fetching schedule from: {schedule_url}")
-    
+
+    # Convert ISO date to the schedule's 'date' format, e.g. 'Aug 26'
     try:
-        response = requests.get(schedule_url, timeout=10)
-        response.raise_for_status()
-        schedule_data = response.json()
-        
-        # Find the next game where game_start is not "--"
-        for game in schedule_data:
-            if game.get('game_start') and game['game_start'] != "--":
-                logging.info(f"Found next game: {game['date']} vs {game['opp_name']} at {game['game_start']}")
+        target_display = datetime.strptime(target_date_iso, '%Y-%m-%d').strftime('%b %-d')
+    except Exception:
+        # Fallback without leading-zero stripping in non-POSIX environments
+        target_display = datetime.strptime(target_date_iso, '%Y-%m-%d').strftime('%b %d').lstrip('0').replace(' 0', ' ')
+
+    def looks_like_time(s: str) -> bool:
+        if not isinstance(s, str):
+            return False
+        # Accept forms like '6:10 PM', '3:00 PM' (already converted to PT upstream)
+        return bool(re.match(r'^\d{1,2}:\d{2}\s?(AM|PM)$', s, flags=re.IGNORECASE))
+
+    try:
+        resp = requests.get(schedule_url, timeout=10)
+        resp.raise_for_status()
+        schedule_data = resp.json()
+
+        # Match the specific date and only future/next entries
+        candidates = [g for g in schedule_data if g.get('placement') == 'next' and g.get('date') == target_display]
+
+        for game in candidates:
+            gs = game.get('game_start')
+            if looks_like_time(gs):
+                logging.info(f"Matched next game {game['date']} vs {game.get('opp_name')} at {gs} (PT)")
                 return game
-        
-        logging.warning("No upcoming games found with valid start times")
+
+        logging.warning(f"No valid start time found for date {target_display} in schedule")
         return None
-        
     except requests.exceptions.RequestException as e:
         logging.error(f"Error fetching schedule from {schedule_url}: {e}")
         return None
@@ -343,6 +358,7 @@ def fetch_schedule_data():
 def main():
     parser = argparse.ArgumentParser(description="Fetch Dodgers lineup and optionally post pitching matchup to Twitter.")
     parser.add_argument("--post-tweet", action="store_true", help="Post the pitching matchup to Twitter if available.")
+    parser.add_argument("--force", action="store_true", help="Post even if today's tweet was already recorded.")
     args = parser.parse_args()
 
     # Get current date in Los Angeles timezone to handle UTC on server
@@ -414,8 +430,8 @@ def main():
                 dodgers_pitcher = dodgers_pitcher.iloc[0]
                 opponent_pitcher = opponent_pitcher.iloc[0]
 
-                # Fetch schedule data to get game start time
-                next_game = fetch_schedule_data()
+                # Fetch schedule data to get game start time for this exact date
+                next_game = fetch_schedule_data(current_date_str)
 
                 # Format date for the tweet
                 game_date = datetime.strptime(dodgers_pitcher['game_date'], '%Y-%m-%d').strftime('%B %-d')
@@ -437,8 +453,8 @@ def main():
 
                 if args.post_tweet:
                     last_tweet_date = get_last_tweet_date()
-                    if last_tweet_date == current_date_str:
-                        logging.info(f"Already tweeted for {current_date_str}. Skipping.")
+                    if last_tweet_date == current_date_str and not args.force:
+                        logging.info(f"Already tweeted for {current_date_str}. Skipping (use --force to override).")
                     else:
                         logging.info("Attempting to post tweet...")
                         post_tweet(tweet_text, current_date_str)
