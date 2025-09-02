@@ -1,16 +1,16 @@
 {
     "season_summary": {
-        "correct_strikes_pct": 90.13466042154566,
-        "incorrect_strikes_pct": 9.86533957845434,
-        "total_called_strikes": 3416,
+        "correct_strikes_pct": 90.13754755633596,
+        "incorrect_strikes_pct": 9.86245244366404,
+        "total_called_strikes": 3417,
         "bad_calls_count": 337
     },
     "last_game_summary": {
-        "date": "August 31, 2025",
-        "correct_strikes_pct": 95.45454545454545,
-        "incorrect_strikes_pct": 4.545454545454547,
-        "total_called_strikes": 22,
-        "bad_calls_count": 1
+        "date": "September 2, 2025",
+        "correct_strikes_pct": 100.0,
+        "incorrect_strikes_pct": 0.0,
+        "total_called_strikes": 1,
+        "bad_calls_count": 0
     },
     "worst_calls_of_season": [
         {
@@ -55,38 +55,28 @@
         }
     ],
     "pitching_season_summary": {
-        "correct_balls_pct": 92.55022730605661,
-        "incorrect_balls_pct": 7.4497726939433875,
-        "total_called_balls": 6819,
-        "bad_calls_count": 508
+        "correct_balls_pct": 92.54976580796253,
+        "incorrect_balls_pct": 7.45023419203747,
+        "total_called_balls": 6832,
+        "bad_calls_count": 509
     },
     "pitching_last_game_summary": {
-        "date": "August 31, 2025",
-        "correct_balls_pct": 85.29411764705883,
-        "incorrect_balls_pct": 14.705882352941174,
-        "total_called_balls": 34,
-        "bad_calls_count": 5
+        "date": "September 2, 2025",
+        "correct_balls_pct": 92.3076923076923,
+        "incorrect_balls_pct": 7.692307692307693,
+        "total_called_balls": 13,
+        "bad_calls_count": 1
     },
     "pitching_worst_calls_of_season": [
         {
             "distance_inches": 1.45,
-            "batter": "David Mershon",
-            "pitcher": "Patrick Copen",
+            "batter": "Nick Gonzales",
+            "pitcher": "Clayton Kershaw",
             "pitch_type": "Curveball",
-            "velocity_mph": 84.4,
-            "date": "2025-03-25",
-            "date_formatted": "March 25, 2025",
-            "video_link": "https://baseballsavant.mlb.com/sporty-videos?playId=c73203ac-741e-4a82-8f75-bc738829085a"
-        },
-        {
-            "distance_inches": 1.45,
-            "batter": "Lourdes Gurriel Jr.",
-            "pitcher": "Kirby Yates",
-            "pitch_type": "4-Seam Fastball",
-            "velocity_mph": 91.9,
-            "date": "2025-08-29",
-            "date_formatted": "August 29, 2025",
-            "video_link": "https://baseballsavant.mlb.com/sporty-videos?playId=f388dba8-ab3c-3c16-9c37-f5691d7ad222"
+            "velocity_mph": 71.0,
+            "date": "2025-09-02",
+            "date_formatted": "September 2, 2025",
+            "video_link": "https://baseballsavant.mlb.com/sporty-videos?playId=e8e05726-d5d0-3049-8b96-2fd04ccb07de"
         },
         {
             "distance_inches": 1.45,
@@ -100,13 +90,23 @@
         },
         {
             "distance_inches": 1.45,
+            "batter": "Kevin Newman",
+            "pitcher": "Ben Casparius",
+            "pitch_type": "Curveball",
+            "velocity_mph": 79.5,
+            "date": "2025-03-23",
+            "date_formatted": "March 23, 2025",
+            "video_link": "https://baseballsavant.mlb.com/sporty-videos?playId=5ecba9e1-4cce-4d34-bd45-2e9a486309a4"
+        },
+        {
+            "distance_inches": 1.45,
             "batter": "Ketel Marte",
-            "pitcher": "Tyler Glasnow",
+            "pitcher": "Yoshinobu Yamamoto",
             "pitch_type": "4-Seam Fastball",
             "velocity_mph": 95.9,
-            "date": "2025-08-30",
-            "date_formatted": "August 30, 2025",
-            "video_link": "https://baseballsavant.mlb.com/sporty-videos?playId=3227f962-28c9-33cc-8709-6defd54df090"
+            "date": "2025-08-31",
+            "date_formatted": "August 31, 2025",
+            "video_link": "https://baseballsavant.mlb.com/sporty-videos?playId=2a73c654-f60b-3684-8e64-dd816a772ad8"
         }
     ]
 }
