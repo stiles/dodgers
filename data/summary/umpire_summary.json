@@ -1,16 +1,16 @@
 {
     "season_summary": {
-        "correct_strikes_pct": 90.13754755633596,
-        "incorrect_strikes_pct": 9.86245244366404,
-        "total_called_strikes": 3417,
-        "bad_calls_count": 337
+        "correct_strikes_pct": 90.1285046728972,
+        "incorrect_strikes_pct": 9.871495327102807,
+        "total_called_strikes": 3424,
+        "bad_calls_count": 338
     },
     "last_game_summary": {
-        "date": "September 2, 2025",
-        "correct_strikes_pct": 100.0,
-        "incorrect_strikes_pct": 0.0,
-        "total_called_strikes": 1,
-        "bad_calls_count": 0
+        "date": "September 3, 2025",
+        "correct_strikes_pct": 85.71428571428571,
+        "incorrect_strikes_pct": 14.285714285714292,
+        "total_called_strikes": 7,
+        "bad_calls_count": 1
     },
     "worst_calls_of_season": [
         {
@@ -55,19 +55,29 @@
         }
     ],
     "pitching_season_summary": {
-        "correct_balls_pct": 92.54976580796253,
-        "incorrect_balls_pct": 7.45023419203747,
-        "total_called_balls": 6832,
-        "bad_calls_count": 509
+        "correct_balls_pct": 92.54276941073256,
+        "incorrect_balls_pct": 7.457230589267439,
+        "total_called_balls": 6839,
+        "bad_calls_count": 510
     },
     "pitching_last_game_summary": {
-        "date": "September 2, 2025",
-        "correct_balls_pct": 92.3076923076923,
-        "incorrect_balls_pct": 7.692307692307693,
-        "total_called_balls": 13,
+        "date": "September 3, 2025",
+        "correct_balls_pct": 85.71428571428571,
+        "incorrect_balls_pct": 14.285714285714292,
+        "total_called_balls": 7,
         "bad_calls_count": 1
     },
     "pitching_worst_calls_of_season": [
+        {
+            "distance_inches": 1.45,
+            "batter": "Gleyber Torres",
+            "pitcher": "Blake Snell",
+            "pitch_type": "Curveball",
+            "velocity_mph": 82.6,
+            "date": "2025-03-27",
+            "date_formatted": "March 27, 2025",
+            "video_link": "https://baseballsavant.mlb.com/sporty-videos?playId=4c02fb4d-65fe-34d6-af91-079da2cfc783"
+        },
         {
             "distance_inches": 1.45,
             "batter": "Nick Gonzales",
@@ -81,12 +91,12 @@
         {
             "distance_inches": 1.45,
             "batter": "Ketel Marte",
-            "pitcher": "Yoshinobu Yamamoto",
+            "pitcher": "Tyler Glasnow",
             "pitch_type": "4-Seam Fastball",
-            "velocity_mph": 94.0,
-            "date": "2025-08-31",
-            "date_formatted": "August 31, 2025",
-            "video_link": "https://baseballsavant.mlb.com/sporty-videos?playId=d7afd21c-b811-3ec6-ad13-538a78495535"
+            "velocity_mph": 95.9,
+            "date": "2025-08-30",
+            "date_formatted": "August 30, 2025",
+            "video_link": "https://baseballsavant.mlb.com/sporty-videos?playId=3227f962-28c9-33cc-8709-6defd54df090"
         },
         {
             "distance_inches": 1.45,
@@ -97,16 +107,6 @@
             "date": "2025-03-23",
             "date_formatted": "March 23, 2025",
             "video_link": "https://baseballsavant.mlb.com/sporty-videos?playId=5ecba9e1-4cce-4d34-bd45-2e9a486309a4"
-        },
-        {
-            "distance_inches": 1.45,
-            "batter": "Ketel Marte",
-            "pitcher": "Yoshinobu Yamamoto",
-            "pitch_type": "4-Seam Fastball",
-            "velocity_mph": 95.9,
-            "date": "2025-08-31",
-            "date_formatted": "August 31, 2025",
-            "video_link": "https://baseballsavant.mlb.com/sporty-videos?playId=2a73c654-f60b-3684-8e64-dd816a772ad8"
         }
     ]
 }
