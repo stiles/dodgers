@@ -1,16 +1,16 @@
 {
     "season_summary": {
-        "correct_strikes_pct": 90.15634047481181,
-        "incorrect_strikes_pct": 9.843659525188187,
-        "total_called_strikes": 3454,
-        "bad_calls_count": 340
+        "correct_strikes_pct": 90.14693171996542,
+        "incorrect_strikes_pct": 9.853068280034577,
+        "total_called_strikes": 3471,
+        "bad_calls_count": 342
     },
     "last_game_summary": {
-        "date": "September 5, 2025",
-        "correct_strikes_pct": 96.0,
-        "incorrect_strikes_pct": 4.0,
-        "total_called_strikes": 25,
-        "bad_calls_count": 1
+        "date": "September 6, 2025",
+        "correct_strikes_pct": 88.23529411764706,
+        "incorrect_strikes_pct": 11.764705882352942,
+        "total_called_strikes": 17,
+        "bad_calls_count": 2
     },
     "worst_calls_of_season": [
         {
@@ -55,39 +55,19 @@
         }
     ],
     "pitching_season_summary": {
-        "correct_balls_pct": 92.58723034602578,
-        "incorrect_balls_pct": 7.412769653974223,
-        "total_called_balls": 6907,
-        "bad_calls_count": 512
+        "correct_balls_pct": 92.58620689655173,
+        "incorrect_balls_pct": 7.4137931034482705,
+        "total_called_balls": 6960,
+        "bad_calls_count": 516
     },
     "pitching_last_game_summary": {
-        "date": "September 5, 2025",
-        "correct_balls_pct": 96.7741935483871,
-        "incorrect_balls_pct": 3.225806451612897,
-        "total_called_balls": 62,
-        "bad_calls_count": 2
+        "date": "September 6, 2025",
+        "correct_balls_pct": 92.45283018867924,
+        "incorrect_balls_pct": 7.547169811320757,
+        "total_called_balls": 53,
+        "bad_calls_count": 4
     },
     "pitching_worst_calls_of_season": [
-        {
-            "distance_inches": 1.45,
-            "batter": "Ke'Bryan Hayes",
-            "pitcher": "Justin Wrobleski",
-            "pitch_type": "4-Seam Fastball",
-            "velocity_mph": 96.2,
-            "date": "2025-08-27",
-            "date_formatted": "August 27, 2025",
-            "video_link": "https://baseballsavant.mlb.com/sporty-videos?playId=ac2261c3-29f6-349d-88c4-1ba9cb1051fe"
-        },
-        {
-            "distance_inches": 1.45,
-            "batter": "Fernando Tatis Jr.",
-            "pitcher": "Tyler Glasnow",
-            "pitch_type": "Curveball",
-            "velocity_mph": 80.4,
-            "date": "2025-08-23",
-            "date_formatted": "August 23, 2025",
-            "video_link": "https://baseballsavant.mlb.com/sporty-videos?playId=bc5a3c53-b404-313a-83a3-125603482d31"
-        },
         {
             "distance_inches": 1.45,
             "batter": "Matt McLain",
@@ -107,6 +87,26 @@
             "date": "2025-04-02",
             "date_formatted": "April 2, 2025",
             "video_link": "https://baseballsavant.mlb.com/sporty-videos?playId=d7aa203b-369a-393c-8152-ef759835e05b"
+        },
+        {
+            "distance_inches": 1.45,
+            "batter": "Ke'Bryan Hayes",
+            "pitcher": "Justin Wrobleski",
+            "pitch_type": "4-Seam Fastball",
+            "velocity_mph": 96.2,
+            "date": "2025-08-27",
+            "date_formatted": "August 27, 2025",
+            "video_link": "https://baseballsavant.mlb.com/sporty-videos?playId=ac2261c3-29f6-349d-88c4-1ba9cb1051fe"
+        },
+        {
+            "distance_inches": 1.45,
+            "batter": "Matt Olson",
+            "pitcher": "Blake Snell",
+            "pitch_type": "4-Seam Fastball",
+            "velocity_mph": 94.7,
+            "date": "2025-04-02",
+            "date_formatted": "April 2, 2025",
+            "video_link": "https://baseballsavant.mlb.com/sporty-videos?playId=707c1373-f1f0-34ba-853f-e027407a0bb0"
         }
     ]
 }
