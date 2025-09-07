@@ -1,16 +1,16 @@
 {
     "season_summary": {
-        "correct_strikes_pct": 90.14693171996542,
-        "incorrect_strikes_pct": 9.853068280034577,
-        "total_called_strikes": 3471,
-        "bad_calls_count": 342
+        "correct_strikes_pct": 90.13157894736842,
+        "incorrect_strikes_pct": 9.868421052631575,
+        "total_called_strikes": 3496,
+        "bad_calls_count": 345
     },
     "last_game_summary": {
-        "date": "September 6, 2025",
-        "correct_strikes_pct": 88.23529411764706,
-        "incorrect_strikes_pct": 11.764705882352942,
-        "total_called_strikes": 17,
-        "bad_calls_count": 2
+        "date": "September 7, 2025",
+        "correct_strikes_pct": 88.0,
+        "incorrect_strikes_pct": 12.0,
+        "total_called_strikes": 25,
+        "bad_calls_count": 3
     },
     "worst_calls_of_season": [
         {
@@ -55,17 +55,17 @@
         }
     ],
     "pitching_season_summary": {
-        "correct_balls_pct": 92.58620689655173,
-        "incorrect_balls_pct": 7.4137931034482705,
-        "total_called_balls": 6960,
+        "correct_balls_pct": 92.63803680981594,
+        "incorrect_balls_pct": 7.361963190184056,
+        "total_called_balls": 7009,
         "bad_calls_count": 516
     },
     "pitching_last_game_summary": {
-        "date": "September 6, 2025",
-        "correct_balls_pct": 92.45283018867924,
-        "incorrect_balls_pct": 7.547169811320757,
-        "total_called_balls": 53,
-        "bad_calls_count": 4
+        "date": "September 7, 2025",
+        "correct_balls_pct": 100.0,
+        "incorrect_balls_pct": 0.0,
+        "total_called_balls": 49,
+        "bad_calls_count": 0
     },
     "pitching_worst_calls_of_season": [
         {
