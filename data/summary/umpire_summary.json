@@ -1,16 +1,16 @@
 {
     "season_summary": {
-        "correct_strikes_pct": 90.13157894736842,
-        "incorrect_strikes_pct": 9.868421052631575,
-        "total_called_strikes": 3496,
+        "correct_strikes_pct": 90.19607843137256,
+        "incorrect_strikes_pct": 9.803921568627445,
+        "total_called_strikes": 3519,
         "bad_calls_count": 345
     },
     "last_game_summary": {
-        "date": "September 7, 2025",
-        "correct_strikes_pct": 88.0,
-        "incorrect_strikes_pct": 12.0,
-        "total_called_strikes": 25,
-        "bad_calls_count": 3
+        "date": "September 8, 2025",
+        "correct_strikes_pct": 100.0,
+        "incorrect_strikes_pct": 0.0,
+        "total_called_strikes": 23,
+        "bad_calls_count": 0
     },
     "worst_calls_of_season": [
         {
@@ -55,19 +55,29 @@
         }
     ],
     "pitching_season_summary": {
-        "correct_balls_pct": 92.63803680981594,
-        "incorrect_balls_pct": 7.361963190184056,
-        "total_called_balls": 7009,
-        "bad_calls_count": 516
+        "correct_balls_pct": 92.65456608054453,
+        "incorrect_balls_pct": 7.345433919455473,
+        "total_called_balls": 7052,
+        "bad_calls_count": 518
     },
     "pitching_last_game_summary": {
-        "date": "September 7, 2025",
-        "correct_balls_pct": 100.0,
-        "incorrect_balls_pct": 0.0,
-        "total_called_balls": 49,
-        "bad_calls_count": 0
+        "date": "September 8, 2025",
+        "correct_balls_pct": 95.34883720930233,
+        "incorrect_balls_pct": 4.6511627906976685,
+        "total_called_balls": 43,
+        "bad_calls_count": 2
     },
     "pitching_worst_calls_of_season": [
+        {
+            "distance_inches": 1.45,
+            "batter": "Fernando Tatis Jr.",
+            "pitcher": "Tyler Glasnow",
+            "pitch_type": "Curveball",
+            "velocity_mph": 80.4,
+            "date": "2025-08-23",
+            "date_formatted": "August 23, 2025",
+            "video_link": "https://baseballsavant.mlb.com/sporty-videos?playId=bc5a3c53-b404-313a-83a3-125603482d31"
+        },
         {
             "distance_inches": 1.45,
             "batter": "Matt McLain",
@@ -77,16 +87,6 @@
             "date": "2025-08-25",
             "date_formatted": "August 25, 2025",
             "video_link": "https://baseballsavant.mlb.com/sporty-videos?playId=c4bd0d5d-2dac-3e24-af10-1efedffe3512"
-        },
-        {
-            "distance_inches": 1.45,
-            "batter": "Austin Riley",
-            "pitcher": "Blake Snell",
-            "pitch_type": "4-Seam Fastball",
-            "velocity_mph": 95.2,
-            "date": "2025-04-02",
-            "date_formatted": "April 2, 2025",
-            "video_link": "https://baseballsavant.mlb.com/sporty-videos?playId=d7aa203b-369a-393c-8152-ef759835e05b"
         },
         {
             "distance_inches": 1.45,
