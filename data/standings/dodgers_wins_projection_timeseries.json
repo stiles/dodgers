@@ -935,7 +935,7 @@
         },
         {
             "game_number": 156,
-            "mean_projected_wins": 88.6,
+            "mean_projected_wins": 88.5,
             "lower_ci_wins": 86,
             "upper_ci_wins": 91
         },
@@ -953,7 +953,7 @@
         },
         {
             "game_number": 159,
-            "mean_projected_wins": 90.3,
+            "mean_projected_wins": 90.2,
             "lower_ci_wins": 87,
             "upper_ci_wins": 93
         },
@@ -971,9 +971,9 @@
         },
         {
             "game_number": 162,
-            "mean_projected_wins": 91.9,
+            "mean_projected_wins": 92.0,
             "lower_ci_wins": 88,
-            "upper_ci_wins": 95
+            "upper_ci_wins": 96
         }
     ],
     "message": "Projection based on bootstrapping 148 past game outcomes for 14 remaining games."
