@@ -10,17 +10,17 @@
     {
         "stat_label":"Losses",
         "stat":"losses",
-        "value":64,
+        "value":65,
         "category":"standings",
-        "context_value":59,
+        "context_value":60,
         "context_value_label":"This point last season"
     },
     {
         "stat_label":"Record",
         "stat":"record",
-        "value":"82-64",
+        "value":"82-65",
         "category":"standings",
-        "context_value":"87-59",
+        "context_value":"87-60",
         "context_value_label":"This point last season"
     },
     {
@@ -28,7 +28,7 @@
         "stat":"win_pct",
         "value":"56%",
         "category":"standings",
-        "context_value":"60%",
+        "context_value":"59%",
         "context_value_label":"This point last season"
     },
     {
@@ -50,7 +50,7 @@
     {
         "stat_label":"Runs",
         "stat":"runs",
-        "value":738,
+        "value":739,
         "category":"standings",
         "context_value":"3rd",
         "context_value_label":"League rank"
@@ -58,23 +58,23 @@
     {
         "stat_label":"Runs against",
         "stat":"runs_against",
-        "value":627,
+        "value":632,
         "category":"standings",
-        "context_value":618,
+        "context_value":624,
         "context_value_label":"This point last season"
     },
     {
         "stat_label":"Run differential",
         "stat":"run_differential",
-        "value":111,
+        "value":107,
         "category":"standings",
-        "context_value":112,
+        "context_value":108,
         "context_value_label":"This point last season"
     },
     {
         "stat_label":"Batting average",
         "stat":"batting_average",
-        "value":".252",
+        "value":".251",
         "category":"batting",
         "context_value":".253",
         "context_value_label":"Last decade average"
@@ -82,7 +82,7 @@
     {
         "stat_label":"Home runs",
         "stat":"home_runs",
-        "value":215,
+        "value":216,
         "category":"batting",
         "context_value":"2nd",
         "context_value_label":"League rank"
@@ -122,7 +122,7 @@
     {
         "stat_label":"Strikeouts",
         "stat":"strikeouts",
-        "value":"1,324",
+        "value":"1,337",
         "category":"pitching",
         "context_value":"3rd",
         "context_value_label":"League rank"
@@ -130,9 +130,9 @@
     {
         "stat_label":"Walks",
         "stat":"walks",
-        "value":"494",
+        "value":"498",
         "category":"pitching",
-        "context_value":"9th",
+        "context_value":"8th",
         "context_value_label":"League rank"
     },
     {
@@ -140,13 +140,13 @@
         "stat":"era",
         "value":"4.03",
         "category":"pitching",
-        "context_value":"18th",
+        "context_value":"17th",
         "context_value_label":"League rank"
     },
     {
         "stat_label":"Last updated",
         "stat":"update_time",
-        "value":"September 12, 2025, 4:17 PM PT",
+        "value":"September 13, 2025, 1:22 AM PT",
         "category":"summary",
         "context_value":"",
         "context_value_label":""
@@ -154,7 +154,7 @@
     {
         "stat_label":"Team summary",
         "stat":"summary",
-        "value":"<span class='highlight'>LOS ANGELES<\/span> <span class='updated'>(September 12)<\/span> \u2014 After <span class='highlight'>146<\/span> games this season, the Dodgers are in <span class='highlight'>1st<\/span> place in the National League West division. The team has compiled a <span class='highlight'>82-64<\/span> record, winning <span class='highlight'>56%<\/span> of its games so far. The last game's result is not yet available. They've won <span class='highlight'>5 of the last 10<\/span> and are on pace to win at least <span class='highlight'>92<\/span> games in the regular season.",
+        "value":"<span class='highlight'>LOS ANGELES<\/span> <span class='updated'>(September 13)<\/span> \u2014 After <span class='highlight'>147<\/span> games this season, the Dodgers are in <span class='highlight'>1st<\/span> place in the National League West division. The team has compiled a <span class='highlight'>82-65<\/span> record, winning <span class='highlight'>56%<\/span> of its games so far. The last game was a <span class='highlight'>1-5<\/span> away <span class='highlight'>loss<\/span> against the San Francisco Giants. They've won <span class='highlight'>4 of the last 10<\/span> and are on pace to win at least <span class='highlight'>92<\/span> games in the regular season.",
         "category":"summary",
         "context_value":"",
         "context_value_label":""
@@ -162,7 +162,7 @@
     {
         "stat_label":"Last game result",
         "stat":"last_game_result",
-        "value":"win",
+        "value":"loss",
         "category":"summary",
         "context_value":"",
         "context_value_label":""
