@@ -3284,6 +3284,14 @@ if (document.readyState === 'loading') {
           .style('width', `${incorrectPct}%`)
           .text(incorrectPct >= 15 ? `${incorrectPct.toFixed(0)}%` : ''); 
       }
+
+      // Home plate umpire caption (matches italics style used in worst calls pitch type)
+      if (gameData.home_plate_umpire) {
+        chartDiv
+          .append('div')
+          .attr('class', 'call-details')
+          .html(`<em>Home plate umpire: ${gameData.home_plate_umpire}</em>`);
+      }
     }
 
     // Right column: worst calls
