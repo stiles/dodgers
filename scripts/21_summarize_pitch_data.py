@@ -1,4 +1,5 @@
 import json
+import requests
 import pandas as pd
 import os
 import boto3
@@ -166,6 +167,42 @@ def analyze_pitches(file_path, thrown_by_file_path=None):
         except (FileNotFoundError, json.JSONDecodeError):
             pass
 
+    # --- Helper: Fetch Home Plate Umpire for the last game ---
+    def get_home_plate_umpire(game_pk: int):
+        try:
+            url = f"https://statsapi.mlb.com/api/v1.1/game/{int(game_pk)}/feed/live"
+            resp = requests.get(url, timeout=15)
+            resp.raise_for_status()
+            payload = resp.json()
+            officials = (
+                payload
+                .get("liveData", {})
+                .get("boxscore", {})
+                .get("officials", [])
+            )
+            for off in officials:
+                if str(off.get("officialType", "")).lower() == "home plate":
+                    official = off.get("official", {})
+                    return {
+                        "id": official.get("id"),
+                        "name": official.get("fullName"),
+                    }
+        except Exception:
+            pass
+        return None
+
+    # Determine the gamePk for the most recent game in the dataset
+    recent_game_pk = None
+    try:
+        # Use mode or first unique pk on the most recent date
+        game_pks = df_game.get("game_pk")
+        if game_pks is not None and not game_pks.empty:
+            recent_game_pk = int(pd.Series(game_pks).mode().iloc[0])
+    except Exception:
+        recent_game_pk = None
+
+    home_plate_umpire = get_home_plate_umpire(recent_game_pk) if recent_game_pk is not None else None
+
     # --- Create Summary Object ---
     summary_data = {
         "season_summary": {
@@ -179,7 +216,8 @@ def analyze_pitches(file_path, thrown_by_file_path=None):
             "correct_strikes_pct": game_correct_pct,
             "incorrect_strikes_pct": game_incorrect_pct,
             "total_called_strikes": game_total_strikes,
-            "bad_calls_count": game_bad_calls_count
+            "bad_calls_count": game_bad_calls_count,
+            **({"home_plate_umpire": home_plate_umpire.get("name") if home_plate_umpire else None} ),
         },
         "worst_calls_of_season": worst_calls_list
     }
