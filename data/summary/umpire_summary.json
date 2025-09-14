@@ -1,16 +1,16 @@
 {
     "season_summary": {
-        "correct_strikes_pct": 90.13377926421404,
-        "incorrect_strikes_pct": 9.866220735785959,
-        "total_called_strikes": 3588,
-        "bad_calls_count": 354
+        "correct_strikes_pct": 90.07717750826902,
+        "incorrect_strikes_pct": 9.922822491730983,
+        "total_called_strikes": 3628,
+        "bad_calls_count": 360
     },
     "last_game_summary": {
-        "date": "September 12, 2025",
-        "correct_strikes_pct": 83.33333333333334,
-        "incorrect_strikes_pct": 16.666666666666657,
-        "total_called_strikes": 24,
-        "bad_calls_count": 4
+        "date": "September 13, 2025",
+        "correct_strikes_pct": 85.0,
+        "incorrect_strikes_pct": 15.0,
+        "total_called_strikes": 40,
+        "bad_calls_count": 6
     },
     "worst_calls_of_season": [
         {
@@ -55,58 +55,58 @@
         }
     ],
     "pitching_season_summary": {
-        "correct_balls_pct": 92.75180856983863,
-        "incorrect_balls_pct": 7.24819143016137,
-        "total_called_balls": 7188,
-        "bad_calls_count": 521
+        "correct_balls_pct": 92.76742581090407,
+        "incorrect_balls_pct": 7.232574189095928,
+        "total_called_balls": 7245,
+        "bad_calls_count": 524
     },
     "pitching_last_game_summary": {
-        "date": "September 12, 2025",
-        "correct_balls_pct": 100.0,
-        "incorrect_balls_pct": 0.0,
-        "total_called_balls": 34,
-        "bad_calls_count": 0
+        "date": "September 13, 2025",
+        "correct_balls_pct": 94.73684210526315,
+        "incorrect_balls_pct": 5.26315789473685,
+        "total_called_balls": 57,
+        "bad_calls_count": 3
     },
     "pitching_worst_calls_of_season": [
         {
             "distance_inches": 1.45,
-            "batter": "Jordan Beck",
-            "pitcher": "Emmet Sheehan",
+            "batter": "Patrick Bailey",
+            "pitcher": "Michael Kopech",
             "pitch_type": "4-Seam Fastball",
-            "velocity_mph": 97.2,
-            "date": "2025-09-09",
-            "date_formatted": "September 9, 2025",
-            "video_link": "https://baseballsavant.mlb.com/sporty-videos?playId=f2c30da6-4059-38d1-add0-d9ac37213fd4"
+            "velocity_mph": 101.0,
+            "date": "2025-09-13",
+            "date_formatted": "September 13, 2025",
+            "video_link": "https://baseballsavant.mlb.com/sporty-videos?playId=694d4a0e-b3ea-3e92-afa1-59fd450adbdf"
         },
         {
             "distance_inches": 1.45,
-            "batter": "Ke'Bryan Hayes",
+            "batter": "Casey Schmitt",
             "pitcher": "Justin Wrobleski",
-            "pitch_type": "4-Seam Fastball",
-            "velocity_mph": 96.2,
-            "date": "2025-08-27",
-            "date_formatted": "August 27, 2025",
-            "video_link": "https://baseballsavant.mlb.com/sporty-videos?playId=ac2261c3-29f6-349d-88c4-1ba9cb1051fe"
-        },
-        {
-            "distance_inches": 1.45,
-            "batter": "Fernando Tatis Jr.",
-            "pitcher": "Tyler Glasnow",
-            "pitch_type": "Curveball",
-            "velocity_mph": 80.4,
-            "date": "2025-08-23",
-            "date_formatted": "August 23, 2025",
-            "video_link": "https://baseballsavant.mlb.com/sporty-videos?playId=bc5a3c53-b404-313a-83a3-125603482d31"
-        },
-        {
-            "distance_inches": 1.45,
-            "batter": "Matt McLain",
-            "pitcher": "Emmet Sheehan",
             "pitch_type": "Slider",
-            "velocity_mph": 89.8,
-            "date": "2025-08-25",
-            "date_formatted": "August 25, 2025",
-            "video_link": "https://baseballsavant.mlb.com/sporty-videos?playId=c4bd0d5d-2dac-3e24-af10-1efedffe3512"
+            "velocity_mph": 86.6,
+            "date": "2025-09-13",
+            "date_formatted": "September 13, 2025",
+            "video_link": "https://baseballsavant.mlb.com/sporty-videos?playId=2ee78570-f902-30f1-b424-342ba0d432ea"
+        },
+        {
+            "distance_inches": 1.45,
+            "batter": "Kevin Newman",
+            "pitcher": "Ben Casparius",
+            "pitch_type": "Curveball",
+            "velocity_mph": 79.5,
+            "date": "2025-03-23",
+            "date_formatted": "March 23, 2025",
+            "video_link": "https://baseballsavant.mlb.com/sporty-videos?playId=5ecba9e1-4cce-4d34-bd45-2e9a486309a4"
+        },
+        {
+            "distance_inches": 1.45,
+            "batter": "Geraldo Perdomo",
+            "pitcher": "Edgardo Henriquez",
+            "pitch_type": "Cutter",
+            "velocity_mph": 97.3,
+            "date": "2025-08-30",
+            "date_formatted": "August 30, 2025",
+            "video_link": "https://baseballsavant.mlb.com/sporty-videos?playId=0a4319b4-a7ed-3330-a842-0e24fa9d8720"
         }
     ]
 }
