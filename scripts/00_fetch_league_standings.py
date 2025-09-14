@@ -13,6 +13,7 @@ import logging
 from datetime import datetime
 import json
 from typing import List, Dict, Any, Optional
+import pytz
 
 HEADERS = {
     'sec-ch-ua-platform': '"macOS"',
@@ -50,6 +51,38 @@ else:
 s3_resource = session.resource("s3")
 
 CURRENT_YEAR = datetime.now().year
+
+def get_pacific_time_string():
+    """Get current time formatted as 'Sept. 14 at 2:35 p.m. Pacific Time'"""
+    pacific = pytz.timezone('US/Pacific')
+    now = datetime.now(pacific)
+    
+    # Format month (abbreviated with period)
+    month = now.strftime('%b') + '.'
+    
+    # Format day (no leading zero)
+    day = str(now.day)
+    
+    # Format time (12-hour format)
+    hour = now.hour
+    minute = now.minute
+    
+    if hour == 0:
+        hour_str = "12"
+        period = "a.m."
+    elif hour < 12:
+        hour_str = str(hour)
+        period = "a.m."
+    elif hour == 12:
+        hour_str = "12"
+        period = "p.m."
+    else:
+        hour_str = str(hour - 12)
+        period = "p.m."
+    
+    time_str = f"{hour_str}:{minute:02d} {period}"
+    
+    return f"{month} {day} at {time_str} Pacific Time"
 
 def format_games_back(gb_value):
     """Formats games back to be an int if a whole number, otherwise a float."""
@@ -153,12 +186,21 @@ def main():
         return
 
     try:
+        # Create metadata with timestamp
+        last_updated = get_pacific_time_string()
+        standings_with_metadata = {
+            "last_updated": last_updated,
+            "last_updated_iso": datetime.now(pytz.timezone('US/Pacific')).isoformat(),
+            "teams": all_standings_data
+        }
+        
         with open(local_file_path, 'w') as f:
-            json.dump(all_standings_data, f, indent=4)
-        logging.info(f"Successfully saved all teams standings metrics to {local_file_path}")
-        # Save a copy for Jekyll
+            json.dump(standings_with_metadata, f, indent=4)
+        logging.info(f"Successfully saved all teams standings metrics with timestamp to {local_file_path}")
+        
+        # Save a copy for Jekyll (with metadata)
         with open(jekyll_file_path, 'w') as f:
-            json.dump(all_standings_data, f, indent=4)
+            json.dump(standings_with_metadata, f, indent=4)
         logging.info(f"Successfully saved all teams standings metrics to {jekyll_file_path} for Jekyll")
     except IOError as e:
         logging.error(f"Failed to save all teams standings metrics locally: {e}")

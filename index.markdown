@@ -84,17 +84,26 @@ twitter:
   {% assign standings_data = "" | split: "" %}
 {% endif %}
 
-{% assign nl_teams = standings_data | where_exp: "item", "item.league_name == 'National League'" %}
+{% comment %} Extract teams array from new data structure {% endcomment %}
+{% if standings_data.teams %}
+  {% assign teams_array = standings_data.teams %}
+{% else %}
+  {% assign teams_array = standings_data %}
+{% endif %}
+
+{% assign nl_teams = teams_array | where_exp: "item", "item.league_name == 'National League'" %}
 {% if nl_teams == nil %} {% assign nl_teams = "" | split: "" %} {% endif %}
 
 {% assign nl_west = nl_teams | where_exp: "item", "item.division_name == 'National League West'" | sort: "division_rank" %}
 {% assign nl_central = nl_teams | where_exp: "item", "item.division_name == 'National League Central'" | sort: "division_rank" %}
 {% assign nl_east = nl_teams | where_exp: "item", "item.division_name == 'National League East'" | sort: "division_rank" %}
 
+<h2 class="stat-group">Playoff race</h2>
+
 <h3 class="visual-subhead">National League standings by division</h3>
 <div class="tables-container standings-tables">
   <div class="table-wrapper">
-    <h3 class="visual-subhead">NL West</h3>
+    <h3 class="stat-card-label">NL West</h3>
     <table class="data-table">
       <thead>
         <tr>
@@ -115,7 +124,7 @@ twitter:
     </table>
   </div>
   <div class="table-wrapper">
-    <h3 class="visual-subhead">NL Central</h3>
+    <h3 class="stat-card-label">NL Central</h3>
     <table class="data-table">
       <thead>
         <tr>
@@ -136,7 +145,7 @@ twitter:
     </table>
   </div>
   <div class="table-wrapper">
-    <h3 class="visual-subhead">NL East</h3>
+    <h3 class="stat-card-label">NL East</h3>
     <table class="data-table">
       <thead>
         <tr>
@@ -156,6 +165,230 @@ twitter:
       </tbody>
     </table>
   </div>
+</div>
+
+<h3 class="visual-subhead">Playoff bracket: <em>If the postseason started today</em></h3>
+<div id="playoff-bracket-container">
+  <div class="bracket-section">
+    <h4 class="bracket-league-title">National League</h4>
+    <div class="bracket-grid nl-bracket">
+      <div class="bracket-column wildcards">
+        <div class="stat-card-label">Wild card</div>
+        <div class="wildcard-matchup">
+          <div class="wildcard-team seed-6" data-seed="6">
+            <span class="team-logo"></span>
+            <span class="team-info">
+              <span class="team-name">TBD</span>
+              <span class="team-seed">6</span>
+            </span>
+          </div>
+          <div class="vs">vs</div>
+          <div class="wildcard-team seed-3" data-seed="3">
+            <span class="team-logo"></span>
+            <span class="team-info">
+              <span class="team-name">TBD</span>
+              <span class="team-seed">3</span>
+            </span>
+          </div>
+        </div>
+        <div class="wildcard-matchup">
+          <div class="wildcard-team seed-5" data-seed="5">
+            <span class="team-logo"></span>
+            <span class="team-info">
+              <span class="team-name">TBD</span>
+              <span class="team-seed">5</span>
+            </span>
+          </div>
+          <div class="vs">vs</div>
+          <div class="wildcard-team seed-4" data-seed="4">
+            <span class="team-logo"></span>
+            <span class="team-info">
+              <span class="team-name">TBD</span>
+              <span class="team-seed">4</span>
+            </span>
+          </div>
+        </div>
+      </div>
+      <div class="bracket-column division-series">
+        <div class="stat-card-label">Division series</div>
+        <div class="ds-matchup">
+          <div class="ds-team seed-1" data-seed="1">
+            <span class="team-logo"></span>
+            <span class="team-info">
+              <span class="team-name">TBD</span>
+              <span class="team-seed">1</span>
+            </span>
+          </div>
+          <div class="vs">vs</div>
+          <div class="ds-team wc-winner">
+            <span class="team-logo"></span>
+            <span class="team-info">
+              <span class="team-name">Wild card winner</span>
+              <span class="team-seed"></span>
+            </span>
+          </div>
+        </div>
+        <div class="ds-matchup">
+          <div class="ds-team seed-2" data-seed="2">
+            <span class="team-logo"></span>
+            <span class="team-info">
+              <span class="team-name">TBD</span>
+              <span class="team-seed">2</span>
+            </span>
+          </div>
+          <div class="vs">vs</div>
+          <div class="ds-team wc-winner">
+            <span class="team-logo"></span>
+            <span class="team-info">
+              <span class="team-name">Wild card winner</span>
+              <span class="team-seed"></span>
+            </span>
+          </div>
+        </div>
+      </div>
+      <div class="bracket-column championship">
+        <div class="stat-card-label">NLCS</div>
+        <div class="cs-matchup">
+          <div class="cs-team">
+            <span class="team-logo"></span>
+            <span class="team-info">
+              <span class="team-name">DS winner</span>
+              <span class="team-seed"></span>
+            </span>
+          </div>
+          <div class="vs">vs</div>
+          <div class="cs-team">
+            <span class="team-logo"></span>
+            <span class="team-info">
+              <span class="team-name">DS winner</span>
+              <span class="team-seed"></span>
+            </span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="bracket-section">
+    <h4 class="bracket-league-title">American League</h4>
+    <div class="bracket-grid al-bracket">
+      <div class="bracket-column wildcards">
+        <div class="stat-card-label">Wild card</div>
+        <div class="wildcard-matchup">
+          <div class="wildcard-team seed-6" data-seed="6">
+            <span class="team-logo"></span>
+            <span class="team-info">
+              <span class="team-name">TBD</span>
+              <span class="team-seed">6</span>
+            </span>
+          </div>
+          <div class="vs">vs</div>
+          <div class="wildcard-team seed-3" data-seed="3">
+            <span class="team-logo"></span>
+            <span class="team-info">
+              <span class="team-name">TBD</span>
+              <span class="team-seed">3</span>
+            </span>
+          </div>
+        </div>
+        <div class="wildcard-matchup">
+          <div class="wildcard-team seed-5" data-seed="5">
+            <span class="team-logo"></span>
+            <span class="team-info">
+              <span class="team-name">TBD</span>
+              <span class="team-seed">5</span>
+            </span>
+          </div>
+          <div class="vs">vs</div>
+          <div class="wildcard-team seed-4" data-seed="4">
+            <span class="team-logo"></span>
+            <span class="team-info">
+              <span class="team-name">TBD</span>
+              <span class="team-seed">4</span>
+            </span>
+          </div>
+        </div>
+      </div>
+      <div class="bracket-column division-series">
+        <div class="stat-card-label">Division series</div>
+        <div class="ds-matchup">
+          <div class="ds-team seed-1" data-seed="1">
+            <span class="team-logo"></span>
+            <span class="team-info">
+              <span class="team-name">TBD</span>
+              <span class="team-seed">1</span>
+            </span>
+          </div>
+          <div class="vs">vs</div>
+          <div class="ds-team wc-winner">
+            <span class="team-logo"></span>
+            <span class="team-info">
+              <span class="team-name">Wild card winner</span>
+              <span class="team-seed"></span>
+            </span>
+          </div>
+        </div>
+        <div class="ds-matchup">
+          <div class="ds-team seed-2" data-seed="2">
+            <span class="team-logo"></span>
+            <span class="team-info">
+              <span class="team-name">TBD</span>
+              <span class="team-seed">2</span>
+            </span>
+          </div>
+          <div class="vs">vs</div>
+          <div class="ds-team wc-winner">
+            <span class="team-logo"></span>
+            <span class="team-info">
+              <span class="team-name">Wild card winner</span>
+              <span class="team-seed"></span>
+            </span>
+          </div>
+        </div>
+      </div>
+      <div class="bracket-column championship">
+        <div class="stat-card-label">ALCS</div>
+        <div class="cs-matchup">
+          <div class="cs-team">
+            <span class="team-logo"></span>
+            <span class="team-info">
+              <span class="team-name">DS winner</span>
+              <span class="team-seed"></span>
+            </span>
+          </div>
+          <div class="vs">vs</div>
+          <div class="cs-team">
+            <span class="team-logo"></span>
+            <span class="team-info">
+              <span class="team-name">DS winner</span>
+              <span class="team-seed"></span>
+            </span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- <div class="world-series-section">
+    <h4 class="bracket-league-title">World Series</h4>
+    <div class="ws-matchup">
+      <div class="ws-team nl-champion">
+        <span class="team-logo"></span>
+        <span class="team-info">
+          <span class="team-name">NL champion</span>
+          <span class="team-seed"></span>
+        </span>
+      </div>
+      <div class="vs">vs</div>
+      <div class="ws-team al-champion">
+        <span class="team-logo"></span>
+        <span class="team-info">
+          <span class="team-name">AL champion</span>
+          <span class="team-seed"></span>
+        </span>
+      </div>
+    </div>
+  </div> -->
 </div>
 
 <h2 class="stat-group">Team batting</h2>

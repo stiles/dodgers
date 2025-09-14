@@ -133,9 +133,16 @@ def analyze_pitches(file_path, thrown_by_file_path=None):
                 game_correct_pct_balls = (game_correct_balls / game_total_balls * 100) if game_total_balls > 0 else 0
                 game_incorrect_pct_balls = 100 - game_correct_pct_balls
 
-                # Worst calls (how off): magnitude inside zone
-                df_rankable_by = df_bad_pitch_calls.dropna(subset=['dist_from_sz_edge_inches']).copy()
-                df_rankable_by['inside_inches'] = df_rankable_by['dist_from_sz_edge_inches'].abs()
+                # Worst calls (how off): prefer depth inside zone if available
+                # inside_margin_inches measures depth from ball's outer edge to nearest zone edge
+                if 'inside_margin_inches' in df_bad_pitch_calls.columns:
+                    df_rankable_by = df_bad_pitch_calls.dropna(subset=['inside_margin_inches']).copy()
+                    df_rankable_by['inside_inches'] = df_rankable_by['inside_margin_inches']
+                else:
+                    df_rankable_by = df_bad_pitch_calls.dropna(subset=['dist_from_sz_edge_inches']).copy()
+                    df_rankable_by['inside_inches'] = df_rankable_by['dist_from_sz_edge_inches'].abs()
+                # Filter out borderline cases (< 2") to highlight truly egregious
+                df_rankable_by = df_rankable_by[df_rankable_by['inside_inches'] >= 2.0]
                 df_worst_by = df_rankable_by.sort_values(by='inside_inches', ascending=False).head(4)
                 pitching_worst_calls_list = [
                     {

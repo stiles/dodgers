@@ -122,13 +122,26 @@ def analyze_pitches(game_info, batting_side_override: str = None, team_role: str
             dist_from_sz_edge_feet = None
             dist_from_sz_center_inches = None
             dist_from_sz_edge_inches = None
+            inside_margin_inches = None
             if all(v is not None for v in [px, pz, sz_bot, sz_top]):
+                # Distance from ball center to closest point on the zone rectangle
                 closest_x = max(sz_left, min(sz_right, px))
                 closest_z = max(sz_bot, min(sz_top, pz))
                 dist_from_sz_center_feet = math.sqrt((px - closest_x)**2 + (pz - closest_z)**2)
                 dist_from_sz_edge_feet = dist_from_sz_center_feet - BALL_RADIUS_FEET
                 dist_from_sz_center_inches = dist_from_sz_center_feet * 12
                 dist_from_sz_edge_inches = dist_from_sz_edge_feet * 12
+
+                # Depth inside zone (from the ball's outside edge to nearest edge)
+                # Compute minimal center-to-edge distance when inside the zone
+                left_gap = px - sz_left
+                right_gap = sz_right - px
+                bottom_gap = pz - sz_bot
+                top_gap = sz_top - pz
+                min_gap_feet = min(left_gap, right_gap, bottom_gap, top_gap)
+                # Positive only when the center is inside the rectangle
+                if min_gap_feet is not None:
+                    inside_margin_inches = max(0.0, (min_gap_feet - BALL_RADIUS_FEET) * 12)
             
             in_strike_zone = dist_from_sz_center_feet is not None and dist_from_sz_center_feet <= BALL_RADIUS_FEET
             
@@ -149,6 +162,7 @@ def analyze_pitches(game_info, batting_side_override: str = None, team_role: str
                 "at_bat_eventual_desc": pitch.get("des"),
                 "dist_from_sz_center_inches": dist_from_sz_center_inches,
                 "dist_from_sz_edge_inches": dist_from_sz_edge_inches,
+                "inside_margin_inches": inside_margin_inches,
                 "zone": pitch.get("zone"),
                 "px": px,
                 "pz": pz,

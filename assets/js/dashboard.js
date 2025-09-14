@@ -3417,6 +3417,14 @@ if (document.readyState === 'loading') {
           .style('width', `${incorrectPct}%`)
           .text(incorrectPct >= 15 ? `${incorrectPct.toFixed(0)}%` : '');
       }
+
+      // Home plate umpire caption (reuse batting field; same game, same umpire)
+      if (data.last_game_summary && data.last_game_summary.home_plate_umpire) {
+        chartDiv
+          .append('div')
+          .attr('class', 'call-details')
+          .html(`<em>Home plate umpire: ${data.last_game_summary.home_plate_umpire}</em>`);
+      }
     }
 
     // Worst calls list
@@ -3631,5 +3639,272 @@ document.addEventListener('DOMContentLoaded', function () {
   }
 
   fetchOhtaniPitchData();
+});
+
+// Playoff Bracket Functions
+async function fetchPlayoffBracketData() {
+  try {
+    const currentYear = new Date().getFullYear();
+    const response = await fetch(`https://stilesdata.com/dodgers/data/standings/all_teams_standings_metrics_${currentYear}.json`);
+    if (!response.ok) {
+      throw new Error(`HTTP error! status: ${response.status}`);
+    }
+    const data = await response.json();
+    
+    // Handle both old format (array) and new format (object with metadata)
+    if (Array.isArray(data)) {
+      return { teams: data, last_updated: null };
+    } else if (data.teams) {
+      return data;
+    } else {
+      console.error('Unexpected data format:', data);
+      return null;
+    }
+  } catch (error) {
+    console.error('Error fetching playoff bracket data:', error);
+    return null;
+  }
+}
+
+function calculatePlayoffSeeds(standings) {
+  // Separate leagues
+  const nlTeams = standings.filter(team => team.league_name === 'National League');
+  const alTeams = standings.filter(team => team.league_name === 'American League');
+  
+  // Sort by division rank first, then by league rank for wild cards
+  function getPlayoffTeams(leagueTeams) {
+    // Get division winners (rank 1 in each division)
+    const divisionWinners = leagueTeams
+      .filter(team => team.division_rank === '1')
+      .sort((a, b) => parseFloat(b.winning_percentage) - parseFloat(a.winning_percentage));
+    
+    // Get wild card teams (best non-division winners)
+    const wildCardCandidates = leagueTeams
+      .filter(team => team.division_rank !== '1')
+      .sort((a, b) => parseFloat(b.winning_percentage) - parseFloat(a.winning_percentage));
+    
+    const wildCards = wildCardCandidates.slice(0, 3); // Top 3 wild cards
+    
+    // Combine and assign seeds
+    const allPlayoffTeams = [...divisionWinners, ...wildCards];
+    allPlayoffTeams.sort((a, b) => parseFloat(b.winning_percentage) - parseFloat(a.winning_percentage));
+    
+    return allPlayoffTeams.slice(0, 6).map((team, index) => ({
+      ...team,
+      seed: index + 1
+    }));
+  }
+  
+  return {
+    nl: getPlayoffTeams(nlTeams),
+    al: getPlayoffTeams(alTeams)
+  };
+}
+
+function getTeamAbbreviation(teamName) {
+  const abbrevMap = {
+    'Los Angeles Dodgers': 'LAD',
+    'New York Yankees': 'NYY',
+    'Los Angeles Angels': 'LAA',
+    'Houston Astros': 'HOU',
+    'Atlanta Braves': 'ATL',
+    'New York Mets': 'NYM',
+    'Philadelphia Phillies': 'PHI',
+    'San Diego Padres': 'SD',
+    'San Francisco Giants': 'SF',
+    'Milwaukee Brewers': 'MIL',
+    'St. Louis Cardinals': 'STL',
+    'Chicago Cubs': 'CHC',
+    'Arizona Diamondbacks': 'ARI',
+    'Colorado Rockies': 'COL',
+    'Toronto Blue Jays': 'TOR',
+    'Baltimore Orioles': 'BAL',
+    'Boston Red Sox': 'BOS',
+    'Tampa Bay Rays': 'TB',
+    'Cleveland Guardians': 'CLE',
+    'Detroit Tigers': 'DET',
+    'Kansas City Royals': 'KC',
+    'Minnesota Twins': 'MIN',
+    'Chicago White Sox': 'CWS',
+    'Texas Rangers': 'TEX',
+    'Seattle Mariners': 'SEA',
+    'Oakland Athletics': 'OAK',
+    'Pittsburgh Pirates': 'PIT',
+    'Cincinnati Reds': 'CIN',
+    'Miami Marlins': 'MIA',
+    'Washington Nationals': 'WSN'
+  };
+  return abbrevMap[teamName] || teamName.substring(0, 3).toUpperCase();
+}
+
+function getTeamMascot(teamName) {
+  // Extract just the mascot/nickname from full team name
+  const mascotMap = {
+    'Los Angeles Dodgers': 'Dodgers',
+    'New York Yankees': 'Yankees', 
+    'Los Angeles Angels': 'Angels',
+    'Houston Astros': 'Astros',
+    'Atlanta Braves': 'Braves',
+    'New York Mets': 'Mets',
+    'Philadelphia Phillies': 'Phillies',
+    'San Diego Padres': 'Padres',
+    'San Francisco Giants': 'Giants',
+    'Milwaukee Brewers': 'Brewers',
+    'St. Louis Cardinals': 'Cardinals',
+    'Chicago Cubs': 'Cubs',
+    'Arizona Diamondbacks': 'Diamondbacks',
+    'Colorado Rockies': 'Rockies',
+    'Toronto Blue Jays': 'Blue Jays',
+    'Baltimore Orioles': 'Orioles',
+    'Boston Red Sox': 'Red Sox',
+    'Tampa Bay Rays': 'Rays',
+    'Cleveland Guardians': 'Guardians',
+    'Detroit Tigers': 'Tigers',
+    'Kansas City Royals': 'Royals',
+    'Minnesota Twins': 'Twins',
+    'Chicago White Sox': 'White Sox',
+    'Texas Rangers': 'Rangers',
+    'Seattle Mariners': 'Mariners',
+    'Oakland Athletics': 'Athletics',
+    'Pittsburgh Pirates': 'Pirates',
+    'Cincinnati Reds': 'Reds',
+    'Miami Marlins': 'Marlins',
+    'Washington Nationals': 'Nationals'
+  };
+  
+  return mascotMap[teamName] || teamName.split(' ').pop(); // Fallback to last word
+}
+
+function getTeamLogoUrl(teamId) {
+  return `https://midfield.mlbstatic.com/v1/team/${teamId}/spots/`;
+}
+
+function populateTeamSlot(element, team) {
+  if (!team) return;
+  
+  const teamAbbr = getTeamAbbreviation(team.team_name);
+  const teamMascot = getTeamMascot(team.team_name);
+  const teamLogo = element.querySelector('.team-logo');
+  const teamName = element.querySelector('.team-name');
+  const teamSeed = element.querySelector('.team-seed');
+  
+  // Update team info - use mascot name for better readability
+  teamName.textContent = teamMascot;
+  teamSeed.textContent = team.seed;
+  
+  // Add record display (wins-losses) - create element if it doesn't exist
+  let teamRecord = element.querySelector('.team-record');
+  if (!teamRecord) {
+    teamRecord = document.createElement('span');
+    teamRecord.className = 'team-record';
+    // Insert between team name and seed
+    teamName.parentNode.insertBefore(teamRecord, teamSeed);
+  }
+  teamRecord.textContent = `(${team.wins}-${team.losses})`;
+  
+  // Add team-specific styling
+  teamLogo.setAttribute('data-team', teamAbbr);
+  
+  // Set team logo as background image
+  const logoUrl = getTeamLogoUrl(team.team_id);
+  teamLogo.style.backgroundImage = `url('${logoUrl}')`;
+  teamLogo.style.backgroundSize = 'contain';
+  teamLogo.style.backgroundRepeat = 'no-repeat';
+  teamLogo.style.backgroundPosition = 'center';
+  teamLogo.textContent = ''; // Remove text content since we have logo now
+  
+  // Fallback: if logo fails to load, show abbreviation
+  const logoImg = new Image();
+  logoImg.onload = function() {
+    // Logo loaded successfully, keep it
+  };
+  logoImg.onerror = function() {
+    // Logo failed to load, show text fallback
+    teamLogo.style.backgroundImage = '';
+    teamLogo.textContent = teamAbbr.substring(0, 2);
+  };
+  logoImg.src = logoUrl;
+  
+  // Special styling for Dodgers
+  if (teamAbbr === 'LAD') {
+    element.classList.add('dodgers-team');
+  }
+}
+
+function renderPlayoffBracket(playoffTeams) {
+  const { nl, al } = playoffTeams;
+  
+  // Populate NL bracket
+  const nlBracket = document.querySelector('.nl-bracket');
+  if (nlBracket && nl.length >= 6) {
+    // Wild Card round
+    populateTeamSlot(nlBracket.querySelector('[data-seed="6"]'), nl.find(t => t.seed === 6));
+    populateTeamSlot(nlBracket.querySelector('[data-seed="3"]'), nl.find(t => t.seed === 3));
+    populateTeamSlot(nlBracket.querySelector('[data-seed="5"]'), nl.find(t => t.seed === 5));
+    populateTeamSlot(nlBracket.querySelector('[data-seed="4"]'), nl.find(t => t.seed === 4));
+    
+    // Division Series
+    populateTeamSlot(nlBracket.querySelector('[data-seed="1"]'), nl.find(t => t.seed === 1));
+    populateTeamSlot(nlBracket.querySelector('[data-seed="2"]'), nl.find(t => t.seed === 2));
+  }
+  
+  // Populate AL bracket
+  const alBracket = document.querySelector('.al-bracket');
+  if (alBracket && al.length >= 6) {
+    // Wild Card round
+    populateTeamSlot(alBracket.querySelector('[data-seed="6"]'), al.find(t => t.seed === 6));
+    populateTeamSlot(alBracket.querySelector('[data-seed="3"]'), al.find(t => t.seed === 3));
+    populateTeamSlot(alBracket.querySelector('[data-seed="5"]'), al.find(t => t.seed === 5));
+    populateTeamSlot(alBracket.querySelector('[data-seed="4"]'), al.find(t => t.seed === 4));
+    
+    // Division Series
+    populateTeamSlot(alBracket.querySelector('[data-seed="1"]'), al.find(t => t.seed === 1));
+    populateTeamSlot(alBracket.querySelector('[data-seed="2"]'), al.find(t => t.seed === 2));
+  }
+}
+
+function displayLastUpdated(lastUpdated) {
+  if (!lastUpdated) return;
+  
+  // Create or update the last updated element
+  let lastUpdatedElement = document.getElementById('playoff-last-updated');
+  if (!lastUpdatedElement) {
+    lastUpdatedElement = document.createElement('p');
+    lastUpdatedElement.id = 'playoff-last-updated';
+    lastUpdatedElement.className = 'note';
+    
+    const bracketContainer = document.getElementById('playoff-bracket-container');
+    if (bracketContainer) {
+      bracketContainer.appendChild(lastUpdatedElement);
+    }
+  }
+  
+  lastUpdatedElement.textContent = `Last updated on ${lastUpdated}`;
+}
+
+async function initPlayoffBracket() {
+  try {
+    const standingsData = await fetchPlayoffBracketData();
+    if (standingsData && standingsData.teams && standingsData.teams.length > 0) {
+      const playoffTeams = calculatePlayoffSeeds(standingsData.teams);
+      renderPlayoffBracket(playoffTeams);
+      
+      // Display last updated timestamp
+      if (standingsData.last_updated) {
+        displayLastUpdated(standingsData.last_updated);
+      }
+    } else {
+      console.log('No standings data available for playoff bracket');
+    }
+  } catch (error) {
+    console.error('Error initializing playoff bracket:', error);
+  }
+}
+
+// Initialize playoff bracket when DOM is loaded
+document.addEventListener('DOMContentLoaded', function() {
+  if (document.getElementById('playoff-bracket-container')) {
+    initPlayoffBracket();
+  }
 });
 

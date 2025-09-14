@@ -1077,7 +1077,7 @@ h3.visual-subhead {
   margin: 10px 0px 20px 0px; // Reduced margins
   font-family: 'Roboto Slab', serif;
   font-size: 1em;
-  color: #666;
+  color: #555;
 }
 
 label {
@@ -2361,4 +2361,311 @@ label {
   .standings-tables .data-table td:nth-child(3) { /* GB */
     width: 20%;
   }
+}
+
+// Playoff Bracket Styles
+#playoff-bracket-container {
+  margin: 30px 0 40px 0;
+  padding: 0;
+}
+
+.bracket-section {
+  margin-bottom: 40px;
+  
+  @media (max-width: 767px) {
+    margin-bottom: 30px;
+  }
+}
+
+.bracket-league-title {
+  font-family: 'Roboto Slab', serif;
+  font-size: .9em;
+  font-weight: 500;
+  color: #666;
+  text-align: center;
+  margin: 0 0 20px 0;
+  padding-bottom: 10px;
+  border-bottom: 1px solid #e9ecef;
+  
+  @media (max-width: 767px) {
+    font-size: 1.1em;
+    margin-bottom: 15px;
+  }
+}
+
+.bracket-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: 20px;
+  align-items: center;
+  
+  @media (max-width: 900px) {
+    grid-template-columns: 1fr;
+    gap: 25px;
+  }
+}
+
+.bracket-column {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 15px;
+}
+
+.bracket-round-title {
+  font-family: 'Roboto Slab', serif;
+  font-size: 0.9em;
+  font-weight: 600;
+  color: #666;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  margin-bottom: 10px;
+  text-align: center;
+}
+
+.wildcard-matchup,
+.ds-matchup,
+.cs-matchup,
+.ws-matchup {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
+  padding: 20px;
+  background: #fff;
+  border: 1px solid #e8e8e8;
+  border-radius: 12px;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.06);
+  width: 100%;
+  max-width: 280px;
+  
+  @media (max-width: 767px) {
+    max-width: 100%;
+    padding: 15px;
+  }
+}
+
+.wildcard-team,
+.ds-team,
+.cs-team,
+.ws-team {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 12px 50px 12px 16px; // Add right padding for seed
+  background: #f8f9fa;
+  border: 1px solid #e9ecef;
+  border-radius: 8px;
+  width: 100%;
+  min-height: 60px;
+  transition: all 0.2s ease;
+  position: relative; // For absolute positioned seed
+  
+  &:hover {
+    background: #e9ecef;
+    border-color: #005a9c;
+  }
+  
+  &.dodgers-team {
+    background: linear-gradient(135deg, #005a9c 0%, #003d6b 100%);
+    color: white;
+    border-color: #005a9c;
+    font-weight: 600;
+    
+    &:hover {
+      background: linear-gradient(135deg, #004080 0%, #002a4a 100%);
+    }
+  }
+  
+  @media (max-width: 767px) {
+    padding: 10px 40px 10px 12px; // Adjust for smaller seed
+    min-height: 50px;
+    gap: 10px;
+  }
+}
+
+.team-logo {
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  background: #f8f9fa;
+  border: 1px solid #e9ecef;
+  flex-shrink: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 16px;
+  font-weight: bold;
+  color: #666;
+  overflow: hidden;
+  
+  @media (max-width: 767px) {
+    width: 32px;
+    height: 32px;
+    font-size: 14px;
+  }
+  
+  // When showing real logos, remove the fallback background colors
+  &[style*="background-image"] {
+    background: white;
+    border: 1px solid #ddd;
+  }
+}
+
+.team-info {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 2px;
+}
+
+.team-name {
+  font-family: 'Roboto', sans-serif;
+  font-size: 14px;
+  font-weight: 500;
+  color: inherit;
+  text-align: left;
+  
+  @media (max-width: 767px) {
+    font-size: 13px;
+  }
+}
+
+.team-record {
+  font-family: 'Roboto', sans-serif;
+  font-size: 11px;
+  font-weight: 400;
+  color: #a3a2a2;
+  text-align: left;
+  
+  .dodgers-team & {
+    color: rgba(255, 255, 255, 0.8);
+  }
+  
+  @media (max-width: 767px) {
+    font-size: 10px;
+  }
+}
+
+.team-seed {
+  font-family: 'Roboto Slab', serif;
+  font-size: 16px;
+  font-weight: 700;
+  color: #005a9c;
+  background: white;
+  border: 2px solid #005a9c;
+  border-radius: 50%;
+  width: 28px;
+  height: 28px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  position: absolute;
+  right: 16px;
+  top: 50%;
+  transform: translateY(-50%);
+  
+  .dodgers-team & {
+    background: #005a9c;
+    color: white;
+    border-color: white;
+  }
+  
+  @media (max-width: 767px) {
+    width: 24px;
+    height: 24px;
+    font-size: 14px;
+    right: 12px;
+  }
+}
+
+.vs {
+  font-family: 'Roboto', sans-serif;
+  font-size: 10px;
+  font-weight: 400;
+  color: #999;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  padding: 4px 0;
+}
+
+// World Series Special Styling
+.world-series-section {
+  text-align: center;
+  margin-top: 40px;
+  
+  @media (max-width: 767px) {
+    margin-top: 30px;
+  }
+}
+
+.ws-matchup {
+  max-width: 400px;
+  margin: 0 auto;
+  padding: 30px 20px;
+  background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+  border: 2px solid #005a9c;
+  border-radius: 16px;
+  box-shadow: 0 4px 12px rgba(0, 90, 156, 0.15);
+  
+  @media (max-width: 767px) {
+    padding: 20px 15px;
+  }
+}
+
+// Mobile stacking - NL first, then AL
+@media (max-width: 900px) {
+  #playoff-bracket-container {
+    .bracket-section:first-child {
+      order: 1; // NL first
+    }
+    
+    .bracket-section:nth-child(2) {
+      order: 2; // AL second
+    }
+    
+    .world-series-section {
+      order: 3; // WS last
+    }
+  }
+}
+
+// Team abbreviation mapping for fallback styling (when logos fail to load)
+.team-logo {
+  &[data-team="LAD"]:not([style*="background-image"]) {
+    background: #005a9c;
+    color: white;
+  }
+  &[data-team="NYY"]:not([style*="background-image"]) {
+    background: #0c2340;
+    color: white;
+  }
+  &[data-team="ATL"]:not([style*="background-image"]) {
+    background: #ce1141;
+    color: white;
+  }
+  &[data-team="NYM"]:not([style*="background-image"]) {
+    background: #002d72;
+    color: #ff5910;
+  }
+  &[data-team="PHI"]:not([style*="background-image"]) {
+    background: #e81828;
+    color: white;
+  }
+  &[data-team="SD"]:not([style*="background-image"]) {
+    background: #2f241d;
+    color: #ffc425;
+  }
+  // Add more teams as needed for fallback
+}
+
+#playoff-last-updated {
+  font-size: 12px;
+  color: #999;
+  font-family: 'Roboto', sans-serif;
+  text-align: left;
+  font-style: italic;
+  margin-top: 20px;
 }
