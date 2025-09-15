@@ -195,11 +195,31 @@ standings_now = standings.query("game_date == game_date.max()").copy()
 local_live_path = os.path.join(base_dir, '_data', 'standings', f'all_teams_standings_metrics_{year}.json')
 try:
     if os.path.exists(local_live_path):
-        standings_live = pd.read_json(local_live_path)
+        with open(local_live_path, 'r') as f:
+            import json
+            data = json.load(f)
+            # Handle new metadata structure
+            if isinstance(data, dict) and 'teams' in data:
+                standings_live = pd.DataFrame(data['teams'])
+            else:
+                standings_live = pd.DataFrame(data)
     else:
-        standings_live = pd.read_json(standings_live_url)
+        response = requests.get(standings_live_url)
+        data = response.json()
+        # Handle new metadata structure
+        if isinstance(data, dict) and 'teams' in data:
+            standings_live = pd.DataFrame(data['teams'])
+        else:
+            standings_live = pd.DataFrame(data)
 except Exception:
-    standings_live = pd.read_json(standings_live_url)
+    response = requests.get(standings_live_url)
+    data = response.json()
+    # Handle new metadata structure
+    if isinstance(data, dict) and 'teams' in data:
+        standings_live = pd.DataFrame(data['teams'])
+    else:
+        standings_live = pd.DataFrame(data)
+        
 standings_live_lad = standings_live.query("team_name == 'Los Angeles Dodgers'")
 print(standings_live_lad.iloc[0])
 
