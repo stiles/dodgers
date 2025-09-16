@@ -1,17 +1,17 @@
 {
     "season_summary": {
-        "correct_strikes_pct": 90.11984021304926,
-        "incorrect_strikes_pct": 9.880159786950742,
-        "total_called_strikes": 3755,
-        "bad_calls_count": 371
+        "correct_strikes_pct": 90.16653449643141,
+        "incorrect_strikes_pct": 9.83346550356859,
+        "total_called_strikes": 3783,
+        "bad_calls_count": 372
     },
     "last_game_summary": {
-        "date": "September 14, 2025",
-        "correct_strikes_pct": 75.67567567567568,
-        "incorrect_strikes_pct": 24.324324324324323,
-        "total_called_strikes": 37,
-        "bad_calls_count": 9,
-        "home_plate_umpire": "Tripp Gibson"
+        "date": "September 15, 2025",
+        "correct_strikes_pct": 96.42857142857143,
+        "incorrect_strikes_pct": 3.5714285714285694,
+        "total_called_strikes": 28,
+        "bad_calls_count": 1,
+        "home_plate_umpire": "Adam Hamari"
     },
     "worst_calls_of_season": [
         {
@@ -56,17 +56,17 @@
         }
     ],
     "pitching_season_summary": {
-        "correct_balls_pct": 92.81117349034643,
-        "incorrect_balls_pct": 7.188826509653566,
-        "total_called_balls": 7303,
-        "bad_calls_count": 525
+        "correct_balls_pct": 92.84550638066793,
+        "incorrect_balls_pct": 7.154493619332072,
+        "total_called_balls": 7366,
+        "bad_calls_count": 527
     },
     "pitching_last_game_summary": {
-        "date": "September 14, 2025",
-        "correct_balls_pct": 98.27586206896551,
-        "incorrect_balls_pct": 1.724137931034491,
-        "total_called_balls": 58,
-        "bad_calls_count": 1
+        "date": "September 15, 2025",
+        "correct_balls_pct": 96.82539682539682,
+        "incorrect_balls_pct": 3.1746031746031775,
+        "total_called_balls": 63,
+        "bad_calls_count": 2
     },
     "pitching_worst_calls_of_season": []
 }
