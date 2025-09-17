@@ -3685,14 +3685,26 @@ function calculatePlayoffSeeds(standings) {
     
     const wildCards = wildCardCandidates.slice(0, 3); // Top 3 wild cards
     
-    // Combine and assign seeds
-    const allPlayoffTeams = [...divisionWinners, ...wildCards];
-    allPlayoffTeams.sort((a, b) => parseFloat(b.winning_percentage) - parseFloat(a.winning_percentage));
+    // Assign seeds: division winners get 1-3, wild cards get 4-6
+    const playoffTeams = [];
     
-    return allPlayoffTeams.slice(0, 6).map((team, index) => ({
-      ...team,
-      seed: index + 1
-    }));
+    // Division winners get seeds 1-3
+    divisionWinners.forEach((team, index) => {
+      playoffTeams.push({
+        ...team,
+        seed: index + 1
+      });
+    });
+    
+    // Wild cards get seeds 4-6
+    wildCards.forEach((team, index) => {
+      playoffTeams.push({
+        ...team,
+        seed: index + 4
+      });
+    });
+    
+    return playoffTeams;
   }
   
   return {
