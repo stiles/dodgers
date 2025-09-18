@@ -34,7 +34,7 @@
     {
         "stat_label":"Games up\/back",
         "stat":"games_up_back",
-        "value":2,
+        "value":2.5,
         "category":"standings",
         "context_value":"1st",
         "context_value_label":"Division rank"
@@ -146,7 +146,7 @@
     {
         "stat_label":"Last updated",
         "stat":"update_time",
-        "value":"September 18, 2025, 8:07 AM PT",
+        "value":"September 18, 2025, 4:07 PM PT",
         "category":"summary",
         "context_value":"",
         "context_value_label":""
