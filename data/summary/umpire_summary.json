@@ -1,17 +1,17 @@
 {
     "season_summary": {
-        "correct_strikes_pct": 90.20794946038431,
-        "incorrect_strikes_pct": 9.792050539615687,
-        "total_called_strikes": 3799,
-        "bad_calls_count": 372
+        "correct_strikes_pct": 90.2458158995816,
+        "incorrect_strikes_pct": 9.7541841004184,
+        "total_called_strikes": 3824,
+        "bad_calls_count": 373
     },
     "last_game_summary": {
-        "date": "September 16, 2025",
-        "correct_strikes_pct": 100.0,
-        "incorrect_strikes_pct": 0.0,
-        "total_called_strikes": 16,
-        "bad_calls_count": 0,
-        "home_plate_umpire": "Todd Tichenor"
+        "date": "September 17, 2025",
+        "correct_strikes_pct": 96.0,
+        "incorrect_strikes_pct": 4.0,
+        "total_called_strikes": 25,
+        "bad_calls_count": 1,
+        "home_plate_umpire": "Nestor Ceja"
     },
     "worst_calls_of_season": [
         {
@@ -56,16 +56,16 @@
         }
     ],
     "pitching_season_summary": {
-        "correct_balls_pct": 92.86388776473761,
-        "incorrect_balls_pct": 7.136112235262388,
-        "total_called_balls": 7413,
-        "bad_calls_count": 529
+        "correct_balls_pct": 92.88775783552103,
+        "incorrect_balls_pct": 7.112242164478971,
+        "total_called_balls": 7466,
+        "bad_calls_count": 531
     },
     "pitching_last_game_summary": {
-        "date": "September 16, 2025",
-        "correct_balls_pct": 95.74468085106383,
-        "incorrect_balls_pct": 4.255319148936167,
-        "total_called_balls": 47,
+        "date": "September 17, 2025",
+        "correct_balls_pct": 96.22641509433963,
+        "incorrect_balls_pct": 3.773584905660371,
+        "total_called_balls": 53,
         "bad_calls_count": 2
     },
     "pitching_worst_calls_of_season": []
