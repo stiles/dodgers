@@ -11,7 +11,16 @@ import pandas as pd
 import requests
 from bs4 import BeautifulSoup
 from zoneinfo import ZoneInfo
+import time
+import logging
+from requests.adapters import HTTPAdapter
+from urllib3.util.retry import Retry
 
+# Configure logging
+logging.basicConfig(
+    level=logging.INFO,
+    format='%(asctime)s - %(levelname)s - %(message)s'
+)
 
 DODGERS_TEAM_ID = 119
 BUCKET = "stilesdata.com"
@@ -43,16 +52,124 @@ def get_s3_client(profile_name: Optional[str] = None):
     return session.client("s3")
 
 
-def fetch_text(url: str) -> str:
-    response = requests.get(url, timeout=30)
-    response.raise_for_status()
-    return response.text
+def create_session_with_retries():
+    """Create a requests session with retry strategy for resilience."""
+    session = requests.Session()
+    
+    # Define retry strategy
+    retry_strategy = Retry(
+        total=3,  # Total number of retries
+        backoff_factor=2,  # Wait time between retries (2, 4, 8 seconds)
+        status_forcelist=[500, 502, 503, 504, 429],  # HTTP status codes to retry
+        allowed_methods=["GET"]  # Only retry GET requests
+    )
+    
+    # Mount adapter with retry strategy
+    adapter = HTTPAdapter(max_retries=retry_strategy)
+    session.mount("http://", adapter)
+    session.mount("https://", adapter)
+    
+    return session
 
 
-def fetch_json(url: str) -> dict:
-    response = requests.get(url, timeout=30)
-    response.raise_for_status()
-    return response.json()
+def fetch_text(url: str, max_retries: int = 3, base_delay: float = 1.0) -> Optional[str]:
+    """
+    Fetch text from URL with retry logic and exponential backoff.
+    
+    Args:
+        url: URL to fetch
+        max_retries: Maximum number of retry attempts
+        base_delay: Base delay between retries (exponentially increased)
+    
+    Returns:
+        Response text or None if all retries failed
+    """
+    session = create_session_with_retries()
+    
+    for attempt in range(max_retries + 1):
+        try:
+            response = session.get(url, timeout=30)
+            response.raise_for_status()
+            return response.text
+            
+        except requests.exceptions.HTTPError as e:
+            if e.response.status_code in [500, 502, 503, 504]:
+                if attempt < max_retries:
+                    delay = base_delay * (2 ** attempt)  # Exponential backoff
+                    logging.warning(f"Server error {e.response.status_code} for {url}. Retrying in {delay} seconds... (attempt {attempt + 1}/{max_retries + 1})")
+                    time.sleep(delay)
+                    continue
+                else:
+                    logging.error(f"Server error {e.response.status_code} for {url}. All retries exhausted.")
+                    return None
+            else:
+                # For non-server errors (4xx), don't retry
+                logging.error(f"Client error {e.response.status_code} for {url}: {e}")
+                return None
+                
+        except requests.exceptions.RequestException as e:
+            if attempt < max_retries:
+                delay = base_delay * (2 ** attempt)
+                logging.warning(f"Request failed for {url}: {e}. Retrying in {delay} seconds... (attempt {attempt + 1}/{max_retries + 1})")
+                time.sleep(delay)
+                continue
+            else:
+                logging.error(f"Request failed for {url} after all retries: {e}")
+                return None
+    
+    return None
+
+
+def fetch_json(url: str, max_retries: int = 3, base_delay: float = 1.0) -> Optional[dict]:
+    """
+    Fetch JSON from URL with retry logic and exponential backoff.
+    
+    Args:
+        url: URL to fetch
+        max_retries: Maximum number of retry attempts
+        base_delay: Base delay between retries (exponentially increased)
+    
+    Returns:
+        Parsed JSON as dict or None if all retries failed
+    """
+    session = create_session_with_retries()
+    
+    for attempt in range(max_retries + 1):
+        try:
+            response = session.get(url, timeout=30)
+            response.raise_for_status()
+            return response.json()
+            
+        except requests.exceptions.HTTPError as e:
+            if e.response.status_code in [500, 502, 503, 504]:
+                if attempt < max_retries:
+                    delay = base_delay * (2 ** attempt)  # Exponential backoff
+                    logging.warning(f"Server error {e.response.status_code} for {url}. Retrying in {delay} seconds... (attempt {attempt + 1}/{max_retries + 1})")
+                    time.sleep(delay)
+                    continue
+                else:
+                    logging.error(f"Server error {e.response.status_code} for {url}. All retries exhausted.")
+                    return None
+            else:
+                # For non-server errors (4xx), don't retry
+                logging.error(f"Client error {e.response.status_code} for {url}: {e}")
+                return None
+                
+        except requests.exceptions.RequestException as e:
+            if attempt < max_retries:
+                delay = base_delay * (2 ** attempt)
+                logging.warning(f"Request failed for {url}: {e}. Retrying in {delay} seconds... (attempt {attempt + 1}/{max_retries + 1})")
+                time.sleep(delay)
+                continue
+            else:
+                logging.error(f"Request failed for {url} after all retries: {e}")
+                return None
+                
+        except ValueError as e:  # JSON decode error
+            logging.error(f"Invalid JSON response from {url}: {e}")
+            return None
+    
+    return None
 
 
 def find_gamelog_table(html: str) -> BeautifulSoup:
@@ -108,9 +225,9 @@ def get_dodgers_final_gamepks_for_date(date_iso: str) -> List[int]:
     url = (
         f"https://statsapi.mlb.com/api/v1/schedule?timeZone=America/Los_Angeles&sportId=1&date={date_iso}"
     )
-    try:
-        payload = fetch_json(url)
-    except Exception:
+    payload = fetch_json(url)
+    if payload is None:
+        logging.warning(f"Failed to fetch schedule data for {date_iso}")
         return []
 
     dodgers_pks: List[int] = []
@@ -268,6 +385,11 @@ def main() -> None:
         f"https://baseballsavant.mlb.com/team/{DODGERS_TEAM_ID}?view=gamelogs&nav=hitting&season={current_year}"
     )
     html = fetch_text(gamelogs_url)
+    
+    if html is None:
+        logging.error("Failed to fetch gamelog data from Baseball Savant. Skipping boxscore update.")
+        return
+        
     table = find_gamelog_table(html)
     logs_df = parse_game_log_rows(table)
 
