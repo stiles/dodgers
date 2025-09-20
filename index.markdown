@@ -513,7 +513,7 @@ twitter:
   <div id="cumulative-hits-chart" class="small-chart"></div>
 </div>
 
-  <h2 class="stat-group">Umpire scorecard (pitching)</h2>
+  <!-- <h2 class="stat-group">Umpire scorecard (pitching)</h2>
 <div class="scorecard-row">
   <div class="scorecard-left">
   <h3 class="visual-subhead">Pitching strike zone analysis</h3>
@@ -525,7 +525,7 @@ twitter:
     <div id="umpire-worst-calls-pitching"></div>
   </div>
 </div>
- <p class="note">Note: Strike zone calls are determined by Baseball Savant and <a href="https://github.com/stiles/dodgers/blob/main/scripts/20_fetch_game_pitches.py">collected</a> after each game from its gamefeed API. Download the data <a href="https://stilesdata.com/dodgers/data/pitches/dodgers_pitches_thrown_2025.json">here</a>.</p>
+ <p class="note">Note: Strike zone calls are determined by Baseball Savant and <a href="https://github.com/stiles/dodgers/blob/main/scripts/20_fetch_game_pitches.py">collected</a> after each game from its gamefeed API. Download the data <a href="https://stilesdata.com/dodgers/data/pitches/dodgers_pitches_thrown_2025.json">here</a>.</p> -->
 
   <h2 class="stat-group">Schedule</h2>
     <div id="schedule-section" class="schedule-tables">
