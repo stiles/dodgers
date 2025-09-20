@@ -1,13 +1,13 @@
 stat_label,stat,value,category,context_value,context_value_label
-Wins,wins,86,standings,91,This point last season
+Wins,wins,87,standings,92,This point last season
 Losses,losses,67,standings,62,This point last season
-Record,record,86-67,standings,91-62,This point last season
-Win percentage,win_pct,56%,standings,59%,This point last season
+Record,record,87-67,standings,92-62,This point last season
+Win percentage,win_pct,56%,standings,60%,This point last season
 Games up/back,games_up_back,4,standings,1st,Division rank
-Avg. home attendance,mean_attendance,"49,482",standings,78,Home games this season
-Runs,runs,780,standings,2nd,League rank
-Runs against,runs_against,657,standings,655,This point last season
-Run differential,run_differential,123,standings,133,This point last season
+Avg. home attendance,mean_attendance,"49,527",standings,79,Home games this season
+Runs,runs,786,standings,2nd,League rank
+Runs against,runs_against,660,standings,659,This point last season
+Run differential,run_differential,126,standings,135,This point last season
 Batting average,batting_average,.254,batting,.253,Last decade average
 Home runs,home_runs,228,batting,2nd,League rank
 Home runs/game,home_runs_game,1.48,batting,1.42,Last decade average
@@ -17,6 +17,6 @@ Stolen bases/game,stolen_bases_game,0.56,batting,0.84,Rate all last season
 Strikeouts,strikeouts,"1,411",pitching,2nd,League rank
 Walks,walks,538,pitching,4th,League rank
 ERA,era,4.02,pitching,18th,League rank
-Last updated,update_time,"September 20, 2025, 1:08 AM PT",summary,,
+Last updated,update_time,"September 20, 2025, 5:10 AM PT",summary,,
 Team summary,summary,"<span class='highlight'>LOS ANGELES</span> <span class='updated'>(September 20)</span> — After <span class='highlight'>154</span> games this season, the Dodgers are in <span class='highlight'>1st</span> place in the National League West division. The team has compiled a <span class='highlight'>87-67</span> record, winning <span class='highlight'>56%</span> of its games so far. The last game was a <span class='highlight'>6-3</span> home <span class='highlight'>win</span> against the San Francisco Giants. They've won <span class='highlight'>7 of the last 10</span> and are on pace to win at least <span class='highlight'>92</span> games in the regular season.",summary,,
 Last game result,last_game_result,win,summary,,

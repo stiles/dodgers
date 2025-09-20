@@ -2,9 +2,9 @@
     {
         "stat_label":"Wins",
         "stat":"wins",
-        "value":86,
+        "value":87,
         "category":"standings",
-        "context_value":91,
+        "context_value":92,
         "context_value_label":"This point last season"
     },
     {
@@ -18,9 +18,9 @@
     {
         "stat_label":"Record",
         "stat":"record",
-        "value":"86-67",
+        "value":"87-67",
         "category":"standings",
-        "context_value":"91-62",
+        "context_value":"92-62",
         "context_value_label":"This point last season"
     },
     {
@@ -28,7 +28,7 @@
         "stat":"win_pct",
         "value":"56%",
         "category":"standings",
-        "context_value":"59%",
+        "context_value":"60%",
         "context_value_label":"This point last season"
     },
     {
@@ -42,15 +42,15 @@
     {
         "stat_label":"Avg. home attendance",
         "stat":"mean_attendance",
-        "value":"49,482",
+        "value":"49,527",
         "category":"standings",
-        "context_value":78,
+        "context_value":79,
         "context_value_label":"Home games this season"
     },
     {
         "stat_label":"Runs",
         "stat":"runs",
-        "value":780,
+        "value":786,
         "category":"standings",
         "context_value":"2nd",
         "context_value_label":"League rank"
@@ -58,17 +58,17 @@
     {
         "stat_label":"Runs against",
         "stat":"runs_against",
-        "value":657,
+        "value":660,
         "category":"standings",
-        "context_value":655,
+        "context_value":659,
         "context_value_label":"This point last season"
     },
     {
         "stat_label":"Run differential",
         "stat":"run_differential",
-        "value":123,
+        "value":126,
         "category":"standings",
-        "context_value":133,
+        "context_value":135,
         "context_value_label":"This point last season"
     },
     {
@@ -146,7 +146,7 @@
     {
         "stat_label":"Last updated",
         "stat":"update_time",
-        "value":"September 20, 2025, 1:08 AM PT",
+        "value":"September 20, 2025, 5:10 AM PT",
         "category":"summary",
         "context_value":"",
         "context_value_label":""
