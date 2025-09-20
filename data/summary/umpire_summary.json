@@ -1,17 +1,17 @@
 {
     "season_summary": {
-        "correct_strikes_pct": 90.25214452820379,
-        "incorrect_strikes_pct": 9.747855471796214,
-        "total_called_strikes": 3847,
+        "correct_strikes_pct": 90.30757301628329,
+        "incorrect_strikes_pct": 9.692426983716715,
+        "total_called_strikes": 3869,
         "bad_calls_count": 375
     },
     "last_game_summary": {
-        "date": "September 18, 2025",
-        "correct_strikes_pct": 91.30434782608695,
-        "incorrect_strikes_pct": 8.695652173913047,
-        "total_called_strikes": 23,
-        "bad_calls_count": 2,
-        "home_plate_umpire": "Ryan Wills"
+        "date": "September 19, 2025",
+        "correct_strikes_pct": 100.0,
+        "incorrect_strikes_pct": 0.0,
+        "total_called_strikes": 22,
+        "bad_calls_count": 0,
+        "home_plate_umpire": "Lance Barksdale"
     },
     "worst_calls_of_season": [
         {
@@ -56,17 +56,17 @@
         }
     ],
     "pitching_season_summary": {
-        "correct_balls_pct": 92.85430200185603,
-        "incorrect_balls_pct": 7.145697998143973,
-        "total_called_balls": 7543,
-        "bad_calls_count": 539
+        "correct_balls_pct": 92.86184643750823,
+        "incorrect_balls_pct": 7.138153562491766,
+        "total_called_balls": 7593,
+        "bad_calls_count": 542
     },
     "pitching_last_game_summary": {
-        "date": "September 18, 2025",
-        "correct_balls_pct": 89.6103896103896,
-        "incorrect_balls_pct": 10.389610389610397,
-        "total_called_balls": 77,
-        "bad_calls_count": 8
+        "date": "September 19, 2025",
+        "correct_balls_pct": 94.0,
+        "incorrect_balls_pct": 6.0,
+        "total_called_balls": 50,
+        "bad_calls_count": 3
     },
     "pitching_worst_calls_of_season": []
 }
