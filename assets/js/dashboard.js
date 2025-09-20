@@ -146,10 +146,16 @@ function renderChart(data) {
   // Add the 'Past' annotation
   svg.append('text')
     .attr('x', isMobile ? xScale(80) : xScale(110))
-    .attr('y', yScale(22))
+    .attr('y', yScale(-10))
     .attr('class', 'anno')
     .text(`Past: 1958-${parseInt(currentYear) - 1}`)
-    .attr('text-anchor', 'start');
+    .attr('text-anchor', 'start')
+    .style('stroke', '#fff')
+    .style('stroke-width', '4px')
+    .style('stroke-linejoin', 'round')
+    .style('paint-order', 'stroke')
+    .clone(true)
+    .style('stroke', 'none');
 
   // Get the last data point for the current year safely
   const currentDataArray = data.get(currentYear);
@@ -160,20 +166,20 @@ function renderChart(data) {
 
     svg.append('text')
       .attr('x', xScale(lastDataCurrent.gm + 1)) // Reduced horizontal offset
-      .attr('y', yScale(lastDataCurrent.gb) - 12)
+      .attr('y', yScale(lastDataCurrent.gb) - 20)
       .text(currentYear)
       .attr('class', 'anno-dodgers')
       .style('stroke', '#fff')
       .style('stroke-width', '4px')
       .style('stroke-linejoin', 'round')
-      .attr('text-anchor', 'start')
+      .attr('text-anchor', 'end')
       .style('paint-order', 'stroke')
       .clone(true)
       .style('stroke', 'none');
 
     svg.append('text')
       .attr('x', xScale(lastDataCurrent.gm + 1.5)) // Reduced horizontal offset
-      .attr('y', yScale(lastDataCurrent.gb) + 1)
+      .attr('y', yScale(lastDataCurrent.gb) + -6)
       .text(() => {
           const gb = lastDataCurrent.gb;
           if (gb > 0) {
@@ -188,7 +194,7 @@ function renderChart(data) {
       .style('stroke', '#fff')
       .style('stroke-width', '4px')
       .style('stroke-linejoin', 'round')
-      .attr('text-anchor', 'start')
+      .attr('text-anchor', 'end')
       .style('paint-order', 'stroke')
       .clone(true)
       .style('stroke', 'none');
@@ -427,26 +433,26 @@ document.addEventListener('DOMContentLoaded', function() {
   
       svg.append('text')
         .attr('x', xScale(Number(lastDataCurrentYear.gm)) + 5)
-        .attr('y', yScale(Number(lastDataCurrentYear.wins)) - 12)
+        .attr('y', yScale(Number(lastDataCurrentYear.wins)) - 20)
         .text(currentYear)
         .attr('class', 'anno-dodgers')
         .style('stroke', '#fff')
         .style('stroke-width', '4px')
         .style('stroke-linejoin', 'round')
-        .attr('text-anchor', 'start')
+        .attr('text-anchor', 'end')
         .style('paint-order', 'stroke')
         .clone(true)
         .style('stroke', 'none');
   
       svg.append('text')
         .attr('x', xScale(Number(lastDataCurrentYear.gm)) + 5)
-        .attr('y', yScale(Number(lastDataCurrentYear.wins)) + 2)
+        .attr('y', yScale(Number(lastDataCurrentYear.wins)) -6 )
         .text(`${lastDataCurrentYear.wins} wins`)
         .attr('class', 'anno-dark')
         .style('stroke', '#fff')
         .style('stroke-width', '4px')
         .style('stroke-linejoin', 'round')
-        .attr('text-anchor', 'start')
+        .attr('text-anchor', 'end')
         .style('paint-order', 'stroke')
         .clone(true)
         .style('stroke', 'none');
@@ -662,24 +668,30 @@ document.addEventListener('DOMContentLoaded', function() {
     
         svg
           .append('text')
-          .attr('x', isMobile ? xScale(60) : xScale(60))
-          .attr('y', yScale(250))
+          .attr('x', isMobile ? xScale(90) : xScale(90))
+          .attr('y', yScale(100))
           .attr('class', 'anno')
           .text(`Past: 1958-${currentYear - 1}`)
-          .attr('text-anchor', 'start');
+          .attr('text-anchor', 'start')
+          .style('stroke', '#fff')
+          .style('stroke-width', '4px')
+          .style('stroke-linejoin', 'round')
+          .style('paint-order', 'stroke')
+            .clone(true)
+            .style('stroke', 'none');
     
         const lastDataCurrentYear = data.get(currentYear)?.slice(-1)[0];
         if (lastDataCurrentYear) {
           svg
             .append('text')
             .attr('x', xScale(lastDataCurrentYear.gtm + 1))
-            .attr('y', yScale(lastDataCurrentYear[config.dataField]) - 12)
+            .attr('y', yScale(lastDataCurrentYear[config.dataField]) - 20)
             .text(currentYear)
             .attr('class', 'anno-dodgers')
             .style('stroke', '#fff')
             .style('stroke-width', '4px')
             .style('stroke-linejoin', 'round')
-            .attr('text-anchor', 'start')
+            .attr('text-anchor', 'end')
             .style('paint-order', 'stroke')
             .clone(true)
             .style('stroke', 'none');
@@ -687,13 +699,13 @@ document.addEventListener('DOMContentLoaded', function() {
           svg
             .append('text')
             .attr('x', xScale(lastDataCurrentYear.gtm + 1))
-            .attr('y', yScale(lastDataCurrentYear[config.dataField]) + 2)
+            .attr('y', yScale(lastDataCurrentYear[config.dataField]) -6)
             .text(`${lastDataCurrentYear[config.dataField]} ${config.yAxisLabel.split(' ')[1].toLowerCase()}`)
             .attr('class', 'anno-dark')
             .style('stroke', '#fff')
             .style('stroke-width', '4px')
             .style('stroke-linejoin', 'round')
-            .attr('text-anchor', 'start')
+            .attr('text-anchor', 'end')
             .style('paint-order', 'stroke')
             .clone(true)
             .style('stroke', 'none');
@@ -833,24 +845,31 @@ document.addEventListener('DOMContentLoaded', function() {
 
     svg
       .append('text')
-      .attr('x', isMobile ? xScale(70) : xScale(80))
-      .attr('y', yScale(1400))
+      .attr('x', isMobile ? xScale(110) : xScale(110))
+      .attr('y', yScale(600))
       .attr('class', 'anno')
       .text(`Past: 1958-${currentYear - 1}`)
-      .attr('text-anchor', 'start');
+      .attr('text-anchor', 'start')
+      .style('stroke', '#fff')
+      .style('stroke-width', '4px')
+      .style('stroke-linejoin', 'round')
+      .attr('text-anchor', 'start')
+      .style('paint-order', 'stroke')
+      .clone(true)
+      .style('stroke', 'none');
 
     const lastDataCurrentYear = data.get(currentYear)?.slice(-1)[0];
     if (lastDataCurrentYear) {
       svg
         .append('text')
         .attr('x', xScale(lastDataCurrentYear.gtm + 1))
-        .attr('y', yScale(lastDataCurrentYear[config.dataField]) - 12)
+        .attr('y', yScale(lastDataCurrentYear[config.dataField]) - 20)
         .text(currentYear)
         .attr('class', 'anno-dodgers')
         .style('stroke', '#fff')
         .style('stroke-width', '4px')
         .style('stroke-linejoin', 'round')
-        .attr('text-anchor', 'start')
+        .attr('text-anchor', 'end')
         .style('paint-order', 'stroke')
         .clone(true)
         .style('stroke', 'none');
@@ -858,13 +877,13 @@ document.addEventListener('DOMContentLoaded', function() {
       svg
         .append('text')
         .attr('x', xScale(lastDataCurrentYear.gtm + 1))
-        .attr('y', yScale(lastDataCurrentYear[config.dataField]) + 2)
+        .attr('y', yScale(lastDataCurrentYear[config.dataField]) -6)
         .text(`${lastDataCurrentYear[config.dataField]} ${config.yAxisLabel.split(' ')[1].toLowerCase()}`)
         .attr('class', 'anno-dark')
         .style('stroke', '#fff')
         .style('stroke-width', '4px')
         .style('stroke-linejoin', 'round')
-        .attr('text-anchor', 'start')
+        .attr('text-anchor', 'end')
         .style('paint-order', 'stroke')
         .clone(true)
         .style('stroke', 'none');
@@ -998,13 +1017,13 @@ document.addEventListener('DOMContentLoaded', function() {
       svg
         .append('text')
         .attr('x', xScale(lastDataCurrentYear.gtm + 1))
-        .attr('y', yScale(lastDataCurrentYear.era_cum) - 12)
+        .attr('y', yScale(lastDataCurrentYear.era_cum) - 20)
         .text(currentYear)
         .attr('class', 'anno-dodgers')
         .style('stroke', '#fff')
         .style('stroke-width', '4px')
         .style('stroke-linejoin', 'round')
-        .attr('text-anchor', 'start')
+        .attr('text-anchor', 'end')
         .style('paint-order', 'stroke')
         .clone(true)
         .style('stroke', 'none');
@@ -1012,13 +1031,13 @@ document.addEventListener('DOMContentLoaded', function() {
       svg
         .append('text')
         .attr('x', xScale(lastDataCurrentYear.gtm + 1))
-        .attr('y', yScale(lastDataCurrentYear.era_cum) + 2)
+        .attr('y', yScale(lastDataCurrentYear.era_cum) -6)
         .text(`${lastDataCurrentYear.era_cum} ERA`)
         .attr('class', 'anno-dark')
         .style('stroke', '#fff')
         .style('stroke-width', '4px')
         .style('stroke-linejoin', 'round')
-        .attr('text-anchor', 'start')
+        .attr('text-anchor', 'end')
         .style('paint-order', 'stroke')
         .clone(true)
         .style('stroke', 'none');
@@ -1027,10 +1046,16 @@ document.addEventListener('DOMContentLoaded', function() {
     svg
       .append('text')
       .attr('x', isMobile ? xScale(80) : xScale(110)) // Adjusted for mobile
-      .attr('y', yScale(6))
+      .attr('y', yScale(2))
       .attr('class', 'anno')
       .text(`Past: 1958-${currentYear - 1}`)
-      .attr('text-anchor', 'start');
+      .attr('text-anchor', 'start')
+      .style('stroke', '#fff')
+      .style('stroke-width', '4px')
+      .style('stroke-linejoin', 'round')
+      .style('paint-order', 'stroke')
+      .clone(true)
+      .style('stroke', 'none');
   }
 
   fetchCumulativeERAData();
@@ -2598,10 +2623,11 @@ document.addEventListener('DOMContentLoaded', function () {
     // Add labels for 2025 (current season)
     if (data2025.length > 0) {
       const last2025 = data2025[data2025.length - 1];
-      const xPosText2025 = xScale(last2025.game_number);
+      const xPosText2025 = xScale(last2025.game_number) - (isMobile ? 20 : 30); // Move annotation to the left, less offset on mobile
       // On desktop, lift the 2025 label slightly higher to avoid collisions with 2024
-      let yPosLabel2025 = yScale(last2025[config.yField]) - (isMobile ? 44 : 64);
-      let yPosStat2025 = yScale(last2025[config.yField]) - (isMobile ? 30 : 50);
+      // On mobile, position closer to the data point for better alignment
+      let yPosLabel2025 = yScale(last2025[config.yField]) - (isMobile ? 25 : 64);
+      let yPosStat2025 = yScale(last2025[config.yField]) - (isMobile ? 10 : 50);
       // Clamp to keep inside chart area
       yPosLabel2025 = Math.max(12, yPosLabel2025);
       yPosStat2025 = Math.max(26, yPosStat2025);
@@ -2615,7 +2641,7 @@ document.addEventListener('DOMContentLoaded', function () {
         .attr('x', xPosText2025)
         .attr('y', yPosLabel2025)
         .attr('class', 'anno-dodgers')
-        .attr('text-anchor', 'middle') // Center text
+        .attr('text-anchor', 'end') // Right-align text since it's positioned to the left
         .style('stroke', '#fff')
         .style('stroke-width', '3px')
         .style('stroke-linejoin', 'round')
@@ -2624,10 +2650,10 @@ document.addEventListener('DOMContentLoaded', function () {
         .clone(true)
         .style('stroke', 'none');
       svg.append('text')
-        .attr('x', xPosText2025 - 10)
+        .attr('x', xPosText2025)
         .attr('y', yPosStat2025)
         .attr('class', 'anno-dark')
-        .attr('text-anchor', 'middle') // Center text
+        .attr('text-anchor', 'end') // Right-align text since it's positioned to the left
         .style('stroke', '#fff')
         .style('stroke-width', '3px')
         .style('stroke-linejoin', 'round')
@@ -2636,12 +2662,13 @@ document.addEventListener('DOMContentLoaded', function () {
         .clone(true)
         .style('stroke', 'none');
 
-      // Leader line for 2025
+      // Leader line for 2025 - horizontal line from text to data point
+      const lineY = (yPosLabel2025 + yPosStat2025) / 2; // Position line between the two text elements
       svg.append('line')
-        .attr('x1', xPosText2025)
-        .attr('y1', yPosStat2025 + 6) 
-        .attr('x2', xPosText2025)
-        .attr('y2', yScale(last2025[config.yField])) 
+        .attr('x1', xPosText2025 + 5) // Start line slightly to the right of text
+        .attr('y1', lineY) 
+        .attr('x2', xScale(last2025.game_number)) // End at the actual data point x-position
+        .attr('y2', yScale(last2025[config.yField])) // End at the actual data point y-position
         .attr('stroke', '#999999')
         .attr('stroke-width', 1)
         .attr('stroke-dasharray', '3,3'); // Make dashed
@@ -3090,34 +3117,34 @@ function renderWinsProjectionChartWithCI(data) {
         .style('font-size', isMobile ? '9px' : '11px') // Adjusted font size for mobile
         .text(isMobile ? `${finalMeanWins.toFixed(0)} wins` : `Projected: ${finalMeanWins.toFixed(0)} wins`);
 
-      // CI Upper Annotation
-      svg.append('text')
-        .attr('x', isMobile ? xScale(162) - 5 : xScale(162) + 5)
-        .attr('y', yScale(ciUpper) + (isMobile ? -2 : (yScale(finalMeanWins) > yScale(ciUpper) ? 5 : -3)))
-        .attr('text-anchor', isMobile ? 'end' : 'start')
-        .attr('class', 'anno-grey-small')
-        .style('font-size', isMobile ? '8px' : '10px') // Adjusted font size for mobile
-        .text(`${Math.round(ciUpper)}`);
+      // // CI Upper Annotation
+      // svg.append('text')
+      //   .attr('x', isMobile ? xScale(162) - 5 : xScale(162) + 5)
+      //   .attr('y', yScale(ciUpper) + (isMobile ? -2 : (yScale(finalMeanWins) > yScale(ciUpper) ? 5 : -3)))
+      //   .attr('text-anchor', isMobile ? 'end' : 'start')
+      //   .attr('class', 'anno-grey-small')
+      //   .style('font-size', isMobile ? '8px' : '10px') // Adjusted font size for mobile
+      //   .text(`${Math.round(ciUpper)}`);
 
-      // CI Lower Annotation
-      svg.append('text')
-        .attr('x', isMobile ? xScale(162) - 5 : xScale(162) + 5)
-        .attr('y', yScale(ciLower) + (isMobile ? 6 : (yScale(finalMeanWins) < yScale(ciLower) ? -5 : 3)))
-        .attr('text-anchor', isMobile ? 'end' : 'start')
-        .attr('class', 'anno-grey-small')
-        .style('font-size', isMobile ? '8px' : '10px') // Adjusted font size for mobile
-        .text(`${Math.round(ciLower)}`);
+      // // CI Lower Annotation
+      // svg.append('text')
+      //   .attr('x', isMobile ? xScale(162) - 5 : xScale(162) + 5)
+      //   .attr('y', yScale(ciLower) + (isMobile ? 6 : (yScale(finalMeanWins) < yScale(ciLower) ? -5 : 3)))
+      //   .attr('text-anchor', isMobile ? 'end' : 'start')
+      //   .attr('class', 'anno-grey-small')
+      //   .style('font-size', isMobile ? '8px' : '10px') // Adjusted font size for mobile
+      //   .text(`${Math.round(ciLower)}`);
         
       // Vertical CI Line
-      if (Math.abs(yScale(ciUpper) - yScale(ciLower)) > (isMobile ? 8 : 10)) { // Adjust min difference for mobile
-        svg.append('line')
-            .attr('x1', isMobile ? xScale(162) - 2.5 : xScale(162) + 2.5)
-            .attr('x2', isMobile ? xScale(162) - 2.5 : xScale(162) + 2.5)
-            .attr('y1', yScale(ciUpper))
-            .attr('y2', yScale(ciLower))
-            .attr('stroke', '#A5ACAF')
-            .attr('stroke-width', 1);
-      }
+      // if (Math.abs(yScale(ciUpper) - yScale(ciLower)) > (isMobile ? 8 : 10)) { // Adjust min difference for mobile
+      //   svg.append('line')
+      //       .attr('x1', isMobile ? xScale(162) - 2.5 : xScale(162) + 2.5)
+      //       .attr('x2', isMobile ? xScale(162) - 2.5 : xScale(162) + 2.5)
+      //       .attr('y1', yScale(ciUpper))
+      //       .attr('y2', yScale(ciLower))
+      //       .attr('stroke', '#A5ACAF')
+      //       .attr('stroke-width', 1);
+      // }
   }
 
   svg.append('text') // X-axis Label
