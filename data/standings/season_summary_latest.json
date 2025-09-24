@@ -34,7 +34,7 @@
     {
         "stat_label":"Games up\/back",
         "stat":"games_up_back",
-        "value":2.5,
+        "value":1.5,
         "category":"standings",
         "context_value":"1st",
         "context_value_label":"Division rank"
@@ -108,7 +108,7 @@
         "stat":"stolen_bases",
         "value":86,
         "category":"batting",
-        "context_value":"20th",
+        "context_value":"21st",
         "context_value_label":"League rank"
     },
     {
@@ -146,7 +146,7 @@
     {
         "stat_label":"Last updated",
         "stat":"update_time",
-        "value":"September 23, 2025, 4:06 PM PT",
+        "value":"September 24, 2025, 1:09 AM PT",
         "category":"summary",
         "context_value":"",
         "context_value_label":""
@@ -154,7 +154,7 @@
     {
         "stat_label":"Team summary",
         "stat":"summary",
-        "value":"<span class='highlight'>LOS ANGELES<\/span> <span class='updated'>(September 23)<\/span> \u2014 After <span class='highlight'>156<\/span> games this season, the Dodgers are in <span class='highlight'>1st<\/span> place in the National League West division. The team has compiled a <span class='highlight'>88-68<\/span> record, winning <span class='highlight'>56%<\/span> of its games so far. The last game's result is not yet available. They've won <span class='highlight'>6 of the last 10<\/span> and are on pace to win at least <span class='highlight'>92<\/span> games in the regular season.",
+        "value":"<span class='highlight'>LOS ANGELES<\/span> <span class='updated'>(September 24)<\/span> \u2014 After <span class='highlight'>157<\/span> games this season, the Dodgers are in <span class='highlight'>1st<\/span> place in the National League West division. The team has compiled a <span class='highlight'>88-69<\/span> record, winning <span class='highlight'>56%<\/span> of its games so far. The last game was a <span class='highlight'>4-5<\/span> away <span class='highlight'>loss<\/span> against the Arizona Diamondbacks. They've won <span class='highlight'>6 of the last 10<\/span> and are on pace to win at least <span class='highlight'>92<\/span> games in the regular season.",
         "category":"summary",
         "context_value":"",
         "context_value_label":""

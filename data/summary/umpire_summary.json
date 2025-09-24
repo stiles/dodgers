@@ -1,17 +1,17 @@
 {
     "season_summary": {
-        "correct_strikes_pct": 90.25445292620866,
-        "incorrect_strikes_pct": 9.745547073791343,
-        "total_called_strikes": 3930,
+        "correct_strikes_pct": 90.31605562579014,
+        "incorrect_strikes_pct": 9.683944374209858,
+        "total_called_strikes": 3955,
         "bad_calls_count": 383
     },
     "last_game_summary": {
-        "date": "September 21, 2025",
-        "correct_strikes_pct": 91.30434782608695,
-        "incorrect_strikes_pct": 8.695652173913047,
-        "total_called_strikes": 23,
-        "bad_calls_count": 2,
-        "home_plate_umpire": "Ryan Additon"
+        "date": "September 23, 2025",
+        "correct_strikes_pct": 100.0,
+        "incorrect_strikes_pct": 0.0,
+        "total_called_strikes": 25,
+        "bad_calls_count": 0,
+        "home_plate_umpire": "Junior Valentine"
     },
     "worst_calls_of_season": [
         {
@@ -56,17 +56,17 @@
         }
     ],
     "pitching_season_summary": {
-        "correct_balls_pct": 92.92219620088473,
-        "incorrect_balls_pct": 7.077803799115273,
-        "total_called_balls": 7686,
-        "bad_calls_count": 544
+        "correct_balls_pct": 92.9171513506527,
+        "incorrect_balls_pct": 7.082848649347298,
+        "total_called_balls": 7737,
+        "bad_calls_count": 548
     },
     "pitching_last_game_summary": {
-        "date": "September 21, 2025",
-        "correct_balls_pct": 96.66666666666667,
-        "incorrect_balls_pct": 3.3333333333333286,
-        "total_called_balls": 30,
-        "bad_calls_count": 1
+        "date": "September 23, 2025",
+        "correct_balls_pct": 92.15686274509804,
+        "incorrect_balls_pct": 7.843137254901961,
+        "total_called_balls": 51,
+        "bad_calls_count": 4
     },
     "pitching_worst_calls_of_season": []
 }
