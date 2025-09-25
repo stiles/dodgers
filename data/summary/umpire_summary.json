@@ -1,17 +1,17 @@
 {
     "season_summary": {
-        "correct_strikes_pct": 90.32176973353444,
-        "incorrect_strikes_pct": 9.678230266465562,
-        "total_called_strikes": 3978,
-        "bad_calls_count": 385
+        "correct_strikes_pct": 90.30167040638246,
+        "incorrect_strikes_pct": 9.698329593617544,
+        "total_called_strikes": 4011,
+        "bad_calls_count": 389
     },
     "last_game_summary": {
-        "date": "September 24, 2025",
-        "correct_strikes_pct": 91.30434782608695,
-        "incorrect_strikes_pct": 8.695652173913047,
-        "total_called_strikes": 23,
-        "bad_calls_count": 2,
-        "home_plate_umpire": "Marvin Hudson"
+        "date": "September 25, 2025",
+        "correct_strikes_pct": 87.87878787878788,
+        "incorrect_strikes_pct": 12.121212121212125,
+        "total_called_strikes": 33,
+        "bad_calls_count": 4,
+        "home_plate_umpire": "Ryan Blakney"
     },
     "worst_calls_of_season": [
         {
@@ -23,6 +23,16 @@
             "date": "2025-05-15",
             "date_formatted": "May 15, 2025",
             "video_link": "https://baseballsavant.mlb.com/sporty-videos?playId=6cbf4e93-5c3c-351e-9d5b-8adc21a49abf"
+        },
+        {
+            "distance_inches": 7.5430679363,
+            "batter": "Hyeseong Kim",
+            "pitcher": "Taylor Rashi",
+            "pitch_type": "4-Seam Fastball",
+            "velocity_mph": 90.3,
+            "date": "2025-09-25",
+            "date_formatted": "September 25, 2025",
+            "video_link": "https://baseballsavant.mlb.com/sporty-videos?playId=d49999d5-d80f-3886-900c-8ea5123b26c1"
         },
         {
             "distance_inches": 4.3183692803,
@@ -43,30 +53,20 @@
             "date": "2025-09-14",
             "date_formatted": "September 14, 2025",
             "video_link": "https://baseballsavant.mlb.com/sporty-videos?playId=d4af67b6-869c-3094-b105-28d229c5b740"
-        },
-        {
-            "distance_inches": 3.962329804,
-            "batter": "Hyeseong Kim",
-            "pitcher": "Justin Wilson",
-            "pitch_type": "4-Seam Fastball",
-            "velocity_mph": 94.4,
-            "date": "2025-07-26",
-            "date_formatted": "July 26, 2025",
-            "video_link": "https://baseballsavant.mlb.com/sporty-videos?playId=4d5cc748-0222-3426-93bf-42a52b41e4b0"
         }
     ],
     "pitching_season_summary": {
-        "correct_balls_pct": 92.92035398230088,
-        "incorrect_balls_pct": 7.079646017699119,
-        "total_called_balls": 7797,
-        "bad_calls_count": 552
+        "correct_balls_pct": 92.88356077030991,
+        "incorrect_balls_pct": 7.116439229690087,
+        "total_called_balls": 7841,
+        "bad_calls_count": 558
     },
     "pitching_last_game_summary": {
-        "date": "September 24, 2025",
-        "correct_balls_pct": 93.33333333333333,
-        "incorrect_balls_pct": 6.666666666666671,
-        "total_called_balls": 60,
-        "bad_calls_count": 4
+        "date": "September 25, 2025",
+        "correct_balls_pct": 86.36363636363636,
+        "incorrect_balls_pct": 13.63636363636364,
+        "total_called_balls": 44,
+        "bad_calls_count": 6
     },
     "pitching_worst_calls_of_season": []
 }
