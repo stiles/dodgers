@@ -1,17 +1,17 @@
 {
     "season_summary": {
-        "correct_strikes_pct": 90.31605562579014,
-        "incorrect_strikes_pct": 9.683944374209858,
-        "total_called_strikes": 3955,
-        "bad_calls_count": 383
+        "correct_strikes_pct": 90.32176973353444,
+        "incorrect_strikes_pct": 9.678230266465562,
+        "total_called_strikes": 3978,
+        "bad_calls_count": 385
     },
     "last_game_summary": {
-        "date": "September 23, 2025",
-        "correct_strikes_pct": 100.0,
-        "incorrect_strikes_pct": 0.0,
-        "total_called_strikes": 25,
-        "bad_calls_count": 0,
-        "home_plate_umpire": "Junior Valentine"
+        "date": "September 24, 2025",
+        "correct_strikes_pct": 91.30434782608695,
+        "incorrect_strikes_pct": 8.695652173913047,
+        "total_called_strikes": 23,
+        "bad_calls_count": 2,
+        "home_plate_umpire": "Marvin Hudson"
     },
     "worst_calls_of_season": [
         {
@@ -56,16 +56,16 @@
         }
     ],
     "pitching_season_summary": {
-        "correct_balls_pct": 92.9171513506527,
-        "incorrect_balls_pct": 7.082848649347298,
-        "total_called_balls": 7737,
-        "bad_calls_count": 548
+        "correct_balls_pct": 92.92035398230088,
+        "incorrect_balls_pct": 7.079646017699119,
+        "total_called_balls": 7797,
+        "bad_calls_count": 552
     },
     "pitching_last_game_summary": {
-        "date": "September 23, 2025",
-        "correct_balls_pct": 92.15686274509804,
-        "incorrect_balls_pct": 7.843137254901961,
-        "total_called_balls": 51,
+        "date": "September 24, 2025",
+        "correct_balls_pct": 93.33333333333333,
+        "incorrect_balls_pct": 6.666666666666671,
+        "total_called_balls": 60,
         "bad_calls_count": 4
     },
     "pitching_worst_calls_of_season": []
