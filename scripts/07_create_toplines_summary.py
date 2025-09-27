@@ -395,41 +395,64 @@ def get_live_last_game_summary():
         "User-Agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/91.0.4472.114 Safari/537.36"
     }
     
-    # Fetch data for today and yesterday to find the last completed game
+    # Fetch data for today and the last 5 days to find the last completed game
     today = date.today()
-    yesterday = today - timedelta(days=1)
+    five_days_ago = today - timedelta(days=5)
     
-    url = f"https://statsapi.mlb.com/api/v1/schedule?sportId=1&teamId=119&startDate={yesterday.strftime('%Y-%m-%d')}&endDate={today.strftime('%Y-%m-%d')}&hydrate=team,linescore"
+    url = f"https://statsapi.mlb.com/api/v1/schedule?sportId=1&teamId=119&startDate={five_days_ago.strftime('%Y-%m-%d')}&endDate={today.strftime('%Y-%m-%d')}&hydrate=team,linescore"
     
     try:
         response = requests.get(url, headers=headers)
         response.raise_for_status()
         data = response.json()
         
+        # Debug logging
+        logging.info(f"Fetched schedule data for {five_days_ago} to {today}")
+        logging.info(f"Found {len(data.get('dates', []))} date(s) in response")
+        
         # Iterate backwards through dates and games to find the most recent final game
         for day in reversed(data.get('dates', [])):
+            logging.info(f"Checking date: {day.get('date', 'Unknown')}")
             for game in reversed(day.get('games', [])):
-                if game['status']['abstractGameState'] == 'Final':
+                game_status = game['status']['abstractGameState']
+                game_teams = game.get('teams', {})
+                away_team = game_teams.get('away', {}).get('team', {}).get('abbreviation', 'Unknown')
+                home_team = game_teams.get('home', {}).get('team', {}).get('abbreviation', 'Unknown')
+                logging.info(f"Game: {away_team} @ {home_team}, Status: {game_status}")
+                
+                if game_status == 'Final':
                     teams = game['teams']
                     
-                    if teams.get('away', {}).get('team', {}).get('abbreviation') == 'LAD':
+                    # Check if LAD is either away or home team
+                    away_abbr = teams.get('away', {}).get('team', {}).get('abbreviation')
+                    home_abbr = teams.get('home', {}).get('team', {}).get('abbreviation')
+                    logging.info(f"Processing final game: {away_abbr} @ {home_abbr}")
+                    
+                    if away_abbr == 'LAD':
                         home_away = "away"
                         result_clean = "win" if teams['away'].get('isWinner') else "loss"
                         r = teams['away'].get('score', 'N/A')
                         ra = teams['home'].get('score', 'N/A')
                         opp_name = teams.get('home', {}).get('team', {}).get('name', 'N/A')
-                    else:
+                        
+                        logging.info(f"Found LAD away game: {r}-{ra} {result_clean} vs {opp_name}")
+                        return (
+                            f"The last game was a <span class='highlight'>{r}-{ra}</span> "
+                            f"{home_away} <span class='highlight'>{result_clean}</span> "
+                            f"against the {opp_name}."
+                        )
+                    elif teams.get('home', {}).get('team', {}).get('abbreviation') == 'LAD':
                         home_away = "home"
                         result_clean = "win" if teams['home'].get('isWinner') else "loss"
                         r = teams['home'].get('score', 'N/A')
                         ra = teams['away'].get('score', 'N/A')
                         opp_name = teams.get('away', {}).get('team', {}).get('name', 'N/A')
                         
-                    return (
-                        f"The last game was a <span class='highlight'>{r}-{ra}</span> "
-                        f"{home_away} <span class='highlight'>{result_clean}</span> "
-                        f"against the {opp_name}."
-                    )
+                        return (
+                            f"The last game was a <span class='highlight'>{r}-{ra}</span> "
+                            f"{home_away} <span class='highlight'>{result_clean}</span> "
+                            f"against the {opp_name}."
+                        )
         return "The last game's result is not yet available."
         
     except (requests.exceptions.RequestException, KeyError, IndexError) as e:
@@ -521,7 +544,7 @@ def generate_summary(
 
     summary = (
         f"<span class='highlight'>LOS ANGELES</span> <span class='updated'>({update_date_str})</span> — "
-        f"After <span class='highlight'>{games_played}</span> games this season, the Dodgers have compiled a <span class='highlight'>{record}</span> record, winning <span class='highlight'>{win_pct:.0f}%</span> of its games. They are the National League West division champs!"
+        f"After <span class='highlight'>{games_played}</span> games this season, the Dodgers have compiled a <span class='highlight'>{record}</span> record, winning <span class='highlight'>{win_pct:.0f}%</span> of its games. They are the National League West division champs! "
         f"{last_game_summary_fragment} "
         f"They've won <span class='highlight'>{last_10_wins} of the last 10</span>."
     )
