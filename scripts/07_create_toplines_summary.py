@@ -511,12 +511,19 @@ def generate_summary(
     # Handle cases where last_game_info_series might be None or empty if no games played
     last_game_summary_fragment = get_live_last_game_summary()
 
+    # summary = (
+    #     f"<span class='highlight'>LOS ANGELES</span> <span class='updated'>({update_date_str})</span> — "
+    #     f"After <span class='highlight'>{games_played}</span> games this season, the Dodgers are in <span class='highlight'>{division_place_ord}</span> place in the National League West division. "
+    #     f"The team has compiled a <span class='highlight'>{record}</span> record, winning <span class='highlight'>{win_pct:.0f}%</span> of its games so far. "
+    #     f"{last_game_summary_fragment} "
+    #     f"They've won <span class='highlight'>{last_10_wins} of the last 10</span> and are on pace to win at least <span class='highlight'>{projected_wins}</span> games in the regular season."
+    # )
+
     summary = (
         f"<span class='highlight'>LOS ANGELES</span> <span class='updated'>({update_date_str})</span> — "
-        f"After <span class='highlight'>{games_played}</span> games this season, the Dodgers are in <span class='highlight'>{division_place_ord}</span> place in the National League West division. "
-        f"The team has compiled a <span class='highlight'>{record}</span> record, winning <span class='highlight'>{win_pct:.0f}%</span> of its games so far. "
+        f"After <span class='highlight'>{games_played}</span> games this season, the Dodgers havecompiled a <span class='highlight'>{record}</span> record, winning <span class='highlight'>{win_pct:.0f}%</span> of its games so far and are the National League West division champs."
         f"{last_game_summary_fragment} "
-        f"They've won <span class='highlight'>{last_10_wins} of the last 10</span> and are on pace to win at least <span class='highlight'>{projected_wins}</span> games in the regular season."
+        f"They've won <span class='highlight'>{last_10_wins} of the last 10</span>."
     )
     return summary
 
