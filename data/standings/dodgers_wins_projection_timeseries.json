@@ -1,6 +1,6 @@
 {
-    "games_played": 161,
-    "current_wins": 92,
+    "games_played": 162,
+    "current_wins": 93,
     "current_losses": 69,
     "timeseries": [
         {
@@ -971,10 +971,10 @@
         },
         {
             "game_number": 162,
-            "mean_projected_wins": 92.6,
-            "lower_ci_wins": 92,
-            "upper_ci_wins": 93
+            "mean_projected_wins": 93.0,
+            "lower_ci_wins": 93.0,
+            "upper_ci_wins": 93.0
         }
     ],
-    "message": "Projection based on bootstrapping 161 past game outcomes for 1 remaining games."
+    "message": "Season complete. All 162 games have been played."
 }
