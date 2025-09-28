@@ -1,17 +1,17 @@
 {
     "season_summary": {
-        "correct_strikes_pct": 90.31698860822189,
-        "incorrect_strikes_pct": 9.683011391778109,
-        "total_called_strikes": 4038,
+        "correct_strikes_pct": 90.3480622068625,
+        "incorrect_strikes_pct": 9.651937793137506,
+        "total_called_strikes": 4051,
         "bad_calls_count": 391
     },
     "last_game_summary": {
-        "date": "September 26, 2025",
-        "correct_strikes_pct": 92.5925925925926,
-        "incorrect_strikes_pct": 7.407407407407405,
-        "total_called_strikes": 27,
-        "bad_calls_count": 2,
-        "home_plate_umpire": "Jordan Baker"
+        "date": "September 27, 2025",
+        "correct_strikes_pct": 100.0,
+        "incorrect_strikes_pct": 0.0,
+        "total_called_strikes": 13,
+        "bad_calls_count": 0,
+        "home_plate_umpire": "Dan Merzel"
     },
     "worst_calls_of_season": [
         {
@@ -56,17 +56,17 @@
         }
     ],
     "pitching_season_summary": {
-        "correct_balls_pct": 92.85442797415432,
-        "incorrect_balls_pct": 7.145572025845681,
-        "total_called_balls": 7893,
+        "correct_balls_pct": 92.87518948964123,
+        "incorrect_balls_pct": 7.12481051035877,
+        "total_called_balls": 7916,
         "bad_calls_count": 564
     },
     "pitching_last_game_summary": {
-        "date": "September 26, 2025",
-        "correct_balls_pct": 88.46153846153845,
-        "incorrect_balls_pct": 11.538461538461547,
-        "total_called_balls": 52,
-        "bad_calls_count": 6
+        "date": "September 27, 2025",
+        "correct_balls_pct": 100.0,
+        "incorrect_balls_pct": 0.0,
+        "total_called_balls": 23,
+        "bad_calls_count": 0
     },
     "pitching_worst_calls_of_season": []
 }

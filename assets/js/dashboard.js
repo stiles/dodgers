@@ -3706,9 +3706,10 @@ function calculatePlayoffSeeds(standings) {
       .sort((a, b) => parseFloat(b.winning_percentage) - parseFloat(a.winning_percentage));
     
     // Get wild card teams (best non-division winners)
+    // Sort by league_rank which already accounts for tiebreakers
     const wildCardCandidates = leagueTeams
       .filter(team => team.division_rank !== '1')
-      .sort((a, b) => parseFloat(b.winning_percentage) - parseFloat(a.winning_percentage));
+      .sort((a, b) => parseInt(a.league_rank) - parseInt(b.league_rank));
     
     const wildCards = wildCardCandidates.slice(0, 3); // Top 3 wild cards
     
