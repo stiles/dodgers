@@ -2,9 +2,9 @@
     {
         "stat_label":"Wins",
         "stat":"wins",
-        "value":92,
+        "value":93,
         "category":"standings",
-        "context_value":97,
+        "context_value":98,
         "context_value_label":"This point last season"
     },
     {
@@ -18,9 +18,9 @@
     {
         "stat_label":"Record",
         "stat":"record",
-        "value":"92-69",
+        "value":"93-69",
         "category":"standings",
-        "context_value":"97-64",
+        "context_value":"98-64",
         "context_value_label":"This point last season"
     },
     {
@@ -50,7 +50,7 @@
     {
         "stat_label":"Runs",
         "stat":"runs",
-        "value":819,
+        "value":825,
         "category":"standings",
         "context_value":"2nd",
         "context_value_label":"League rank"
@@ -58,17 +58,17 @@
     {
         "stat_label":"Runs against",
         "stat":"runs_against",
-        "value":682,
+        "value":683,
         "category":"standings",
-        "context_value":685,
+        "context_value":686,
         "context_value_label":"This point last season"
     },
     {
         "stat_label":"Run differential",
         "stat":"run_differential",
-        "value":137,
+        "value":142,
         "category":"standings",
-        "context_value":155,
+        "context_value":156,
         "context_value_label":"This point last season"
     },
     {
@@ -82,7 +82,7 @@
     {
         "stat_label":"Home runs",
         "stat":"home_runs",
-        "value":241,
+        "value":244,
         "category":"batting",
         "context_value":"2nd",
         "context_value_label":"League rank"
@@ -90,7 +90,7 @@
     {
         "stat_label":"Home runs\/game",
         "stat":"home_runs_game",
-        "value":1.5,
+        "value":1.51,
         "category":"batting",
         "context_value":1.42,
         "context_value_label":"Last decade average"
@@ -98,7 +98,7 @@
     {
         "stat_label":"On-base percentage",
         "stat":"on_base_pct",
-        "value":".328",
+        "value":".327",
         "category":"batting",
         "context_value":".333",
         "context_value_label":"Last decade average"
@@ -114,7 +114,7 @@
     {
         "stat_label":"Stolen bases\/game",
         "stat":"stolen_bases_game",
-        "value":0.55,
+        "value":0.54,
         "category":"batting",
         "context_value":0.84,
         "context_value_label":"Rate all last season"
@@ -122,7 +122,7 @@
     {
         "stat_label":"Strikeouts",
         "stat":"strikeouts",
-        "value":"1,491",
+        "value":"1,505",
         "category":"pitching",
         "context_value":"1st",
         "context_value_label":"League rank"
@@ -130,7 +130,7 @@
     {
         "stat_label":"Walks",
         "stat":"walks",
-        "value":"561",
+        "value":"563",
         "category":"pitching",
         "context_value":"5th",
         "context_value_label":"League rank"
@@ -138,7 +138,7 @@
     {
         "stat_label":"ERA",
         "stat":"era",
-        "value":"3.97",
+        "value":"3.95",
         "category":"pitching",
         "context_value":"17th",
         "context_value_label":"League rank"
@@ -146,7 +146,7 @@
     {
         "stat_label":"Last updated",
         "stat":"update_time",
-        "value":"September 29, 2025, 5:11 AM PT",
+        "value":"September 29, 2025, 9:06 AM PT",
         "category":"summary",
         "context_value":"",
         "context_value_label":""
@@ -154,7 +154,7 @@
     {
         "stat_label":"Team summary",
         "stat":"summary",
-        "value":"<span class='highlight'>LOS ANGELES<\/span> <span class='updated'>(September 29)<\/span> \u2014 After <span class='highlight'>162<\/span> games this season, the Dodgers have compiled a <span class='highlight'>93-69<\/span> record, winning <span class='highlight'>57%<\/span> of its games. They've won <span class='highlight'>8 of the last 10<\/span> and are the National League West division champs! The last game was a <span class='highlight'>6-1<\/span> away <span class='highlight'>win<\/span> against the Seattle Mariners.",
+        "value":"<span class='highlight'>LOS ANGELES<\/span> <span class='updated'>(September 29)<\/span> \u2014 The Dodgers compiled a <span class='highlight'>93-69<\/span> record in the 2025 regular season, a <span class='highlight'>57%<\/span> winning percentage. The team entered the postseason winning <span class='highlight'>5 of the last 10<\/span> games and were the National League West division champs! On to the postseason... The last game was a <span class='highlight'>6-1<\/span> away <span class='highlight'>win<\/span> against the Seattle Mariners.",
         "category":"summary",
         "context_value":"",
         "context_value_label":""
