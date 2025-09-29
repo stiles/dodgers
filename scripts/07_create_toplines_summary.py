@@ -511,7 +511,24 @@ def generate_summary(
         for record in json_data["records"]:
             team_records.extend(record["teamRecords"])
         df = pd.json_normalize(team_records, sep="_")
-        row = df.query('abbreviation == "LAD"').iloc[0]
+        # Debug: print column names to see what's available
+        logging.info(f"Available columns in standings dataframe: {list(df.columns)}")
+        if len(df) > 0:
+            logging.info(f"Sample row keys: {df.iloc[0].to_dict().keys()}")
+        # Try different possible column names for team abbreviation
+        if 'abbreviation' in df.columns:
+            row = df.query('abbreviation == "LAD"').iloc[0]
+        elif 'team_abbreviation' in df.columns:
+            row = df.query('team_abbreviation == "LAD"').iloc[0]
+        elif 'teamAbbreviation' in df.columns:
+            row = df.query('teamAbbreviation == "LAD"').iloc[0]
+        else:
+            # Fallback: find by team name
+            lad_rows = df[df.astype(str).apply(lambda x: x.str.contains('Los Angeles Dodgers|LAD', na=False)).any(axis=1)]
+            if len(lad_rows) > 0:
+                row = lad_rows.iloc[0]
+            else:
+                raise ValueError("Could not find LAD team in standings data")
 
         # Parse variables from live data
         games_played = row["wins"] + row["losses"]
@@ -544,7 +561,7 @@ def generate_summary(
 
     summary = (
         f"<span class='highlight'>LOS ANGELES</span> <span class='updated'>({update_date_str})</span> — "
-        f"The Dodgers compiled a <span class='highlight'>{record}</span> record in the {year} regular season, a <span class='highlight'>{win_pct:.0f}%</span> winning percentage. The team entered the postseason winning <span class='highlight'>{last_10_wins} of the last 10</span> games and were the National League West division champs! On to the postseason... "
+        f"The Dodgers compiled a <span class='highlight'>{record}</span> record in the {current_year} regular season, a <span class='highlight'>{win_pct:.0f}%</span> winning percentage. The team entered the postseason winning <span class='highlight'>{last_10_wins} of the last 10</span> games and were the National League West division champs! On to the postseason... "
         f"{last_game_summary_fragment}"
     )
     return summary
