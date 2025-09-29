@@ -544,7 +544,7 @@ def generate_summary(
 
     summary = (
         f"<span class='highlight'>LOS ANGELES</span> <span class='updated'>({update_date_str})</span> — "
-        f"After <span class='highlight'>{games_played}</span> games this season, the Dodgers have compiled a <span class='highlight'>{record}</span> record, winning <span class='highlight'>{win_pct:.0f}%</span> of its games. They've won <span class='highlight'>{last_10_wins} of the last 10</span> and are the National League West division champs! "
+        f"The Dodgers compiled a <span class='highlight'>{record}</span> record in the {year} regular season, a <span class='highlight'>{win_pct:.0f}%</span> winning percentage. The team entered the postseason winning <span class='highlight'>{last_10_wins} of the last 10</span> games and were the National League West division champs! On to the postseason... "
         f"{last_game_summary_fragment}"
     )
     return summary
