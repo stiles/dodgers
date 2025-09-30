@@ -75,6 +75,26 @@ def build_wins_losses(df: pd.DataFrame) -> pd.DataFrame:
     # Normalize and sort by date
     df["game_date"] = pd.to_datetime(df.get("date", df.get("game_date")))
     df = df.sort_values("game_date")
+    
+    # Filter out exhibition/spring training games
+    # Method 1: Exclude games against Angels (Freeway Series exhibitions)
+    # Method 2: Only include games from April onwards (regular season typically starts in April)
+    # Method 3: Exclude games with gaps > 3 days early in season (likely exhibitions)
+    
+    # For now, use a combination approach:
+    # 1. Exclude Angels games in March (Freeway Series exhibitions)
+    # 2. Could add other heuristics in the future
+    
+    march_angels_games = (
+        (df["game_date"].dt.month == 3) & 
+        (df["opponent_name"].str.contains("Angels", na=False))
+    )
+    df = df[~march_angels_games]
+    
+    # Alternative approach for future: only include games from regular season start
+    # Uncomment and adjust if needed:
+    # regular_season_start = pd.Timestamp(f"{df['game_date'].dt.year.iloc[0]}-03-20")
+    # df = df[df["game_date"] >= regular_season_start]
 
     # Compute fields
     df["r"] = df["dodgers_runs"].astype(int)
