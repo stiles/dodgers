@@ -222,7 +222,7 @@ async function fetchGameData() {
 
 function renderRunDiffChart(data) {
   const isMobile = window.innerWidth <= 767;
-  const margin = isMobile ? { top: 20, right: 20, bottom: 50, left: 40 } : { top: 20, right: 20, bottom: 40, left: 50 };
+  const margin = isMobile ? { top: 20, right: 10, bottom: 50, left: 40 } : { top: 20, right: 10, bottom: 40, left: 50 };
   const container = d3.select('#results-chart');
   if (container.empty()) {
       console.error("Container #results-chart not found.");
@@ -243,7 +243,7 @@ function renderRunDiffChart(data) {
     .scaleBand()
     .range([0, width])
     .padding(0.1)
-    .domain(d3.range(1, 163)); // Assuming max 162 games
+    .domain(d3.range(1, 165)); // Assuming max 162 games
 
   const minRunDiff = d3.min(data, d => d.run_diff);
   const maxRunDiff = d3.max(data, d => d.run_diff);
