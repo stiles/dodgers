@@ -167,7 +167,7 @@ twitter:
   </div>
 </div>
 
-<h3 class="visual-subhead">Playoff bracket: <em>If the postseason started today</em></h3>
+<!-- <h3 class="visual-subhead">Playoff bracket: <em>If the postseason started today</em></h3>
 <div id="playoff-bracket-container">
   <div class="bracket-section">
     <h4 class="bracket-league-title">National League</h4>
@@ -367,7 +367,7 @@ twitter:
         </div>
       </div>
     </div>
-  </div>
+  </div> -->
 
   <!-- <div class="world-series-section">
     <h4 class="bracket-league-title">World Series</h4>
