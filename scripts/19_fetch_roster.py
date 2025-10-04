@@ -209,7 +209,7 @@ def fetch_transactions():
 def main():
     os.makedirs(output_dir, exist_ok=True)
     os.makedirs(jekyll_data_dir, exist_ok=True)
-    url = "https://www.mlb.com/dodgers/roster/40-man"
+    url = "https://www.mlb.com/dodgers/roster"  # Active roster instead of 40-man
     response = requests.get(url)
     soup = BeautifulSoup(response.text, 'html.parser')
     tables = soup.find_all('table', class_='roster__table')
