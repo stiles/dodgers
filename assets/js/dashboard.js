@@ -3983,8 +3983,12 @@ async function fetchPostseasonStats() {
 
 function createPostseasonPlayerCard(player) {
   const stats = player.stats;
+
+  console.log(player);
   
   // Extract last name from full name
+  const fullName = player.player_name;
+  const firstName = player.player_name.split(' ').shift();
   const lastName = player.player_name.split(' ').pop();
   
   // Determine which stats to highlight based on performance
@@ -3995,7 +3999,7 @@ function createPostseasonPlayerCard(player) {
   
   return `
     <div class="postseason-player-card">
-      <div class="postseason-player-name">${lastName}</div>
+      <div class="postseason-player-name">${fullName}</div>
       <div class="postseason-stats-grid">
         <div class="postseason-stat">
           <div class="postseason-stat-label">AVG</div>
