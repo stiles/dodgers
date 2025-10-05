@@ -790,10 +790,15 @@ h2.stat-group {
   padding-top: 40px;
   border-top: 1px solid #e9ecef;
   
-  &:first-of-type {
+  &:first-of-type, &.postseason-header {
     border-top: none;
     padding-top: 0;
     margin-top: 30px;
+  }
+  
+  &.performance-header {
+    border-top: 1px solid #e9ecef;
+    padding-top: 40px;
   }
 }
 
@@ -2668,4 +2673,344 @@ label {
   text-align: left;
   font-style: italic;
   margin-top: 20px;
+}
+
+/* Postseason Stats Styling */
+.postseason-stats-section {
+  margin: 30px 0 40px 0;
+  padding: 0 20px;
+}
+
+/* Playoff Journey */
+.playoff-journey {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 15px;
+  margin: 20px 0;
+  max-width: 1200px;
+  margin-left: auto;
+  margin-right: auto;
+  position: relative;
+  
+  // Connecting lines between boxes
+  &::before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 12.5%;
+    right: 12.5%;
+    height: 2px;
+    background: linear-gradient(to right, 
+      #ddd 0%, 
+      #ddd 30%, 
+      transparent 30%, 
+      transparent 35%, 
+      #ddd 35%, 
+      #ddd 65%, 
+      transparent 65%, 
+      transparent 70%, 
+      #ddd 70%, 
+      #ddd 100%
+    );
+    z-index: 0;
+    pointer-events: none;
+  }
+  
+  // Simple connecting lines only
+  &::after {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 20%;
+    right: 20%;
+    height: 2px;
+    background: #ddd;
+    z-index: 0;
+    pointer-events: none;
+  }
+}
+
+.playoff-round {
+  background: #fff;
+  border: 2px solid #e5e5e5;
+  border-radius: 8px;
+  padding: 15px;
+  text-align: center;
+  position: relative;
+  transition: all 0.2s ease;
+  z-index: 2;
+  
+  &.completed {
+    border-color: #005a9c;
+    background: #f8f9ff;
+    
+    .round-status {
+      background: #005a9c;
+      color: white;
+      
+      &::after {
+        content: '✓';
+        font-weight: bold;
+      }
+    }
+  }
+  
+  &.in-progress {
+    border-color: #28a745;
+    background: #f8fff8;
+    
+    .round-status {
+      background: #28a745;
+      color: white;
+      animation: pulse 2s infinite;
+      
+      &::after {
+        content: '\f110';
+        font-family: 'Font Awesome 5 Free';
+        font-weight: 900;
+        font-size: 10px;
+        animation: spin 2s linear infinite;
+      }
+    }
+  }
+  
+  &.upcoming {
+    border-color: #ccc;
+    background: #f9f9f9;
+    
+    .round-status {
+      background: #ccc;
+      color: white;
+      
+      &::after {
+        content: '?';
+        font-weight: bold;
+      }
+    }
+  }
+}
+
+.round-title {
+  font-size: 14px;
+  font-weight: bold;
+  color: #333;
+  margin-bottom: 8px;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.round-opponent {
+  font-size: 13px;
+  color: #666;
+  margin-bottom: 5px;
+}
+
+.round-result {
+  font-size: 12px;
+  color: #888;
+  font-style: italic;
+}
+
+.round-status {
+  position: absolute;
+  top: -10px;
+  right: -10px;
+  width: 24px;
+  height: 24px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 12px;
+  border: 2px solid white;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+@keyframes pulse {
+  0% { opacity: 1; }
+  50% { opacity: 0.7; }
+  100% { opacity: 1; }
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+/* Responsive adjustments for playoff journey */
+@media (max-width: 1024px) {
+  .playoff-journey {
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: repeat(2, 1fr);
+    gap: 12px;
+    max-width: 600px;
+    
+    // Remove horizontal arrows, add vertical ones for 2x2 grid
+    &::before {
+      background: linear-gradient(to bottom, 
+        transparent 0%, 
+        transparent 25%, 
+        #ddd 25%, 
+        #ddd 75%, 
+        transparent 75%, 
+        transparent 100%
+      );
+      width: 2px;
+      height: 100%;
+      left: 50%;
+      top: 0;
+      transform: translateX(-50%);
+    }
+    
+    &::after {
+      content: '';
+      width: 2px;
+      height: 50%;
+      left: 50%;
+      top: 25%;
+      transform: translateX(-50%);
+      background: #ddd;
+    }
+  }
+  
+  .playoff-round {
+    padding: 12px;
+  }
+  
+  .round-title {
+    font-size: 12px;
+  }
+  
+  .round-opponent {
+    font-size: 11px;
+  }
+  
+  .round-result {
+    font-size: 10px;
+  }
+}
+
+@media (max-width: 768px) {
+  .playoff-journey {
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: auto;
+    gap: 8px;
+    max-width: 400px;
+    
+    // Simpler connecting line for mobile
+    &::before {
+      display: none;
+    }
+    
+    &::after {
+      display: none;
+    }
+  }
+}
+
+.postseason-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-template-rows: repeat(3, 1fr);
+  gap: 15px;
+  margin-top: 20px;
+  max-width: 1200px;
+  margin-left: auto;
+  margin-right: auto;
+  margin-bottom: 20px;
+}
+
+// Modern minimal card styling
+.postseason-player-card {
+  background: #fff;
+  border: 1px solid #e8e8e8;
+  border-radius: 8px;
+  padding: 24px 20px;
+  text-align: center;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.04);
+  transition: box-shadow 0.2s ease;
+  
+  &:hover {
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+  }
+}
+
+.postseason-player-name {
+  font-family: "Roboto", sans-serif;
+    font-size: 13px;
+    color: #666;
+    text-align: center;
+    text-transform: uppercase;
+    letter-spacing: .5px;
+    margin-bottom: 8px;
+    font-weight: 500;
+}
+
+.postseason-stats-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 6px;
+  text-align: center;
+}
+
+// .postseason-stat {
+//   padding: 6px 2px;
+// }
+
+.postseason-stat-label {
+  font-size: 10px;
+  color: #666;
+  text-transform: uppercase;
+  font-weight: 600;
+  margin-bottom: 2px;
+}
+
+.postseason-stat-value {
+  font-size: 12px;
+  font-weight: bold;
+  color: #333;
+}
+
+.postseason-stat-value.highlight {
+  color: #005a9c;
+}
+
+@media (max-width: 1024px) {
+  .postseason-grid {
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: repeat(6, 1fr);
+    gap: 12px;
+  }
+}
+
+@media (max-width: 768px) {
+  .postseason-grid {
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: auto;
+    gap: 8px;
+  }
+  
+  .postseason-player-card {
+    padding: 12px 8px;
+  }
+  
+  .postseason-player-name {
+    font-size: 11px;
+    margin-bottom: 6px;
+    letter-spacing: 0.3px;
+  }
+  
+  .postseason-stats-grid {
+    gap: 3px;
+  }
+  
+  .postseason-stat-label {
+    font-size: 8px;
+    margin-bottom: 1px;
+  }
+  
+  .postseason-stat-value {
+    font-size: 10px;
+    font-weight: 600;
+  }
 }

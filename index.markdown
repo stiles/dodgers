@@ -30,10 +30,25 @@ twitter:
   </p>
 </div>
 
+<div class="postseason-stats-section">
+  <h2 class="stat-group postseason-header">Postseason 2025</h2>
+  
+  <h3 class="visual-subhead">Playoff journey</h3>
+  <div class="playoff-journey" id="playoff-journey">
+    <!-- Playoff journey will be populated by JavaScript -->
+  </div>
+  
+  <h3 class="visual-subhead">Team hitting</h3>
+  <div class="postseason-grid" id="postseason-grid">
+    <!-- Postseason stats will be populated by JavaScript -->
+  </div>
+  <p class="note">Note: Top 12 players in order of plate appearances.</p>
+</div>
+
 
 
 <div class="container mt-4">
-<h2 class="stat-group">Performance and standings</h2>
+<h2 class="stat-group performance-header">Regular season performance and standings</h2>
 <h3 class="visual-subhead"><span class="win">Wins</span>, <span class="loss">losses</span> and run differential</h3>
 <div id="chart-container" class="chart-container" style="position: relative;">
 <div id="results-chart"></div>
@@ -52,10 +67,10 @@ twitter:
     {% endfor %}
   </div>
 
-<h3 class="visual-subhead">Projected <span class="win">wins</span> this season</h3>
+<!-- <h3 class="visual-subhead">Projected <span class="win">wins</span> this season</h3>
 <p class="chart-chatter">This chart shows the Dodgers' actual <span class="underline-wins">wins</span> so far, the projected <span class="underline-mean-projection">mean</span> number of final wins and the 95% <span class="highlight-ci">confidence interval</span> around that projection.</p>
 <div id="wins-projection-chart-ci" class="chart-container"></div>
-<p class="note">Note: The projection is based on 10,000 simulations. For games played, it shows actual wins. For future games, it simulates outcomes by randomly drawing from the Dodgers' win/loss results so far this season, then calculates the mean and a 95% confidence range.</p>
+<p class="note">Note: The projection is based on 10,000 simulations. For games played, it shows actual wins. For future games, it simulates outcomes by randomly drawing from the Dodgers' win/loss results so far this season, then calculates the mean and a 95% confidence range.</p> -->
 
 <h3 class="visual-subhead">Cumulative <span class="win">wins</span>: Then and now</h3>
 <p class="chart-chatter">Since moving to LA, the Dodgers have won the World Series seven times: 2024, 2020, 1988, 1981, 1965, 1963 and 1959. Compare this year's win trajectory with the past.</p>
@@ -98,7 +113,7 @@ twitter:
 {% assign nl_central = nl_teams | where_exp: "item", "item.division_name == 'National League Central'" | sort: "division_rank" %}
 {% assign nl_east = nl_teams | where_exp: "item", "item.division_name == 'National League East'" | sort: "division_rank" %}
 
-<h2 class="stat-group">Playoff race</h2>
+<h2 class="stat-group">Final regular season standings</h2>
 
 <h3 class="visual-subhead">National League standings by division</h3>
 <div class="tables-container standings-tables">
@@ -391,7 +406,7 @@ twitter:
   </div> -->
 </div>
 
-<h2 class="stat-group">Team batting</h2>
+<h2 class="stat-group">Team hitting</h2>
   <div class="row">
     {% for item in site.data.season_summary_latest %}
       {% if item.category == 'batting' %}
@@ -416,7 +431,7 @@ twitter:
   <div id="cumulative-homers-chart" class="small-chart"></div>
 </div>
 
-<h2 class="stat-group">Player batting</h2>
+<h2 class="stat-group">Player hitting</h2>
 <p class="chart-chatter">Darker shades represent <span class="win">better</span> performance.</p>
 <div class="tables-container">
   <div class="table-wrapper">
@@ -467,7 +482,7 @@ twitter:
     <div id="shohei-sb-chart" class="small-chart-container"></div>
   </div>
 
-  <h2 class="stat-group">Umpire scorecard (batting)</h2>
+  <h2 class="stat-group">Umpire scorecard</h2>
 <div class="scorecard-row">
   <div class="scorecard-left">
   <h3 class="visual-subhead">Strike zone analysis</h3>

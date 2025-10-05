@@ -438,8 +438,7 @@ def get_live_last_game_summary():
                         logging.info(f"Found LAD away game: {r}-{ra} {result_clean} vs {opp_name}")
                         return (
                             f"The last game was a <span class='highlight'>{r}-{ra}</span> "
-                            f"{home_away} <span class='highlight'>{result_clean}</span> "
-                            f"against the {opp_name}."
+                            f"{home_away} <span class='highlight'>{result_clean}</span>."
                         )
                     elif teams.get('home', {}).get('team', {}).get('abbreviation') == 'LAD':
                         home_away = "home"
@@ -450,8 +449,7 @@ def get_live_last_game_summary():
                         
                         return (
                             f"The last game was a <span class='highlight'>{r}-{ra}</span> "
-                            f"{home_away} <span class='highlight'>{result_clean}</span> "
-                            f"against the {opp_name}."
+                            f"{home_away} <span class='highlight'>{result_clean}</span>."
                         )
         return "The last game's result is not yet available."
         
@@ -485,6 +483,112 @@ def get_live_last_game_result():
         return None
     except (requests.exceptions.RequestException, KeyError, IndexError):
         return None
+
+def get_next_game_info():
+    """Fetches the next scheduled Dodgers game and returns formatted info."""
+    headers = {
+        "User-Agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/91.0.4472.114 Safari/537.36"
+    }
+    
+    # Fetch upcoming games for the next 10 days
+    today = date.today()
+    ten_days_ahead = today + timedelta(days=10)
+    
+    url = f"https://statsapi.mlb.com/api/v1/schedule?sportId=1&teamId=119&startDate={today.strftime('%Y-%m-%d')}&endDate={ten_days_ahead.strftime('%Y-%m-%d')}&hydrate=team,venue"
+    
+    try:
+        response = requests.get(url, headers=headers)
+        response.raise_for_status()
+        data = response.json()
+        
+        # Find the next scheduled game
+        for date_entry in data.get('dates', []):
+            for game in date_entry.get('games', []):
+                if game.get('status', {}).get('abstractGameState') == 'Preview':
+                    # Parse game info
+                    game_date_utc = datetime.fromisoformat(game['gameDate'].replace('Z', '+00:00'))
+                    # Convert to ET
+                    et_tz = timezone(timedelta(hours=-5))  # EST/EDT approximation
+                    game_date_et = game_date_utc.astimezone(et_tz)
+                    
+                    # Format day and time
+                    day_name = game_date_et.strftime('%A')  # Monday, Tuesday, etc.
+                    time_str = game_date_et.strftime('%-I:%M p.m. ET')
+                    
+                    # Get venue info
+                    venue_name = game.get('venue', {}).get('name', '')
+                    
+                    # Determine if home or away
+                    home_team_id = game.get('teams', {}).get('home', {}).get('team', {}).get('id')
+                    is_dodgers_home = home_team_id == 119
+                    
+                    location_text = f"at {venue_name}" if not is_dodgers_home else f"at {venue_name}"
+                    
+                    return f"The next game is {day_name} at {time_str} {location_text}"
+        
+        return None
+        
+    except Exception as e:
+        logging.warning(f"Could not fetch next game info: {e}")
+        return None
+
+def generate_postseason_summary():
+    """Generate a summary of the current postseason status"""
+    try:
+        # Try to load postseason series data
+        postseason_file = "data/postseason/dodgers_postseason_series_2025.json"
+        if os.path.exists(postseason_file):
+            with open(postseason_file, 'r') as f:
+                postseason_data = json.load(f)
+            
+            # Find current series status
+            current_series = None
+            completed_series = []
+            
+            for series in postseason_data:
+                if series['status'] == 'in_progress':
+                    current_series = series
+                elif series['status'] == 'completed':
+                    completed_series.append(series)
+            
+            if current_series:
+                # Currently playing a series
+                opponent = current_series['opponent']
+                round_name = current_series['round']
+                result = current_series['result']
+
+                # Parse the series result to determine who's leading
+                result = current_series['result']
+                if 'LAD leads' in result:
+                    series_status = result.replace('LAD leads', 'The Dodgers lead the series')
+                elif 'LAD wins' in result:
+                    series_status = result.replace('LAD wins', 'The Dodgers won the series')
+                elif 'leads' in result and 'LAD' not in result:
+                    # Handle case where opponent is leading
+                    series_status = result.replace('leads', 'lead the series')
+                else:
+                    series_status = result
+                
+                return {
+                    'competing': f"The team is competing in the {round_name} against the {opponent}.",
+                    'series_status': series_status
+                }
+            
+            elif completed_series:
+                # All completed, check if they advanced or were eliminated
+                last_series = completed_series[-1]
+                if 'LAD wins' in last_series['result'] or 'LAD leads' in last_series['result']:
+                    return {"text": f"The team advanced through the {last_series['round']} and continues in the postseason."}
+                else:
+                    return {"text": f"The team was eliminated in the {last_series['round']}."}
+            else:
+                return {"text": "The team is preparing for their postseason run."}
+        else:
+            return {"text": "The team won the National League West division and is off to the postseason!"}
+            
+    except Exception as e:
+        logging.warning(f"Could not generate postseason summary: {e}")
+        return {"text": "The team won the National League West division and is off to the postseason!"}
 
 def generate_summary(
     update_date_str, standings_live_lad=None
@@ -564,6 +668,11 @@ def generate_summary(
 
     # Handle cases where last_game_info_series might be None or empty if no games played
     last_game_summary_fragment = get_live_last_game_summary()
+    postseason_summary = generate_postseason_summary()
+    next_game_info = get_next_game_info()
+    
+    # Use current date with single digit day format
+    current_date = datetime.now().strftime("%B %-d")
 
     # summary = (
     #     f"<span class='highlight'>LOS ANGELES</span> <span class='updated'>({update_date_str})</span> — "
@@ -573,9 +682,18 @@ def generate_summary(
     #     f"They've won <span class='highlight'>{last_10_wins} of the last 10</span> and are on pace to win at least <span class='highlight'>{projected_wins}</span> games in the regular season."
     # )
 
+    # Format next game info to connect smoothly with series status
+    next_game_text = ""
+    if next_game_info:
+        # Convert "The next game is Monday..." to "and the next game is Monday..."
+        next_game_text = f" and the {next_game_info.replace('The next game is ', 'next game is ')}"
+    
     summary = (
-        f"<span class='highlight'>LOS ANGELES</span> <span class='updated'>({update_date_str})</span> — "
-        f"The Dodgers compiled a <span class='highlight'>{record}</span> record in the {current_year} regular season, a <span class='highlight'>{win_pct:.0f}%</span> winning percentage. {last_game_summary_fragment} The team won the National League West division and is off to the postseason!"
+        f"<span class='highlight'>LOS ANGELES</span> <span class='updated'>({current_date})</span> — "
+        f"The Dodgers compiled a <span class='highlight'>{record}</span> record in the {current_year} regular season, a <span class='highlight'>{win_pct:.0f}%</span> winning percentage. "
+        f"{postseason_summary.get('competing', postseason_summary.get('text', ''))} "
+        f"{last_game_summary_fragment} "
+        f"{postseason_summary.get('series_status', '')}{next_game_text}."
     )
     return summary
 
