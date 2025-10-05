@@ -515,14 +515,15 @@ def get_next_game_info():
                     day_name = game_date_et.strftime('%A')  # Monday, Tuesday, etc.
                     time_str = game_date_et.strftime('%-I:%M p.m. ET')
                     
-                    # Get venue info
+                    # Get venue info and highlight it
                     venue_name = game.get('venue', {}).get('name', '')
+                    highlighted_venue = f"<span class='highlight'>{venue_name}</span>" if venue_name else ""
                     
                     # Determine if home or away
                     home_team_id = game.get('teams', {}).get('home', {}).get('team', {}).get('id')
                     is_dodgers_home = home_team_id == 119
                     
-                    location_text = f"at {venue_name}" if not is_dodgers_home else f"at {venue_name}"
+                    location_text = f"at {highlighted_venue}" if not is_dodgers_home else f"at {highlighted_venue}"
                     
                     return f"The next game is {day_name} at {time_str} {location_text}"
         
@@ -560,17 +561,21 @@ def generate_postseason_summary():
                 # Parse the series result to determine who's leading
                 result = current_series['result']
                 if 'LAD leads' in result:
-                    series_status = result.replace('LAD leads', 'The Dodgers lead the series')
+                    # Extract the series score and highlight it
+                    series_score = result.replace('LAD leads ', '')
+                    series_status = f"The Dodgers lead the series <span class='highlight'>{series_score}</span>"
                 elif 'LAD wins' in result:
-                    series_status = result.replace('LAD wins', 'The Dodgers won the series')
+                    # Extract the series score and highlight it
+                    series_score = result.replace('LAD wins ', '')
+                    series_status = f"The Dodgers won the series <span class='highlight'>{series_score}</span>"
                 elif 'leads' in result and 'LAD' not in result:
-                    # Handle case where opponent is leading
-                    series_status = result.replace('leads', 'lead the series')
+                    # Handle case where opponent is leading - highlight the score
+                    series_status = result.replace('leads', 'lead the series').replace(' ', " <span class='highlight'>", 1).replace('-', "-</span>", 1)
                 else:
                     series_status = result
                 
                 return {
-                    'competing': f"The team is competing in the {round_name} against the {opponent}.",
+                    'competing': f"The team is competing in the <span class='highlight'>{round_name}</span> against the <span class='highlight'>{opponent}</span>.",
                     'series_status': series_status
                 }
             

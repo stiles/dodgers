@@ -146,7 +146,11 @@
     {
         "stat_label":"Last updated",
         "stat":"update_time",
+<<<<<<< HEAD
         "value":"October 5, 2025, 2:06 PM PT",
+=======
+        "value":"October 5, 2025, 3:05 PM PT",
+>>>>>>> 5c8e0850 (cleaning up summary)
         "category":"summary",
         "context_value":"",
         "context_value_label":""
@@ -154,7 +158,11 @@
     {
         "stat_label":"Team summary",
         "stat":"summary",
+<<<<<<< HEAD
         "value":"<span class='highlight'>LOS ANGELES<\/span> <span class='updated'>(October 5)<\/span> \u2014 The Dodgers compiled a <span class='highlight'>93-69<\/span> record in the 2025 regular season, a <span class='highlight'>57%<\/span> winning percentage. The team is competing in the NLDS against the Philadelphia Phillies. The last game was a <span class='highlight'>5-3<\/span> away <span class='highlight'>win<\/span>. The Dodgers lead the series 1-0 and the next game is Monday at 5:08 p.m. ET at Citizens Bank Park.",
+=======
+        "value":"<span class='highlight'>LOS ANGELES<\/span> <span class='updated'>(October 5)<\/span> \u2014 The Dodgers compiled a <span class='highlight'>93-69<\/span> record in the 2025 regular season, a <span class='highlight'>57%<\/span> winning percentage. The team is competing in the <span class='highlight'>NLDS<\/span> against the <span class='highlight'>Philadelphia Phillies<\/span>. The last game was a <span class='highlight'>5-3<\/span> away <span class='highlight'>win<\/span>. The Dodgers lead the series <span class='highlight'>1-0<\/span> and the next game is Monday at 5:08 p.m. ET at <span class='highlight'>Citizens Bank Park<\/span>.",
+>>>>>>> 5c8e0850 (cleaning up summary)
         "category":"summary",
         "context_value":"",
         "context_value_label":""
