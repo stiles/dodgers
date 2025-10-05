@@ -1,0 +1,34 @@
+[
+  {
+    "round": "Wild Card",
+    "series_name": "NL Wild Card Series",
+    "status": "completed",
+    "opponent": "Cincinnati Reds",
+    "result": "LAD wins 2-0",
+    "wins": 2,
+    "losses": 0
+  },
+  {
+    "round": "NLDS",
+    "series_name": "NL Division Series",
+    "status": "in_progress",
+    "opponent": "Philadelphia Phillies",
+    "result": "LAD leads 1-0",
+    "wins": 1,
+    "losses": 0
+  },
+  {
+    "round": "NLCS",
+    "series_name": "NL Championship Series",
+    "status": "upcoming",
+    "opponent": "?",
+    "result": "?"
+  },
+  {
+    "round": "World Series",
+    "series_name": "World Series",
+    "status": "upcoming",
+    "opponent": "?",
+    "result": "?"
+  }
+]

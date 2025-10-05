@@ -3946,5 +3946,204 @@ document.addEventListener('DOMContentLoaded', function() {
   if (document.getElementById('playoff-bracket-container')) {
     initPlayoffBracket();
   }
+  
+  // Initialize postseason stats
+  if (document.getElementById('postseason-grid')) {
+    initPostseasonStats();
+  }
+  
+  // Initialize playoff journey
+  if (document.getElementById('playoff-journey')) {
+    initPlayoffJourney();
+  }
 });
+
+// Postseason Stats Functions
+async function fetchPostseasonStats() {
+  try {
+    // Try local path first (for development), then fallback to S3
+    const localUrl = '/data/postseason/dodgers_postseason_stats_2025.json';
+    const s3Url = 'https://stilesdata.com/dodgers/data/postseason/dodgers_postseason_stats_2025.json';
+    
+    let response = await fetch(localUrl);
+    if (!response.ok) {
+      // Fallback to S3 URL
+      response = await fetch(s3Url);
+    }
+    
+    if (!response.ok) {
+      throw new Error(`HTTP error! status: ${response.status}`);
+    }
+    return await response.json();
+  } catch (error) {
+    console.error('Error fetching postseason stats:', error);
+    return null;
+  }
+}
+
+function createPostseasonPlayerCard(player) {
+  const stats = player.stats;
+  
+  // Extract last name from full name
+  const lastName = player.player_name.split(' ').pop();
+  
+  // Determine which stats to highlight based on performance
+  const highlightAvg = parseFloat(stats.avg) >= 0.300;
+  const highlightHR = stats.homeRuns >= 2;
+  const highlightRBI = stats.rbi >= 5;
+  const highlightOPS = parseFloat(stats.ops) >= 0.900;
+  
+  return `
+    <div class="postseason-player-card">
+      <div class="postseason-player-name">${lastName}</div>
+      <div class="postseason-stats-grid">
+        <div class="postseason-stat">
+          <div class="postseason-stat-label">AVG</div>
+          <div class="postseason-stat-value ${highlightAvg ? 'highlight' : ''}">${stats.avg}</div>
+        </div>
+        <div class="postseason-stat">
+          <div class="postseason-stat-label">HR</div>
+          <div class="postseason-stat-value ${highlightHR ? 'highlight' : ''}">${stats.homeRuns}</div>
+        </div>
+        <div class="postseason-stat">
+          <div class="postseason-stat-label">RBI</div>
+          <div class="postseason-stat-value ${highlightRBI ? 'highlight' : ''}">${stats.rbi}</div>
+        </div>
+        <div class="postseason-stat">
+          <div class="postseason-stat-label">OPS</div>
+          <div class="postseason-stat-value ${highlightOPS ? 'highlight' : ''}">${stats.ops}</div>
+        </div>
+      </div>
+    </div>
+  `;
+}
+
+function renderPostseasonStats(playersData) {
+  const grid = document.getElementById('postseason-grid');
+  if (!grid || !playersData || playersData.length === 0) {
+    console.log('No postseason stats data to display');
+    return;
+  }
+  
+  // Sort players by at-bats (descending) to show most active players first
+  const sortedPlayers = playersData.sort((a, b) => {
+    const atBatsA = parseInt(a.stats.atBats) || 0;
+    const atBatsB = parseInt(b.stats.atBats) || 0;
+    return atBatsB - atBatsA;
+  });
+  
+  // Generate HTML for all player cards
+  const cardsHTML = sortedPlayers.map(player => createPostseasonPlayerCard(player)).join('');
+  grid.innerHTML = cardsHTML;
+}
+
+async function initPostseasonStats() {
+  console.log('Initializing postseason stats...');
+  
+  // Add a temporary loading indicator
+  const grid = document.getElementById('postseason-grid');
+  if (grid) {
+    grid.innerHTML = '<div style="text-align: center; padding: 20px; color: #666;">Loading postseason stats...</div>';
+  }
+  
+  try {
+    const postseasonData = await fetchPostseasonStats();
+    console.log('Postseason data:', postseasonData);
+    if (postseasonData) {
+      renderPostseasonStats(postseasonData);
+      console.log('Postseason stats rendered successfully');
+    } else {
+      console.log('No postseason data available, hiding section');
+      if (grid) {
+        grid.innerHTML = '<div style="text-align: center; padding: 20px; color: #999;">No postseason data available</div>';
+      }
+    }
+  } catch (error) {
+    console.error('Error initializing postseason stats:', error);
+    if (grid) {
+      grid.innerHTML = '<div style="text-align: center; padding: 20px; color: #f00;">Error loading postseason stats</div>';
+    }
+  }
+}
+
+// Playoff Journey Functions
+async function fetchPlayoffJourney() {
+  try {
+    // Try local path first (for development), then fallback to S3
+    const localUrl = '/data/postseason/dodgers_postseason_series_2025.json';
+    const s3Url = 'https://stilesdata.com/dodgers/data/postseason/dodgers_postseason_series_2025.json';
+    
+    let response = await fetch(localUrl);
+    if (!response.ok) {
+      // Fallback to S3 URL
+      response = await fetch(s3Url);
+    }
+    
+    if (!response.ok) {
+      throw new Error(`HTTP error! status: ${response.status}`);
+    }
+    return await response.json();
+  } catch (error) {
+    console.error('Error fetching playoff journey:', error);
+    return null;
+  }
+}
+
+function createPlayoffRoundCard(round) {
+  const opponent = round.opponent === '?' ? 'TBD' : round.opponent;
+  const result = round.result === '?' ? 'TBD' : round.result;
+  
+  // Convert underscore to hyphen for CSS class names
+  const statusClass = round.status.replace(/_/g, '-');
+  
+  return `
+    <div class="playoff-round ${statusClass}">
+      <div class="round-status"></div>
+      <div class="round-title">${round.round}</div>
+      <div class="round-opponent">vs ${opponent}</div>
+      <div class="round-result">${result}</div>
+    </div>
+  `;
+}
+
+function renderPlayoffJourney(journeyData) {
+  const container = document.getElementById('playoff-journey');
+  if (!container || !journeyData || journeyData.length === 0) {
+    console.log('No playoff journey data to display');
+    return;
+  }
+  
+  // Generate HTML for all rounds
+  const roundsHTML = journeyData.map(round => createPlayoffRoundCard(round)).join('');
+  container.innerHTML = roundsHTML;
+}
+
+async function initPlayoffJourney() {
+  console.log('Initializing playoff journey...');
+  
+  // Add a temporary loading indicator
+  const container = document.getElementById('playoff-journey');
+  if (container) {
+    container.innerHTML = '<div style="text-align: center; padding: 20px; color: #666;">Loading playoff journey...</div>';
+  }
+  
+  try {
+    const journeyData = await fetchPlayoffJourney();
+    console.log('Playoff journey data:', journeyData);
+    if (journeyData) {
+      renderPlayoffJourney(journeyData);
+      console.log('Playoff journey rendered successfully');
+    } else {
+      console.log('No playoff journey data available');
+      if (container) {
+        container.innerHTML = '<div style="text-align: center; padding: 20px; color: #999;">No playoff data available</div>';
+      }
+    }
+  } catch (error) {
+    console.error('Error initializing playoff journey:', error);
+    if (container) {
+      container.innerHTML = '<div style="text-align: center; padding: 20px; color: #f00;">Error loading playoff journey</div>';
+    }
+  }
+}
 
