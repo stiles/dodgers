@@ -688,13 +688,29 @@ def generate_summary(
         # Convert "The next game is Monday..." to "and the next game is Monday..."
         next_game_text = f" and the {next_game_info.replace('The next game is ', 'next game is ')}"
     
-    summary = (
-        f"<span class='highlight'>LOS ANGELES</span> <span class='updated'>({current_date})</span> — "
-        f"The Dodgers compiled a <span class='highlight'>{record}</span> record in the {current_year} regular season, a <span class='highlight'>{win_pct:.0f}%</span> winning percentage. "
-        f"{postseason_summary.get('competing', postseason_summary.get('text', ''))} "
-        f"{last_game_summary_fragment} "
-        f"{postseason_summary.get('series_status', '')}{next_game_text}."
-    )
+    # Handle fallback postseason summary (when no series data available)
+    if isinstance(postseason_summary, dict) and ('competing' in postseason_summary or 'series_status' in postseason_summary):
+        # Structured format with competing/series_status
+        competing_text = postseason_summary.get('competing', '')
+        series_status = postseason_summary.get('series_status', '')
+        
+        summary = (
+            f"<span class='highlight'>LOS ANGELES</span> <span class='updated'>({current_date})</span> — "
+            f"The Dodgers compiled a <span class='highlight'>{record}</span> record in the {current_year} regular season, a <span class='highlight'>{win_pct:.0f}%</span> winning percentage. "
+            f"{competing_text} "
+            f"{last_game_summary_fragment} "
+            f"{series_status}{next_game_text}."
+        )
+    else:
+        # Simple text format (fallback)
+        postseason_text = postseason_summary.get('text', '') if isinstance(postseason_summary, dict) else postseason_summary
+        
+        summary = (
+            f"<span class='highlight'>LOS ANGELES</span> <span class='updated'>({current_date})</span> — "
+            f"The Dodgers compiled a <span class='highlight'>{record}</span> record in the {current_year} regular season, a <span class='highlight'>{win_pct:.0f}%</span> winning percentage. "
+            f"{postseason_text} "
+            f"{last_game_summary_fragment}{next_game_text}."
+        )
     return summary
 
 

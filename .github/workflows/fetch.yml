@@ -65,17 +65,17 @@ jobs:
         # python scripts/06_fetch_process_pitching.py
         # python scripts/09_build_wins_losses_from_boxscores.py
         # python scripts/18_generate_projection.py
+        python scripts/13_fetch_process_schedule.py
+        python scripts/19_fetch_roster.py
+        python scripts/28_fetch_postseason_stats.py
         python scripts/07_create_toplines_summary.py
         # python scripts/08_fetch_process_season_outcomes.py
         # python scripts/10_fetch_process_historic_batting_gamelogs.py
         # python scripts/11_fetch_process_attendance.py
         # python scripts/12_fetch_process_historic_pitching_gamelogs.py
-        python scripts/13_fetch_process_schedule.py
         # python scripts/14_fetch_process_batting_mlb.py
         # python scripts/15_fetch_xwoba.py
         # python scripts/16_fetch_shohei.py
-        python scripts/19_fetch_roster.py
-        python scripts/28_fetch_postseason_stats.py
         # python scripts/20_fetch_game_pitches.py
         # python scripts/21_summarize_pitch_data.py
         # python scripts/27_collect_umpires.py
