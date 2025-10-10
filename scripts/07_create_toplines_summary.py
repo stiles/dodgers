@@ -676,8 +676,8 @@ def generate_summary(
     postseason_summary = generate_postseason_summary()
     next_game_info = get_next_game_info()
     
-    # Use current date with single digit day format
-    current_date = datetime.now().strftime("%B %-d")
+    # Use the properly converted Pacific date that was passed in
+    current_date = update_date_str
 
     # summary = (
     #     f"<span class='highlight'>LOS ANGELES</span> <span class='updated'>({update_date_str})</span> — "
