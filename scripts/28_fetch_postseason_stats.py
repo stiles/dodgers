@@ -232,16 +232,29 @@ def main():
         else:
             logging.warning(f"Could not categorize series: {series_name} - {description}")
     
-    # Manual override based on known current state (Oct 5, 2025)
-    # This can be removed once the API catches up
-    if playoff_journey[0]['opponent'] == 'Cincinnati Reds' and playoff_journey[0]['status'] != 'completed':
-        logging.info("Applying manual override for Wild Card series")
-        playoff_journey[0].update({
-            "status": "completed",
-            "result": "LAD wins 2-0",
-            "wins": 2,
-            "losses": 0
-        })
+    # Manual override based on known current state (Oct 13, 2025)
+    # Update to reflect current NLCS vs Brewers starting today
+    
+    # NLDS vs Phillies is completed
+    for journey in playoff_journey:
+        if journey['round'] == 'NLDS':
+            journey.update({
+                "status": "completed",
+                "opponent": "Philadelphia Phillies", 
+                "result": "LAD wins 3-1",
+                "wins": 3,
+                "losses": 1
+            })
+            logging.info("Applied manual override for completed NLDS vs Phillies (3-1)")
+        elif journey['round'] == 'NLCS':
+            journey.update({
+                "status": "in_progress",
+                "opponent": "Milwaukee Brewers",
+                "result": "Series tied 0-0",
+                "wins": 0,
+                "losses": 0
+            })
+            logging.info("Applied manual override for current NLCS vs Brewers")
     
     # Save series data
     with open(series_file, 'w', encoding='utf-8') as f:
@@ -284,10 +297,13 @@ def main():
     logging.info(f"Saved postseason stats for top {len(top_12_stats)} players (by plate appearances) to {json_file}")
     
     # Print summary
-    print(f"\n=== Dodgers 2025 Postseason Journey ===")
+    print(f"\n=== Dodgers 2025 Postseason Journey (as of Oct 13, 2025) ===")
     for journey in playoff_journey:
         status_icon = "✅" if journey['status'] == "completed" else "🏃" if journey['status'] == "in_progress" else "❓"
         print(f"{status_icon} {journey['round']}: vs {journey['opponent']} - {journey['result']}")
+    
+    print(f"\n📅 Current Status: NLCS Game 1 vs Milwaukee Brewers starts today")
+    print(f"🏆 Last completed series: NLDS vs Philadelphia Phillies (LAD wins 3-1)")
     
     print(f"\n=== Top {len(top_12_stats)} Players by 2025 Postseason Plate Appearances ===")
     for i, player_stats in enumerate(top_12_stats, 1):
