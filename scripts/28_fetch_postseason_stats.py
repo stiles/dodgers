@@ -319,7 +319,7 @@ def main():
             journey.update({
                 "status": "in_progress",
                 "opponent": "Milwaukee Brewers",
-                "result": "Series tied 0-0",
+                "result": "Series is tied 0-0",
                 "wins": 0,
                 "losses": 0
             })

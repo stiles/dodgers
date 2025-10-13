@@ -571,6 +571,12 @@ def generate_postseason_summary():
                 elif 'leads' in result and 'LAD' not in result:
                     # Handle case where opponent is leading - highlight the score
                     series_status = result.replace('leads', 'lead the series').replace(' ', " <span class='highlight'>", 1).replace('-', "-</span>", 1)
+                elif 'tied' in result.lower():
+                    # Handle tied series - ensure proper verb form
+                    if 'is tied' in result.lower():
+                        series_status = result  # Already has proper format
+                    else:
+                        series_status = f"Series is {result.lower().replace('series ', '')}"
                 else:
                     series_status = result
                 
@@ -699,13 +705,75 @@ def generate_summary(
         competing_text = postseason_summary.get('competing', '')
         series_status = postseason_summary.get('series_status', '')
         
-        summary = (
-            f"<span class='highlight'>LOS ANGELES</span> <span class='updated'>({current_date})</span> — "
-            f"The Dodgers compiled a <span class='highlight'>{record}</span> record in the {current_year} regular season, a <span class='highlight'>{win_pct:.0f}%</span> winning percentage. "
-            f"{competing_text} "
-            f"{last_game_summary_fragment} "
-            f"{series_status}{next_game_text}."
-        )
+        # Check if we're in a series transition by looking at postseason data
+        is_series_transition = False
+        previous_series_context = ""
+        
+        try:
+            # Load postseason series data to check for transitions
+            postseason_file = "data/postseason/dodgers_postseason_series_2025.json"
+            if os.path.exists(postseason_file):
+                with open(postseason_file, 'r') as f:
+                    postseason_data = json.load(f)
+                
+                # Find current and most recent completed series
+                current_series = None
+                last_completed_series = None
+                
+                for series in postseason_data:
+                    if series['status'] == 'in_progress':
+                        current_series = series
+                    elif series['status'] == 'completed':
+                        # Get the most recent completed series (highest round order)
+                        round_order = {'Wild Card': 1, 'NLDS': 2, 'NLCS': 3, 'World Series': 4}
+                        if (last_completed_series is None or 
+                            round_order.get(series['round'], 0) > round_order.get(last_completed_series['round'], 0)):
+                            last_completed_series = series
+                
+                # Check if we have a series transition (completed series + current series)
+                if current_series and last_completed_series:
+                    is_series_transition = True
+                    previous_series_context = f" in the <span class='highlight'>{last_completed_series['round']}</span> against the <span class='highlight'>{last_completed_series['opponent']}</span>"
+        except Exception as e:
+            logging.warning(f"Could not check for series transition: {e}")
+        
+        # Adjust the last game summary for series transitions
+        if is_series_transition and last_game_summary_fragment:
+            # Modify the last game summary to include series context
+            # Handle both plain text and HTML formatted versions
+            enhanced_last_game = last_game_summary_fragment
+            
+            # Replace various win/loss patterns
+            patterns_to_replace = [
+                " home win", " road win", " home loss", " road loss",
+                " <span class='highlight'>win</span>", " <span class='highlight'>loss</span>",
+                " win", " loss"
+            ]
+            
+            for pattern in patterns_to_replace:
+                if pattern in enhanced_last_game:
+                    enhanced_last_game = enhanced_last_game.replace(
+                        pattern, f"{pattern}{previous_series_context}"
+                    )
+                    break  # Only replace the first match to avoid double replacements
+            
+            # Create the summary with series transition flow
+            summary = (
+                f"<span class='highlight'>LOS ANGELES</span> <span class='updated'>({current_date})</span> — "
+                f"The Dodgers compiled a <span class='highlight'>{record}</span> record in the {current_year} regular season, a <span class='highlight'>{win_pct:.0f}%</span> winning percentage. "
+                f"{enhanced_last_game} "
+                f"The team is now competing in the <span class='highlight'>{current_series['round']}</span> against the <span class='highlight'>{current_series['opponent']}</span>. "
+                f"The {series_status.lower()}{next_game_text}."
+            )
+        else:
+            # Standard format for non-transition periods
+            summary = (
+                f"<span class='highlight'>LOS ANGELES</span> <span class='updated'>({current_date})</span> — "
+                f"The Dodgers compiled a <span class='highlight'>{record}</span> record in the {current_year} regular season, a <span class='highlight'>{win_pct:.0f}%</span> winning percentage. "
+                f"{competing_text} "
+                f"{last_game_summary_fragment} "
+                f"{series_status}{next_game_text}."
+            )
     else:
         # Simple text format (fallback)
         postseason_text = postseason_summary.get('text', '') if isinstance(postseason_summary, dict) else postseason_summary
