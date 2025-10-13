@@ -507,8 +507,9 @@ def get_next_game_info():
                 if game.get('status', {}).get('abstractGameState') == 'Preview':
                     # Parse game info
                     game_date_utc = datetime.fromisoformat(game['gameDate'].replace('Z', '+00:00'))
-                    # Convert to PT (Pacific Time for LA audience)
-                    pt_tz = timezone(timedelta(hours=-8))  # PST/PDT approximation
+                    # Convert to PT using pytz for proper DST handling
+                    import pytz
+                    pt_tz = pytz.timezone('US/Pacific')
                     game_date_pt = game_date_utc.astimezone(pt_tz)
                     
                     # Format day and time
