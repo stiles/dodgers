@@ -4,6 +4,8 @@ import pandas as pd
 import json
 import logging
 from datetime import datetime
+from dateutil import parser
+import pytz
 
 logging.basicConfig(level=logging.INFO, format='%(asctime)s - %(levelname)s - %(message)s')
 
@@ -43,6 +45,70 @@ def get_all_batters():
     
     logging.info(f"Total batters found: {len(player_ids)}")
     return player_ids
+
+def get_next_game_info(series_data):
+    """Get information about the next upcoming game"""
+    next_game_info = None
+    
+    # Look for the current series (in_progress)
+    current_series = None
+    for series in series_data:
+        if not series.get('is_over', True):
+            current_series = series
+            break
+    
+    if current_series:
+        # Try to get more detailed game info from API
+        try:
+            # Get current series schedule to find next game
+            current_year = datetime.now().year
+            url = f"https://statsapi.mlb.com/api/v1/schedule/postseason?sportId=1&season={current_year}&hydrate=team,venue,linescore&language=en"
+            
+            response = requests.get(url)
+            response.raise_for_status()
+            data = response.json()
+            
+            if 'dates' in data:
+                for date_entry in data['dates']:
+                    for game in date_entry.get('games', []):
+                        home_team = game.get('teams', {}).get('home', {}).get('team', {}).get('name', '')
+                        away_team = game.get('teams', {}).get('away', {}).get('team', {}).get('name', '')
+                        
+                        if 'Los Angeles Dodgers' in [home_team, away_team]:
+                            game_status = game.get('status', {}).get('detailedState', '')
+                            
+                            # Look for upcoming games (Scheduled, Pre-Game, etc.)
+                            if game_status in ['Scheduled', 'Pre-Game', 'Warmup']:
+                                game_datetime = game.get('gameDate', '')
+                                venue_name = game.get('venue', {}).get('name', '')
+                                
+                                if game_datetime:
+                                    # Parse the game time and convert to PT
+                                    try:
+                                        game_dt = parser.parse(game_datetime)
+                                        pt_tz = pytz.timezone('US/Pacific')
+                                        game_pt = game_dt.astimezone(pt_tz)
+                                        
+                                        next_game_info = {
+                                            'opponent': away_team if home_team == 'Los Angeles Dodgers' else home_team,
+                                            'venue': venue_name,
+                                            'datetime_pt': game_pt,
+                                            'time_pt': game_pt.strftime('%-I:%M p.m. PT'),
+                                            'day': game_pt.strftime('%A'),
+                                            'is_home': home_team == 'Los Angeles Dodgers'
+                                        }
+                                        
+                                        logging.info(f"Found next game: {next_game_info}")
+                                        return next_game_info
+                                        
+                                    except Exception as e:
+                                        logging.warning(f"Error parsing game time: {e}")
+                                        
+        except Exception as e:
+            logging.warning(f"Error fetching detailed game info: {e}")
+    
+    return next_game_info
+
 
 def fetch_postseason_series():
     """Fetch postseason series data from MLB API"""
@@ -178,6 +244,9 @@ def main():
     logging.info("Fetching postseason series data...")
     series_data = fetch_postseason_series()
     
+    # Get next game info with proper time zone handling
+    next_game = get_next_game_info(series_data)
+    
     # Create a structured playoff journey
     playoff_journey = [
         {"round": "Wild Card", "series_name": "NL Wild Card Series", "status": "upcoming", "opponent": "?", "result": "?"},
@@ -302,8 +371,38 @@ def main():
         status_icon = "✅" if journey['status'] == "completed" else "🏃" if journey['status'] == "in_progress" else "❓"
         print(f"{status_icon} {journey['round']}: vs {journey['opponent']} - {journey['result']}")
     
-    print(f"\n📅 Current Status: NLCS Game 1 vs Milwaukee Brewers starts today")
-    print(f"🏆 Last completed series: NLDS vs Philadelphia Phillies (LAD wins 3-1)")
+    # Enhanced current status with context
+    current_series = None
+    previous_series = None
+    
+    # Find current and most recent completed series
+    for journey in playoff_journey:
+        if journey['status'] == 'in_progress':
+            current_series = journey
+        elif journey['status'] == 'completed':
+            if previous_series is None or journey['round'] in ['World Series', 'NLCS', 'NLDS', 'Wild Card']:
+                # Get the most recent completed series
+                round_order = {'Wild Card': 1, 'NLDS': 2, 'NLCS': 3, 'World Series': 4}
+                if previous_series is None or round_order.get(journey['round'], 0) > round_order.get(previous_series['round'], 0):
+                    previous_series = journey
+    
+    if next_game:
+        game_time = next_game['time_pt']
+        game_day = next_game['day']
+        venue = next_game['venue']
+        current_opponent = next_game['opponent']
+        
+        print(f"\n📅 Current Status: NLCS Game 1 vs {current_opponent} starts {game_day} at {game_time}")
+        print(f"🏟️ Venue: {venue}")
+        
+        if previous_series and previous_series['opponent'] != current_opponent:
+            print(f"🏆 Last completed series: {previous_series['round']} vs {previous_series['opponent']} ({previous_series['result']})")
+    else:
+        # Fallback if we can't get detailed game info
+        if current_series:
+            print(f"\n📅 Current Status: {current_series['round']} vs {current_series['opponent']} - {current_series['result']}")
+        if previous_series:
+            print(f"🏆 Last completed series: {previous_series['round']} vs {previous_series['opponent']} ({previous_series['result']})")
     
     print(f"\n=== Top {len(top_12_stats)} Players by 2025 Postseason Plate Appearances ===")
     for i, player_stats in enumerate(top_12_stats, 1):
