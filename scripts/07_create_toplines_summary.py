@@ -507,13 +507,13 @@ def get_next_game_info():
                 if game.get('status', {}).get('abstractGameState') == 'Preview':
                     # Parse game info
                     game_date_utc = datetime.fromisoformat(game['gameDate'].replace('Z', '+00:00'))
-                    # Convert to ET
-                    et_tz = timezone(timedelta(hours=-5))  # EST/EDT approximation
-                    game_date_et = game_date_utc.astimezone(et_tz)
+                    # Convert to PT (Pacific Time for LA audience)
+                    pt_tz = timezone(timedelta(hours=-8))  # PST/PDT approximation
+                    game_date_pt = game_date_utc.astimezone(pt_tz)
                     
                     # Format day and time
-                    day_name = game_date_et.strftime('%A')  # Monday, Tuesday, etc.
-                    time_str = game_date_et.strftime('%-I:%M p.m. ET')
+                    day_name = game_date_pt.strftime('%A')  # Monday, Tuesday, etc.
+                    time_str = game_date_pt.strftime('%-I:%M p.m. PT')
                     
                     # Get venue info and highlight it
                     venue_name = game.get('venue', {}).get('name', '')
