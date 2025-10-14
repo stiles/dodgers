@@ -732,9 +732,20 @@ def generate_summary(
                             last_completed_series = series
                 
                 # Check if we have a series transition (completed series + current series)
-                if current_series and last_completed_series:
-                    is_series_transition = True
-                    previous_series_context = f" in the <span class='highlight'>{last_completed_series['round']}</span> against the <span class='highlight'>{last_completed_series['opponent']}</span>"
+                # But only if the last game was actually from the previous series
+                if current_series and last_completed_series and last_game_summary_fragment:
+                    # Check if the last game was against the current opponent or previous opponent
+                    current_opponent = current_series.get('opponent', '').lower()
+                    previous_opponent = last_completed_series.get('opponent', '').lower()
+                    
+                    # Simple check: if last game summary mentions current opponent, it's from current series
+                    # If it mentions previous opponent, it's from previous series (transition scenario)
+                    if previous_opponent in last_game_summary_fragment.lower() and current_opponent not in last_game_summary_fragment.lower():
+                        is_series_transition = True
+                        previous_series_context = f" in the <span class='highlight'>{last_completed_series['round']}</span> against the <span class='highlight'>{last_completed_series['opponent']}</span>"
+                    else:
+                        # Last game was from current series, not a transition
+                        is_series_transition = False
         except Exception as e:
             logging.warning(f"Could not check for series transition: {e}")
         
@@ -768,11 +779,46 @@ def generate_summary(
             )
         else:
             # Standard format for non-transition periods
+            # Check if last game was in the same series to avoid redundancy
+            clean_last_game = last_game_summary_fragment
+            if competing_text and last_game_summary_fragment:
+                # Extract current series info to compare
+                current_series_info = ""
+                try:
+                    postseason_file = "data/postseason/dodgers_postseason_series_2025.json"
+                    if os.path.exists(postseason_file):
+                        with open(postseason_file, 'r') as f:
+                            postseason_data = json.load(f)
+                        
+                        # Find current series
+                        for series in postseason_data:
+                            if series['status'] == 'in_progress':
+                                current_round = series['round']
+                                current_opponent = series['opponent']
+                                
+                                # Check if last game summary contains current series context
+                                if (current_round.lower() in last_game_summary_fragment.lower() and 
+                                    current_opponent.lower() in last_game_summary_fragment.lower()):
+                                    # Remove redundant series context from last game summary
+                                    # Keep just the basic game result
+                                    clean_last_game = last_game_summary_fragment
+                                    # Remove the series and opponent context
+                                    import re
+                                    pattern = rf" in the <span class='highlight'>{current_round}</span> against the <span class='highlight'>{current_opponent}</span>"
+                                    clean_last_game = clean_last_game.replace(pattern, "")
+                                    
+                                    # Also handle non-highlighted versions
+                                    pattern_plain = f" in the {current_round} against the {current_opponent}"
+                                    clean_last_game = clean_last_game.replace(pattern_plain, "")
+                                break
+                except Exception as e:
+                    logging.warning(f"Could not clean redundant series context: {e}")
+            
             summary = (
                 f"<span class='highlight'>LOS ANGELES</span> <span class='updated'>({current_date})</span> — "
                 f"The Dodgers compiled a <span class='highlight'>{record}</span> record in the {current_year} regular season, a <span class='highlight'>{win_pct:.0f}%</span> winning percentage. "
                 f"{competing_text} "
-                f"{last_game_summary_fragment} "
+                f"{clean_last_game} "
                 f"{series_status}{next_game_text}."
             )
     else:
