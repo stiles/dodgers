@@ -301,29 +301,9 @@ def main():
         else:
             logging.warning(f"Could not categorize series: {series_name} - {description}")
     
-    # Manual override based on known current state (Oct 13, 2025)
-    # Update to reflect current NLCS vs Brewers starting today
-    
-    # NLDS vs Phillies is completed
-    for journey in playoff_journey:
-        if journey['round'] == 'NLDS':
-            journey.update({
-                "status": "completed",
-                "opponent": "Philadelphia Phillies", 
-                "result": "LAD wins 3-1",
-                "wins": 3,
-                "losses": 1
-            })
-            logging.info("Applied manual override for completed NLDS vs Phillies (3-1)")
-        elif journey['round'] == 'NLCS':
-            journey.update({
-                "status": "in_progress",
-                "opponent": "Milwaukee Brewers",
-                "result": "Series is tied 0-0",
-                "wins": 0,
-                "losses": 0
-            })
-            logging.info("Applied manual override for current NLCS vs Brewers")
+    # Note: Manual overrides removed to allow live API data to flow through
+    # The API now correctly provides real-time series status
+    logging.info("Using live API data without manual overrides")
     
     # Save series data
     with open(series_file, 'w', encoding='utf-8') as f:

@@ -564,11 +564,11 @@ def generate_postseason_summary():
                 if 'LAD leads' in result:
                     # Extract the series score and highlight it
                     series_score = result.replace('LAD leads ', '')
-                    series_status = f"The Dodgers lead the series <span class='highlight'>{series_score}</span>"
+                    series_status = f"Dodgers lead the series <span class='highlight'>{series_score}</span>"
                 elif 'LAD wins' in result:
                     # Extract the series score and highlight it
                     series_score = result.replace('LAD wins ', '')
-                    series_status = f"The Dodgers won the series <span class='highlight'>{series_score}</span>"
+                    series_status = f"Dodgers won the series <span class='highlight'>{series_score}</span>"
                 elif 'leads' in result and 'LAD' not in result:
                     # Handle case where opponent is leading - highlight the score
                     series_status = result.replace('leads', 'lead the series').replace(' ', " <span class='highlight'>", 1).replace('-', "-</span>", 1)
