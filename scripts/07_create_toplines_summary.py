@@ -590,7 +590,12 @@ def generate_postseason_summary():
                 # All completed, check if they advanced or were eliminated
                 last_series = completed_series[-1]
                 if 'LAD wins' in last_series['result'] or 'LAD leads' in last_series['result']:
-                    return {"text": f"The team advanced through the {last_series['round']} and continues in the postseason."}
+                    # Check if the last series was the World Series
+                    if last_series['round'] == 'World Series':
+                        opponent = last_series.get('opponent', 'their opponent')
+                        return {"text": f"The team won the <span class='highlight'>World Series</span>, defeating the <span class='highlight'>{opponent}</span>!"}
+                    else:
+                        return {"text": f"The team advanced through the {last_series['round']} and continues in the postseason."}
                 else:
                     return {"text": f"The team was eliminated in the {last_series['round']}."}
             else:
