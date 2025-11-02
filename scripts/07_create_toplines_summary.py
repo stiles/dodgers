@@ -830,11 +830,14 @@ def generate_summary(
         # Simple text format (fallback)
         postseason_text = postseason_summary.get('text', '') if isinstance(postseason_summary, dict) else postseason_summary
         
+        # Check if we need to add a period (avoid double punctuation)
+        ending_punctuation = "." if not (postseason_text.endswith('.') or postseason_text.endswith('!') or postseason_text.endswith('?')) else ""
+        
         summary = (
             f"<span class='highlight'>LOS ANGELES</span> <span class='updated'>({current_date})</span> — "
             f"The Dodgers compiled a <span class='highlight'>{record}</span> record in the {current_year} regular season, a <span class='highlight'>{win_pct:.0f}%</span> winning percentage. "
             f"{postseason_text} "
-            f"{last_game_summary_fragment}{next_game_text}."
+            f"{last_game_summary_fragment}{next_game_text}{ending_punctuation}"
         )
     return summary
 
