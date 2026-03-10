@@ -1,9 +1,23 @@
 [
   {
+    "date":"2026-03-10",
+    "transaction":"LF John Rhodes assigned to Dodgers.",
+    "players":[
+      "John Rhodes"
+    ]
+  },
+  {
     "date":"2026-03-09",
     "transaction":"SS Emil Morales assigned to Dodgers.",
     "players":[
       "Emil Morales"
+    ]
+  },
+  {
+    "date":"2026-03-08",
+    "transaction":"C Carlos Avila assigned to Dodgers.",
+    "players":[
+      "Carlos Avila"
     ]
   },
   {
@@ -18,13 +32,6 @@
     "transaction":"RHP Logan Lunceford assigned to Dodgers.",
     "players":[
       "Logan Lunceford"
-    ]
-  },
-  {
-    "date":"2026-03-08",
-    "transaction":"C Carlos Avila assigned to Dodgers.",
-    "players":[
-      "Carlos Avila"
     ]
   },
   {
@@ -64,6 +71,13 @@
   },
   {
     "date":"2026-03-02",
+    "transaction":"OF Landyn Vidourek assigned to Dodgers.",
+    "players":[
+      "Landyn Vidourek"
+    ]
+  },
+  {
+    "date":"2026-03-02",
     "transaction":"LHP Jacob Frost assigned to Dodgers.",
     "players":[
       "Jacob Frost"
@@ -74,13 +88,6 @@
     "transaction":"RHP Jordan Weems assigned to Dodgers.",
     "players":[
       "Jordan Weems"
-    ]
-  },
-  {
-    "date":"2026-03-02",
-    "transaction":"OF Landyn Vidourek assigned to Dodgers.",
-    "players":[
-      "Landyn Vidourek"
     ]
   },
   {
@@ -106,9 +113,9 @@
   },
   {
     "date":"2026-02-28",
-    "transaction":"C Victor Rodrigues assigned to Dodgers.",
+    "transaction":"CF Mike Sirota assigned to Dodgers.",
     "players":[
-      "Victor Rodrigues"
+      "Mike Sirota"
     ]
   },
   {
@@ -120,9 +127,9 @@
   },
   {
     "date":"2026-02-28",
-    "transaction":"CF Mike Sirota assigned to Dodgers.",
+    "transaction":"C Victor Rodrigues assigned to Dodgers.",
     "players":[
-      "Mike Sirota"
+      "Victor Rodrigues"
     ]
   },
   {
@@ -134,16 +141,16 @@
   },
   {
     "date":"2026-02-28",
-    "transaction":"CF Eduardo Quintero assigned to Dodgers.",
+    "transaction":"2B Mairoshendrick Martinus assigned to Dodgers.",
     "players":[
-      "Eduardo Quintero"
+      "Mairoshendrick Martinus"
     ]
   },
   {
     "date":"2026-02-28",
-    "transaction":"2B Mairoshendrick Martinus assigned to Dodgers.",
+    "transaction":"CF Eduardo Quintero assigned to Dodgers.",
     "players":[
-      "Mairoshendrick Martinus"
+      "Eduardo Quintero"
     ]
   },
   {
@@ -1003,9 +1010,9 @@
   },
   {
     "date":"2025-12-10",
-    "transaction":"Miami Marlins purchased contract of RHP Livan Reinoso in the Rule 5 Draft, AAA Phase.",
+    "transaction":"Pittsburgh Pirates purchased contract of LHP Brandon Neeck in the Rule 5 Draft, AAA Phase.",
     "players":[
-      "Livan Reinoso"
+      "Brandon Neeck"
     ]
   },
   {
@@ -1017,9 +1024,9 @@
   },
   {
     "date":"2025-12-10",
-    "transaction":"Pittsburgh Pirates purchased contract of LHP Brandon Neeck in the Rule 5 Draft, AAA Phase.",
+    "transaction":"Miami Marlins purchased contract of RHP Livan Reinoso in the Rule 5 Draft, AAA Phase.",
     "players":[
-      "Brandon Neeck"
+      "Livan Reinoso"
     ]
   },
   {
