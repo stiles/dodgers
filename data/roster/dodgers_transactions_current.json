@@ -1,9 +1,16 @@
 [
   {
-    "date":"2026-03-24",
-    "transaction":"Dodgers signed free agent RHP Jake Cousins.",
+    "date":"2026-03-27",
+    "transaction":"Dodgers signed free agent RHP Angel Rodriguez to a minor league contract.",
     "players":[
-      "Jake Cousins"
+      "Angel Rodriguez"
+    ]
+  },
+  {
+    "date":"2026-03-27",
+    "transaction":"Dodgers signed free agent RHP Eliezel Marte to a minor league contract.",
+    "players":[
+      "Eliezel Marte"
     ]
   },
   {
@@ -14,31 +21,17 @@
     ]
   },
   {
-    "date":"2026-03-23",
-    "transaction":"Dodgers placed RHP Bobby Miller on the 60-day injured list retroactive to March 22, 2026. Right shoulder soreness.",
+    "date":"2026-03-24",
+    "transaction":"Dodgers signed free agent RHP Jake Cousins.",
     "players":[
-      "Bobby Miller"
+      "Jake Cousins"
     ]
   },
   {
     "date":"2026-03-23",
-    "transaction":"Dodgers placed RHP Brusdar Graterol on the 15-day injured list retroactive to March 22, 2026. Recovery from right shoulder surgery.",
+    "transaction":"Dodgers placed LHP Blake Snell on the 15-day injured list retroactive to March 22, 2026. Left shoulder fatigue.",
     "players":[
-      "Brusdar Graterol"
-    ]
-  },
-  {
-    "date":"2026-03-23",
-    "transaction":"Dodgers placed 2B Tommy Edman on the 10-day injured list retroactive to March 22, 2026. Recovery from right ankle surgery.",
-    "players":[
-      "Tommy Edman"
-    ]
-  },
-  {
-    "date":"2026-03-23",
-    "transaction":"Dodgers placed RHP Gavin Stone on the 15-day injured list retroactive to March 22, 2026. Right shoulder inflammation.",
-    "players":[
-      "Gavin Stone"
+      "Blake Snell"
     ]
   },
   {
@@ -50,6 +43,27 @@
   },
   {
     "date":"2026-03-23",
+    "transaction":"Dodgers placed RHP Gavin Stone on the 15-day injured list retroactive to March 22, 2026. Right shoulder inflammation.",
+    "players":[
+      "Gavin Stone"
+    ]
+  },
+  {
+    "date":"2026-03-23",
+    "transaction":"Dodgers placed RHP Bobby Miller on the 60-day injured list retroactive to March 22, 2026. Right shoulder soreness.",
+    "players":[
+      "Bobby Miller"
+    ]
+  },
+  {
+    "date":"2026-03-23",
+    "transaction":"Dodgers placed 2B Tommy Edman on the 10-day injured list retroactive to March 22, 2026. Recovery from right ankle surgery.",
+    "players":[
+      "Tommy Edman"
+    ]
+  },
+  {
+    "date":"2026-03-23",
     "transaction":"Dodgers placed RHP Landon Knack on the 15-day injured list retroactive to March 22, 2026.",
     "players":[
       "Landon Knack"
@@ -57,16 +71,9 @@
   },
   {
     "date":"2026-03-23",
-    "transaction":"Dodgers placed LHP Blake Snell on the 15-day injured list retroactive to March 22, 2026. Left shoulder fatigue.",
+    "transaction":"Dodgers placed RHP Brusdar Graterol on the 15-day injured list retroactive to March 22, 2026. Recovery from right shoulder surgery.",
     "players":[
-      "Blake Snell"
-    ]
-  },
-  {
-    "date":"2026-03-22",
-    "transaction":"SS Joendry Vargas assigned to Dodgers.",
-    "players":[
-      "Joendry Vargas"
+      "Brusdar Graterol"
     ]
   },
   {
@@ -74,6 +81,13 @@
     "transaction":"Dodgers optioned 2B Hyeseong Kim to Oklahoma City Comets.",
     "players":[
       "Hyeseong Kim"
+    ]
+  },
+  {
+    "date":"2026-03-22",
+    "transaction":"SS Joendry Vargas assigned to Dodgers.",
+    "players":[
+      "Joendry Vargas"
     ]
   },
   {
@@ -127,37 +141,23 @@
   },
   {
     "date":"2026-03-16",
-    "transaction":"Dodgers optioned CF Michael Siani to Oklahoma City Comets.",
-    "players":[
-      "Michael Siani"
-    ]
-  },
-  {
-    "date":"2026-03-16",
     "transaction":"Dodgers optioned RHP Paul Gervase to Oklahoma City Comets.",
     "players":[
       "Paul Gervase"
     ]
   },
   {
-    "date":"2026-03-15",
-    "transaction":"RHP Alex Makarewich assigned to Dodgers.",
+    "date":"2026-03-16",
+    "transaction":"Dodgers optioned CF Michael Siani to Oklahoma City Comets.",
     "players":[
-      "Alex Makarewich"
+      "Michael Siani"
     ]
   },
   {
     "date":"2026-03-15",
-    "transaction":"SS Eduardo Guerrero roster status changed by Dodgers.",
+    "transaction":"LHP Evan Shaw assigned to Dodgers.",
     "players":[
-      "Eduardo Guerrero"
-    ]
-  },
-  {
-    "date":"2026-03-15",
-    "transaction":"RHP Domingo Geronimo assigned to Dodgers.",
-    "players":[
-      "Domingo Geronimo"
+      "Evan Shaw"
     ]
   },
   {
@@ -165,6 +165,13 @@
     "transaction":"RHP Accimias Morales assigned to Dodgers.",
     "players":[
       "Accimias Morales"
+    ]
+  },
+  {
+    "date":"2026-03-15",
+    "transaction":"RHP Domingo Geronimo assigned to Dodgers.",
+    "players":[
+      "Domingo Geronimo"
     ]
   },
   {
@@ -183,16 +190,16 @@
   },
   {
     "date":"2026-03-15",
-    "transaction":"LHP Evan Shaw assigned to Dodgers.",
+    "transaction":"RHP Alex Makarewich assigned to Dodgers.",
     "players":[
-      "Evan Shaw"
+      "Alex Makarewich"
     ]
   },
   {
-    "date":"2026-03-14",
-    "transaction":"2B Taylor Young assigned to Dodgers.",
+    "date":"2026-03-15",
+    "transaction":"SS Eduardo Guerrero roster status changed by Dodgers.",
     "players":[
-      "Taylor Young"
+      "Eduardo Guerrero"
     ]
   },
   {
@@ -204,16 +211,23 @@
   },
   {
     "date":"2026-03-14",
-    "transaction":"LF Jaron Elkins assigned to Dodgers.",
+    "transaction":"RHP Dilan Figueredo assigned to Dodgers.",
     "players":[
-      "Jaron Elkins"
+      "Dilan Figueredo"
     ]
   },
   {
     "date":"2026-03-14",
-    "transaction":"RHP Dilan Figueredo assigned to Dodgers.",
+    "transaction":"2B Taylor Young assigned to Dodgers.",
     "players":[
-      "Dilan Figueredo"
+      "Taylor Young"
+    ]
+  },
+  {
+    "date":"2026-03-14",
+    "transaction":"LF Jaron Elkins assigned to Dodgers.",
+    "players":[
+      "Jaron Elkins"
     ]
   },
   {
@@ -281,16 +295,16 @@
   },
   {
     "date":"2026-03-08",
-    "transaction":"Dodgers optioned LHP Ronan Kopp to Oklahoma City Comets.",
+    "transaction":"Dodgers optioned LF Ryan Ward to Oklahoma City Comets.",
     "players":[
-      "Ronan Kopp"
+      "Ryan Ward"
     ]
   },
   {
     "date":"2026-03-08",
-    "transaction":"Dodgers optioned LF Ryan Ward to Oklahoma City Comets.",
+    "transaction":"Dodgers optioned LHP Ronan Kopp to Oklahoma City Comets.",
     "players":[
-      "Ryan Ward"
+      "Ronan Kopp"
     ]
   },
   {
@@ -330,16 +344,16 @@
   },
   {
     "date":"2026-03-02",
-    "transaction":"Dodgers sent RF Jack Suwinski outright to Oklahoma City Comets.",
+    "transaction":"OF Landyn Vidourek assigned to Dodgers.",
     "players":[
-      "Jack Suwinski"
+      "Landyn Vidourek"
     ]
   },
   {
     "date":"2026-03-02",
-    "transaction":"OF Landyn Vidourek assigned to Dodgers.",
+    "transaction":"Dodgers sent RF Jack Suwinski outright to Oklahoma City Comets.",
     "players":[
-      "Landyn Vidourek"
+      "Jack Suwinski"
     ]
   },
   {
@@ -347,6 +361,13 @@
     "transaction":"RF Jack Suwinski roster status changed by Dodgers.",
     "players":[
       "Jack Suwinski"
+    ]
+  },
+  {
+    "date":"2026-02-28",
+    "transaction":"CF Mike Sirota assigned to Dodgers.",
+    "players":[
+      "Mike Sirota"
     ]
   },
   {
@@ -365,16 +386,16 @@
   },
   {
     "date":"2026-02-28",
-    "transaction":"2B Mairoshendrick Martinus assigned to Dodgers.",
+    "transaction":"CF Eduardo Quintero assigned to Dodgers.",
     "players":[
-      "Mairoshendrick Martinus"
+      "Eduardo Quintero"
     ]
   },
   {
     "date":"2026-02-28",
-    "transaction":"CF Mike Sirota assigned to Dodgers.",
+    "transaction":"2B Mairoshendrick Martinus assigned to Dodgers.",
     "players":[
-      "Mike Sirota"
+      "Mairoshendrick Martinus"
     ]
   },
   {
@@ -389,13 +410,6 @@
     "transaction":"C Frank Rodriguez roster status changed by Dodgers.",
     "players":[
       "Frank Rodriguez"
-    ]
-  },
-  {
-    "date":"2026-02-28",
-    "transaction":"CF Eduardo Quintero assigned to Dodgers.",
-    "players":[
-      "Eduardo Quintero"
     ]
   },
   {
@@ -428,16 +442,16 @@
   },
   {
     "date":"2026-02-25",
-    "transaction":"RF Damon Keith assigned to Dodgers.",
+    "transaction":"3B Logan Wagner assigned to Dodgers.",
     "players":[
-      "Damon Keith"
+      "Logan Wagner"
     ]
   },
   {
     "date":"2026-02-25",
-    "transaction":"3B Logan Wagner assigned to Dodgers.",
+    "transaction":"RF Damon Keith assigned to Dodgers.",
     "players":[
-      "Logan Wagner"
+      "Damon Keith"
     ]
   },
   {
@@ -456,30 +470,9 @@
   },
   {
     "date":"2026-02-23",
-    "transaction":"RHP Joseilyn Gonzalez assigned to Dodgers.",
-    "players":[
-      "Joseilyn Gonzalez"
-    ]
-  },
-  {
-    "date":"2026-02-23",
-    "transaction":"OF Charles Davalan assigned to Dodgers.",
-    "players":[
-      "Charles Davalan"
-    ]
-  },
-  {
-    "date":"2026-02-23",
     "transaction":"LHP Wyatt Crowell assigned to Dodgers.",
     "players":[
       "Wyatt Crowell"
-    ]
-  },
-  {
-    "date":"2026-02-23",
-    "transaction":"LHP Myles Caba assigned to Dodgers.",
-    "players":[
-      "Myles Caba"
     ]
   },
   {
@@ -491,9 +484,16 @@
   },
   {
     "date":"2026-02-23",
-    "transaction":"SS Elijah Hainline roster status changed by Dodgers.",
+    "transaction":"LHP Myles Caba assigned to Dodgers.",
     "players":[
-      "Elijah Hainline"
+      "Myles Caba"
+    ]
+  },
+  {
+    "date":"2026-02-23",
+    "transaction":"OF Charles Davalan assigned to Dodgers.",
+    "players":[
+      "Charles Davalan"
     ]
   },
   {
@@ -505,9 +505,37 @@
   },
   {
     "date":"2026-02-23",
+    "transaction":"RHP Joseilyn Gonzalez assigned to Dodgers.",
+    "players":[
+      "Joseilyn Gonzalez"
+    ]
+  },
+  {
+    "date":"2026-02-23",
+    "transaction":"SS Elijah Hainline roster status changed by Dodgers.",
+    "players":[
+      "Elijah Hainline"
+    ]
+  },
+  {
+    "date":"2026-02-23",
     "transaction":"SS Elijah Hainline assigned to Dodgers.",
     "players":[
       "Elijah Hainline"
+    ]
+  },
+  {
+    "date":"2026-02-22",
+    "transaction":"RHP Roque Gutierrez assigned to Dodgers.",
+    "players":[
+      "Roque Gutierrez"
+    ]
+  },
+  {
+    "date":"2026-02-22",
+    "transaction":"OF Kole Myers roster status changed by Dodgers.",
+    "players":[
+      "Kole Myers"
     ]
   },
   {
@@ -526,27 +554,6 @@
   },
   {
     "date":"2026-02-22",
-    "transaction":"SS Jose Izarra assigned to Dodgers.",
-    "players":[
-      "Jose Izarra"
-    ]
-  },
-  {
-    "date":"2026-02-22",
-    "transaction":"SS Austin Gauthier assigned to Dodgers.",
-    "players":[
-      "Austin Gauthier"
-    ]
-  },
-  {
-    "date":"2026-02-22",
-    "transaction":"OF Kole Myers roster status changed by Dodgers.",
-    "players":[
-      "Kole Myers"
-    ]
-  },
-  {
-    "date":"2026-02-22",
     "transaction":"OF Kole Myers assigned to Dodgers.",
     "players":[
       "Kole Myers"
@@ -554,9 +561,9 @@
   },
   {
     "date":"2026-02-22",
-    "transaction":"3B Kyle Nevin roster status changed by Dodgers.",
+    "transaction":"SS Jose Izarra roster status changed by Dodgers.",
     "players":[
-      "Kyle Nevin"
+      "Jose Izarra"
     ]
   },
   {
@@ -568,23 +575,23 @@
   },
   {
     "date":"2026-02-22",
-    "transaction":"RHP Roque Gutierrez assigned to Dodgers.",
+    "transaction":"SS Austin Gauthier assigned to Dodgers.",
     "players":[
-      "Roque Gutierrez"
+      "Austin Gauthier"
     ]
   },
   {
     "date":"2026-02-22",
-    "transaction":"SS Jose Izarra roster status changed by Dodgers.",
+    "transaction":"SS Jose Izarra assigned to Dodgers.",
     "players":[
       "Jose Izarra"
     ]
   },
   {
-    "date":"2026-02-21",
-    "transaction":"Dodgers claimed RF Jack Suwinski off waivers from Pittsburgh Pirates.",
+    "date":"2026-02-22",
+    "transaction":"3B Kyle Nevin roster status changed by Dodgers.",
     "players":[
-      "Jack Suwinski"
+      "Kyle Nevin"
     ]
   },
   {
@@ -596,16 +603,16 @@
   },
   {
     "date":"2026-02-21",
-    "transaction":"RHP Cam Day assigned to Dodgers.",
+    "transaction":"RHP Nicolas Cruz roster status changed by Dodgers.",
     "players":[
-      "Cam Day"
+      "Nicolas Cruz"
     ]
   },
   {
     "date":"2026-02-21",
-    "transaction":"LHP Christian Suarez assigned to Dodgers.",
+    "transaction":"SS Sean McLain assigned to Dodgers.",
     "players":[
-      "Christian Suarez"
+      "Sean McLain"
     ]
   },
   {
@@ -617,6 +624,13 @@
   },
   {
     "date":"2026-02-21",
+    "transaction":"Dodgers claimed RF Jack Suwinski off waivers from Pittsburgh Pirates.",
+    "players":[
+      "Jack Suwinski"
+    ]
+  },
+  {
+    "date":"2026-02-21",
     "transaction":"3B Santiago Espinal assigned to Dodgers.",
     "players":[
       "Santiago Espinal"
@@ -624,23 +638,9 @@
   },
   {
     "date":"2026-02-21",
-    "transaction":"RHP Nicolas Cruz assigned to Dodgers.",
+    "transaction":"RHP Antonio Knowles assigned to Dodgers.",
     "players":[
-      "Nicolas Cruz"
-    ]
-  },
-  {
-    "date":"2026-02-21",
-    "transaction":"RHP Nicolas Cruz roster status changed by Dodgers.",
-    "players":[
-      "Nicolas Cruz"
-    ]
-  },
-  {
-    "date":"2026-02-21",
-    "transaction":"SS Sean McLain roster status changed by Dodgers.",
-    "players":[
-      "Sean McLain"
+      "Antonio Knowles"
     ]
   },
   {
@@ -659,16 +659,30 @@
   },
   {
     "date":"2026-02-21",
-    "transaction":"RHP Antonio Knowles assigned to Dodgers.",
+    "transaction":"SS Sean McLain roster status changed by Dodgers.",
     "players":[
-      "Antonio Knowles"
+      "Sean McLain"
     ]
   },
   {
     "date":"2026-02-21",
-    "transaction":"SS Sean McLain assigned to Dodgers.",
+    "transaction":"RHP Cam Day assigned to Dodgers.",
     "players":[
-      "Sean McLain"
+      "Cam Day"
+    ]
+  },
+  {
+    "date":"2026-02-21",
+    "transaction":"LHP Christian Suarez assigned to Dodgers.",
+    "players":[
+      "Christian Suarez"
+    ]
+  },
+  {
+    "date":"2026-02-21",
+    "transaction":"RHP Nicolas Cruz assigned to Dodgers.",
+    "players":[
+      "Nicolas Cruz"
     ]
   },
   {
@@ -683,20 +697,6 @@
     "transaction":"Dodgers signed free agent 3B Santiago Espinal to a minor league contract.",
     "players":[
       "Santiago Espinal"
-    ]
-  },
-  {
-    "date":"2026-02-16",
-    "transaction":"Dodgers signed free agent RHP Keynan Middleton to a minor league contract.",
-    "players":[
-      "Keynan Middleton"
-    ]
-  },
-  {
-    "date":"2026-02-15",
-    "transaction":"New York Mets claimed C Ben Rortvedt off waivers from Dodgers.",
-    "players":[
-      "Ben Rortvedt"
     ]
   }
 ]
