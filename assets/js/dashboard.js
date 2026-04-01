@@ -123,6 +123,22 @@ function renderChart(data) {
     .style('stroke', '#005A9C')
     .style('stroke-width', 2);
 
+  // Get the last data point for the circle
+  if (lineCurrent.length > 0) {
+    const currentDataArray = lineCurrent[0][1];
+    currentDataArray.sort((a, b) => a.gm - b.gm);
+    const lastDataCurrent = currentDataArray.slice(-1)[0];
+    
+    // Add circle at the end of current year line
+    svg.append('circle')
+      .attr('cx', xScale(lastDataCurrent.gm))
+      .attr('cy', yScale(lastDataCurrent.gb))
+      .attr('r', 4)
+      .style('fill', '#005A9C')
+      .style('stroke', '#fff')
+      .style('stroke-width', 2);
+  }
+
   // Add a horizontal line at y = 0
   svg.append('line')
     .attr('x1', 0)
@@ -134,7 +150,7 @@ function renderChart(data) {
 
   // Add the 'Leading' annotation
   svg.append('text')
-    .attr('x', isMobile ? xScale(10) : xScale(10))
+    .attr('x', isMobile ? xScale(100) : xScale(100))
     .attr('y', yScale(0) - 10)
     .text('Leading ↑')
     .attr('class', 'anno-dark')
@@ -168,20 +184,20 @@ function renderChart(data) {
     const lastDataCurrent = currentDataArray.slice(-1)[0];
 
     svg.append('text')
-      .attr('x', xScale(lastDataCurrent.gm + 1)) // Reduced horizontal offset
+      .attr('x', xScale(lastDataCurrent.gm + 0)) // Reduced horizontal offset
       .attr('y', yScale(lastDataCurrent.gb) - 20)
       .text(currentYear)
       .attr('class', 'anno-dodgers')
       .style('stroke', '#fff')
       .style('stroke-width', '4px')
       .style('stroke-linejoin', 'round')
-      .attr('text-anchor', 'end')
+      .attr('text-anchor', 'start')
       .style('paint-order', 'stroke')
       .clone(true)
       .style('stroke', 'none');
 
     svg.append('text')
-      .attr('x', xScale(lastDataCurrent.gm + 1.5)) // Reduced horizontal offset
+      .attr('x', xScale(lastDataCurrent.gm + 0)) // Reduced horizontal offset
       .attr('y', yScale(lastDataCurrent.gb) + -6)
       .text(() => {
           const gb = lastDataCurrent.gb;
@@ -197,7 +213,7 @@ function renderChart(data) {
       .style('stroke', '#fff')
       .style('stroke-width', '4px')
       .style('stroke-linejoin', 'round')
-      .attr('text-anchor', 'end')
+      .attr('text-anchor', 'start')
       .style('paint-order', 'stroke')
       .clone(true)
       .style('stroke', 'none');
@@ -374,6 +390,8 @@ document.addEventListener('DOMContentLoaded', function() {
   
     svg.selectAll('.line').remove(); // Clear previous lines
     svg.selectAll('.anno-selected-year').remove(); // Clear previous annotations
+    svg.selectAll('.selected-year-circle').remove(); // Clear previous selected year circle
+    svg.selectAll('circle').remove(); // Clear all circles
   
     svg.selectAll('.line')
       .data(allLinesExceptCurrentYear, (d) => d[0])
@@ -384,6 +402,7 @@ document.addEventListener('DOMContentLoaded', function() {
       .style('fill', 'none')
       .style('stroke', '#ccc')
       .style('stroke-width', 0.5);
+
   
     // Draw the selected year line if a year is selected
     if (selectedYear) {
@@ -401,6 +420,16 @@ document.addEventListener('DOMContentLoaded', function() {
           .style('fill', 'none')
           .style('stroke', '#ef3e42')
           .style('stroke-width', 1.5);
+        
+        // Add circle at the end of selected year line
+        svg.append('circle')
+          .attr('cx', xScale(Number(selectedYearLastData.gm)))
+          .attr('cy', yScale(Number(selectedYearLastData.wins)))
+          .attr('r', 4)
+          .attr('class', 'selected-year-circle')
+          .style('fill', '#ef3e42')
+          .style('stroke', '#fff')
+          .style('stroke-width', 2);
   
         svg.append('text')
           .attr('x', xScale(Number(selectedYearLastData.gm)) - 10)
@@ -415,6 +444,7 @@ document.addEventListener('DOMContentLoaded', function() {
           .clone(true)
           .style('stroke', 'none');
       }
+      
     }
   
     // Draw the current year line
@@ -433,6 +463,15 @@ document.addEventListener('DOMContentLoaded', function() {
     if (lineCurrentYear.length > 0) {
       lineCurrentYear[0][1].sort((a, b) => d3.ascending(Number(a.gm), Number(b.gm)));
       const lastDataCurrentYear = lineCurrentYear[0][1].slice(-1)[0];
+      
+      // Add circle at the end of current year line
+      svg.append('circle')
+        .attr('cx', xScale(Number(lastDataCurrentYear.gm)))
+        .attr('cy', yScale(Number(lastDataCurrentYear.wins)))
+        .attr('r', 4)
+        .style('fill', '#005A9C')
+        .style('stroke', '#fff')
+        .style('stroke-width', 2);
   
       svg.append('text')
         .attr('x', xScale(Number(lastDataCurrentYear.gm)) + 5)
@@ -442,7 +481,7 @@ document.addEventListener('DOMContentLoaded', function() {
         .style('stroke', '#fff')
         .style('stroke-width', '4px')
         .style('stroke-linejoin', 'round')
-        .attr('text-anchor', 'end')
+        .attr('text-anchor', 'start')
         .style('paint-order', 'stroke')
         .clone(true)
         .style('stroke', 'none');
@@ -455,7 +494,7 @@ document.addEventListener('DOMContentLoaded', function() {
         .style('stroke', '#fff')
         .style('stroke-width', '4px')
         .style('stroke-linejoin', 'round')
-        .attr('text-anchor', 'end')
+        .attr('text-anchor', 'start')
         .style('paint-order', 'stroke')
         .clone(true)
         .style('stroke', 'none');
@@ -525,6 +564,21 @@ document.addEventListener('DOMContentLoaded', function() {
           .attr("x", -height / 2)
           .style('font-size', isMobile ? '10px' : '12px')
           .text("Cumulative wins");
+      
+      // Add "Past" annotation
+      const currentYear = new Date().getFullYear();
+      svg.append('text')
+          .attr('x', xScale(100))
+          .attr('y', yScale(40))
+          .attr('class', 'anno')
+          .text(`Past: 1958-${currentYear - 1}`)
+          .attr('text-anchor', 'start')
+          .style('stroke', '#fff')
+          .style('stroke-width', '4px')
+          .style('stroke-linejoin', 'round')
+          .style('paint-order', 'stroke')
+          .clone(true)
+          .style('stroke', 'none');
 
       line = d3
           .line()
@@ -667,6 +721,19 @@ document.addEventListener('DOMContentLoaded', function() {
             .style('fill', 'none')
             .style('stroke', '#005A9C')
             .style('stroke-width', 2);
+          
+          // Add circle at the end of the current year line
+          const lastDataPoint = lineCurrentYear[0][1].slice(-1)[0];
+          if (lastDataPoint) {
+            svg
+              .append('circle')
+              .attr('cx', xScale(lastDataPoint.gtm))
+              .attr('cy', yScale(lastDataPoint[config.dataField]))
+              .attr('r', 4)
+              .style('fill', '#005A9C')
+              .style('stroke', '#fff')
+              .style('stroke-width', 2);
+          }
         }
     
         svg
@@ -694,7 +761,7 @@ document.addEventListener('DOMContentLoaded', function() {
             .style('stroke', '#fff')
             .style('stroke-width', '4px')
             .style('stroke-linejoin', 'round')
-            .attr('text-anchor', 'end')
+            .attr('text-anchor', 'start')
             .style('paint-order', 'stroke')
             .clone(true)
             .style('stroke', 'none');
@@ -708,7 +775,7 @@ document.addEventListener('DOMContentLoaded', function() {
             .style('stroke', '#fff')
             .style('stroke-width', '4px')
             .style('stroke-linejoin', 'round')
-            .attr('text-anchor', 'end')
+            .attr('text-anchor', 'start')
             .style('paint-order', 'stroke')
             .clone(true)
             .style('stroke', 'none');
@@ -844,6 +911,19 @@ document.addEventListener('DOMContentLoaded', function() {
         .style('fill', 'none')
         .style('stroke', '#005A9C')
         .style('stroke-width', 2);
+      
+      // Add circle at the end of the current year line
+      const lastDataPoint = lineCurrentYear[0][1].slice(-1)[0];
+      if (lastDataPoint) {
+        svg
+          .append('circle')
+          .attr('cx', xScale(lastDataPoint.gtm))
+          .attr('cy', yScale(lastDataPoint[config.dataField]))
+          .attr('r', 4)
+          .style('fill', '#005A9C')
+          .style('stroke', '#fff')
+          .style('stroke-width', 2);
+      }
     }
 
     svg
@@ -872,7 +952,7 @@ document.addEventListener('DOMContentLoaded', function() {
         .style('stroke', '#fff')
         .style('stroke-width', '4px')
         .style('stroke-linejoin', 'round')
-        .attr('text-anchor', 'end')
+        .attr('text-anchor', 'start')
         .style('paint-order', 'stroke')
         .clone(true)
         .style('stroke', 'none');
@@ -886,7 +966,7 @@ document.addEventListener('DOMContentLoaded', function() {
         .style('stroke', '#fff')
         .style('stroke-width', '4px')
         .style('stroke-linejoin', 'round')
-        .attr('text-anchor', 'end')
+        .attr('text-anchor', 'start')
         .style('paint-order', 'stroke')
         .clone(true)
         .style('stroke', 'none');
@@ -1016,6 +1096,16 @@ document.addEventListener('DOMContentLoaded', function() {
         .style('stroke-width', 2);
 
       const lastDataCurrentYear = lineCurrentYear.slice(-1)[0];
+      
+      // Add circle at the end of current year line
+      svg
+        .append('circle')
+        .attr('cx', xScale(lastDataCurrentYear.gtm))
+        .attr('cy', yScale(lastDataCurrentYear.era_cum))
+        .attr('r', 4)
+        .style('fill', '#005A9C')
+        .style('stroke', '#fff')
+        .style('stroke-width', 2);
 
       svg
         .append('text')
@@ -1026,7 +1116,7 @@ document.addEventListener('DOMContentLoaded', function() {
         .style('stroke', '#fff')
         .style('stroke-width', '4px')
         .style('stroke-linejoin', 'round')
-        .attr('text-anchor', 'end')
+        .attr('text-anchor', 'start')
         .style('paint-order', 'stroke')
         .clone(true)
         .style('stroke', 'none');
@@ -1040,7 +1130,7 @@ document.addEventListener('DOMContentLoaded', function() {
         .style('stroke', '#fff')
         .style('stroke-width', '4px')
         .style('stroke-linejoin', 'round')
-        .attr('text-anchor', 'end')
+        .attr('text-anchor', 'start')
         .style('paint-order', 'stroke')
         .clone(true)
         .style('stroke', 'none');
@@ -2310,7 +2400,8 @@ document.addEventListener('DOMContentLoaded', function () {
   
     const rows = table.append('tbody').selectAll('tr')
       .data(data)
-      .enter().append('tr');
+      .enter().append('tr')
+      .attr('class', d => d.team === 'Los Angeles Dodgers' ? 'dodgers-row' : '');
   
     rows.append('td').text(d => d.team);
     rows.append('td').text(d => d.name); // Always include stadium name
