@@ -28,7 +28,7 @@ csv_file = f"{output_dir}/dodgers_standings_1958_present.csv"
 csv_file_slim = f"{output_dir}/dodgers_standings_1958_present_optimized.csv"
 json_file = f"{output_dir}/dodgers_standings_1958_present.json"
 json_file_slim = f"{output_dir}/dodgers_standings_1958_present_optimized.json"
-historic_file = "https://stilesdata.com/dodgers/data/standings/archive/dodgers_standings_1958_2024.parquet"
+historic_file = "https://stilesdata.com/dodgers/data/standings/archive/dodgers_standings_1958_2025.parquet"
 parquet_file = f"{output_dir}/dodgers_standings_1958_present.parquet"
 s3_bucket = "stilesdata.com"
 s3_key_csv = "dodgers/data/standings/dodgers_standings_1958_present.csv"
@@ -182,9 +182,11 @@ def main():
 
         df = pd.concat([src_df, historic_df]).sort_values("game_date", ascending=False).drop_duplicates(subset=['gm', 'year']).reset_index(drop=True)
 
+        # Calculate run differential (runs scored - runs against)
+        df['run_diff'] = df['r'] - df['ra']
         
-        df[['year', 'gm', 'win_pct', 'gb']].to_csv(csv_file_slim, index=False)
-        df[['year', 'gm', 'win_pct', 'gb']].to_json(json_file_slim, orient="records")
+        df[['year', 'gm', 'win_pct', 'gb', 'run_diff']].to_csv(csv_file_slim, index=False)
+        df[['year', 'gm', 'win_pct', 'gb', 'run_diff']].to_json(json_file_slim, orient="records")
         df.to_csv(csv_file, index=False)
         df.to_json(json_file, orient="records")
         df.to_parquet(parquet_file, index=False)

@@ -125,7 +125,7 @@ def compute_games_up_back_from_live(live_df: pd.DataFrame, team_name: str) -> Un
         return None
 
 # URLs for data
-standings_live_url = "https://stilesdata.com/dodgers/data/standings/all_teams_standings_metrics_2025.json"
+standings_live_url = f"https://stilesdata.com/dodgers/data/standings/all_teams_standings_metrics_{datetime.now().year}.json"
 standings_url = "https://stilesdata.com/dodgers/data/standings/dodgers_standings_1958_present.parquet"
 batting_url = "https://stilesdata.com/dodgers/data/batting/dodgers_team_batting_1958_present.parquet"
 pitching_url = 'https://stilesdata.com/dodgers/data/pitching/dodgers_pitching_totals_current.parquet'
@@ -281,16 +281,17 @@ pitching = read_parquet_s3(pitching_url)
 def current_season_stats(standings_now, standings_past, pitching, standings_last):
     games = standings_now["gm"].iloc[0]
     wins = standings_now["wins"].iloc[0]
-    wins_last = standings_last["wins"].iloc[0]
+    wins_last = standings_last["wins"].iloc[0] if not standings_last.empty else 0
     losses = standings_now["losses"].iloc[0]
-    losses_last = standings_last["losses"].iloc[0]
+    losses_last = standings_last["losses"].iloc[0] if not standings_last.empty else 0
     record = standings_now["record"].iloc[0]
-    record_last = standings_last["record"].iloc[0]
+    record_last = standings_last["record"].iloc[0] if not standings_last.empty else "0-0"
     win_pct = int(standings_now["win_pct"].iloc[0] * 100)
-    win_pct_last = int(standings_last["win_pct"].iloc[0] * 100)
-    win_pct_decade_thispoint = int(
-        standings_past.query(f"gm == {games}").head(10)["win_pct"].mean().round(2) * 100
-    )
+    win_pct_last = int(standings_last["win_pct"].iloc[0] * 100) if not standings_last.empty else 0
+    
+    # Calculate decade average, handling NaN if query returns empty
+    decade_avg = standings_past.query(f"gm == {games}").head(10)["win_pct"].mean()
+    win_pct_decade_thispoint = int(round(decade_avg, 2) * 100) if not pd.isna(decade_avg) else win_pct
     era = pitching['era'].iloc[0]
     era_rank = to_ordinal(league_ranks_data.get('pitching_earnedRunAverage', 'N/A'))
     strikeouts = pitching['so'].iloc[0]
@@ -438,7 +439,7 @@ def get_live_last_game_summary():
                         logging.info(f"Found LAD away game: {r}-{ra} {result_clean} vs {opp_name}")
                         return (
                             f"The last game was a <span class='highlight'>{r}-{ra}</span> "
-                            f"{home_away} <span class='highlight'>{result_clean}</span>."
+                            f"{home_away} <span class='highlight'>{result_clean}</span> against the <span class='highlight'>{opp_name}</span>."
                         )
                     elif teams.get('home', {}).get('team', {}).get('abbreviation') == 'LAD':
                         home_away = "home"
@@ -449,7 +450,7 @@ def get_live_last_game_summary():
                         
                         return (
                             f"The last game was a <span class='highlight'>{r}-{ra}</span> "
-                            f"{home_away} <span class='highlight'>{result_clean}</span>."
+                            f"{home_away} <span class='highlight'>{result_clean}</span> against the <span class='highlight'>{opp_name}</span>."
                         )
         return "The last game's result is not yet available."
         
@@ -520,13 +521,22 @@ def get_next_game_info():
                     venue_name = game.get('venue', {}).get('name', '')
                     highlighted_venue = f"<span class='highlight'>{venue_name}</span>" if venue_name else ""
                     
-                    # Determine if home or away
+                    # Determine if home or away and get opponent
                     home_team_id = game.get('teams', {}).get('home', {}).get('team', {}).get('id')
+                    away_team_id = game.get('teams', {}).get('away', {}).get('team', {}).get('id')
                     is_dodgers_home = home_team_id == 119
+                    
+                    # Get opponent name
+                    if is_dodgers_home:
+                        opponent_name = game.get('teams', {}).get('away', {}).get('team', {}).get('name', 'Unknown')
+                    else:
+                        opponent_name = game.get('teams', {}).get('home', {}).get('team', {}).get('name', 'Unknown')
+                    
+                    highlighted_opponent = f"<span class='highlight'>{opponent_name}</span>"
                     
                     location_text = f"at {highlighted_venue}" if not is_dodgers_home else f"at {highlighted_venue}"
                     
-                    return f"The next game is {day_name} at {time_str} {location_text}"
+                    return f"The team will face the {highlighted_opponent} next on {day_name} at {time_str} {location_text}"
         
         return None
         
@@ -538,7 +548,7 @@ def generate_postseason_summary():
     """Generate a summary of the current postseason status"""
     try:
         # Try to load postseason series data
-        postseason_file = "data/postseason/dodgers_postseason_series_2025.json"
+        postseason_file = f"data/postseason/dodgers_postseason_series_{datetime.now().year}.json"
         if os.path.exists(postseason_file):
             with open(postseason_file, 'r') as f:
                 postseason_data = json.load(f)
@@ -601,11 +611,12 @@ def generate_postseason_summary():
             else:
                 return {"text": "The team is preparing for their postseason run."}
         else:
-            return {"text": "The team won the National League West division and is off to the postseason!"}
+            # No postseason file exists - we're in regular season
+            return None
             
     except Exception as e:
         logging.warning(f"Could not generate postseason summary: {e}")
-        return {"text": "The team won the National League West division and is off to the postseason!"}
+        return None
 
 def generate_summary(
     update_date_str, standings_live_lad=None
@@ -699,11 +710,10 @@ def generate_summary(
     #     f"They've won <span class='highlight'>{last_10_wins} of the last 10</span> and are on pace to win at least <span class='highlight'>{projected_wins}</span> games in the regular season."
     # )
 
-    # Format next game info to connect smoothly with series status
+    # Format next game info - no longer need to transform it
     next_game_text = ""
     if next_game_info:
-        # Convert "The next game is Monday..." to "and the next game is Monday..."
-        next_game_text = f" and the {next_game_info.replace('The next game is ', 'next game is ')}"
+        next_game_text = next_game_info
     
     # Handle fallback postseason summary (when no series data available)
     if isinstance(postseason_summary, dict) and ('competing' in postseason_summary or 'series_status' in postseason_summary):
@@ -717,7 +727,7 @@ def generate_summary(
         
         try:
             # Load postseason series data to check for transitions
-            postseason_file = "data/postseason/dodgers_postseason_series_2025.json"
+            postseason_file = f"data/postseason/dodgers_postseason_series_{datetime.now().year}.json"
             if os.path.exists(postseason_file):
                 with open(postseason_file, 'r') as f:
                     postseason_data = json.load(f)
@@ -790,7 +800,7 @@ def generate_summary(
                 # Extract current series info to compare
                 current_series_info = ""
                 try:
-                    postseason_file = "data/postseason/dodgers_postseason_series_2025.json"
+                    postseason_file = f"data/postseason/dodgers_postseason_series_{datetime.now().year}.json"
                     if os.path.exists(postseason_file):
                         with open(postseason_file, 'r') as f:
                             postseason_data = json.load(f)
@@ -827,18 +837,41 @@ def generate_summary(
                 f"{series_status}{next_game_text}."
             )
     else:
-        # Simple text format (fallback)
-        postseason_text = postseason_summary.get('text', '') if isinstance(postseason_summary, dict) else postseason_summary
+        # Simple text format (fallback) - or no postseason text during regular season
+        postseason_text = ""
+        if postseason_summary:
+            postseason_text = postseason_summary.get('text', '') if isinstance(postseason_summary, dict) else str(postseason_summary)
         
         # Check if we need to add a period (avoid double punctuation)
-        ending_punctuation = "." if not (postseason_text.endswith('.') or postseason_text.endswith('!') or postseason_text.endswith('?')) else ""
+        ending_punctuation = "." if not (last_game_summary_fragment and (last_game_summary_fragment.endswith('.') or last_game_summary_fragment.endswith('!') or last_game_summary_fragment.endswith('?'))) else ""
         
-        summary = (
+        # Build summary - only include postseason text if it exists
+        # Use "an" before percentages starting with 8 (80, 81, etc.)
+        article = "an" if str(int(win_pct))[0] == "8" else "a"
+        
+        summary_parts = [
             f"<span class='highlight'>LOS ANGELES</span> <span class='updated'>({current_date})</span> — "
-            f"The Dodgers compiled a <span class='highlight'>{record}</span> record in the {current_year} regular season, a <span class='highlight'>{win_pct:.0f}%</span> winning percentage. "
-            f"{postseason_text} "
-            f"{last_game_summary_fragment}{next_game_text}{ending_punctuation}"
-        )
+            f"The Dodgers have compiled a <span class='highlight'>{record}</span> record in the {current_year} regular season, {article} <span class='highlight'>{win_pct:.0f}%</span> winning percentage."
+        ]
+        
+        if postseason_text:
+            summary_parts.append(postseason_text)
+        
+        if last_game_summary_fragment:
+            # Keep the period from last game fragment (it's a complete sentence now)
+            summary_parts.append(last_game_summary_fragment)
+        
+        if next_game_text:
+            # Next game is now a separate sentence starting with "The team will face..."
+            next_game_clean = next_game_text.strip()
+            if next_game_clean.startswith('and '):
+                next_game_clean = next_game_clean[4:]  # Remove "and " if present
+            summary_parts.append(next_game_clean)
+        
+        # Always end with a period
+        summary = " ".join(summary_parts)
+        if not summary.endswith('.'):
+            summary += '.'
     return summary
 
 

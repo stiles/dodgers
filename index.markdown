@@ -31,7 +31,7 @@ twitter:
 </div>
 
 <div class="postseason-stats-section">
-  <h2 class="stat-group postseason-header">Postseason 2025</h2>
+  <h2 class="stat-group postseason-header" id="postseason-header">Postseason</h2>
   
   <h3 class="visual-subhead">Playoff journey</h3>
   <div class="playoff-journey" id="playoff-journey">
@@ -48,7 +48,7 @@ twitter:
 
 
 <div class="container mt-4">
-<h2 class="stat-group performance-header">Regular season performance and standings</h2>
+<h2 class="stat-group performance-header">Performance and standings</h2>
 <h3 class="visual-subhead"><span class="win">Wins</span>, <span class="loss">losses</span> and run differential</h3>
 <div id="chart-container" class="chart-container" style="position: relative;">
 <div id="results-chart"></div>
@@ -113,9 +113,9 @@ twitter:
 {% assign nl_central = nl_teams | where_exp: "item", "item.division_name == 'National League Central'" | sort: "division_rank" %}
 {% assign nl_east = nl_teams | where_exp: "item", "item.division_name == 'National League East'" | sort: "division_rank" %}
 
-<h2 class="stat-group">Final regular season standings</h2>
+<h2 class="stat-group">Season standings</h2>
 
-<h3 class="visual-subhead">National League standings by division</h3>
+<h3 class="visual-subhead">National League by division</h3>
 <div class="tables-container standings-tables">
   <div class="table-wrapper">
     <h3 class="stat-card-label">NL West</h3>
@@ -473,14 +473,14 @@ twitter:
   <div id="xwoba-grid" class="xwoba-grid-container">
   </div>
 
-  <h2 class="stat-group">Shohei stats</h2>
+  <!-- <h2 class="stat-group">Shohei stats</h2>
 
   <h3 class="visual-subhead">50-50 trend</h3>
   <p id="shohei-comparison-subhead" class="chart-chatter"></p>
   <div class="charts-container">
     <div id="shohei-homers-chart" class="small-chart-container"></div>
     <div id="shohei-sb-chart" class="small-chart-container"></div>
-  </div>
+  </div> -->
 
   <h2 class="stat-group">Umpire scorecard</h2>
 <div class="scorecard-row">
@@ -590,7 +590,7 @@ twitter:
 </div>
 
 <script src="https://d3js.org/d3.v6.min.js"></script>
-<script src="{{ '/assets/js/dashboard.js' | relative_url }}"></script>
+<script type="module" src="{{ '/assets/js/dashboard.js' | relative_url }}"></script>
 
 <style>
 @media (max-width: 767px) {

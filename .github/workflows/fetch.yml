@@ -2,8 +2,20 @@ name: fetch
 
 on:
   schedule:
+    # Multiple times daily during season (March-October)
+    # Actual scripts run are determined by detected phase
     - cron: '0 8,12,15,23 * 3-10 *'
   workflow_dispatch:
+    inputs:
+      phase_override:
+        description: 'Override season phase (leave empty for auto-detect)'
+        required: false
+        type: choice
+        options:
+          - ''
+          - 'regular_season'
+          - 'postseason'
+          - 'offseason'
 
 jobs:
   update_and_deploy:
@@ -55,30 +67,15 @@ jobs:
         gem install bundler
         bundle install
 
-    - name: Run scripts
+    - name: Run phase-aware data pipeline
       run: |
-        # python scripts/00_fetch_league_standings.py
-        # python scripts/02_update_boxscores_archive.py
-        # python scripts/03_scrape_league_ranks.py
-        # python scripts/04_fetch_process_standings.py
-        # python scripts/05_fetch_process_batting.py
-        # python scripts/06_fetch_process_pitching.py
-        # python scripts/09_build_wins_losses_from_boxscores.py
-        # python scripts/18_generate_projection.py
-        # python scripts/13_fetch_process_schedule.py
-        python scripts/19_fetch_roster.py
-        # python scripts/28_fetch_postseason_stats.py
-        # python scripts/07_create_toplines_summary.py
-        # python scripts/08_fetch_process_season_outcomes.py
-        # python scripts/10_fetch_process_historic_batting_gamelogs.py
-        # python scripts/11_fetch_process_attendance.py
-        # python scripts/12_fetch_process_historic_pitching_gamelogs.py
-        # python scripts/14_fetch_process_batting_mlb.py
-        # python scripts/15_fetch_xwoba.py
-        # python scripts/16_fetch_shohei.py
-        # python scripts/20_fetch_game_pitches.py
-        # python scripts/21_summarize_pitch_data.py
-        # python scripts/27_collect_umpires.py
+        if [ -n "${{ github.event.inputs.phase_override }}" ]; then
+          echo "Using manual phase override: ${{ github.event.inputs.phase_override }}"
+          python scripts/run_phase_scripts.py ${{ github.event.inputs.phase_override }}
+        else
+          echo "Auto-detecting phase from MLB schedule"
+          python scripts/run_phase_scripts.py
+        fi
 
     - name: Publish manifest
       run: python scripts/99_publish_manifest.py

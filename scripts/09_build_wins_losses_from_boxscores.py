@@ -76,6 +76,10 @@ def build_wins_losses(df: pd.DataFrame) -> pd.DataFrame:
     df["game_date"] = pd.to_datetime(df.get("date", df.get("game_date")))
     df = df.sort_values("game_date")
     
+    # Filter for current season only
+    current_year = pd.Timestamp.now().year
+    df = df[df["game_date"].dt.year == current_year]
+    
     # Filter out exhibition/spring training games
     # Method 1: Exclude games against Angels (Freeway Series exhibitions)
     # Method 2: Only include games from April onwards (regular season typically starts in April)

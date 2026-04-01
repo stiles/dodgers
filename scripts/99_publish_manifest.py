@@ -10,6 +10,9 @@ from datetime import datetime
 import pytz
 import logging
 
+# Import season phase detector
+from season_phase import detect_season_phase
+
 logging.basicConfig(level=logging.INFO, format='%(asctime)s - %(levelname)s - %(message)s')
 
 # Configuration
@@ -22,34 +25,20 @@ def get_pacific_time():
     pacific = pytz.timezone('US/Pacific')
     return datetime.now(pacific).isoformat()
 
-def detect_season_phase():
-    """
-    Detect current season phase.
-    TODO: implement actual MLB schedule check via StatsAPI.
-    For now, return a sensible default based on date.
-    """
-    now = datetime.now()
-    month = now.month
-    
-    # Simple heuristic (will be replaced with API check in milestone 3)
-    if month in [11, 12, 1, 2]:
-        return "offseason"
-    elif month == 10:
-        return "postseason"
-    else:
-        return "regular_season"
-
 def build_manifest():
     """Build the manifest structure."""
-    phase = detect_season_phase()
-    season = str(datetime.now().year)
+    # Use real MLB API-based phase detection
+    phase, postseason_active, season_year = detect_season_phase()
+    season = str(season_year)
+    
+    logging.info(f"Detected phase: {phase}, postseason_active: {postseason_active}, season: {season}")
     
     manifest = {
         "version": "1.0",
         "last_updated": get_pacific_time(),
         "season": season,
         "phase": phase,
-        "postseason_active": phase == "postseason",
+        "postseason_active": postseason_active,
         "datasets": []
     }
     

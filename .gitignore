@@ -17,3 +17,7 @@ data/roster/*
 !data/roster/avatars/
 _data/
 !_data/navigation.yml
+# Python
+__pycache__/
+*.pyc
+*.pyo

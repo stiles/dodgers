@@ -1,7 +1,7 @@
 {
-    "games_played": 161,
-    "current_wins": 93,
-    "current_losses": 68,
+    "games_played": 166,
+    "current_wins": 97,
+    "current_losses": 69,
     "timeseries": [
         {
             "game_number": 1,
@@ -971,10 +971,34 @@
         },
         {
             "game_number": 162,
-            "mean_projected_wins": 93.6,
-            "lower_ci_wins": 93,
-            "upper_ci_wins": 94
+            "mean_projected_wins": 94.0,
+            "lower_ci_wins": 94.0,
+            "upper_ci_wins": 94.0
+        },
+        {
+            "game_number": 163,
+            "mean_projected_wins": 95.0,
+            "lower_ci_wins": 95.0,
+            "upper_ci_wins": 95.0
+        },
+        {
+            "game_number": 164,
+            "mean_projected_wins": 96.0,
+            "lower_ci_wins": 96.0,
+            "upper_ci_wins": 96.0
+        },
+        {
+            "game_number": 165,
+            "mean_projected_wins": 96.0,
+            "lower_ci_wins": 96.0,
+            "upper_ci_wins": 96.0
+        },
+        {
+            "game_number": 166,
+            "mean_projected_wins": 97.0,
+            "lower_ci_wins": 97.0,
+            "upper_ci_wins": 97.0
         }
     ],
-    "message": "Projection based on bootstrapping 161 past game outcomes for 1 remaining games."
+    "message": "Season complete. All 162 games have been played."
 }
