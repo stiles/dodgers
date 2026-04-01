@@ -80,6 +80,9 @@ jobs:
         # python scripts/21_summarize_pitch_data.py
         # python scripts/27_collect_umpires.py
 
+    - name: Publish manifest
+      run: python scripts/99_publish_manifest.py
+
     - name: Build Jekyll site
       run: bundle exec jekyll build
       env:

@@ -3942,39 +3942,55 @@ async function initPlayoffBracket() {
 }
 
 // Initialize playoff bracket when DOM is loaded
-document.addEventListener('DOMContentLoaded', function() {
-  if (document.getElementById('playoff-bracket-container')) {
-    initPlayoffBracket();
-  }
-  
-  // Initialize postseason stats
-  if (document.getElementById('postseason-grid')) {
-    initPostseasonStats();
-  }
-  
-  // Initialize playoff journey
-  if (document.getElementById('playoff-journey')) {
-    initPlayoffJourney();
+document.addEventListener('DOMContentLoaded', async function() {
+  // Check if postseason section should be visible
+  try {
+    const { isPostseasonActive } = await import('./manifest_loader.js');
+    const postseasonActive = await isPostseasonActive();
+    
+    const postseasonSection = document.querySelector('.postseason-stats-section');
+    
+    if (!postseasonActive && postseasonSection) {
+      // Hide entire postseason section when not in postseason
+      postseasonSection.style.display = 'none';
+      console.log('Postseason section hidden (not currently in postseason)');
+    } else {
+      // Initialize postseason components
+      if (document.getElementById('playoff-bracket-container')) {
+        initPlayoffBracket();
+      }
+      
+      // Initialize postseason stats
+      if (document.getElementById('postseason-grid')) {
+        initPostseasonStats();
+      }
+      
+      // Initialize playoff journey
+      if (document.getElementById('playoff-journey')) {
+        initPlayoffJourney();
+      }
+    }
+  } catch (error) {
+    console.error('Error checking postseason status:', error);
+    // On error, default to showing the section
+    if (document.getElementById('playoff-bracket-container')) {
+      initPlayoffBracket();
+    }
+    if (document.getElementById('postseason-grid')) {
+      initPostseasonStats();
+    }
+    if (document.getElementById('playoff-journey')) {
+      initPlayoffJourney();
+    }
   }
 });
 
 // Postseason Stats Functions
 async function fetchPostseasonStats() {
   try {
-    // Try local path first (for development), then fallback to S3
-    const localUrl = '/data/postseason/dodgers_postseason_stats_2025.json';
-    const s3Url = 'https://stilesdata.com/dodgers/data/postseason/dodgers_postseason_stats_2025.json';
-    
-    let response = await fetch(localUrl);
-    if (!response.ok) {
-      // Fallback to S3 URL
-      response = await fetch(s3Url);
-    }
-    
-    if (!response.ok) {
-      throw new Error(`HTTP error! status: ${response.status}`);
-    }
-    return await response.json();
+    // Import manifest loader dynamically
+    const { fetchDataset } = await import('./manifest_loader.js');
+    return await fetchDataset('postseason_players_current');
   } catch (error) {
     console.error('Error fetching postseason stats:', error);
     return null;
@@ -4073,20 +4089,9 @@ async function initPostseasonStats() {
 // Playoff Journey Functions
 async function fetchPlayoffJourney() {
   try {
-    // Try local path first (for development), then fallback to S3
-    const localUrl = '/data/postseason/dodgers_postseason_series_2025.json';
-    const s3Url = 'https://stilesdata.com/dodgers/data/postseason/dodgers_postseason_series_2025.json';
-    
-    let response = await fetch(localUrl);
-    if (!response.ok) {
-      // Fallback to S3 URL
-      response = await fetch(s3Url);
-    }
-    
-    if (!response.ok) {
-      throw new Error(`HTTP error! status: ${response.status}`);
-    }
-    return await response.json();
+    // Import manifest loader dynamically
+    const { fetchDataset } = await import('./manifest_loader.js');
+    return await fetchDataset('postseason_series_current');
   } catch (error) {
     console.error('Error fetching playoff journey:', error);
     return null;
