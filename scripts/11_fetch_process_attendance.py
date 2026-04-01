@@ -81,8 +81,8 @@ gdf.loc[gdf["team"] == "Houston Astros", "league"] = 'AL'
 gdf.loc[gdf["team"] == "Oakland Athletics", "name"] = 'Sutter Health Park'  # Sacramento venue 2025-2027
 gdf.loc[gdf["team"] == "Baltimore Orioles", "name"] = 'Camden Yards'
 
-# Handle Athletics name change (Oakland → Sacramento)
-df.loc[df["team"] == "Athletics", "team"] = 'Oakland Athletics'
+# Handle Athletics name - keep as just "Athletics" since they now play in Sacramento
+df.loc[df["team"] == "Athletics", "team"] = 'Athletics'
 
 
 """
