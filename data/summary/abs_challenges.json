@@ -1,0 +1,278 @@
+{
+    "dodgers": {
+        "batting": {
+            "total": 16,
+            "successful": 10,
+            "failed": 6
+        },
+        "pitching": {
+            "total": 2,
+            "successful": 0,
+            "failed": 2
+        },
+        "catching": {
+            "total": 17,
+            "successful": 11,
+            "failed": 6
+        }
+    },
+    "opponents": {
+        "batting": {
+            "total": 21,
+            "successful": 11,
+            "failed": 10
+        },
+        "pitching": {
+            "total": 0,
+            "successful": 0,
+            "failed": 0
+        },
+        "catching": {
+            "total": 21,
+            "successful": 12,
+            "failed": 9
+        }
+    },
+    "challenge_log": [
+        {
+            "date": "2026-03-31",
+            "date_formatted": "March 31, 2026",
+            "challenger": "Will Smith",
+            "role": "catching",
+            "team": "dodgers",
+            "outcome": "overturned",
+            "result_desc": "Daniel Schneemann strikes out swinging.",
+            "batter": "Daniel Schneemann",
+            "pitcher": "Edwin D\u00edaz",
+            "game_pk": 823969
+        },
+        {
+            "date": "2026-03-31",
+            "date_formatted": "March 31, 2026",
+            "challenger": "Gabriel Arias",
+            "role": "batting",
+            "team": "opponents",
+            "outcome": "confirmed",
+            "result_desc": "Gabriel Arias grounds out, shortstop Mookie Betts to first baseman Freddie Freeman.",
+            "batter": "Gabriel Arias",
+            "pitcher": "Shohei Ohtani",
+            "game_pk": 823969
+        },
+        {
+            "date": "2026-03-31",
+            "date_formatted": "March 31, 2026",
+            "challenger": "Bo Naylor",
+            "role": "catching",
+            "team": "opponents",
+            "outcome": "confirmed",
+            "result_desc": "Max Muncy flies out to left fielder Angel Mart\u00ednez.",
+            "batter": "Max Muncy",
+            "pitcher": "Tanner Bibee",
+            "game_pk": 823969
+        },
+        {
+            "date": "2026-03-31",
+            "date_formatted": "March 31, 2026",
+            "challenger": "Will Smith",
+            "role": "catching",
+            "team": "dodgers",
+            "outcome": "overturned",
+            "result_desc": "Rhys Hoskins doubles (2) on a line drive to left fielder Teoscar Hern\u00e1ndez.",
+            "batter": "Rhys Hoskins",
+            "pitcher": "Shohei Ohtani",
+            "game_pk": 823969
+        },
+        {
+            "date": "2026-03-31",
+            "date_formatted": "March 31, 2026",
+            "challenger": "Will Smith",
+            "role": "catching",
+            "team": "dodgers",
+            "outcome": "overturned",
+            "result_desc": "CJ Kayfus strikes out swinging.",
+            "batter": "CJ Kayfus",
+            "pitcher": "Shohei Ohtani",
+            "game_pk": 823969
+        },
+        {
+            "date": "2026-03-30",
+            "date_formatted": "March 30, 2026",
+            "challenger": "Austin Hedges",
+            "role": "catching",
+            "team": "opponents",
+            "outcome": "confirmed",
+            "result_desc": "Andy Pages grounds out, third baseman Jos\u00e9 Ram\u00edrez to first baseman Rhys Hoskins.",
+            "batter": "Andy Pages",
+            "pitcher": "Cade Smith",
+            "game_pk": 823972
+        },
+        {
+            "date": "2026-03-30",
+            "date_formatted": "March 30, 2026",
+            "challenger": "Teoscar Hern\u00e1ndez",
+            "role": "batting",
+            "team": "dodgers",
+            "outcome": "overturned",
+            "result_desc": "Teoscar Hern\u00e1ndez grounds out, shortstop Gabriel Arias to first baseman Rhys Hoskins.",
+            "batter": "Teoscar Hern\u00e1ndez",
+            "pitcher": "Cade Smith",
+            "game_pk": 823972
+        },
+        {
+            "date": "2026-03-30",
+            "date_formatted": "March 30, 2026",
+            "challenger": "Teoscar Hern\u00e1ndez",
+            "role": "batting",
+            "team": "dodgers",
+            "outcome": "overturned",
+            "result_desc": "Teoscar Hern\u00e1ndez singles on a ground ball to left fielder Steven Kwan.",
+            "batter": "Teoscar Hern\u00e1ndez",
+            "pitcher": "Shawn Armstrong",
+            "game_pk": 823972
+        },
+        {
+            "date": "2026-03-30",
+            "date_formatted": "March 30, 2026",
+            "challenger": "Steven Kwan",
+            "role": "batting",
+            "team": "opponents",
+            "outcome": "overturned",
+            "result_desc": "Steven Kwan called out on strikes.",
+            "batter": "Steven Kwan",
+            "pitcher": "Roki Sasaki",
+            "game_pk": 823972
+        },
+        {
+            "date": "2026-03-28",
+            "date_formatted": "March 28, 2026",
+            "challenger": "James McCann",
+            "role": "catching",
+            "team": "opponents",
+            "outcome": "overturned",
+            "result_desc": "Shohei Ohtani grounds into a double play, second baseman Ketel Marte to shortstop Geraldo Perdomo to first baseman Carlos Santana. Miguel Rojas out at 2nd. Shohei Ohtani out at 1st.",
+            "batter": "Shohei Ohtani",
+            "pitcher": "Eduardo Rodriguez",
+            "game_pk": 823973
+        },
+        {
+            "date": "2026-03-28",
+            "date_formatted": "March 28, 2026",
+            "challenger": "Will Smith",
+            "role": "catching",
+            "team": "dodgers",
+            "outcome": "confirmed",
+            "result_desc": "Alek Thomas lines out sharply to right fielder Kyle Tucker.",
+            "batter": "Alek Thomas",
+            "pitcher": "Tyler Glasnow",
+            "game_pk": 823973
+        },
+        {
+            "date": "2026-03-28",
+            "date_formatted": "March 28, 2026",
+            "challenger": "Edwin D\u00edaz",
+            "role": "pitching",
+            "team": "dodgers",
+            "outcome": "confirmed",
+            "result_desc": "Nolan Arenado flies out to center fielder Andy Pages.",
+            "batter": "Nolan Arenado",
+            "pitcher": "Edwin D\u00edaz",
+            "game_pk": 823973
+        },
+        {
+            "date": "2026-03-27",
+            "date_formatted": "March 27, 2026",
+            "challenger": "Will Smith",
+            "role": "catching",
+            "team": "dodgers",
+            "outcome": "overturned",
+            "result_desc": "Geraldo Perdomo flies out to center fielder Andy Pages.",
+            "batter": "Geraldo Perdomo",
+            "pitcher": "Jack Dreyer",
+            "game_pk": 823971
+        },
+        {
+            "date": "2026-03-27",
+            "date_formatted": "March 27, 2026",
+            "challenger": "Gabriel Moreno",
+            "role": "catching",
+            "team": "opponents",
+            "outcome": "overturned",
+            "result_desc": "Shohei Ohtani walks.",
+            "batter": "Shohei Ohtani",
+            "pitcher": "Ryne Nelson",
+            "game_pk": 823971
+        },
+        {
+            "date": "2026-03-26",
+            "date_formatted": "March 26, 2026",
+            "challenger": "Corbin Carroll",
+            "role": "batting",
+            "team": "opponents",
+            "outcome": "overturned",
+            "result_desc": "Corbin Carroll flies out to left fielder Teoscar Hern\u00e1ndez.",
+            "batter": "Corbin Carroll",
+            "pitcher": "Yoshinobu Yamamoto",
+            "game_pk": 823974
+        },
+        {
+            "date": "2026-03-23",
+            "date_formatted": "March 23, 2026",
+            "challenger": "Logan O'Hoppe",
+            "role": "catching",
+            "team": "opponents",
+            "outcome": "overturned",
+            "result_desc": "Teoscar Hern\u00e1ndez walks.",
+            "batter": "Teoscar Hern\u00e1ndez",
+            "pitcher": "Reid Detmers",
+            "game_pk": 831821
+        },
+        {
+            "date": "2026-03-23",
+            "date_formatted": "March 23, 2026",
+            "challenger": "Nolan Schanuel",
+            "role": "batting",
+            "team": "opponents",
+            "outcome": "confirmed",
+            "result_desc": "Nolan Schanuel grounds into a force out, first baseman Freddie Freeman to shortstop Mookie Betts. Zach Neto to 3rd. Mike Trout out at 2nd. Nolan Schanuel to 1st.",
+            "batter": "Nolan Schanuel",
+            "pitcher": "Roki Sasaki",
+            "game_pk": 831821
+        },
+        {
+            "date": "2026-03-23",
+            "date_formatted": "March 23, 2026",
+            "challenger": "Jorge Soler",
+            "role": "batting",
+            "team": "opponents",
+            "outcome": "overturned",
+            "result_desc": "Jorge Soler walks. Zach Neto scores. Mike Trout to 3rd. Nolan Schanuel to 2nd.",
+            "batter": "Jorge Soler",
+            "pitcher": "Roki Sasaki",
+            "game_pk": 831821
+        },
+        {
+            "date": "2026-03-22",
+            "date_formatted": "March 22, 2026",
+            "challenger": "Zach Neto",
+            "role": "batting",
+            "team": "opponents",
+            "outcome": "confirmed",
+            "result_desc": "Zach Neto pops out to third baseman Max Muncy in foul territory.",
+            "batter": "Zach Neto",
+            "pitcher": "Tyler Glasnow",
+            "game_pk": 831804
+        },
+        {
+            "date": "2026-03-22",
+            "date_formatted": "March 22, 2026",
+            "challenger": "Logan O'Hoppe",
+            "role": "catching",
+            "team": "opponents",
+            "outcome": "overturned",
+            "result_desc": "Mookie Betts walks. Andy Pages scores. Shohei Ohtani to 3rd. Kyle Tucker to 2nd.",
+            "batter": "Mookie Betts",
+            "pitcher": "George Klassen",
+            "game_pk": 831804
+        }
+    ]
+}
