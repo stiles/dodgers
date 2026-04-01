@@ -60,12 +60,8 @@ jobs:
     - name: Set up Ruby for Jekyll
       uses: ruby/setup-ruby@v1
       with:
-        ruby-version: '3.0' # Match the version to your Gemfile or latest stable release
-
-    - name: Install Bundler and Jekyll dependencies
-      run: |
-        gem install bundler
-        bundle install
+        ruby-version: '3.2'
+        bundler-cache: true
 
     - name: Run phase-aware data pipeline
       run: |
