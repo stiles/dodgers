@@ -25,6 +25,7 @@ PHASE_CONFIG = {
             "scripts/19_fetch_roster.py",
             "scripts/20_fetch_game_pitches.py",
             "scripts/21_summarize_pitch_data.py",
+            "scripts/30_fetch_abs_challenges.py",
             # Projection only during regular season
             "scripts/18_generate_projection.py",
             # Summary aggregates

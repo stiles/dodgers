@@ -3598,8 +3598,8 @@ if (document.readyState === 'loading') {
 (function () {
   async function fetchAbsChallenges() {
     try {
-      const data = await d3.json(await getDatasetUrl('umpire_summary'));
-      renderAbsChallenges(data.abs_challenges);
+      const data = await d3.json(await getDatasetUrl('abs_challenges'));
+      renderAbsChallenges(data);
     } catch (error) {
       console.error('Failed to fetch ABS challenge data:', error);
     }
