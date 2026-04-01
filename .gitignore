@@ -17,7 +17,15 @@ data/roster/*
 !data/roster/avatars/
 _data/
 !_data/navigation.yml
+
 # Python
 __pycache__/
 *.pyc
 *.pyo
+
+# Ruby/Bundler
+.bundle/
+Gemfile.lock
+
+# Cursor docs
+.cursor/
