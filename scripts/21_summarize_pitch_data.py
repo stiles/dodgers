@@ -73,13 +73,32 @@ def extract_abs_challenges(df_to, df_by=None):
             if not m:
                 continue
             challenger, ruling, result_desc = m.group(1), m.group(2), m.group(3)
-            is_batter = challenger.strip() == str(row["batter"]).strip()
-            role = "batting" if is_batter else "catching"
+            challenger_name = challenger.strip()
+            batter_name = str(row["batter"]).strip()
+            pitcher_name = str(row["pitcher"]).strip()
+            
+            # Determine role: batter, pitcher, or catcher
+            if challenger_name == batter_name:
+                role = "batting"
+            elif challenger_name == pitcher_name:
+                role = "pitching"
+            else:
+                role = "catching"
 
             if source == "thrown_to":
-                team = "dodgers" if is_batter else "opponents"
+                # Pitches thrown TO Dodgers batters
+                if role == "batting":
+                    team = "dodgers"  # Dodgers batter challenged
+                else:
+                    team = "opponents"  # Opponent pitcher/catcher challenged
             else:
-                team = "opponents" if is_batter else "dodgers"
+                # Pitches thrown BY Dodgers pitchers
+                if role == "batting":
+                    team = "opponents"  # Opponent batter challenged
+                elif role == "pitching":
+                    team = "dodgers"  # Dodgers pitcher challenged
+                else:
+                    team = "dodgers"  # Dodgers catcher challenged
 
             challenge_rows.append({
                 "date": row["game_date"].strftime("%Y-%m-%d"),
@@ -99,10 +118,12 @@ def extract_abs_challenges(df_to, df_by=None):
     summary = {
         "dodgers": {
             "batting": {"total": 0, "successful": 0, "failed": 0},
+            "pitching": {"total": 0, "successful": 0, "failed": 0},
             "catching": {"total": 0, "successful": 0, "failed": 0},
         },
         "opponents": {
             "batting": {"total": 0, "successful": 0, "failed": 0},
+            "pitching": {"total": 0, "successful": 0, "failed": 0},
             "catching": {"total": 0, "successful": 0, "failed": 0},
         },
         "challenge_log": challenge_rows[:20],
