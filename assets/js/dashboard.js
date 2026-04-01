@@ -3655,10 +3655,10 @@ if (document.readyState === 'loading') {
 
     const dodgers = abs.dodgers || {};
     const opponents = abs.opponents || {};
-    const dodgersTotal = (dodgers.batting?.total || 0) + (dodgers.catching?.total || 0);
-    const opponentsTotal = (opponents.batting?.total || 0) + (opponents.catching?.total || 0);
-    const dodgersWon = (dodgers.batting?.successful || 0) + (dodgers.catching?.successful || 0);
-    const opponentsWon = (opponents.batting?.successful || 0) + (opponents.catching?.successful || 0);
+    const dodgersTotal = (dodgers.batting?.total || 0) + (dodgers.pitching?.total || 0) + (dodgers.catching?.total || 0);
+    const opponentsTotal = (opponents.batting?.total || 0) + (opponents.pitching?.total || 0) + (opponents.catching?.total || 0);
+    const dodgersWon = (dodgers.batting?.successful || 0) + (dodgers.pitching?.successful || 0) + (dodgers.catching?.successful || 0);
+    const opponentsWon = (opponents.batting?.successful || 0) + (opponents.pitching?.successful || 0) + (opponents.catching?.successful || 0);
 
     if (dodgersTotal === 0 && opponentsTotal === 0) {
       summaryDiv.append('p')
@@ -3679,6 +3679,7 @@ if (document.readyState === 'loading') {
         .text(`: ${dodgersTotal} challenge${dodgersTotal !== 1 ? 's' : ''} this season`);
     }
     renderRoleChart(dodgersSection, 'Batting', dodgers.batting);
+    renderRoleChart(dodgersSection, 'Pitching', dodgers.pitching);
     renderRoleChart(dodgersSection, 'Catching', dodgers.catching);
 
     const opponentsSection = grid.append('div').attr('class', 'abs-team-section');
@@ -3689,6 +3690,7 @@ if (document.readyState === 'loading') {
         .text(`: ${opponentsTotal} challenge${opponentsTotal !== 1 ? 's' : ''} this season`);
     }
     renderRoleChart(opponentsSection, 'Batting', opponents.batting);
+    renderRoleChart(opponentsSection, 'Pitching', opponents.pitching);
     renderRoleChart(opponentsSection, 'Catching', opponents.catching);
 
     const log = abs.challenge_log;
@@ -3721,7 +3723,10 @@ if (document.readyState === 'loading') {
         const challengerCell = row.append('td').attr('class', 'abs-log-challenger');
         challengerCell.append('span').text(c.challenger);
         const tagSpan = challengerCell.append('span').attr('class', 'abs-role-tag');
-        tagSpan.append('span').text(c.role === 'batting' ? 'batter' : 'catcher');
+        let roleText = 'batter';
+        if (c.role === 'pitching') roleText = 'pitcher';
+        else if (c.role === 'catching') roleText = 'catcher';
+        tagSpan.append('span').text(roleText);
         tagSpan.append('span').attr('class', 'abs-team-tag')
           .text(c.team === 'dodgers' ? ' • LAD' : ' • vs');
         
