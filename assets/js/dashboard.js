@@ -2306,7 +2306,7 @@ document.addEventListener('DOMContentLoaded', function () {
   }
 
   function appendTableRows(table, data) {
-    const maxAttendance = d3.max(data, d => d.attend_game);
+    const maxAttendance = d3.max(data, d => d.attend_game != null && !isNaN(d.attend_game) ? d.attend_game : 0);
   
     const rows = table.append('tbody').selectAll('tr')
       .data(data)
@@ -2319,7 +2319,8 @@ document.addEventListener('DOMContentLoaded', function () {
       .style('position', 'relative')
       .style('width', '100%')
       .each(function(d) {
-        const barWidth = (d.attend_game / maxAttendance) * 100;
+        const attendValue = (d.attend_game != null && !isNaN(d.attend_game)) ? d.attend_game : 0;
+        const barWidth = maxAttendance > 0 ? (attendValue / maxAttendance) * 100 : 0;
         const isDodgers = d.team === 'Los Angeles Dodgers';
         d3.select(this).append('div')
           .attr('class', `attendance-bar-bg ${isDodgers ? 'attendance-bar-dodgers' : ''}`)
@@ -2336,7 +2337,16 @@ document.addEventListener('DOMContentLoaded', function () {
   }
 
   function renderMaxAttendanceInfo(data) {
-    const maxAttendanceTeam = data.reduce((max, team) => (team.attend_game > max.attend_game ? team : max), data[0]);
+    // Filter out teams with null or invalid attendance before finding max
+    const validData = data.filter(d => d.attend_game != null && !isNaN(d.attend_game) && d.attend_game > 0);
+    
+    if (validData.length === 0) {
+      // No valid attendance data yet
+      d3.select('#max-attendance-info').html('Attendance data will be available once teams have played home games.');
+      return;
+    }
+    
+    const maxAttendanceTeam = validData.reduce((max, team) => (team.attend_game > max.attend_game ? team : max), validData[0]);
     const maxAttendanceText = `The average attendance to see the ${maxAttendanceTeam.team} at ${maxAttendanceTeam.name} so far this season is <span class='win'>${maxAttendanceTeam.attend_game.toLocaleString()}</span>, more than any other franchise in Major League Baseball.`;
 
     // Insert the text into a paragraph element
