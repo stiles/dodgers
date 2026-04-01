@@ -3771,7 +3771,8 @@ function getTeamAbbreviation(teamName) {
     'Chicago White Sox': 'CWS',
     'Texas Rangers': 'TEX',
     'Seattle Mariners': 'SEA',
-    'Oakland Athletics': 'OAK',
+    'Oakland Athletics': 'ATH',  // Legacy name (pre-2025)
+    'Athletics': 'ATH',  // Current name (Sacramento 2025-2027)
     'Pittsburgh Pirates': 'PIT',
     'Cincinnati Reds': 'CIN',
     'Miami Marlins': 'MIA',
@@ -3808,7 +3809,8 @@ function getTeamMascot(teamName) {
     'Chicago White Sox': 'White Sox',
     'Texas Rangers': 'Rangers',
     'Seattle Mariners': 'Mariners',
-    'Oakland Athletics': 'Athletics',
+    'Oakland Athletics': 'Athletics',  // Legacy name (pre-2025)
+    'Athletics': 'Athletics',  // Current name (Sacramento 2025-2027)
     'Pittsburgh Pirates': 'Pirates',
     'Cincinnati Reds': 'Reds',
     'Miami Marlins': 'Marlins',

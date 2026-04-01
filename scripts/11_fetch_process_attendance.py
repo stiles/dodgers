@@ -78,8 +78,11 @@ gdf.loc[gdf["team"] == "Cleveland Indians", "team"] = 'Cleveland Guardians'
 gdf.loc[gdf["league"] == "National", "league"] = 'NL'
 gdf.loc[gdf["league"] == "American", "league"] = 'AL'
 gdf.loc[gdf["team"] == "Houston Astros", "league"] = 'AL'
-gdf.loc[gdf["team"] == "Oakland Athletics", "name"] = 'Oakland Coliseum'
+gdf.loc[gdf["team"] == "Oakland Athletics", "name"] = 'Sutter Health Park'  # Sacramento venue 2025-2027
 gdf.loc[gdf["team"] == "Baltimore Orioles", "name"] = 'Camden Yards'
+
+# Handle Athletics name change (Oakland → Sacramento)
+df.loc[df["team"] == "Athletics", "team"] = 'Oakland Athletics'
 
 
 """
