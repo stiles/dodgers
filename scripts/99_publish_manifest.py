@@ -196,6 +196,16 @@ def build_manifest():
             "source": "baseball_savant"
         },
         {
+            "id": "abs_challenges",
+            "version": "v1",
+            "url": "https://stilesdata.com/dodgers/data/summary/abs_challenges.json",
+            "content_type": "application/json",
+            "last_updated": get_pacific_time(),
+            "description": "ABS challenge tracking",
+            "cadence": "regular_season_daily",
+            "source": "mlb_statsapi"
+        },
+        {
             "id": "postseason_players_current",
             "version": "v1",
             "url": f"https://stilesdata.com/dodgers/data/postseason/dodgers_postseason_stats_{season}.json",
