@@ -16,15 +16,24 @@ export async function getManifest() {
     return manifestCache;
   }
   
-  const manifestUrl = 'https://stilesdata.com/dodgers/data/manifest.json';
+  // Try local path first (for development), then fallback to S3
+  const localUrl = '/data/manifest.json';
+  const s3Url = 'https://stilesdata.com/dodgers/data/manifest.json';
   
   try {
-    const response = await fetch(manifestUrl);
+    let response = await fetch(localUrl);
+    if (!response.ok) {
+      // Fallback to S3 URL
+      console.log('Local manifest not found, falling back to S3');
+      response = await fetch(s3Url);
+    }
+    
     if (!response.ok) {
       throw new Error(`Failed to fetch manifest: ${response.status}`);
     }
+    
     manifestCache = await response.json();
-    console.log(`📋 Manifest loaded (v${manifestCache.version}, phase: ${manifestCache.phase})`);
+    console.log(`📋 Manifest loaded (v${manifestCache.version}, phase: ${manifestCache.phase}, postseason_active: ${manifestCache.postseason_active})`);
     return manifestCache;
   } catch (error) {
     console.error('❌ Failed to load manifest:', error);

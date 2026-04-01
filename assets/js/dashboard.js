@@ -1115,7 +1115,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
 
 
-document.addEventListener('DOMContentLoaded', function () {
+document.addEventListener('DOMContentLoaded', async function () {
   const url = await getDatasetUrl('player_batting_current');
 
   const fetchDataAndRenderBattingTables = async () => {
@@ -1354,7 +1354,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
 
 
-document.addEventListener('DOMContentLoaded', function () {
+document.addEventListener('DOMContentLoaded', async function () {
   const url = await getDatasetUrl('player_batting_current');
 
   const fetchDataAndRenderBattingTables = async () => {
@@ -1593,7 +1593,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
 
 
-document.addEventListener('DOMContentLoaded', function () {
+document.addEventListener('DOMContentLoaded', async function () {
   const url = await getDatasetUrl('player_batting_current');
 
   const fetchDataAndRenderBattingTables = async () => {
@@ -1832,7 +1832,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
 
 
-document.addEventListener('DOMContentLoaded', function () {
+document.addEventListener('DOMContentLoaded', async function () {
   const url = await getDatasetUrl('player_batting_current');
 
   const fetchDataAndRenderBattingTables = async () => {
@@ -2071,7 +2071,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
 
 
-document.addEventListener('DOMContentLoaded', function () {
+document.addEventListener('DOMContentLoaded', async function () {
   const url = await getDatasetUrl('player_batting_current');
 
   const fetchDataAndRenderBattingTables = async () => {
@@ -3948,42 +3948,64 @@ async function initPlayoffBracket() {
 document.addEventListener('DOMContentLoaded', async function() {
   // Check if postseason section should be visible
   try {
-    const { isPostseasonActive } = await import('./manifest_loader.js');
+    const { isPostseasonActive, getCurrentSeason } = await import('./manifest_loader.js');
+    
+    console.log('Checking postseason status...');
     const postseasonActive = await isPostseasonActive();
+    console.log(`Postseason active: ${postseasonActive}`);
     
     const postseasonSection = document.querySelector('.postseason-stats-section');
     
-    if (!postseasonActive && postseasonSection) {
+    if (!postseasonActive) {
       // Hide entire postseason section when not in postseason
-      postseasonSection.style.display = 'none';
-      console.log('Postseason section hidden (not currently in postseason)');
-    } else {
-      // Initialize postseason components
-      if (document.getElementById('playoff-bracket-container')) {
-        initPlayoffBracket();
+      if (postseasonSection) {
+        postseasonSection.style.display = 'none';
+        console.log('✅ Postseason section hidden (not currently in postseason)');
       }
-      
-      // Initialize postseason stats
-      if (document.getElementById('postseason-grid')) {
-        initPostseasonStats();
+      // Remove top border from performance header to avoid double-rule appearance
+      const performanceHeader = document.querySelector('.performance-header');
+      if (performanceHeader) {
+        performanceHeader.style.borderTop = 'none';
+        performanceHeader.style.paddingTop = '0';
       }
-      
-      // Initialize playoff journey
-      if (document.getElementById('playoff-journey')) {
-        initPlayoffJourney();
-      }
+      // Do not initialize any postseason components
+      return;
     }
-  } catch (error) {
-    console.error('Error checking postseason status:', error);
-    // On error, default to showing the section
+    
+    // If we get here, postseason IS active
+    console.log('✅ Postseason is active, initializing components...');
+    
+    // Update postseason header with current season year
+    const season = await getCurrentSeason();
+    const postseasonHeader = document.getElementById('postseason-header');
+    if (postseasonHeader) {
+      postseasonHeader.textContent = `Postseason ${season}`;
+      console.log(`Updated header to: Postseason ${season}`);
+    }
+    
+    // Initialize postseason components
     if (document.getElementById('playoff-bracket-container')) {
       initPlayoffBracket();
     }
+    
+    // Initialize postseason stats
     if (document.getElementById('postseason-grid')) {
       initPostseasonStats();
     }
+    
+    // Initialize playoff journey
     if (document.getElementById('playoff-journey')) {
       initPlayoffJourney();
+    }
+    
+  } catch (error) {
+    console.error('❌ Error checking postseason status:', error);
+    console.error('Stack trace:', error.stack);
+    // On error, hide the section to be safe
+    const postseasonSection = document.querySelector('.postseason-stats-section');
+    if (postseasonSection) {
+      postseasonSection.style.display = 'none';
+      console.log('Hiding postseason section due to error');
     }
   }
 });

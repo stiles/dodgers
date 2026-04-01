@@ -1,0 +1,72 @@
+{
+    "season_summary": {
+        "correct_strikes_pct": 88.01498127340824,
+        "incorrect_strikes_pct": 11.985018726591761,
+        "total_called_strikes": 267,
+        "bad_calls_count": 32
+    },
+    "last_game_summary": {
+        "date": "March 31, 2026",
+        "correct_strikes_pct": 86.66666666666667,
+        "incorrect_strikes_pct": 13.333333333333329,
+        "total_called_strikes": 30,
+        "bad_calls_count": 4,
+        "home_plate_umpire": "Adrian Johnson"
+    },
+    "worst_calls_of_season": [
+        {
+            "distance_inches": 2.4670354695,
+            "batter": "Eduardo Quintero",
+            "pitcher": "Logan Gillaspie",
+            "pitch_type": "Sinker",
+            "velocity_mph": 93.8,
+            "date": "2026-03-20",
+            "date_formatted": "March 20, 2026",
+            "video_link": "https://baseballsavant.mlb.com/sporty-videos?playId=4e421a2f-a67b-3f68-a9a8-0404ca31c89e"
+        },
+        {
+            "distance_inches": 2.3559691319,
+            "batter": "Andy Pages",
+            "pitcher": "Andrew Hoffmann",
+            "pitch_type": "4-Seam Fastball",
+            "velocity_mph": 95.7,
+            "date": "2026-03-26",
+            "date_formatted": "March 26, 2026",
+            "video_link": "https://baseballsavant.mlb.com/sporty-videos?playId=51ec3075-e3d5-37b7-bc45-72960f6a38c9"
+        },
+        {
+            "distance_inches": 2.2640428287,
+            "batter": "Miguel Rojas",
+            "pitcher": "Logan Gillaspie",
+            "pitch_type": "4-Seam Fastball",
+            "velocity_mph": 94.8,
+            "date": "2026-03-20",
+            "date_formatted": "March 20, 2026",
+            "video_link": "https://baseballsavant.mlb.com/sporty-videos?playId=8bd1648c-edf4-3cc3-9328-62ce0f9d6b00"
+        },
+        {
+            "distance_inches": 2.0234010344,
+            "batter": "Miguel Rojas",
+            "pitcher": "Parker Messick",
+            "pitch_type": "Slider",
+            "velocity_mph": 89.5,
+            "date": "2026-03-30",
+            "date_formatted": "March 30, 2026",
+            "video_link": "https://baseballsavant.mlb.com/sporty-videos?playId=6cf04d7f-8e51-3e64-b1e5-5e51b854d501"
+        }
+    ],
+    "pitching_season_summary": {
+        "correct_balls_pct": 95.35315985130111,
+        "incorrect_balls_pct": 4.646840148698885,
+        "total_called_balls": 538,
+        "bad_calls_count": 25
+    },
+    "pitching_last_game_summary": {
+        "date": "March 31, 2026",
+        "correct_balls_pct": 100.0,
+        "incorrect_balls_pct": 0.0,
+        "total_called_balls": 47,
+        "bad_calls_count": 0
+    },
+    "pitching_worst_calls_of_season": []
+}
