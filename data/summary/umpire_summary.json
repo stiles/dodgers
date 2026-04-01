@@ -68,5 +68,129 @@
         "total_called_balls": 47,
         "bad_calls_count": 0
     },
-    "pitching_worst_calls_of_season": []
+    "pitching_worst_calls_of_season": [],
+    "abs_challenges": {
+        "dodgers": {
+            "batting": {
+                "total": 3,
+                "successful": 1,
+                "failed": 2
+            },
+            "catching": {
+                "total": 2,
+                "successful": 1,
+                "failed": 1
+            }
+        },
+        "opponents": {
+            "batting": {
+                "total": 1,
+                "successful": 0,
+                "failed": 1
+            },
+            "catching": {
+                "total": 2,
+                "successful": 2,
+                "failed": 0
+            }
+        },
+        "challenge_log": [
+            {
+                "date": "2026-03-27",
+                "date_formatted": "March 27, 2026",
+                "challenger": "Will Smith",
+                "role": "catching",
+                "team": "dodgers",
+                "outcome": "overturned",
+                "result_desc": "Geraldo Perdomo called out on strikes.",
+                "batter": "Geraldo Perdomo",
+                "pitcher": "Emmet Sheehan",
+                "game_pk": 823971
+            },
+            {
+                "date": "2026-03-27",
+                "date_formatted": "March 27, 2026",
+                "challenger": "Will Smith",
+                "role": "catching",
+                "team": "dodgers",
+                "outcome": "confirmed",
+                "result_desc": "Alek Thomas walks.",
+                "batter": "Alek Thomas",
+                "pitcher": "Edwin D\u00edaz",
+                "game_pk": 823971
+            },
+            {
+                "date": "2026-03-22",
+                "date_formatted": "March 22, 2026",
+                "challenger": "Logan O'Hoppe",
+                "role": "catching",
+                "team": "opponents",
+                "outcome": "overturned",
+                "result_desc": "Will Smith called out on strikes.",
+                "batter": "Will Smith",
+                "pitcher": "George Klassen",
+                "game_pk": 831804
+            },
+            {
+                "date": "2026-03-22",
+                "date_formatted": "March 22, 2026",
+                "challenger": "Dalton Rushing",
+                "role": "batting",
+                "team": "dodgers",
+                "outcome": "confirmed",
+                "result_desc": "Dalton Rushing called out on strikes.",
+                "batter": "Dalton Rushing",
+                "pitcher": "Shaun Anderson",
+                "game_pk": 831804
+            },
+            {
+                "date": "2026-03-21",
+                "date_formatted": "March 21, 2026",
+                "challenger": "Alex Freeland",
+                "role": "batting",
+                "team": "dodgers",
+                "outcome": "confirmed",
+                "result_desc": "Alex Freeland called out on strikes.",
+                "batter": "Alex Freeland",
+                "pitcher": "Jacob Lopez",
+                "game_pk": 831937
+            },
+            {
+                "date": "2026-03-21",
+                "date_formatted": "March 21, 2026",
+                "challenger": "Austin Wynns",
+                "role": "catching",
+                "team": "opponents",
+                "outcome": "overturned",
+                "result_desc": "Alex Call called out on strikes.",
+                "batter": "Alex Call",
+                "pitcher": "Luis Medina",
+                "game_pk": 831937
+            },
+            {
+                "date": "2026-03-21",
+                "date_formatted": "March 21, 2026",
+                "challenger": "Nick Senzel",
+                "role": "batting",
+                "team": "dodgers",
+                "outcome": "overturned",
+                "result_desc": "Nick Senzel walks.",
+                "batter": "Nick Senzel",
+                "pitcher": "Luis Medina",
+                "game_pk": 831937
+            },
+            {
+                "date": "2026-03-21",
+                "date_formatted": "March 21, 2026",
+                "challenger": "Henry Bolte",
+                "role": "batting",
+                "team": "opponents",
+                "outcome": "confirmed",
+                "result_desc": "Henry Bolte called out on strikes.",
+                "batter": "Henry Bolte",
+                "pitcher": "Emmet Sheehan",
+                "game_pk": 831937
+            }
+        ]
+    }
 }

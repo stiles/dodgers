@@ -3594,6 +3594,172 @@ if (document.readyState === 'loading') {
   }
 })();
 
+// ABS Challenge Tracking
+(function () {
+  async function fetchAbsChallenges() {
+    try {
+      const data = await d3.json(await getDatasetUrl('umpire_summary'));
+      renderAbsChallenges(data.abs_challenges);
+    } catch (error) {
+      console.error('Failed to fetch ABS challenge data:', error);
+    }
+  }
+
+  function renderRoleChart(container, label, roleData) {
+    const total = roleData?.total || 0;
+    const successful = roleData?.successful || 0;
+    const failed = roleData?.failed || 0;
+
+    if (total === 0) return;
+
+    const chartDiv = container.append('div').attr('class', 'abs-role-chart');
+    
+    chartDiv.append('div').attr('class', 'abs-role-label').text(label);
+
+    const barContainer = chartDiv.append('div').attr('class', 'abs-bar-container');
+    
+    const wonPct = (successful / total) * 100;
+    const lostPct = (failed / total) * 100;
+    
+    if (successful > 0) {
+      const wonSegment = barContainer.append('div')
+        .attr('class', 'abs-bar-segment won')
+        .style('width', `${wonPct}%`);
+      if (wonPct > 15) wonSegment.text(`${wonPct.toFixed(0)}% (${successful})`);
+    }
+    
+    if (failed > 0) {
+      const lostSegment = barContainer.append('div')
+        .attr('class', 'abs-bar-segment lost')
+        .style('width', `${lostPct}%`);
+      if (lostPct > 15) lostSegment.text(`${lostPct.toFixed(0)}% (${failed})`);
+    }
+  }
+
+  function renderAbsChallenges(abs) {
+    const summaryDiv = d3.select('#abs-challenge-summary');
+    const logDiv = d3.select('#abs-challenge-log');
+    if (summaryDiv.empty()) return;
+
+    summaryDiv.html('');
+    logDiv.html('');
+
+    if (!abs) {
+      summaryDiv.append('p')
+        .attr('class', 'call-details')
+        .style('font-style', 'italic')
+        .style('color', '#999')
+        .text('No ABS challenge data available.');
+      return;
+    }
+
+    const dodgers = abs.dodgers || {};
+    const opponents = abs.opponents || {};
+    const dodgersTotal = (dodgers.batting?.total || 0) + (dodgers.catching?.total || 0);
+    const opponentsTotal = (opponents.batting?.total || 0) + (opponents.catching?.total || 0);
+    const dodgersWon = (dodgers.batting?.successful || 0) + (dodgers.catching?.successful || 0);
+    const opponentsWon = (opponents.batting?.successful || 0) + (opponents.catching?.successful || 0);
+
+    if (dodgersTotal === 0 && opponentsTotal === 0) {
+      summaryDiv.append('p')
+        .attr('class', 'call-details')
+        .style('font-style', 'italic')
+        .style('color', '#999')
+        .text('No ABS challenges recorded this season.');
+      return;
+    }
+
+    const grid = summaryDiv.append('div').attr('class', 'abs-summary-grid');
+
+    const dodgersSection = grid.append('div').attr('class', 'abs-team-section');
+    const dodgersHeading = dodgersSection.append('h4');
+    dodgersHeading.append('span').text('Dodgers');
+    if (dodgersTotal > 0) {
+      dodgersHeading.append('span').attr('class', 'abs-team-count')
+        .text(`: ${dodgersTotal} challenge${dodgersTotal !== 1 ? 's' : ''} this season`);
+    }
+    renderRoleChart(dodgersSection, 'Batting', dodgers.batting);
+    renderRoleChart(dodgersSection, 'Catching', dodgers.catching);
+
+    const opponentsSection = grid.append('div').attr('class', 'abs-team-section');
+    const opponentsHeading = opponentsSection.append('h4');
+    opponentsHeading.append('span').text('Opponents');
+    if (opponentsTotal > 0) {
+      opponentsHeading.append('span').attr('class', 'abs-team-count')
+        .text(`: ${opponentsTotal} challenge${opponentsTotal !== 1 ? 's' : ''} this season`);
+    }
+    renderRoleChart(opponentsSection, 'Batting', opponents.batting);
+    renderRoleChart(opponentsSection, 'Catching', opponents.catching);
+
+    const log = abs.challenge_log;
+    if (!log || log.length === 0) return;
+
+    logDiv.append('h4').attr('class', 'abs-log-heading').text('Recent challenges');
+    const table = logDiv.append('table').attr('class', 'abs-log-table');
+    const thead = table.append('thead').append('tr');
+    ['Date', 'Challenger', 'Result', 'Outcome', 'Matchup'].forEach(h =>
+      thead.append('th').text(h)
+    );
+
+    const tbody = table.append('tbody');
+    const initialLimit = 5;
+    let showingAll = false;
+
+    function renderRows(limit) {
+      tbody.html('');
+      const rowsToShow = limit ? log.slice(0, limit) : log;
+      
+      rowsToShow.forEach(c => {
+        const row = tbody.append('tr');
+        
+        if (c.team === 'dodgers') {
+          row.attr('class', 'dodgers-challenge');
+        }
+        
+        row.append('td').attr('class', 'abs-log-date').text(c.date_formatted || c.date);
+        
+        const challengerCell = row.append('td').attr('class', 'abs-log-challenger');
+        challengerCell.append('span').text(c.challenger);
+        const tagSpan = challengerCell.append('span').attr('class', 'abs-role-tag');
+        tagSpan.append('span').text(c.role === 'batting' ? 'batter' : 'catcher');
+        tagSpan.append('span').attr('class', 'abs-team-tag')
+          .text(c.team === 'dodgers' ? ' • LAD' : ' • vs');
+        
+        const outcomeClass = c.outcome === 'overturned' ? 'won' : 'lost';
+        const outcomeText = c.outcome === 'overturned' ? 'Won' : 'Lost';
+        row.append('td').append('span')
+          .attr('class', `abs-outcome-badge ${outcomeClass}`)
+          .text(outcomeText);
+        
+        row.append('td').attr('class', 'abs-log-result').text(c.result_desc);
+        row.append('td').attr('class', 'abs-log-matchup').text(`${c.batter} vs. ${c.pitcher}`);
+      });
+    }
+
+    renderRows(initialLimit);
+
+    if (log.length > initialLimit) {
+      const toggleBtn = logDiv.append('button')
+        .attr('class', 'abs-show-more-btn')
+        .text(`Show ${log.length - initialLimit} more`)
+        .on('click', function() {
+          showingAll = !showingAll;
+          if (showingAll) {
+            renderRows(null);
+            d3.select(this).text('Show less');
+          } else {
+            renderRows(initialLimit);
+            d3.select(this).text(`Show ${log.length - initialLimit} more`);
+          }
+        });
+    }
+  }
+
+  if (document.getElementById('abs-challenge-summary')) {
+    fetchAbsChallenges();
+  }
+})();
+
 // Shohei Ohtani Pitching Visualization
 document.addEventListener('DOMContentLoaded', function () {
   if (!document.getElementById('shohei-pitching-container')) {
