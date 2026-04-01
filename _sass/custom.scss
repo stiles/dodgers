@@ -2115,6 +2115,337 @@ label {
   font-size: 14px;
 }
 
+// ABS Challenge Tracking
+.abs-challenges-section {
+  margin-top: 24px;
+  margin-bottom: 40px;
+}
+
+.abs-summary-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 40px;
+  margin-bottom: 32px;
+}
+
+.abs-team-section {
+  h4 {
+    font-family: 'Roboto Slab', serif;
+    font-size: 15px;
+    font-weight: 600;
+    color: #333;
+    margin-bottom: 4px;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+  }
+}
+
+.abs-team-count {
+  font-family: 'Roboto', sans-serif;
+  font-size: 13px;
+  font-weight: 400;
+  color: #666;
+  text-transform: none;
+  letter-spacing: 0;
+}
+
+.abs-team-total {
+  font-family: 'Roboto', sans-serif;
+  font-size: 13px;
+  color: #666;
+  margin-bottom: 16px;
+}
+
+.abs-role-chart {
+  margin-bottom: 20px;
+
+  &:last-child {
+    margin-bottom: 0;
+  }
+}
+
+.abs-role-label {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 6px;
+  font-family: 'Roboto', sans-serif;
+  font-size: 13px;
+  color: #666;
+  font-weight: 500;
+}
+
+.abs-role-stats {
+  font-family: 'Roboto', sans-serif;
+  font-size: 12px;
+  color: #999;
+}
+
+.abs-bar-container {
+  position: relative;
+  height: 32px;
+  background-color: #f5f5f5;
+  border-radius: 6px;
+  overflow: hidden;
+  box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.08);
+  display: flex;
+}
+
+.abs-bar-segment {
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: 'Roboto', sans-serif;
+  font-size: 12px;
+  font-weight: 600;
+  color: #fff;
+  transition: width 0.3s ease;
+  position: relative;
+
+  &.won {
+    background-color: #53A796;
+  }
+
+  &.lost {
+    background-color: #F18851;
+  }
+
+  &.empty {
+    background-color: #f5f5f5;
+  }
+}
+
+.abs-log-heading {
+  font-family: 'Roboto Slab', serif;
+  font-size: 15px;
+  font-weight: 600;
+  color: #333;
+  margin-bottom: 12px;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.abs-log-table {
+  width: 100% !important;
+  max-width: 100%;
+  table-layout: fixed;
+  border-collapse: collapse;
+  font-family: 'Roboto', sans-serif;
+  font-size: 13px;
+  background-color: #fff;
+
+  thead th {
+    background-color: #fff;
+    border: 0;
+    padding: 5px 10px;
+    border-bottom: 1px solid #999;
+    text-align: left;
+    font-family: 'Roboto Slab', serif;
+    font-size: .9em;
+    font-weight: 400;
+    color: #333;
+
+    &:nth-child(1) { width: 13%; }  // Date
+    &:nth-child(2) { width: 20%; }  // Challenger
+    &:nth-child(3) { width: 10%; }  // Result badge
+    &:nth-child(4) { width: 35%; }  // Outcome
+    &:nth-child(5) { width: 22%; }  // Matchup
+  }
+
+  tbody td {
+    padding: 10px 12px;
+    border-bottom: 1px solid #f0f0f0;
+    color: #444;
+    vertical-align: middle;
+  }
+
+  tbody tr:hover {
+    background-color: #fafafa;
+  }
+
+  tbody tr:last-child td {
+    border-bottom: none;
+  }
+}
+
+.abs-log-date {
+  font-size: 12px;
+  color: #999;
+  white-space: nowrap;
+  font-weight: 400;
+}
+
+.abs-log-challenger {
+  white-space: nowrap;
+  font-weight: 500;
+}
+
+.abs-role-tag {
+  display: inline-block;
+  font-size: 10px;
+  font-weight: 600;
+  color: #999;
+  text-transform: uppercase;
+  letter-spacing: 0.3px;
+  margin-left: 4px;
+}
+
+.abs-team-tag {
+  color: #bbb;
+  font-weight: 400;
+}
+
+.abs-log-table tbody tr.dodgers-challenge {
+  background-color: rgba(0, 90, 156, 0.02);
+}
+
+.abs-log-table tbody tr.dodgers-challenge:hover {
+  background-color: rgba(0, 90, 156, 0.04);
+}
+
+.abs-outcome-badge {
+  display: inline-block;
+  padding: 2px 8px;
+  border-radius: 12px;
+  font-weight: 600;
+  font-size: 11px;
+  text-transform: uppercase;
+  letter-spacing: 0.3px;
+  white-space: nowrap;
+
+  &.won {
+    background-color: rgba(83, 167, 150, 0.12);
+    color: #2d8070;
+  }
+
+  &.lost {
+    background-color: rgba(241, 136, 81, 0.12);
+    color: #c0522b;
+  }
+}
+
+.abs-log-result {
+  font-size: 12px;
+  color: #666;
+}
+
+.abs-log-matchup {
+  font-size: 11px;
+  color: #999;
+  white-space: nowrap;
+}
+
+.abs-show-more-btn {
+  display: block;
+  margin: 16px auto 0;
+  padding: 8px 20px;
+  background-color: #fff;
+  border: 1px solid #e0e0e0;
+  border-radius: 4px;
+  font-family: 'Roboto', sans-serif;
+  font-size: 13px;
+  font-weight: 500;
+  color: #555;
+  cursor: pointer;
+  transition: all 0.2s ease;
+
+  &:hover {
+    background-color: #fafafa;
+    border-color: #ccc;
+    color: #333;
+  }
+
+  &:active {
+    background-color: #f0f0f0;
+  }
+}
+
+@media (max-width: 768px) {
+  .abs-summary-grid {
+    grid-template-columns: 1fr;
+    gap: 24px;
+  }
+
+  .abs-log-table {
+    font-size: 12px;
+  }
+
+  // Hide table structure on mobile, show as cards
+  .abs-log-table thead {
+    display: none;
+  }
+
+  .abs-log-table,
+  .abs-log-table tbody,
+  .abs-log-table tr {
+    display: block;
+  }
+
+  .abs-log-table tbody tr {
+    margin-bottom: 10px;
+    padding: 10px;
+    border: 1px solid #e0e0e0;
+    border-radius: 4px;
+    background-color: #fff;
+    display: grid;
+    grid-template-columns: 1fr auto;
+    grid-gap: 6px 10px;
+    align-items: start;
+  }
+
+  .abs-log-table tbody tr.dodgers-challenge {
+    background-color: rgba(0, 90, 156, 0.03);
+    border-left: 3px solid rgba(0, 90, 156, 0.3);
+  }
+
+  .abs-log-table td {
+    padding: 0;
+    border: none;
+    text-align: left;
+  }
+
+  // Date and badge on first row
+  .abs-log-date {
+    font-size: 11px;
+    color: #999;
+    grid-column: 1;
+  }
+
+  .abs-log-table td:nth-child(3) {
+    grid-column: 2;
+    grid-row: 1;
+  }
+
+  .abs-outcome-badge {
+    font-size: 10px;
+    padding: 2px 7px;
+  }
+
+  // Challenger spans full width on second row
+  .abs-log-challenger {
+    font-size: 14px;
+    font-weight: 600;
+    color: #333;
+    grid-column: 1 / -1;
+  }
+
+  // Result and matchup on third row
+  .abs-log-result {
+    font-size: 12px;
+    color: #555;
+    line-height: 1.3;
+    grid-column: 1 / -1;
+  }
+
+  .abs-log-matchup {
+    font-size: 11px;
+    color: #999;
+    grid-column: 1 / -1;
+    white-space: normal;
+  }
+}
+
 @media (min-width: 1200px) {
   .container, .container-lg, .container-md, .container-sm, .container-xl {
       max-width: 900px !important;

@@ -1,4 +1,5 @@
 import json
+import re
 import requests
 import pandas as pd
 import os
@@ -40,6 +41,83 @@ def upload_to_s3(file_path):
         print("Error: AWS credentials not found. S3 upload failed.")
     except Exception as e:
         print(f"An error occurred during S3 upload: {e}")
+
+CHALLENGE_RE = re.compile(
+    r"^(.+?) challenged \(pitch result\), call on the field was (confirmed|overturned): (.+)$"
+)
+
+
+def extract_abs_challenges(df_to, df_by=None):
+    """
+    Parse ABS challenge events from pitch data.
+
+    df_to: pitches thrown TO Dodgers batters (team_role=thrown_to_dodgers)
+    df_by: pitches thrown BY Dodgers pitchers (team_role=thrown_by_dodgers)
+
+    Returns a dict with dodgers/opponents aggregates and a challenge_log list.
+    """
+    frames = []
+    if df_to is not None and not df_to.empty:
+        frames.append(("thrown_to", df_to))
+    if df_by is not None and not df_by.empty:
+        frames.append(("thrown_by", df_by))
+
+    challenge_rows = []
+    for source, frame in frames:
+        mask = frame["at_bat_eventual_desc"].str.contains(
+            "challenged (pitch result)", na=False, regex=False
+        )
+        subset = frame.loc[mask].drop_duplicates(subset=["game_pk", "ab_number"])
+        for _, row in subset.iterrows():
+            m = CHALLENGE_RE.match(row["at_bat_eventual_desc"])
+            if not m:
+                continue
+            challenger, ruling, result_desc = m.group(1), m.group(2), m.group(3)
+            is_batter = challenger.strip() == str(row["batter"]).strip()
+            role = "batting" if is_batter else "catching"
+
+            if source == "thrown_to":
+                team = "dodgers" if is_batter else "opponents"
+            else:
+                team = "opponents" if is_batter else "dodgers"
+
+            challenge_rows.append({
+                "date": row["game_date"].strftime("%Y-%m-%d"),
+                "date_formatted": row["game_date"].strftime("%B %-d, %Y"),
+                "challenger": challenger.strip(),
+                "role": role,
+                "team": team,
+                "outcome": ruling,
+                "result_desc": result_desc.strip(),
+                "batter": row["batter"],
+                "pitcher": row["pitcher"],
+                "game_pk": int(row["game_pk"]),
+            })
+
+    challenge_rows.sort(key=lambda c: c["date"], reverse=True)
+
+    summary = {
+        "dodgers": {
+            "batting": {"total": 0, "successful": 0, "failed": 0},
+            "catching": {"total": 0, "successful": 0, "failed": 0},
+        },
+        "opponents": {
+            "batting": {"total": 0, "successful": 0, "failed": 0},
+            "catching": {"total": 0, "successful": 0, "failed": 0},
+        },
+        "challenge_log": challenge_rows[:20],
+    }
+
+    for c in challenge_rows:
+        bucket = summary[c["team"]][c["role"]]
+        bucket["total"] += 1
+        if c["outcome"] == "overturned":
+            bucket["successful"] += 1
+        else:
+            bucket["failed"] += 1
+
+    return summary
+
 
 def analyze_pitches(file_path, thrown_by_file_path=None):
     """
@@ -103,6 +181,7 @@ def analyze_pitches(file_path, thrown_by_file_path=None):
     pitching_summary = None
     pitching_last_game = None
     pitching_worst_calls_list = []
+    df_by = None
     if thrown_by_file_path:
         try:
             with open(thrown_by_file_path, 'r') as f:
@@ -210,6 +289,9 @@ def analyze_pitches(file_path, thrown_by_file_path=None):
 
     home_plate_umpire = get_home_plate_umpire(recent_game_pk) if recent_game_pk is not None else None
 
+    # --- ABS Challenge Tracking ---
+    abs_challenges = extract_abs_challenges(df, df_by)
+
     # --- Create Summary Object ---
     summary_data = {
         "season_summary": {
@@ -233,6 +315,8 @@ def analyze_pitches(file_path, thrown_by_file_path=None):
         summary_data["pitching_season_summary"] = pitching_summary
         summary_data["pitching_last_game_summary"] = pitching_last_game
         summary_data["pitching_worst_calls_of_season"] = pitching_worst_calls_list
+
+    summary_data["abs_challenges"] = abs_challenges
 
     # --- Save and Upload ---
     os.makedirs(os.path.dirname(LOCAL_JSON_PATH), exist_ok=True)
