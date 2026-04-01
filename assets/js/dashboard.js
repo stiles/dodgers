@@ -1,9 +1,12 @@
+// Import manifest loader for dataset access
+import { fetchDataset, getDatasetUrl } from './manifest_loader.js';
+
 // Games back line chart
 
 async function fetchData() {
   try {
     const response = await d3.json(
-      'https://stilesdata.com/dodgers/data/standings/dodgers_standings_1958_present_optimized.json'
+      await getDatasetUrl('standings_1958_present_optimized')
     );
     // Group data by year, converting the year to a string for consistency
     const groupedByYear = d3.group(response, (d) => d.year.toString());
@@ -212,7 +215,7 @@ fetchData();
 
 async function fetchGameData() {
   try {
-    const response = await d3.json('https://stilesdata.com/dodgers/data/standings/dodgers_wins_losses_current.json');
+    const response = await d3.json(await getDatasetUrl('wins_losses_current'));
     response.reverse(); // Reverse the array to start from the beginning of the season
     renderRunDiffChart(response);
   } catch (error) {
@@ -317,7 +320,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
   async function fetchCumulativeWinsData() {
       try {
-          const response = await d3.json('https://stilesdata.com/dodgers/data/standings/dodgers_standings_1958_present.json');
+          const response = await d3.json(await getDatasetUrl('standings_1958_present'));
           // Group data by year
           groupedByYear = d3.group(response, (d) => d.year);
           populateYearSelect(Array.from(groupedByYear.keys()));
@@ -565,7 +568,7 @@ document.addEventListener('DOMContentLoaded', function() {
       async function fetchData() {
         try {
           const response = await d3.json(
-            'https://stilesdata.com/dodgers/data/batting/archive/dodgers_historic_batting_gamelogs.json'
+            await getDatasetUrl('historic_batting_gamelogs')
           );
           const groupedData = d3.group(response, (d) => d.year.toString());
           const maxVal = d3.max(response, d => Math.max(d['2b_cum'], d['hr_cum']));
@@ -744,7 +747,7 @@ document.addEventListener('DOMContentLoaded', function() {
   async function fetchData() {
     try {
       const response = await d3.json(
-        'https://stilesdata.com/dodgers/data/pitching/dodgers_historic_pitching_gamelogs_1958-present.json'
+        await getDatasetUrl('historic_pitching_gamelogs')
       );
       const groupedData = d3.group(response, (d) => d.year.toString());
       const maxVal = d3.max(response, d => Math.max(d['so_cum'], d['h_cum']));
@@ -907,7 +910,7 @@ document.addEventListener('DOMContentLoaded', function() {
   async function fetchCumulativeERAData() {
     try {
       const response = await d3.json(
-        'https://stilesdata.com/dodgers/data/pitching/dodgers_historic_pitching_gamelogs_1958-present.json'
+        await getDatasetUrl('historic_pitching_gamelogs')
       );
       // Group data by year
       const groupedByYear = d3.group(response, (d) => d.year.toString());
@@ -1094,7 +1097,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
   const fetchDataAndRenderTables = async () => {
     try {
-      const response = await fetch('https://stilesdata.com/dodgers/data/standings/dodgers_schedule.json');
+      const response = await fetch(await getDatasetUrl('schedule_current'));
       const games = await response.json();
 
       const lastGames = games.filter(game => game.placement === 'last');
@@ -1113,7 +1116,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
 
 document.addEventListener('DOMContentLoaded', function () {
-  const url = 'https://stilesdata.com/dodgers/data/batting/dodgers_player_batting_current_table.json';
+  const url = await getDatasetUrl('player_batting_current');
 
   const fetchDataAndRenderBattingTables = async () => {
       try {
@@ -1207,7 +1210,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
 
 // document.addEventListener('DOMContentLoaded', function () {
-//     const url = 'https://stilesdata.com/dodgers/data/batting/dodgers_player_batting_current_table.json';
+//     const url = await getDatasetUrl('player_batting_current');
 
 //     const fetchDataAndRenderBattingTables = async () => {
 //         try {
@@ -1333,7 +1336,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
   const fetchDataAndRenderTables = async () => {
     try {
-      const response = await fetch('https://stilesdata.com/dodgers/data/standings/dodgers_schedule.json');
+      const response = await fetch(await getDatasetUrl('schedule_current'));
       const games = await response.json();
 
       const lastGames = games.filter(game => game.placement === 'last');
@@ -1352,7 +1355,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
 
 document.addEventListener('DOMContentLoaded', function () {
-  const url = 'https://stilesdata.com/dodgers/data/batting/dodgers_player_batting_current_table.json';
+  const url = await getDatasetUrl('player_batting_current');
 
   const fetchDataAndRenderBattingTables = async () => {
       try {
@@ -1446,7 +1449,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
 
 // document.addEventListener('DOMContentLoaded', function () {
-//     const url = 'https://stilesdata.com/dodgers/data/batting/dodgers_player_batting_current_table.json';
+//     const url = await getDatasetUrl('player_batting_current');
 
 //     const fetchDataAndRenderBattingTables = async () => {
 //         try {
@@ -1572,7 +1575,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
   const fetchDataAndRenderTables = async () => {
     try {
-      const response = await fetch('https://stilesdata.com/dodgers/data/standings/dodgers_schedule.json');
+      const response = await fetch(await getDatasetUrl('schedule_current'));
       const games = await response.json();
 
       const lastGames = games.filter(game => game.placement === 'last');
@@ -1591,7 +1594,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
 
 document.addEventListener('DOMContentLoaded', function () {
-  const url = 'https://stilesdata.com/dodgers/data/batting/dodgers_player_batting_current_table.json';
+  const url = await getDatasetUrl('player_batting_current');
 
   const fetchDataAndRenderBattingTables = async () => {
       try {
@@ -1685,7 +1688,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
 
 // document.addEventListener('DOMContentLoaded', function () {
-//     const url = 'https://stilesdata.com/dodgers/data/batting/dodgers_player_batting_current_table.json';
+//     const url = await getDatasetUrl('player_batting_current');
 
 //     const fetchDataAndRenderBattingTables = async () => {
 //         try {
@@ -1811,7 +1814,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
   const fetchDataAndRenderTables = async () => {
     try {
-      const response = await fetch('https://stilesdata.com/dodgers/data/standings/dodgers_schedule.json');
+      const response = await fetch(await getDatasetUrl('schedule_current'));
       const games = await response.json();
 
       const lastGames = games.filter(game => game.placement === 'last');
@@ -1830,7 +1833,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
 
 document.addEventListener('DOMContentLoaded', function () {
-  const url = 'https://stilesdata.com/dodgers/data/batting/dodgers_player_batting_current_table.json';
+  const url = await getDatasetUrl('player_batting_current');
 
   const fetchDataAndRenderBattingTables = async () => {
       try {
@@ -1924,7 +1927,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
 
 // document.addEventListener('DOMContentLoaded', function () {
-//     const url = 'https://stilesdata.com/dodgers/data/batting/dodgers_player_batting_current_table.json';
+//     const url = await getDatasetUrl('player_batting_current');
 
 //     const fetchDataAndRenderBattingTables = async () => {
 //         try {
@@ -2050,7 +2053,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
   const fetchDataAndRenderTables = async () => {
     try {
-      const response = await fetch('https://stilesdata.com/dodgers/data/standings/dodgers_schedule.json');
+      const response = await fetch(await getDatasetUrl('schedule_current'));
       const games = await response.json();
 
       const lastGames = games.filter(game => game.placement === 'last');
@@ -2069,7 +2072,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
 
 document.addEventListener('DOMContentLoaded', function () {
-  const url = 'https://stilesdata.com/dodgers/data/batting/dodgers_player_batting_current_table.json';
+  const url = await getDatasetUrl('player_batting_current');
 
   const fetchDataAndRenderBattingTables = async () => {
       try {
@@ -2163,7 +2166,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
 
 // document.addEventListener('DOMContentLoaded', function () {
-//     const url = 'https://stilesdata.com/dodgers/data/batting/dodgers_player_batting_current_table.json';
+//     const url = await getDatasetUrl('player_batting_current');
 
 //     const fetchDataAndRenderBattingTables = async () => {
 //         try {
@@ -2262,7 +2265,7 @@ document.addEventListener('DOMContentLoaded', function () {
 document.addEventListener('DOMContentLoaded', function () {
   async function fetchTableData() {
     try {
-      const response = await d3.json('https://stilesdata.com/dodgers/data/standings/mlb_team_attendance.json');
+      const response = await d3.json(await getDatasetUrl('mlb_team_attendance'));
       renderTables(response);
       renderMaxAttendanceInfo(response);
     } catch (error) {
@@ -2351,7 +2354,7 @@ document.addEventListener('DOMContentLoaded', function () {
 // xwOBA charts
 async function fetchAndRenderXwoba() {
   try {
-    const data = await d3.json('https://stilesdata.com/dodgers/data/batting/dodgers_xwoba_current.json');
+    const data = await d3.json(await getDatasetUrl('xwoba_current'));
     
     const playerGroups = d3.group(data, d => d.player_name);
     const players = Array.from(playerGroups.keys()).sort();
@@ -2532,8 +2535,8 @@ document.addEventListener('DOMContentLoaded', fetchAndRenderXwoba);
 
 document.addEventListener('DOMContentLoaded', function () {
   async function fetchShoheiData() {
-    const hrUrl = 'https://stilesdata.com/dodgers/data/batting/shohei_home_runs_cumulative_timeseries_combined.json';
-    const sbUrl = 'https://stilesdata.com/dodgers/data/batting/shohei_stolen_bases_cumulative_timeseries_combined.json';
+    const hrUrl = await getDatasetUrl('shohei_home_runs');
+    const sbUrl = await getDatasetUrl('shohei_stolen_bases');
     const [hrData, sbData] = await Promise.all([d3.json(hrUrl), d3.json(sbUrl)]);
     return { hrData, sbData };
   }
@@ -2948,7 +2951,7 @@ document.addEventListener('DOMContentLoaded', function () {
 async function fetchWinsProjectionDataWithCI() {
   try {
     // Fetch data from the new single endpoint that includes timeseries data
-    const response = await d3.json('https://stilesdata.com/dodgers/data/standings/dodgers_wins_projection_timeseries.json');
+    const response = await d3.json(await getDatasetUrl('wins_projection'));
 
     if (!response || !response.timeseries) {
         console.error('Invalid data structure received for wins projection CI chart.');
@@ -3219,7 +3222,7 @@ if (document.readyState === 'loading') {
 (function () {
   async function fetchUmpireData() {
     try {
-      const response = await d3.json('https://stilesdata.com/dodgers/data/summary/umpire_summary.json');
+      const response = await d3.json(await getDatasetUrl('umpire_summary'));
       renderUmpireScorecard(response);
       } catch (error) {
       console.error('Failed to fetch umpire scorecard data:', error);
@@ -3375,7 +3378,7 @@ if (document.readyState === 'loading') {
 (function () {
   async function fetchUmpireDataPitching() {
     try {
-      const response = await d3.json('https://stilesdata.com/dodgers/data/summary/umpire_summary.json');
+      const response = await d3.json(await getDatasetUrl('umpire_summary'));
       renderUmpireScorecardPitching(response);
     } catch (error) {
       console.error('Failed to fetch umpire scorecard pitching data:', error);
@@ -3499,8 +3502,8 @@ document.addEventListener('DOMContentLoaded', function () {
   async function fetchOhtaniPitchData() {
     try {
       const cacheBuster = `?v=${Date.now()}`;
-      const mixResponse = await d3.json(`https://stilesdata.com/dodgers/data/pitching/shohei_ohtani_pitch_mix.json${cacheBuster}`);
-      const pitchesResponse = await d3.json(`https://stilesdata.com/dodgers/data/pitching/shohei_ohtani_pitches.json${cacheBuster}`);
+      const mixResponse = await d3.json(`${await getDatasetUrl('shohei_pitch_mix')}${cacheBuster}`);
+      const pitchesResponse = await d3.json(`${await getDatasetUrl('shohei_pitches')}${cacheBuster}`);
       
       // Calculate total pitches and games
       const totalPitches = pitchesResponse.length;
@@ -3672,7 +3675,7 @@ document.addEventListener('DOMContentLoaded', function () {
 async function fetchPlayoffBracketData() {
   try {
     const currentYear = new Date().getFullYear();
-    const response = await fetch(`https://stilesdata.com/dodgers/data/standings/all_teams_standings_metrics_${currentYear}.json`);
+    const response = await fetch(await getDatasetUrl('all_teams_standings_current'));
     if (!response.ok) {
       throw new Error(`HTTP error! status: ${response.status}`);
     }
@@ -3942,39 +3945,55 @@ async function initPlayoffBracket() {
 }
 
 // Initialize playoff bracket when DOM is loaded
-document.addEventListener('DOMContentLoaded', function() {
-  if (document.getElementById('playoff-bracket-container')) {
-    initPlayoffBracket();
-  }
-  
-  // Initialize postseason stats
-  if (document.getElementById('postseason-grid')) {
-    initPostseasonStats();
-  }
-  
-  // Initialize playoff journey
-  if (document.getElementById('playoff-journey')) {
-    initPlayoffJourney();
+document.addEventListener('DOMContentLoaded', async function() {
+  // Check if postseason section should be visible
+  try {
+    const { isPostseasonActive } = await import('./manifest_loader.js');
+    const postseasonActive = await isPostseasonActive();
+    
+    const postseasonSection = document.querySelector('.postseason-stats-section');
+    
+    if (!postseasonActive && postseasonSection) {
+      // Hide entire postseason section when not in postseason
+      postseasonSection.style.display = 'none';
+      console.log('Postseason section hidden (not currently in postseason)');
+    } else {
+      // Initialize postseason components
+      if (document.getElementById('playoff-bracket-container')) {
+        initPlayoffBracket();
+      }
+      
+      // Initialize postseason stats
+      if (document.getElementById('postseason-grid')) {
+        initPostseasonStats();
+      }
+      
+      // Initialize playoff journey
+      if (document.getElementById('playoff-journey')) {
+        initPlayoffJourney();
+      }
+    }
+  } catch (error) {
+    console.error('Error checking postseason status:', error);
+    // On error, default to showing the section
+    if (document.getElementById('playoff-bracket-container')) {
+      initPlayoffBracket();
+    }
+    if (document.getElementById('postseason-grid')) {
+      initPostseasonStats();
+    }
+    if (document.getElementById('playoff-journey')) {
+      initPlayoffJourney();
+    }
   }
 });
 
 // Postseason Stats Functions
 async function fetchPostseasonStats() {
   try {
-    // Try local path first (for development), then fallback to S3
-    const localUrl = '/data/postseason/dodgers_postseason_stats_2025.json';
-    const s3Url = 'https://stilesdata.com/dodgers/data/postseason/dodgers_postseason_stats_2025.json';
-    
-    let response = await fetch(localUrl);
-    if (!response.ok) {
-      // Fallback to S3 URL
-      response = await fetch(s3Url);
-    }
-    
-    if (!response.ok) {
-      throw new Error(`HTTP error! status: ${response.status}`);
-    }
-    return await response.json();
+    // Import manifest loader dynamically
+    const { fetchDataset } = await import('./manifest_loader.js');
+    return await fetchDataset('postseason_players_current');
   } catch (error) {
     console.error('Error fetching postseason stats:', error);
     return null;
@@ -4073,20 +4092,9 @@ async function initPostseasonStats() {
 // Playoff Journey Functions
 async function fetchPlayoffJourney() {
   try {
-    // Try local path first (for development), then fallback to S3
-    const localUrl = '/data/postseason/dodgers_postseason_series_2025.json';
-    const s3Url = 'https://stilesdata.com/dodgers/data/postseason/dodgers_postseason_series_2025.json';
-    
-    let response = await fetch(localUrl);
-    if (!response.ok) {
-      // Fallback to S3 URL
-      response = await fetch(s3Url);
-    }
-    
-    if (!response.ok) {
-      throw new Error(`HTTP error! status: ${response.status}`);
-    }
-    return await response.json();
+    // Import manifest loader dynamically
+    const { fetchDataset } = await import('./manifest_loader.js');
+    return await fetchDataset('postseason_series_current');
   } catch (error) {
     console.error('Error fetching playoff journey:', error);
     return null;
