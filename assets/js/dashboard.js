@@ -564,6 +564,21 @@ document.addEventListener('DOMContentLoaded', function() {
           .attr("x", -height / 2)
           .style('font-size', isMobile ? '10px' : '12px')
           .text("Cumulative wins");
+      
+      // Add "Past" annotation
+      const currentYear = new Date().getFullYear();
+      svg.append('text')
+          .attr('x', xScale(100))
+          .attr('y', yScale(40))
+          .attr('class', 'anno')
+          .text(`Past: 1958-${currentYear - 1}`)
+          .attr('text-anchor', 'start')
+          .style('stroke', '#fff')
+          .style('stroke-width', '4px')
+          .style('stroke-linejoin', 'round')
+          .style('paint-order', 'stroke')
+          .clone(true)
+          .style('stroke', 'none');
 
       line = d3
           .line()
@@ -2385,7 +2400,8 @@ document.addEventListener('DOMContentLoaded', function () {
   
     const rows = table.append('tbody').selectAll('tr')
       .data(data)
-      .enter().append('tr');
+      .enter().append('tr')
+      .attr('class', d => d.team === 'Los Angeles Dodgers' ? 'dodgers-row' : '');
   
     rows.append('td').text(d => d.team);
     rows.append('td').text(d => d.name); // Always include stadium name

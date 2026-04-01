@@ -821,7 +821,7 @@ h2.stat-group {
   font-weight: 700;
   padding-top: 50px;
   padding-bottom: 15px;
-  border-top: 3px solid #005a9c;
+  border-top: 2px solid #005a9c;
   color: #1a1a1a;
   letter-spacing: -0.01em;
   
@@ -832,7 +832,7 @@ h2.stat-group {
   }
   
   &.performance-header {
-    border-top: 3px solid #005a9c;
+    border-top: 2px solid #005a9c;
     padding-top: 50px;
   }
   
@@ -1338,6 +1338,35 @@ label {
     
     &:first-child {
       border-left: 2px solid c.$dodger-blue;
+    }
+    
+    &:last-child {
+      border-right: 2px solid c.$dodger-blue;
+    }
+  }
+  
+  &:hover {
+    background-color: rgba(0, 90, 156, 0.15);
+  }
+}
+
+// Highlight for Dodgers row in attendance table
+#nl-table tr.dodgers-row,
+#al-table tr.dodgers-row {
+  background-color: rgba(0, 90, 156, 0.1);
+  
+  td {
+    border-top: 2px solid c.$dodger-blue;
+    border-bottom: 2px solid c.$dodger-blue;
+    font-weight: 700;
+    
+    &:first-child {
+      border-left: 2px solid c.$dodger-blue;
+      color: c.$dodger-blue;
+    }
+    
+    &:nth-child(2) {
+      color: c.$dodger-blue;
     }
     
     &:last-child {
