@@ -299,9 +299,25 @@ def current_season_stats(standings_now, standings_past, pitching, standings_last
     walks = pitching['bb'].iloc[0]
     walks_rank = to_ordinal(league_ranks_data.get('pitching_walks', 'N/A'))
     home_runs_allowed = pitching['hr'].iloc[0]
-    # home_runs_allowed_rank = league_ranks_data.get('pitching_homeRunsAllowed', 'N/A') # This stat is not in the current ranks JSON
+    
+    # New pitching stats
+    whip = pitching['whip'].iloc[0]
+    whip_rank = to_ordinal(league_ranks_data.get('pitching_walksAndHitsPerInningPitched', 'N/A'))
+    avg_against = pitching['avg'].iloc[0]
+    avg_against_rank = to_ordinal(league_ranks_data.get('pitching_avg', 'N/A'))
+    
+    # Calculate K/BB ratio if not present (SO / BB)
+    if 'k_bb' in pitching.columns:
+        k_bb_ratio = pitching['k_bb'].iloc[0]
+    elif 'so' in pitching.columns and 'bb' in pitching.columns:
+        so_val = pitching['so'].iloc[0]
+        bb_val = pitching['bb'].iloc[0]
+        k_bb_ratio = round(so_val / bb_val, 2) if bb_val > 0 else None
+    else:
+        k_bb_ratio = None
+    k_bb_ratio_rank = to_ordinal(league_ranks_data.get('pitching_strikeoutWalkRatio', 'N/A'))
 
-    return games, wins, losses, record, win_pct, win_pct_decade_thispoint, era, era_rank, strikeouts, strikeouts_rank, walks, walks_rank, wins_last, losses_last, record_last, win_pct_last, home_runs_allowed
+    return games, wins, losses, record, win_pct, win_pct_decade_thispoint, era, era_rank, strikeouts, strikeouts_rank, walks, walks_rank, wins_last, losses_last, record_last, win_pct_last, home_runs_allowed, whip, whip_rank, avg_against, avg_against_rank, k_bb_ratio, k_bb_ratio_rank
 
 def run_differential(standings):
     runs = standings["r"].sum()
@@ -887,7 +903,7 @@ def recent_trend(standings):
     loss_count_trend = last_10[last_10 == "L"].count()
     return win_count_trend, loss_count_trend, f"Recent trend: {win_count_trend} wins, {loss_count_trend} losses"
 
-games, wins, losses, record, win_pct, win_pct_decade_thispoint, era, era_rank, strikeouts, strikeouts_rank, walks, walks_rank, wins_last, losses_last, record_last, win_pct_last, home_runs_allowed = current_season_stats(standings_now, standings_past, pitching, standings_last)
+games, wins, losses, record, win_pct, win_pct_decade_thispoint, era, era_rank, strikeouts, strikeouts_rank, walks, walks_rank, wins_last, losses_last, record_last, win_pct_last, home_runs_allowed, whip, whip_rank, avg_against, avg_against_rank, k_bb_ratio, k_bb_ratio_rank = current_season_stats(standings_now, standings_past, pitching, standings_last)
 runs, runs_last, runs_rank, runs_against, runs_against_last, run_diff, run_diff_last, mean_attendance, formatted_mean_attendance, home_games_count = run_differential(standings)
 home_runs, home_runs_rank, home_runs_game, home_runs_game_last, home_runs_game_decade = home_run_stats(batting_now, batting_past)
 batting_average, batting_average_decade, stolen_bases, stolen_bases_rank, stolen_bases_game, stolen_bases_last_rate, on_base_pct, on_base_pct_decade = batting_and_stolen_base_stats(batting_now, batting_past, games)
@@ -928,8 +944,10 @@ summary_data = [
     # Pitching
     {"stat_label": "Strikeouts", "stat": "strikeouts", "value": format_int_with_commas(strikeouts), "category": "pitching", "context_value": strikeouts_rank, "context_value_label": "League rank"},
     {"stat_label": "Walks", "stat": "walks", "value": walks, "category": "pitching", "context_value": walks_rank, "context_value_label": "League rank"},
-    # {"stat_label": "Home runs allowed", "stat": "home_runs_allowed", "value": home_runs_allowed, "category": "pitching", "context_value": home_runs_allowed_rank, "context_value_label": "League rank"}, # Rank not available in current JSON
     {"stat_label": "ERA", "stat": "era", "value": era, "category": "pitching", "context_value": era_rank, "context_value_label": "League rank"},
+    {"stat_label": "WHIP", "stat": "whip", "value": whip, "category": "pitching", "context_value": whip_rank, "context_value_label": "League rank"},
+    {"stat_label": "Batting average against", "stat": "avg_against", "value": avg_against, "category": "pitching", "context_value": avg_against_rank, "context_value_label": "League rank"},
+    {"stat_label": "K/BB ratio", "stat": "k_bb_ratio", "value": k_bb_ratio if k_bb_ratio else 'N/A', "category": "pitching", "context_value": k_bb_ratio_rank, "context_value_label": "League rank"},
     
     # Summary
     {"stat_label": "Last updated", "stat": "update_time", "value": update_time, "category": "summary", "context_value": "", "context_value_label": ''}, 

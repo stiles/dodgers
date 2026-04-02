@@ -57,7 +57,7 @@ CURRENT_YEAR = datetime.now().year
 
 # runs, stolen bases, homeruns, strikeouts, walks, ERA
 HITTING_STATS = ['runs', 'stolenBases', 'homeRuns', 'battingAverage', 'onBasePlusSlugging', 'sluggingPercentage', 'onBasePercentage']
-PITCHING_STATS = ['strikeouts', 'walks', 'earnedRunAverage', 'walksAndHitsPerInningPitched']
+PITCHING_STATS = ['strikeouts', 'walks', 'earnedRunAverage', 'walksAndHitsPerInningPitched', 'avg', 'strikeoutWalkRatio']
 STAT_TYPES = ['hitting', 'pitching']
 
 def get_team_rank_for_stat(stat_name: str, stat_group: str, team_name_query: str = "Los Angeles Dodgers") -> Optional[int]:
@@ -72,8 +72,8 @@ def get_team_rank_for_stat(stat_name: str, stat_group: str, team_name_query: str
     Returns:
         The rank of the team for the specified statistic, or None if not found.
     """
-    # Determine sort order based on stat - some stats are better lower (e.g., ERA)
-    sort_order = "asc" if stat_name in ["earnedRunAverage"] else "desc"
+    # Determine sort order based on stat - some stats are better lower (e.g., ERA, WHIP, AVG against)
+    sort_order = "asc" if stat_name in ["earnedRunAverage", "walksAndHitsPerInningPitched", "avg"] else "desc"
     
     url = (
         f'https://bdfed.stitch.mlbinfra.com/bdfed/stats/team?&env=prod&sportId=1&gameType=R'
