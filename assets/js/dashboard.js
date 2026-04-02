@@ -3678,9 +3678,9 @@ if (document.readyState === 'loading') {
       dodgersHeading.append('span').attr('class', 'abs-team-count')
         .text(`: ${dodgersTotal} challenge${dodgersTotal !== 1 ? 's' : ''} this season`);
     }
-    renderRoleChart(dodgersSection, 'Batting', dodgers.batting);
-    renderRoleChart(dodgersSection, 'Pitching', dodgers.pitching);
-    renderRoleChart(dodgersSection, 'Catching', dodgers.catching);
+    renderRoleChart(dodgersSection, 'Batter', dodgers.batting);
+    renderRoleChart(dodgersSection, 'Pitcher', dodgers.pitching);
+    renderRoleChart(dodgersSection, 'Catcher', dodgers.catching);
 
     const opponentsSection = grid.append('div').attr('class', 'abs-team-section');
     const opponentsHeading = opponentsSection.append('h4');
@@ -3689,9 +3689,9 @@ if (document.readyState === 'loading') {
       opponentsHeading.append('span').attr('class', 'abs-team-count')
         .text(`: ${opponentsTotal} challenge${opponentsTotal !== 1 ? 's' : ''} this season`);
     }
-    renderRoleChart(opponentsSection, 'Batting', opponents.batting);
-    renderRoleChart(opponentsSection, 'Pitching', opponents.pitching);
-    renderRoleChart(opponentsSection, 'Catching', opponents.catching);
+    renderRoleChart(opponentsSection, 'Batter', opponents.batting);
+    renderRoleChart(opponentsSection, 'Pitcher', opponents.pitching);
+    renderRoleChart(opponentsSection, 'Catcher', opponents.catching);
 
     const log = abs.challenge_log;
     if (!log || log.length === 0) return;
