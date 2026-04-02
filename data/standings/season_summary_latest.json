@@ -144,9 +144,33 @@
         "context_value_label":"League rank"
     },
     {
+        "stat_label":"WHIP",
+        "stat":"whip",
+        "value":"0.963",
+        "category":"pitching",
+        "context_value":"4th",
+        "context_value_label":"League rank"
+    },
+    {
+        "stat_label":"Batting average against",
+        "stat":"avg_against",
+        "value":".188",
+        "category":"pitching",
+        "context_value":"4th",
+        "context_value_label":"League rank"
+    },
+    {
+        "stat_label":"K\/BB ratio",
+        "stat":"k_bb_ratio",
+        "value":"3.13",
+        "category":"pitching",
+        "context_value":"9th",
+        "context_value_label":"League rank"
+    },
+    {
         "stat_label":"Last updated",
         "stat":"update_time",
-        "value":"April 2, 2026, 8:35 AM PT",
+        "value":"April 2, 2026, 8:44 AM PT",
         "category":"summary",
         "context_value":"",
         "context_value_label":""
