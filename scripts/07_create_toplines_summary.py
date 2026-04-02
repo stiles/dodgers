@@ -508,23 +508,29 @@ def get_next_game_info():
                 if game.get('status', {}).get('abstractGameState') == 'Preview':
                     # Parse game info
                     game_date_utc = datetime.fromisoformat(game['gameDate'].replace('Z', '+00:00'))
-                    # Convert to PT using pytz for proper DST handling
-                    import pytz
-                    pt_tz = pytz.timezone('US/Pacific')
-                    game_date_pt = game_date_utc.astimezone(pt_tz)
                     
-                    # Format day and time
-                    day_name = game_date_pt.strftime('%A')  # Monday, Tuesday, etc.
-                    time_str = game_date_pt.strftime('%-I:%M p.m. PT')
+                    # Determine if home or away and get venue timezone
+                    home_team_id = game.get('teams', {}).get('home', {}).get('team', {}).get('id')
+                    is_dodgers_home = home_team_id == 119
+                    
+                    # Get venue timezone from API or map common venues
+                    venue_tz_id = game.get('venue', {}).get('timeZone', {}).get('id', 'America/Los_Angeles')
+                    
+                    # Convert game time to venue's local timezone
+                    import pytz
+                    venue_tz = pytz.timezone(venue_tz_id)
+                    game_date_local = game_date_utc.astimezone(venue_tz)
+                    
+                    # Format day and time with local timezone abbreviation
+                    day_name = game_date_local.strftime('%A')
+                    # Use %p to get AM/PM dynamically, then format to lowercase with periods
+                    am_pm = game_date_local.strftime('%p').lower().replace('m', '.m.')
+                    time_str = game_date_local.strftime('%-I:%M') + ' ' + am_pm
+                    tz_abbr = game_date_local.strftime('%Z')
                     
                     # Get venue info and highlight it
                     venue_name = game.get('venue', {}).get('name', '')
                     highlighted_venue = f"<span class='highlight'>{venue_name}</span>" if venue_name else ""
-                    
-                    # Determine if home or away and get opponent
-                    home_team_id = game.get('teams', {}).get('home', {}).get('team', {}).get('id')
-                    away_team_id = game.get('teams', {}).get('away', {}).get('team', {}).get('id')
-                    is_dodgers_home = home_team_id == 119
                     
                     # Get opponent name
                     if is_dodgers_home:
@@ -534,9 +540,9 @@ def get_next_game_info():
                     
                     highlighted_opponent = f"<span class='highlight'>{opponent_name}</span>"
                     
-                    location_text = f"at {highlighted_venue}" if not is_dodgers_home else f"at {highlighted_venue}"
+                    location_text = f"at {highlighted_venue}"
                     
-                    return f"The team will face the {highlighted_opponent} next on {day_name} at {time_str} {location_text}"
+                    return f"The team will face the {highlighted_opponent} next on {day_name} at {time_str} {tz_abbr} {location_text}"
         
         return None
         
