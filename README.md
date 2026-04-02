@@ -6,7 +6,30 @@ The code executes an automated workflow to fetch, process and store the team's c
 
 These records are processed and used to bake out the site using the Jekyll static site generator, in concert with Github Pages, and D3.js for charts. 
 
-The data is sourced from the heroes at [Baseball Reference](https://www.baseball-reference.com/teams/LAD/2024-schedule-scores.shtml) and [Baseball Savant](https://baseballsavant.mlb.com/) and consolidated into unified datasets for analysis and visualization purposes only. The resulting site is a non-commercial fan project.
+The data is sourced from [Baseball Reference](https://www.baseball-reference.com/teams/LAD/), [Baseball Savant](https://baseballsavant.mlb.com/), and [MLB StatsAPI](https://statsapi.mlb.com/) and consolidated into unified datasets for analysis and visualization purposes only. The resulting site is a non-commercial fan project.
+
+## Architecture
+
+### Phase-aware data pipeline
+
+The data pipeline automatically adapts to the current MLB season phase (regular season, postseason, or offseason):
+
+- **Regular season**: Full daily data refresh including standings, batting, pitching, schedule, pitch data, and projections
+- **Postseason**: Postseason-specific stats plus maintained roster and final regular season snapshots  
+- **Offseason**: Minimal updates focusing on roster, transactions, news, and historical data refresh
+
+The phase is automatically detected using MLB's official schedule API. Scripts are organized in `scripts/phase_config.py` and executed via `scripts/run_phase_scripts.py`.
+
+### Manifest-driven data access
+
+All datasets are tracked through a central `manifest.json` that provides:
+
+- Dataset metadata (version, update timestamps, phase info)
+- URLs for all data artifacts (JSON, CSV, Parquet)
+- Season context (current year, postseason status)
+- Automated cache invalidation via version hashing
+
+The frontend loads data through `assets/js/manifest_loader.js`, which provides helper functions like `getDatasetUrl()` and `isPostseasonActive()` for consistent, phase-aware data access.
 
 ## Automated tweets
 
@@ -22,6 +45,15 @@ The repository includes numerous Python scripts that perform the following daily
 
 ### Scripts:
 
+**Core phase-aware pipeline scripts:**
+
+- **Season phase detection:** `scripts/season_phase.py` - Automatically detects regular season, postseason, or offseason using MLB schedule API
+- **Phase orchestration:** `scripts/run_phase_scripts.py` - Executes appropriate scripts based on detected phase
+- **Phase configuration:** `scripts/phase_config.py` - Defines which datasets are updated in each phase
+- **Manifest generation:** `scripts/99_publish_manifest.py` - Creates central manifest.json with all dataset URLs and metadata
+
+**Regular season scripts (run multiple times daily):**
+
 - **League standings (reference for rankings):** `scripts/00_fetch_league_standings.py`
 - **Update Savant boxscores archive (discovers new games, fetches only new finals):** `scripts/02_update_boxscores_archive.py`
 - **League ranks (scraped):** `scripts/03_scrape_league_ranks.py`
@@ -29,37 +61,55 @@ The repository includes numerous Python scripts that perform the following daily
 - **Team batting (figures and league ranks):** `scripts/05_fetch_process_batting.py`
 - **Team pitching (figures and league ranks):** `scripts/06_fetch_process_pitching.py`
 - **Dashboard summary statistics:** `scripts/07_create_toplines_summary.py`
-- **Team post-season history:** `scripts/08_fetch_process_season_outcomes.py`
 - **Run differential for current season (from Savant boxscores):** `scripts/09_build_wins_losses_from_boxscores.py`
-- **Past/present team batting performance:** `scripts/10_fetch_process_historic_batting_gamelogs.py`
-- **Team attendance (all teams):** `scripts/11_fetch_process_attendance.py`
-- **Past/present team pitching performance:** `scripts/12_fetch_process_historic_pitching_gamelogs.py`
 - **Team schedule:** `scripts/13_fetch_process_schedule.py`
 - **MLB batting (league-level tables):** `scripts/14_fetch_process_batting_mlb.py`
 - **xwOBA rolling windows (current season):** `scripts/15_fetch_xwoba.py`
 - **Shohei Ohtani season data:** `scripts/16_fetch_shohei.py`
+- **Win projection model:** `scripts/18_generate_projection.py`
 - **Roster:** `scripts/19_fetch_roster.py`
 - **Game pitch-by-pitch:** `scripts/20_fetch_game_pitches.py`
 - **Pitch summaries:** `scripts/21_summarize_pitch_data.py`
+
+**Postseason scripts:**
+
+- **Postseason statistics:** `scripts/28_fetch_postseason_stats.py`
+- **Roster updates:** `scripts/19_fetch_roster.py`
+- **Transactions:** `scripts/26_post_transactions.py`
+
+**Offseason scripts (run weekly):**
+
+- **Team post-season history:** `scripts/08_fetch_process_season_outcomes.py`
+- **Past/present team batting performance:** `scripts/10_fetch_process_historic_batting_gamelogs.py`
+- **Team attendance (all teams):** `scripts/11_fetch_process_attendance.py`
+- **Past/present team pitching performance:** `scripts/12_fetch_process_historic_pitching_gamelogs.py`
+- **Roster:** `scripts/19_fetch_roster.py`
+- **Transactions:** `scripts/26_post_transactions.py`
+- **News:** `scripts/24_fetch_news.py`
   
 Separate tweet/automation scripts are documented in the sections below (lineups, daily summaries, news, etc.).
 ### What they do:
 
-1. **Fetch current season, batting and pitching data**: Download the current season's game-by-game standings for the LA Dodgers from [Baseball Reference](https://www.baseball-reference.com/teams/LAD/2024-schedule-scores.shtml). The latest season's batting statitics for each player also fetched, as are the latest season's pitching statistics for each pitcher and the team as a whole. A to-date season summary with standings information and major batting statistics is also created.
-2. **Process data**: Cleans and formats the fetched standings and batting data for consistency with the historical dataset.
-3. **Concatenate with historic data**: Merges the current season's data for batting and standings with pre-existing datasets containing records for the 1958 to 2023 seasons.
-5. **Save and export data**: Outputs the combined datasets in CSV, JSON and Parquet formats.
-6. **Upload to AWS S3**: Uploads the files to an AWS S3 bucket for use and archiving.
+1. **Detect season phase**: Automatically determines whether MLB is in regular season, postseason, or offseason using the official schedule API
+2. **Fetch phase-appropriate data**: Downloads current standings, batting, pitching, and other statistics based on the active phase
+3. **Process data**: Cleans and formats the fetched data for consistency with historical datasets
+4. **Concatenate with historic data**: Merges current season data with pre-existing datasets (1958-present for standings and batting)
+5. **Generate aggregations**: Creates summary statistics, projections, and rolling metrics
+6. **Save and export data**: Outputs datasets in CSV, JSON and Parquet formats
+7. **Upload to AWS S3**: Uploads files to S3 bucket with appropriate cache headers
+8. **Publish manifest**: Generates manifest.json with URLs, versions, and metadata for all datasets
+9. **Build and deploy site**: Compiles Jekyll site and deploys to GitHub Pages
 
 ## GitHub Actions workflow
 
-The repository uses GitHub Actions to automate the execution of the scripts each day, ensuring the datasets remains up-to-date throughout the baseball season. The key workflows include:
+The repository uses GitHub Actions to automate the execution of the scripts, ensuring the datasets remain up-to-date throughout the baseball season. The key workflows include:
 
-- **`fetch.yml`**: This is the main data pipeline, running multiple times a day during the season. It executes all the Python scripts responsible for fetching, processing, and saving the core team and player statistics needed to build the site.
-- **`build_site.yml`**: Fetches and processes all core team data (standings, batting, pitching, etc.) and rebuilds the site. Runs daily.
+- **`fetch.yml`**: The main phase-aware data pipeline that runs multiple times daily during the season (March-October). Automatically detects the current season phase and executes the appropriate scripts for regular season, postseason, or offseason. Builds and deploys the Jekyll site to GitHub Pages.
 - **`post_summaries.yml`**: Posts statistical summaries to Twitter at 8am, 10am, and 12pm PT.
 - **`tweet_lineup.yml`**: Checks hourly for the day's lineup and posts the pitching matchup to Twitter once available.
 - **`post_news.yml`**: Fetches and posts a news roundup to Twitter at 1pm PT.
+
+The fetch workflow can be manually triggered with an optional phase override for testing or special circumstances.
 
 ## Configuration and usage
 
@@ -74,7 +124,21 @@ To utilize this repository for your own tracking or analysis on the Dodgers or a
 
 ## Data storage and access
 
-The processed datasets — which aren't all documented below yet — are uploaded to an AWS S3 bucket. 
+The processed datasets are uploaded to an AWS S3 bucket and tracked via a central manifest for versioned, cache-aware access.
+
+### Manifest
+
+**Current manifest (central data registry):**
+- [JSON](https://stilesdata.com/dodgers/data/manifest.json)
+
+The manifest provides:
+- Current season phase (regular_season, postseason, offseason)
+- Postseason status and active series info
+- URLs and versions for all datasets
+- Last update timestamps
+- Season context (current year, team info)
+
+Frontend code should use the manifest to discover dataset URLs rather than hardcoding paths.
 
 ### Standings
 
@@ -107,11 +171,14 @@ The processed datasets — which aren't all documented below yet — are uploade
 | batting_average_decade      | .253  | batting   |
 | summary                     | The Dodgers have played 26 games this season compiling a 15-11 record — a winning percentage of 57%. The team's last game was an 11-2 away win to the WSN in front of 26,298 fans. The team has won 5 of its last 10 games. | standings |
 
-**Game-by-game standings, 1958 to present (10,400+ rows):**
+**Game-by-game standings, 1958 to present (10,700+ rows):**
 
 - [JSON](https://stilesdata.com/dodgers/data/standings/dodgers_standings_1958_present.json)
 - [CSV](https://stilesdata.com/dodgers/data/standings/dodgers_standings_1958_present.csv)
 - [Parquet](https://stilesdata.com/dodgers/data/standings/dodgers_standings_1958_present.parquet)
+
+Historical archive (for year-over-year comparisons):
+- [Parquet](https://stilesdata.com/dodgers/data/standings/dodgers_standings_1958_2025.parquet)
 
 **Data structure:**
 *Each row represents a game in a specific season*
@@ -131,6 +198,7 @@ The processed datasets — which aren't all documented below yet — are uploade
 | `win_pct`        | float64          | Dodgers season record after game     |
 | `rank`          | object          | Rank in division*                    |
 | `gb`            | float64         | Games back in division*              |
+| `run_diff`      | int64           | Run differential (r - ra)            |
 | `time`          | object          | Game length                          |
 | `time_minutes`  | int64           | Game length, in minutes              |
 | `day_night`     | object          | Start time: "D" vs. "N"              |
