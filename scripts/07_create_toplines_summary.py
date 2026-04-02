@@ -303,15 +303,33 @@ def current_season_stats(standings_now, standings_past, pitching, standings_last
     # New pitching stats
     whip = pitching['whip'].iloc[0]
     whip_rank = to_ordinal(league_ranks_data.get('pitching_walksAndHitsPerInningPitched', 'N/A'))
-    avg_against = pitching['avg'].iloc[0]
+    
+    # Calculate batting average against (H / (BF - BB - HBP))
+    # Approximation: H / BF * ~0.85 (rough approximation for at-bats from BF)
+    # More accurate would be: H / (BF - BB - HBP - SH - SF - CI) but we don't have all those
+    if 'avg' in pitching.columns:
+        avg_against = pitching['avg'].iloc[0]
+    elif 'h' in pitching.columns and 'bf' in pitching.columns:
+        h_val = float(pitching['h'].iloc[0])
+        bf_val = float(pitching['bf'].iloc[0])
+        bb_val = float(pitching['bb'].iloc[0]) if 'bb' in pitching.columns else 0.0
+        hbp_val = float(pitching['hbp'].iloc[0]) if 'hbp' in pitching.columns else 0.0
+        # Calculate opponent AB (approximation: BF - BB - HBP)
+        opp_ab = bf_val - bb_val - hbp_val
+        avg_against = round(h_val / opp_ab, 3) if opp_ab > 0 else None
+        if avg_against:
+            # Format as batting average (e.g., .250)
+            avg_against = f"{avg_against:.3f}".lstrip('0') if avg_against < 1 else f"{avg_against:.3f}"
+    else:
+        avg_against = None
     avg_against_rank = to_ordinal(league_ranks_data.get('pitching_avg', 'N/A'))
     
-    # Calculate K/BB ratio if not present (SO / BB)
-    if 'k_bb' in pitching.columns:
-        k_bb_ratio = pitching['k_bb'].iloc[0]
+    # Get K/BB ratio (column name is 'so/bb' in Baseball Reference data)
+    if 'so/bb' in pitching.columns:
+        k_bb_ratio = pitching['so/bb'].iloc[0]
     elif 'so' in pitching.columns and 'bb' in pitching.columns:
-        so_val = pitching['so'].iloc[0]
-        bb_val = pitching['bb'].iloc[0]
+        so_val = float(pitching['so'].iloc[0])
+        bb_val = float(pitching['bb'].iloc[0])
         k_bb_ratio = round(so_val / bb_val, 2) if bb_val > 0 else None
     else:
         k_bb_ratio = None
