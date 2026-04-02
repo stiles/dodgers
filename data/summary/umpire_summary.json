@@ -1,17 +1,17 @@
 {
     "season_summary": {
-        "correct_strikes_pct": 88.01498127340824,
-        "incorrect_strikes_pct": 11.985018726591761,
-        "total_called_strikes": 267,
-        "bad_calls_count": 32
+        "correct_strikes_pct": 88.50174216027874,
+        "incorrect_strikes_pct": 11.498257839721262,
+        "total_called_strikes": 287,
+        "bad_calls_count": 33
     },
     "last_game_summary": {
-        "date": "March 31, 2026",
-        "correct_strikes_pct": 86.66666666666667,
-        "incorrect_strikes_pct": 13.333333333333329,
-        "total_called_strikes": 30,
-        "bad_calls_count": 4,
-        "home_plate_umpire": "Adrian Johnson"
+        "date": "April 1, 2026",
+        "correct_strikes_pct": 95.0,
+        "incorrect_strikes_pct": 5.0,
+        "total_called_strikes": 20,
+        "bad_calls_count": 1,
+        "home_plate_umpire": "Quinn Wolcott"
     },
     "worst_calls_of_season": [
         {
@@ -56,25 +56,25 @@
         }
     ],
     "pitching_season_summary": {
-        "correct_balls_pct": 95.35315985130111,
-        "incorrect_balls_pct": 4.646840148698885,
-        "total_called_balls": 538,
+        "correct_balls_pct": 95.76271186440678,
+        "incorrect_balls_pct": 4.237288135593218,
+        "total_called_balls": 590,
         "bad_calls_count": 25
     },
     "pitching_last_game_summary": {
-        "date": "March 31, 2026",
+        "date": "April 1, 2026",
         "correct_balls_pct": 100.0,
         "incorrect_balls_pct": 0.0,
-        "total_called_balls": 47,
+        "total_called_balls": 52,
         "bad_calls_count": 0
     },
     "pitching_worst_calls_of_season": [],
     "abs_challenges": {
         "dodgers": {
             "batting": {
-                "total": 3,
+                "total": 4,
                 "successful": 1,
-                "failed": 2
+                "failed": 3
             },
             "pitching": {
                 "total": 0,
@@ -105,6 +105,18 @@
             }
         },
         "challenge_log": [
+            {
+                "date": "2026-04-01",
+                "date_formatted": "April 1, 2026",
+                "challenger": "Alex Freeland",
+                "role": "batting",
+                "team": "dodgers",
+                "outcome": "confirmed",
+                "result_desc": "Alex Freeland called out on strikes.",
+                "batter": "Alex Freeland",
+                "pitcher": "Shawn Armstrong",
+                "game_pk": 823970
+            },
             {
                 "date": "2026-03-27",
                 "date_formatted": "March 27, 2026",

@@ -1,7 +1,7 @@
 {
-    "games_played": 5,
+    "games_played": 6,
     "current_wins": 4,
-    "current_losses": 1,
+    "current_losses": 2,
     "timeseries": [
         {
             "game_number": 1,
@@ -29,6 +29,12 @@
         },
         {
             "game_number": 5,
+            "mean_projected_wins": 4.0,
+            "lower_ci_wins": 4.0,
+            "upper_ci_wins": 4.0
+        },
+        {
+            "game_number": 6,
             "mean_projected_wins": 4.0,
             "lower_ci_wins": 4.0,
             "upper_ci_wins": 4.0
