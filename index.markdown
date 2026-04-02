@@ -537,7 +537,7 @@ twitter:
  <p class="note">Note: Strike zone calls are determined by Baseball Savant and <a href="https://github.com/stiles/dodgers/blob/main/scripts/20_fetch_game_pitches.py">collected</a> after each game from its gamefeed API. Download the data <a href="https://stilesdata.com/dodgers/data/pitches/dodgers_pitches_2025.json">here</a>.</p>
 
 <h3 class="visual-subhead">ABS challenges</h3>
-<p class="chart-chatter">MLB's Automated Ball-Strike challenge system allows batters, pitchers and catchers to challenge calls at the plate. Tracking <span style="background-color: #53A796; color: #fff; font-weight: bold; padding: 1px 6px; border-radius: 5px;">successful</span> and <span style="background-color: #F18851; color: #fff; font-weight: bold; padding: 1px 6px; border-radius: 5px;">unsuccessful</span> challenges this season by the Dodgers and their opponents:</p>
+<p class="chart-chatter">MLB's Automated Ball-Strike system allows batters, pitchers and catchers to challenge calls at the plate. Tracking <span style="background-color: #53A796; color: #fff; font-weight: bold; padding: 1px 6px; border-radius: 5px;">successful</span> and <span style="background-color: #F18851; color: #fff; font-weight: bold; padding: 1px 6px; border-radius: 5px;">unsuccessful</span> challenges this season by the Dodgers and their opponents:</p>
 <div class="abs-challenges-section">
   <div id="abs-challenge-summary"></div>
   <div id="abs-challenge-log"></div>
