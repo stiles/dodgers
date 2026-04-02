@@ -34,7 +34,7 @@
     {
         "stat_label":"Games up\/back",
         "stat":"games_up_back",
-        "value":1.5,
+        "value":1,
         "category":"standings",
         "context_value":"1st",
         "context_value_label":"Division rank"
@@ -52,7 +52,7 @@
         "stat":"runs",
         "value":22,
         "category":"standings",
-        "context_value":"21st",
+        "context_value":"19th",
         "context_value_label":"League rank"
     },
     {
@@ -84,7 +84,7 @@
         "stat":"home_runs",
         "value":6,
         "category":"batting",
-        "context_value":"13th",
+        "context_value":"9th",
         "context_value_label":"League rank"
     },
     {
@@ -124,7 +124,7 @@
         "stat":"strikeouts",
         "value":"45",
         "category":"pitching",
-        "context_value":"22nd",
+        "context_value":"19th",
         "context_value_label":"League rank"
     },
     {
@@ -132,7 +132,7 @@
         "stat":"walks",
         "value":"13",
         "category":"pitching",
-        "context_value":"26th",
+        "context_value":"25th",
         "context_value_label":"League rank"
     },
     {
@@ -146,7 +146,7 @@
     {
         "stat_label":"Last updated",
         "stat":"update_time",
-        "value":"April 1, 2026, 4:18 PM PT",
+        "value":"April 1, 2026, 8:02 PM PT",
         "category":"summary",
         "context_value":"",
         "context_value_label":""
@@ -154,7 +154,7 @@
     {
         "stat_label":"Team summary",
         "stat":"summary",
-        "value":"<span class='highlight'>LOS ANGELES<\/span> <span class='updated'>(April 1)<\/span> \u2014 The Dodgers have compiled a <span class='highlight'>4-1<\/span> record in the 2026 regular season, an <span class='highlight'>80%<\/span> winning percentage. The last game was a <span class='highlight'>4-1<\/span> home <span class='highlight'>win<\/span> against the <span class='highlight'>Cleveland Guardians<\/span>. The team will face the <span class='highlight'>Cleveland Guardians<\/span> next on Wednesday at 5:20 p.m. PT at <span class='highlight'>UNIQLO Field at Dodger Stadium<\/span>.",
+        "value":"<span class='highlight'>LOS ANGELES<\/span> <span class='updated'>(April 1)<\/span> \u2014 The Dodgers have compiled a <span class='highlight'>4-2<\/span> record in the 2026 regular season, a <span class='highlight'>67%<\/span> winning percentage. The last game was a <span class='highlight'>1-4<\/span> home <span class='highlight'>loss<\/span> against the <span class='highlight'>Cleveland Guardians<\/span>. The team will face the <span class='highlight'>Washington Nationals<\/span> next on Friday at 10:05 p.m. PT at <span class='highlight'>Nationals Park<\/span>.",
         "category":"summary",
         "context_value":"",
         "context_value_label":""
@@ -162,7 +162,7 @@
     {
         "stat_label":"Last game result",
         "stat":"last_game_result",
-        "value":"win",
+        "value":"loss",
         "category":"summary",
         "context_value":"",
         "context_value_label":""
