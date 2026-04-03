@@ -74,7 +74,7 @@
     {
         "stat_label":"Batting average",
         "stat":"batting_average",
-        "value":".237",
+        "value":".264",
         "category":"batting",
         "context_value":".253",
         "context_value_label":"Last decade average"
@@ -82,7 +82,7 @@
     {
         "stat_label":"Home runs",
         "stat":"home_runs",
-        "value":7,
+        "value":12,
         "category":"batting",
         "context_value":"1st",
         "context_value_label":"League rank"
@@ -90,7 +90,7 @@
     {
         "stat_label":"Home runs\/game",
         "stat":"home_runs_game",
-        "value":1.17,
+        "value":1.71,
         "category":"batting",
         "context_value":1.42,
         "context_value_label":"Last decade average"
@@ -98,7 +98,7 @@
     {
         "stat_label":"On-base percentage",
         "stat":"on_base_pct",
-        "value":".307",
+        "value":".336",
         "category":"batting",
         "context_value":".333",
         "context_value_label":"Last decade average"
@@ -156,7 +156,7 @@
         "stat":"avg_against",
         "value":".188",
         "category":"pitching",
-        "context_value":"8th",
+        "context_value":"7th",
         "context_value_label":"League rank"
     },
     {
@@ -170,7 +170,7 @@
     {
         "stat_label":"Last updated",
         "stat":"update_time",
-        "value":"April 3, 2026, 1:28 PM PT",
+        "value":"April 3, 2026, 1:50 PM PT",
         "category":"summary",
         "context_value":"",
         "context_value_label":""
