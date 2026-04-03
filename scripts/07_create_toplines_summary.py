@@ -184,13 +184,13 @@ except json.JSONDecodeError:
 
 
 # Standings
-standings = read_parquet_s3(standings_url, sort_by='game_date').query(f"year == '{year}'")
+standings = read_parquet_s3(standings_url, sort_by='game_date').query(f"year == {year}")
 # Remove "-wo" suffix if present (walkoff wins/losses)
 standings['result'] = standings['result'].str.replace('-wo', '', regex=False)
 standings['opp_name'] = standings['opp'].map(mlb_teams)
 # Create result_clean column
 standings['result_clean'] = standings['result'].map({'W': 'win', 'L': 'loss', 'T': 'tie'})
-standings_past = read_parquet_s3(standings_url, sort_by='game_date').query(f"year == '{last_year}'")
+standings_past = read_parquet_s3(standings_url, sort_by='game_date').query(f"year == {last_year}")
 # Get most recent game (standings should already be sorted by game_date)
 standings_now = standings.iloc[[-1]].copy() if not standings.empty else pd.DataFrame()
 # Prefer local _data standings file (same one the site tables use); fallback to remote
@@ -241,7 +241,7 @@ if standings_now.empty:
 
 game_number = standings_now['gm'].iloc[0]
 standings_last = standings_past.query(f"gm == {game_number}").head(1).reset_index(drop=True).copy()
-standings_last_season = standings_past.query(f"gm <= {game_number} and year=='{last_year}'").reset_index(drop=True).copy()
+standings_last_season = standings_past.query(f"gm <= {game_number} and year=={last_year}").reset_index(drop=True).copy()
 standings["rank_ordinal"] = standings["rank"].map(to_ordinal)
 # Use live standings for division rank to match NL tables
 try:
