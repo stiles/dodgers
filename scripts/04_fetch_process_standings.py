@@ -215,6 +215,21 @@ def main():
             logging.error(f"Failed to load historical archive: {e}", exc_info=True)
             raise
         
+        # Calculate cumulative wins/losses for historical data if missing
+        if historic_df['wins'].isna().any():
+            logging.info("Calculating cumulative wins/losses for historical data")
+            # Group by year and calculate cumulative stats
+            historic_df = historic_df.sort_values(['year', 'gm'])
+            historic_df['wins'] = historic_df.groupby('year')['result'].apply(
+                lambda x: (x == 'W').cumsum()
+            ).values
+            historic_df['losses'] = historic_df.groupby('year')['result'].apply(
+                lambda x: (x == 'L').cumsum()
+            ).values
+            # Recalculate win_pct
+            historic_df['win_pct'] = (historic_df['wins'] / historic_df['gm']).round(3)
+            logging.info("Cumulative stats calculated for historical data")
+        
         # Ensure consistent data types before combining
         # Convert game_date to string in both dataframes to avoid Parquet mixed-type errors
         logging.info("Converting data types for compatibility")
