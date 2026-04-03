@@ -1,9 +1,9 @@
 {
     "dodgers": {
         "batting": {
-            "total": 16,
+            "total": 17,
             "successful": 10,
-            "failed": 6
+            "failed": 7
         },
         "pitching": {
             "total": 2,
@@ -11,16 +11,16 @@
             "failed": 2
         },
         "catching": {
-            "total": 17,
-            "successful": 11,
+            "total": 18,
+            "successful": 12,
             "failed": 6
         }
     },
     "opponents": {
         "batting": {
-            "total": 21,
-            "successful": 11,
-            "failed": 10
+            "total": 23,
+            "successful": 12,
+            "failed": 11
         },
         "pitching": {
             "total": 0,
@@ -34,6 +34,54 @@
         }
     },
     "challenge_log": [
+        {
+            "date": "2026-04-03",
+            "date_formatted": "April 3, 2026",
+            "challenger": "Luis Garc\u00eda Jr.",
+            "role": "batting",
+            "team": "opponents",
+            "outcome": "confirmed",
+            "result_desc": "Luis Garc\u00eda Jr. strikes out swinging.",
+            "batter": "Luis Garc\u00eda Jr.",
+            "pitcher": "Edgardo Henriquez",
+            "game_pk": 822758
+        },
+        {
+            "date": "2026-04-03",
+            "date_formatted": "April 3, 2026",
+            "challenger": "Shohei Ohtani",
+            "role": "batting",
+            "team": "dodgers",
+            "outcome": "confirmed",
+            "result_desc": "Shohei Ohtani flies out to left fielder Daylen Lile.",
+            "batter": "Shohei Ohtani",
+            "pitcher": "Ken Waldichuk",
+            "game_pk": 822758
+        },
+        {
+            "date": "2026-04-03",
+            "date_formatted": "April 3, 2026",
+            "challenger": "Will Smith",
+            "role": "catching",
+            "team": "dodgers",
+            "outcome": "overturned",
+            "result_desc": "James Wood strikes out swinging.",
+            "batter": "James Wood",
+            "pitcher": "Jack Dreyer",
+            "game_pk": 822758
+        },
+        {
+            "date": "2026-04-03",
+            "date_formatted": "April 3, 2026",
+            "challenger": "Daylen Lile",
+            "role": "batting",
+            "team": "opponents",
+            "outcome": "overturned",
+            "result_desc": "Daylen Lile singles on a ground ball to shortstop Mookie Betts.",
+            "batter": "Daylen Lile",
+            "pitcher": "Emmet Sheehan",
+            "game_pk": 822758
+        },
         {
             "date": "2026-03-31",
             "date_formatted": "March 31, 2026",
@@ -97,6 +145,30 @@
         {
             "date": "2026-03-30",
             "date_formatted": "March 30, 2026",
+            "challenger": "Teoscar Hern\u00e1ndez",
+            "role": "batting",
+            "team": "dodgers",
+            "outcome": "overturned",
+            "result_desc": "Teoscar Hern\u00e1ndez singles on a ground ball to left fielder Steven Kwan.",
+            "batter": "Teoscar Hern\u00e1ndez",
+            "pitcher": "Shawn Armstrong",
+            "game_pk": 823972
+        },
+        {
+            "date": "2026-03-30",
+            "date_formatted": "March 30, 2026",
+            "challenger": "Steven Kwan",
+            "role": "batting",
+            "team": "opponents",
+            "outcome": "overturned",
+            "result_desc": "Steven Kwan called out on strikes.",
+            "batter": "Steven Kwan",
+            "pitcher": "Roki Sasaki",
+            "game_pk": 823972
+        },
+        {
+            "date": "2026-03-30",
+            "date_formatted": "March 30, 2026",
             "challenger": "Austin Hedges",
             "role": "catching",
             "team": "opponents",
@@ -119,28 +191,16 @@
             "game_pk": 823972
         },
         {
-            "date": "2026-03-30",
-            "date_formatted": "March 30, 2026",
-            "challenger": "Teoscar Hern\u00e1ndez",
-            "role": "batting",
+            "date": "2026-03-28",
+            "date_formatted": "March 28, 2026",
+            "challenger": "Edwin D\u00edaz",
+            "role": "pitching",
             "team": "dodgers",
-            "outcome": "overturned",
-            "result_desc": "Teoscar Hern\u00e1ndez singles on a ground ball to left fielder Steven Kwan.",
-            "batter": "Teoscar Hern\u00e1ndez",
-            "pitcher": "Shawn Armstrong",
-            "game_pk": 823972
-        },
-        {
-            "date": "2026-03-30",
-            "date_formatted": "March 30, 2026",
-            "challenger": "Steven Kwan",
-            "role": "batting",
-            "team": "opponents",
-            "outcome": "overturned",
-            "result_desc": "Steven Kwan called out on strikes.",
-            "batter": "Steven Kwan",
-            "pitcher": "Roki Sasaki",
-            "game_pk": 823972
+            "outcome": "confirmed",
+            "result_desc": "Nolan Arenado flies out to center fielder Andy Pages.",
+            "batter": "Nolan Arenado",
+            "pitcher": "Edwin D\u00edaz",
+            "game_pk": 823973
         },
         {
             "date": "2026-03-28",
@@ -164,18 +224,6 @@
             "result_desc": "Alek Thomas lines out sharply to right fielder Kyle Tucker.",
             "batter": "Alek Thomas",
             "pitcher": "Tyler Glasnow",
-            "game_pk": 823973
-        },
-        {
-            "date": "2026-03-28",
-            "date_formatted": "March 28, 2026",
-            "challenger": "Edwin D\u00edaz",
-            "role": "pitching",
-            "team": "dodgers",
-            "outcome": "confirmed",
-            "result_desc": "Nolan Arenado flies out to center fielder Andy Pages.",
-            "batter": "Nolan Arenado",
-            "pitcher": "Edwin D\u00edaz",
             "game_pk": 823973
         },
         {
@@ -217,18 +265,6 @@
         {
             "date": "2026-03-23",
             "date_formatted": "March 23, 2026",
-            "challenger": "Logan O'Hoppe",
-            "role": "catching",
-            "team": "opponents",
-            "outcome": "overturned",
-            "result_desc": "Teoscar Hern\u00e1ndez walks.",
-            "batter": "Teoscar Hern\u00e1ndez",
-            "pitcher": "Reid Detmers",
-            "game_pk": 831821
-        },
-        {
-            "date": "2026-03-23",
-            "date_formatted": "March 23, 2026",
             "challenger": "Nolan Schanuel",
             "role": "batting",
             "team": "opponents",
@@ -237,42 +273,6 @@
             "batter": "Nolan Schanuel",
             "pitcher": "Roki Sasaki",
             "game_pk": 831821
-        },
-        {
-            "date": "2026-03-23",
-            "date_formatted": "March 23, 2026",
-            "challenger": "Jorge Soler",
-            "role": "batting",
-            "team": "opponents",
-            "outcome": "overturned",
-            "result_desc": "Jorge Soler walks. Zach Neto scores. Mike Trout to 3rd. Nolan Schanuel to 2nd.",
-            "batter": "Jorge Soler",
-            "pitcher": "Roki Sasaki",
-            "game_pk": 831821
-        },
-        {
-            "date": "2026-03-22",
-            "date_formatted": "March 22, 2026",
-            "challenger": "Zach Neto",
-            "role": "batting",
-            "team": "opponents",
-            "outcome": "confirmed",
-            "result_desc": "Zach Neto pops out to third baseman Max Muncy in foul territory.",
-            "batter": "Zach Neto",
-            "pitcher": "Tyler Glasnow",
-            "game_pk": 831804
-        },
-        {
-            "date": "2026-03-22",
-            "date_formatted": "March 22, 2026",
-            "challenger": "Logan O'Hoppe",
-            "role": "catching",
-            "team": "opponents",
-            "outcome": "overturned",
-            "result_desc": "Mookie Betts walks. Andy Pages scores. Shohei Ohtani to 3rd. Kyle Tucker to 2nd.",
-            "batter": "Mookie Betts",
-            "pitcher": "George Klassen",
-            "game_pk": 831804
         }
     ]
 }

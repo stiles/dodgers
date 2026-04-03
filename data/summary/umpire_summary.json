@@ -1,17 +1,17 @@
 {
     "season_summary": {
-        "correct_strikes_pct": 88.50174216027874,
-        "incorrect_strikes_pct": 11.498257839721262,
-        "total_called_strikes": 287,
-        "bad_calls_count": 33
+        "correct_strikes_pct": 88.88888888888889,
+        "incorrect_strikes_pct": 11.111111111111114,
+        "total_called_strikes": 315,
+        "bad_calls_count": 35
     },
     "last_game_summary": {
-        "date": "April 1, 2026",
-        "correct_strikes_pct": 95.0,
-        "incorrect_strikes_pct": 5.0,
-        "total_called_strikes": 20,
-        "bad_calls_count": 1,
-        "home_plate_umpire": "Quinn Wolcott"
+        "date": "April 3, 2026",
+        "correct_strikes_pct": 92.85714285714286,
+        "incorrect_strikes_pct": 7.142857142857139,
+        "total_called_strikes": 28,
+        "bad_calls_count": 2,
+        "home_plate_umpire": "Gabe Morales"
     },
     "worst_calls_of_season": [
         {
@@ -56,17 +56,17 @@
         }
     ],
     "pitching_season_summary": {
-        "correct_balls_pct": 95.76271186440678,
-        "incorrect_balls_pct": 4.237288135593218,
-        "total_called_balls": 590,
-        "bad_calls_count": 25
+        "correct_balls_pct": 95.95645412130638,
+        "incorrect_balls_pct": 4.043545878693621,
+        "total_called_balls": 643,
+        "bad_calls_count": 26
     },
     "pitching_last_game_summary": {
-        "date": "April 1, 2026",
-        "correct_balls_pct": 100.0,
-        "incorrect_balls_pct": 0.0,
-        "total_called_balls": 52,
-        "bad_calls_count": 0
+        "date": "April 3, 2026",
+        "correct_balls_pct": 98.11320754716981,
+        "incorrect_balls_pct": 1.8867924528301927,
+        "total_called_balls": 53,
+        "bad_calls_count": 1
     },
     "pitching_worst_calls_of_season": [],
     "abs_challenges": {
