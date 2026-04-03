@@ -18,6 +18,7 @@ PHASE_CONFIG = {
             "scripts/05_fetch_process_batting.py",
             "scripts/06_fetch_process_pitching.py",
             "scripts/09_build_wins_losses_from_boxscores.py",
+            "scripts/10_fetch_process_historic_batting_gamelogs.py",
             "scripts/12_fetch_process_historic_pitching_gamelogs.py",
             "scripts/13_fetch_process_schedule.py",
             "scripts/14_fetch_process_batting_mlb.py",
