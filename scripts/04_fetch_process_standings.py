@@ -23,7 +23,7 @@ LOCAL_BOXES_JSON = os.path.join("data", "standings", "dodgers_boxscores.json")
 HISTORIC_ARCHIVE = "https://stilesdata.com/dodgers/data/standings/archive/dodgers_standings_1958_2025.parquet"
 
 output_dir = "data/standings"
-year = str(datetime.now().year)
+year = datetime.now().year  # Keep as int to match historical data
 
 
 def get_s3_client(profile_name: Optional[str] = None):
@@ -62,7 +62,7 @@ def load_boxscores(profile_name: Optional[str] = None) -> pd.DataFrame:
     raise FileNotFoundError("Boxscores archive not found in S3 or local")
 
 
-def build_standings_from_boxscores(df: pd.DataFrame, season: str) -> pd.DataFrame:
+def build_standings_from_boxscores(df: pd.DataFrame, season: int) -> pd.DataFrame:
     """Build game-by-game standings from boxscores archive"""
     df = df.copy()
     
@@ -72,7 +72,7 @@ def build_standings_from_boxscores(df: pd.DataFrame, season: str) -> pd.DataFram
     
     # Normalize date
     df["game_date"] = pd.to_datetime(df.get("date", df.get("game_date")))
-    df = df[df["game_date"].dt.year == int(season)]
+    df = df[df["game_date"].dt.year == season]
     
     # Exclude spring training exhibitions (Angels games in March)
     march_angels = (
