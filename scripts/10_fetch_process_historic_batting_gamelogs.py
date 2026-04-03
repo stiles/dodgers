@@ -2,153 +2,201 @@
 # coding: utf-8
 
 """
-LA Dodgers cumulative batting statistics by season, 1958-2024
-This script fetches and processes current and past game-by-game and cumulative totals for hits, doubles, home runs, walks, strikeouts and other statistics using data from [Baseball Reference](https://www.baseball-reference.com/teams/tgl.cgi?team=LAD&t=b&year=2024).
+LA Dodgers game-by-game batting stats from MLB API
+Builds cumulative batting gamelogs for charts (doubles, homers, etc.)
 """
 
 import os
 import boto3
-import datetime
-import logging
 import pandas as pd
+import requests
+import json
+import logging
+from datetime import datetime
+from typing import Optional
 from io import BytesIO
 
-# Set up basic configuration for logging
 logging.basicConfig(level=logging.INFO, format='%(asctime)s - %(levelname)s - %(message)s')
 
-# Determine if running in a GitHub Actions environment
-is_github_actions = os.getenv('GITHUB_ACTIONS') == 'true'
+DODGERS_TEAM_ID = 119
+BUCKET = "stilesdata.com"
+LOCAL_BOXES = "data/standings/dodgers_boxscores.json"
 
-# AWS credentials and session initialization
-aws_key_id = os.environ.get("AWS_ACCESS_KEY_ID")
-aws_secret_key = os.environ.get("AWS_SECRET_ACCESS_KEY")
-aws_region = "us-west-1"
-
-# Conditional AWS session creation based on the environment
-if is_github_actions:
-    # In GitHub Actions, use environment variables directly
-    session = boto3.Session(
-        aws_access_key_id=aws_key_id,
-        aws_secret_access_key=aws_secret_key,
-        region_name=aws_region
-    )
-else:
-    # Locally, use a specific profile
-    session = boto3.Session(profile_name="haekeo", region_name=aws_region)
-    # session = boto3.Session(region_name=aws_region)
-
-s3_resource = session.resource("s3")
-
-# Base directory settings
-base_dir = os.getcwd()
-data_dir = os.path.join(base_dir, 'data', 'batting')
-# os.makedirs(data_dir, exist_ok=True)
-
-profile_name = os.environ.get("AWS_PERSONAL_PROFILE")
-today = datetime.date.today()
-year = today.year
-
-headers = {
-    "User-Agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/109.0.0.0 Safari/537.36",
+HEADERS = {
+    'User-Agent': 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36'
 }
 
-# Fetch Archive game logs
-archive_url = "https://stilesdata.com/dodgers/data/batting/archive/dodgers_team_cumulative_batting_logs_1958_2024.parquet"
-archive_df = pd.read_parquet(archive_url)
 
-# Fetch Current game logs
-current_url = f"https://www.baseball-reference.com/teams/tgl.cgi?team=LAD&t=b&year={year}"
-current_df = pd.read_html(current_url)[0].assign(year=year)
-# Drop the top level of the MultiIndex columns
-current_df.columns = current_df.columns.droplevel(0)
-# Restore column lowercasing
-current_df.columns = current_df.columns.str.lower()
-# Rename the column that was ('year', '') and became '' to 'year'
-current_df = current_df.rename(columns={'': 'year'})
-# Filter out header/summary rows by ensuring 'gtm' is a numeric value
-current_df = current_df[pd.to_numeric(current_df['gtm'], errors='coerce').notna()]
+def get_s3_client(profile_name: Optional[str] = None):
+    """Get S3 client"""
+    if os.environ.get("GITHUB_ACTIONS") == "true":
+        return boto3.client("s3")
+    
+    profile = profile_name or os.environ.get("AWS_PROFILE", "haekeo")
+    session = boto3.session.Session(profile_name=profile)
+    return session.client("s3")
 
-# Process current game logs
-current_df["game_date"] = pd.to_datetime(
-    current_df["date"] + " " + current_df["year"].astype(str),
-    format="%b %d %Y",
-    errors="coerce"
-).dt.strftime("%Y-%m-%d")
 
-# Drop unnecessary columns
-drop_cols = [
-    "rk", "date", "unnamed: 3", "opp", "rslt", "ba", "obp", "slg", "ops", "lob", "#", "thr", "opp. starter (gmesc)"
-]
-# Only attempt to drop columns that actually exist in the DataFrame
-cols_to_actually_drop = [col for col in drop_cols if col in current_df.columns]
-current_df = current_df.drop(cols_to_actually_drop, axis=1).copy()
+def load_boxscores() -> pd.DataFrame:
+    """Load boxscores to get list of game PKs"""
+    with open(LOCAL_BOXES, 'r') as f:
+        data = json.load(f)
+    return pd.DataFrame(data)
 
-# Define value columns
-val_cols = [
-    "gtm", "pa", "ab", "r", "h", "2b", "3b", "hr", "rbi", "bb", "ibb", "so", "hbp", "sh", "sf", "roe", "gdp", "sb", "cs"
-]
 
-# Filter val_cols to only include columns present in the DataFrame
-existing_val_cols = [col for col in val_cols if col in current_df.columns]
+def fetch_game_batting_stats(game_pk: int, season: int) -> dict:
+    """Fetch batting stats for a single game"""
+    url = f"https://statsapi.mlb.com/api/v1.1/game/{game_pk}/feed/live"
+    
+    try:
+        response = requests.get(url, headers=HEADERS, timeout=30)
+        response.raise_for_status()
+        data = response.json()
+        
+        # Find Dodgers team stats
+        dodgers_stats = None
+        if data.get('liveData', {}).get('boxscore', {}).get('teams'):
+            teams = data['liveData']['boxscore']['teams']
+            
+            # Check if home or away
+            if teams['home']['team']['id'] == DODGERS_TEAM_ID:
+                dodgers_stats = teams['home']['teamStats']['batting']
+            elif teams['away']['team']['id'] == DODGERS_TEAM_ID:
+                dodgers_stats = teams['away']['teamStats']['batting']
+        
+        if not dodgers_stats:
+            logging.warning(f"Could not find Dodgers stats for game {game_pk}")
+            return None
+        
+        # Extract key stats
+        return {
+            'game_pk': game_pk,
+            'doubles': dodgers_stats.get('doubles', 0),
+            'triples': dodgers_stats.get('triples', 0),
+            'home_runs': dodgers_stats.get('homeRuns', 0),
+            'hits': dodgers_stats.get('hits', 0),
+            'runs': dodgers_stats.get('runs', 0),
+            'rbi': dodgers_stats.get('rbi', 0),
+            'stolen_bases': dodgers_stats.get('stolenBases', 0),
+            'walks': dodgers_stats.get('baseOnBalls', 0),
+            'strikeouts': dodgers_stats.get('strikeOuts', 0),
+            'left_on_base': dodgers_stats.get('leftOnBase', 0),
+        }
+        
+    except Exception as e:
+        logging.error(f"Failed to fetch game {game_pk}: {e}")
+        return None
 
-# Convert existing value columns to integers
-current_df[existing_val_cols] = current_df[existing_val_cols].astype(int)
 
-# Calculate cumulative columns for existing value columns
-for col in existing_val_cols:
-    current_df[f"{col}_cum"] = current_df.groupby("year")[col].cumsum()
-current_df = current_df.drop("gtm_cum", axis=1)
+def build_batting_gamelogs(season: int) -> pd.DataFrame:
+    """Build game-by-game batting stats for the season"""
+    logging.info(f"Loading boxscores for {season}")
+    boxes_df = load_boxscores()
+    
+    # Filter for current season and final games
+    boxes_df['date'] = pd.to_datetime(boxes_df['date'])
+    boxes_df = boxes_df[
+        (boxes_df['date'].dt.year == season) & 
+        (boxes_df['is_final'] == True)
+    ].sort_values('date').reset_index(drop=True)
+    
+    # Exclude spring training
+    march_angels = (
+        (boxes_df['date'].dt.month == 3) & 
+        (boxes_df['opponent_name'].str.contains("Angels", na=False))
+    )
+    boxes_df = boxes_df[~march_angels]
+    
+    logging.info(f"Fetching batting stats for {len(boxes_df)} games")
+    
+    game_stats = []
+    for idx, row in boxes_df.iterrows():
+        game_pk = row['game_pk']
+        game_date = row['date'].strftime('%Y-%m-%d')
+        
+        stats = fetch_game_batting_stats(game_pk, season)
+        if stats:
+            stats['game_date'] = game_date
+            stats['game_number'] = idx + 1
+            game_stats.append(stats)
+            
+            if (idx + 1) % 10 == 0:
+                logging.info(f"Processed {idx + 1}/{len(boxes_df)} games")
+    
+    if not game_stats:
+        logging.error("No batting stats collected")
+        return pd.DataFrame()
+    
+    df = pd.DataFrame(game_stats)
+    
+    # Add cumulative columns
+    df['cumulative_doubles'] = df['doubles'].cumsum()
+    df['cumulative_triples'] = df['triples'].cumsum()
+    df['cumulative_home_runs'] = df['home_runs'].cumsum()
+    df['cumulative_hits'] = df['hits'].cumsum()
+    df['cumulative_runs'] = df['runs'].cumsum()
+    df['cumulative_rbi'] = df['rbi'].cumsum()
+    df['cumulative_stolen_bases'] = df['stolen_bases'].cumsum()
+    
+    logging.info(f"Built batting gamelogs: {len(df)} games")
+    return df
 
-# Combine current and archive data
-df = (
-    pd.concat([current_df, archive_df])
-    .sort_values(["year", "gtm"], ascending=[False, True])
-    .reset_index(drop=True)
-    .drop_duplicates()
-)
 
-# Optimize DataFrame for output
-optimized_df = df[
-    ["gtm", "year", "r_cum", "h_cum", "2b_cum", "bb_cum", "so_cum", "hr_cum"]
-].copy()
+def save_outputs(df: pd.DataFrame, season: int, profile_name: Optional[str] = None):
+    """Save locally and to S3"""
+    base_path = f"data/batting/dodgers_batting_gamelogs_{season}"
+    os.makedirs("data/batting", exist_ok=True)
+    
+    # Save locally
+    df.to_csv(f"{base_path}.csv", index=False)
+    df.to_json(f"{base_path}.json", orient='records', indent=2)
+    df.to_parquet(f"{base_path}.parquet", index=False)
+    logging.info(f"Saved locally: {base_path}")
+    
+    # Upload to S3
+    try:
+        s3 = get_s3_client(profile_name)
+        s3_base = f"dodgers/data/batting/dodgers_batting_gamelogs_{season}"
+        
+        # CSV
+        csv_buf = df.to_csv(index=False).encode('utf-8')
+        s3.put_object(Bucket=BUCKET, Key=f"{s3_base}.csv", Body=csv_buf, ContentType="text/csv")
+        
+        # JSON
+        json_buf = df.to_json(orient='records', indent=2).encode('utf-8')
+        s3.put_object(Bucket=BUCKET, Key=f"{s3_base}.json", Body=json_buf, ContentType="application/json")
+        
+        # Parquet
+        parquet_buf = df.to_parquet(index=False)
+        s3.put_object(Bucket=BUCKET, Key=f"{s3_base}.parquet", Body=parquet_buf)
+        
+        logging.info(f"Uploaded to S3: {s3_base}")
+    except Exception as e:
+        logging.error(f"S3 upload failed: {e}")
 
-# Function to save DataFrame to local files
-def save_dataframe(df, path_without_extension, formats):
-    for file_format in formats:
-        try:
-            full_path = f"{path_without_extension}.{file_format}"
-            if file_format == "csv":
-                df.to_csv(full_path, index=False)
-            elif file_format == "json":
-                df.to_json(full_path, indent=4, orient="records", lines=False)
-            elif file_format == "parquet":
-                df.to_parquet(full_path, index=False)
-            logging.info(f"Saved {file_format} format to {full_path}")
-        except Exception as e:
-            logging.error(f"Failed to save {file_format}: {e}")
 
-# Function to save DataFrame to S3
-def save_to_s3(df, base_path, s3_bucket, formats):
-    for fmt in formats:
-        try:
-            buffer = BytesIO()
-            if fmt == "csv":
-                df.to_csv(buffer, index=False)
-                content_type = "text/csv"
-            elif fmt == "json":
-                df.to_json(buffer, indent=4, orient="records", lines=False)
-                content_type = "application/json"
-            elif fmt == "parquet":
-                df.to_parquet(buffer, index=False)
-                content_type = "application/octet-stream"
-            buffer.seek(0)
-            s3_resource.Bucket(s3_bucket).put_object(Key=f"{base_path}.{fmt}", Body=buffer, ContentType=content_type)
-            logging.info(f"Uploaded {fmt} to {s3_bucket}/{base_path}.{fmt}")
-        except Exception as e:
-            logging.error(f"Failed to upload {fmt} to S3: {e}")
+def main():
+    """Main execution"""
+    season = datetime.now().year
+    profile = os.environ.get("AWS_PROFILE", "haekeo" if os.environ.get("GITHUB_ACTIONS") != "true" else None)
+    
+    logging.info(f"Building batting gamelogs for {season}")
+    df = build_batting_gamelogs(season)
+    
+    if df.empty:
+        logging.error("No data generated")
+        return
+    
+    save_outputs(df, season, profile)
+    logging.info("Batting gamelogs complete!")
+    
+    # Print summary
+    print(f"\nSeason totals through game {len(df)}:")
+    print(f"  Doubles: {df['cumulative_doubles'].iloc[-1]}")
+    print(f"  Home runs: {df['cumulative_home_runs'].iloc[-1]}")
+    print(f"  Hits: {df['cumulative_hits'].iloc[-1]}")
+    print(f"  Stolen bases: {df['cumulative_stolen_bases'].iloc[-1]}")
 
-# Saving files locally and to S3
-file_path = os.path.join(data_dir, 'dodgers_historic_batting_gamelogs')
-formats = ["csv", "json", "parquet"]
-# save_dataframe(optimized_df, file_path, formats)
-save_to_s3(optimized_df, "dodgers/data/batting/archive/dodgers_historic_batting_gamelogs", "stilesdata.com", formats)
+
+if __name__ == "__main__":
+    main()

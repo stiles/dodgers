@@ -1,173 +1,228 @@
 #!/usr/bin/env python
 # coding: utf-8
 
-# # LA Dodgers pitching logs by season, 1958-2024
-# > This script processes current and past game-by-game and cumulative totals for strikeouts, walks, ERA, etc., using data from [Baseball Reference](https://www.baseball-reference.com/teams/tgl.cgi?team=LAD&t=p&year=2024).
-
-# ---
-
-#!/usr/bin/env python
-# coding: utf-8
+"""
+LA Dodgers game-by-game pitching stats from MLB API
+Builds cumulative pitching gamelogs for charts (ERA, K's, hits allowed, etc.)
+"""
 
 import os
-import requests
-import datetime
-import pandas as pd
-from io import BytesIO
 import boto3
+import pandas as pd
+import requests
+import json
 import logging
+from datetime import datetime
+from typing import Optional
 
-
-# Set up basic configuration for logging
 logging.basicConfig(level=logging.INFO, format='%(asctime)s - %(levelname)s - %(message)s')
 
-# Determine if running in a GitHub Actions environment
-is_github_actions = os.getenv('GITHUB_ACTIONS') == 'true'
+DODGERS_TEAM_ID = 119
+BUCKET = "stilesdata.com"
+LOCAL_BOXES = "data/standings/dodgers_boxscores.json"
 
-# AWS credentials and session initialization
-aws_key_id = os.environ.get("AWS_ACCESS_KEY_ID")
-aws_secret_key = os.environ.get("AWS_SECRET_ACCESS_KEY")
-aws_region = "us-west-1"
-
-# Conditional AWS session creation based on the environment
-if is_github_actions:
-    # In GitHub Actions, use environment variables directly
-    session = boto3.Session(
-        aws_access_key_id=aws_key_id,
-        aws_secret_access_key=aws_secret_key,
-        region_name=aws_region
-    )
-else:
-    # Locally, use a specific profile
-    session = boto3.Session(profile_name="haekeo", region_name=aws_region)
-    # session = boto3.Session(region_name=aws_region)
-
-
-s3_resource = session.resource("s3")
-
-# Base directory settings
-base_dir = os.getcwd()
-data_dir = os.path.join(base_dir, 'data', 'pitching')
-# os.makedirs(data_dir, exist_ok=True)
-
-profile_name = os.environ.get("AWS_PERSONAL_PROFILE")
-today = datetime.date.today()
-year = pd.to_datetime("now").strftime("%Y")
-
-
-# Headers to mimic a browser request
-headers = {
-    "User-Agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/109.0.0.0 Safari/537.36",
+HEADERS = {
+    'User-Agent': 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36'
 }
 
 
-# Fetch archive game logs
-archive_url = "https://stilesdata.com/dodgers/data/pitching/archive/dodgers_historic_pitching_gamelogs_1958_2023.parquet"
-archive_df = pd.read_parquet(archive_url)
+def get_s3_client(profile_name: Optional[str] = None):
+    """Get S3 client"""
+    if os.environ.get("GITHUB_ACTIONS") == "true":
+        return boto3.client("s3")
+    
+    profile = profile_name or os.environ.get("AWS_PROFILE", "haekeo")
+    session = boto3.session.Session(profile_name=profile)
+    return session.client("s3")
 
 
-# Fetch Current game logs
-current_url = f"https://www.baseball-reference.com/teams/tgl.cgi?team=LAD&t=p&year={year}"
-# Use index [0] for the main table and assign year
-current_src = pd.read_html(current_url)[0].assign(year=year)
-# Drop the top level of the MultiIndex columns
-current_src.columns = current_src.columns.droplevel(0)
-# Lowercase column names
-current_src.columns = current_src.columns.str.lower()
-# Rename the column that was ('year', '') and became '' to 'year'
-current_src = current_src.rename(columns={'': 'year'})
-# Filter out header/summary rows by ensuring 'gtm' is a numeric value
-current_src = current_src[pd.to_numeric(current_src['gtm'], errors='coerce').notna()]
+def load_boxscores() -> pd.DataFrame:
+    """Load boxscores to get list of game PKs"""
+    with open(LOCAL_BOXES, 'r') as f:
+        data = json.load(f)
+    return pd.DataFrame(data)
 
 
-# Process current game logs
-current_src["game_date"] = pd.to_datetime(
-    current_src["date"] + " " + current_src["year"].astype(str),
-    format="%b %d %Y",
-    errors="coerce"
-).dt.strftime("%Y-%m-%d")
+def fetch_game_pitching_stats(game_pk: int, season: int) -> dict:
+    """Fetch pitching stats for a single game"""
+    url = f"https://statsapi.mlb.com/api/v1.1/game/{game_pk}/feed/live"
+    
+    try:
+        response = requests.get(url, headers=HEADERS, timeout=30)
+        response.raise_for_status()
+        data = response.json()
+        
+        # Find Dodgers team stats
+        dodgers_stats = None
+        if data.get('liveData', {}).get('boxscore', {}).get('teams'):
+            teams = data['liveData']['boxscore']['teams']
+            
+            # Check if home or away
+            if teams['home']['team']['id'] == DODGERS_TEAM_ID:
+                dodgers_stats = teams['home']['teamStats']['pitching']
+            elif teams['away']['team']['id'] == DODGERS_TEAM_ID:
+                dodgers_stats = teams['away']['teamStats']['pitching']
+        
+        if not dodgers_stats:
+            logging.warning(f"Could not find Dodgers stats for game {game_pk}")
+            return None
+        
+        # Extract key stats
+        return {
+            'game_pk': game_pk,
+            'innings_pitched': dodgers_stats.get('inningsPitched', '0.0'),
+            'hits': dodgers_stats.get('hits', 0),
+            'runs': dodgers_stats.get('runs', 0),
+            'earned_runs': dodgers_stats.get('earnedRuns', 0),
+            'walks': dodgers_stats.get('baseOnBalls', 0),
+            'strikeouts': dodgers_stats.get('strikeOuts', 0),
+            'home_runs': dodgers_stats.get('homeRuns', 0),
+            'hit_by_pitch': dodgers_stats.get('hitByPitch', 0),
+            'wild_pitches': dodgers_stats.get('wildPitches', 0),
+            'balks': dodgers_stats.get('balks', 0),
+        }
+        
+    except Exception as e:
+        logging.error(f"Failed to fetch game {game_pk}: {e}")
+        return None
 
 
-# Just the columns we need
-keep_cols = ['gtm', 'year', 'game_date', 'h', 'hr', 'er', 'so', 'era']
-current_df = current_src[keep_cols].copy()
+def innings_to_outs(ip_str: str) -> int:
+    """Convert innings pitched string (e.g., '9.0', '8.1') to outs"""
+    try:
+        parts = str(ip_str).split('.')
+        full_innings = int(parts[0])
+        partial = int(parts[1]) if len(parts) > 1 else 0
+        return (full_innings * 3) + partial
+    except:
+        return 0
 
 
-# Define value columns
-int_cols = ["gtm", 'h', 'hr', 'er', 'so']
-
-# Convert value columns to numbers
-current_df[int_cols] = current_df[int_cols].astype(int)
-current_df['era'] = current_df['era'].astype(float)
-current_df['era_cum'] = current_df['era']
+def outs_to_innings(outs: int) -> str:
+    """Convert outs to innings pitched string"""
+    full_innings = outs // 3
+    partial = outs % 3
+    return f"{full_innings}.{partial}"
 
 
-# Calculate cumulative columns
-for col in ['h', 'hr', 'er', 'so']:
-    current_df[f"{col}_cum"] = current_df.groupby("year")[col].cumsum()
+def build_pitching_gamelogs(season: int) -> pd.DataFrame:
+    """Build game-by-game pitching stats for the season"""
+    logging.info(f"Loading boxscores for {season}")
+    boxes_df = load_boxscores()
+    
+    # Filter for current season and final games
+    boxes_df['date'] = pd.to_datetime(boxes_df['date'])
+    boxes_df = boxes_df[
+        (boxes_df['date'].dt.year == season) & 
+        (boxes_df['is_final'] == True)
+    ].sort_values('date').reset_index(drop=True)
+    
+    # Exclude spring training
+    march_angels = (
+        (boxes_df['date'].dt.month == 3) & 
+        (boxes_df['opponent_name'].str.contains("Angels", na=False))
+    )
+    boxes_df = boxes_df[~march_angels]
+    
+    logging.info(f"Fetching pitching stats for {len(boxes_df)} games")
+    
+    game_stats = []
+    for idx, row in boxes_df.iterrows():
+        game_pk = row['game_pk']
+        game_date = row['date'].strftime('%Y-%m-%d')
+        
+        stats = fetch_game_pitching_stats(game_pk, season)
+        if stats:
+            stats['game_date'] = game_date
+            stats['game_number'] = idx + 1
+            game_stats.append(stats)
+            
+            if (idx + 1) % 10 == 0:
+                logging.info(f"Processed {idx + 1}/{len(boxes_df)} games")
+    
+    if not game_stats:
+        logging.error("No pitching stats collected")
+        return pd.DataFrame()
+    
+    df = pd.DataFrame(game_stats)
+    
+    # Convert IP to outs for cumulative calculation
+    df['outs'] = df['innings_pitched'].apply(innings_to_outs)
+    
+    # Add cumulative columns
+    df['cumulative_outs'] = df['outs'].cumsum()
+    df['cumulative_innings_pitched'] = df['cumulative_outs'].apply(outs_to_innings)
+    df['cumulative_hits'] = df['hits'].cumsum()
+    df['cumulative_runs'] = df['runs'].cumsum()
+    df['cumulative_earned_runs'] = df['earned_runs'].cumsum()
+    df['cumulative_walks'] = df['walks'].cumsum()
+    df['cumulative_strikeouts'] = df['strikeouts'].cumsum()
+    df['cumulative_home_runs'] = df['home_runs'].cumsum()
+    
+    # Calculate cumulative ERA (earned runs per 9 innings)
+    df['cumulative_era'] = (df['cumulative_earned_runs'] * 27 / df['cumulative_outs']).round(2)
+    df['cumulative_era'] = df['cumulative_era'].replace([float('inf'), float('-inf')], 0)
+    
+    logging.info(f"Built pitching gamelogs: {len(df)} games")
+    return df
 
 
-"""
-MERGE
-"""
-
-# Normalize dtypes before merge to avoid mixed object types in Parquet
-archive_df = archive_df.copy()
-try:
-    archive_df['year'] = archive_df['year'].astype(int)
-except Exception:
-    archive_df['year'] = pd.to_numeric(archive_df['year'], errors='coerce').fillna(0).astype(int)
-
-current_df['year'] = pd.to_numeric(current_df['year'], errors='coerce').fillna(0).astype(int)
-current_df['gtm'] = pd.to_numeric(current_df['gtm'], errors='coerce').fillna(0).astype(int)
-
-# Combine current and archive data
-df = (
-    pd.concat([current_df, archive_df], ignore_index=True)
-    .sort_values(["year", "gtm"], ascending=[False, True])
-    .reset_index(drop=True)
-    .drop_duplicates()
-)
-
-"""
-OUTPUT
-"""
-
-# Optimize DataFrame for output
-optimized_df = df[['gtm', 'year', 'game_date', 'era_cum','h_cum', 'hr_cum', 'er_cum', 'so_cum']].copy()
-
-# Final dtype enforcement for Parquet
-optimized_df['year'] = optimized_df['year'].astype(int)
-optimized_df['gtm'] = optimized_df['gtm'].astype(int)
-for c in ['h_cum', 'hr_cum', 'er_cum', 'so_cum']:
-    optimized_df[c] = pd.to_numeric(optimized_df[c], errors='coerce').fillna(0).astype(int)
-optimized_df['era_cum'] = pd.to_numeric(optimized_df['era_cum'], errors='coerce')
-optimized_df['game_date'] = optimized_df['game_date'].astype(str)
+def save_outputs(df: pd.DataFrame, season: int, profile_name: Optional[str] = None):
+    """Save locally and to S3"""
+    base_path = f"data/pitching/dodgers_pitching_gamelogs_{season}"
+    os.makedirs("data/pitching", exist_ok=True)
+    
+    # Save locally
+    df.to_csv(f"{base_path}.csv", index=False)
+    df.to_json(f"{base_path}.json", orient='records', indent=2)
+    df.to_parquet(f"{base_path}.parquet", index=False)
+    logging.info(f"Saved locally: {base_path}")
+    
+    # Upload to S3
+    try:
+        s3 = get_s3_client(profile_name)
+        s3_base = f"dodgers/data/pitching/dodgers_pitching_gamelogs_{season}"
+        
+        # CSV
+        csv_buf = df.to_csv(index=False).encode('utf-8')
+        s3.put_object(Bucket=BUCKET, Key=f"{s3_base}.csv", Body=csv_buf, ContentType="text/csv")
+        
+        # JSON
+        json_buf = df.to_json(orient='records', indent=2).encode('utf-8')
+        s3.put_object(Bucket=BUCKET, Key=f"{s3_base}.json", Body=json_buf, ContentType="application/json")
+        
+        # Parquet
+        parquet_buf = df.to_parquet(index=False)
+        s3.put_object(Bucket=BUCKET, Key=f"{s3_base}.parquet", Body=parquet_buf)
+        
+        logging.info(f"Uploaded to S3: {s3_base}")
+    except Exception as e:
+        logging.error(f"S3 upload failed: {e}")
 
 
-# Function to save DataFrame to S3
-def save_to_s3(df, base_path, s3_bucket, formats):
-    for fmt in formats:
-        try:
-            buffer = BytesIO()
-            if fmt == "csv":
-                df.to_csv(buffer, index=False)
-                content_type = "text/csv"
-            elif fmt == "json":
-                df.to_json(buffer, indent=4, orient="records", lines=False)
-                content_type = "application/json"
-            elif fmt == "parquet":
-                df.to_parquet(buffer, index=False, engine="pyarrow")
-                content_type = "application/octet-stream"
-            buffer.seek(0)
-            s3_resource.Bucket(s3_bucket).put_object(Key=f"{base_path}.{fmt}", Body=buffer, ContentType=content_type)
-            logging.info(f"Uploaded {fmt} to {s3_bucket}/{base_path}.{fmt}")
-        except Exception as e:
-            logging.error(f"Failed to upload {fmt} to S3: {e}")
+def main():
+    """Main execution"""
+    season = datetime.now().year
+    profile = os.environ.get("AWS_PROFILE", "haekeo" if os.environ.get("GITHUB_ACTIONS") != "true" else None)
+    
+    logging.info(f"Building pitching gamelogs for {season}")
+    df = build_pitching_gamelogs(season)
+    
+    if df.empty:
+        logging.error("No data generated")
+        return
+    
+    save_outputs(df, season, profile)
+    logging.info("Pitching gamelogs complete!")
+    
+    # Print summary
+    print(f"\nSeason totals through game {len(df)}:")
+    print(f"  Innings pitched: {df['cumulative_innings_pitched'].iloc[-1]}")
+    print(f"  ERA: {df['cumulative_era'].iloc[-1]}")
+    print(f"  Strikeouts: {df['cumulative_strikeouts'].iloc[-1]}")
+    print(f"  Hits allowed: {df['cumulative_hits'].iloc[-1]}")
+    print(f"  Walks: {df['cumulative_walks'].iloc[-1]}")
 
-# Saving files locally and to S3
-file_path = os.path.join(data_dir, 'dodgers_historic_pitching_gamelogs_1958-present')
-formats = ["csv", "json", "parquet"]
-# save_dataframe(optimized_df, file_path, formats)
-save_to_s3(optimized_df, "dodgers/data/pitching/dodgers_historic_pitching_gamelogs_1958-present", "stilesdata.com", formats)
 
+if __name__ == "__main__":
+    main()
