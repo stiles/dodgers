@@ -53,7 +53,8 @@ def build_manifest():
             "last_updated": get_pacific_time(),
             "description": "Game-by-game standings 1958-present",
             "cadence": "regular_season_daily",
-            "source": "baseball_reference_scrape"
+            "source": "mlb_statsapi",
+            "source_historical": "baseball_reference_archives"
         },
         {
             "id": "standings_1958_present_optimized",
@@ -63,7 +64,8 @@ def build_manifest():
             "last_updated": get_pacific_time(),
             "description": "Optimized standings (year, gm, win_pct, gb only)",
             "cadence": "regular_season_daily",
-            "source": "baseball_reference_scrape"
+            "source": "mlb_statsapi",
+            "source_historical": "baseball_reference_archives"
         },
         {
             "id": "wins_losses_current",
@@ -73,7 +75,7 @@ def build_manifest():
             "last_updated": get_pacific_time(),
             "description": "Current season wins/losses/run differential",
             "cadence": "regular_season_daily",
-            "source": "baseball_savant"
+            "source": "mlb_statsapi"
         },
         {
             "id": "schedule_current",
@@ -83,7 +85,7 @@ def build_manifest():
             "last_updated": get_pacific_time(),
             "description": "Last 10 games and next 10 games",
             "cadence": "regular_season_daily",
-            "source": "baseball_reference_scrape"
+            "source": "mlb_statsapi"
         },
         {
             "id": "all_teams_standings_current",
@@ -151,9 +153,10 @@ def build_manifest():
             "url": "https://stilesdata.com/dodgers/data/batting/archive/dodgers_historic_batting_gamelogs.json",
             "content_type": "application/json",
             "last_updated": get_pacific_time(),
-            "description": "Historical batting game logs",
+            "description": "Game-by-game batting stats (doubles, homers, hits)",
             "cadence": "regular_season_daily",
-            "source": "baseball_reference_scrape"
+            "source": "mlb_statsapi",
+            "source_historical": "baseball_reference_archives"
         },
         {
             "id": "historic_pitching_gamelogs",
@@ -161,9 +164,10 @@ def build_manifest():
             "url": "https://stilesdata.com/dodgers/data/pitching/dodgers_historic_pitching_gamelogs_1958-present.json",
             "content_type": "application/json",
             "last_updated": get_pacific_time(),
-            "description": "Historical pitching game logs",
+            "description": "Game-by-game pitching stats (ERA, K's, hits allowed)",
             "cadence": "regular_season_daily",
-            "source": "baseball_reference_scrape"
+            "source": "mlb_statsapi",
+            "source_historical": "baseball_reference_archives"
         },
         {
             "id": "shohei_pitch_mix",
