@@ -17,8 +17,8 @@ async function fetchData() {
 }
 
 function renderChart(data) {
-  // Dynamically get the current year as a string
-  const currentYear = new Date().getFullYear().toString();
+  // Dynamically get the current year as an integer
+  const currentYear = new Date().getFullYear();
   const isMobile = window.innerWidth <= 767; // Example breakpoint for mobile devices
   const margin = isMobile 
     ? { top: 30, right: 20, bottom: 70, left: 70 }  // Smaller margins for mobile
@@ -348,7 +348,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
   function populateYearSelect(years) {
       const yearSelect = document.getElementById('year-select');
-      const currentYear = new Date().getFullYear().toString(); // Get the current year as a string
+      const currentYear = new Date().getFullYear(); // Get the current year as an integer
       years
           .filter(year => year !== currentYear) // Exclude the current year
           .forEach(year => {
@@ -365,7 +365,7 @@ document.addEventListener('DOMContentLoaded', function() {
   }
 
   function drawLines(svg, data) {
-    const currentYear = new Date().getFullYear().toString();
+    const currentYear = new Date().getFullYear();
   
     // Create the line generator with fallback conversion for wins and gm.
     const line = d3.line()
@@ -693,7 +693,7 @@ document.addEventListener('DOMContentLoaded', function() {
           .curve(d3.curveMonotoneX);
     
         const allLinesExceptCurrentYear = Array.from(data.entries()).filter(
-          (d) => d[0] !== new Date().getFullYear().toString()
+          (d) => d[0] !== new Date().getFullYear()
         );
         svg
           .selectAll('.line')
@@ -708,7 +708,7 @@ document.addEventListener('DOMContentLoaded', function() {
           .style('stroke', '#ccc')
           .style('stroke-width', 0.5);
     
-        const currentYear = new Date().getFullYear().toString();
+        const currentYear = new Date().getFullYear();
         const lineCurrentYear = Array.from(data.entries()).filter((d) => d[0] === currentYear);
         if (lineCurrentYear.length > 0) {
           svg
@@ -885,7 +885,7 @@ document.addEventListener('DOMContentLoaded', function() {
       .curve(d3.curveMonotoneX);
 
     const allLinesExceptCurrentYear = Array.from(data.entries()).filter(
-      (d) => d[0] !== new Date().getFullYear().toString()
+      (d) => d[0] !== new Date().getFullYear()
     );
     svg
       .selectAll('.line')
@@ -898,7 +898,7 @@ document.addEventListener('DOMContentLoaded', function() {
       .style('stroke', '#ccc')
       .style('stroke-width', 0.5);
 
-    const currentYear = new Date().getFullYear().toString();
+    const currentYear = new Date().getFullYear();
     const lineCurrentYear = Array.from(data.entries()).filter((d) => d[0] === currentYear);
     if (lineCurrentYear.length > 0) {
       svg
@@ -1066,7 +1066,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
     // Draw all lines except the current year first
     const allLinesExceptCurrentYear = Array.from(data.entries()).filter(
-      (d) => d[0] !== new Date().getFullYear().toString()
+      (d) => d[0] !== new Date().getFullYear()
     );
 
     svg
