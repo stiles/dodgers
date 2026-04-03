@@ -190,43 +190,48 @@ def upload_to_s3(df: pd.DataFrame, s3_key: str, profile_name: Optional[str] = No
 
 def main():
     """Main execution"""
-    profile_name = os.environ.get("AWS_PROFILE", "haekeo" if os.environ.get("GITHUB_ACTIONS") != "true" else None)
+    try:
+        profile_name = os.environ.get("AWS_PROFILE", "haekeo" if os.environ.get("GITHUB_ACTIONS") != "true" else None)
+        
+        logging.info(f"Building standings for season {year} from boxscores archive")
+        
+        # Load boxscores archive
+        boxscores_df = load_boxscores(profile_name)
+        logging.info(f"Loaded {len(boxscores_df)} total boxscore records")
+        
+        # Build current season standings
+        standings_current = build_standings_from_boxscores(boxscores_df, year)
+        
+        if standings_current.empty:
+            logging.error(f"No standings data generated for {year}")
+            return
+        
+        # Load historical archive (1958-2025)
+        logging.info("Loading historical standings archive")
+        historic_df = pd.read_parquet(HISTORIC_ARCHIVE)
+        logging.info(f"Loaded {len(historic_df)} historical records")
+        
+        # Combine current season with historical
+        combined_df = pd.concat([standings_current, historic_df]).sort_values(
+            ["year", "gm"], ascending=[False, True]
+        ).reset_index(drop=True)
+        
+        logging.info(f"Combined total: {len(combined_df)} records")
+        
+        # Save locally
+        formats = ["csv", "json", "parquet"]
+        save_dataframe_formats(standings_current, f"{output_dir}/dodgers_standings_current", formats)
+        save_dataframe_formats(combined_df, f"{output_dir}/dodgers_standings_1958_present", formats)
+        
+        # Upload to S3
+        upload_to_s3(standings_current, "dodgers/data/standings/dodgers_standings_current", profile_name)
+        upload_to_s3(combined_df, "dodgers/data/standings/dodgers_standings_1958_present", profile_name)
+        
+        logging.info("Standings processing complete!")
     
-    logging.info(f"Building standings for season {year} from boxscores archive")
-    
-    # Load boxscores archive
-    boxscores_df = load_boxscores(profile_name)
-    logging.info(f"Loaded {len(boxscores_df)} total boxscore records")
-    
-    # Build current season standings
-    standings_current = build_standings_from_boxscores(boxscores_df, year)
-    
-    if standings_current.empty:
-        logging.error(f"No standings data generated for {year}")
-        return
-    
-    # Load historical archive (1958-2025)
-    logging.info("Loading historical standings archive")
-    historic_df = pd.read_parquet(HISTORIC_ARCHIVE)
-    logging.info(f"Loaded {len(historic_df)} historical records")
-    
-    # Combine current season with historical
-    combined_df = pd.concat([standings_current, historic_df]).sort_values(
-        ["year", "gm"], ascending=[False, True]
-    ).reset_index(drop=True)
-    
-    logging.info(f"Combined total: {len(combined_df)} records")
-    
-    # Save locally
-    formats = ["csv", "json", "parquet"]
-    save_dataframe_formats(standings_current, f"{output_dir}/dodgers_standings_current", formats)
-    save_dataframe_formats(combined_df, f"{output_dir}/dodgers_standings_1958_present", formats)
-    
-    # Upload to S3
-    upload_to_s3(standings_current, "dodgers/data/standings/dodgers_standings_current", profile_name)
-    upload_to_s3(combined_df, "dodgers/data/standings/dodgers_standings_1958_present", profile_name)
-    
-    logging.info("Standings processing complete!")
+    except Exception as e:
+        logging.error(f"Fatal error in main(): {e}", exc_info=True)
+        raise
 
 
 if __name__ == "__main__":
