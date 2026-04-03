@@ -36,11 +36,26 @@ def get_s3_client(profile_name: Optional[str] = None):
     return session.client("s3")
 
 
-def load_boxscores() -> pd.DataFrame:
-    """Load boxscores to get list of game PKs"""
-    with open(LOCAL_BOXES, 'r') as f:
-        data = json.load(f)
-    return pd.DataFrame(data)
+def load_boxscores(profile_name: Optional[str] = None) -> pd.DataFrame:
+    """Load boxscores archive from S3 or local"""
+    # Try S3 first
+    try:
+        s3 = get_s3_client(profile_name)
+        obj = s3.get_object(Bucket=BUCKET, Key="dodgers/data/standings/dodgers_boxscores.json")
+        text = obj["Body"].read().decode("utf-8")
+        logging.info(f"Loaded boxscores from S3")
+        return pd.DataFrame(json.loads(text))
+    except Exception as e:
+        logging.warning(f"Could not load from S3: {e}")
+    
+    # Try local
+    if os.path.exists(LOCAL_BOXES):
+        with open(LOCAL_BOXES, 'r') as f:
+            logging.info(f"Loaded boxscores from local: {LOCAL_BOXES}")
+            data = json.load(f)
+        return pd.DataFrame(data)
+    
+    raise FileNotFoundError(f"Could not load boxscores from S3 or local ({LOCAL_BOXES})")
 
 
 def fetch_game_pitching_stats(game_pk: int, season: int) -> dict:
