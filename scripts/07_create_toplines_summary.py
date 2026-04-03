@@ -185,7 +185,8 @@ except json.JSONDecodeError:
 
 # Standings
 standings = read_parquet_s3(standings_url, sort_by='game_date').query(f"year == '{year}'")
-standings['result'] = standings['result'].str.split('-wo', expand=True)[0]
+# Remove "-wo" suffix if present (walkoff wins/losses)
+standings['result'] = standings['result'].str.replace('-wo', '', regex=False)
 standings['opp_name'] = standings['opp'].map(mlb_teams)
 standings.loc[standings.result == "L", "result_clean"] = "loss"
 standings.loc[standings.result == "W", "result_clean"] = "win"
