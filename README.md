@@ -6,9 +6,43 @@ The code executes an automated workflow to fetch, process and store the team's c
 
 These records are processed and used to bake out the site using the Jekyll static site generator, in concert with Github Pages, and D3.js for charts. 
 
-The data is sourced from [Baseball Reference](https://www.baseball-reference.com/teams/LAD/), [Baseball Savant](https://baseballsavant.mlb.com/), and [MLB StatsAPI](https://statsapi.mlb.com/) and consolidated into unified datasets for analysis and visualization purposes only. The resulting site is a non-commercial fan project.
+The data is sourced primarily from [MLB Stats API](https://statsapi.mlb.com/) for current season data (standings, batting, pitching, schedule), with [Baseball Savant](https://baseballsavant.mlb.com/) for advanced metrics (xwOBA, pitch tracking, umpire scorecards). Historical data (1958-2025) is sourced from [Baseball Reference](https://www.baseball-reference.com/teams/LAD/) archives. All data is consolidated into unified datasets for analysis and visualization purposes only. The resulting site is a non-commercial fan project.
 
 ## Architecture
+
+### Data sources
+
+**Current season (2026):**
+- **MLB Stats API** (`statsapi.mlb.com`) - Primary source for standings, batting, pitching, schedule
+  - Updates within 1-2 minutes of game completion
+  - Official MLB data source
+  - Used for all real-time statistics
+
+**Advanced metrics:**
+- **Baseball Savant** (`baseballsavant.mlb.com`) - Pitch tracking, xwOBA, umpire scorecards
+  - Statcast data for detailed analysis
+  - Updated daily
+
+**Historical data (1958-2025):**
+- **Baseball Reference archives** - Season-end snapshots stored in `/archive/` directories
+  - Used for "Then and now" chart comparisons
+  - One-time fetch per season, not time-sensitive
+
+### Archive strategy for season continuity
+
+All current season game data flows through persistent archives to prevent data gaps:
+
+1. **Boxscores archive** (`dodgers_boxscores.json`)
+   - Each game added when final
+   - Persists across seasons (2021-present)
+   - Source for all game-by-game processing
+
+2. **Season-specific files** (e.g., `dodgers_batting_gamelogs_2026.parquet`)
+   - Generated from boxscores archive
+   - One file per season year
+   - When 2027 starts, 2026 data is already archived
+
+This ensures charts maintain historical context and there are no data gaps during season transitions.
 
 ### Phase-aware data pipeline
 
@@ -54,22 +88,25 @@ The repository includes numerous Python scripts that perform the following daily
 
 **Regular season scripts (run multiple times daily):**
 
-- **League standings (reference for rankings):** `scripts/00_fetch_league_standings.py`
-- **Update Savant boxscores archive (discovers new games, fetches only new finals):** `scripts/02_update_boxscores_archive.py`
-- **League ranks (scraped):** `scripts/03_scrape_league_ranks.py`
-- **Latest and historical standings:** `scripts/04_fetch_process_standings.py`
-- **Team batting (figures and league ranks):** `scripts/05_fetch_process_batting.py`
-- **Team pitching (figures and league ranks):** `scripts/06_fetch_process_pitching.py`
-- **Dashboard summary statistics:** `scripts/07_create_toplines_summary.py`
-- **Run differential for current season (from Savant boxscores):** `scripts/09_build_wins_losses_from_boxscores.py`
-- **Team schedule:** `scripts/13_fetch_process_schedule.py`
-- **MLB batting (league-level tables):** `scripts/14_fetch_process_batting_mlb.py`
-- **xwOBA rolling windows (current season):** `scripts/15_fetch_xwoba.py`
-- **Shohei Ohtani season data:** `scripts/16_fetch_shohei.py`
-- **Win projection model:** `scripts/18_generate_projection.py`
-- **Roster:** `scripts/19_fetch_roster.py`
-- **Game pitch-by-pitch:** `scripts/20_fetch_game_pitches.py`
-- **Pitch summaries:** `scripts/21_summarize_pitch_data.py`
+- **League standings (current standings for all teams):** `scripts/00_fetch_league_standings.py` - MLB Stats API
+- **Update boxscores archive (game-by-game results):** `scripts/02_update_boxscores_archive.py` - MLB Stats API
+- **League ranks (team rankings):** `scripts/03_scrape_league_ranks.py` - MLB.com
+- **Game-by-game standings (built from boxscores archive):** `scripts/04_fetch_process_standings.py` - MLB Stats API
+- **Team batting stats:** `scripts/05_fetch_process_batting.py` - MLB Stats API
+- **Team pitching stats:** `scripts/06_fetch_process_pitching.py` - MLB Stats API
+- **Dashboard summary statistics:** `scripts/07_create_toplines_summary.py` - Aggregates from multiple sources
+- **Wins/losses/run differential:** `scripts/09_build_wins_losses_from_boxscores.py` - MLB Stats API
+- **Batting gamelogs (cumulative doubles, homers):** `scripts/10_fetch_process_historic_batting_gamelogs.py` - MLB Stats API
+- **Pitching gamelogs (cumulative ERA, K's, hits):** `scripts/12_fetch_process_historic_pitching_gamelogs.py` - MLB Stats API
+- **Team schedule (last 10, next 10 games):** `scripts/13_fetch_process_schedule.py` - MLB Stats API
+- **MLB batting (league-level tables):** `scripts/14_fetch_process_batting_mlb.py` - MLB BDFed API
+- **xwOBA rolling windows:** `scripts/15_fetch_xwoba.py` - Baseball Savant
+- **Shohei Ohtani season data:** `scripts/16_fetch_shohei.py` - MLB BDFed API
+- **Win projection model:** `scripts/18_generate_projection.py` - Derived from standings
+- **Roster:** `scripts/19_fetch_roster.py` - MLB Stats API
+- **Game pitch-by-pitch:** `scripts/20_fetch_game_pitches.py` - Baseball Savant
+- **Pitch summaries (umpire scorecards):** `scripts/21_summarize_pitch_data.py` - Baseball Savant
+- **ABS challenges:** `scripts/30_fetch_abs_challenges.py` - MLB Stats API
 
 **Postseason scripts:**
 
@@ -79,13 +116,13 @@ The repository includes numerous Python scripts that perform the following daily
 
 **Offseason scripts (run weekly):**
 
-- **Team post-season history:** `scripts/08_fetch_process_season_outcomes.py`
-- **Past/present team batting performance:** `scripts/10_fetch_process_historic_batting_gamelogs.py`
-- **Team attendance (all teams):** `scripts/11_fetch_process_attendance.py`
-- **Past/present team pitching performance:** `scripts/12_fetch_process_historic_pitching_gamelogs.py`
-- **Roster:** `scripts/19_fetch_roster.py`
-- **Transactions:** `scripts/26_post_transactions.py`
-- **News:** `scripts/24_fetch_news.py`
+- **Team post-season history:** `scripts/08_fetch_process_season_outcomes.py` - Baseball Reference archives
+- **Past/present team batting performance:** `scripts/10_fetch_process_historic_batting_gamelogs.py` - MLB Stats API (current), BR archives (historical)
+- **Team attendance (all teams):** `scripts/11_fetch_process_attendance.py` - Baseball Reference
+- **Past/present team pitching performance:** `scripts/12_fetch_process_historic_pitching_gamelogs.py` - MLB Stats API (current), BR archives (historical)
+- **Roster:** `scripts/19_fetch_roster.py` - MLB Stats API
+- **Transactions:** `scripts/26_post_transactions.py` - MLB Stats API
+- **News:** `scripts/24_fetch_news.py` - RSS feeds
   
 Separate tweet/automation scripts are documented in the sections below (lineups, daily summaries, news, etc.).
 ### What they do:
