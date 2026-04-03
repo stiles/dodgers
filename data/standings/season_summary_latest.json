@@ -2,7 +2,7 @@
     {
         "stat_label":"Wins",
         "stat":"wins",
-        "value":4,
+        "value":5,
         "category":"standings",
         "context_value":6,
         "context_value_label":"This point last season"
@@ -18,7 +18,7 @@
     {
         "stat_label":"Record",
         "stat":"record",
-        "value":"4-2",
+        "value":"5-2",
         "category":"standings",
         "context_value":"6-0",
         "context_value_label":"This point last season"
@@ -26,7 +26,7 @@
     {
         "stat_label":"Win percentage",
         "stat":"win_pct",
-        "value":"67%",
+        "value":"71%",
         "category":"standings",
         "context_value":"100%",
         "context_value_label":"This point last season"
@@ -50,7 +50,7 @@
     {
         "stat_label":"Runs",
         "stat":"runs",
-        "value":23,
+        "value":36,
         "category":"standings",
         "context_value":"5th",
         "context_value_label":"League rank"
@@ -58,7 +58,7 @@
     {
         "stat_label":"Runs against",
         "stat":"runs_against",
-        "value":17,
+        "value":23,
         "category":"standings",
         "context_value":17,
         "context_value_label":"This point last season"
@@ -66,7 +66,7 @@
     {
         "stat_label":"Run differential",
         "stat":"run_differential",
-        "value":6,
+        "value":13,
         "category":"standings",
         "context_value":19,
         "context_value_label":"This point last season"
@@ -114,7 +114,7 @@
     {
         "stat_label":"Stolen bases\/game",
         "stat":"stolen_bases_game",
-        "value":0.33,
+        "value":0.29,
         "category":"batting",
         "context_value":0.84,
         "context_value_label":"Rate all last season"
@@ -156,7 +156,7 @@
         "stat":"avg_against",
         "value":".188",
         "category":"pitching",
-        "context_value":"7th",
+        "context_value":"8th",
         "context_value_label":"League rank"
     },
     {
@@ -170,7 +170,7 @@
     {
         "stat_label":"Last updated",
         "stat":"update_time",
-        "value":"April 3, 2026, 1:50 PM PT",
+        "value":"April 3, 2026, 2:01 PM PT",
         "category":"summary",
         "context_value":"",
         "context_value_label":""
