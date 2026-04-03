@@ -212,13 +212,9 @@ def main():
         logging.info(f"Loaded {len(historic_df)} historical records")
         
         # Ensure consistent data types before combining
-        # Convert game_date to string in both dataframes
+        # Convert game_date to string in both dataframes to avoid Parquet mixed-type errors
         standings_current["game_date"] = standings_current["game_date"].astype(str)
         historic_df["game_date"] = pd.to_datetime(historic_df["game_date"]).dt.strftime("%Y-%m-%d")
-        
-        # Ensure year is string in both
-        standings_current["year"] = standings_current["year"].astype(str)
-        historic_df["year"] = historic_df["year"].astype(str)
         
         # Combine current season with historical
         combined_df = pd.concat([standings_current, historic_df]).sort_values(
