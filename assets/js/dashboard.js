@@ -337,8 +337,8 @@ document.addEventListener('DOMContentLoaded', function() {
   async function fetchCumulativeWinsData() {
       try {
           const response = await d3.json(await getDatasetUrl('standings_1958_present'));
-          // Group data by year
-          groupedByYear = d3.group(response, (d) => d.year);
+          // Group data by year (convert to string for consistency with other charts)
+          groupedByYear = d3.group(response, (d) => d.year.toString());
           populateYearSelect(Array.from(groupedByYear.keys()));
           renderCumulativeWinsChart(groupedByYear);
       } catch (error) {
@@ -348,7 +348,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
   function populateYearSelect(years) {
       const yearSelect = document.getElementById('year-select');
-      const currentYear = new Date().getFullYear(); // Get the current year as an integer
+      const currentYear = new Date().getFullYear().toString(); // Get the current year as a string
       years
           .filter(year => year !== currentYear) // Exclude the current year
           .forEach(year => {
@@ -365,7 +365,7 @@ document.addEventListener('DOMContentLoaded', function() {
   }
 
   function drawLines(svg, data) {
-    const currentYear = new Date().getFullYear();
+    const currentYear = new Date().getFullYear().toString();
   
     // Create the line generator with fallback conversion for wins and gm.
     const line = d3.line()
