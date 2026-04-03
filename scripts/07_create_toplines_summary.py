@@ -278,15 +278,32 @@ batting_now = batting.query(f"season == '{year}'").copy()
 pitching = read_parquet_s3(pitching_url)
 # pitching_ranks = read_parquet_s3(pitching_ranks_url) # Removed
 
-def current_season_stats(standings_now, standings_past, pitching, standings_last):
-    games = standings_now["gm"].iloc[0]
-    wins = standings_now["wins"].iloc[0]
+def current_season_stats(standings_now, standings_past, pitching, standings_last, standings_live_lad=None):
+    # Prefer live MLB standings for current season stats (faster updates)
+    if standings_live_lad is not None and not standings_live_lad.empty:
+        games = standings_live_lad["games_played"].iloc[0]
+        wins = standings_live_lad["wins"].iloc[0]
+        losses = standings_live_lad["losses"].iloc[0]
+        record = f"{wins}-{losses}"
+        # Handle winning_percentage which comes as string like ".714"
+        win_pct_str = str(standings_live_lad["winning_percentage"].iloc[0])
+        win_pct_float = float(win_pct_str.lstrip('.')) if win_pct_str.startswith('.') else float(win_pct_str)
+        # If it's already a decimal (e.g., 0.714), use as is; if it's like "714", divide by 1000
+        if win_pct_float > 1:
+            win_pct = int(win_pct_float / 10)
+        else:
+            win_pct = int(win_pct_float * 100)
+    else:
+        # Fallback to Baseball Reference data if live data unavailable
+        games = standings_now["gm"].iloc[0]
+        wins = standings_now["wins"].iloc[0]
+        losses = standings_now["losses"].iloc[0]
+        record = standings_now["record"].iloc[0]
+        win_pct = int(standings_now["win_pct"].iloc[0] * 100)
+    
     wins_last = standings_last["wins"].iloc[0] if not standings_last.empty else 0
-    losses = standings_now["losses"].iloc[0]
     losses_last = standings_last["losses"].iloc[0] if not standings_last.empty else 0
-    record = standings_now["record"].iloc[0]
     record_last = standings_last["record"].iloc[0] if not standings_last.empty else "0-0"
-    win_pct = int(standings_now["win_pct"].iloc[0] * 100)
     win_pct_last = int(standings_last["win_pct"].iloc[0] * 100) if not standings_last.empty else 0
     
     # Calculate decade average, handling NaN if query returns empty
@@ -337,13 +354,21 @@ def current_season_stats(standings_now, standings_past, pitching, standings_last
 
     return games, wins, losses, record, win_pct, win_pct_decade_thispoint, era, era_rank, strikeouts, strikeouts_rank, walks, walks_rank, wins_last, losses_last, record_last, win_pct_last, home_runs_allowed, whip, whip_rank, avg_against, avg_against_rank, k_bb_ratio, k_bb_ratio_rank
 
-def run_differential(standings):
-    runs = standings["r"].sum()
+def run_differential(standings, standings_live_lad=None):
+    # Prefer live MLB standings for current runs data
+    if standings_live_lad is not None and not standings_live_lad.empty:
+        runs = standings_live_lad["runs_scored"].iloc[0]
+        runs_against = standings_live_lad["runs_against"].iloc[0]
+        run_diff = standings_live_lad["run_differential"].iloc[0]
+    else:
+        # Fallback to Baseball Reference game-by-game data
+        runs = standings["r"].sum()
+        runs_against = standings["ra"].sum()
+        run_diff = runs - runs_against
+    
     runs_last = standings_last_season['r'].sum()
     runs_rank = to_ordinal(league_ranks_data.get('hitting_runs', 'N/A'))
-    runs_against = standings["ra"].sum()
     runs_against_last = standings_last_season['ra'].sum()
-    run_diff = runs - runs_against
     run_diff_last = runs_last - runs_against_last
     mean_attendance = standings.query('home_away == "home"')['attendance'].mean()
     home_games_count = len(standings.query('home_away == "home"'))
@@ -921,8 +946,8 @@ def recent_trend(standings):
     loss_count_trend = last_10[last_10 == "L"].count()
     return win_count_trend, loss_count_trend, f"Recent trend: {win_count_trend} wins, {loss_count_trend} losses"
 
-games, wins, losses, record, win_pct, win_pct_decade_thispoint, era, era_rank, strikeouts, strikeouts_rank, walks, walks_rank, wins_last, losses_last, record_last, win_pct_last, home_runs_allowed, whip, whip_rank, avg_against, avg_against_rank, k_bb_ratio, k_bb_ratio_rank = current_season_stats(standings_now, standings_past, pitching, standings_last)
-runs, runs_last, runs_rank, runs_against, runs_against_last, run_diff, run_diff_last, mean_attendance, formatted_mean_attendance, home_games_count = run_differential(standings)
+games, wins, losses, record, win_pct, win_pct_decade_thispoint, era, era_rank, strikeouts, strikeouts_rank, walks, walks_rank, wins_last, losses_last, record_last, win_pct_last, home_runs_allowed, whip, whip_rank, avg_against, avg_against_rank, k_bb_ratio, k_bb_ratio_rank = current_season_stats(standings_now, standings_past, pitching, standings_last, standings_live_lad)
+runs, runs_last, runs_rank, runs_against, runs_against_last, run_diff, run_diff_last, mean_attendance, formatted_mean_attendance, home_games_count = run_differential(standings, standings_live_lad)
 home_runs, home_runs_rank, home_runs_game, home_runs_game_last, home_runs_game_decade = home_run_stats(batting_now, batting_past)
 batting_average, batting_average_decade, stolen_bases, stolen_bases_rank, stolen_bases_game, stolen_bases_last_rate, on_base_pct, on_base_pct_decade = batting_and_stolen_base_stats(batting_now, batting_past, games)
 win_count_trend, loss_count_trend, win_loss_trend = recent_trend(standings.iloc[:10])
