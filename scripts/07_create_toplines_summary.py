@@ -188,8 +188,8 @@ standings = read_parquet_s3(standings_url, sort_by='game_date').query(f"year == 
 # Remove "-wo" suffix if present (walkoff wins/losses)
 standings['result'] = standings['result'].str.replace('-wo', '', regex=False)
 standings['opp_name'] = standings['opp'].map(mlb_teams)
-standings.loc[standings.result == "L", "result_clean"] = "loss"
-standings.loc[standings.result == "W", "result_clean"] = "win"
+# Create result_clean column
+standings['result_clean'] = standings['result'].map({'W': 'win', 'L': 'loss', 'T': 'tie'})
 standings_past = read_parquet_s3(standings_url, sort_by='game_date').query(f"year == '{last_year}'")
 standings_now = standings.query("game_date == game_date.max()").copy()
 # Prefer local _data standings file (same one the site tables use); fallback to remote
