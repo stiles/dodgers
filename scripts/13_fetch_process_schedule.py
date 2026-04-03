@@ -2,164 +2,186 @@
 # coding: utf-8
 
 """
-LA Dodgers schedule snapshot
-This notebook downloads the team's current standings table from [Baseball Reference](https://www.baseball-reference.com/teams/LAD/2024-schedule-scores.shtml) and creates a results/schedule table listing five games in the past and future.
+LA Dodgers schedule from MLB Stats API
+Creates tables showing last 10 games and next 10 games
 """
 
-# Import Python tools
 import os
 import pandas as pd
 import requests
-from bs4 import BeautifulSoup
 import boto3
-from io import StringIO
-from io import BytesIO
 import logging
 from datetime import datetime, timedelta
+from io import BytesIO
+import pytz
 
-# Set up basic configuration for logging
 logging.basicConfig(level=logging.INFO, format='%(asctime)s - %(levelname)s - %(message)s')
 
-# Determine if running in a GitHub Actions environment
-is_github_actions = os.getenv('GITHUB_ACTIONS') == 'true'
+DODGERS_TEAM_ID = 119
+BUCKET = "stilesdata.com"
 
-# AWS credentials and session initialization
-aws_key_id = os.environ.get("AWS_ACCESS_KEY_ID")
-aws_secret_key = os.environ.get("AWS_SECRET_ACCESS_KEY")
-aws_region = "us-west-1"
-
-# Conditional AWS session creation based on the environment
-if is_github_actions:
-    # In GitHub Actions, use environment variables directly
-    session = boto3.Session(
-        aws_access_key_id=aws_key_id,
-        aws_secret_access_key=aws_secret_key,
-        region_name=aws_region
-    )
-else:
-    # Locally, use a specific profile
-    session = boto3.Session(profile_name="haekeo", region_name=aws_region)
-
-s3_resource = session.resource("s3")
-
-# Base directory settings
-base_dir = os.getcwd()
-data_dir = os.path.join(base_dir, 'data', 'standings')
-
-profile_name = os.environ.get("AWS_PERSONAL_PROFILE")
-year = pd.Timestamp.today().year
-year = pd.to_datetime("now").strftime("%Y")
-
-mlb_teams = {
-    "ARI": "Arizona Diamondbacks",
-    "ATL": "Atlanta Braves",
-    "BAL": "Baltimore Orioles",
-    "BOS": "Boston Red Sox",
-    "CHC": "Chicago Cubs",
-    "CHW": "Chicago White Sox",
-    "CIN": "Cincinnati Reds",
-    "CLE": "Cleveland Guardians",
-    "COL": "Colorado Rockies",
-    "DET": "Detroit Tigers",
-    "HOU": "Houston Astros",
-    "KCR": "Kansas City Royals",
-    "LAA": "Los Angeles Angels",
-    "LAD": "Los Angeles Dodgers",
-    "MIA": "Miami Marlins",
-    "MIL": "Milwaukee Brewers",
-    "MIN": "Minnesota Twins",
-    "NYM": "New York Mets",
-    "NYY": "New York Yankees",
-    "ATH": "Athletics",
-    "PHI": "Philadelphia Phillies",
-    "PIT": "Pittsburgh Pirates",
-    "SDP": "San Diego Padres",
-    "SFG": "San Francisco Giants",
-    "SEA": "Seattle Mariners",
-    "STL": "St. Louis Cardinals",
-    "TBR": "Tampa Bay Rays",
-    "TEX": "Texas Rangers",
-    "TOR": "Toronto Blue Jays",
-    "WSN": "Washington Nationals"
+HEADERS = {
+    'User-Agent': 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36'
 }
 
-# Configuration
-year = pd.to_datetime("now").strftime("%Y")
-url = f"https://www.baseball-reference.com/teams/LAD/{year}-schedule-scores.shtml"
-output_dir = "data/standings"
-csv_file = f"{output_dir}/dodgers_schedule.csv"
-json_file = f"{output_dir}/dodgers_schedule.json"
-parquet_file = f"{output_dir}/dodgers_schedule.parquet"
-s3_bucket = "stilesdata.com"
 
-def fetch_clean_current_schedule(url, year):
-    response = requests.get(url)
-    html_content = BeautifulSoup(response.content, 'html.parser')
-    raw_df = pd.read_html(StringIO(str(html_content)))[0].rename(columns={"Gm#": "game_no", "Unnamed: 4": "home_away", 'W/L': 'result'}).assign(season=year)
-    df = raw_df.query("Tm !='Tm'").copy()
-    df.columns = df.columns.str.lower()
-    print(df.columns)
-    df['opp_name'] = df['opp'].map(mlb_teams)
-    df['date'] = df['date'].dropna().str.split(', ', expand=True)[1]
-    df['date'] = df['date'].str.split(' \(', expand=True)[0]
-    df['date'] = pd.to_datetime(df['date'].dropna() + " " + df['season'].astype(str))
-    df['date'] = df['date'].dt.strftime('%b %-d')
-    df['home_away'] = df['home_away'].apply(lambda i: 'away' if i == '@' else 'home')
-    # Parse result with score to preserve last game's score string
-    # Example values: 'W-5-3', 'L-2-4', 'W', 'L', None
-    df['result_raw'] = df['result'].astype(str)
-    df['result_letter'] = df['result_raw'].str[0]
-    df['result_letter'] = df['result_letter'].where(df['result_letter'].isin(['W','L']), None)
-    df['result'] = df['result_letter'].map({'W':'win','L':'loss'})
-    # Extract score part after first dash
-    score_part = df['result_raw'].str.extract(r'^[WL]-(.+)$')[0]
-    df['score'] = score_part.where(df['result'].notna(), None)
-    # Where result is neither win nor loss, set placeholder
-    df.loc[df['result'].isna(), 'result'] = '--'
-    df = df.drop(["unnamed: 2", "streak", "orig. scheduled", 'inn', 'tm', 'ra', 'rank', 'gb', 'win', 'opp', 'loss', 'save', 'time', 'd/n', 'w-l', 'attendance'], axis=1)
-    return df
+def get_s3_resource():
+    """Get S3 resource with environment-based credentials"""
+    if os.getenv('GITHUB_ACTIONS') == 'true':
+        session = boto3.Session(
+            aws_access_key_id=os.environ.get("AWS_ACCESS_KEY_ID"),
+            aws_secret_access_key=os.environ.get("AWS_SECRET_ACCESS_KEY"),
+            region_name="us-west-1"
+        )
+    else:
+        profile = os.environ.get("AWS_PROFILE", "haekeo")
+        session = boto3.Session(profile_name=profile, region_name="us-west-1")
+    
+    return session.resource("s3")
 
-# Convert time from Eastern to Pacific manually
-def convert_time_to_pacific_manual(time_str):
+
+def fetch_schedule_from_mlb_api(season: int) -> pd.DataFrame:
+    """Fetch full season schedule from MLB Stats API"""
+    # Get schedule for entire season
+    start_date = f"{season}-02-01"  # Spring training starts
+    end_date = f"{season}-11-30"    # World Series ends
+    
+    url = "https://statsapi.mlb.com/api/v1/schedule"
+    params = {
+        'sportId': 1,
+        'teamId': DODGERS_TEAM_ID,
+        'startDate': start_date,
+        'endDate': end_date,
+        'hydrate': 'team,linescore'
+    }
+    
     try:
-        time = datetime.strptime(time_str, '%I:%M %p')
-        time -= timedelta(hours=3)
-        return time.strftime('%-I:%M %p')
+        response = requests.get(url, params=params, headers=HEADERS, timeout=30)
+        response.raise_for_status()
+        data = response.json()
+        
+        games = []
+        for date_entry in data.get('dates', []):
+            for game in date_entry.get('games', []):
+                game_data = parse_game(game)
+                if game_data:
+                    games.append(game_data)
+        
+        if not games:
+            logging.error("No games found in schedule")
+            return pd.DataFrame()
+        
+        df = pd.DataFrame(games)
+        logging.info(f"Fetched {len(df)} games from schedule")
+        return df
+        
     except Exception as e:
-        logging.error(f"Failed to convert time: {e}")
-        return time_str
+        logging.error(f"Failed to fetch schedule: {e}")
+        raise
 
-src = fetch_clean_current_schedule(url, year)
 
-# Create a more robust indicator for completed games
-# A game is completed if either cli is not null OR result is 'win' or 'loss'
-src['game_completed'] = (~src['cli'].isnull()) | (src['result'].isin(['win', 'loss']))
+def parse_game(game: dict) -> dict:
+    """Parse a single game from MLB API response"""
+    try:
+        teams = game.get('teams', {})
+        status = game.get('status', {})
+        game_date_str = game.get('gameDate')
+        
+        # Parse game date/time
+        game_date_utc = datetime.fromisoformat(game_date_str.replace('Z', '+00:00'))
+        
+        # Convert to Pacific Time
+        pacific = pytz.timezone('US/Pacific')
+        game_date_pacific = game_date_utc.astimezone(pacific)
+        
+        # Determine if Dodgers are home or away
+        is_home = teams.get('home', {}).get('team', {}).get('id') == DODGERS_TEAM_ID
+        
+        if is_home:
+            opponent_name = teams.get('away', {}).get('team', {}).get('name', 'Unknown')
+            dodgers_score = teams.get('home', {}).get('score')
+            opponent_score = teams.get('away', {}).get('score')
+        else:
+            opponent_name = teams.get('home', {}).get('team', {}).get('name', 'Unknown')
+            dodgers_score = teams.get('away', {}).get('score')
+            opponent_score = teams.get('home', {}).get('score')
+        
+        # Determine result
+        game_state = status.get('detailedState', '')
+        result = None
+        game_start = None
+        
+        if game_state in ['Final', 'Completed']:
+            # Completed game
+            if dodgers_score is not None and opponent_score is not None:
+                result = 'win' if dodgers_score > opponent_score else 'loss'
+                game_start = f"{dodgers_score}-{opponent_score}"  # Show score for completed games
+        elif game_state in ['Scheduled', 'Pre-Game']:
+            # Upcoming game
+            result = '--'
+            game_start = game_date_pacific.strftime('%-I:%M %p')  # Show time for upcoming games
+        elif game_state in ['In Progress', 'Delayed']:
+            # Game in progress
+            result = 'in progress'
+            game_start = 'Live'
+        else:
+            # Postponed, cancelled, etc.
+            result = '--'
+            game_start = game_state
+        
+        return {
+            'game_pk': game.get('gamePk'),
+            'date': game_date_pacific.strftime('%b %-d'),
+            'date_full': game_date_pacific.strftime('%Y-%m-%d'),
+            'opp_name': opponent_name,
+            'home_away': 'home' if is_home else 'away',
+            'result': result,
+            'game_start': game_start,
+            'status': game_state,
+            'is_final': game_state in ['Final', 'Completed']
+        }
+        
+    except Exception as e:
+        logging.warning(f"Failed to parse game: {e}")
+        return None
 
-next_five = src.query('~game_completed').head(10).drop(['cli', 'season', 'game_completed'], axis=1).copy()
-last_five = src.query('game_completed').tail(10).drop(['cli', 'season', 'game_completed'], axis=1).copy()
-next_five['placement'] = 'next'
-last_five['placement'] = 'last'
 
-schedule_df = pd.concat([last_five, next_five], ignore_index=True)
-# For completed games, show score instead of time; for upcoming, show time
-schedule_df['game_start'] = schedule_df.apply(
-    lambda row: row['score'] if row['result'] in ['win', 'loss'] and isinstance(row.get('score'), str) and row['score'] else row.get('r', '--'),
-    axis=1
-)
-schedule_df = schedule_df[['date', 'opp_name', 'home_away', 'result', 'placement', 'game_start']]
+def build_schedule_tables(df: pd.DataFrame) -> pd.DataFrame:
+    """Build last 10 and next 10 game tables"""
+    # Exclude spring training (Angels in March)
+    df['date_dt'] = pd.to_datetime(df['date_full'])
+    march_angels = (
+        (df['date_dt'].dt.month == 3) & 
+        (df['opp_name'].str.contains('Angels', na=False))
+    )
+    df = df[~march_angels].reset_index(drop=True)
+    
+    # Split into completed and upcoming
+    completed = df[df['is_final'] == True].copy()
+    upcoming = df[df['is_final'] == False].copy()
+    
+    # Last 10 games
+    last_ten = completed.tail(10).copy()
+    last_ten['placement'] = 'last'
+    
+    # Next 10 games
+    next_ten = upcoming.head(10).copy()
+    next_ten['placement'] = 'next'
+    
+    # Combine
+    schedule = pd.concat([last_ten, next_ten], ignore_index=True)
+    
+    # Keep only needed columns
+    schedule = schedule[['date', 'opp_name', 'home_away', 'result', 'placement', 'game_start']]
+    
+    logging.info(f"Built schedule table: {len(last_ten)} past games, {len(next_ten)} upcoming games")
+    return schedule
 
-# Convert time-like strings to Pacific Time; ignore scores like '5-3'
-def is_time_string(s: str) -> bool:
-    if not isinstance(s, str):
-        return False
-    return bool(pd.Series([s]).str.match(r'^\d{1,2}:\d{2}\s?(AM|PM)$', case=False, na=False).iloc[0])
 
-schedule_df['game_start'] = schedule_df['game_start'].apply(
-    lambda x: convert_time_to_pacific_manual(x) if isinstance(x, str) and is_time_string(x) else x
-)
-
-# Function to save DataFrame to S3
-def save_to_s3(df, base_path, s3_bucket, formats):
+def save_to_s3(df: pd.DataFrame, base_path: str, bucket: str, formats: list):
+    """Save DataFrame to S3 in multiple formats"""
+    s3 = get_s3_resource()
+    
     for fmt in formats:
         try:
             buffer = BytesIO()
@@ -169,13 +191,62 @@ def save_to_s3(df, base_path, s3_bucket, formats):
             elif fmt == "json":
                 df.to_json(buffer, indent=4, orient="records", lines=False)
                 content_type = "application/json"
+            
             buffer.seek(0)
-            s3_resource.Bucket(s3_bucket).put_object(Key=f"{base_path}.{fmt}", Body=buffer, ContentType=content_type)
-            logging.info(f"Uploaded {fmt} to {s3_bucket}/{base_path}.{fmt}")
+            s3.Bucket(bucket).put_object(
+                Key=f"{base_path}.{fmt}",
+                Body=buffer,
+                ContentType=content_type
+            )
+            logging.info(f"Uploaded {fmt} to {bucket}/{base_path}.{fmt}")
         except Exception as e:
             logging.error(f"Failed to upload {fmt} to S3: {e}")
 
-# Saving files locally and to S3
-file_path = os.path.join(data_dir, 'dodgers_schedule')
-formats = ["csv", "json"]
-save_to_s3(schedule_df, "dodgers/data/standings/dodgers_schedule", "stilesdata.com", formats)
+
+def save_locally(df: pd.DataFrame, base_path: str, formats: list):
+    """Save DataFrame locally"""
+    os.makedirs(os.path.dirname(base_path), exist_ok=True)
+    
+    for fmt in formats:
+        file_path = f"{base_path}.{fmt}"
+        if fmt == "csv":
+            df.to_csv(file_path, index=False)
+        elif fmt == "json":
+            df.to_json(file_path, indent=4, orient="records", lines=False)
+        logging.info(f"Saved locally: {file_path}")
+
+
+def main():
+    """Main execution"""
+    season = datetime.now().year
+    
+    logging.info(f"Fetching Dodgers schedule for {season} from MLB Stats API")
+    
+    # Fetch schedule
+    df = fetch_schedule_from_mlb_api(season)
+    
+    if df.empty:
+        logging.error("No schedule data retrieved")
+        return
+    
+    # Build last 10 / next 10 tables
+    schedule = build_schedule_tables(df)
+    
+    # Save locally
+    save_locally(schedule, "data/standings/dodgers_schedule", ["csv", "json"])
+    
+    # Upload to S3
+    save_to_s3(schedule, "dodgers/data/standings/dodgers_schedule", BUCKET, ["csv", "json"])
+    
+    logging.info("Schedule processing complete!")
+    
+    # Print summary
+    last_count = len(schedule[schedule['placement'] == 'last'])
+    next_count = len(schedule[schedule['placement'] == 'next'])
+    print(f"\nSchedule summary:")
+    print(f"  Last {last_count} games included")
+    print(f"  Next {next_count} games included")
+
+
+if __name__ == "__main__":
+    main()
