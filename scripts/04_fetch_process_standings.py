@@ -1,209 +1,233 @@
 #!/usr/bin/env python
 # coding: utf-8
 
-# # LA Dodgers Standings, 1958-present
-# This script downloads the team's current standings table from [Baseball Reference](https://www.baseball-reference.com/teams/LAD/2024-schedule-scores.shtml) and combines it with historic records for later analysis and visualization.
-
 """
-LA Dodgers Standings, 1958-present
-This script downloads the team's current standings table from Baseball Reference and combines it with historic records.
+LA Dodgers Standings: Build from MLB API boxscores archive
+Replaces Baseball Reference scraping with archive-based processing
 """
 
 import os
-import sys
 import pandas as pd
-import requests
-from bs4 import BeautifulSoup
 import boto3
-from io import StringIO
+import json
 import logging
+from datetime import datetime
+from typing import Optional
 
 logging.basicConfig(level=logging.INFO, format='%(asctime)s - %(levelname)s - %(message)s')
 
 # Configuration
-year = pd.to_datetime("now").strftime("%Y")
-url = f"https://www.baseball-reference.com/teams/LAD/{year}-schedule-scores.shtml"
+BUCKET = "stilesdata.com"
+BOXES_KEY_JSON = "dodgers/data/standings/dodgers_boxscores.json"
+LOCAL_BOXES_JSON = os.path.join("data", "standings", "dodgers_boxscores.json")
+HISTORIC_ARCHIVE = "https://stilesdata.com/dodgers/data/standings/archive/dodgers_standings_1958_2025.parquet"
+
 output_dir = "data/standings"
-csv_file = f"{output_dir}/dodgers_standings_1958_present.csv"
-csv_file_slim = f"{output_dir}/dodgers_standings_1958_present_optimized.csv"
-json_file = f"{output_dir}/dodgers_standings_1958_present.json"
-json_file_slim = f"{output_dir}/dodgers_standings_1958_present_optimized.json"
-historic_file = "https://stilesdata.com/dodgers/data/standings/archive/dodgers_standings_1958_2025.parquet"
-parquet_file = f"{output_dir}/dodgers_standings_1958_present.parquet"
-s3_bucket = "stilesdata.com"
-s3_key_csv = "dodgers/data/standings/dodgers_standings_1958_present.csv"
-s3_key_json = "dodgers/data/standings/dodgers_standings_1958_present.json"
-s3_key_slim_csv = "dodgers/data/standings/dodgers_standings_1958_present_optimized.csv"
-s3_key_slim_json = "dodgers/data/standings/dodgers_standings_1958_present_optimized.json"
-s3_key_parquet = "dodgers/data/standings/dodgers_standings_1958_present.parquet"
+year = str(datetime.now().year)
 
 
-# AWS session and S3 resource
-session = boto3.Session(
-    aws_access_key_id=os.getenv('AWS_ACCESS_KEY_ID'),
-    aws_secret_access_key=os.getenv('AWS_SECRET_ACCESS_KEY'),
-)
-s3 = session.resource('s3')
-
-
-# Fetch and process the current year's data
-def fetch_current_year_data(url, year):
-    logging.info("Fetching current year's data.")
-    response = requests.get(url)
-    soup = BeautifulSoup(response.content, 'html.parser')
-    src = (pd.read_html(StringIO(str(soup)))[0].query("Tm !='Tm' and Inn != 'Game Preview, and Matchups'")
-              .drop(["Unnamed: 2", "Streak", "Orig. Scheduled"], axis=1)
-              .rename(columns={"Unnamed: 4": "home_away"})
-              .assign(season=year))
+def get_s3_client(profile_name: Optional[str] = None):
+    """Get S3 client with local/CI fallback"""
+    if profile_name:
+        session = boto3.session.Session(profile_name=profile_name)
+        return session.client("s3")
     
-    src.columns = src.columns.str.lower().str.replace("/", "_").str.replace("-", "-")
-    src.columns = [
-        "gm",
-        "date",
-        "tm",
-        "home_away",
-        "opp",
-        "result",
-        "r",
-        "ra",
-        "inn",
-        "record",
-        "rank",
-        "gb",
-        "win",
-        "loss",
-        "save",
-        "time",
-        "day_night",
-        "attendance",
-        "cli",
-        "year",
-    ]
-
-    # Convert date types where needed
-    src["gm"] = src["gm"].astype(int)
-    src["year"] = src["year"].astype(str)
-
-    # Split, format date
-    src[["weekday", "date"]] = src["date"].str.split(", ", expand=True)
-    src["date"] = src["date"].str.replace(" (1)", "").str.replace(" (2)", "")
-    src["game_date"] = pd.to_datetime(src["date"] + ", " + src["year"], format="%b %d, %Y").astype(str)
-
-    # Clean home-away column
-    src.loc[src.home_away == "@", "home_away"] = "away"
-    src.loc[src.home_away.isna(), "home_away"] = "home"
-
-    # Games back figures as a number
-    src["gb"] = (
-        src["gb"].str.replace("up ", "up").str.replace("up", "+").str.replace("Tied", "0")
-    )
-    src["gb"] = src["gb"].apply(
-        lambda x: float(x) if x.startswith("+") else -float(x) if float(x) != 0 else 0
-    )
-
-    src["attendance"] = src["attendance"].fillna(0)
-    src["gm"] = src["gm"].astype(int)
-    src[["r", "ra", "attendance", "gm", "rank"]] = src[
-        ["r", "ra", "attendance", "gm", "rank"]
-    ].astype(int)
-
-    src["time"] = src["time"] + ":00"
-    src["time_minutes"] = pd.to_timedelta(src["time"]).dt.total_seconds() / 60
-    src["time_minutes"] = src["time_minutes"].astype(int)
-
-    src[['wins', 'losses']] = src['record'].str.split('-', expand=True).astype(int)
-    src['win_pct'] = (src['wins'] / src['gm']).round(2)
-    src['game_day'] = pd.to_datetime(src['game_date']).dt.day_name()
-    src["result"] = src["result"].str.split("-", expand=True)[0]
-
-    # Just the columns we need
-    src_df = src[
-        [
-            "gm",
-            "game_date",
-            "home_away",
-            "opp",
-            "result",
-            "r",
-            "ra",
-            "record",
-            "rank",
-            "gb",
-            "time",
-            "time_minutes",
-            "day_night",
-            "attendance",
-            "year",
-            "wins",
-            "losses",
-            "win_pct",
-            "game_day",
-            
-        ]
-    ].copy()
+    if os.environ.get("GITHUB_ACTIONS") == "true":
+        return boto3.client("s3")
     
-    return src_df
+    env_profile = os.environ.get("AWS_PROFILE")
+    resolved = env_profile or "haekeo"
+    session = boto3.session.Session(profile_name=resolved)
+    return session.client("s3")
 
 
-# Load historic data
-def load_historic_data(filepath):
-    logging.info("Loading historic data.")
-    historic_df = pd.read_parquet(filepath)
-    historic_df["gm"] = historic_df["gm"].astype(int)
-    historic_df[["r", "ra", "attendance", "gm", "rank"]] = historic_df[
-        ["r", "ra", "attendance", "gm", "rank"]
-    ].astype(int)
+def load_boxscores(profile_name: Optional[str] = None) -> pd.DataFrame:
+    """Load boxscores archive from S3 or local"""
+    # Try S3 first
+    try:
+        s3 = get_s3_client(profile_name)
+        obj = s3.get_object(Bucket=BUCKET, Key=BOXES_KEY_JSON)
+        text = obj["Body"].read().decode("utf-8")
+        logging.info(f"Loaded boxscores from S3: {BOXES_KEY_JSON}")
+        return pd.DataFrame(json.loads(text))
+    except Exception as e:
+        logging.warning(f"Could not load from S3: {e}")
+    
+    # Try local
+    if os.path.exists(LOCAL_BOXES_JSON):
+        with open(LOCAL_BOXES_JSON, "r", encoding="utf-8") as f:
+            logging.info(f"Loaded boxscores from local: {LOCAL_BOXES_JSON}")
+            return pd.DataFrame(json.load(f))
+    
+    raise FileNotFoundError("Boxscores archive not found in S3 or local")
 
-    historic_df[['wins', 'losses']] = historic_df['record'].str.split('-', expand=True).astype(int)
-    historic_df['win_pct'] = (historic_df['wins'] / historic_df['gm']).round(2)
-    historic_df['game_day'] = pd.to_datetime(historic_df['game_date']).dt.day_name()
-    historic_df["result"] = historic_df["result"].str.split("-", expand=True)[0]
 
-    if 'game_date' in historic_df.columns and historic_df['game_date'].dtype == 'object':
-        historic_df['game_date'] = pd.to_datetime(historic_df['game_date'])
-    return historic_df
+def build_standings_from_boxscores(df: pd.DataFrame, season: str) -> pd.DataFrame:
+    """Build game-by-game standings from boxscores archive"""
+    df = df.copy()
+    
+    # Filter for final games only and current season
+    if "is_final" in df.columns:
+        df = df[df["is_final"] == True]
+    
+    # Normalize date
+    df["game_date"] = pd.to_datetime(df.get("date", df.get("game_date")))
+    df = df[df["game_date"].dt.year == int(season)]
+    
+    # Exclude spring training exhibitions (Angels games in March)
+    march_angels = (
+        (df["game_date"].dt.month == 3) & 
+        (df["opponent_name"].str.contains("Angels", na=False))
+    )
+    df = df[~march_angels]
+    
+    # Sort by date
+    df = df.sort_values("game_date").reset_index(drop=True)
+    
+    if df.empty:
+        logging.warning(f"No games found for season {season}")
+        return pd.DataFrame()
+    
+    # Build core stats
+    standings = pd.DataFrame()
+    standings["gm"] = range(1, len(df) + 1)
+    standings["game_date"] = df["game_date"].dt.strftime("%Y-%m-%d")
+    standings["year"] = season
+    
+    # Home/away (convert dodgers_is_home boolean to home/away string)
+    standings["home_away"] = df["dodgers_is_home"].apply(lambda x: "home" if x else "away")
+    
+    # Opponent
+    standings["opp"] = df["opponent_name"]
+    
+    # Scores
+    standings["r"] = df["dodgers_runs"].astype(int)
+    standings["ra"] = df["opponent_runs"].astype(int)
+    
+    # Result
+    standings["run_diff"] = standings["r"] - standings["ra"]
+    standings["result"] = standings["run_diff"].apply(
+        lambda x: "W" if x > 0 else ("L" if x < 0 else "T")
+    )
+    
+    # Cumulative wins/losses
+    standings["wins"] = (standings["result"] == "W").cumsum()
+    standings["losses"] = (standings["result"] == "L").cumsum()
+    standings["record"] = standings["wins"].astype(str) + "-" + standings["losses"].astype(str)
+    
+    # Win percentage
+    standings["win_pct"] = (standings["wins"] / standings["gm"]).round(3)
+    
+    # Games back (relative to division leader at that point)
+    # For now, set to 0 (would need historical standings data to compute accurately)
+    standings["gb"] = 0
+    standings["rank"] = 1  # Simplified - would need division standings history
+    
+    # Attendance (from boxscores if available)
+    if "attendance" in df.columns:
+        standings["attendance"] = df["attendance"].fillna(0).astype(int)
+    else:
+        standings["attendance"] = 0
+    
+    # Game metadata
+    if "game_time_minutes" in df.columns:
+        standings["time_minutes"] = df["game_time_minutes"].fillna(0).astype(int)
+    else:
+        standings["time_minutes"] = 0
+    
+    # Convert time_minutes to HH:MM:SS format
+    hours = standings["time_minutes"] // 60
+    minutes = standings["time_minutes"] % 60
+    standings["time"] = hours.astype(str).str.zfill(2) + ":" + minutes.astype(str).str.zfill(2) + ":00"
+    
+    # Day/night - not in boxscores, default to N
+    standings["day_night"] = "N"
+    standings["game_day"] = df["game_date"].dt.day_name()
+    
+    logging.info(f"Built standings for {season}: {len(standings)} games")
+    return standings
 
-logging.basicConfig(level=logging.INFO, format='%(asctime)s - %(levelname)s - %(message)s')
+
+def save_dataframe_formats(df: pd.DataFrame, base_path: str, formats: list):
+    """Save DataFrame in multiple formats"""
+    os.makedirs(os.path.dirname(base_path), exist_ok=True)
+    
+    for fmt in formats:
+        file_path = f"{base_path}.{fmt}"
+        if fmt == "csv":
+            df.to_csv(file_path, index=False)
+        elif fmt == "json":
+            df.to_json(file_path, orient="records", indent=2)
+        elif fmt == "parquet":
+            df.to_parquet(file_path, index=False)
+        logging.info(f"Saved {fmt}: {file_path}")
+
+
+def upload_to_s3(df: pd.DataFrame, s3_key: str, profile_name: Optional[str] = None):
+    """Upload DataFrame to S3 in multiple formats"""
+    try:
+        s3 = get_s3_client(profile_name)
+        
+        # CSV
+        csv_buffer = df.to_csv(index=False).encode("utf-8")
+        s3.put_object(Bucket=BUCKET, Key=f"{s3_key}.csv", Body=csv_buffer, ContentType="text/csv")
+        logging.info(f"Uploaded to S3: {s3_key}.csv")
+        
+        # JSON
+        json_buffer = df.to_json(orient="records", indent=2).encode("utf-8")
+        s3.put_object(Bucket=BUCKET, Key=f"{s3_key}.json", Body=json_buffer, ContentType="application/json")
+        logging.info(f"Uploaded to S3: {s3_key}.json")
+        
+        # Parquet
+        parquet_buffer = df.to_parquet(index=False)
+        s3.put_object(Bucket=BUCKET, Key=f"{s3_key}.parquet", Body=parquet_buffer, ContentType="application/octet-stream")
+        logging.info(f"Uploaded to S3: {s3_key}.parquet")
+        
+    except Exception as e:
+        logging.error(f"S3 upload failed: {e}")
+        raise
+
 
 def main():
-    try:
-        os.makedirs(output_dir, exist_ok=True)
-        logging.info("Output directory checked/created.")
+    """Main execution"""
+    profile_name = os.environ.get("AWS_PROFILE", "haekeo" if os.environ.get("GITHUB_ACTIONS") != "true" else None)
+    
+    logging.info(f"Building standings for season {year} from boxscores archive")
+    
+    # Load boxscores archive
+    boxscores_df = load_boxscores(profile_name)
+    logging.info(f"Loaded {len(boxscores_df)} total boxscore records")
+    
+    # Build current season standings
+    standings_current = build_standings_from_boxscores(boxscores_df, year)
+    
+    if standings_current.empty:
+        logging.error(f"No standings data generated for {year}")
+        return
+    
+    # Load historical archive (1958-2025)
+    logging.info("Loading historical standings archive")
+    historic_df = pd.read_parquet(HISTORIC_ARCHIVE)
+    logging.info(f"Loaded {len(historic_df)} historical records")
+    
+    # Combine current season with historical
+    combined_df = pd.concat([standings_current, historic_df]).sort_values(
+        ["year", "gm"], ascending=[False, True]
+    ).reset_index(drop=True)
+    
+    logging.info(f"Combined total: {len(combined_df)} records")
+    
+    # Save locally
+    formats = ["csv", "json", "parquet"]
+    save_dataframe_formats(standings_current, f"{output_dir}/dodgers_standings_current", formats)
+    save_dataframe_formats(combined_df, f"{output_dir}/dodgers_standings_1958_present", formats)
+    
+    # Upload to S3
+    upload_to_s3(standings_current, "dodgers/data/standings/dodgers_standings_current", profile_name)
+    upload_to_s3(combined_df, "dodgers/data/standings/dodgers_standings_1958_present", profile_name)
+    
+    logging.info("Standings processing complete!")
 
-        src_df = fetch_current_year_data(url, year)
-        historic_df = load_historic_data(historic_file)
-
-        # Ensure both dataframes have the game_date in the correct format
-        if src_df['game_date'].dtype != 'datetime64[ns]':
-            src_df['game_date'] = pd.to_datetime(src_df['game_date'])
-
-        if historic_df['game_date'].dtype != 'datetime64[ns]':
-            historic_df['game_date'] = pd.to_datetime(historic_df['game_date'])
-
-        df = pd.concat([src_df, historic_df]).sort_values("game_date", ascending=False).drop_duplicates(subset=['gm', 'year']).reset_index(drop=True)
-
-        # Calculate run differential (runs scored - runs against)
-        df['run_diff'] = df['r'] - df['ra']
-        
-        df[['year', 'gm', 'win_pct', 'gb', 'run_diff']].to_csv(csv_file_slim, index=False)
-        df[['year', 'gm', 'win_pct', 'gb', 'run_diff']].to_json(json_file_slim, orient="records")
-        df.to_csv(csv_file, index=False)
-        df.to_json(json_file, orient="records")
-        df.to_parquet(parquet_file, index=False)
-
-        logging.info("Data written to JSON, CSV, and Parquet files.")
-
-        s3.Bucket(s3_bucket).upload_file(csv_file, s3_key_csv)
-        s3.Bucket(s3_bucket).upload_file(json_file, s3_key_json)
-        s3.Bucket(s3_bucket).upload_file(csv_file_slim, s3_key_slim_csv)
-        s3.Bucket(s3_bucket).upload_file(json_file_slim, s3_key_slim_json)
-        s3.Bucket(s3_bucket).upload_file(parquet_file, s3_key_parquet)
-
-        logging.info("Files successfully uploaded to S3.")
-
-    except Exception as e:
-        logging.error(f"An error occurred: {e}")
-        sys.exit(1)
 
 if __name__ == "__main__":
     main()
