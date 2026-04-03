@@ -221,6 +221,10 @@ def main():
         standings_current["game_date"] = standings_current["game_date"].astype(str)
         historic_df["game_date"] = pd.to_datetime(historic_df["game_date"]).dt.strftime("%Y-%m-%d")
         
+        # Ensure year is int in both dataframes
+        standings_current["year"] = standings_current["year"].astype(int)
+        historic_df["year"] = historic_df["year"].astype(int)
+        
         # Combine current season with historical
         logging.info("Combining current season with historical data")
         combined_df = pd.concat([standings_current, historic_df]).sort_values(
