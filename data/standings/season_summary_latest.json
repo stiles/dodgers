@@ -4,7 +4,7 @@
         "stat":"wins",
         "value":5,
         "category":"standings",
-        "context_value":6,
+        "context_value":7.0,
         "context_value_label":"This point last season"
     },
     {
@@ -12,7 +12,7 @@
         "stat":"losses",
         "value":2,
         "category":"standings",
-        "context_value":0,
+        "context_value":0.0,
         "context_value_label":"This point last season"
     },
     {
@@ -20,7 +20,7 @@
         "stat":"record",
         "value":"5-2",
         "category":"standings",
-        "context_value":"6-0",
+        "context_value":"7-0",
         "context_value_label":"This point last season"
     },
     {
@@ -42,7 +42,7 @@
     {
         "stat_label":"Avg. home attendance",
         "stat":"mean_attendance",
-        "value":"51,656",
+        "value":"0",
         "category":"standings",
         "context_value":6,
         "context_value_label":"Home games this season"
@@ -60,7 +60,7 @@
         "stat":"runs_against",
         "value":23,
         "category":"standings",
-        "context_value":17,
+        "context_value":18,
         "context_value_label":"This point last season"
     },
     {
@@ -68,7 +68,7 @@
         "stat":"run_differential",
         "value":13,
         "category":"standings",
-        "context_value":19,
+        "context_value":21,
         "context_value_label":"This point last season"
     },
     {
@@ -122,7 +122,7 @@
     {
         "stat_label":"Strikeouts",
         "stat":"strikeouts",
-        "value":"50",
+        "value":"55",
         "category":"pitching",
         "context_value":"20th",
         "context_value_label":"League rank"
@@ -130,7 +130,7 @@
     {
         "stat_label":"Walks",
         "stat":"walks",
-        "value":"16",
+        "value":21,
         "category":"pitching",
         "context_value":"19th",
         "context_value_label":"League rank"
@@ -138,7 +138,7 @@
     {
         "stat_label":"ERA",
         "stat":"era",
-        "value":"2.83",
+        "value":"3.29",
         "category":"pitching",
         "context_value":"7th",
         "context_value_label":"League rank"
@@ -146,31 +146,31 @@
     {
         "stat_label":"WHIP",
         "stat":"whip",
-        "value":"0.963",
+        "value":"1.08",
         "category":"pitching",
-        "context_value":"6th",
+        "context_value":"5th",
         "context_value_label":"League rank"
     },
     {
         "stat_label":"Batting average against",
         "stat":"avg_against",
-        "value":".188",
+        "value":".208",
         "category":"pitching",
-        "context_value":"8th",
+        "context_value":"6th",
         "context_value_label":"League rank"
     },
     {
         "stat_label":"K\/BB ratio",
         "stat":"k_bb_ratio",
-        "value":"3.13",
+        "value":2.62,
         "category":"pitching",
-        "context_value":"14th",
+        "context_value":"15th",
         "context_value_label":"League rank"
     },
     {
         "stat_label":"Last updated",
         "stat":"update_time",
-        "value":"April 3, 2026, 2:01 PM PT",
+        "value":"April 3, 2026, 2:53 PM PT",
         "category":"summary",
         "context_value":"",
         "context_value_label":""
