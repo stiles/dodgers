@@ -191,7 +191,8 @@ standings['opp_name'] = standings['opp'].map(mlb_teams)
 # Create result_clean column
 standings['result_clean'] = standings['result'].map({'W': 'win', 'L': 'loss', 'T': 'tie'})
 standings_past = read_parquet_s3(standings_url, sort_by='game_date').query(f"year == '{last_year}'")
-standings_now = standings.query("game_date == game_date.max()").copy()
+# Get most recent game (standings should already be sorted by game_date)
+standings_now = standings.iloc[[-1]].copy() if not standings.empty else pd.DataFrame()
 # Prefer local _data standings file (same one the site tables use); fallback to remote
 local_live_path = os.path.join(base_dir, '_data', 'standings', f'all_teams_standings_metrics_{year}.json')
 try:
@@ -234,6 +235,9 @@ try:
             last_game_result_live = 'win' if streak_type_val.lower() == 'wins' else 'loss'
 except Exception as _:
     last_game_result_live = None
+
+if standings_now.empty:
+    raise ValueError("No current standings data found - standings dataframe is empty")
 
 game_number = standings_now['gm'].iloc[0]
 standings_last = standings_past.query(f"gm == {game_number}").head(1).reset_index(drop=True).copy()
