@@ -208,15 +208,21 @@ def main():
         
         # Load historical archive (1958-2025)
         logging.info("Loading historical standings archive")
-        historic_df = pd.read_parquet(HISTORIC_ARCHIVE)
-        logging.info(f"Loaded {len(historic_df)} historical records")
+        try:
+            historic_df = pd.read_parquet(HISTORIC_ARCHIVE)
+            logging.info(f"Loaded {len(historic_df)} historical records")
+        except Exception as e:
+            logging.error(f"Failed to load historical archive: {e}", exc_info=True)
+            raise
         
         # Ensure consistent data types before combining
         # Convert game_date to string in both dataframes to avoid Parquet mixed-type errors
+        logging.info("Converting data types for compatibility")
         standings_current["game_date"] = standings_current["game_date"].astype(str)
         historic_df["game_date"] = pd.to_datetime(historic_df["game_date"]).dt.strftime("%Y-%m-%d")
         
         # Combine current season with historical
+        logging.info("Combining current season with historical data")
         combined_df = pd.concat([standings_current, historic_df]).sort_values(
             ["year", "gm"], ascending=[False, True]
         ).reset_index(drop=True)
@@ -224,11 +230,13 @@ def main():
         logging.info(f"Combined total: {len(combined_df)} records")
         
         # Save locally
+        logging.info("Saving files locally")
         formats = ["csv", "json", "parquet"]
         save_dataframe_formats(standings_current, f"{output_dir}/dodgers_standings_current", formats)
         save_dataframe_formats(combined_df, f"{output_dir}/dodgers_standings_1958_present", formats)
         
         # Upload to S3
+        logging.info("Uploading to S3")
         upload_to_s3(standings_current, "dodgers/data/standings/dodgers_standings_current", profile_name)
         upload_to_s3(combined_df, "dodgers/data/standings/dodgers_standings_1958_present", profile_name)
         
