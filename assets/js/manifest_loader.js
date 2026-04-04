@@ -17,13 +17,13 @@ export async function getManifest() {
   }
   
   // Try local path first (for development), then fallback to S3
-  const localUrl = '/data/manifest.json';
-  const s3Url = 'https://stilesdata.com/dodgers/data/manifest.json';
+  const cacheBust = `?_=${Date.now()}`;
+  const localUrl = `/data/manifest.json${cacheBust}`;
+  const s3Url = `https://stilesdata.com/dodgers/data/manifest.json${cacheBust}`;
   
   try {
     let response = await fetch(localUrl);
     if (!response.ok) {
-      // Fallback to S3 URL
       console.log('Local manifest not found, falling back to S3');
       response = await fetch(s3Url);
     }
@@ -54,7 +54,11 @@ export async function getDatasetUrl(datasetId) {
     throw new Error(`Dataset not found: ${datasetId}`);
   }
   
-  return dataset.url;
+  const url = new URL(dataset.url);
+  if (dataset.last_updated) {
+    url.searchParams.set('v', dataset.last_updated);
+  }
+  return url.toString();
 }
 
 /**
