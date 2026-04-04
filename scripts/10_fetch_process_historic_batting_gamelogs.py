@@ -149,7 +149,7 @@ def build_batting_gamelogs(season: int) -> pd.DataFrame:
     # Add year column
     df['year'] = season
     
-    # Add cumulative columns
+    # Add cumulative columns (long names for clarity)
     df['cumulative_doubles'] = df['doubles'].cumsum()
     df['cumulative_triples'] = df['triples'].cumsum()
     df['cumulative_home_runs'] = df['home_runs'].cumsum()
@@ -157,6 +157,15 @@ def build_batting_gamelogs(season: int) -> pd.DataFrame:
     df['cumulative_runs'] = df['runs'].cumsum()
     df['cumulative_rbi'] = df['rbi'].cumsum()
     df['cumulative_stolen_bases'] = df['stolen_bases'].cumsum()
+    
+    # Add short field name aliases to match historical data schema
+    df['2b_cum'] = df['cumulative_doubles']
+    df['3b_cum'] = df['cumulative_triples']
+    df['hr_cum'] = df['cumulative_home_runs']
+    df['h_cum'] = df['cumulative_hits']
+    df['r_cum'] = df['cumulative_runs']
+    df['rbi_cum'] = df['cumulative_rbi']
+    df['sb_cum'] = df['cumulative_stolen_bases']
     
     logging.info(f"Built batting gamelogs: {len(df)} games")
     return df

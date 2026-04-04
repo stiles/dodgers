@@ -169,7 +169,7 @@ def build_pitching_gamelogs(season: int) -> pd.DataFrame:
     # Convert IP to outs for cumulative calculation
     df['outs'] = df['innings_pitched'].apply(innings_to_outs)
     
-    # Add cumulative columns
+    # Add cumulative columns (long names for clarity)
     df['cumulative_outs'] = df['outs'].cumsum()
     df['cumulative_innings_pitched'] = df['cumulative_outs'].apply(outs_to_innings)
     df['cumulative_hits'] = df['hits'].cumsum()
@@ -182,6 +182,13 @@ def build_pitching_gamelogs(season: int) -> pd.DataFrame:
     # Calculate cumulative ERA (earned runs per 9 innings)
     df['cumulative_era'] = (df['cumulative_earned_runs'] * 27 / df['cumulative_outs']).round(2)
     df['cumulative_era'] = df['cumulative_era'].replace([float('inf'), float('-inf')], 0)
+    
+    # Add short field name aliases to match historical data schema
+    df['era_cum'] = df['cumulative_era']
+    df['h_cum'] = df['cumulative_hits']
+    df['hr_cum'] = df['cumulative_home_runs']
+    df['er_cum'] = df['cumulative_earned_runs']
+    df['so_cum'] = df['cumulative_strikeouts']
     
     logging.info(f"Built pitching gamelogs: {len(df)} games")
     return df
