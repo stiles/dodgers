@@ -221,22 +221,49 @@ def main():
     profile = os.environ.get("AWS_PROFILE", "haekeo" if os.environ.get("GITHUB_ACTIONS") != "true" else None)
     
     logging.info(f"Building pitching gamelogs for {season}")
-    df = build_pitching_gamelogs(season)
+    df_current = build_pitching_gamelogs(season)
     
-    if df.empty:
+    if df_current.empty:
         logging.error("No data generated")
         return
     
-    save_outputs(df, season, profile)
-    logging.info("Pitching gamelogs complete!")
+    # Save current season files
+    save_outputs(df_current, season, profile)
+    logging.info("Current season pitching gamelogs saved!")
+    
+    # Load and combine with historical archive (1958-2025)
+    HISTORIC_URL = "https://stilesdata.com/dodgers/data/pitching/dodgers_pitching_gamelogs_1958_2025.parquet"
+    try:
+        logging.info("Loading historical pitching gamelogs archive")
+        df_historic = pd.read_parquet(HISTORIC_URL)
+        logging.info(f"Loaded {len(df_historic)} historical records")
+        
+        # Combine current + historical
+        df_combined = pd.concat([df_current, df_historic]).sort_values(
+            ['year', 'gtm'], ascending=[False, True]
+        ).reset_index(drop=True)
+        
+        logging.info(f"Combined total: {len(df_combined)} records")
+        
+        # Upload combined file to archive path (what the charts use)
+        s3 = get_s3_client(profile)
+        archive_key = "dodgers/data/pitching/dodgers_historic_pitching_gamelogs_1958-present"
+        
+        # JSON (what the chart uses)
+        json_buf = df_combined.to_json(orient='records', indent=2).encode('utf-8')
+        s3.put_object(Bucket=BUCKET, Key=f"{archive_key}.json", Body=json_buf, ContentType="application/json")
+        logging.info(f"Uploaded combined archive to S3: {archive_key}.json")
+        
+    except Exception as e:
+        logging.warning(f"Could not load/combine historical archive: {e}")
     
     # Print summary
-    print(f"\nSeason totals through game {len(df)}:")
-    print(f"  Innings pitched: {df['cumulative_innings_pitched'].iloc[-1]}")
-    print(f"  ERA: {df['cumulative_era'].iloc[-1]}")
-    print(f"  Strikeouts: {df['cumulative_strikeouts'].iloc[-1]}")
-    print(f"  Hits allowed: {df['cumulative_hits'].iloc[-1]}")
-    print(f"  Walks: {df['cumulative_walks'].iloc[-1]}")
+    print(f"\nSeason totals through game {len(df_current)}:")
+    print(f"  Innings pitched: {df_current['cumulative_innings_pitched'].iloc[-1]}")
+    print(f"  ERA: {df_current['cumulative_era'].iloc[-1]}")
+    print(f"  Strikeouts: {df_current['cumulative_strikeouts'].iloc[-1]}")
+    print(f"  Hits allowed: {df_current['cumulative_hits'].iloc[-1]}")
+    print(f"  Walks: {df_current['cumulative_walks'].iloc[-1]}")
 
 
 if __name__ == "__main__":
