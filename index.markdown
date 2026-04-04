@@ -114,8 +114,6 @@ twitter:
 {% assign nl_central = nl_teams | where_exp: "item", "item.division_name == 'National League Central'" | sort: "division_rank" %}
 {% assign nl_east = nl_teams | where_exp: "item", "item.division_name == 'National League East'" | sort: "division_rank" %}
 
-<h2 class="stat-group">Season standings</h2>
-
 <h3 class="visual-subhead">National League by division</h3>
 <div class="tables-container standings-tables">
   <div class="table-wrapper">
