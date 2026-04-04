@@ -81,7 +81,7 @@ twitter:
 
 <h3 class="visual-subhead">Standings: Games <span class="win">up</span> or <span class="loss">back</span></h3>
 <div id="d3-container" style="width: 100%; padding-bottom: 20px;"></div>
-<p class="chart-note"><em>Note: Chart shows games back/up as of each Dodgers game. Current standings may differ if other division teams have played more recently.</em></p>
+<p class="note"><em>Note: Chart shows games back/up as of each Dodgers game. Current standings may differ if other division teams have played more recently.</em></p>
 
 {% assign current_year_str = site.time | date: '%Y' %}
 {% assign dynamic_filename_key = "all_teams_standings_metrics_" | append: current_year_str %}

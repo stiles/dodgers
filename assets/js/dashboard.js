@@ -201,10 +201,10 @@ function renderChart(data) {
       .attr('y', yScale(lastDataCurrent.gb) + -6)
       .text(() => {
           const gb = lastDataCurrent.gb;
-          if (gb < 0) {
-              return `Games up: ${Math.abs(gb)}`;
-          } else if (gb > 0) {
-              return `Games back: ${gb}`;
+          if (gb > 0) {
+              return `Games up: ${gb}`;
+          } else if (gb < 0) {
+              return `Games back: ${Math.abs(gb)}`;
           } else {
               return 'Even';
           }

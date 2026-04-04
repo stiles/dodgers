@@ -396,10 +396,20 @@ def main():
         save_dataframe_formats(standings_current, f"{output_dir}/dodgers_standings_current", formats)
         save_dataframe_formats(combined_df, f"{output_dir}/dodgers_standings_1958_present", formats)
         
+        # Build optimized (slim) version for the GB chart
+        # Historical data uses positive = leading; active script uses negative = leading.
+        # Flip current year's sign so the entire file is consistent (positive = leading).
+        logging.info("Building optimized standings for GB chart")
+        optimized = combined_df[['year', 'gm', 'win_pct', 'gb', 'run_diff']].copy()
+        current_year_mask = optimized['year'] == year
+        optimized.loc[current_year_mask, 'gb'] = -optimized.loc[current_year_mask, 'gb']
+        save_dataframe_formats(optimized, f"{output_dir}/dodgers_standings_1958_present_optimized", ["csv", "json"])
+        
         # Upload to S3
         logging.info("Uploading to S3")
         upload_to_s3(standings_current, "dodgers/data/standings/dodgers_standings_current", profile_name)
         upload_to_s3(combined_df, "dodgers/data/standings/dodgers_standings_1958_present", profile_name)
+        upload_to_s3(optimized, "dodgers/data/standings/dodgers_standings_1958_present_optimized", profile_name)
         
         logging.info("Standings processing complete!")
     
