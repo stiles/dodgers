@@ -59,9 +59,9 @@
         "date":"Apr 4",
         "opp_name":"Washington Nationals",
         "home_away":"away",
-        "result":"--",
-        "placement":"next",
-        "game_start":"1:05 PM"
+        "result":"win",
+        "placement":"last",
+        "game_start":"10-5"
     },
     {
         "date":"Apr 5",
@@ -129,6 +129,14 @@
     },
     {
         "date":"Apr 14",
+        "opp_name":"New York Mets",
+        "home_away":"home",
+        "result":"--",
+        "placement":"next",
+        "game_start":"7:10 PM"
+    },
+    {
+        "date":"Apr 15",
         "opp_name":"New York Mets",
         "home_away":"home",
         "result":"--",
