@@ -1,8 +1,8 @@
-game_pk,innings_pitched,hits,runs,earned_runs,walks,strikeouts,home_runs,hit_by_pitch,wild_pitches,balks,game_date,game_number,outs,cumulative_outs,cumulative_innings_pitched,cumulative_hits,cumulative_runs,cumulative_earned_runs,cumulative_walks,cumulative_strikeouts,cumulative_home_runs,cumulative_era
-823974,9.0,6,2,2,0,8,1,0,0,0,2026-03-26,1,27,27,9.0,6,2,2,0,8,1,2.0
-823971,9.0,8,4,4,4,12,1,0,0,0,2026-03-27,2,27,54,18.0,14,6,6,4,20,2,3.0
-823973,9.0,5,2,2,1,7,0,0,0,0,2026-03-28,3,27,81,27.0,19,8,8,5,27,2,2.67
-823972,9.0,9,4,4,3,8,0,0,0,0,2026-03-30,4,27,108,36.0,28,12,12,8,35,2,3.0
-823969,9.0,2,1,1,5,10,0,2,1,0,2026-03-31,5,27,135,45.0,30,13,13,13,45,2,2.6
-823970,9.0,6,4,4,3,5,2,1,0,0,2026-04-01,6,27,162,54.0,36,17,17,16,50,4,2.83
-822758,9.0,11,6,6,5,5,1,0,2,0,2026-04-03,7,27,189,63.0,47,23,23,21,55,5,3.29
+game_pk,innings_pitched,hits,runs,earned_runs,walks,strikeouts,home_runs,hit_by_pitch,wild_pitches,balks,game_date,game_number,year,outs,cumulative_outs,cumulative_innings_pitched,cumulative_hits,cumulative_runs,cumulative_earned_runs,cumulative_walks,cumulative_strikeouts,cumulative_home_runs,cumulative_era
+823974,9.0,6,2,2,0,8,1,0,0,0,2026-03-26,1,2026,27,27,9.0,6,2,2,0,8,1,2.0
+823971,9.0,8,4,4,4,12,1,0,0,0,2026-03-27,2,2026,27,54,18.0,14,6,6,4,20,2,3.0
+823973,9.0,5,2,2,1,7,0,0,0,0,2026-03-28,3,2026,27,81,27.0,19,8,8,5,27,2,2.67
+823972,9.0,9,4,4,3,8,0,0,0,0,2026-03-30,4,2026,27,108,36.0,28,12,12,8,35,2,3.0
+823969,9.0,2,1,1,5,10,0,2,1,0,2026-03-31,5,2026,27,135,45.0,30,13,13,13,45,2,2.6
+823970,9.0,6,4,4,3,5,2,1,0,0,2026-04-01,6,2026,27,162,54.0,36,17,17,16,50,4,2.83
+822758,9.0,11,6,6,5,5,1,0,2,0,2026-04-03,7,2026,27,189,63.0,47,23,23,21,55,5,3.29
