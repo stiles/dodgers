@@ -11,6 +11,7 @@ import pandas as pd
 import boto3
 import json
 import logging
+import requests
 from datetime import datetime
 from typing import Optional
 
@@ -60,6 +61,136 @@ def load_boxscores(profile_name: Optional[str] = None) -> pd.DataFrame:
             return pd.DataFrame(json.load(f))
     
     raise FileNotFoundError("Boxscores archive not found in S3 or local")
+
+
+def fetch_nl_west_standings(season: int) -> pd.DataFrame:
+    """Fetch game-by-game standings for all NL West teams"""
+    import requests
+    
+    # NL West team IDs
+    NL_WEST_TEAMS = {
+        119: 'Los Angeles Dodgers',
+        109: 'Arizona Diamondbacks',
+        137: 'San Francisco Giants',
+        135: 'San Diego Padres',
+        115: 'Colorado Rockies'
+    }
+    
+    all_games = []
+    
+    for team_id, team_name in NL_WEST_TEAMS.items():
+        logging.info(f"Fetching schedule for {team_name}")
+        
+        url = "https://statsapi.mlb.com/api/v1/schedule"
+        params = {
+            'sportId': 1,
+            'teamId': team_id,
+            'season': season,
+            'gameType': 'R',  # Regular season only
+            'hydrate': 'team,linescore'
+        }
+        
+        try:
+            response = requests.get(url, params=params, timeout=30)
+            response.raise_for_status()
+            data = response.json()
+            
+            for date_entry in data.get('dates', []):
+                for game in date_entry.get('games', []):
+                    if game.get('status', {}).get('abstractGameState') != 'Final':
+                        continue
+                    
+                    game_date = pd.to_datetime(game.get('gameDate')).strftime('%Y-%m-%d')
+                    teams = game.get('teams', {})
+                    home_team_id = teams.get('home', {}).get('team', {}).get('id')
+                    away_team_id = teams.get('away', {}).get('team', {}).get('id')
+                    
+                    # Determine if this team won
+                    if home_team_id == team_id:
+                        team_score = teams.get('home', {}).get('score', 0)
+                        opp_score = teams.get('away', {}).get('score', 0)
+                    else:
+                        team_score = teams.get('away', {}).get('score', 0)
+                        opp_score = teams.get('home', {}).get('score', 0)
+                    
+                    won = team_score > opp_score
+                    
+                    all_games.append({
+                        'team_id': team_id,
+                        'team_name': team_name,
+                        'game_date': game_date,
+                        'won': won
+                    })
+        
+        except Exception as e:
+            logging.error(f"Failed to fetch schedule for {team_name}: {e}")
+            continue
+    
+    if not all_games:
+        logging.warning("No NL West games fetched")
+        return pd.DataFrame()
+    
+    df = pd.DataFrame(all_games)
+    df['game_date'] = pd.to_datetime(df['game_date'])
+    df = df.sort_values(['team_id', 'game_date']).reset_index(drop=True)
+    
+    # Calculate cumulative wins and losses by team
+    df['wins'] = df.groupby('team_id')['won'].cumsum().astype(int)
+    df['games'] = df.groupby('team_id').cumcount() + 1
+    df['losses'] = df['games'] - df['wins']
+    
+    logging.info(f"Fetched {len(df)} total NL West games")
+    return df
+
+
+def calculate_games_back(dodgers_standings: pd.DataFrame, nl_west_df: pd.DataFrame) -> pd.DataFrame:
+    """Calculate game-by-game games back/up for Dodgers"""
+    dodgers_standings = dodgers_standings.copy()
+    dodgers_standings['game_date'] = pd.to_datetime(dodgers_standings['game_date'])
+    
+    gb_values = []
+    
+    for idx, row in dodgers_standings.iterrows():
+        game_date = row['game_date']
+        dodgers_wins = row['wins']
+        dodgers_losses = row['losses']
+        
+        # Get all NL West teams' records as of this date
+        teams_as_of_date = nl_west_df[nl_west_df['game_date'] <= game_date].copy()
+        
+        if teams_as_of_date.empty:
+            gb_values.append(0.0)
+            continue
+        
+        # Get latest record for each team as of this date
+        latest_records = teams_as_of_date.groupby('team_id').tail(1).copy()
+        
+        # Find division leader (most wins, best win %)
+        latest_records = latest_records.copy()
+        latest_records['win_pct'] = latest_records['wins'] / (latest_records['wins'] + latest_records['losses'])
+        leader = latest_records.sort_values(['wins', 'win_pct'], ascending=False).iloc[0]
+        
+        leader_wins = leader['wins']
+        leader_losses = leader['losses']
+        
+        # Calculate games back/up
+        # GB = ((Leader Wins - Team Wins) + (Team Losses - Leader Losses)) / 2
+        gb = ((leader_wins - dodgers_wins) + (dodgers_losses - leader_losses)) / 2.0
+        
+        # If Dodgers are the leader, negate to show games UP
+        if leader['team_id'] == 119:  # Dodgers team ID
+            # Find second place team
+            other_teams = latest_records[latest_records['team_id'] != 119]
+            if not other_teams.empty:
+                second_place = other_teams.sort_values(['wins', 'win_pct'], ascending=False).iloc[0]
+                gb = -((dodgers_wins - second_place['wins']) + (second_place['losses'] - dodgers_losses)) / 2.0
+        
+        gb_values.append(gb)
+    
+    dodgers_standings['gb'] = gb_values
+    dodgers_standings['game_date'] = dodgers_standings['game_date'].dt.strftime('%Y-%m-%d')
+    
+    return dodgers_standings
 
 
 def build_standings_from_boxscores(df: pd.DataFrame, season: int) -> pd.DataFrame:
@@ -206,6 +337,16 @@ def main():
         if standings_current.empty:
             logging.error(f"No standings data generated for {year}")
             return
+        
+        # Fetch NL West standings and calculate games back
+        logging.info("Fetching NL West standings for games back calculation")
+        nl_west_df = fetch_nl_west_standings(year)
+        
+        if not nl_west_df.empty:
+            logging.info("Calculating games back")
+            standings_current = calculate_games_back(standings_current, nl_west_df)
+        else:
+            logging.warning("Could not fetch NL West standings, gb will be 0")
         
         # Load historical archive (1958-2025)
         logging.info("Loading historical standings archive")
