@@ -91,6 +91,7 @@ def build_standings_from_boxscores(df: pd.DataFrame, season: int) -> pd.DataFram
     # Build core stats
     standings = pd.DataFrame()
     standings["gm"] = range(1, len(df) + 1)
+    standings["gtm"] = standings["gm"]  # Alias for charts
     standings["game_date"] = df["game_date"].dt.strftime("%Y-%m-%d")
     standings["year"] = season
     
