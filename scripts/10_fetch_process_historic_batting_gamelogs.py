@@ -149,6 +149,9 @@ def build_batting_gamelogs(season: int) -> pd.DataFrame:
     # Add year column
     df['year'] = season
     
+    # Add gtm alias for game_number (matches historical schema)
+    df['gtm'] = df['game_number']
+    
     # Add cumulative columns (long names for clarity)
     df['cumulative_doubles'] = df['doubles'].cumsum()
     df['cumulative_triples'] = df['triples'].cumsum()

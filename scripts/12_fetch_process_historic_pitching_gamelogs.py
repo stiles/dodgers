@@ -166,6 +166,9 @@ def build_pitching_gamelogs(season: int) -> pd.DataFrame:
     # Add year column
     df['year'] = season
     
+    # Add gtm alias for game_number (matches historical schema)
+    df['gtm'] = df['game_number']
+    
     # Convert IP to outs for cumulative calculation
     df['outs'] = df['innings_pitched'].apply(innings_to_outs)
     
