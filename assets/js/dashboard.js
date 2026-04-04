@@ -17,8 +17,8 @@ async function fetchData() {
 }
 
 function renderChart(data) {
-  // Dynamically get the current year as an integer
-  const currentYear = new Date().getFullYear();
+  // Dynamically get the current year as a string to match Map keys
+  const currentYear = new Date().getFullYear().toString();
   const isMobile = window.innerWidth <= 767; // Example breakpoint for mobile devices
   const margin = isMobile 
     ? { top: 30, right: 20, bottom: 70, left: 70 }  // Smaller margins for mobile
