@@ -27,6 +27,11 @@ def run_script(script_path):
         
         if result.returncode == 0:
             logging.info(f"✅ Success: {script_path}")
+            # Log stdout if it contains useful info
+            if result.stdout and result.stdout.strip():
+                for line in result.stdout.strip().split('\n')[-10:]:  # Last 10 lines
+                    if 'Fetching game' in line or 'Successfully fetched' in line or 'Uploaded combined' in line:
+                        logging.info(f"   {line}")
             return True
         else:
             logging.error(f"❌ Failed: {script_path}")
