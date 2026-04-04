@@ -129,14 +129,16 @@ def build_batting_gamelogs(season: int) -> pd.DataFrame:
         game_pk = row['game_pk']
         game_date = row['date'].strftime('%Y-%m-%d')
         
+        logging.info(f"Fetching game {idx + 1}/{len(boxes_df)}: {game_date} (PK: {game_pk})")
         stats = fetch_game_batting_stats(game_pk, season)
         if stats:
             stats['game_date'] = game_date
             stats['game_number'] = idx + 1
             game_stats.append(stats)
-            
-            if (idx + 1) % 10 == 0:
-                logging.info(f"Processed {idx + 1}/{len(boxes_df)} games")
+        else:
+            logging.warning(f"Skipped game {game_pk} - no stats returned")
+    
+    logging.info(f"Successfully fetched {len(game_stats)}/{len(boxes_df)} games")
     
     if not game_stats:
         logging.error("No batting stats collected")
