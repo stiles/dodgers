@@ -83,6 +83,11 @@ def fetch_schedule_from_mlb_api(season: int) -> pd.DataFrame:
 def parse_game(game: dict) -> dict:
     """Parse a single game from MLB API response"""
     try:
+        # Skip spring training and exhibition games
+        game_type = game.get('gameType')
+        if game_type in ['S', 'E']:
+            return None
+        
         teams = game.get('teams', {})
         status = game.get('status', {})
         game_date_str = game.get('gameDate')
@@ -148,14 +153,6 @@ def parse_game(game: dict) -> dict:
 
 def build_schedule_tables(df: pd.DataFrame) -> pd.DataFrame:
     """Build last 10 and next 10 game tables"""
-    # Exclude spring training (Angels in March)
-    df['date_dt'] = pd.to_datetime(df['date_full'])
-    march_angels = (
-        (df['date_dt'].dt.month == 3) & 
-        (df['opp_name'].str.contains('Angels', na=False))
-    )
-    df = df[~march_angels].reset_index(drop=True)
-    
     # Split into completed and upcoming
     completed = df[df['is_final'] == True].copy()
     upcoming = df[df['is_final'] == False].copy()
