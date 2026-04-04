@@ -1,29 +1,5 @@
 [
     {
-        "date":"Mar 17",
-        "opp_name":"Kansas City Royals",
-        "home_away":"away",
-        "result":"win",
-        "placement":"last",
-        "game_start":"10-4"
-    },
-    {
-        "date":"Mar 20",
-        "opp_name":"San Diego Padres",
-        "home_away":"home",
-        "result":"win",
-        "placement":"last",
-        "game_start":"4-3"
-    },
-    {
-        "date":"Mar 21",
-        "opp_name":"Athletics",
-        "home_away":"home",
-        "result":"loss",
-        "placement":"last",
-        "game_start":"5-5"
-    },
-    {
         "date":"Mar 26",
         "opp_name":"Arizona Diamondbacks",
         "home_away":"home",
@@ -78,14 +54,6 @@
         "result":"win",
         "placement":"last",
         "game_start":"13-6"
-    },
-    {
-        "date":"Mar 18",
-        "opp_name":"San Francisco Giants",
-        "home_away":"home",
-        "result":"--",
-        "placement":"next",
-        "game_start":"Completed Early"
     },
     {
         "date":"Apr 4",
@@ -153,6 +121,14 @@
     },
     {
         "date":"Apr 13",
+        "opp_name":"New York Mets",
+        "home_away":"home",
+        "result":"--",
+        "placement":"next",
+        "game_start":"7:10 PM"
+    },
+    {
+        "date":"Apr 14",
         "opp_name":"New York Mets",
         "home_away":"home",
         "result":"--",
