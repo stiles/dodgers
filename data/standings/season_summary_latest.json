@@ -34,7 +34,7 @@
     {
         "stat_label":"Games up\/back",
         "stat":"games_up_back",
-        "value":3,
+        "value":2.5,
         "category":"standings",
         "context_value":"1st",
         "context_value_label":"Division rank"
@@ -108,7 +108,7 @@
         "stat":"stolen_bases",
         "value":3,
         "category":"batting",
-        "context_value":"20th",
+        "context_value":"22nd",
         "context_value_label":"League rank"
     },
     {
@@ -124,7 +124,7 @@
         "stat":"strikeouts",
         "value":"66",
         "category":"pitching",
-        "context_value":"16th",
+        "context_value":"20th",
         "context_value_label":"League rank"
     },
     {
@@ -132,7 +132,7 @@
         "stat":"walks",
         "value":23,
         "category":"pitching",
-        "context_value":"21st",
+        "context_value":"24th",
         "context_value_label":"League rank"
     },
     {
@@ -148,7 +148,7 @@
         "stat":"whip",
         "value":"1.08",
         "category":"pitching",
-        "context_value":"5th",
+        "context_value":"4th",
         "context_value_label":"League rank"
     },
     {
@@ -156,7 +156,7 @@
         "stat":"avg_against",
         "value":".212",
         "category":"pitching",
-        "context_value":"6th",
+        "context_value":"5th",
         "context_value_label":"League rank"
     },
     {
@@ -164,13 +164,13 @@
         "stat":"k_bb_ratio",
         "value":2.87,
         "category":"pitching",
-        "context_value":"10th",
+        "context_value":"8th",
         "context_value_label":"League rank"
     },
     {
         "stat_label":"Last updated",
         "stat":"update_time",
-        "value":"April 4, 2026, 4:15 PM PT",
+        "value":"April 5, 2026, 1:20 AM PT",
         "category":"summary",
         "context_value":"",
         "context_value_label":""
@@ -178,7 +178,7 @@
     {
         "stat_label":"Team summary",
         "stat":"summary",
-        "value":"<span class='highlight'>LOS ANGELES<\/span> <span class='updated'>(April 4)<\/span> \u2014 The Dodgers have compiled a <span class='highlight'>6-2<\/span> record in the 2026 regular season, a <span class='highlight'>75%<\/span> winning percentage. The last game was a <span class='highlight'>10-5<\/span> away <span class='highlight'>win<\/span> against the <span class='highlight'>Washington Nationals<\/span>. The team will face the <span class='highlight'>Washington Nationals<\/span> next on Sunday at 10:35 a.m. PDT at <span class='highlight'>Nationals Park<\/span>.",
+        "value":"<span class='highlight'>LOS ANGELES<\/span> <span class='updated'>(April 5)<\/span> \u2014 The Dodgers have compiled a <span class='highlight'>6-2<\/span> record in the 2026 regular season, a <span class='highlight'>75%<\/span> winning percentage. The last game was a <span class='highlight'>10-5<\/span> away <span class='highlight'>win<\/span> against the <span class='highlight'>Washington Nationals<\/span>. The team will face the <span class='highlight'>Washington Nationals<\/span> next on Sunday at 10:35 a.m. PDT at <span class='highlight'>Nationals Park<\/span>.",
         "category":"summary",
         "context_value":"",
         "context_value_label":""
