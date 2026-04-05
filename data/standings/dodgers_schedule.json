@@ -67,9 +67,9 @@
         "date":"Apr 5",
         "opp_name":"Washington Nationals",
         "home_away":"away",
-        "result":"--",
-        "placement":"next",
-        "game_start":"10:35 AM"
+        "result":"win",
+        "placement":"last",
+        "game_start":"8-6"
     },
     {
         "date":"Apr 6",
@@ -142,5 +142,13 @@
         "result":"--",
         "placement":"next",
         "game_start":"7:10 PM"
+    },
+    {
+        "date":"Apr 17",
+        "opp_name":"Colorado Rockies",
+        "home_away":"away",
+        "result":"--",
+        "placement":"next",
+        "game_start":"5:40 PM"
     }
 ]

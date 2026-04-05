@@ -1,9 +1,9 @@
 {
     "dodgers": {
         "batting": {
-            "total": 18,
+            "total": 19,
             "successful": 11,
-            "failed": 7
+            "failed": 8
         },
         "pitching": {
             "total": 2,
@@ -28,12 +28,36 @@
             "failed": 0
         },
         "catching": {
-            "total": 21,
-            "successful": 12,
+            "total": 22,
+            "successful": 13,
             "failed": 9
         }
     },
     "challenge_log": [
+        {
+            "date": "2026-04-05",
+            "date_formatted": "April 5, 2026",
+            "challenger": "Drew Millas",
+            "role": "catching",
+            "team": "opponents",
+            "outcome": "overturned",
+            "result_desc": "Alex Call flies out to left fielder Daylen Lile.",
+            "batter": "Alex Call",
+            "pitcher": "Andre Granillo",
+            "game_pk": 822756
+        },
+        {
+            "date": "2026-04-05",
+            "date_formatted": "April 5, 2026",
+            "challenger": "Andy Pages",
+            "role": "batting",
+            "team": "dodgers",
+            "outcome": "confirmed",
+            "result_desc": "Andy Pages doubles (2) on a sharp ground ball to left fielder Daylen Lile. Freddie Freeman to 3rd.",
+            "batter": "Andy Pages",
+            "pitcher": "Cionel P\u00e9rez",
+            "game_pk": 822756
+        },
         {
             "date": "2026-04-04",
             "date_formatted": "April 4, 2026",
@@ -73,18 +97,6 @@
         {
             "date": "2026-04-03",
             "date_formatted": "April 3, 2026",
-            "challenger": "Luis Garc\u00eda Jr.",
-            "role": "batting",
-            "team": "opponents",
-            "outcome": "confirmed",
-            "result_desc": "Luis Garc\u00eda Jr. strikes out swinging.",
-            "batter": "Luis Garc\u00eda Jr.",
-            "pitcher": "Edgardo Henriquez",
-            "game_pk": 822758
-        },
-        {
-            "date": "2026-04-03",
-            "date_formatted": "April 3, 2026",
             "challenger": "Shohei Ohtani",
             "role": "batting",
             "team": "dodgers",
@@ -119,6 +131,54 @@
             "game_pk": 822758
         },
         {
+            "date": "2026-04-03",
+            "date_formatted": "April 3, 2026",
+            "challenger": "Luis Garc\u00eda Jr.",
+            "role": "batting",
+            "team": "opponents",
+            "outcome": "confirmed",
+            "result_desc": "Luis Garc\u00eda Jr. strikes out swinging.",
+            "batter": "Luis Garc\u00eda Jr.",
+            "pitcher": "Edgardo Henriquez",
+            "game_pk": 822758
+        },
+        {
+            "date": "2026-03-31",
+            "date_formatted": "March 31, 2026",
+            "challenger": "Will Smith",
+            "role": "catching",
+            "team": "dodgers",
+            "outcome": "overturned",
+            "result_desc": "Daniel Schneemann strikes out swinging.",
+            "batter": "Daniel Schneemann",
+            "pitcher": "Edwin D\u00edaz",
+            "game_pk": 823969
+        },
+        {
+            "date": "2026-03-31",
+            "date_formatted": "March 31, 2026",
+            "challenger": "Gabriel Arias",
+            "role": "batting",
+            "team": "opponents",
+            "outcome": "confirmed",
+            "result_desc": "Gabriel Arias grounds out, shortstop Mookie Betts to first baseman Freddie Freeman.",
+            "batter": "Gabriel Arias",
+            "pitcher": "Shohei Ohtani",
+            "game_pk": 823969
+        },
+        {
+            "date": "2026-03-31",
+            "date_formatted": "March 31, 2026",
+            "challenger": "Bo Naylor",
+            "role": "catching",
+            "team": "opponents",
+            "outcome": "confirmed",
+            "result_desc": "Max Muncy flies out to left fielder Angel Mart\u00ednez.",
+            "batter": "Max Muncy",
+            "pitcher": "Tanner Bibee",
+            "game_pk": 823969
+        },
+        {
             "date": "2026-03-31",
             "date_formatted": "March 31, 2026",
             "challenger": "Will Smith",
@@ -140,42 +200,6 @@
             "result_desc": "CJ Kayfus strikes out swinging.",
             "batter": "CJ Kayfus",
             "pitcher": "Shohei Ohtani",
-            "game_pk": 823969
-        },
-        {
-            "date": "2026-03-31",
-            "date_formatted": "March 31, 2026",
-            "challenger": "Bo Naylor",
-            "role": "catching",
-            "team": "opponents",
-            "outcome": "confirmed",
-            "result_desc": "Max Muncy flies out to left fielder Angel Mart\u00ednez.",
-            "batter": "Max Muncy",
-            "pitcher": "Tanner Bibee",
-            "game_pk": 823969
-        },
-        {
-            "date": "2026-03-31",
-            "date_formatted": "March 31, 2026",
-            "challenger": "Gabriel Arias",
-            "role": "batting",
-            "team": "opponents",
-            "outcome": "confirmed",
-            "result_desc": "Gabriel Arias grounds out, shortstop Mookie Betts to first baseman Freddie Freeman.",
-            "batter": "Gabriel Arias",
-            "pitcher": "Shohei Ohtani",
-            "game_pk": 823969
-        },
-        {
-            "date": "2026-03-31",
-            "date_formatted": "March 31, 2026",
-            "challenger": "Will Smith",
-            "role": "catching",
-            "team": "dodgers",
-            "outcome": "overturned",
-            "result_desc": "Daniel Schneemann strikes out swinging.",
-            "batter": "Daniel Schneemann",
-            "pitcher": "Edwin D\u00edaz",
             "game_pk": 823969
         },
         {
@@ -229,18 +253,6 @@
         {
             "date": "2026-03-28",
             "date_formatted": "March 28, 2026",
-            "challenger": "Edwin D\u00edaz",
-            "role": "pitching",
-            "team": "dodgers",
-            "outcome": "confirmed",
-            "result_desc": "Nolan Arenado flies out to center fielder Andy Pages.",
-            "batter": "Nolan Arenado",
-            "pitcher": "Edwin D\u00edaz",
-            "game_pk": 823973
-        },
-        {
-            "date": "2026-03-28",
-            "date_formatted": "March 28, 2026",
             "challenger": "James McCann",
             "role": "catching",
             "team": "opponents",
@@ -261,18 +273,6 @@
             "batter": "Alek Thomas",
             "pitcher": "Tyler Glasnow",
             "game_pk": 823973
-        },
-        {
-            "date": "2026-03-27",
-            "date_formatted": "March 27, 2026",
-            "challenger": "Gabriel Moreno",
-            "role": "catching",
-            "team": "opponents",
-            "outcome": "overturned",
-            "result_desc": "Shohei Ohtani walks.",
-            "batter": "Shohei Ohtani",
-            "pitcher": "Ryne Nelson",
-            "game_pk": 823971
         }
     ]
 }

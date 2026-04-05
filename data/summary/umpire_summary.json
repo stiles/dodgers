@@ -1,17 +1,17 @@
 {
     "season_summary": {
-        "correct_strikes_pct": 88.92045454545455,
-        "incorrect_strikes_pct": 11.079545454545453,
-        "total_called_strikes": 352,
-        "bad_calls_count": 39
+        "correct_strikes_pct": 89.15343915343915,
+        "incorrect_strikes_pct": 10.846560846560848,
+        "total_called_strikes": 378,
+        "bad_calls_count": 41
     },
     "last_game_summary": {
-        "date": "April 4, 2026",
-        "correct_strikes_pct": 89.1891891891892,
-        "incorrect_strikes_pct": 10.810810810810807,
-        "total_called_strikes": 37,
-        "bad_calls_count": 4,
-        "home_plate_umpire": "Doug Eddings"
+        "date": "April 5, 2026",
+        "correct_strikes_pct": 92.3076923076923,
+        "incorrect_strikes_pct": 7.692307692307693,
+        "total_called_strikes": 26,
+        "bad_calls_count": 2,
+        "home_plate_umpire": "Willie Traynor"
     },
     "worst_calls_of_season": [
         {
@@ -56,17 +56,17 @@
         }
     ],
     "pitching_season_summary": {
-        "correct_balls_pct": 95.67099567099568,
-        "incorrect_balls_pct": 4.32900432900432,
-        "total_called_balls": 693,
+        "correct_balls_pct": 95.9731543624161,
+        "incorrect_balls_pct": 4.026845637583904,
+        "total_called_balls": 745,
         "bad_calls_count": 30
     },
     "pitching_last_game_summary": {
-        "date": "April 4, 2026",
-        "correct_balls_pct": 92.0,
-        "incorrect_balls_pct": 8.0,
-        "total_called_balls": 50,
-        "bad_calls_count": 4
+        "date": "April 5, 2026",
+        "correct_balls_pct": 100.0,
+        "incorrect_balls_pct": 0.0,
+        "total_called_balls": 52,
+        "bad_calls_count": 0
     },
     "pitching_worst_calls_of_season": [],
     "abs_challenges": {
