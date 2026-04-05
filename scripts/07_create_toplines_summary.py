@@ -191,8 +191,8 @@ standings['opp_name'] = standings['opp'].map(mlb_teams)
 # Create result_clean column
 standings['result_clean'] = standings['result'].map({'W': 'win', 'L': 'loss', 'T': 'tie'})
 standings_past = read_parquet_s3(standings_url, sort_by='game_date').query(f"year == {last_year}")
-# Get most recent game (standings should already be sorted by game_date)
-standings_now = standings.iloc[[-1]].copy() if not standings.empty else pd.DataFrame()
+# Get most recent game (standings is sorted by game_date descending, so first row is latest)
+standings_now = standings.iloc[[0]].copy() if not standings.empty else pd.DataFrame()
 # Prefer local _data standings file (same one the site tables use); fallback to remote
 local_live_path = os.path.join(base_dir, '_data', 'standings', f'all_teams_standings_metrics_{year}.json')
 try:
@@ -375,8 +375,26 @@ def run_differential(standings, standings_live_lad=None):
     runs_rank = to_ordinal(league_ranks_data.get('hitting_runs', 'N/A'))
     runs_against_last = standings_last_season['ra'].sum()
     run_diff_last = runs_last - runs_against_last
-    mean_attendance = standings.query('home_away == "home"')['attendance'].mean()
-    home_games_count = len(standings.query('home_away == "home"'))
+    home_games = standings.query('home_away == "home"')
+    home_games_count = len(home_games)
+    mean_attendance = home_games['attendance'].mean() if not home_games.empty else 0
+
+    # Boxscores often lack attendance; fall back to mlb_team_attendance.json
+    if mean_attendance == 0 or pd.isna(mean_attendance):
+        att_path = os.path.join(base_dir, 'data', 'standings', 'mlb_team_attendance.json')
+        att_url = 'https://stilesdata.com/dodgers/data/standings/mlb_team_attendance.json'
+        try:
+            if os.path.exists(att_path):
+                with open(att_path, 'r') as _f:
+                    att_data = json.load(_f)
+            else:
+                att_data = requests.get(att_url, timeout=15).json()
+            lad_att = [t for t in att_data if 'Dodgers' in t.get('team', '')]
+            if lad_att and lad_att[0].get('attend_game'):
+                mean_attendance = float(lad_att[0]['attend_game'])
+        except Exception as att_err:
+            logging.warning(f"Could not load attendance fallback: {att_err}")
+
     formatted_mean_attendance = f"{mean_attendance:,.0f}"
     
     return runs, runs_last, runs_rank, runs_against, runs_against_last, run_diff, run_diff_last, mean_attendance, formatted_mean_attendance, home_games_count
