@@ -405,8 +405,19 @@ def main() -> None:
     schedule_pks = set(get_dodgers_final_gamepks_for_date(la_date))
     candidate_pks.update(schedule_pks)
 
+    # Re-fetch any archived games still marked as not final
+    stale_pks = set()
+    if not archive_df.empty and "is_final" in archive_df.columns:
+        stale_pks = set(
+            archive_df.loc[archive_df["is_final"] != True, "game_pk"]
+            .astype(int)
+            .tolist()
+        )
+        if stale_pks:
+            logging.info(f"Re-fetching {len(stale_pks)} non-final games: {sorted(stale_pks)}")
+
     for game_pk in sorted(candidate_pks):
-        if game_pk in existing_pks:
+        if game_pk in existing_pks and game_pk not in stale_pks:
             continue
         gf_url = f"https://baseballsavant.mlb.com/gf?game_pk={game_pk}"
         gf = fetch_json(gf_url)
