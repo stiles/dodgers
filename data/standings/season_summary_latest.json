@@ -4,7 +4,7 @@
         "stat":"wins",
         "value":6,
         "category":"standings",
-        "context_value":1,
+        "context_value":7,
         "context_value_label":"This point last season"
     },
     {
@@ -20,7 +20,7 @@
         "stat":"record",
         "value":"6-2",
         "category":"standings",
-        "context_value":"1-0",
+        "context_value":"7-0",
         "context_value_label":"This point last season"
     },
     {
@@ -42,7 +42,7 @@
     {
         "stat_label":"Avg. home attendance",
         "stat":"mean_attendance",
-        "value":"0",
+        "value":"51,656",
         "category":"standings",
         "context_value":6,
         "context_value_label":"Home games this season"
@@ -60,7 +60,7 @@
         "stat":"runs_against",
         "value":28,
         "category":"standings",
-        "context_value":1,
+        "context_value":18,
         "context_value_label":"This point last season"
     },
     {
@@ -68,7 +68,7 @@
         "stat":"run_differential",
         "value":18,
         "category":"standings",
-        "context_value":3,
+        "context_value":21,
         "context_value_label":"This point last season"
     },
     {
@@ -170,7 +170,7 @@
     {
         "stat_label":"Last updated",
         "stat":"update_time",
-        "value":"April 5, 2026, 5:19 AM PT",
+        "value":"April 5, 2026, 7:11 AM PT",
         "category":"summary",
         "context_value":"",
         "context_value_label":""
