@@ -159,5 +159,28 @@
     "time":"00:00:00",
     "day_night":"N",
     "game_day":"Friday"
+  },
+  {
+    "gm":8,
+    "gtm":8,
+    "game_date":"2026-04-04",
+    "year":2026,
+    "home_away":"away",
+    "opp":"Washington Nationals",
+    "r":10,
+    "ra":5,
+    "run_diff":5,
+    "result":"W",
+    "wins":6,
+    "losses":2,
+    "record":"6-2",
+    "win_pct":0.75,
+    "gb":-2.5,
+    "rank":1,
+    "attendance":0,
+    "time_minutes":0,
+    "time":"00:00:00",
+    "day_night":"N",
+    "game_day":"Saturday"
   }
 ]
