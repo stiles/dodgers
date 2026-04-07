@@ -624,7 +624,7 @@ def get_next_game_info():
                     
                     location_text = f"at {highlighted_venue}"
                     
-                    return f"The team will face the {highlighted_opponent} next on {day_name} at {time_str} {tz_abbr} {location_text}"
+                    return f"The team will next face the {highlighted_opponent} on {day_name} at {time_str} {tz_abbr} {location_text}"
         
         return None
         
