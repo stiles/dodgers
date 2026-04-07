@@ -1,26 +1,9 @@
 {
     "dodgers": {
         "batting": {
-            "total": 19,
-            "successful": 11,
-            "failed": 8
-        },
-        "pitching": {
-            "total": 2,
+            "total": 0,
             "successful": 0,
-            "failed": 2
-        },
-        "catching": {
-            "total": 21,
-            "successful": 13,
-            "failed": 8
-        }
-    },
-    "opponents": {
-        "batting": {
-            "total": 23,
-            "successful": 12,
-            "failed": 11
+            "failed": 0
         },
         "pitching": {
             "total": 0,
@@ -28,251 +11,27 @@
             "failed": 0
         },
         "catching": {
-            "total": 23,
-            "successful": 13,
-            "failed": 10
+            "total": 0,
+            "successful": 0,
+            "failed": 0
         }
     },
-    "challenge_log": [
-        {
-            "date": "2026-04-06",
-            "date_formatted": "April 6, 2026",
-            "challenger": "Dalton Rushing",
-            "role": "catching",
-            "team": "dodgers",
-            "outcome": "confirmed",
-            "result_desc": "Myles Straw grounds out, second baseman Alex Freeland to first baseman Freddie Freeman.",
-            "batter": "Myles Straw",
-            "pitcher": "Will Klein",
-            "game_pk": 822832
+    "opponents": {
+        "batting": {
+            "total": 0,
+            "successful": 0,
+            "failed": 0
         },
-        {
-            "date": "2026-04-06",
-            "date_formatted": "April 6, 2026",
-            "challenger": "Tyler Heineman",
-            "role": "catching",
-            "team": "opponents",
-            "outcome": "confirmed",
-            "result_desc": "Teoscar Hern\u00e1ndez strikes out swinging.",
-            "batter": "Teoscar Hern\u00e1ndez",
-            "pitcher": "Josh Fleming",
-            "game_pk": 822832
+        "pitching": {
+            "total": 0,
+            "successful": 0,
+            "failed": 0
         },
-        {
-            "date": "2026-04-05",
-            "date_formatted": "April 5, 2026",
-            "challenger": "Drew Millas",
-            "role": "catching",
-            "team": "opponents",
-            "outcome": "overturned",
-            "result_desc": "Alex Call flies out to left fielder Daylen Lile.",
-            "batter": "Alex Call",
-            "pitcher": "Andre Granillo",
-            "game_pk": 822756
-        },
-        {
-            "date": "2026-04-05",
-            "date_formatted": "April 5, 2026",
-            "challenger": "Andy Pages",
-            "role": "batting",
-            "team": "dodgers",
-            "outcome": "confirmed",
-            "result_desc": "Andy Pages doubles (2) on a sharp ground ball to left fielder Daylen Lile. Freddie Freeman to 3rd.",
-            "batter": "Andy Pages",
-            "pitcher": "Cionel P\u00e9rez",
-            "game_pk": 822756
-        },
-        {
-            "date": "2026-04-04",
-            "date_formatted": "April 4, 2026",
-            "challenger": "Will Smith",
-            "role": "catching",
-            "team": "dodgers",
-            "outcome": "confirmed",
-            "result_desc": "Jacob Young grounds out, shortstop Miguel Rojas to first baseman Freddie Freeman.",
-            "batter": "Jacob Young",
-            "pitcher": "Tyler Glasnow",
-            "game_pk": 822757
-        },
-        {
-            "date": "2026-04-04",
-            "date_formatted": "April 4, 2026",
-            "challenger": "Alex Call",
-            "role": "batting",
-            "team": "dodgers",
-            "outcome": "overturned",
-            "result_desc": "Alex Call singles on a fly ball to left fielder Daylen Lile. Andy Pages scores.",
-            "batter": "Alex Call",
-            "pitcher": "Jake Irvin",
-            "game_pk": 822757
-        },
-        {
-            "date": "2026-04-04",
-            "date_formatted": "April 4, 2026",
-            "challenger": "Will Smith",
-            "role": "catching",
-            "team": "dodgers",
-            "outcome": "overturned",
-            "result_desc": "Curtis Mead strikes out swinging.",
-            "batter": "Curtis Mead",
-            "pitcher": "Tyler Glasnow",
-            "game_pk": 822757
-        },
-        {
-            "date": "2026-04-03",
-            "date_formatted": "April 3, 2026",
-            "challenger": "Shohei Ohtani",
-            "role": "batting",
-            "team": "dodgers",
-            "outcome": "confirmed",
-            "result_desc": "Shohei Ohtani flies out to left fielder Daylen Lile.",
-            "batter": "Shohei Ohtani",
-            "pitcher": "Ken Waldichuk",
-            "game_pk": 822758
-        },
-        {
-            "date": "2026-04-03",
-            "date_formatted": "April 3, 2026",
-            "challenger": "Will Smith",
-            "role": "catching",
-            "team": "dodgers",
-            "outcome": "overturned",
-            "result_desc": "James Wood strikes out swinging.",
-            "batter": "James Wood",
-            "pitcher": "Jack Dreyer",
-            "game_pk": 822758
-        },
-        {
-            "date": "2026-04-03",
-            "date_formatted": "April 3, 2026",
-            "challenger": "Daylen Lile",
-            "role": "batting",
-            "team": "opponents",
-            "outcome": "overturned",
-            "result_desc": "Daylen Lile singles on a ground ball to shortstop Mookie Betts.",
-            "batter": "Daylen Lile",
-            "pitcher": "Emmet Sheehan",
-            "game_pk": 822758
-        },
-        {
-            "date": "2026-04-03",
-            "date_formatted": "April 3, 2026",
-            "challenger": "Luis Garc\u00eda Jr.",
-            "role": "batting",
-            "team": "opponents",
-            "outcome": "confirmed",
-            "result_desc": "Luis Garc\u00eda Jr. strikes out swinging.",
-            "batter": "Luis Garc\u00eda Jr.",
-            "pitcher": "Edgardo Henriquez",
-            "game_pk": 822758
-        },
-        {
-            "date": "2026-03-31",
-            "date_formatted": "March 31, 2026",
-            "challenger": "Will Smith",
-            "role": "catching",
-            "team": "dodgers",
-            "outcome": "overturned",
-            "result_desc": "Daniel Schneemann strikes out swinging.",
-            "batter": "Daniel Schneemann",
-            "pitcher": "Edwin D\u00edaz",
-            "game_pk": 823969
-        },
-        {
-            "date": "2026-03-31",
-            "date_formatted": "March 31, 2026",
-            "challenger": "Gabriel Arias",
-            "role": "batting",
-            "team": "opponents",
-            "outcome": "confirmed",
-            "result_desc": "Gabriel Arias grounds out, shortstop Mookie Betts to first baseman Freddie Freeman.",
-            "batter": "Gabriel Arias",
-            "pitcher": "Shohei Ohtani",
-            "game_pk": 823969
-        },
-        {
-            "date": "2026-03-31",
-            "date_formatted": "March 31, 2026",
-            "challenger": "Bo Naylor",
-            "role": "catching",
-            "team": "opponents",
-            "outcome": "confirmed",
-            "result_desc": "Max Muncy flies out to left fielder Angel Mart\u00ednez.",
-            "batter": "Max Muncy",
-            "pitcher": "Tanner Bibee",
-            "game_pk": 823969
-        },
-        {
-            "date": "2026-03-31",
-            "date_formatted": "March 31, 2026",
-            "challenger": "Will Smith",
-            "role": "catching",
-            "team": "dodgers",
-            "outcome": "overturned",
-            "result_desc": "Rhys Hoskins doubles (2) on a line drive to left fielder Teoscar Hern\u00e1ndez.",
-            "batter": "Rhys Hoskins",
-            "pitcher": "Shohei Ohtani",
-            "game_pk": 823969
-        },
-        {
-            "date": "2026-03-31",
-            "date_formatted": "March 31, 2026",
-            "challenger": "Will Smith",
-            "role": "catching",
-            "team": "dodgers",
-            "outcome": "overturned",
-            "result_desc": "CJ Kayfus strikes out swinging.",
-            "batter": "CJ Kayfus",
-            "pitcher": "Shohei Ohtani",
-            "game_pk": 823969
-        },
-        {
-            "date": "2026-03-30",
-            "date_formatted": "March 30, 2026",
-            "challenger": "Austin Hedges",
-            "role": "catching",
-            "team": "opponents",
-            "outcome": "confirmed",
-            "result_desc": "Andy Pages grounds out, third baseman Jos\u00e9 Ram\u00edrez to first baseman Rhys Hoskins.",
-            "batter": "Andy Pages",
-            "pitcher": "Cade Smith",
-            "game_pk": 823972
-        },
-        {
-            "date": "2026-03-30",
-            "date_formatted": "March 30, 2026",
-            "challenger": "Teoscar Hern\u00e1ndez",
-            "role": "batting",
-            "team": "dodgers",
-            "outcome": "overturned",
-            "result_desc": "Teoscar Hern\u00e1ndez grounds out, shortstop Gabriel Arias to first baseman Rhys Hoskins.",
-            "batter": "Teoscar Hern\u00e1ndez",
-            "pitcher": "Cade Smith",
-            "game_pk": 823972
-        },
-        {
-            "date": "2026-03-30",
-            "date_formatted": "March 30, 2026",
-            "challenger": "Teoscar Hern\u00e1ndez",
-            "role": "batting",
-            "team": "dodgers",
-            "outcome": "overturned",
-            "result_desc": "Teoscar Hern\u00e1ndez singles on a ground ball to left fielder Steven Kwan.",
-            "batter": "Teoscar Hern\u00e1ndez",
-            "pitcher": "Shawn Armstrong",
-            "game_pk": 823972
-        },
-        {
-            "date": "2026-03-30",
-            "date_formatted": "March 30, 2026",
-            "challenger": "Steven Kwan",
-            "role": "batting",
-            "team": "opponents",
-            "outcome": "overturned",
-            "result_desc": "Steven Kwan called out on strikes.",
-            "batter": "Steven Kwan",
-            "pitcher": "Roki Sasaki",
-            "game_pk": 823972
+        "catching": {
+            "total": 0,
+            "successful": 0,
+            "failed": 0
         }
-    ]
+    },
+    "challenge_log": []
 }
