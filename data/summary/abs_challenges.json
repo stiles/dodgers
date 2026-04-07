@@ -11,9 +11,9 @@
             "failed": 2
         },
         "catching": {
-            "total": 20,
+            "total": 21,
             "successful": 13,
-            "failed": 7
+            "failed": 8
         }
     },
     "opponents": {
@@ -28,12 +28,36 @@
             "failed": 0
         },
         "catching": {
-            "total": 22,
+            "total": 23,
             "successful": 13,
-            "failed": 9
+            "failed": 10
         }
     },
     "challenge_log": [
+        {
+            "date": "2026-04-06",
+            "date_formatted": "April 6, 2026",
+            "challenger": "Dalton Rushing",
+            "role": "catching",
+            "team": "dodgers",
+            "outcome": "confirmed",
+            "result_desc": "Myles Straw grounds out, second baseman Alex Freeland to first baseman Freddie Freeman.",
+            "batter": "Myles Straw",
+            "pitcher": "Will Klein",
+            "game_pk": 822832
+        },
+        {
+            "date": "2026-04-06",
+            "date_formatted": "April 6, 2026",
+            "challenger": "Tyler Heineman",
+            "role": "catching",
+            "team": "opponents",
+            "outcome": "confirmed",
+            "result_desc": "Teoscar Hern\u00e1ndez strikes out swinging.",
+            "batter": "Teoscar Hern\u00e1ndez",
+            "pitcher": "Josh Fleming",
+            "game_pk": 822832
+        },
         {
             "date": "2026-04-05",
             "date_formatted": "April 5, 2026",
@@ -249,30 +273,6 @@
             "batter": "Steven Kwan",
             "pitcher": "Roki Sasaki",
             "game_pk": 823972
-        },
-        {
-            "date": "2026-03-28",
-            "date_formatted": "March 28, 2026",
-            "challenger": "James McCann",
-            "role": "catching",
-            "team": "opponents",
-            "outcome": "overturned",
-            "result_desc": "Shohei Ohtani grounds into a double play, second baseman Ketel Marte to shortstop Geraldo Perdomo to first baseman Carlos Santana. Miguel Rojas out at 2nd. Shohei Ohtani out at 1st.",
-            "batter": "Shohei Ohtani",
-            "pitcher": "Eduardo Rodriguez",
-            "game_pk": 823973
-        },
-        {
-            "date": "2026-03-28",
-            "date_formatted": "March 28, 2026",
-            "challenger": "Will Smith",
-            "role": "catching",
-            "team": "dodgers",
-            "outcome": "confirmed",
-            "result_desc": "Alek Thomas lines out sharply to right fielder Kyle Tucker.",
-            "batter": "Alek Thomas",
-            "pitcher": "Tyler Glasnow",
-            "game_pk": 823973
         }
     ]
 }

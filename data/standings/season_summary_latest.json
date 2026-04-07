@@ -2,9 +2,9 @@
     {
         "stat_label":"Wins",
         "stat":"wins",
-        "value":7,
+        "value":8,
         "category":"standings",
-        "context_value":8,
+        "context_value":9,
         "context_value_label":"This point last season"
     },
     {
@@ -18,23 +18,23 @@
     {
         "stat_label":"Record",
         "stat":"record",
-        "value":"7-2",
+        "value":"8-2",
         "category":"standings",
-        "context_value":"8-1",
+        "context_value":"9-1",
         "context_value_label":"This point last season"
     },
     {
         "stat_label":"Win percentage",
         "stat":"win_pct",
-        "value":"77%",
+        "value":"80%",
         "category":"standings",
-        "context_value":"88%",
+        "context_value":"90%",
         "context_value_label":"This point last season"
     },
     {
         "stat_label":"Games up\/back",
         "stat":"games_up_back",
-        "value":2.5,
+        "value":3,
         "category":"standings",
         "context_value":"1st",
         "context_value_label":"Division rank"
@@ -50,31 +50,31 @@
     {
         "stat_label":"Runs",
         "stat":"runs",
-        "value":54,
+        "value":68,
         "category":"standings",
-        "context_value":"4th",
+        "context_value":"2nd",
         "context_value_label":"League rank"
     },
     {
         "stat_label":"Runs against",
         "stat":"runs_against",
-        "value":34,
+        "value":36,
         "category":"standings",
-        "context_value":26,
+        "context_value":27,
         "context_value_label":"This point last season"
     },
     {
         "stat_label":"Run differential",
         "stat":"run_differential",
-        "value":20,
+        "value":32,
         "category":"standings",
-        "context_value":21,
+        "context_value":23,
         "context_value_label":"This point last season"
     },
     {
         "stat_label":"Batting average",
         "stat":"batting_average",
-        "value":".285",
+        "value":".299",
         "category":"batting",
         "context_value":".253",
         "context_value_label":"Last decade average"
@@ -82,7 +82,7 @@
     {
         "stat_label":"Home runs",
         "stat":"home_runs",
-        "value":17,
+        "value":21,
         "category":"batting",
         "context_value":"1st",
         "context_value_label":"League rank"
@@ -90,7 +90,7 @@
     {
         "stat_label":"Home runs\/game",
         "stat":"home_runs_game",
-        "value":1.7,
+        "value":2.1,
         "category":"batting",
         "context_value":1.42,
         "context_value_label":"Last decade average"
@@ -98,7 +98,7 @@
     {
         "stat_label":"On-base percentage",
         "stat":"on_base_pct",
-        "value":".353",
+        "value":".366",
         "category":"batting",
         "context_value":".333",
         "context_value_label":"Last decade average"
@@ -106,15 +106,15 @@
     {
         "stat_label":"Stolen bases",
         "stat":"stolen_bases",
-        "value":3,
+        "value":5,
         "category":"batting",
-        "context_value":"26th",
+        "context_value":"17th",
         "context_value_label":"League rank"
     },
     {
         "stat_label":"Stolen bases\/game",
         "stat":"stolen_bases_game",
-        "value":0.33,
+        "value":0.5,
         "category":"batting",
         "context_value":0.84,
         "context_value_label":"Rate all last season"
@@ -122,25 +122,25 @@
     {
         "stat_label":"Strikeouts",
         "stat":"strikeouts",
-        "value":"74",
+        "value":"80",
         "category":"pitching",
-        "context_value":"22nd",
+        "context_value":"19th",
         "context_value_label":"League rank"
     },
     {
         "stat_label":"Walks",
         "stat":"walks",
-        "value":28,
+        "value":33,
         "category":"pitching",
-        "context_value":"24th",
+        "context_value":"20th",
         "context_value_label":"League rank"
     },
     {
         "stat_label":"ERA",
         "stat":"era",
-        "value":"3.78",
+        "value":"3.60",
         "category":"pitching",
-        "context_value":"14th",
+        "context_value":"11th",
         "context_value_label":"League rank"
     },
     {
@@ -154,23 +154,23 @@
     {
         "stat_label":"Batting average against",
         "stat":"avg_against",
-        "value":".211",
+        "value":".206",
         "category":"pitching",
-        "context_value":"6th",
+        "context_value":"4th",
         "context_value_label":"League rank"
     },
     {
         "stat_label":"K\/BB ratio",
         "stat":"k_bb_ratio",
-        "value":2.64,
+        "value":2.42,
         "category":"pitching",
-        "context_value":"13th",
+        "context_value":"14th",
         "context_value_label":"League rank"
     },
     {
         "stat_label":"Last updated",
         "stat":"update_time",
-        "value":"April 6, 2026, 4:18 PM PT",
+        "value":"April 6, 2026, 7:24 PM PT",
         "category":"summary",
         "context_value":"",
         "context_value_label":""
@@ -178,7 +178,7 @@
     {
         "stat_label":"Team summary",
         "stat":"summary",
-        "value":"<span class='highlight'>LOS ANGELES<\/span> <span class='updated'>(April 6)<\/span> \u2014 The Dodgers have compiled a <span class='highlight'>7-2<\/span> record in the 2026 regular season, a <span class='highlight'>78%<\/span> winning percentage. The last game was a <span class='highlight'>8-6<\/span> away <span class='highlight'>win<\/span> against the <span class='highlight'>Washington Nationals<\/span>. The team will face the <span class='highlight'>Toronto Blue Jays<\/span> next on Tuesday at 4:07 p.m. PDT at <span class='highlight'>Rogers Centre<\/span>.",
+        "value":"<span class='highlight'>LOS ANGELES<\/span> <span class='updated'>(April 6)<\/span> \u2014 The Dodgers have compiled a <span class='highlight'>8-2<\/span> record in the 2026 regular season, an <span class='highlight'>80%<\/span> winning percentage. The last game was a <span class='highlight'>14-2<\/span> away <span class='highlight'>win<\/span> against the <span class='highlight'>Toronto Blue Jays<\/span>. The team will next face the <span class='highlight'>Toronto Blue Jays<\/span> on Tuesday at 4:07 p.m. PDT at <span class='highlight'>Rogers Centre<\/span>.",
         "category":"summary",
         "context_value":"",
         "context_value_label":""

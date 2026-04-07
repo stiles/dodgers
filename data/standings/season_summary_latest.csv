@@ -1,25 +1,25 @@
 stat_label,stat,value,category,context_value,context_value_label
-Wins,wins,7,standings,8,This point last season
+Wins,wins,8,standings,9,This point last season
 Losses,losses,2,standings,1,This point last season
-Record,record,7-2,standings,8-1,This point last season
-Win percentage,win_pct,77%,standings,88%,This point last season
-Games up/back,games_up_back,2.5,standings,1st,Division rank
+Record,record,8-2,standings,9-1,This point last season
+Win percentage,win_pct,80%,standings,90%,This point last season
+Games up/back,games_up_back,3,standings,1st,Division rank
 Avg. home attendance,mean_attendance,"51,656",standings,6,Home games this season
-Runs,runs,54,standings,4th,League rank
-Runs against,runs_against,34,standings,26,This point last season
-Run differential,run_differential,20,standings,21,This point last season
-Batting average,batting_average,.285,batting,.253,Last decade average
-Home runs,home_runs,17,batting,1st,League rank
-Home runs/game,home_runs_game,1.7,batting,1.42,Last decade average
-On-base percentage,on_base_pct,.353,batting,.333,Last decade average
-Stolen bases,stolen_bases,3,batting,26th,League rank
-Stolen bases/game,stolen_bases_game,0.33,batting,0.84,Rate all last season
-Strikeouts,strikeouts,74,pitching,22nd,League rank
-Walks,walks,28,pitching,24th,League rank
-ERA,era,3.78,pitching,14th,League rank
+Runs,runs,68,standings,2nd,League rank
+Runs against,runs_against,36,standings,27,This point last season
+Run differential,run_differential,32,standings,23,This point last season
+Batting average,batting_average,.299,batting,.253,Last decade average
+Home runs,home_runs,21,batting,1st,League rank
+Home runs/game,home_runs_game,2.1,batting,1.42,Last decade average
+On-base percentage,on_base_pct,.366,batting,.333,Last decade average
+Stolen bases,stolen_bases,5,batting,17th,League rank
+Stolen bases/game,stolen_bases_game,0.5,batting,0.84,Rate all last season
+Strikeouts,strikeouts,80,pitching,19th,League rank
+Walks,walks,33,pitching,20th,League rank
+ERA,era,3.60,pitching,11th,League rank
 WHIP,whip,1.11,pitching,4th,League rank
-Batting average against,avg_against,.211,pitching,6th,League rank
-K/BB ratio,k_bb_ratio,2.64,pitching,13th,League rank
-Last updated,update_time,"April 6, 2026, 4:18 PM PT",summary,,
-Team summary,summary,"<span class='highlight'>LOS ANGELES</span> <span class='updated'>(April 6)</span> — The Dodgers have compiled a <span class='highlight'>7-2</span> record in the 2026 regular season, a <span class='highlight'>78%</span> winning percentage. The last game was a <span class='highlight'>8-6</span> away <span class='highlight'>win</span> against the <span class='highlight'>Washington Nationals</span>. The team will face the <span class='highlight'>Toronto Blue Jays</span> next on Tuesday at 4:07 p.m. PDT at <span class='highlight'>Rogers Centre</span>.",summary,,
+Batting average against,avg_against,.206,pitching,4th,League rank
+K/BB ratio,k_bb_ratio,2.42,pitching,14th,League rank
+Last updated,update_time,"April 6, 2026, 7:24 PM PT",summary,,
+Team summary,summary,"<span class='highlight'>LOS ANGELES</span> <span class='updated'>(April 6)</span> — The Dodgers have compiled a <span class='highlight'>8-2</span> record in the 2026 regular season, an <span class='highlight'>80%</span> winning percentage. The last game was a <span class='highlight'>14-2</span> away <span class='highlight'>win</span> against the <span class='highlight'>Toronto Blue Jays</span>. The team will next face the <span class='highlight'>Toronto Blue Jays</span> on Tuesday at 4:07 p.m. PDT at <span class='highlight'>Rogers Centre</span>.",summary,,
 Last game result,last_game_result,win,summary,,
