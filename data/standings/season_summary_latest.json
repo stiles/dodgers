@@ -74,7 +74,7 @@
     {
         "stat_label":"Batting average",
         "stat":"batting_average",
-        "value":".292",
+        "value":".294",
         "category":"batting",
         "context_value":".253",
         "context_value_label":"Last decade average"
@@ -98,7 +98,7 @@
     {
         "stat_label":"On-base percentage",
         "stat":"on_base_pct",
-        "value":".359",
+        "value":".360",
         "category":"batting",
         "context_value":".333",
         "context_value_label":"Last decade average"
@@ -170,7 +170,7 @@
     {
         "stat_label":"Last updated",
         "stat":"update_time",
-        "value":"April 8, 2026, 5:30 AM PT",
+        "value":"April 8, 2026, 8:38 AM PT",
         "category":"summary",
         "context_value":"",
         "context_value_label":""
