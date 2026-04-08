@@ -1,25 +1,25 @@
 stat_label,stat,value,category,context_value,context_value_label
-Wins,wins,8,standings,9,This point last season
-Losses,losses,2,standings,1,This point last season
-Record,record,8-2,standings,9-1,This point last season
-Win percentage,win_pct,80%,standings,90%,This point last season
-Games up/back,games_up_back,3,standings,1st,Division rank
+Wins,wins,9,standings,9,This point last season
+Losses,losses,2,standings,2,This point last season
+Record,record,9-2,standings,9-2,This point last season
+Win percentage,win_pct,81%,standings,81%,This point last season
+Games up/back,games_up_back,4,standings,1st,Division rank
 Avg. home attendance,mean_attendance,"51,656",standings,6,Home games this season
-Runs,runs,68,standings,2nd,League rank
-Runs against,runs_against,36,standings,27,This point last season
-Run differential,run_differential,32,standings,23,This point last season
-Batting average,batting_average,.296,batting,.253,Last decade average
+Runs,runs,72,standings,2nd,League rank
+Runs against,runs_against,37,standings,35,This point last season
+Run differential,run_differential,35,standings,22,This point last season
+Batting average,batting_average,.292,batting,.253,Last decade average
 Home runs,home_runs,21,batting,1st,League rank
 Home runs/game,home_runs_game,1.91,batting,1.42,Last decade average
-On-base percentage,on_base_pct,.365,batting,.333,Last decade average
-Stolen bases,stolen_bases,5,batting,18th,League rank
-Stolen bases/game,stolen_bases_game,0.5,batting,0.84,Rate all last season
-Strikeouts,strikeouts,81,pitching,22nd,League rank
-Walks,walks,33,pitching,23rd,League rank
-ERA,era,3.59,pitching,11th,League rank
-WHIP,whip,1.11,pitching,4th,League rank
-Batting average against,avg_against,.205,pitching,6th,League rank
-K/BB ratio,k_bb_ratio,2.45,pitching,15th,League rank
-Last updated,update_time,"April 7, 2026, 4:20 PM PT",summary,,
-Team summary,summary,"<span class='highlight'>LOS ANGELES</span> <span class='updated'>(April 7)</span> — The Dodgers have compiled a <span class='highlight'>8-2</span> record in the 2026 regular season, an <span class='highlight'>80%</span> winning percentage. The last game was a <span class='highlight'>14-2</span> away <span class='highlight'>win</span> against the <span class='highlight'>Toronto Blue Jays</span>. The team will next face the <span class='highlight'>Toronto Blue Jays</span> on Wednesday at 12:07 p.m. PDT at <span class='highlight'>Rogers Centre</span>.",summary,,
+On-base percentage,on_base_pct,.359,batting,.333,Last decade average
+Stolen bases,stolen_bases,5,batting,20th,League rank
+Stolen bases/game,stolen_bases_game,0.45,batting,0.84,Rate all last season
+Strikeouts,strikeouts,90,pitching,21st,League rank
+Walks,walks,36,pitching,21st,League rank
+ERA,era,3.36,pitching,9th,League rank
+WHIP,whip,1.10,pitching,4th,League rank
+Batting average against,avg_against,.203,pitching,5th,League rank
+K/BB ratio,k_bb_ratio,2.5,pitching,12th,League rank
+Last updated,update_time,"April 7, 2026, 9:22 PM PT",summary,,
+Team summary,summary,"<span class='highlight'>LOS ANGELES</span> <span class='updated'>(April 7)</span> — The Dodgers have compiled a <span class='highlight'>9-2</span> record in the 2026 regular season, an <span class='highlight'>82%</span> winning percentage. The last game was a <span class='highlight'>4-1</span> away <span class='highlight'>win</span> against the <span class='highlight'>Toronto Blue Jays</span>. The team will next face the <span class='highlight'>Toronto Blue Jays</span> on Wednesday at 12:07 p.m. PDT at <span class='highlight'>Rogers Centre</span>.",summary,,
 Last game result,last_game_result,win,summary,,

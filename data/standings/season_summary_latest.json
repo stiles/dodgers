@@ -2,7 +2,7 @@
     {
         "stat_label":"Wins",
         "stat":"wins",
-        "value":8,
+        "value":9,
         "category":"standings",
         "context_value":9,
         "context_value_label":"This point last season"
@@ -12,29 +12,29 @@
         "stat":"losses",
         "value":2,
         "category":"standings",
-        "context_value":1,
+        "context_value":2,
         "context_value_label":"This point last season"
     },
     {
         "stat_label":"Record",
         "stat":"record",
-        "value":"8-2",
+        "value":"9-2",
         "category":"standings",
-        "context_value":"9-1",
+        "context_value":"9-2",
         "context_value_label":"This point last season"
     },
     {
         "stat_label":"Win percentage",
         "stat":"win_pct",
-        "value":"80%",
+        "value":"81%",
         "category":"standings",
-        "context_value":"90%",
+        "context_value":"81%",
         "context_value_label":"This point last season"
     },
     {
         "stat_label":"Games up\/back",
         "stat":"games_up_back",
-        "value":3,
+        "value":4,
         "category":"standings",
         "context_value":"1st",
         "context_value_label":"Division rank"
@@ -50,7 +50,7 @@
     {
         "stat_label":"Runs",
         "stat":"runs",
-        "value":68,
+        "value":72,
         "category":"standings",
         "context_value":"2nd",
         "context_value_label":"League rank"
@@ -58,23 +58,23 @@
     {
         "stat_label":"Runs against",
         "stat":"runs_against",
-        "value":36,
+        "value":37,
         "category":"standings",
-        "context_value":27,
+        "context_value":35,
         "context_value_label":"This point last season"
     },
     {
         "stat_label":"Run differential",
         "stat":"run_differential",
-        "value":32,
+        "value":35,
         "category":"standings",
-        "context_value":23,
+        "context_value":22,
         "context_value_label":"This point last season"
     },
     {
         "stat_label":"Batting average",
         "stat":"batting_average",
-        "value":".296",
+        "value":".292",
         "category":"batting",
         "context_value":".253",
         "context_value_label":"Last decade average"
@@ -98,7 +98,7 @@
     {
         "stat_label":"On-base percentage",
         "stat":"on_base_pct",
-        "value":".365",
+        "value":".359",
         "category":"batting",
         "context_value":".333",
         "context_value_label":"Last decade average"
@@ -108,13 +108,13 @@
         "stat":"stolen_bases",
         "value":5,
         "category":"batting",
-        "context_value":"18th",
+        "context_value":"20th",
         "context_value_label":"League rank"
     },
     {
         "stat_label":"Stolen bases\/game",
         "stat":"stolen_bases_game",
-        "value":0.5,
+        "value":0.45,
         "category":"batting",
         "context_value":0.84,
         "context_value_label":"Rate all last season"
@@ -122,31 +122,31 @@
     {
         "stat_label":"Strikeouts",
         "stat":"strikeouts",
-        "value":"81",
+        "value":"90",
         "category":"pitching",
-        "context_value":"22nd",
+        "context_value":"21st",
         "context_value_label":"League rank"
     },
     {
         "stat_label":"Walks",
         "stat":"walks",
-        "value":33,
+        "value":36,
         "category":"pitching",
-        "context_value":"23rd",
+        "context_value":"21st",
         "context_value_label":"League rank"
     },
     {
         "stat_label":"ERA",
         "stat":"era",
-        "value":"3.59",
+        "value":"3.36",
         "category":"pitching",
-        "context_value":"11th",
+        "context_value":"9th",
         "context_value_label":"League rank"
     },
     {
         "stat_label":"WHIP",
         "stat":"whip",
-        "value":"1.11",
+        "value":"1.10",
         "category":"pitching",
         "context_value":"4th",
         "context_value_label":"League rank"
@@ -154,23 +154,23 @@
     {
         "stat_label":"Batting average against",
         "stat":"avg_against",
-        "value":".205",
+        "value":".203",
         "category":"pitching",
-        "context_value":"6th",
+        "context_value":"5th",
         "context_value_label":"League rank"
     },
     {
         "stat_label":"K\/BB ratio",
         "stat":"k_bb_ratio",
-        "value":2.45,
+        "value":2.5,
         "category":"pitching",
-        "context_value":"15th",
+        "context_value":"12th",
         "context_value_label":"League rank"
     },
     {
         "stat_label":"Last updated",
         "stat":"update_time",
-        "value":"April 7, 2026, 4:20 PM PT",
+        "value":"April 7, 2026, 9:22 PM PT",
         "category":"summary",
         "context_value":"",
         "context_value_label":""
@@ -178,7 +178,7 @@
     {
         "stat_label":"Team summary",
         "stat":"summary",
-        "value":"<span class='highlight'>LOS ANGELES<\/span> <span class='updated'>(April 7)<\/span> \u2014 The Dodgers have compiled a <span class='highlight'>8-2<\/span> record in the 2026 regular season, an <span class='highlight'>80%<\/span> winning percentage. The last game was a <span class='highlight'>14-2<\/span> away <span class='highlight'>win<\/span> against the <span class='highlight'>Toronto Blue Jays<\/span>. The team will next face the <span class='highlight'>Toronto Blue Jays<\/span> on Wednesday at 12:07 p.m. PDT at <span class='highlight'>Rogers Centre<\/span>.",
+        "value":"<span class='highlight'>LOS ANGELES<\/span> <span class='updated'>(April 7)<\/span> \u2014 The Dodgers have compiled a <span class='highlight'>9-2<\/span> record in the 2026 regular season, an <span class='highlight'>82%<\/span> winning percentage. The last game was a <span class='highlight'>4-1<\/span> away <span class='highlight'>win<\/span> against the <span class='highlight'>Toronto Blue Jays<\/span>. The team will next face the <span class='highlight'>Toronto Blue Jays<\/span> on Wednesday at 12:07 p.m. PDT at <span class='highlight'>Rogers Centre<\/span>.",
         "category":"summary",
         "context_value":"",
         "context_value_label":""
