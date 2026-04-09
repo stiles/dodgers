@@ -251,5 +251,28 @@
     "time":"00:00:00",
     "day_night":"N",
     "game_day":"Tuesday"
+  },
+  {
+    "gm":12,
+    "gtm":12,
+    "game_date":"2026-04-08",
+    "year":2026,
+    "home_away":"away",
+    "opp":"Toronto Blue Jays",
+    "r":3,
+    "ra":4,
+    "run_diff":-1,
+    "result":"L",
+    "wins":9,
+    "losses":3,
+    "record":"9-3",
+    "win_pct":0.75,
+    "gb":-3.0,
+    "rank":1,
+    "attendance":0,
+    "time_minutes":0,
+    "time":"00:00:00",
+    "day_night":"N",
+    "game_day":"Wednesday"
   }
 ]

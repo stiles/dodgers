@@ -11,16 +11,16 @@
             "failed": 2
         },
         "catching": {
-            "total": 22,
+            "total": 23,
             "successful": 13,
-            "failed": 9
+            "failed": 10
         }
     },
     "opponents": {
         "batting": {
-            "total": 24,
-            "successful": 13,
-            "failed": 11
+            "total": 26,
+            "successful": 14,
+            "failed": 12
         },
         "pitching": {
             "total": 0,
@@ -34,6 +34,42 @@
         }
     },
     "challenge_log": [
+        {
+            "date": "2026-04-08",
+            "date_formatted": "April 8, 2026",
+            "challenger": "Andr\u00e9s Gim\u00e9nez",
+            "role": "batting",
+            "team": "opponents",
+            "outcome": "confirmed",
+            "result_desc": "Andr\u00e9s Gim\u00e9nez singles on a ground ball to center fielder Andy Pages. Davis Schneider to 3rd.",
+            "batter": "Andr\u00e9s Gim\u00e9nez",
+            "pitcher": "Ben Casparius",
+            "game_pk": 822833
+        },
+        {
+            "date": "2026-04-08",
+            "date_formatted": "April 8, 2026",
+            "challenger": "Davis Schneider",
+            "role": "batting",
+            "team": "opponents",
+            "outcome": "overturned",
+            "result_desc": "Davis Schneider walks.",
+            "batter": "Davis Schneider",
+            "pitcher": "Jack Dreyer",
+            "game_pk": 822833
+        },
+        {
+            "date": "2026-04-08",
+            "date_formatted": "April 8, 2026",
+            "challenger": "Will Smith",
+            "role": "catching",
+            "team": "dodgers",
+            "outcome": "confirmed",
+            "result_desc": "George Springer singles on a ground ball to left fielder Teoscar Hern\u00e1ndez.",
+            "batter": "George Springer",
+            "pitcher": "Shohei Ohtani",
+            "game_pk": 822833
+        },
         {
             "date": "2026-04-07",
             "date_formatted": "April 7, 2026",
@@ -121,18 +157,6 @@
         {
             "date": "2026-04-04",
             "date_formatted": "April 4, 2026",
-            "challenger": "Alex Call",
-            "role": "batting",
-            "team": "dodgers",
-            "outcome": "overturned",
-            "result_desc": "Alex Call singles on a fly ball to left fielder Daylen Lile. Andy Pages scores.",
-            "batter": "Alex Call",
-            "pitcher": "Jake Irvin",
-            "game_pk": 822757
-        },
-        {
-            "date": "2026-04-04",
-            "date_formatted": "April 4, 2026",
             "challenger": "Will Smith",
             "role": "catching",
             "team": "dodgers",
@@ -140,6 +164,18 @@
             "result_desc": "Curtis Mead strikes out swinging.",
             "batter": "Curtis Mead",
             "pitcher": "Tyler Glasnow",
+            "game_pk": 822757
+        },
+        {
+            "date": "2026-04-04",
+            "date_formatted": "April 4, 2026",
+            "challenger": "Alex Call",
+            "role": "batting",
+            "team": "dodgers",
+            "outcome": "overturned",
+            "result_desc": "Alex Call singles on a fly ball to left fielder Daylen Lile. Andy Pages scores.",
+            "batter": "Alex Call",
+            "pitcher": "Jake Irvin",
             "game_pk": 822757
         },
         {
@@ -237,42 +273,6 @@
             "batter": "Max Muncy",
             "pitcher": "Tanner Bibee",
             "game_pk": 823969
-        },
-        {
-            "date": "2026-03-31",
-            "date_formatted": "March 31, 2026",
-            "challenger": "Will Smith",
-            "role": "catching",
-            "team": "dodgers",
-            "outcome": "overturned",
-            "result_desc": "Rhys Hoskins doubles (2) on a line drive to left fielder Teoscar Hern\u00e1ndez.",
-            "batter": "Rhys Hoskins",
-            "pitcher": "Shohei Ohtani",
-            "game_pk": 823969
-        },
-        {
-            "date": "2026-03-31",
-            "date_formatted": "March 31, 2026",
-            "challenger": "Will Smith",
-            "role": "catching",
-            "team": "dodgers",
-            "outcome": "overturned",
-            "result_desc": "CJ Kayfus strikes out swinging.",
-            "batter": "CJ Kayfus",
-            "pitcher": "Shohei Ohtani",
-            "game_pk": 823969
-        },
-        {
-            "date": "2026-03-30",
-            "date_formatted": "March 30, 2026",
-            "challenger": "Teoscar Hern\u00e1ndez",
-            "role": "batting",
-            "team": "dodgers",
-            "outcome": "overturned",
-            "result_desc": "Teoscar Hern\u00e1ndez grounds out, shortstop Gabriel Arias to first baseman Rhys Hoskins.",
-            "batter": "Teoscar Hern\u00e1ndez",
-            "pitcher": "Cade Smith",
-            "game_pk": 823972
         }
     ]
 }

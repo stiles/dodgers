@@ -10,31 +10,31 @@
     {
         "stat_label":"Losses",
         "stat":"losses",
-        "value":2,
+        "value":3,
         "category":"standings",
-        "context_value":2,
+        "context_value":3,
         "context_value_label":"This point last season"
     },
     {
         "stat_label":"Record",
         "stat":"record",
-        "value":"9-2",
+        "value":"9-3",
         "category":"standings",
-        "context_value":"9-2",
+        "context_value":"9-3",
         "context_value_label":"This point last season"
     },
     {
         "stat_label":"Win percentage",
         "stat":"win_pct",
-        "value":"81%",
+        "value":"75%",
         "category":"standings",
-        "context_value":"81%",
+        "context_value":"75%",
         "context_value_label":"This point last season"
     },
     {
         "stat_label":"Games up\/back",
         "stat":"games_up_back",
-        "value":4,
+        "value":3,
         "category":"standings",
         "context_value":"1st",
         "context_value_label":"Division rank"
@@ -50,7 +50,7 @@
     {
         "stat_label":"Runs",
         "stat":"runs",
-        "value":72,
+        "value":75,
         "category":"standings",
         "context_value":"2nd",
         "context_value_label":"League rank"
@@ -58,23 +58,23 @@
     {
         "stat_label":"Runs against",
         "stat":"runs_against",
-        "value":37,
+        "value":41,
         "category":"standings",
-        "context_value":35,
+        "context_value":41,
         "context_value_label":"This point last season"
     },
     {
         "stat_label":"Run differential",
         "stat":"run_differential",
-        "value":35,
+        "value":34,
         "category":"standings",
-        "context_value":22,
+        "context_value":20,
         "context_value_label":"This point last season"
     },
     {
         "stat_label":"Batting average",
         "stat":"batting_average",
-        "value":".294",
+        "value":".287",
         "category":"batting",
         "context_value":".253",
         "context_value_label":"Last decade average"
@@ -90,7 +90,7 @@
     {
         "stat_label":"Home runs\/game",
         "stat":"home_runs_game",
-        "value":1.91,
+        "value":1.75,
         "category":"batting",
         "context_value":1.42,
         "context_value_label":"Last decade average"
@@ -98,7 +98,7 @@
     {
         "stat_label":"On-base percentage",
         "stat":"on_base_pct",
-        "value":".360",
+        "value":".361",
         "category":"batting",
         "context_value":".333",
         "context_value_label":"Last decade average"
@@ -108,13 +108,13 @@
         "stat":"stolen_bases",
         "value":5,
         "category":"batting",
-        "context_value":"20th",
+        "context_value":"23rd",
         "context_value_label":"League rank"
     },
     {
         "stat_label":"Stolen bases\/game",
         "stat":"stolen_bases_game",
-        "value":0.45,
+        "value":0.42,
         "category":"batting",
         "context_value":0.84,
         "context_value_label":"Rate all last season"
@@ -122,7 +122,7 @@
     {
         "stat_label":"Strikeouts",
         "stat":"strikeouts",
-        "value":"90",
+        "value":"93",
         "category":"pitching",
         "context_value":"21st",
         "context_value_label":"League rank"
@@ -130,7 +130,7 @@
     {
         "stat_label":"Walks",
         "stat":"walks",
-        "value":36,
+        "value":40,
         "category":"pitching",
         "context_value":"21st",
         "context_value_label":"League rank"
@@ -146,15 +146,15 @@
     {
         "stat_label":"WHIP",
         "stat":"whip",
-        "value":"1.10",
+        "value":"1.13",
         "category":"pitching",
-        "context_value":"4th",
+        "context_value":"6th",
         "context_value_label":"League rank"
     },
     {
         "stat_label":"Batting average against",
         "stat":"avg_against",
-        "value":".203",
+        "value":".207",
         "category":"pitching",
         "context_value":"5th",
         "context_value_label":"League rank"
@@ -162,15 +162,15 @@
     {
         "stat_label":"K\/BB ratio",
         "stat":"k_bb_ratio",
-        "value":2.5,
+        "value":2.33,
         "category":"pitching",
-        "context_value":"12th",
+        "context_value":"13th",
         "context_value_label":"League rank"
     },
     {
         "stat_label":"Last updated",
         "stat":"update_time",
-        "value":"April 8, 2026, 8:38 AM PT",
+        "value":"April 8, 2026, 5:44 PM PT",
         "category":"summary",
         "context_value":"",
         "context_value_label":""
@@ -178,7 +178,7 @@
     {
         "stat_label":"Team summary",
         "stat":"summary",
-        "value":"<span class='highlight'>LOS ANGELES<\/span> <span class='updated'>(April 8)<\/span> \u2014 The Dodgers have compiled a <span class='highlight'>9-2<\/span> record in the 2026 regular season, an <span class='highlight'>82%<\/span> winning percentage. The last game was a <span class='highlight'>4-1<\/span> away <span class='highlight'>win<\/span> against the <span class='highlight'>Toronto Blue Jays<\/span>. The team will next face the <span class='highlight'>Toronto Blue Jays<\/span> on Wednesday at 12:07 p.m. PDT at <span class='highlight'>Rogers Centre<\/span>.",
+        "value":"<span class='highlight'>LOS ANGELES<\/span> <span class='updated'>(April 8)<\/span> \u2014 The Dodgers have compiled a <span class='highlight'>9-3<\/span> record in the 2026 regular season, a <span class='highlight'>75%<\/span> winning percentage. The last game was a <span class='highlight'>3-4<\/span> away <span class='highlight'>loss<\/span> against the <span class='highlight'>Toronto Blue Jays<\/span>. The team will next face the <span class='highlight'>Texas Rangers<\/span> on Friday at 7:10 p.m. PDT at <span class='highlight'>UNIQLO Field at Dodger Stadium<\/span>.",
         "category":"summary",
         "context_value":"",
         "context_value_label":""
@@ -186,7 +186,7 @@
     {
         "stat_label":"Last game result",
         "stat":"last_game_result",
-        "value":"win",
+        "value":"loss",
         "category":"summary",
         "context_value":"",
         "context_value_label":""
