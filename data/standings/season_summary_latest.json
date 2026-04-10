@@ -34,7 +34,7 @@
     {
         "stat_label":"Games up\/back",
         "stat":"games_up_back",
-        "value":3,
+        "value":2.5,
         "category":"standings",
         "context_value":"1st",
         "context_value_label":"Division rank"
@@ -124,7 +124,7 @@
         "stat":"strikeouts",
         "value":"93",
         "category":"pitching",
-        "context_value":"22nd",
+        "context_value":"24th",
         "context_value_label":"League rank"
     },
     {
@@ -156,7 +156,7 @@
         "stat":"avg_against",
         "value":".207",
         "category":"pitching",
-        "context_value":"5th",
+        "context_value":"4th",
         "context_value_label":"League rank"
     },
     {
@@ -170,7 +170,7 @@
     {
         "stat_label":"Last updated",
         "stat":"update_time",
-        "value":"April 9, 2026, 8:40 AM PT",
+        "value":"April 10, 2026, 5:26 AM PT",
         "category":"summary",
         "context_value":"",
         "context_value_label":""
@@ -178,7 +178,7 @@
     {
         "stat_label":"Team summary",
         "stat":"summary",
-        "value":"<span class='highlight'>LOS ANGELES<\/span> <span class='updated'>(April 9)<\/span> \u2014 The Dodgers have compiled a <span class='highlight'>9-3<\/span> record in the 2026 regular season, a <span class='highlight'>75%<\/span> winning percentage. The last game was a <span class='highlight'>3-4<\/span> away <span class='highlight'>loss<\/span> against the <span class='highlight'>Toronto Blue Jays<\/span>. The team will next face the <span class='highlight'>Texas Rangers<\/span> on Friday at 7:10 p.m. PDT at <span class='highlight'>UNIQLO Field at Dodger Stadium<\/span>.",
+        "value":"<span class='highlight'>LOS ANGELES<\/span> <span class='updated'>(April 10)<\/span> \u2014 The Dodgers have compiled a <span class='highlight'>9-3<\/span> record in the 2026 regular season, a <span class='highlight'>75%<\/span> winning percentage. The last game was a <span class='highlight'>3-4<\/span> away <span class='highlight'>loss<\/span> against the <span class='highlight'>Toronto Blue Jays<\/span>. The team will next face the <span class='highlight'>Texas Rangers<\/span> on Friday at 7:10 p.m. PDT at <span class='highlight'>UNIQLO Field at Dodger Stadium<\/span>.",
         "category":"summary",
         "context_value":"",
         "context_value_label":""
