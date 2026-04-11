@@ -1,9 +1,9 @@
 {
     "season_summary": {
-        "correct_strikes_pct": 88.94117647058823,
-        "incorrect_strikes_pct": 11.058823529411768,
-        "total_called_strikes": 425,
-        "bad_calls_count": 47
+        "correct_strikes_pct": 88.27292110874201,
+        "incorrect_strikes_pct": 11.727078891257989,
+        "total_called_strikes": 469,
+        "bad_calls_count": 55
     },
     "last_game_summary": {
         "date": "April 10, 2026",
@@ -15,6 +15,36 @@
     },
     "worst_calls_of_season": [
         {
+            "distance_inches": 4.9747035145,
+            "batter": "Teoscar Hern\u00e1ndez",
+            "pitcher": "Tyler Heineman",
+            "pitch_type": "Fastball",
+            "velocity_mph": 70.2,
+            "date": "2026-04-06",
+            "date_formatted": "April 6, 2026",
+            "video_link": "https://baseballsavant.mlb.com/sporty-videos?playId=452d33b9-5600-30b5-93d2-2b65dda57411"
+        },
+        {
+            "distance_inches": 2.6846937843,
+            "batter": "Teoscar Hern\u00e1ndez",
+            "pitcher": "Tyler Heineman",
+            "pitch_type": "Fastball",
+            "velocity_mph": 69.1,
+            "date": "2026-04-06",
+            "date_formatted": "April 6, 2026",
+            "video_link": "https://baseballsavant.mlb.com/sporty-videos?playId=1e90bf04-fb2d-3a5f-9c86-af576f5a1e49"
+        },
+        {
+            "distance_inches": 2.6476613717,
+            "batter": "Santiago Espinal",
+            "pitcher": "Tyler Heineman",
+            "pitch_type": "Eephus",
+            "velocity_mph": 45.1,
+            "date": "2026-04-06",
+            "date_formatted": "April 6, 2026",
+            "video_link": "https://baseballsavant.mlb.com/sporty-videos?playId=11cd9ed6-6185-3b7d-b576-eceb7dcfc7fd"
+        },
+        {
             "distance_inches": 2.4670354695,
             "batter": "Eduardo Quintero",
             "pitcher": "Logan Gillaspie",
@@ -23,43 +53,13 @@
             "date": "2026-03-20",
             "date_formatted": "March 20, 2026",
             "video_link": "https://baseballsavant.mlb.com/sporty-videos?playId=4e421a2f-a67b-3f68-a9a8-0404ca31c89e"
-        },
-        {
-            "distance_inches": 2.3559691319,
-            "batter": "Andy Pages",
-            "pitcher": "Andrew Hoffmann",
-            "pitch_type": "4-Seam Fastball",
-            "velocity_mph": 95.7,
-            "date": "2026-03-26",
-            "date_formatted": "March 26, 2026",
-            "video_link": "https://baseballsavant.mlb.com/sporty-videos?playId=51ec3075-e3d5-37b7-bc45-72960f6a38c9"
-        },
-        {
-            "distance_inches": 2.2640428287,
-            "batter": "Miguel Rojas",
-            "pitcher": "Logan Gillaspie",
-            "pitch_type": "4-Seam Fastball",
-            "velocity_mph": 94.8,
-            "date": "2026-03-20",
-            "date_formatted": "March 20, 2026",
-            "video_link": "https://baseballsavant.mlb.com/sporty-videos?playId=8bd1648c-edf4-3cc3-9328-62ce0f9d6b00"
-        },
-        {
-            "distance_inches": 2.0234010344,
-            "batter": "Miguel Rojas",
-            "pitcher": "Parker Messick",
-            "pitch_type": "Slider",
-            "velocity_mph": 89.5,
-            "date": "2026-03-30",
-            "date_formatted": "March 30, 2026",
-            "video_link": "https://baseballsavant.mlb.com/sporty-videos?playId=6cf04d7f-8e51-3e64-b1e5-5e51b854d501"
         }
     ],
     "pitching_season_summary": {
-        "correct_balls_pct": 95.91611479028698,
-        "incorrect_balls_pct": 4.083885209713017,
-        "total_called_balls": 906,
-        "bad_calls_count": 37
+        "correct_balls_pct": 95.8904109589041,
+        "incorrect_balls_pct": 4.1095890410959015,
+        "total_called_balls": 949,
+        "bad_calls_count": 39
     },
     "pitching_last_game_summary": {
         "date": "April 10, 2026",
@@ -82,8 +82,8 @@
                 "failed": 0
             },
             "catching": {
-                "total": 4,
-                "successful": 3,
+                "total": 5,
+                "successful": 4,
                 "failed": 1
             }
         },
@@ -116,6 +116,18 @@
                 "batter": "Danny Jansen",
                 "pitcher": "Edwin D\u00edaz",
                 "game_pk": 823968
+            },
+            {
+                "date": "2026-04-07",
+                "date_formatted": "April 7, 2026",
+                "challenger": "Will Smith",
+                "role": "catching",
+                "team": "dodgers",
+                "outcome": "overturned",
+                "result_desc": "Davis Schneider called out on strikes.",
+                "batter": "Davis Schneider",
+                "pitcher": "Edwin D\u00edaz",
+                "game_pk": 822831
             },
             {
                 "date": "2026-04-06",
