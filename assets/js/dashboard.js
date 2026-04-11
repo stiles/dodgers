@@ -3348,9 +3348,9 @@ if (document.readyState === 'loading') {
       const seasonBarWrapper = chartDiv.append('div').attr('class', 'chart-bar-wrapper');
       const seasonLabelLine = seasonBarWrapper.append('div').attr('class', 'chart-label-line');
       seasonLabelLine.append('div').attr('class', 'chart-label').text('This season');
-      // Show raw totals above the bar
+      // Show raw totals above the bar with clarification
       seasonLabelLine.append('div').attr('class', 'chart-percentages').html(
-        `<span class="good-calls-label">${seasonActualStrikes.toLocaleString()} </span> good calls / <span class="bad-calls-label">${seasonBadCalls} </span> bad calls`
+        `<span class="good-calls-label">${seasonActualStrikes.toLocaleString()} </span> good calls / <span class="bad-calls-label">${seasonBadCalls} </span> bad calls <span style="font-size: 0.85em; color: #666;">(called strikes only)</span>`
       );
       const seasonBarInner = seasonBarWrapper.append('div').attr('class', 'chart-bar');
       
@@ -3390,9 +3390,9 @@ if (document.readyState === 'loading') {
         lastGameLabel += `: ${gameData.date}`;
       }
       gameLabelLine.append('div').attr('class', 'chart-label').text(lastGameLabel);
-      // Show raw totals above the bar
+      // Show raw totals above the bar with clarification
       gameLabelLine.append('div').attr('class', 'chart-percentages').html(
-        `<span class="good-calls-label">${gameActualStrikes} </span> / <span class="bad-calls-label">${gameBadCalls} </span>`
+        `<span class="good-calls-label">${gameActualStrikes} </span> / <span class="bad-calls-label">${gameBadCalls} </span> <span style="font-size: 0.85em; color: #666;">(called strikes only)</span>`
       );
       const gameBarInner = gameBarWrapper.append('div').attr('class', 'chart-bar');
       
