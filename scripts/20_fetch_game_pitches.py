@@ -4,13 +4,17 @@ from datetime import datetime, timedelta
 from tqdm import tqdm
 import math
 import os
+import sys
+import argparse
 import boto3
 
 # === Constants ===
 SCHEDULE_URL = "https://statsapi.mlb.com/api/v1/schedule"
 GAMEFEED_URL = "https://baseballsavant.mlb.com/gf"
+LIVE_FEED_URL = "https://statsapi.mlb.com/api/v1.1/game/{game_pk}/feed/live"
 BALL_RADIUS_FEET = 1.45 / 12
 SCRIPT_DIR = os.path.dirname(os.path.abspath(__file__))
+MIN_EXPECTED_PITCHES = 40
 
 # === Configuration ===
 OUTPUT_DIR = os.path.join(SCRIPT_DIR, "..", "data", "pitches")
@@ -96,6 +100,87 @@ def load_existing_json(url: str) -> pd.DataFrame:
         pass
     return pd.DataFrame()
 
+def get_game_status(game_pk: int) -> dict:
+    """
+    Fetch game status from MLB Stats API.
+    Returns dict with status, total_pitches, and innings_played.
+    """
+    try:
+        url = LIVE_FEED_URL.format(game_pk=game_pk)
+        resp = requests.get(url, timeout=15)
+        resp.raise_for_status()
+        data = resp.json()
+        
+        game_data = data.get('gameData', {})
+        status = game_data.get('status', {})
+        detailed_state = status.get('detailedState', '')
+        
+        linescore = data.get('liveData', {}).get('linescore', {})
+        current_inning = linescore.get('currentInning', 0)
+        
+        # Get total pitches from box score if available
+        boxscore = data.get('liveData', {}).get('boxscore', {})
+        teams = boxscore.get('teams', {})
+        away_pitches = teams.get('away', {}).get('teamStats', {}).get('pitching', {}).get('numberOfPitches', 0)
+        home_pitches = teams.get('home', {}).get('teamStats', {}).get('pitching', {}).get('numberOfPitches', 0)
+        total_pitches = away_pitches + home_pitches
+        
+        return {
+            'status': detailed_state,
+            'is_final': detailed_state in ['Final', 'Completed Early', 'Game Over'],
+            'total_pitches': total_pitches,
+            'innings_played': current_inning
+        }
+    except Exception as e:
+        return {
+            'status': 'Unknown',
+            'is_final': False,
+            'total_pitches': 0,
+            'innings_played': 0
+        }
+
+def should_refetch_game(game_pk: int, existing_df: pd.DataFrame, force_refresh_pks: set = None) -> bool:
+    """
+    Determine if a game should be re-fetched.
+    Returns True if:
+    - Game is in force_refresh_pks
+    - Game is not final
+    - Game has suspiciously low pitch count
+    """
+    if force_refresh_pks and game_pk in force_refresh_pks:
+        return True
+    
+    if existing_df.empty or 'game_pk' not in existing_df.columns:
+        return True
+    
+    game_data = existing_df[existing_df['game_pk'] == game_pk]
+    if game_data.empty:
+        return True
+    
+    # Check existing pitch count
+    existing_pitch_count = len(game_data)
+    
+    # Fetch game status
+    status_info = get_game_status(game_pk)
+    
+    # Re-fetch if game is not final
+    if not status_info['is_final']:
+        return True
+    
+    # Re-fetch if existing pitch count is suspiciously low for a final game
+    if status_info['is_final'] and existing_pitch_count < MIN_EXPECTED_PITCHES:
+        print(f"  ⚠️  Game {game_pk}: Only {existing_pitch_count} pitches but game is final. Re-fetching...")
+        return True
+    
+    # Validate against box score total if available
+    if status_info['total_pitches'] > 0:
+        expected = status_info['total_pitches'] / 2  # Approximate half for Dodgers batting
+        if existing_pitch_count < expected * 0.5:  # Less than 50% of expected
+            print(f"  ⚠️  Game {game_pk}: Only {existing_pitch_count}/{int(expected)} expected pitches. Re-fetching...")
+            return True
+    
+    return False
+
 def analyze_pitches(game_info, batting_side_override: str = None, team_role: str = None):
     game_pk = game_info["gamePk"]
     team_side = batting_side_override if batting_side_override else game_info["team_side"]
@@ -173,6 +258,19 @@ def analyze_pitches(game_info, batting_side_override: str = None, team_role: str
     rows.sort(key=lambda p: (p.get('inning', 0), p.get('ab_number', 0), p.get('pitch_number', 0)))
     return rows
 
+# === Argument Parsing ===
+parser = argparse.ArgumentParser(description='Fetch Dodgers pitch data from Baseball Savant')
+parser.add_argument('--force-refresh', type=str, help='Comma-separated list of game_pks to force refresh')
+args = parser.parse_args()
+
+force_refresh_pks = set()
+if args.force_refresh:
+    try:
+        force_refresh_pks = set(int(pk.strip()) for pk in args.force_refresh.split(','))
+        print(f"Force refreshing games: {force_refresh_pks}")
+    except ValueError:
+        print("⚠️  Invalid game_pk in --force-refresh argument. Ignoring.")
+
 # === Main ===
 all_dodgers_games = []
 total_days = (end_date - start_date).days + 1
@@ -191,23 +289,49 @@ public_to_url = f"https://stilesdata.com/{S3_KEY_JSON}"
 public_by_url = f"https://stilesdata.com/dodgers/data/pitches/dodgers_pitches_thrown_{current_year_for_paths}.json"
 existing_to_df = load_existing_json(public_to_url)
 existing_by_df = load_existing_json(public_by_url)
-processed_gamepks_to = set(existing_to_df['game_pk'].unique()) if not existing_to_df.empty and 'game_pk' in existing_to_df.columns else set()
-processed_gamepks_by = set(existing_by_df['game_pk'].unique()) if not existing_by_df.empty and 'game_pk' in existing_by_df.columns else set()
+
+# Track stats
+stats = {
+    'total_games': len(all_dodgers_games),
+    'skipped': 0,
+    'fetched': 0,
+    'refetched': 0,
+    'failed': 0
+}
 
 for game_info in tqdm(all_dodgers_games, desc="Analyzing games"):
     gpk = game_info.get('gamePk')
 
-    # Pitches thrown to Dodgers batters (skip if already processed)
-    if gpk not in processed_gamepks_to:
-        all_pitches.extend(analyze_pitches(game_info, team_role="thrown_to_dodgers"))
+    # Pitches thrown to Dodgers batters
+    should_fetch_to = should_refetch_game(gpk, existing_to_df, force_refresh_pks)
+    if should_fetch_to:
+        pitches = analyze_pitches(game_info, team_role="thrown_to_dodgers")
+        if pitches:
+            all_pitches.extend(pitches)
+            if gpk in existing_to_df.get('game_pk', pd.Series()).values:
+                stats['refetched'] += 1
+            else:
+                stats['fetched'] += 1
+        else:
+            stats['failed'] += 1
+    else:
+        stats['skipped'] += 1
 
-    # Pitches thrown BY Dodgers pitchers (skip if already processed)
-    if gpk not in processed_gamepks_by:
+    # Pitches thrown BY Dodgers pitchers
+    should_fetch_by = should_refetch_game(gpk, existing_by_df, force_refresh_pks)
+    if should_fetch_by:
         ts = game_info.get("team_side")
         other_side = "away_batters" if ts == "home_batters" else "home_batters"
-        all_pitches_thrown_by_dodgers.extend(
-            analyze_pitches(game_info, batting_side_override=other_side, team_role="thrown_by_dodgers")
-        )
+        pitches = analyze_pitches(game_info, batting_side_override=other_side, team_role="thrown_by_dodgers")
+        if pitches:
+            all_pitches_thrown_by_dodgers.extend(pitches)
+
+print(f"\n=== Collection Summary ===")
+print(f"Total games: {stats['total_games']}")
+print(f"Fetched new: {stats['fetched']}")
+print(f"Re-fetched incomplete: {stats['refetched']}")
+print(f"Skipped complete: {stats['skipped']}")
+print(f"Failed: {stats['failed']}")
 
 # === Results ===
 df = pd.DataFrame(all_pitches)
@@ -235,6 +359,21 @@ def combine_and_dedupe(existing: pd.DataFrame, new: pd.DataFrame) -> pd.DataFram
 
 df = combine_and_dedupe(existing_to_df, df)
 df_by_dodgers = combine_and_dedupe(existing_by_df, df_by_dodgers)
+
+# === Validate final data ===
+print(f"\n=== Data Validation ===")
+if not df.empty and 'game_pk' in df.columns:
+    game_summary = df.groupby('game_pk').size().reset_index(name='pitch_count')
+    low_count_games = game_summary[game_summary['pitch_count'] < MIN_EXPECTED_PITCHES]
+    if not low_count_games.empty:
+        print(f"⚠️  {len(low_count_games)} games with suspiciously low pitch counts:")
+        for _, row in low_count_games.head(10).iterrows():
+            status_info = get_game_status(row['game_pk'])
+            print(f"  Game {row['game_pk']}: {row['pitch_count']} pitches, Status: {status_info['status']}")
+    else:
+        print("✓ All games have reasonable pitch counts")
+else:
+    print("No data to validate")
 
 # === Export the data ===
 os.makedirs(OUTPUT_DIR, exist_ok=True)
