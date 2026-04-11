@@ -81,7 +81,7 @@ twitter:
 
 <h3 class="visual-subhead">Standings: Games <span class="win">up</span> or <span class="loss">back</span></h3>
 <div id="d3-container" style="width: 100%; padding-bottom: 20px;"></div>
-<p class="note"><em>Note: Chart shows games back/up as of each Dodgers game. Current standings may differ if other division teams have played more recently.</em></p>
+<p class="note">Note: Chart shows games back/up as of each Dodgers game. Current standings may differ if other division teams have played more recently.</p>
 
 {% assign current_year_str = site.time | date: '%Y' %}
 {% assign dynamic_filename_key = "all_teams_standings_metrics_" | append: current_year_str %}
@@ -533,7 +533,6 @@ twitter:
     <div id="umpire-worst-calls"></div>
   </div>
 </div>
- <p class="note">Note: Strike zone calls are determined by Baseball Savant and <a href="https://github.com/stiles/dodgers/blob/main/scripts/20_fetch_game_pitches.py">collected</a> after each game from its gamefeed API. Download the data <a href="https://stilesdata.com/dodgers/data/pitches/dodgers_pitches_2025.json">here</a>.</p>
 
 <h3 class="visual-subhead">ABS challenges</h3>
 <p class="chart-chatter">MLB's Automated Ball-Strike system allows batters, pitchers and catchers to challenge calls at the plate. Tracking <span style="background-color: #53A796; color: #fff; font-weight: bold; padding: 1px 6px; border-radius: 5px;">successful</span> and <span style="background-color: #F18851; color: #fff; font-weight: bold; padding: 1px 6px; border-radius: 5px;">unsuccessful</span> challenges this season by the Dodgers and their opponents:</p>
@@ -541,6 +540,8 @@ twitter:
   <div id="abs-challenge-summary"></div>
   <div id="abs-challenge-log"></div>
 </div>
+
+ <p class="note">Note: Strike zone calls and ABS challengess are determined by Baseball Savant and collected after each game from its gamefeed API. Download the data here: <a href="https://stilesdata.com/dodgers/data/pitches/dodgers_pitches_2026.json">umpire called strikes</a>, <a href="https://stilesdata.com/dodgers/data/summary/abs_challenges.json">ABS challenge history</a>.</p>
 
   <!-- <h2 class="stat-group">Umpire scorecard (pitching)</h2>
 <div class="scorecard-row">
