@@ -1,13 +1,5 @@
 [
     {
-        "date":"Mar 28",
-        "opp_name":"Arizona Diamondbacks",
-        "home_away":"home",
-        "result":"win",
-        "placement":"last",
-        "game_start":"3-2"
-    },
-    {
         "date":"Mar 30",
         "opp_name":"Cleveland Guardians",
         "home_away":"home",
@@ -83,9 +75,9 @@
         "date":"Apr 10",
         "opp_name":"Texas Rangers",
         "home_away":"home",
-        "result":"--",
-        "placement":"next",
-        "game_start":"Game Over"
+        "result":"win",
+        "placement":"last",
+        "game_start":"8-7"
     },
     {
         "date":"Apr 11",
@@ -158,5 +150,13 @@
         "result":"--",
         "placement":"next",
         "game_start":"5:40 PM"
+    },
+    {
+        "date":"Apr 21",
+        "opp_name":"San Francisco Giants",
+        "home_away":"away",
+        "result":"--",
+        "placement":"next",
+        "game_start":"6:45 PM"
     }
 ]

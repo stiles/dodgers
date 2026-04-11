@@ -12,7 +12,7 @@
         "stat":"losses",
         "value":3,
         "category":"standings",
-        "context_value":3,
+        "context_value":4,
         "context_value_label":"This point last season"
     },
     {
@@ -20,7 +20,7 @@
         "stat":"record",
         "value":"10-3",
         "category":"standings",
-        "context_value":"9-3",
+        "context_value":"9-4",
         "context_value_label":"This point last season"
     },
     {
@@ -28,7 +28,7 @@
         "stat":"win_pct",
         "value":"76%",
         "category":"standings",
-        "context_value":"75%",
+        "context_value":"69%",
         "context_value_label":"This point last season"
     },
     {
@@ -44,7 +44,7 @@
         "stat":"mean_attendance",
         "value":"51,656",
         "category":"standings",
-        "context_value":6,
+        "context_value":7,
         "context_value_label":"Home games this season"
     },
     {
@@ -60,7 +60,7 @@
         "stat":"runs_against",
         "value":48,
         "category":"standings",
-        "context_value":41,
+        "context_value":49,
         "context_value_label":"This point last season"
     },
     {
@@ -68,7 +68,7 @@
         "stat":"run_differential",
         "value":35,
         "category":"standings",
-        "context_value":20,
+        "context_value":14,
         "context_value_label":"This point last season"
     },
     {
@@ -170,7 +170,7 @@
     {
         "stat_label":"Last updated",
         "stat":"update_time",
-        "value":"April 10, 2026, 10:11 PM PT",
+        "value":"April 10, 2026, 10:18 PM PT",
         "category":"summary",
         "context_value":"",
         "context_value_label":""
