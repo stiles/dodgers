@@ -1,17 +1,17 @@
 {
     "season_summary": {
-        "correct_strikes_pct": 88.45208845208845,
-        "incorrect_strikes_pct": 11.547911547911553,
-        "total_called_strikes": 407,
+        "correct_strikes_pct": 88.94117647058823,
+        "incorrect_strikes_pct": 11.058823529411768,
+        "total_called_strikes": 425,
         "bad_calls_count": 47
     },
     "last_game_summary": {
-        "date": "April 8, 2026",
-        "correct_strikes_pct": 80.0,
-        "incorrect_strikes_pct": 20.0,
-        "total_called_strikes": 25,
-        "bad_calls_count": 5,
-        "home_plate_umpire": "Dan Bellino"
+        "date": "April 10, 2026",
+        "correct_strikes_pct": 100.0,
+        "incorrect_strikes_pct": 0.0,
+        "total_called_strikes": 18,
+        "bad_calls_count": 0,
+        "home_plate_umpire": "Chris Guccione"
     },
     "worst_calls_of_season": [
         {
@@ -56,17 +56,17 @@
         }
     ],
     "pitching_season_summary": {
-        "correct_balls_pct": 95.67251461988305,
-        "incorrect_balls_pct": 4.327485380116954,
-        "total_called_balls": 855,
+        "correct_balls_pct": 95.91611479028698,
+        "incorrect_balls_pct": 4.083885209713017,
+        "total_called_balls": 906,
         "bad_calls_count": 37
     },
     "pitching_last_game_summary": {
-        "date": "April 8, 2026",
-        "correct_balls_pct": 96.36363636363636,
-        "incorrect_balls_pct": 3.6363636363636402,
-        "total_called_balls": 55,
-        "bad_calls_count": 2
+        "date": "April 10, 2026",
+        "correct_balls_pct": 100.0,
+        "incorrect_balls_pct": 0.0,
+        "total_called_balls": 51,
+        "bad_calls_count": 0
     },
     "pitching_worst_calls_of_season": [],
     "abs_challenges": {
@@ -82,8 +82,8 @@
                 "failed": 0
             },
             "catching": {
-                "total": 3,
-                "successful": 2,
+                "total": 4,
+                "successful": 3,
                 "failed": 1
             }
         },
@@ -105,6 +105,18 @@
             }
         },
         "challenge_log": [
+            {
+                "date": "2026-04-10",
+                "date_formatted": "April 10, 2026",
+                "challenger": "Will Smith",
+                "role": "catching",
+                "team": "dodgers",
+                "outcome": "overturned",
+                "result_desc": "Danny Jansen called out on strikes.",
+                "batter": "Danny Jansen",
+                "pitcher": "Edwin D\u00edaz",
+                "game_pk": 823968
+            },
             {
                 "date": "2026-04-06",
                 "date_formatted": "April 6, 2026",

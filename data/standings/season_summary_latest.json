@@ -2,7 +2,7 @@
     {
         "stat_label":"Wins",
         "stat":"wins",
-        "value":9,
+        "value":10,
         "category":"standings",
         "context_value":9,
         "context_value_label":"This point last season"
@@ -18,7 +18,7 @@
     {
         "stat_label":"Record",
         "stat":"record",
-        "value":"9-3",
+        "value":"10-3",
         "category":"standings",
         "context_value":"9-3",
         "context_value_label":"This point last season"
@@ -26,7 +26,7 @@
     {
         "stat_label":"Win percentage",
         "stat":"win_pct",
-        "value":"75%",
+        "value":"76%",
         "category":"standings",
         "context_value":"75%",
         "context_value_label":"This point last season"
@@ -50,7 +50,7 @@
     {
         "stat_label":"Runs",
         "stat":"runs",
-        "value":75,
+        "value":83,
         "category":"standings",
         "context_value":"2nd",
         "context_value_label":"League rank"
@@ -58,7 +58,7 @@
     {
         "stat_label":"Runs against",
         "stat":"runs_against",
-        "value":41,
+        "value":48,
         "category":"standings",
         "context_value":41,
         "context_value_label":"This point last season"
@@ -66,7 +66,7 @@
     {
         "stat_label":"Run differential",
         "stat":"run_differential",
-        "value":34,
+        "value":35,
         "category":"standings",
         "context_value":20,
         "context_value_label":"This point last season"
@@ -74,7 +74,7 @@
     {
         "stat_label":"Batting average",
         "stat":"batting_average",
-        "value":".287",
+        "value":".297",
         "category":"batting",
         "context_value":".253",
         "context_value_label":"Last decade average"
@@ -82,7 +82,7 @@
     {
         "stat_label":"Home runs",
         "stat":"home_runs",
-        "value":21,
+        "value":25,
         "category":"batting",
         "context_value":"1st",
         "context_value_label":"League rank"
@@ -90,7 +90,7 @@
     {
         "stat_label":"Home runs\/game",
         "stat":"home_runs_game",
-        "value":1.75,
+        "value":1.92,
         "category":"batting",
         "context_value":1.42,
         "context_value_label":"Last decade average"
@@ -98,7 +98,7 @@
     {
         "stat_label":"On-base percentage",
         "stat":"on_base_pct",
-        "value":".361",
+        "value":".369",
         "category":"batting",
         "context_value":".333",
         "context_value_label":"Last decade average"
@@ -108,13 +108,13 @@
         "stat":"stolen_bases",
         "value":5,
         "category":"batting",
-        "context_value":"23rd",
+        "context_value":"25th",
         "context_value_label":"League rank"
     },
     {
         "stat_label":"Stolen bases\/game",
         "stat":"stolen_bases_game",
-        "value":0.42,
+        "value":0.38,
         "category":"batting",
         "context_value":0.84,
         "context_value_label":"Rate all last season"
@@ -122,15 +122,15 @@
     {
         "stat_label":"Strikeouts",
         "stat":"strikeouts",
-        "value":"93",
+        "value":"107",
         "category":"pitching",
-        "context_value":"25th",
+        "context_value":"23rd",
         "context_value_label":"League rank"
     },
     {
         "stat_label":"Walks",
         "stat":"walks",
-        "value":40,
+        "value":43,
         "category":"pitching",
         "context_value":"21st",
         "context_value_label":"League rank"
@@ -138,7 +138,7 @@
     {
         "stat_label":"ERA",
         "stat":"era",
-        "value":"3.36",
+        "value":"3.65",
         "category":"pitching",
         "context_value":"10th",
         "context_value_label":"League rank"
@@ -146,23 +146,23 @@
     {
         "stat_label":"WHIP",
         "stat":"whip",
-        "value":"1.13",
-        "category":"pitching",
-        "context_value":"6th",
-        "context_value_label":"League rank"
-    },
-    {
-        "stat_label":"Batting average against",
-        "stat":"avg_against",
-        "value":".207",
+        "value":"1.15",
         "category":"pitching",
         "context_value":"5th",
         "context_value_label":"League rank"
     },
     {
+        "stat_label":"Batting average against",
+        "stat":"avg_against",
+        "value":".210",
+        "category":"pitching",
+        "context_value":"4th",
+        "context_value_label":"League rank"
+    },
+    {
         "stat_label":"K\/BB ratio",
         "stat":"k_bb_ratio",
-        "value":2.33,
+        "value":2.49,
         "category":"pitching",
         "context_value":"14th",
         "context_value_label":"League rank"
@@ -170,7 +170,7 @@
     {
         "stat_label":"Last updated",
         "stat":"update_time",
-        "value":"April 10, 2026, 4:18 PM PT",
+        "value":"April 10, 2026, 10:11 PM PT",
         "category":"summary",
         "context_value":"",
         "context_value_label":""
@@ -178,7 +178,7 @@
     {
         "stat_label":"Team summary",
         "stat":"summary",
-        "value":"<span class='highlight'>LOS ANGELES<\/span> <span class='updated'>(April 10)<\/span> \u2014 The Dodgers have compiled a <span class='highlight'>9-3<\/span> record in the 2026 regular season, a <span class='highlight'>75%<\/span> winning percentage. The last game was a <span class='highlight'>3-4<\/span> away <span class='highlight'>loss<\/span> against the <span class='highlight'>Toronto Blue Jays<\/span>. The team will next face the <span class='highlight'>Texas Rangers<\/span> on Friday at 7:10 p.m. PDT at <span class='highlight'>UNIQLO Field at Dodger Stadium<\/span>.",
+        "value":"<span class='highlight'>LOS ANGELES<\/span> <span class='updated'>(April 10)<\/span> \u2014 The Dodgers have compiled a <span class='highlight'>10-3<\/span> record in the 2026 regular season, a <span class='highlight'>77%<\/span> winning percentage. The last game was a <span class='highlight'>8-7<\/span> home <span class='highlight'>win<\/span> against the <span class='highlight'>Texas Rangers<\/span>. The team will next face the <span class='highlight'>Texas Rangers<\/span> on Saturday at 6:10 p.m. PDT at <span class='highlight'>UNIQLO Field at Dodger Stadium<\/span>.",
         "category":"summary",
         "context_value":"",
         "context_value_label":""
@@ -186,7 +186,7 @@
     {
         "stat_label":"Last game result",
         "stat":"last_game_result",
-        "value":"loss",
+        "value":"win",
         "category":"summary",
         "context_value":"",
         "context_value_label":""

@@ -1,8 +1,8 @@
 {
     "dodgers": {
         "batting": {
-            "total": 19,
-            "successful": 11,
+            "total": 20,
+            "successful": 12,
             "failed": 8
         },
         "pitching": {
@@ -11,15 +11,15 @@
             "failed": 2
         },
         "catching": {
-            "total": 23,
-            "successful": 13,
+            "total": 24,
+            "successful": 14,
             "failed": 10
         }
     },
     "opponents": {
         "batting": {
-            "total": 26,
-            "successful": 14,
+            "total": 27,
+            "successful": 15,
             "failed": 12
         },
         "pitching": {
@@ -34,6 +34,42 @@
         }
     },
     "challenge_log": [
+        {
+            "date": "2026-04-10",
+            "date_formatted": "April 10, 2026",
+            "challenger": "Joc Pederson",
+            "role": "batting",
+            "team": "opponents",
+            "outcome": "overturned",
+            "result_desc": "Joc Pederson singles on a ground ball to center fielder Andy Pages.",
+            "batter": "Joc Pederson",
+            "pitcher": "Edwin D\u00edaz",
+            "game_pk": 823968
+        },
+        {
+            "date": "2026-04-10",
+            "date_formatted": "April 10, 2026",
+            "challenger": "Teoscar Hern\u00e1ndez",
+            "role": "batting",
+            "team": "dodgers",
+            "outcome": "overturned",
+            "result_desc": "Teoscar Hern\u00e1ndez flies out to left fielder Ezequiel Duran.",
+            "batter": "Teoscar Hern\u00e1ndez",
+            "pitcher": "Luis Curvelo",
+            "game_pk": 823968
+        },
+        {
+            "date": "2026-04-10",
+            "date_formatted": "April 10, 2026",
+            "challenger": "Will Smith",
+            "role": "catching",
+            "team": "dodgers",
+            "outcome": "overturned",
+            "result_desc": "Corey Seager flies out to left fielder Teoscar Hern\u00e1ndez.",
+            "batter": "Corey Seager",
+            "pitcher": "Tyler Glasnow",
+            "game_pk": 823968
+        },
         {
             "date": "2026-04-08",
             "date_formatted": "April 8, 2026",
@@ -160,9 +196,9 @@
             "challenger": "Will Smith",
             "role": "catching",
             "team": "dodgers",
-            "outcome": "overturned",
-            "result_desc": "Curtis Mead strikes out swinging.",
-            "batter": "Curtis Mead",
+            "outcome": "confirmed",
+            "result_desc": "Jacob Young grounds out, shortstop Miguel Rojas to first baseman Freddie Freeman.",
+            "batter": "Jacob Young",
             "pitcher": "Tyler Glasnow",
             "game_pk": 822757
         },
@@ -184,9 +220,9 @@
             "challenger": "Will Smith",
             "role": "catching",
             "team": "dodgers",
-            "outcome": "confirmed",
-            "result_desc": "Jacob Young grounds out, shortstop Miguel Rojas to first baseman Freddie Freeman.",
-            "batter": "Jacob Young",
+            "outcome": "overturned",
+            "result_desc": "Curtis Mead strikes out swinging.",
+            "batter": "Curtis Mead",
             "pitcher": "Tyler Glasnow",
             "game_pk": 822757
         },
@@ -237,42 +273,6 @@
             "batter": "Daylen Lile",
             "pitcher": "Emmet Sheehan",
             "game_pk": 822758
-        },
-        {
-            "date": "2026-03-31",
-            "date_formatted": "March 31, 2026",
-            "challenger": "Will Smith",
-            "role": "catching",
-            "team": "dodgers",
-            "outcome": "overturned",
-            "result_desc": "Daniel Schneemann strikes out swinging.",
-            "batter": "Daniel Schneemann",
-            "pitcher": "Edwin D\u00edaz",
-            "game_pk": 823969
-        },
-        {
-            "date": "2026-03-31",
-            "date_formatted": "March 31, 2026",
-            "challenger": "Gabriel Arias",
-            "role": "batting",
-            "team": "opponents",
-            "outcome": "confirmed",
-            "result_desc": "Gabriel Arias grounds out, shortstop Mookie Betts to first baseman Freddie Freeman.",
-            "batter": "Gabriel Arias",
-            "pitcher": "Shohei Ohtani",
-            "game_pk": 823969
-        },
-        {
-            "date": "2026-03-31",
-            "date_formatted": "March 31, 2026",
-            "challenger": "Bo Naylor",
-            "role": "catching",
-            "team": "opponents",
-            "outcome": "confirmed",
-            "result_desc": "Max Muncy flies out to left fielder Angel Mart\u00ednez.",
-            "batter": "Max Muncy",
-            "pitcher": "Tanner Bibee",
-            "game_pk": 823969
         }
     ]
 }
