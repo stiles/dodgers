@@ -565,7 +565,15 @@ document.addEventListener('DOMContentLoaded', function() {
           .style('font-size', isMobile ? '10px' : '12px')
           .text("Cumulative wins");
       
-      // Add "Past" annotation
+      line = d3
+          .line()
+          .x((d) => xScale(d.gm))
+          .y((d) => yScale(d.wins))
+          .curve(d3.curveMonotoneX); // Smooth the line
+
+      drawLines(svg, data);
+
+      // Add "Past" annotation (after lines so it appears on top)
       const currentYear = new Date().getFullYear();
       svg.append('text')
           .attr('x', xScale(100))
@@ -579,14 +587,6 @@ document.addEventListener('DOMContentLoaded', function() {
           .style('paint-order', 'stroke')
           .clone(true)
           .style('stroke', 'none');
-
-      line = d3
-          .line()
-          .x((d) => xScale(d.gm))
-          .y((d) => yScale(d.wins))
-          .curve(d3.curveMonotoneX); // Smooth the line
-
-      drawLines(svg, data);
 
       d3.select('#toggle-view').on('click', function() {
           updateChart();
@@ -2604,12 +2604,12 @@ async function fetchAndRenderXwoba() {
           .attr('stroke-dasharray', '3,3');
 
         if (index === 0) {
-          const mlbAvgYOffset = latestXwoba >= leagueAvg ? -5 : 13; // prefer above the line when applicable
-          const mlbAvg = `MLB avg: ${leagueAvg.toFixed(3).replace(/^0\./, '.')}`;
+          const mlbAvgYOffset = latestXwoba >= leagueAvg ? -5 : 13;
+          const mlbAvg = `MLB avg= ${leagueAvg.toFixed(3).replace(/^0\./, '.')}`;
           const label = svg.append('text')
-            .attr('x', drawingWidth - 10)
+            .attr('x', 5) // Move to left side
             .attr('y', y(leagueAvg) + mlbAvgYOffset)
-            .attr('text-anchor', 'end')
+            .attr('text-anchor', 'start') // Align to start
             .attr('class', 'anno')
             .attr('font-size', '10px')
             .style('fill', '#b1b1b1')
