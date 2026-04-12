@@ -377,35 +377,73 @@ else:
 
 # === Export the data ===
 os.makedirs(OUTPUT_DIR, exist_ok=True)
+
+# Year-specific archive files
 csv_path = os.path.join(OUTPUT_DIR, f"dodgers_pitches_{current_year}.csv")
 json_path = os.path.join(OUTPUT_DIR, f"dodgers_pitches_{current_year}.json")
 csv_path_by = os.path.join(OUTPUT_DIR, f"dodgers_pitches_thrown_{current_year}.csv")
 json_path_by = os.path.join(OUTPUT_DIR, f"dodgers_pitches_thrown_{current_year}.json")
 
+# "Current" versions (for easy frontend reference)
+csv_path_current = os.path.join(OUTPUT_DIR, "dodgers_pitches_current.csv")
+json_path_current = os.path.join(OUTPUT_DIR, "dodgers_pitches_current.json")
+csv_path_by_current = os.path.join(OUTPUT_DIR, "dodgers_pitches_thrown_current.csv")
+json_path_by_current = os.path.join(OUTPUT_DIR, "dodgers_pitches_thrown_current.json")
+
+# Save year-specific files
 df.to_csv(csv_path, index=False)
 print(f"Pitch data saved locally to {csv_path}")
 df.to_json(json_path, indent=4, orient="records")
 print(f"Pitch data saved locally to {json_path}")
 
-# Save pitches thrown by Dodgers
+# Save "current" files
+df.to_csv(csv_path_current, index=False)
+print(f"Pitch data saved locally to {csv_path_current}")
+df.to_json(json_path_current, indent=4, orient="records")
+print(f"Pitch data saved locally to {json_path_current}")
+
+# Save pitches thrown by Dodgers (year-specific)
 df_by_dodgers.to_csv(csv_path_by, index=False)
 print(f"Pitch data (thrown by Dodgers) saved locally to {csv_path_by}")
 df_by_dodgers.to_json(json_path_by, indent=4, orient="records")
 print(f"Pitch data (thrown by Dodgers) saved locally to {json_path_by}")
 
+# Save pitches thrown by Dodgers ("current")
+df_by_dodgers.to_csv(csv_path_by_current, index=False)
+print(f"Pitch data (thrown by Dodgers) saved locally to {csv_path_by_current}")
+df_by_dodgers.to_json(json_path_by_current, indent=4, orient="records")
+print(f"Pitch data (thrown by Dodgers) saved locally to {json_path_by_current}")
+
 # === Upload to S3 ===
 try:
+    # Upload year-specific archives
     s3.Bucket(S3_BUCKET).upload_file(csv_path, S3_KEY_CSV)
     print(f"Successfully uploaded {os.path.basename(csv_path)} to {S3_BUCKET}/{S3_KEY_CSV}")
     s3.Bucket(S3_BUCKET).upload_file(json_path, S3_KEY_JSON)
     print(f"Successfully uploaded {os.path.basename(json_path)} to {S3_BUCKET}/{S3_KEY_JSON}")
 
-    # Upload thrown-by-Dodgers files
+    # Upload "current" versions
+    s3_key_csv_current = "dodgers/data/pitches/dodgers_pitches_current.csv"
+    s3_key_json_current = "dodgers/data/pitches/dodgers_pitches_current.json"
+    s3.Bucket(S3_BUCKET).upload_file(csv_path_current, s3_key_csv_current)
+    print(f"Successfully uploaded {os.path.basename(csv_path_current)} to {S3_BUCKET}/{s3_key_csv_current}")
+    s3.Bucket(S3_BUCKET).upload_file(json_path_current, s3_key_json_current)
+    print(f"Successfully uploaded {os.path.basename(json_path_current)} to {S3_BUCKET}/{s3_key_json_current}")
+
+    # Upload thrown-by-Dodgers files (year-specific)
     s3_key_csv_by = f"dodgers/data/pitches/dodgers_pitches_thrown_{current_year_for_paths}.csv"
     s3_key_json_by = f"dodgers/data/pitches/dodgers_pitches_thrown_{current_year_for_paths}.json"
     s3.Bucket(S3_BUCKET).upload_file(csv_path_by, s3_key_csv_by)
     print(f"Successfully uploaded {os.path.basename(csv_path_by)} to {S3_BUCKET}/{s3_key_csv_by}")
     s3.Bucket(S3_BUCKET).upload_file(json_path_by, s3_key_json_by)
     print(f"Successfully uploaded {os.path.basename(json_path_by)} to {S3_BUCKET}/{s3_key_json_by}")
+    
+    # Upload thrown-by-Dodgers files ("current")
+    s3_key_csv_by_current = "dodgers/data/pitches/dodgers_pitches_thrown_current.csv"
+    s3_key_json_by_current = "dodgers/data/pitches/dodgers_pitches_thrown_current.json"
+    s3.Bucket(S3_BUCKET).upload_file(csv_path_by_current, s3_key_csv_by_current)
+    print(f"Successfully uploaded {os.path.basename(csv_path_by_current)} to {S3_BUCKET}/{s3_key_csv_by_current}")
+    s3.Bucket(S3_BUCKET).upload_file(json_path_by_current, s3_key_json_by_current)
+    print(f"Successfully uploaded {os.path.basename(json_path_by_current)} to {S3_BUCKET}/{s3_key_json_by_current}")
 except Exception as e:
     print(f"An error occurred during S3 upload: {e}")

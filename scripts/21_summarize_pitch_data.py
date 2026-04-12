@@ -348,5 +348,5 @@ def analyze_pitches(file_path, thrown_by_file_path=None):
     upload_to_s3(LOCAL_JSON_PATH)
 
 if __name__ == "__main__":
-    year = pd.to_datetime("now").strftime("%Y")
-    analyze_pitches(f'data/pitches/dodgers_pitches_{year}.json', thrown_by_file_path=f'data/pitches/dodgers_pitches_thrown_{year}.json') 
+    # Use "current" files which are automatically updated to current season
+    analyze_pitches('data/pitches/dodgers_pitches_current.json', thrown_by_file_path='data/pitches/dodgers_pitches_thrown_current.json') 

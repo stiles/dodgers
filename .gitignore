@@ -15,6 +15,9 @@ data/*
 !data/pitches/
 data/roster/*
 !data/roster/avatars/
+# Ignore "current" pitch files (duplicates of year-specific files)
+data/pitches/*_current.csv
+data/pitches/*_current.json
 _data/
 !_data/navigation.yml
 
