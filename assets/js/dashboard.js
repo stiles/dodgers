@@ -2604,12 +2604,12 @@ async function fetchAndRenderXwoba() {
           .attr('stroke-dasharray', '3,3');
 
         if (index === 0) {
-          const mlbAvgYOffset = latestXwoba >= leagueAvg ? -5 : 13; // prefer above the line when applicable
-          const mlbAvg = `MLB avg: ${leagueAvg.toFixed(3).replace(/^0\./, '.')}`;
+          const mlbAvgYOffset = latestXwoba >= leagueAvg ? -5 : 13;
+          const mlbAvg = `MLB avg= ${leagueAvg.toFixed(3).replace(/^0\./, '.')}`;
           const label = svg.append('text')
-            .attr('x', drawingWidth - 10)
+            .attr('x', 5) // Move to left side
             .attr('y', y(leagueAvg) + mlbAvgYOffset)
-            .attr('text-anchor', 'end')
+            .attr('text-anchor', 'start') // Align to start
             .attr('class', 'anno')
             .attr('font-size', '10px')
             .style('fill', '#b1b1b1')
