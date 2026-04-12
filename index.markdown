@@ -474,10 +474,10 @@ twitter:
    <p class="note">Note: Tables and charts include top batters by plate appearances.</p>
 </div>
 
-  <!--<h3 class="visual-subhead">Recent form: Expected weighted on-base average</h3>
+  <h3 class="visual-subhead">Recent form: Expected weighted on-base average</h3>
   <p class="chart-chatter">Rolling 100-plate appearance <span class='anno-xwoba'>xwOBA</span> for each Dodgers batter compared to the <span class='anno-mean'>league average</span>. This stat predicts a player's offensive contributions based on the quality of contact they make with the ball.</p>
   <div id="xwoba-grid" class="xwoba-grid-container">
-  </div> -->
+  </div> 
 
   <!-- <h2 class="stat-group">Shohei stats</h2>
 
@@ -542,20 +542,6 @@ twitter:
 </div>
 
  <p class="note">Note: Strike zone calls and ABS challengess are determined by Baseball Savant and MLB and collected after each game from its gamefeed API. Download the data here: <a href="https://stilesdata.com/dodgers/data/pitches/dodgers_pitches_current.json">umpire called strikes</a>, <a href="https://stilesdata.com/dodgers/data/summary/abs_challenges.json">ABS challenge history</a>.</p>
-
-  <!-- <h2 class="stat-group">Umpire scorecard (pitching)</h2>
-<div class="scorecard-row">
-  <div class="scorecard-left">
-  <h3 class="visual-subhead">Pitching strike zone analysis</h3>
-  <p class="chart-chatter">How often are Dodgers pitchers charged with <span style="background-color: #F18851; color: #fff; font-weight: bold; padding: 1px 6px; border-radius: 5px;">balls</span> that were actually <span style="background-color: #53A796; color: #fff; font-weight: bold; padding: 1px 6px; border-radius: 5px;">strikes</span>?</p>
-    <div id="umpire-scorecard-pitching-chart"></div>
-  </div>
-  <div class="scorecard-right">
-    <h3 class="visual-subhead">Worst calls against Dodgers pitchers</h3>
-    <div id="umpire-worst-calls-pitching"></div>
-  </div>
-</div>
- <p class="note">Note: Strike zone calls are determined by Baseball Savant and <a href="https://github.com/stiles/dodgers/blob/main/scripts/20_fetch_game_pitches.py">collected</a> after each game from its gamefeed API. Download the data <a href="https://stilesdata.com/dodgers/data/pitches/dodgers_pitches_thrown_2025.json">here</a>.</p> -->
 
   <h2 class="stat-group">Schedule</h2>
     <div id="schedule-section" class="schedule-tables">
