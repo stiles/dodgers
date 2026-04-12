@@ -1,17 +1,17 @@
 {
     "season_summary": {
-        "correct_strikes_pct": 88.8211382113821,
-        "incorrect_strikes_pct": 11.178861788617894,
-        "total_called_strikes": 492,
+        "correct_strikes_pct": 89.42307692307693,
+        "incorrect_strikes_pct": 10.576923076923066,
+        "total_called_strikes": 520,
         "bad_calls_count": 55
     },
     "last_game_summary": {
-        "date": "April 11, 2026",
+        "date": "April 12, 2026",
         "correct_strikes_pct": 100.0,
         "incorrect_strikes_pct": 0.0,
-        "total_called_strikes": 23,
+        "total_called_strikes": 28,
         "bad_calls_count": 0,
-        "home_plate_umpire": "Nestor Ceja"
+        "home_plate_umpire": "Charlie Ramos"
     },
     "worst_calls_of_season": [
         {
@@ -56,25 +56,25 @@
         }
     ],
     "pitching_season_summary": {
-        "correct_balls_pct": 95.86693548387096,
-        "incorrect_balls_pct": 4.133064516129039,
-        "total_called_balls": 992,
-        "bad_calls_count": 41
+        "correct_balls_pct": 95.5785512699906,
+        "incorrect_balls_pct": 4.421448730009402,
+        "total_called_balls": 1063,
+        "bad_calls_count": 47
     },
     "pitching_last_game_summary": {
-        "date": "April 11, 2026",
-        "correct_balls_pct": 95.34883720930233,
-        "incorrect_balls_pct": 4.6511627906976685,
-        "total_called_balls": 43,
-        "bad_calls_count": 2
+        "date": "April 12, 2026",
+        "correct_balls_pct": 91.54929577464789,
+        "incorrect_balls_pct": 8.450704225352112,
+        "total_called_balls": 71,
+        "bad_calls_count": 6
     },
     "pitching_worst_calls_of_season": [],
     "abs_challenges": {
         "dodgers": {
             "batting": {
-                "total": 4,
+                "total": 5,
                 "successful": 1,
-                "failed": 3
+                "failed": 4
             },
             "pitching": {
                 "total": 0,
@@ -99,12 +99,60 @@
                 "failed": 0
             },
             "catching": {
-                "total": 2,
-                "successful": 2,
+                "total": 5,
+                "successful": 5,
                 "failed": 0
             }
         },
         "challenge_log": [
+            {
+                "date": "2026-04-12",
+                "date_formatted": "April 12, 2026",
+                "challenger": "Danny Jansen",
+                "role": "catching",
+                "team": "opponents",
+                "outcome": "overturned",
+                "result_desc": "Freddie Freeman called out on strikes.",
+                "batter": "Freddie Freeman",
+                "pitcher": "Jacob deGrom",
+                "game_pk": 823966
+            },
+            {
+                "date": "2026-04-12",
+                "date_formatted": "April 12, 2026",
+                "challenger": "Hyeseong Kim",
+                "role": "batting",
+                "team": "dodgers",
+                "outcome": "confirmed",
+                "result_desc": "Hyeseong Kim called out on strikes.",
+                "batter": "Hyeseong Kim",
+                "pitcher": "Jacob deGrom",
+                "game_pk": 823966
+            },
+            {
+                "date": "2026-04-12",
+                "date_formatted": "April 12, 2026",
+                "challenger": "Danny Jansen",
+                "role": "catching",
+                "team": "opponents",
+                "outcome": "overturned",
+                "result_desc": "Dalton Rushing called out on strikes.",
+                "batter": "Dalton Rushing",
+                "pitcher": "Cole Winn",
+                "game_pk": 823966
+            },
+            {
+                "date": "2026-04-12",
+                "date_formatted": "April 12, 2026",
+                "challenger": "Danny Jansen",
+                "role": "catching",
+                "team": "opponents",
+                "outcome": "overturned",
+                "result_desc": "Alex Call called out on strikes.",
+                "batter": "Alex Call",
+                "pitcher": "Jakob Junis",
+                "game_pk": 823966
+            },
             {
                 "date": "2026-04-10",
                 "date_formatted": "April 10, 2026",
