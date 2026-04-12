@@ -23,17 +23,53 @@
             "failed": 12
         },
         "pitching": {
-            "total": 0,
+            "total": 1,
             "successful": 0,
-            "failed": 0
+            "failed": 1
         },
         "catching": {
-            "total": 24,
-            "successful": 14,
-            "failed": 10
+            "total": 26,
+            "successful": 15,
+            "failed": 11
         }
     },
     "challenge_log": [
+        {
+            "date": "2026-04-11",
+            "date_formatted": "April 11, 2026",
+            "challenger": "Kyle Higashioka",
+            "role": "catching",
+            "team": "opponents",
+            "outcome": "confirmed",
+            "result_desc": "Alex Freeland strikes out swinging.",
+            "batter": "Alex Freeland",
+            "pitcher": "Chris Martin",
+            "game_pk": 823967
+        },
+        {
+            "date": "2026-04-11",
+            "date_formatted": "April 11, 2026",
+            "challenger": "Robert Garcia",
+            "role": "pitching",
+            "team": "opponents",
+            "outcome": "confirmed",
+            "result_desc": "Will Smith walks.",
+            "batter": "Will Smith",
+            "pitcher": "Robert Garcia",
+            "game_pk": 823967
+        },
+        {
+            "date": "2026-04-11",
+            "date_formatted": "April 11, 2026",
+            "challenger": "Kyle Higashioka",
+            "role": "catching",
+            "team": "opponents",
+            "outcome": "overturned",
+            "result_desc": "Andy Pages flies out to right fielder Brandon Nimmo.",
+            "batter": "Andy Pages",
+            "pitcher": "Jack Leiter",
+            "game_pk": 823967
+        },
         {
             "date": "2026-04-10",
             "date_formatted": "April 10, 2026",
@@ -145,18 +181,6 @@
         {
             "date": "2026-04-06",
             "date_formatted": "April 6, 2026",
-            "challenger": "Dalton Rushing",
-            "role": "catching",
-            "team": "dodgers",
-            "outcome": "confirmed",
-            "result_desc": "Myles Straw grounds out, second baseman Alex Freeland to first baseman Freddie Freeman.",
-            "batter": "Myles Straw",
-            "pitcher": "Will Klein",
-            "game_pk": 822832
-        },
-        {
-            "date": "2026-04-06",
-            "date_formatted": "April 6, 2026",
             "challenger": "Tyler Heineman",
             "role": "catching",
             "team": "opponents",
@@ -164,6 +188,18 @@
             "result_desc": "Teoscar Hern\u00e1ndez strikes out swinging.",
             "batter": "Teoscar Hern\u00e1ndez",
             "pitcher": "Josh Fleming",
+            "game_pk": 822832
+        },
+        {
+            "date": "2026-04-06",
+            "date_formatted": "April 6, 2026",
+            "challenger": "Dalton Rushing",
+            "role": "catching",
+            "team": "dodgers",
+            "outcome": "confirmed",
+            "result_desc": "Myles Straw grounds out, second baseman Alex Freeland to first baseman Freddie Freeman.",
+            "batter": "Myles Straw",
+            "pitcher": "Will Klein",
             "game_pk": 822832
         },
         {
@@ -236,42 +272,6 @@
             "result_desc": "Luis Garc\u00eda Jr. strikes out swinging.",
             "batter": "Luis Garc\u00eda Jr.",
             "pitcher": "Edgardo Henriquez",
-            "game_pk": 822758
-        },
-        {
-            "date": "2026-04-03",
-            "date_formatted": "April 3, 2026",
-            "challenger": "Shohei Ohtani",
-            "role": "batting",
-            "team": "dodgers",
-            "outcome": "confirmed",
-            "result_desc": "Shohei Ohtani flies out to left fielder Daylen Lile.",
-            "batter": "Shohei Ohtani",
-            "pitcher": "Ken Waldichuk",
-            "game_pk": 822758
-        },
-        {
-            "date": "2026-04-03",
-            "date_formatted": "April 3, 2026",
-            "challenger": "Will Smith",
-            "role": "catching",
-            "team": "dodgers",
-            "outcome": "overturned",
-            "result_desc": "James Wood strikes out swinging.",
-            "batter": "James Wood",
-            "pitcher": "Jack Dreyer",
-            "game_pk": 822758
-        },
-        {
-            "date": "2026-04-03",
-            "date_formatted": "April 3, 2026",
-            "challenger": "Daylen Lile",
-            "role": "batting",
-            "team": "opponents",
-            "outcome": "overturned",
-            "result_desc": "Daylen Lile singles on a ground ball to shortstop Mookie Betts.",
-            "batter": "Daylen Lile",
-            "pitcher": "Emmet Sheehan",
             "game_pk": 822758
         }
     ]
