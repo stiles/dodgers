@@ -295,25 +295,25 @@ def current_season_stats(standings_now, standings_past, pitching, standings_last
         win_pct_float = float(win_pct_str.lstrip('.')) if win_pct_str.startswith('.') else float(win_pct_str)
         # If it's already a decimal (e.g., 0.714), use as is; if it's like "714", divide by 1000
         if win_pct_float > 1:
-            win_pct = int(win_pct_float / 10)
+            win_pct = round(win_pct_float / 10)
         else:
-            win_pct = int(win_pct_float * 100)
+            win_pct = round(win_pct_float * 100)
     else:
         # Fallback to Baseball Reference data if live data unavailable
         games = standings_now["gm"].iloc[0]
         wins = standings_now["wins"].iloc[0]
         losses = standings_now["losses"].iloc[0]
         record = standings_now["record"].iloc[0]
-        win_pct = int(standings_now["win_pct"].iloc[0] * 100)
+        win_pct = round(standings_now["win_pct"].iloc[0] * 100)
     
     wins_last = standings_last["wins"].iloc[0] if not standings_last.empty else 0
     losses_last = standings_last["losses"].iloc[0] if not standings_last.empty else 0
     record_last = standings_last["record"].iloc[0] if not standings_last.empty else "0-0"
-    win_pct_last = int(standings_last["win_pct"].iloc[0] * 100) if not standings_last.empty else 0
+    win_pct_last = round(standings_last["win_pct"].iloc[0] * 100) if not standings_last.empty else 0
     
     # Calculate decade average, handling NaN if query returns empty
     decade_avg = standings_past.query(f"gm == {games}").head(10)["win_pct"].mean()
-    win_pct_decade_thispoint = int(round(decade_avg, 2) * 100) if not pd.isna(decade_avg) else win_pct
+    win_pct_decade_thispoint = round(decade_avg * 100) if not pd.isna(decade_avg) else win_pct
     era = pitching['era'].iloc[0]
     era_rank = to_ordinal(league_ranks_data.get('pitching_earnedRunAverage', 'N/A'))
     strikeouts = pitching['so'].iloc[0]
