@@ -357,8 +357,14 @@ def main():
         # Get all player IDs
         player_lookup = fetch_player_ids()
         if not player_lookup:
-            logging.error("No players found in lookup. Exiting.")
-            sys.exit(1)
+            logging.warning("No players found in lookup from Baseball Savant.")
+            # Check if we have existing data files
+            if os.path.exists(csv_file) and os.path.exists(json_file):
+                logging.info("Existing data files found. Keeping current data and exiting successfully.")
+                sys.exit(0)
+            else:
+                logging.error("No existing data files found. Cannot proceed.")
+                sys.exit(1)
             
         logging.info(f"Player lookup contains {len(player_lookup)} players")
         
