@@ -541,7 +541,7 @@ twitter:
   <div id="abs-challenge-log"></div>
 </div>
 
- <p class="note">Note: Strike zone calls and ABS challengess are determined by Baseball Savant and collected after each game from its gamefeed API. Download the data here: <a href="https://stilesdata.com/dodgers/data/pitches/dodgers_pitches_2026.json">umpire called strikes</a>, <a href="https://stilesdata.com/dodgers/data/summary/abs_challenges.json">ABS challenge history</a>.</p>
+ <p class="note">Note: Strike zone calls and ABS challengess are determined by Baseball Savant and MLB and collected after each game from its gamefeed API. Download the data here: <a href="https://stilesdata.com/dodgers/data/pitches/dodgers_pitches_2026.json">umpire called strikes</a>, <a href="https://stilesdata.com/dodgers/data/summary/abs_challenges.json">ABS challenge history</a>.</p>
 
   <!-- <h2 class="stat-group">Umpire scorecard (pitching)</h2>
 <div class="scorecard-row">
