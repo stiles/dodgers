@@ -4,7 +4,7 @@
         "stat":"wins",
         "value":11,
         "category":"standings",
-        "context_value":10,
+        "context_value":11,
         "context_value_label":"This point last season"
     },
     {
@@ -20,7 +20,7 @@
         "stat":"record",
         "value":"11-4",
         "category":"standings",
-        "context_value":"10-4",
+        "context_value":"11-4",
         "context_value_label":"This point last season"
     },
     {
@@ -28,7 +28,7 @@
         "stat":"win_pct",
         "value":"73%",
         "category":"standings",
-        "context_value":"71%",
+        "context_value":"73%",
         "context_value_label":"This point last season"
     },
     {
@@ -44,7 +44,7 @@
         "stat":"mean_attendance",
         "value":"52,153",
         "category":"standings",
-        "context_value":8,
+        "context_value":9,
         "context_value_label":"Home games this season"
     },
     {
@@ -68,7 +68,7 @@
         "stat":"run_differential",
         "value":35,
         "category":"standings",
-        "context_value":15,
+        "context_value":18,
         "context_value_label":"This point last season"
     },
     {
@@ -140,7 +140,7 @@
         "stat":"era",
         "value":"3.63",
         "category":"pitching",
-        "context_value":"10th",
+        "context_value":"9th",
         "context_value_label":"League rank"
     },
     {
@@ -156,7 +156,7 @@
         "stat":"avg_against",
         "value":".211",
         "category":"pitching",
-        "context_value":"4th",
+        "context_value":"3rd",
         "context_value_label":"League rank"
     },
     {
@@ -170,7 +170,7 @@
     {
         "stat_label":"Last updated",
         "stat":"update_time",
-        "value":"April 12, 2026, 4:17 PM PT",
+        "value":"April 12, 2026, 6:44 PM PT",
         "category":"summary",
         "context_value":"",
         "context_value_label":""
