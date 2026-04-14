@@ -1,6 +1,6 @@
 {
   "version": "1.0",
-  "last_updated": "2026-04-14T01:43:48.964166-07:00",
+  "last_updated": "2026-04-14T05:32:25.551372-07:00",
   "season": "2026",
   "phase": "regular_season",
   "postseason_active": false,
@@ -10,7 +10,7 @@
       "version": "v1",
       "url": "https://stilesdata.com/dodgers/data/standings/dodgers_standings_1958_present.json",
       "content_type": "application/json",
-      "last_updated": "2026-04-14T01:43:48.964189-07:00",
+      "last_updated": "2026-04-14T05:32:25.551401-07:00",
       "description": "Game-by-game standings 1958-present",
       "cadence": "regular_season_daily",
       "source": "mlb_statsapi",
@@ -21,7 +21,7 @@
       "version": "v1",
       "url": "https://stilesdata.com/dodgers/data/standings/dodgers_standings_1958_present_optimized.json",
       "content_type": "application/json",
-      "last_updated": "2026-04-14T01:43:48.964200-07:00",
+      "last_updated": "2026-04-14T05:32:25.551412-07:00",
       "description": "Optimized standings (year, gm, win_pct, gb only)",
       "cadence": "regular_season_daily",
       "source": "mlb_statsapi",
@@ -32,7 +32,7 @@
       "version": "v1",
       "url": "https://stilesdata.com/dodgers/data/standings/dodgers_wins_losses_current.json",
       "content_type": "application/json",
-      "last_updated": "2026-04-14T01:43:48.964207-07:00",
+      "last_updated": "2026-04-14T05:32:25.551419-07:00",
       "description": "Current season wins/losses/run differential",
       "cadence": "regular_season_daily",
       "source": "mlb_statsapi"
@@ -42,7 +42,7 @@
       "version": "v1",
       "url": "https://stilesdata.com/dodgers/data/standings/dodgers_schedule.json",
       "content_type": "application/json",
-      "last_updated": "2026-04-14T01:43:48.964214-07:00",
+      "last_updated": "2026-04-14T05:32:25.551426-07:00",
       "description": "Last 10 games and next 10 games",
       "cadence": "regular_season_daily",
       "source": "mlb_statsapi"
@@ -52,7 +52,7 @@
       "version": "v1",
       "url": "https://stilesdata.com/dodgers/data/standings/all_teams_standings_metrics_2026.json",
       "content_type": "application/json",
-      "last_updated": "2026-04-14T01:43:48.964221-07:00",
+      "last_updated": "2026-04-14T05:32:25.551433-07:00",
       "description": "Current year standings for all MLB teams",
       "cadence": "regular_season_daily",
       "source": "mlb_statsapi"
@@ -62,7 +62,7 @@
       "version": "v1",
       "url": "https://stilesdata.com/dodgers/data/standings/mlb_team_attendance.json",
       "content_type": "application/json",
-      "last_updated": "2026-04-14T01:43:48.964227-07:00",
+      "last_updated": "2026-04-14T05:32:25.551439-07:00",
       "description": "MLB attendance by team",
       "cadence": "regular_season_weekly",
       "source": "baseball_reference_scrape"
@@ -72,7 +72,7 @@
       "version": "v1",
       "url": "https://stilesdata.com/dodgers/data/batting/dodgers_player_batting_current_table.json",
       "content_type": "application/json",
-      "last_updated": "2026-04-14T01:43:48.964234-07:00",
+      "last_updated": "2026-04-14T05:32:25.551445-07:00",
       "description": "Current season player batting stats",
       "cadence": "regular_season_daily",
       "source": "mlb_bdfed"
@@ -82,7 +82,7 @@
       "version": "v1",
       "url": "https://stilesdata.com/dodgers/data/batting/dodgers_xwoba_current.json",
       "content_type": "application/json",
-      "last_updated": "2026-04-14T01:43:48.964240-07:00",
+      "last_updated": "2026-04-14T05:32:25.551451-07:00",
       "description": "Rolling 100 PA xwOBA per player",
       "cadence": "regular_season_daily",
       "source": "baseball_savant"
@@ -92,7 +92,7 @@
       "version": "v1",
       "url": "https://stilesdata.com/dodgers/data/batting/shohei_home_runs_cumulative_timeseries_combined.json",
       "content_type": "application/json",
-      "last_updated": "2026-04-14T01:43:48.964246-07:00",
+      "last_updated": "2026-04-14T05:32:25.551457-07:00",
       "description": "Shohei Ohtani cumulative home runs",
       "cadence": "regular_season_daily",
       "source": "mlb_bdfed"
@@ -102,7 +102,7 @@
       "version": "v1",
       "url": "https://stilesdata.com/dodgers/data/batting/shohei_stolen_bases_cumulative_timeseries_combined.json",
       "content_type": "application/json",
-      "last_updated": "2026-04-14T01:43:48.964252-07:00",
+      "last_updated": "2026-04-14T05:32:25.551463-07:00",
       "description": "Shohei Ohtani cumulative stolen bases",
       "cadence": "regular_season_daily",
       "source": "mlb_bdfed"
@@ -112,7 +112,7 @@
       "version": "v1",
       "url": "https://stilesdata.com/dodgers/data/batting/archive/dodgers_historic_batting_gamelogs.json",
       "content_type": "application/json",
-      "last_updated": "2026-04-14T01:43:48.964257-07:00",
+      "last_updated": "2026-04-14T05:32:25.551469-07:00",
       "description": "Game-by-game batting stats (doubles, homers, hits)",
       "cadence": "regular_season_daily",
       "source": "mlb_statsapi",
@@ -123,7 +123,7 @@
       "version": "v1",
       "url": "https://stilesdata.com/dodgers/data/pitching/dodgers_historic_pitching_gamelogs_1958-present.json",
       "content_type": "application/json",
-      "last_updated": "2026-04-14T01:43:48.964263-07:00",
+      "last_updated": "2026-04-14T05:32:25.551475-07:00",
       "description": "Game-by-game pitching stats (ERA, K's, hits allowed)",
       "cadence": "regular_season_daily",
       "source": "mlb_statsapi",
@@ -134,7 +134,7 @@
       "version": "v1",
       "url": "https://stilesdata.com/dodgers/data/pitching/shohei_ohtani_pitch_mix.json",
       "content_type": "application/json",
-      "last_updated": "2026-04-14T01:43:48.964269-07:00",
+      "last_updated": "2026-04-14T05:32:25.551481-07:00",
       "description": "Shohei Ohtani pitch type distribution",
       "cadence": "regular_season_daily",
       "source": "baseball_savant"
@@ -144,7 +144,7 @@
       "version": "v1",
       "url": "https://stilesdata.com/dodgers/data/pitching/shohei_ohtani_pitches.json",
       "content_type": "application/json",
-      "last_updated": "2026-04-14T01:43:48.964275-07:00",
+      "last_updated": "2026-04-14T05:32:25.551487-07:00",
       "description": "Shohei Ohtani pitch-by-pitch data",
       "cadence": "regular_season_daily",
       "source": "baseball_savant"
@@ -154,7 +154,7 @@
       "version": "v1",
       "url": "https://stilesdata.com/dodgers/data/summary/umpire_summary.json",
       "content_type": "application/json",
-      "last_updated": "2026-04-14T01:43:48.964281-07:00",
+      "last_updated": "2026-04-14T05:32:25.551493-07:00",
       "description": "Umpire scorecard summary",
       "cadence": "regular_season_daily",
       "source": "baseball_savant"
@@ -164,7 +164,7 @@
       "version": "v1",
       "url": "https://stilesdata.com/dodgers/data/summary/abs_challenges.json",
       "content_type": "application/json",
-      "last_updated": "2026-04-14T01:43:48.964287-07:00",
+      "last_updated": "2026-04-14T05:32:25.551499-07:00",
       "description": "ABS challenge tracking",
       "cadence": "regular_season_daily",
       "source": "mlb_statsapi"
@@ -174,7 +174,7 @@
       "version": "v1",
       "url": "https://stilesdata.com/dodgers/data/postseason/dodgers_postseason_stats_2026.json",
       "content_type": "application/json",
-      "last_updated": "2026-04-14T01:43:48.964294-07:00",
+      "last_updated": "2026-04-14T05:32:25.551506-07:00",
       "description": "Current postseason player stats",
       "cadence": "postseason_only",
       "source": "mlb_statsapi"
@@ -184,7 +184,7 @@
       "version": "v1",
       "url": "https://stilesdata.com/dodgers/data/postseason/dodgers_postseason_series_2026.json",
       "content_type": "application/json",
-      "last_updated": "2026-04-14T01:43:48.964300-07:00",
+      "last_updated": "2026-04-14T05:32:25.551512-07:00",
       "description": "Current postseason series journey",
       "cadence": "postseason_only",
       "source": "mlb_statsapi"
@@ -194,7 +194,7 @@
       "version": "v1",
       "url": "https://stilesdata.com/dodgers/data/standings/dodgers_wins_projection_timeseries.json",
       "content_type": "application/json",
-      "last_updated": "2026-04-14T01:43:48.964305-07:00",
+      "last_updated": "2026-04-14T05:32:25.551518-07:00",
       "description": "Projected final wins (simulation)",
       "cadence": "regular_season_daily",
       "source": "derived"
