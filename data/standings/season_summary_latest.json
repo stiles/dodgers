@@ -52,7 +52,7 @@
         "stat":"runs",
         "value":95,
         "category":"standings",
-        "context_value":"1st",
+        "context_value":"2nd",
         "context_value_label":"League rank"
     },
     {
@@ -74,7 +74,7 @@
     {
         "stat_label":"Batting average",
         "stat":"batting_average",
-        "value":".289",
+        "value":".287",
         "category":"batting",
         "context_value":".253",
         "context_value_label":"Last decade average"
@@ -98,7 +98,7 @@
     {
         "stat_label":"On-base percentage",
         "stat":"on_base_pct",
-        "value":".369",
+        "value":".368",
         "category":"batting",
         "context_value":".333",
         "context_value_label":"Last decade average"
@@ -140,7 +140,7 @@
         "stat":"era",
         "value":"3.40",
         "category":"pitching",
-        "context_value":"6th",
+        "context_value":"5th",
         "context_value_label":"League rank"
     },
     {
@@ -170,7 +170,7 @@
     {
         "stat_label":"Last updated",
         "stat":"update_time",
-        "value":"April 14, 2026, 8:34 AM PT",
+        "value":"April 14, 2026, 4:23 PM PT",
         "category":"summary",
         "context_value":"",
         "context_value_label":""
