@@ -11,16 +11,16 @@
             "failed": 2
         },
         "catching": {
-            "total": 25,
-            "successful": 14,
+            "total": 27,
+            "successful": 16,
             "failed": 11
         }
     },
     "opponents": {
         "batting": {
-            "total": 27,
+            "total": 28,
             "successful": 15,
-            "failed": 12
+            "failed": 13
         },
         "pitching": {
             "total": 1,
@@ -28,12 +28,60 @@
             "failed": 1
         },
         "catching": {
-            "total": 28,
-            "successful": 16,
+            "total": 29,
+            "successful": 17,
             "failed": 12
         }
     },
     "challenge_log": [
+        {
+            "date": "2026-04-13",
+            "date_formatted": "April 13, 2026",
+            "challenger": "Will Smith",
+            "role": "catching",
+            "team": "dodgers",
+            "outcome": "overturned",
+            "result_desc": "Tyrone Taylor pops out to first baseman Freddie Freeman.",
+            "batter": "Tyrone Taylor",
+            "pitcher": "Tanner Scott",
+            "game_pk": 823964
+        },
+        {
+            "date": "2026-04-13",
+            "date_formatted": "April 13, 2026",
+            "challenger": "Francisco Alvarez",
+            "role": "catching",
+            "team": "opponents",
+            "outcome": "overturned",
+            "result_desc": "Max Muncy challenged (pitch result), call on the field was confirmed: Max Muncy called out on strikes.",
+            "batter": "Max Muncy",
+            "pitcher": "Joey Gerber",
+            "game_pk": 823964
+        },
+        {
+            "date": "2026-04-13",
+            "date_formatted": "April 13, 2026",
+            "challenger": "Will Smith",
+            "role": "catching",
+            "team": "dodgers",
+            "outcome": "overturned",
+            "result_desc": "Francisco Lindor grounds out, shortstop Miguel Rojas to first baseman Freddie Freeman.",
+            "batter": "Francisco Lindor",
+            "pitcher": "Justin Wrobleski",
+            "game_pk": 823964
+        },
+        {
+            "date": "2026-04-13",
+            "date_formatted": "April 13, 2026",
+            "challenger": "Mark Vientos",
+            "role": "batting",
+            "team": "opponents",
+            "outcome": "confirmed",
+            "result_desc": "Mark Vientos grounds out, third baseman Max Muncy to first baseman Freddie Freeman.",
+            "batter": "Mark Vientos",
+            "pitcher": "Justin Wrobleski",
+            "game_pk": 823964
+        },
         {
             "date": "2026-04-12",
             "date_formatted": "April 12, 2026",
@@ -109,13 +157,13 @@
         {
             "date": "2026-04-10",
             "date_formatted": "April 10, 2026",
-            "challenger": "Joc Pederson",
-            "role": "batting",
-            "team": "opponents",
+            "challenger": "Will Smith",
+            "role": "catching",
+            "team": "dodgers",
             "outcome": "overturned",
-            "result_desc": "Joc Pederson singles on a ground ball to center fielder Andy Pages.",
-            "batter": "Joc Pederson",
-            "pitcher": "Edwin D\u00edaz",
+            "result_desc": "Corey Seager flies out to left fielder Teoscar Hern\u00e1ndez.",
+            "batter": "Corey Seager",
+            "pitcher": "Tyler Glasnow",
             "game_pk": 823968
         },
         {
@@ -133,14 +181,26 @@
         {
             "date": "2026-04-10",
             "date_formatted": "April 10, 2026",
-            "challenger": "Will Smith",
-            "role": "catching",
-            "team": "dodgers",
+            "challenger": "Joc Pederson",
+            "role": "batting",
+            "team": "opponents",
             "outcome": "overturned",
-            "result_desc": "Corey Seager flies out to left fielder Teoscar Hern\u00e1ndez.",
-            "batter": "Corey Seager",
-            "pitcher": "Tyler Glasnow",
+            "result_desc": "Joc Pederson singles on a ground ball to center fielder Andy Pages.",
+            "batter": "Joc Pederson",
+            "pitcher": "Edwin D\u00edaz",
             "game_pk": 823968
+        },
+        {
+            "date": "2026-04-08",
+            "date_formatted": "April 8, 2026",
+            "challenger": "Andr\u00e9s Gim\u00e9nez",
+            "role": "batting",
+            "team": "opponents",
+            "outcome": "confirmed",
+            "result_desc": "Andr\u00e9s Gim\u00e9nez singles on a ground ball to center fielder Andy Pages. Davis Schneider to 3rd.",
+            "batter": "Andr\u00e9s Gim\u00e9nez",
+            "pitcher": "Ben Casparius",
+            "game_pk": 822833
         },
         {
             "date": "2026-04-08",
@@ -164,18 +224,6 @@
             "result_desc": "George Springer singles on a ground ball to left fielder Teoscar Hern\u00e1ndez.",
             "batter": "George Springer",
             "pitcher": "Shohei Ohtani",
-            "game_pk": 822833
-        },
-        {
-            "date": "2026-04-08",
-            "date_formatted": "April 8, 2026",
-            "challenger": "Andr\u00e9s Gim\u00e9nez",
-            "role": "batting",
-            "team": "opponents",
-            "outcome": "confirmed",
-            "result_desc": "Andr\u00e9s Gim\u00e9nez singles on a ground ball to center fielder Andy Pages. Davis Schneider to 3rd.",
-            "batter": "Andr\u00e9s Gim\u00e9nez",
-            "pitcher": "Ben Casparius",
             "game_pk": 822833
         },
         {
@@ -225,54 +273,6 @@
             "batter": "Myles Straw",
             "pitcher": "Will Klein",
             "game_pk": 822832
-        },
-        {
-            "date": "2026-04-06",
-            "date_formatted": "April 6, 2026",
-            "challenger": "Tyler Heineman",
-            "role": "catching",
-            "team": "opponents",
-            "outcome": "confirmed",
-            "result_desc": "Teoscar Hern\u00e1ndez strikes out swinging.",
-            "batter": "Teoscar Hern\u00e1ndez",
-            "pitcher": "Josh Fleming",
-            "game_pk": 822832
-        },
-        {
-            "date": "2026-04-05",
-            "date_formatted": "April 5, 2026",
-            "challenger": "Drew Millas",
-            "role": "catching",
-            "team": "opponents",
-            "outcome": "overturned",
-            "result_desc": "Alex Call flies out to left fielder Daylen Lile.",
-            "batter": "Alex Call",
-            "pitcher": "Andre Granillo",
-            "game_pk": 822756
-        },
-        {
-            "date": "2026-04-05",
-            "date_formatted": "April 5, 2026",
-            "challenger": "Andy Pages",
-            "role": "batting",
-            "team": "dodgers",
-            "outcome": "confirmed",
-            "result_desc": "Andy Pages doubles (2) on a sharp ground ball to left fielder Daylen Lile. Freddie Freeman to 3rd.",
-            "batter": "Andy Pages",
-            "pitcher": "Cionel P\u00e9rez",
-            "game_pk": 822756
-        },
-        {
-            "date": "2026-04-04",
-            "date_formatted": "April 4, 2026",
-            "challenger": "Will Smith",
-            "role": "catching",
-            "team": "dodgers",
-            "outcome": "confirmed",
-            "result_desc": "Jacob Young grounds out, shortstop Miguel Rojas to first baseman Freddie Freeman.",
-            "batter": "Jacob Young",
-            "pitcher": "Tyler Glasnow",
-            "game_pk": 822757
         }
     ]
 }

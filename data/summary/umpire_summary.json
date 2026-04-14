@@ -1,17 +1,17 @@
 {
     "season_summary": {
-        "correct_strikes_pct": 89.42307692307693,
-        "incorrect_strikes_pct": 10.576923076923066,
-        "total_called_strikes": 520,
+        "correct_strikes_pct": 89.87108655616943,
+        "incorrect_strikes_pct": 10.12891344383057,
+        "total_called_strikes": 543,
         "bad_calls_count": 55
     },
     "last_game_summary": {
-        "date": "April 12, 2026",
+        "date": "April 13, 2026",
         "correct_strikes_pct": 100.0,
         "incorrect_strikes_pct": 0.0,
-        "total_called_strikes": 28,
+        "total_called_strikes": 23,
         "bad_calls_count": 0,
-        "home_plate_umpire": "Charlie Ramos"
+        "home_plate_umpire": "Nic Lentz"
     },
     "worst_calls_of_season": [
         {
@@ -56,25 +56,25 @@
         }
     ],
     "pitching_season_summary": {
-        "correct_balls_pct": 95.5785512699906,
-        "incorrect_balls_pct": 4.421448730009402,
-        "total_called_balls": 1063,
-        "bad_calls_count": 47
+        "correct_balls_pct": 95.50870760769936,
+        "incorrect_balls_pct": 4.491292392300636,
+        "total_called_balls": 1091,
+        "bad_calls_count": 49
     },
     "pitching_last_game_summary": {
-        "date": "April 12, 2026",
-        "correct_balls_pct": 91.54929577464789,
-        "incorrect_balls_pct": 8.450704225352112,
-        "total_called_balls": 71,
-        "bad_calls_count": 6
+        "date": "April 13, 2026",
+        "correct_balls_pct": 92.85714285714286,
+        "incorrect_balls_pct": 7.142857142857139,
+        "total_called_balls": 28,
+        "bad_calls_count": 2
     },
     "pitching_worst_calls_of_season": [],
     "abs_challenges": {
         "dodgers": {
             "batting": {
-                "total": 5,
+                "total": 6,
                 "successful": 1,
-                "failed": 4
+                "failed": 5
             },
             "pitching": {
                 "total": 0,
@@ -105,6 +105,18 @@
             }
         },
         "challenge_log": [
+            {
+                "date": "2026-04-13",
+                "date_formatted": "April 13, 2026",
+                "challenger": "Max Muncy",
+                "role": "batting",
+                "team": "dodgers",
+                "outcome": "confirmed",
+                "result_desc": "Max Muncy called out on strikes.",
+                "batter": "Max Muncy",
+                "pitcher": "Joey Gerber",
+                "game_pk": 823964
+            },
             {
                 "date": "2026-04-12",
                 "date_formatted": "April 12, 2026",
