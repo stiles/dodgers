@@ -11,9 +11,9 @@
             "failed": 2
         },
         "catching": {
-            "total": 27,
+            "total": 28,
             "successful": 16,
-            "failed": 11
+            "failed": 12
         }
     },
     "opponents": {
@@ -28,12 +28,36 @@
             "failed": 1
         },
         "catching": {
-            "total": 29,
-            "successful": 17,
+            "total": 30,
+            "successful": 18,
             "failed": 12
         }
     },
     "challenge_log": [
+        {
+            "date": "2026-04-14",
+            "date_formatted": "April 14, 2026",
+            "challenger": "Will Smith",
+            "role": "catching",
+            "team": "dodgers",
+            "outcome": "confirmed",
+            "result_desc": "Luis Robert Jr. challenged (pitch result), call on the field was confirmed: Luis Robert Jr. called out on strikes.",
+            "batter": "Luis Robert Jr.",
+            "pitcher": "Blake Treinen",
+            "game_pk": 823965
+        },
+        {
+            "date": "2026-04-14",
+            "date_formatted": "April 14, 2026",
+            "challenger": "Francisco Alvarez",
+            "role": "catching",
+            "team": "opponents",
+            "outcome": "overturned",
+            "result_desc": "Freddie Freeman strikes out swinging.",
+            "batter": "Freddie Freeman",
+            "pitcher": "Nolan McLean",
+            "game_pk": 823965
+        },
         {
             "date": "2026-04-13",
             "date_formatted": "April 13, 2026",
@@ -157,18 +181,6 @@
         {
             "date": "2026-04-10",
             "date_formatted": "April 10, 2026",
-            "challenger": "Will Smith",
-            "role": "catching",
-            "team": "dodgers",
-            "outcome": "overturned",
-            "result_desc": "Corey Seager flies out to left fielder Teoscar Hern\u00e1ndez.",
-            "batter": "Corey Seager",
-            "pitcher": "Tyler Glasnow",
-            "game_pk": 823968
-        },
-        {
-            "date": "2026-04-10",
-            "date_formatted": "April 10, 2026",
             "challenger": "Teoscar Hern\u00e1ndez",
             "role": "batting",
             "team": "dodgers",
@@ -176,6 +188,18 @@
             "result_desc": "Teoscar Hern\u00e1ndez flies out to left fielder Ezequiel Duran.",
             "batter": "Teoscar Hern\u00e1ndez",
             "pitcher": "Luis Curvelo",
+            "game_pk": 823968
+        },
+        {
+            "date": "2026-04-10",
+            "date_formatted": "April 10, 2026",
+            "challenger": "Will Smith",
+            "role": "catching",
+            "team": "dodgers",
+            "outcome": "overturned",
+            "result_desc": "Corey Seager flies out to left fielder Teoscar Hern\u00e1ndez.",
+            "batter": "Corey Seager",
+            "pitcher": "Tyler Glasnow",
             "game_pk": 823968
         },
         {
@@ -249,30 +273,6 @@
             "batter": "Kazuma Okamoto",
             "pitcher": "Yoshinobu Yamamoto",
             "game_pk": 822831
-        },
-        {
-            "date": "2026-04-07",
-            "date_formatted": "April 7, 2026",
-            "challenger": "Brandon Valenzuela",
-            "role": "catching",
-            "team": "opponents",
-            "outcome": "overturned",
-            "result_desc": "Will Smith flies out to right fielder Nathan Lukes.",
-            "batter": "Will Smith",
-            "pitcher": "Louis Varland",
-            "game_pk": 822831
-        },
-        {
-            "date": "2026-04-06",
-            "date_formatted": "April 6, 2026",
-            "challenger": "Dalton Rushing",
-            "role": "catching",
-            "team": "dodgers",
-            "outcome": "confirmed",
-            "result_desc": "Myles Straw grounds out, second baseman Alex Freeland to first baseman Freddie Freeman.",
-            "batter": "Myles Straw",
-            "pitcher": "Will Klein",
-            "game_pk": 822832
         }
     ]
 }

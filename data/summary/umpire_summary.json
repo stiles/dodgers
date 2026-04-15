@@ -1,17 +1,17 @@
 {
     "season_summary": {
-        "correct_strikes_pct": 89.87108655616943,
-        "incorrect_strikes_pct": 10.12891344383057,
-        "total_called_strikes": 543,
-        "bad_calls_count": 55
+        "correct_strikes_pct": 89.86013986013987,
+        "incorrect_strikes_pct": 10.139860139860133,
+        "total_called_strikes": 572,
+        "bad_calls_count": 58
     },
     "last_game_summary": {
-        "date": "April 13, 2026",
-        "correct_strikes_pct": 100.0,
-        "incorrect_strikes_pct": 0.0,
-        "total_called_strikes": 23,
-        "bad_calls_count": 0,
-        "home_plate_umpire": "Nic Lentz"
+        "date": "April 14, 2026",
+        "correct_strikes_pct": 89.65517241379311,
+        "incorrect_strikes_pct": 10.34482758620689,
+        "total_called_strikes": 29,
+        "bad_calls_count": 3,
+        "home_plate_umpire": "Hunter Wendelstedt"
     },
     "worst_calls_of_season": [
         {
@@ -56,17 +56,17 @@
         }
     ],
     "pitching_season_summary": {
-        "correct_balls_pct": 95.50870760769936,
-        "incorrect_balls_pct": 4.491292392300636,
-        "total_called_balls": 1091,
-        "bad_calls_count": 49
+        "correct_balls_pct": 95.58303886925795,
+        "incorrect_balls_pct": 4.416961130742052,
+        "total_called_balls": 1132,
+        "bad_calls_count": 50
     },
     "pitching_last_game_summary": {
-        "date": "April 13, 2026",
-        "correct_balls_pct": 92.85714285714286,
-        "incorrect_balls_pct": 7.142857142857139,
-        "total_called_balls": 28,
-        "bad_calls_count": 2
+        "date": "April 14, 2026",
+        "correct_balls_pct": 97.5609756097561,
+        "incorrect_balls_pct": 2.439024390243901,
+        "total_called_balls": 41,
+        "bad_calls_count": 1
     },
     "pitching_worst_calls_of_season": [],
     "abs_challenges": {
@@ -89,9 +89,9 @@
         },
         "opponents": {
             "batting": {
-                "total": 2,
+                "total": 3,
                 "successful": 0,
-                "failed": 2
+                "failed": 3
             },
             "pitching": {
                 "total": 0,
@@ -105,6 +105,18 @@
             }
         },
         "challenge_log": [
+            {
+                "date": "2026-04-14",
+                "date_formatted": "April 14, 2026",
+                "challenger": "Luis Robert Jr.",
+                "role": "batting",
+                "team": "opponents",
+                "outcome": "confirmed",
+                "result_desc": "Luis Robert Jr. called out on strikes.",
+                "batter": "Luis Robert Jr.",
+                "pitcher": "Blake Treinen",
+                "game_pk": 823965
+            },
             {
                 "date": "2026-04-13",
                 "date_formatted": "April 13, 2026",

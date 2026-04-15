@@ -2,7 +2,7 @@
     {
         "stat_label":"Wins",
         "stat":"wins",
-        "value":12,
+        "value":13,
         "category":"standings",
         "context_value":11,
         "context_value_label":"This point last season"
@@ -12,23 +12,23 @@
         "stat":"losses",
         "value":4,
         "category":"standings",
-        "context_value":5,
+        "context_value":6,
         "context_value_label":"This point last season"
     },
     {
         "stat_label":"Record",
         "stat":"record",
-        "value":"12-4",
+        "value":"13-4",
         "category":"standings",
-        "context_value":"11-5",
+        "context_value":"11-6",
         "context_value_label":"This point last season"
     },
     {
         "stat_label":"Win percentage",
         "stat":"win_pct",
-        "value":"75%",
+        "value":"76%",
         "category":"standings",
-        "context_value":"69%",
+        "context_value":"65%",
         "context_value_label":"This point last season"
     },
     {
@@ -44,37 +44,37 @@
         "stat":"mean_attendance",
         "value":"51,860",
         "category":"standings",
-        "context_value":10,
+        "context_value":11,
         "context_value_label":"Home games this season"
     },
     {
         "stat_label":"Runs",
         "stat":"runs",
-        "value":95,
+        "value":97,
         "category":"standings",
-        "context_value":"2nd",
+        "context_value":"5th",
         "context_value_label":"League rank"
     },
     {
         "stat_label":"Runs against",
         "stat":"runs_against",
-        "value":56,
+        "value":57,
         "category":"standings",
-        "context_value":70,
+        "context_value":74,
         "context_value_label":"This point last season"
     },
     {
         "stat_label":"Run differential",
         "stat":"run_differential",
-        "value":39,
+        "value":40,
         "category":"standings",
-        "context_value":2,
+        "context_value":0,
         "context_value_label":"This point last season"
     },
     {
         "stat_label":"Batting average",
         "stat":"batting_average",
-        "value":".287",
+        "value":".279",
         "category":"batting",
         "context_value":".253",
         "context_value_label":"Last decade average"
@@ -90,7 +90,7 @@
     {
         "stat_label":"Home runs\/game",
         "stat":"home_runs_game",
-        "value":1.81,
+        "value":1.71,
         "category":"batting",
         "context_value":1.42,
         "context_value_label":"Last decade average"
@@ -98,7 +98,7 @@
     {
         "stat_label":"On-base percentage",
         "stat":"on_base_pct",
-        "value":".368",
+        "value":".362",
         "category":"batting",
         "context_value":".333",
         "context_value_label":"Last decade average"
@@ -114,7 +114,7 @@
     {
         "stat_label":"Stolen bases\/game",
         "stat":"stolen_bases_game",
-        "value":0.44,
+        "value":0.41,
         "category":"batting",
         "context_value":0.84,
         "context_value_label":"Rate all last season"
@@ -122,7 +122,7 @@
     {
         "stat_label":"Strikeouts",
         "stat":"strikeouts",
-        "value":"131",
+        "value":"142",
         "category":"pitching",
         "context_value":"20th",
         "context_value_label":"League rank"
@@ -130,15 +130,15 @@
     {
         "stat_label":"Walks",
         "stat":"walks",
-        "value":55,
+        "value":56,
         "category":"pitching",
-        "context_value":"19th",
+        "context_value":"22nd",
         "context_value_label":"League rank"
     },
     {
         "stat_label":"ERA",
         "stat":"era",
-        "value":"3.40",
+        "value":"3.26",
         "category":"pitching",
         "context_value":"5th",
         "context_value_label":"League rank"
@@ -146,7 +146,7 @@
     {
         "stat_label":"WHIP",
         "stat":"whip",
-        "value":"1.13",
+        "value":"1.10",
         "category":"pitching",
         "context_value":"3rd",
         "context_value_label":"League rank"
@@ -154,7 +154,7 @@
     {
         "stat_label":"Batting average against",
         "stat":"avg_against",
-        "value":".205",
+        "value":".201",
         "category":"pitching",
         "context_value":"1st",
         "context_value_label":"League rank"
@@ -162,15 +162,15 @@
     {
         "stat_label":"K\/BB ratio",
         "stat":"k_bb_ratio",
-        "value":2.38,
+        "value":2.54,
         "category":"pitching",
-        "context_value":"14th",
+        "context_value":"12th",
         "context_value_label":"League rank"
     },
     {
         "stat_label":"Last updated",
         "stat":"update_time",
-        "value":"April 14, 2026, 4:23 PM PT",
+        "value":"April 14, 2026, 9:28 PM PT",
         "category":"summary",
         "context_value":"",
         "context_value_label":""
@@ -178,7 +178,7 @@
     {
         "stat_label":"Team summary",
         "stat":"summary",
-        "value":"<span class='highlight'>LOS ANGELES<\/span> <span class='updated'>(April 14)<\/span> \u2014 The Dodgers have compiled a <span class='highlight'>12-4<\/span> record in the 2026 regular season, a <span class='highlight'>75%<\/span> winning percentage. The last game was a <span class='highlight'>4-0<\/span> home <span class='highlight'>win<\/span> against the <span class='highlight'>New York Mets<\/span>. The team will next face the <span class='highlight'>New York Mets<\/span> on Tuesday at 7:10 p.m. PDT at <span class='highlight'>UNIQLO Field at Dodger Stadium<\/span>.",
+        "value":"<span class='highlight'>LOS ANGELES<\/span> <span class='updated'>(April 14)<\/span> \u2014 The Dodgers have compiled a <span class='highlight'>13-4<\/span> record in the 2026 regular season, a <span class='highlight'>76%<\/span> winning percentage. The last game was a <span class='highlight'>2-1<\/span> home <span class='highlight'>win<\/span> against the <span class='highlight'>New York Mets<\/span>. The team will next face the <span class='highlight'>New York Mets<\/span> on Wednesday at 7:10 p.m. PDT at <span class='highlight'>UNIQLO Field at Dodger Stadium<\/span>.",
         "category":"summary",
         "context_value":"",
         "context_value_label":""
