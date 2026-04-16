@@ -11,9 +11,9 @@
             "failed": 2
         },
         "catching": {
-            "total": 28,
+            "total": 30,
             "successful": 16,
-            "failed": 12
+            "failed": 14
         }
     },
     "opponents": {
@@ -28,12 +28,72 @@
             "failed": 1
         },
         "catching": {
-            "total": 30,
-            "successful": 18,
-            "failed": 12
+            "total": 33,
+            "successful": 20,
+            "failed": 13
         }
     },
     "challenge_log": [
+        {
+            "date": "2026-04-15",
+            "date_formatted": "April 15, 2026",
+            "challenger": "Will Smith",
+            "role": "catching",
+            "team": "dodgers",
+            "outcome": "confirmed",
+            "result_desc": "Marcus Semien singles on a fly ball to center fielder Andy Pages. Bo Bichette scores. Francisco Alvarez to 2nd.",
+            "batter": "Marcus Semien",
+            "pitcher": "Kyle Hurt",
+            "game_pk": 823963
+        },
+        {
+            "date": "2026-04-15",
+            "date_formatted": "April 15, 2026",
+            "challenger": "Francisco Alvarez",
+            "role": "catching",
+            "team": "opponents",
+            "outcome": "overturned",
+            "result_desc": "Teoscar Hern\u00e1ndez singles on a ground ball to shortstop Francisco Lindor.",
+            "batter": "Teoscar Hern\u00e1ndez",
+            "pitcher": "Devin Williams",
+            "game_pk": 823963
+        },
+        {
+            "date": "2026-04-15",
+            "date_formatted": "April 15, 2026",
+            "challenger": "Will Smith",
+            "role": "catching",
+            "team": "dodgers",
+            "outcome": "confirmed",
+            "result_desc": "Francisco Lindor strikes out on a foul tip.",
+            "batter": "Francisco Lindor",
+            "pitcher": "Shohei Ohtani",
+            "game_pk": 823963
+        },
+        {
+            "date": "2026-04-15",
+            "date_formatted": "April 15, 2026",
+            "challenger": "Francisco Alvarez",
+            "role": "catching",
+            "team": "opponents",
+            "outcome": "confirmed",
+            "result_desc": "Alex Freeland strikes out swinging.",
+            "batter": "Alex Freeland",
+            "pitcher": "Clay Holmes",
+            "game_pk": 823963
+        },
+        {
+            "date": "2026-04-15",
+            "date_formatted": "April 15, 2026",
+            "challenger": "Francisco Alvarez",
+            "role": "catching",
+            "team": "opponents",
+            "outcome": "overturned",
+            "result_desc": "Max Muncy grounds out to first baseman Brett Baty.",
+            "batter": "Max Muncy",
+            "pitcher": "Clay Holmes",
+            "game_pk": 823963
+        },
         {
             "date": "2026-04-14",
             "date_formatted": "April 14, 2026",
@@ -109,13 +169,13 @@
         {
             "date": "2026-04-12",
             "date_formatted": "April 12, 2026",
-            "challenger": "Danny Jansen",
+            "challenger": "Dalton Rushing",
             "role": "catching",
-            "team": "opponents",
-            "outcome": "overturned",
-            "result_desc": "Dalton Rushing doubles (1) on a sharp line drive to right fielder Brandon Nimmo.",
-            "batter": "Dalton Rushing",
-            "pitcher": "Jacob Latz",
+            "team": "dodgers",
+            "outcome": "confirmed",
+            "result_desc": "Ezequiel Duran grounds out, first baseman Freddie Freeman to pitcher Roki Sasaki.",
+            "batter": "Ezequiel Duran",
+            "pitcher": "Roki Sasaki",
             "game_pk": 823966
         },
         {
@@ -133,13 +193,13 @@
         {
             "date": "2026-04-12",
             "date_formatted": "April 12, 2026",
-            "challenger": "Dalton Rushing",
+            "challenger": "Danny Jansen",
             "role": "catching",
-            "team": "dodgers",
-            "outcome": "confirmed",
-            "result_desc": "Ezequiel Duran grounds out, first baseman Freddie Freeman to pitcher Roki Sasaki.",
-            "batter": "Ezequiel Duran",
-            "pitcher": "Roki Sasaki",
+            "team": "opponents",
+            "outcome": "overturned",
+            "result_desc": "Dalton Rushing doubles (1) on a sharp line drive to right fielder Brandon Nimmo.",
+            "batter": "Dalton Rushing",
+            "pitcher": "Jacob Latz",
             "game_pk": 823966
         },
         {
@@ -181,6 +241,18 @@
         {
             "date": "2026-04-10",
             "date_formatted": "April 10, 2026",
+            "challenger": "Joc Pederson",
+            "role": "batting",
+            "team": "opponents",
+            "outcome": "overturned",
+            "result_desc": "Joc Pederson singles on a ground ball to center fielder Andy Pages.",
+            "batter": "Joc Pederson",
+            "pitcher": "Edwin D\u00edaz",
+            "game_pk": 823968
+        },
+        {
+            "date": "2026-04-10",
+            "date_formatted": "April 10, 2026",
             "challenger": "Teoscar Hern\u00e1ndez",
             "role": "batting",
             "team": "dodgers",
@@ -201,78 +273,6 @@
             "batter": "Corey Seager",
             "pitcher": "Tyler Glasnow",
             "game_pk": 823968
-        },
-        {
-            "date": "2026-04-10",
-            "date_formatted": "April 10, 2026",
-            "challenger": "Joc Pederson",
-            "role": "batting",
-            "team": "opponents",
-            "outcome": "overturned",
-            "result_desc": "Joc Pederson singles on a ground ball to center fielder Andy Pages.",
-            "batter": "Joc Pederson",
-            "pitcher": "Edwin D\u00edaz",
-            "game_pk": 823968
-        },
-        {
-            "date": "2026-04-08",
-            "date_formatted": "April 8, 2026",
-            "challenger": "Andr\u00e9s Gim\u00e9nez",
-            "role": "batting",
-            "team": "opponents",
-            "outcome": "confirmed",
-            "result_desc": "Andr\u00e9s Gim\u00e9nez singles on a ground ball to center fielder Andy Pages. Davis Schneider to 3rd.",
-            "batter": "Andr\u00e9s Gim\u00e9nez",
-            "pitcher": "Ben Casparius",
-            "game_pk": 822833
-        },
-        {
-            "date": "2026-04-08",
-            "date_formatted": "April 8, 2026",
-            "challenger": "Davis Schneider",
-            "role": "batting",
-            "team": "opponents",
-            "outcome": "overturned",
-            "result_desc": "Davis Schneider walks.",
-            "batter": "Davis Schneider",
-            "pitcher": "Jack Dreyer",
-            "game_pk": 822833
-        },
-        {
-            "date": "2026-04-08",
-            "date_formatted": "April 8, 2026",
-            "challenger": "Will Smith",
-            "role": "catching",
-            "team": "dodgers",
-            "outcome": "confirmed",
-            "result_desc": "George Springer singles on a ground ball to left fielder Teoscar Hern\u00e1ndez.",
-            "batter": "George Springer",
-            "pitcher": "Shohei Ohtani",
-            "game_pk": 822833
-        },
-        {
-            "date": "2026-04-07",
-            "date_formatted": "April 7, 2026",
-            "challenger": "Will Smith",
-            "role": "catching",
-            "team": "dodgers",
-            "outcome": "confirmed",
-            "result_desc": "Jes\u00fas S\u00e1nchez lines out to center fielder Andy Pages.",
-            "batter": "Jes\u00fas S\u00e1nchez",
-            "pitcher": "Blake Treinen",
-            "game_pk": 822831
-        },
-        {
-            "date": "2026-04-07",
-            "date_formatted": "April 7, 2026",
-            "challenger": "Kazuma Okamoto",
-            "role": "batting",
-            "team": "opponents",
-            "outcome": "overturned",
-            "result_desc": "Kazuma Okamoto doubles (1) on a sharp line drive to center fielder Andy Pages.",
-            "batter": "Kazuma Okamoto",
-            "pitcher": "Yoshinobu Yamamoto",
-            "game_pk": 822831
         }
     ]
 }

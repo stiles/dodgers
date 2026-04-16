@@ -1,17 +1,17 @@
 {
     "season_summary": {
-        "correct_strikes_pct": 89.86013986013987,
-        "incorrect_strikes_pct": 10.139860139860133,
-        "total_called_strikes": 572,
+        "correct_strikes_pct": 90.25210084033614,
+        "incorrect_strikes_pct": 9.74789915966386,
+        "total_called_strikes": 595,
         "bad_calls_count": 58
     },
     "last_game_summary": {
-        "date": "April 14, 2026",
-        "correct_strikes_pct": 89.65517241379311,
-        "incorrect_strikes_pct": 10.34482758620689,
-        "total_called_strikes": 29,
-        "bad_calls_count": 3,
-        "home_plate_umpire": "Hunter Wendelstedt"
+        "date": "April 15, 2026",
+        "correct_strikes_pct": 100.0,
+        "incorrect_strikes_pct": 0.0,
+        "total_called_strikes": 23,
+        "bad_calls_count": 0,
+        "home_plate_umpire": "Edwin Moscoso"
     },
     "worst_calls_of_season": [
         {
@@ -56,17 +56,17 @@
         }
     ],
     "pitching_season_summary": {
-        "correct_balls_pct": 95.58303886925795,
-        "incorrect_balls_pct": 4.416961130742052,
-        "total_called_balls": 1132,
+        "correct_balls_pct": 95.75551782682513,
+        "incorrect_balls_pct": 4.244482173174873,
+        "total_called_balls": 1178,
         "bad_calls_count": 50
     },
     "pitching_last_game_summary": {
-        "date": "April 14, 2026",
-        "correct_balls_pct": 97.5609756097561,
-        "incorrect_balls_pct": 2.439024390243901,
-        "total_called_balls": 41,
-        "bad_calls_count": 1
+        "date": "April 15, 2026",
+        "correct_balls_pct": 100.0,
+        "incorrect_balls_pct": 0.0,
+        "total_called_balls": 46,
+        "bad_calls_count": 0
     },
     "pitching_worst_calls_of_season": [],
     "abs_challenges": {
