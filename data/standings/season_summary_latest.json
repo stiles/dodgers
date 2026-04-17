@@ -36,7 +36,7 @@
         "stat":"fielding_pct",
         "value":".992",
         "category":"standings",
-        "context_value":"2nd",
+        "context_value":"3rd",
         "context_value_label":"League rank"
     },
     {
@@ -52,7 +52,7 @@
         "stat":"runs",
         "value":105,
         "category":"standings",
-        "context_value":"4th",
+        "context_value":"5th",
         "context_value_label":"League rank"
     },
     {
@@ -148,7 +148,7 @@
         "stat":"strikeouts",
         "value":"156",
         "category":"pitching",
-        "context_value":"17th",
+        "context_value":"18th",
         "context_value_label":"League rank"
     },
     {
@@ -194,7 +194,7 @@
     {
         "stat_label":"Last updated",
         "stat":"update_time",
-        "value":"April 17, 2026, 8:31 AM PT",
+        "value":"April 17, 2026, 4:20 PM PT",
         "category":"summary",
         "context_value":"",
         "context_value_label":""
