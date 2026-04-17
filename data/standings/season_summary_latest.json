@@ -16,14 +16,6 @@
         "context_value_label":"This point last season"
     },
     {
-        "stat_label":"Record",
-        "stat":"record",
-        "value":"14-4",
-        "category":"standings",
-        "context_value":"12-6",
-        "context_value_label":"This point last season"
-    },
-    {
         "stat_label":"Win percentage",
         "stat":"win_pct",
         "value":"78%",
@@ -40,12 +32,20 @@
         "context_value_label":"Division rank"
     },
     {
-        "stat_label":"Avg. home attendance",
-        "stat":"mean_attendance",
-        "value":"51,470",
+        "stat_label":"Fielding percentage",
+        "stat":"fielding_pct",
+        "value":".992",
         "category":"standings",
-        "context_value":12,
-        "context_value_label":"Home games this season"
+        "context_value":"2nd",
+        "context_value_label":"League rank"
+    },
+    {
+        "stat_label":"Errors",
+        "stat":"errors",
+        "value":5,
+        "category":"standings",
+        "context_value":"2nd",
+        "context_value_label":"League rank"
     },
     {
         "stat_label":"Runs",
@@ -104,6 +104,22 @@
         "context_value_label":"Last decade average"
     },
     {
+        "stat_label":"Slugging percentage",
+        "stat":"slugging_pct",
+        "value":".491",
+        "category":"batting",
+        "context_value":".443",
+        "context_value_label":"Last decade average"
+    },
+    {
+        "stat_label":"OPS",
+        "stat":"ops",
+        "value":".854",
+        "category":"batting",
+        "context_value":"N\/A",
+        "context_value_label":"League rank"
+    },
+    {
         "stat_label":"Stolen bases",
         "stat":"stolen_bases",
         "value":8,
@@ -118,6 +134,14 @@
         "category":"batting",
         "context_value":0.84,
         "context_value_label":"Rate all last season"
+    },
+    {
+        "stat_label":"Doubles",
+        "stat":"doubles",
+        "value":27,
+        "category":"batting",
+        "context_value":"16th",
+        "context_value_label":"League rank"
     },
     {
         "stat_label":"Strikeouts",
@@ -164,13 +188,13 @@
         "stat":"k_bb_ratio",
         "value":2.69,
         "category":"pitching",
-        "context_value":"8th",
+        "context_value":"9th",
         "context_value_label":"League rank"
     },
     {
         "stat_label":"Last updated",
         "stat":"update_time",
-        "value":"April 16, 2026, 4:51 PM PT",
+        "value":"April 16, 2026, 5:23 PM PT",
         "category":"summary",
         "context_value":"",
         "context_value_label":""
