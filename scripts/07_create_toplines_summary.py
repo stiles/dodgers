@@ -448,18 +448,11 @@ def batting_and_stolen_base_stats(batting_now, batting_past, games):
         batting_past.head(10)["ba"].astype(float).mean(), 3
     ).astype(str).replace("0.", ".")
     on_base_pct = batting_now["obp"].iloc[0]
-    on_base_pct_decade = round(
-        batting_past.head(10)["obp"].astype(float).mean(), 3
-    ).astype(str).replace("0.", ".")
+    on_base_pct_rank = to_ordinal(league_ranks_data.get('hitting_onBasePercentage', 'N/A'))
     slugging_pct = batting_now["slg"].iloc[0]
-    slugging_pct_decade = round(
-        batting_past.head(10)["slg"].astype(float).mean(), 3
-    ).astype(str).replace("0.", ".")
+    slugging_pct_rank = to_ordinal(league_ranks_data.get('hitting_sluggingPercentage', 'N/A'))
     ops = batting_now["ops"].iloc[0]
-    ops_rank = to_ordinal(league_ranks_data.get('hitting_ops', 'N/A'))
-    ops_decade = round(
-        batting_past.head(10)["ops"].astype(float).mean(), 3
-    ).astype(str).replace("0.", ".")
+    ops_rank = to_ordinal(league_ranks_data.get('hitting_onBasePlusSlugging', 'N/A'))
     doubles = int(batting_now["2b"].iloc[0])
     doubles_rank = to_ordinal(league_ranks_data.get('hitting_doubles', 'N/A'))
     stolen_bases = int(batting_now["sb"].iloc[0])
@@ -467,7 +460,7 @@ def batting_and_stolen_base_stats(batting_now, batting_past, games):
     stolen_bases_game = round(stolen_bases / games, 2) if games > 0 else 0
     stolen_bases_last_rate = round(batting_past.head(1)["sb"].astype(int).sum() / batting_past.head(1)["g"].astype(int).sum(), 2) if not batting_past.head(1).empty and batting_past.head(1)["g"].astype(int).sum() > 0 else 'N/A'
     
-    return batting_average, batting_average_decade, stolen_bases, stolen_bases_rank, stolen_bases_game, stolen_bases_last_rate, on_base_pct, on_base_pct_decade, slugging_pct, slugging_pct_decade, ops, ops_rank, ops_decade, doubles, doubles_rank
+    return batting_average, batting_average_decade, stolen_bases, stolen_bases_rank, stolen_bases_game, stolen_bases_last_rate, on_base_pct, on_base_pct_rank, slugging_pct, slugging_pct_rank, ops, ops_rank, doubles, doubles_rank
 
 def calculate_projected_wins(current_wins, games_played_so_far, total_season_games=162):
     """Calculates the projected number of wins for a full season based on current performance."""
@@ -1013,7 +1006,7 @@ def recent_trend(standings):
 games, wins, losses, record, win_pct, win_pct_decade_thispoint, era, era_rank, strikeouts, strikeouts_rank, walks, walks_rank, wins_last, losses_last, record_last, win_pct_last, home_runs_allowed, whip, whip_rank, avg_against, avg_against_rank, k_bb_ratio, k_bb_ratio_rank = current_season_stats(standings_now, standings_past, pitching, standings_last, standings_live_lad)
 runs, runs_last, runs_rank, runs_against, runs_against_last, run_diff, run_diff_last, mean_attendance, formatted_mean_attendance, home_games_count = run_differential(standings, standings_live_lad)
 home_runs, home_runs_rank, home_runs_game, home_runs_game_last, home_runs_game_decade = home_run_stats(batting_now, batting_past)
-batting_average, batting_average_decade, stolen_bases, stolen_bases_rank, stolen_bases_game, stolen_bases_last_rate, on_base_pct, on_base_pct_decade, slugging_pct, slugging_pct_decade, ops, ops_rank, ops_decade, doubles, doubles_rank = batting_and_stolen_base_stats(batting_now, batting_past, games)
+batting_average, batting_average_decade, stolen_bases, stolen_bases_rank, stolen_bases_game, stolen_bases_last_rate, on_base_pct, on_base_pct_rank, slugging_pct, slugging_pct_rank, ops, ops_rank, doubles, doubles_rank = batting_and_stolen_base_stats(batting_now, batting_past, games)
 win_count_trend, loss_count_trend, win_loss_trend = recent_trend(standings.iloc[:10])
 
 # Prepare last_game_info, handling empty standings_now for very early season
@@ -1044,8 +1037,8 @@ summary_data = [
     {"stat_label": "Home runs", "stat": "home_runs", "value": home_runs, "category": "batting", "context_value": home_runs_rank,  "context_value_label": "League rank"},
     {"stat_label": "Home runs/game", "stat": "home_runs_game", "value": home_runs_game, "category": "batting", "context_value": home_runs_game_decade, "context_value_label": "Last decade average"},
     
-    {"stat_label": "On-base percentage", "stat": "on_base_pct", "value": on_base_pct, "category": "batting", "context_value": on_base_pct_decade, "context_value_label": "Last decade average"},
-    {"stat_label": "Slugging percentage", "stat": "slugging_pct", "value": slugging_pct, "category": "batting", "context_value": slugging_pct_decade, "context_value_label": "Last decade average"},
+    {"stat_label": "On-base percentage", "stat": "on_base_pct", "value": on_base_pct, "category": "batting", "context_value": on_base_pct_rank, "context_value_label": "League rank"},
+    {"stat_label": "Slugging percentage", "stat": "slugging_pct", "value": slugging_pct, "category": "batting", "context_value": slugging_pct_rank, "context_value_label": "League rank"},
     {"stat_label": "OPS", "stat": "ops", "value": ops, "category": "batting", "context_value": ops_rank, "context_value_label": "League rank"},
     
     {"stat_label": "Stolen bases", "stat": "stolen_bases", "value": stolen_bases, "category": "batting", "context_value": stolen_bases_rank, "context_value_label": "League rank"},
