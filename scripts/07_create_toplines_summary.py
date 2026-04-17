@@ -129,6 +129,7 @@ standings_live_url = f"https://stilesdata.com/dodgers/data/standings/all_teams_s
 standings_url = "https://stilesdata.com/dodgers/data/standings/dodgers_standings_1958_present.parquet"
 batting_url = "https://stilesdata.com/dodgers/data/batting/dodgers_team_batting_1958_present.parquet"
 pitching_url = 'https://stilesdata.com/dodgers/data/pitching/dodgers_pitching_totals_current.parquet'
+fielding_url = f"https://statsapi.mlb.com/api/v1/teams/119/stats?stats=season&group=fielding&season={datetime.now().year}"
 # pitching_ranks_url = 'https://stilesdata.com/dodgers/data/pitching/dodgers_pitching_ranks_current.parquet' # Removed
 # batting_ranks_url = 'https://stilesdata.com/dodgers/data/batting/dodgers_team_batting_ranks_1958_present.parquet' # Removed
 
@@ -283,6 +284,35 @@ batting_now = batting.query(f"season == '{year}'").copy()
 pitching = read_parquet_s3(pitching_url)
 # pitching_ranks = read_parquet_s3(pitching_ranks_url) # Removed
 
+# Fielding
+def fetch_fielding_stats():
+    """Fetch current season fielding stats from MLB Stats API"""
+    try:
+        headers = {
+            'User-Agent': 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/136.0.0.0 Safari/537.36',
+        }
+        response = requests.get(fielding_url, headers=headers, timeout=30)
+        response.raise_for_status()
+        data = response.json()
+        
+        if 'stats' in data and len(data['stats']) > 0:
+            if 'splits' in data['stats'][0] and len(data['stats'][0]['splits']) > 0:
+                stats = data['stats'][0]['splits'][0]['stat']
+                return {
+                    'errors': stats.get('errors', 0),
+                    'fielding_pct': stats.get('fielding', '.000')
+                }
+        return {'errors': 0, 'fielding_pct': '.000'}
+    except Exception as e:
+        logging.warning(f"Could not fetch fielding stats: {e}")
+        return {'errors': 0, 'fielding_pct': '.000'}
+
+fielding_stats = fetch_fielding_stats()
+errors = fielding_stats['errors']
+errors_rank = to_ordinal(league_ranks_data.get('fielding_errors', 'N/A'))
+fielding_pct = fielding_stats['fielding_pct']
+fielding_pct_rank = to_ordinal(league_ranks_data.get('fielding_fielding', 'N/A'))
+
 def current_season_stats(standings_now, standings_past, pitching, standings_last, standings_live_lad=None):
     # Prefer live MLB standings for current season stats (faster updates)
     if standings_live_lad is not None and not standings_live_lad.empty:
@@ -421,12 +451,23 @@ def batting_and_stolen_base_stats(batting_now, batting_past, games):
     on_base_pct_decade = round(
         batting_past.head(10)["obp"].astype(float).mean(), 3
     ).astype(str).replace("0.", ".")
+    slugging_pct = batting_now["slg"].iloc[0]
+    slugging_pct_decade = round(
+        batting_past.head(10)["slg"].astype(float).mean(), 3
+    ).astype(str).replace("0.", ".")
+    ops = batting_now["ops"].iloc[0]
+    ops_rank = to_ordinal(league_ranks_data.get('hitting_ops', 'N/A'))
+    ops_decade = round(
+        batting_past.head(10)["ops"].astype(float).mean(), 3
+    ).astype(str).replace("0.", ".")
+    doubles = int(batting_now["2b"].iloc[0])
+    doubles_rank = to_ordinal(league_ranks_data.get('hitting_doubles', 'N/A'))
     stolen_bases = int(batting_now["sb"].iloc[0])
     stolen_bases_rank = to_ordinal(league_ranks_data.get('hitting_stolenBases', 'N/A'))
     stolen_bases_game = round(stolen_bases / games, 2) if games > 0 else 0
     stolen_bases_last_rate = round(batting_past.head(1)["sb"].astype(int).sum() / batting_past.head(1)["g"].astype(int).sum(), 2) if not batting_past.head(1).empty and batting_past.head(1)["g"].astype(int).sum() > 0 else 'N/A'
     
-    return batting_average, batting_average_decade, stolen_bases, stolen_bases_rank, stolen_bases_game, stolen_bases_last_rate, on_base_pct, on_base_pct_decade
+    return batting_average, batting_average_decade, stolen_bases, stolen_bases_rank, stolen_bases_game, stolen_bases_last_rate, on_base_pct, on_base_pct_decade, slugging_pct, slugging_pct_decade, ops, ops_rank, ops_decade, doubles, doubles_rank
 
 def calculate_projected_wins(current_wins, games_played_so_far, total_season_games=162):
     """Calculates the projected number of wins for a full season based on current performance."""
@@ -972,7 +1013,7 @@ def recent_trend(standings):
 games, wins, losses, record, win_pct, win_pct_decade_thispoint, era, era_rank, strikeouts, strikeouts_rank, walks, walks_rank, wins_last, losses_last, record_last, win_pct_last, home_runs_allowed, whip, whip_rank, avg_against, avg_against_rank, k_bb_ratio, k_bb_ratio_rank = current_season_stats(standings_now, standings_past, pitching, standings_last, standings_live_lad)
 runs, runs_last, runs_rank, runs_against, runs_against_last, run_diff, run_diff_last, mean_attendance, formatted_mean_attendance, home_games_count = run_differential(standings, standings_live_lad)
 home_runs, home_runs_rank, home_runs_game, home_runs_game_last, home_runs_game_decade = home_run_stats(batting_now, batting_past)
-batting_average, batting_average_decade, stolen_bases, stolen_bases_rank, stolen_bases_game, stolen_bases_last_rate, on_base_pct, on_base_pct_decade = batting_and_stolen_base_stats(batting_now, batting_past, games)
+batting_average, batting_average_decade, stolen_bases, stolen_bases_rank, stolen_bases_game, stolen_bases_last_rate, on_base_pct, on_base_pct_decade, slugging_pct, slugging_pct_decade, ops, ops_rank, ops_decade, doubles, doubles_rank = batting_and_stolen_base_stats(batting_now, batting_past, games)
 win_count_trend, loss_count_trend, win_loss_trend = recent_trend(standings.iloc[:10])
 
 # Prepare last_game_info, handling empty standings_now for very early season
@@ -988,11 +1029,11 @@ summary_data = [
     # Standings
     {"stat_label": "Wins", "stat": "wins", "value": wins, "category": "standings", "context_value": wins_last, "context_value_label": "This point last season"},
     {"stat_label": "Losses", "stat": "losses", "value": losses, "category": "standings", "context_value": losses_last, "context_value_label": "This point last season"},
-    {"stat_label": "Record", "stat": "record", "value": record, "category": "standings", "context_value": record_last, "context_value_label": "This point last season"},
-   
     {"stat_label": "Win percentage", "stat": "win_pct", "value": f"{win_pct}%", "category": "standings", "context_value": f"{win_pct_last}%", "context_value_label": "This point last season"},
+   
     {"stat_label": "Games up/back", "stat": "games_up_back", "value": games_up_back_value, "category": "standings", "context_value": standings_division_rank_ordinal, "context_value_label": 'Division rank'},
-    {"stat_label": "Avg. home attendance", "stat": "mean_attendance", "value": formatted_mean_attendance, "category": "standings", "context_value": home_games_count, "context_value_label": 'Home games this season'},
+    {"stat_label": "Fielding percentage", "stat": "fielding_pct", "value": fielding_pct, "category": "standings", "context_value": fielding_pct_rank, "context_value_label": "League rank"},
+    {"stat_label": "Errors", "stat": "errors", "value": errors, "category": "standings", "context_value": errors_rank, "context_value_label": "League rank"},
     
     {"stat_label": "Runs", "stat": "runs", "value": runs, "category": "standings", "context_value": runs_rank, "context_value_label": "League rank"},
     {"stat_label": "Runs against", "stat": "runs_against", "value": runs_against, "category": "standings", "context_value": runs_against_last, "context_value_label": "This point last season"},
@@ -1004,8 +1045,12 @@ summary_data = [
     {"stat_label": "Home runs/game", "stat": "home_runs_game", "value": home_runs_game, "category": "batting", "context_value": home_runs_game_decade, "context_value_label": "Last decade average"},
     
     {"stat_label": "On-base percentage", "stat": "on_base_pct", "value": on_base_pct, "category": "batting", "context_value": on_base_pct_decade, "context_value_label": "Last decade average"},
+    {"stat_label": "Slugging percentage", "stat": "slugging_pct", "value": slugging_pct, "category": "batting", "context_value": slugging_pct_decade, "context_value_label": "Last decade average"},
+    {"stat_label": "OPS", "stat": "ops", "value": ops, "category": "batting", "context_value": ops_rank, "context_value_label": "League rank"},
+    
     {"stat_label": "Stolen bases", "stat": "stolen_bases", "value": stolen_bases, "category": "batting", "context_value": stolen_bases_rank, "context_value_label": "League rank"},
     {"stat_label": "Stolen bases/game", "stat": "stolen_bases_game", "value": stolen_bases_game, "category": "batting", "context_value": stolen_bases_last_rate, "context_value_label": "Rate all last season"},
+    {"stat_label": "Doubles", "stat": "doubles", "value": doubles, "category": "batting", "context_value": doubles_rank, "context_value_label": "League rank"},
     
     # Pitching
     {"stat_label": "Strikeouts", "stat": "strikeouts", "value": format_int_with_commas(strikeouts), "category": "pitching", "context_value": strikeouts_rank, "context_value_label": "League rank"},

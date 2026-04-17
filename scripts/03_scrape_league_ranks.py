@@ -56,9 +56,10 @@ s3_resource = session.resource("s3")
 CURRENT_YEAR = datetime.now().year
 
 # runs, stolen bases, homeruns, strikeouts, walks, ERA
-HITTING_STATS = ['runs', 'stolenBases', 'homeRuns', 'battingAverage', 'onBasePlusSlugging', 'sluggingPercentage', 'onBasePercentage']
+HITTING_STATS = ['runs', 'stolenBases', 'homeRuns', 'battingAverage', 'onBasePlusSlugging', 'sluggingPercentage', 'onBasePercentage', 'doubles']
 PITCHING_STATS = ['strikeouts', 'walks', 'earnedRunAverage', 'walksAndHitsPerInningPitched', 'avg', 'strikeoutWalkRatio']
-STAT_TYPES = ['hitting', 'pitching']
+FIELDING_STATS = ['errors', 'fielding']
+STAT_TYPES = ['hitting', 'pitching', 'fielding']
 
 def get_team_rank_for_stat(stat_name: str, stat_group: str, team_name_query: str = "Los Angeles Dodgers") -> Optional[int]:
     """
@@ -66,14 +67,14 @@ def get_team_rank_for_stat(stat_name: str, stat_group: str, team_name_query: str
 
     Args:
         stat_name: The specific statistic to fetch (e.g., 'runs', 'homeRuns').
-        stat_group: The group of the statistic ('hitting' or 'pitching').
+        stat_group: The group of the statistic ('hitting', 'pitching', or 'fielding').
         team_name_query: The name of the team to find the rank for.
 
     Returns:
         The rank of the team for the specified statistic, or None if not found.
     """
-    # Determine sort order based on stat - some stats are better lower (e.g., ERA, WHIP, AVG against)
-    sort_order = "asc" if stat_name in ["earnedRunAverage", "walksAndHitsPerInningPitched", "avg"] else "desc"
+    # Determine sort order based on stat - some stats are better lower (e.g., ERA, WHIP, AVG against, errors)
+    sort_order = "asc" if stat_name in ["earnedRunAverage", "walksAndHitsPerInningPitched", "avg", "errors"] else "desc"
     
     url = (
         f'https://bdfed.stitch.mlbinfra.com/bdfed/stats/team?&env=prod&sportId=1&gameType=R'
@@ -122,6 +123,14 @@ def main():
             dodgers_ranks[f'pitching_{stat}'] = rank
         else:
             dodgers_ranks[f'pitching_{stat}'] = 'Not found'
+
+    logging.info(f"Fetching fielding stats for {team_to_find} for {CURRENT_YEAR}...")
+    for stat in FIELDING_STATS:
+        rank = get_team_rank_for_stat(stat_name=stat, stat_group="fielding", team_name_query=team_to_find)
+        if rank is not None:
+            dodgers_ranks[f'fielding_{stat}'] = rank
+        else:
+            dodgers_ranks[f'fielding_{stat}'] = 'Not found'
     
     logging.info("Dodgers League Ranks:")
     for stat, rank in dodgers_ranks.items():
