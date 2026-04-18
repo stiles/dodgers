@@ -18,9 +18,9 @@
     },
     "opponents": {
         "batting": {
-            "total": 28,
+            "total": 29,
             "successful": 15,
-            "failed": 13
+            "failed": 14
         },
         "pitching": {
             "total": 1,
@@ -28,12 +28,36 @@
             "failed": 1
         },
         "catching": {
-            "total": 33,
+            "total": 34,
             "successful": 20,
-            "failed": 13
+            "failed": 14
         }
     },
     "challenge_log": [
+        {
+            "date": "2026-04-17",
+            "date_formatted": "April 17, 2026",
+            "challenger": "TJ Rumfield",
+            "role": "batting",
+            "team": "opponents",
+            "outcome": "confirmed",
+            "result_desc": "TJ Rumfield called out on strikes.",
+            "batter": "TJ Rumfield",
+            "pitcher": "Jack Dreyer",
+            "game_pk": 824373
+        },
+        {
+            "date": "2026-04-17",
+            "date_formatted": "April 17, 2026",
+            "challenger": "Brett Sullivan",
+            "role": "catching",
+            "team": "opponents",
+            "outcome": "confirmed",
+            "result_desc": "Teoscar Hern\u00e1ndez strikes out swinging.",
+            "batter": "Teoscar Hern\u00e1ndez",
+            "pitcher": "Tomoyuki Sugano",
+            "game_pk": 824373
+        },
         {
             "date": "2026-04-15",
             "date_formatted": "April 15, 2026",
@@ -121,18 +145,6 @@
         {
             "date": "2026-04-13",
             "date_formatted": "April 13, 2026",
-            "challenger": "Will Smith",
-            "role": "catching",
-            "team": "dodgers",
-            "outcome": "overturned",
-            "result_desc": "Tyrone Taylor pops out to first baseman Freddie Freeman.",
-            "batter": "Tyrone Taylor",
-            "pitcher": "Tanner Scott",
-            "game_pk": 823964
-        },
-        {
-            "date": "2026-04-13",
-            "date_formatted": "April 13, 2026",
             "challenger": "Francisco Alvarez",
             "role": "catching",
             "team": "opponents",
@@ -167,15 +179,27 @@
             "game_pk": 823964
         },
         {
-            "date": "2026-04-12",
-            "date_formatted": "April 12, 2026",
-            "challenger": "Dalton Rushing",
+            "date": "2026-04-13",
+            "date_formatted": "April 13, 2026",
+            "challenger": "Will Smith",
             "role": "catching",
             "team": "dodgers",
-            "outcome": "confirmed",
-            "result_desc": "Ezequiel Duran grounds out, first baseman Freddie Freeman to pitcher Roki Sasaki.",
-            "batter": "Ezequiel Duran",
-            "pitcher": "Roki Sasaki",
+            "outcome": "overturned",
+            "result_desc": "Tyrone Taylor pops out to first baseman Freddie Freeman.",
+            "batter": "Tyrone Taylor",
+            "pitcher": "Tanner Scott",
+            "game_pk": 823964
+        },
+        {
+            "date": "2026-04-12",
+            "date_formatted": "April 12, 2026",
+            "challenger": "Danny Jansen",
+            "role": "catching",
+            "team": "opponents",
+            "outcome": "overturned",
+            "result_desc": "Dalton Rushing doubles (1) on a sharp line drive to right fielder Brandon Nimmo.",
+            "batter": "Dalton Rushing",
+            "pitcher": "Jacob Latz",
             "game_pk": 823966
         },
         {
@@ -193,13 +217,13 @@
         {
             "date": "2026-04-12",
             "date_formatted": "April 12, 2026",
-            "challenger": "Danny Jansen",
+            "challenger": "Dalton Rushing",
             "role": "catching",
-            "team": "opponents",
-            "outcome": "overturned",
-            "result_desc": "Dalton Rushing doubles (1) on a sharp line drive to right fielder Brandon Nimmo.",
-            "batter": "Dalton Rushing",
-            "pitcher": "Jacob Latz",
+            "team": "dodgers",
+            "outcome": "confirmed",
+            "result_desc": "Ezequiel Duran grounds out, first baseman Freddie Freeman to pitcher Roki Sasaki.",
+            "batter": "Ezequiel Duran",
+            "pitcher": "Roki Sasaki",
             "game_pk": 823966
         },
         {
@@ -248,30 +272,6 @@
             "result_desc": "Joc Pederson singles on a ground ball to center fielder Andy Pages.",
             "batter": "Joc Pederson",
             "pitcher": "Edwin D\u00edaz",
-            "game_pk": 823968
-        },
-        {
-            "date": "2026-04-10",
-            "date_formatted": "April 10, 2026",
-            "challenger": "Teoscar Hern\u00e1ndez",
-            "role": "batting",
-            "team": "dodgers",
-            "outcome": "overturned",
-            "result_desc": "Teoscar Hern\u00e1ndez flies out to left fielder Ezequiel Duran.",
-            "batter": "Teoscar Hern\u00e1ndez",
-            "pitcher": "Luis Curvelo",
-            "game_pk": 823968
-        },
-        {
-            "date": "2026-04-10",
-            "date_formatted": "April 10, 2026",
-            "challenger": "Will Smith",
-            "role": "catching",
-            "team": "dodgers",
-            "outcome": "overturned",
-            "result_desc": "Corey Seager flies out to left fielder Teoscar Hern\u00e1ndez.",
-            "batter": "Corey Seager",
-            "pitcher": "Tyler Glasnow",
             "game_pk": 823968
         }
     ]

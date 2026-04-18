@@ -1,17 +1,17 @@
 {
     "season_summary": {
-        "correct_strikes_pct": 90.25210084033614,
-        "incorrect_strikes_pct": 9.74789915966386,
-        "total_called_strikes": 595,
+        "correct_strikes_pct": 90.61488673139159,
+        "incorrect_strikes_pct": 9.385113268608407,
+        "total_called_strikes": 618,
         "bad_calls_count": 58
     },
     "last_game_summary": {
-        "date": "April 15, 2026",
+        "date": "April 17, 2026",
         "correct_strikes_pct": 100.0,
         "incorrect_strikes_pct": 0.0,
         "total_called_strikes": 23,
         "bad_calls_count": 0,
-        "home_plate_umpire": "Edwin Moscoso"
+        "home_plate_umpire": "Jeremie Rehak"
     },
     "worst_calls_of_season": [
         {
@@ -56,17 +56,17 @@
         }
     ],
     "pitching_season_summary": {
-        "correct_balls_pct": 95.75551782682513,
-        "incorrect_balls_pct": 4.244482173174873,
-        "total_called_balls": 1178,
-        "bad_calls_count": 50
+        "correct_balls_pct": 95.73070607553366,
+        "incorrect_balls_pct": 4.269293924466339,
+        "total_called_balls": 1218,
+        "bad_calls_count": 52
     },
     "pitching_last_game_summary": {
-        "date": "April 15, 2026",
-        "correct_balls_pct": 100.0,
-        "incorrect_balls_pct": 0.0,
-        "total_called_balls": 46,
-        "bad_calls_count": 0
+        "date": "April 17, 2026",
+        "correct_balls_pct": 95.0,
+        "incorrect_balls_pct": 5.0,
+        "total_called_balls": 40,
+        "bad_calls_count": 2
     },
     "pitching_worst_calls_of_season": [],
     "abs_challenges": {
