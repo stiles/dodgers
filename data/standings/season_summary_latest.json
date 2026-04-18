@@ -52,7 +52,7 @@
         "stat":"runs",
         "value":112,
         "category":"standings",
-        "context_value":"3rd",
+        "context_value":"4th",
         "context_value_label":"League rank"
     },
     {
@@ -148,7 +148,7 @@
         "stat":"strikeouts",
         "value":"166",
         "category":"pitching",
-        "context_value":"17th",
+        "context_value":"20th",
         "context_value_label":"League rank"
     },
     {
@@ -156,7 +156,7 @@
         "stat":"walks",
         "value":61,
         "category":"pitching",
-        "context_value":"24th",
+        "context_value":"25th",
         "context_value_label":"League rank"
     },
     {
@@ -188,13 +188,13 @@
         "stat":"k_bb_ratio",
         "value":2.72,
         "category":"pitching",
-        "context_value":"8th",
+        "context_value":"7th",
         "context_value_label":"League rank"
     },
     {
         "stat_label":"Last updated",
         "stat":"update_time",
-        "value":"April 18, 2026, 8:20 AM PT",
+        "value":"April 18, 2026, 4:17 PM PT",
         "category":"summary",
         "context_value":"",
         "context_value_label":""
