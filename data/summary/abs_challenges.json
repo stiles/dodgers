@@ -1,8 +1,8 @@
 {
     "dodgers": {
         "batting": {
-            "total": 20,
-            "successful": 12,
+            "total": 21,
+            "successful": 13,
             "failed": 8
         },
         "pitching": {
@@ -18,8 +18,8 @@
     },
     "opponents": {
         "batting": {
-            "total": 29,
-            "successful": 15,
+            "total": 30,
+            "successful": 16,
             "failed": 14
         },
         "pitching": {
@@ -28,12 +28,48 @@
             "failed": 1
         },
         "catching": {
-            "total": 34,
-            "successful": 20,
+            "total": 35,
+            "successful": 21,
             "failed": 14
         }
     },
     "challenge_log": [
+        {
+            "date": "2026-04-18",
+            "date_formatted": "April 18, 2026",
+            "challenger": "Teoscar Hern\u00e1ndez",
+            "role": "batting",
+            "team": "dodgers",
+            "outcome": "overturned",
+            "result_desc": "Teoscar Hern\u00e1ndez grounds out, third baseman Kyle Karros to first baseman Troy Johnston.",
+            "batter": "Teoscar Hern\u00e1ndez",
+            "pitcher": "Ryan Feltner",
+            "game_pk": 824372
+        },
+        {
+            "date": "2026-04-18",
+            "date_formatted": "April 18, 2026",
+            "challenger": "Hunter Goodman",
+            "role": "catching",
+            "team": "opponents",
+            "outcome": "overturned",
+            "result_desc": "Shohei Ohtani grounds out to first baseman Troy Johnston.",
+            "batter": "Shohei Ohtani",
+            "pitcher": "Ryan Feltner",
+            "game_pk": 824372
+        },
+        {
+            "date": "2026-04-18",
+            "date_formatted": "April 18, 2026",
+            "challenger": "Edouard Julien",
+            "role": "batting",
+            "team": "opponents",
+            "outcome": "overturned",
+            "result_desc": "Edouard Julien strikes out swinging.",
+            "batter": "Edouard Julien",
+            "pitcher": "Emmet Sheehan",
+            "game_pk": 824372
+        },
         {
             "date": "2026-04-17",
             "date_formatted": "April 17, 2026",
@@ -157,24 +193,24 @@
         {
             "date": "2026-04-13",
             "date_formatted": "April 13, 2026",
-            "challenger": "Will Smith",
-            "role": "catching",
-            "team": "dodgers",
-            "outcome": "overturned",
-            "result_desc": "Francisco Lindor grounds out, shortstop Miguel Rojas to first baseman Freddie Freeman.",
-            "batter": "Francisco Lindor",
-            "pitcher": "Justin Wrobleski",
-            "game_pk": 823964
-        },
-        {
-            "date": "2026-04-13",
-            "date_formatted": "April 13, 2026",
             "challenger": "Mark Vientos",
             "role": "batting",
             "team": "opponents",
             "outcome": "confirmed",
             "result_desc": "Mark Vientos grounds out, third baseman Max Muncy to first baseman Freddie Freeman.",
             "batter": "Mark Vientos",
+            "pitcher": "Justin Wrobleski",
+            "game_pk": 823964
+        },
+        {
+            "date": "2026-04-13",
+            "date_formatted": "April 13, 2026",
+            "challenger": "Will Smith",
+            "role": "catching",
+            "team": "dodgers",
+            "outcome": "overturned",
+            "result_desc": "Francisco Lindor grounds out, shortstop Miguel Rojas to first baseman Freddie Freeman.",
+            "batter": "Francisco Lindor",
             "pitcher": "Justin Wrobleski",
             "game_pk": 823964
         },
@@ -237,42 +273,6 @@
             "batter": "Alex Freeland",
             "pitcher": "Chris Martin",
             "game_pk": 823967
-        },
-        {
-            "date": "2026-04-11",
-            "date_formatted": "April 11, 2026",
-            "challenger": "Robert Garcia",
-            "role": "pitching",
-            "team": "opponents",
-            "outcome": "confirmed",
-            "result_desc": "Will Smith walks.",
-            "batter": "Will Smith",
-            "pitcher": "Robert Garcia",
-            "game_pk": 823967
-        },
-        {
-            "date": "2026-04-11",
-            "date_formatted": "April 11, 2026",
-            "challenger": "Kyle Higashioka",
-            "role": "catching",
-            "team": "opponents",
-            "outcome": "overturned",
-            "result_desc": "Andy Pages flies out to right fielder Brandon Nimmo.",
-            "batter": "Andy Pages",
-            "pitcher": "Jack Leiter",
-            "game_pk": 823967
-        },
-        {
-            "date": "2026-04-10",
-            "date_formatted": "April 10, 2026",
-            "challenger": "Joc Pederson",
-            "role": "batting",
-            "team": "opponents",
-            "outcome": "overturned",
-            "result_desc": "Joc Pederson singles on a ground ball to center fielder Andy Pages.",
-            "batter": "Joc Pederson",
-            "pitcher": "Edwin D\u00edaz",
-            "game_pk": 823968
         }
     ]
 }

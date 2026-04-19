@@ -1,17 +1,17 @@
 {
     "season_summary": {
-        "correct_strikes_pct": 90.61488673139159,
-        "incorrect_strikes_pct": 9.385113268608407,
-        "total_called_strikes": 618,
+        "correct_strikes_pct": 90.88050314465409,
+        "incorrect_strikes_pct": 9.119496855345915,
+        "total_called_strikes": 636,
         "bad_calls_count": 58
     },
     "last_game_summary": {
-        "date": "April 17, 2026",
+        "date": "April 18, 2026",
         "correct_strikes_pct": 100.0,
         "incorrect_strikes_pct": 0.0,
-        "total_called_strikes": 23,
+        "total_called_strikes": 18,
         "bad_calls_count": 0,
-        "home_plate_umpire": "Jeremie Rehak"
+        "home_plate_umpire": "Dan Iassogna"
     },
     "worst_calls_of_season": [
         {
@@ -56,16 +56,16 @@
         }
     ],
     "pitching_season_summary": {
-        "correct_balls_pct": 95.73070607553366,
-        "incorrect_balls_pct": 4.269293924466339,
-        "total_called_balls": 1218,
-        "bad_calls_count": 52
+        "correct_balls_pct": 95.72107765451663,
+        "incorrect_balls_pct": 4.278922345483366,
+        "total_called_balls": 1262,
+        "bad_calls_count": 54
     },
     "pitching_last_game_summary": {
-        "date": "April 17, 2026",
-        "correct_balls_pct": 95.0,
-        "incorrect_balls_pct": 5.0,
-        "total_called_balls": 40,
+        "date": "April 18, 2026",
+        "correct_balls_pct": 95.45454545454545,
+        "incorrect_balls_pct": 4.545454545454547,
+        "total_called_balls": 44,
         "bad_calls_count": 2
     },
     "pitching_worst_calls_of_season": [],
@@ -99,12 +99,36 @@
                 "failed": 0
             },
             "catching": {
-                "total": 5,
-                "successful": 5,
-                "failed": 0
+                "total": 7,
+                "successful": 6,
+                "failed": 1
             }
         },
         "challenge_log": [
+            {
+                "date": "2026-04-18",
+                "date_formatted": "April 18, 2026",
+                "challenger": "Hunter Goodman",
+                "role": "catching",
+                "team": "opponents",
+                "outcome": "overturned",
+                "result_desc": "Andy Pages called out on strikes.",
+                "batter": "Andy Pages",
+                "pitcher": "Jaden Hill",
+                "game_pk": 824372
+            },
+            {
+                "date": "2026-04-18",
+                "date_formatted": "April 18, 2026",
+                "challenger": "Rockies",
+                "role": "catching",
+                "team": "opponents",
+                "outcome": "confirmed",
+                "result_desc": "Teoscar Hern\u00e1ndez walks.",
+                "batter": "Teoscar Hern\u00e1ndez",
+                "pitcher": "Jaden Hill",
+                "game_pk": 824372
+            },
             {
                 "date": "2026-04-14",
                 "date_formatted": "April 14, 2026",
@@ -319,18 +343,6 @@
                 "result_desc": "Nick Senzel walks.",
                 "batter": "Nick Senzel",
                 "pitcher": "Luis Medina",
-                "game_pk": 831937
-            },
-            {
-                "date": "2026-03-21",
-                "date_formatted": "March 21, 2026",
-                "challenger": "Henry Bolte",
-                "role": "batting",
-                "team": "opponents",
-                "outcome": "confirmed",
-                "result_desc": "Henry Bolte called out on strikes.",
-                "batter": "Henry Bolte",
-                "pitcher": "Emmet Sheehan",
                 "game_pk": 831937
             }
         ]
