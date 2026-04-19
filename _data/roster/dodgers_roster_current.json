@@ -802,10 +802,10 @@
     "height":"5' 10\"",
     "weight":"200",
     "dob":"02\/23\/1998",
-    "status":"MINORS",
-    "is_minors":true,
+    "status":"ACTIVE",
+    "is_minors":false,
     "is_il":false,
-    "is_active_roster":false,
+    "is_active_roster":true,
     "is_40_man":true,
     "slug":"ryan-ward"
   }
