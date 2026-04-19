@@ -11,29 +11,89 @@
             "failed": 2
         },
         "catching": {
-            "total": 30,
-            "successful": 16,
+            "total": 31,
+            "successful": 17,
             "failed": 14
         }
     },
     "opponents": {
         "batting": {
-            "total": 30,
+            "total": 31,
             "successful": 16,
-            "failed": 14
+            "failed": 15
         },
         "pitching": {
-            "total": 1,
+            "total": 2,
             "successful": 0,
-            "failed": 1
+            "failed": 2
         },
         "catching": {
-            "total": 35,
-            "successful": 21,
+            "total": 37,
+            "successful": 23,
             "failed": 14
         }
     },
     "challenge_log": [
+        {
+            "date": "2026-04-19",
+            "date_formatted": "April 19, 2026",
+            "challenger": "Ezequiel Tovar",
+            "role": "batting",
+            "team": "opponents",
+            "outcome": "confirmed",
+            "result_desc": "Ezequiel Tovar strikes out swinging.",
+            "batter": "Ezequiel Tovar",
+            "pitcher": "Jack Dreyer",
+            "game_pk": 824371
+        },
+        {
+            "date": "2026-04-19",
+            "date_formatted": "April 19, 2026",
+            "challenger": "Will Smith",
+            "role": "catching",
+            "team": "dodgers",
+            "outcome": "overturned",
+            "result_desc": "Willi Castro strikes out swinging.",
+            "batter": "Willi Castro",
+            "pitcher": "Will Klein",
+            "game_pk": 824371
+        },
+        {
+            "date": "2026-04-19",
+            "date_formatted": "April 19, 2026",
+            "challenger": "Hunter Goodman",
+            "role": "catching",
+            "team": "opponents",
+            "outcome": "overturned",
+            "result_desc": "Hyeseong Kim doubles (2) on a line drive to center fielder Jake McCarthy.",
+            "batter": "Hyeseong Kim",
+            "pitcher": "Michael Lorenzen",
+            "game_pk": 824371
+        },
+        {
+            "date": "2026-04-19",
+            "date_formatted": "April 19, 2026",
+            "challenger": "Michael Lorenzen",
+            "role": "pitching",
+            "team": "opponents",
+            "outcome": "confirmed",
+            "result_desc": "Hyeseong Kim doubles (2) on a line drive to center fielder Jake McCarthy.",
+            "batter": "Hyeseong Kim",
+            "pitcher": "Michael Lorenzen",
+            "game_pk": 824371
+        },
+        {
+            "date": "2026-04-19",
+            "date_formatted": "April 19, 2026",
+            "challenger": "Hunter Goodman",
+            "role": "catching",
+            "team": "opponents",
+            "outcome": "overturned",
+            "result_desc": "Max Muncy singles on a line drive to left fielder Mickey Moniak, deflected by third baseman Kyle Karros.",
+            "batter": "Max Muncy",
+            "pitcher": "Michael Lorenzen",
+            "game_pk": 824371
+        },
         {
             "date": "2026-04-18",
             "date_formatted": "April 18, 2026",
@@ -101,9 +161,9 @@
             "role": "catching",
             "team": "dodgers",
             "outcome": "confirmed",
-            "result_desc": "Marcus Semien singles on a fly ball to center fielder Andy Pages. Bo Bichette scores. Francisco Alvarez to 2nd.",
-            "batter": "Marcus Semien",
-            "pitcher": "Kyle Hurt",
+            "result_desc": "Francisco Lindor strikes out on a foul tip.",
+            "batter": "Francisco Lindor",
+            "pitcher": "Shohei Ohtani",
             "game_pk": 823963
         },
         {
@@ -113,21 +173,9 @@
             "role": "catching",
             "team": "opponents",
             "outcome": "overturned",
-            "result_desc": "Teoscar Hern\u00e1ndez singles on a ground ball to shortstop Francisco Lindor.",
-            "batter": "Teoscar Hern\u00e1ndez",
-            "pitcher": "Devin Williams",
-            "game_pk": 823963
-        },
-        {
-            "date": "2026-04-15",
-            "date_formatted": "April 15, 2026",
-            "challenger": "Will Smith",
-            "role": "catching",
-            "team": "dodgers",
-            "outcome": "confirmed",
-            "result_desc": "Francisco Lindor strikes out on a foul tip.",
-            "batter": "Francisco Lindor",
-            "pitcher": "Shohei Ohtani",
+            "result_desc": "Max Muncy grounds out to first baseman Brett Baty.",
+            "batter": "Max Muncy",
+            "pitcher": "Clay Holmes",
             "game_pk": 823963
         },
         {
@@ -149,9 +197,21 @@
             "role": "catching",
             "team": "opponents",
             "outcome": "overturned",
-            "result_desc": "Max Muncy grounds out to first baseman Brett Baty.",
-            "batter": "Max Muncy",
-            "pitcher": "Clay Holmes",
+            "result_desc": "Teoscar Hern\u00e1ndez singles on a ground ball to shortstop Francisco Lindor.",
+            "batter": "Teoscar Hern\u00e1ndez",
+            "pitcher": "Devin Williams",
+            "game_pk": 823963
+        },
+        {
+            "date": "2026-04-15",
+            "date_formatted": "April 15, 2026",
+            "challenger": "Will Smith",
+            "role": "catching",
+            "team": "dodgers",
+            "outcome": "confirmed",
+            "result_desc": "Marcus Semien singles on a fly ball to center fielder Andy Pages. Bo Bichette scores. Francisco Alvarez to 2nd.",
+            "batter": "Marcus Semien",
+            "pitcher": "Kyle Hurt",
             "game_pk": 823963
         },
         {
@@ -181,6 +241,18 @@
         {
             "date": "2026-04-13",
             "date_formatted": "April 13, 2026",
+            "challenger": "Will Smith",
+            "role": "catching",
+            "team": "dodgers",
+            "outcome": "overturned",
+            "result_desc": "Tyrone Taylor pops out to first baseman Freddie Freeman.",
+            "batter": "Tyrone Taylor",
+            "pitcher": "Tanner Scott",
+            "game_pk": 823964
+        },
+        {
+            "date": "2026-04-13",
+            "date_formatted": "April 13, 2026",
             "challenger": "Francisco Alvarez",
             "role": "catching",
             "team": "opponents",
@@ -188,18 +260,6 @@
             "result_desc": "Max Muncy challenged (pitch result), call on the field was confirmed: Max Muncy called out on strikes.",
             "batter": "Max Muncy",
             "pitcher": "Joey Gerber",
-            "game_pk": 823964
-        },
-        {
-            "date": "2026-04-13",
-            "date_formatted": "April 13, 2026",
-            "challenger": "Mark Vientos",
-            "role": "batting",
-            "team": "opponents",
-            "outcome": "confirmed",
-            "result_desc": "Mark Vientos grounds out, third baseman Max Muncy to first baseman Freddie Freeman.",
-            "batter": "Mark Vientos",
-            "pitcher": "Justin Wrobleski",
             "game_pk": 823964
         },
         {
@@ -213,66 +273,6 @@
             "batter": "Francisco Lindor",
             "pitcher": "Justin Wrobleski",
             "game_pk": 823964
-        },
-        {
-            "date": "2026-04-13",
-            "date_formatted": "April 13, 2026",
-            "challenger": "Will Smith",
-            "role": "catching",
-            "team": "dodgers",
-            "outcome": "overturned",
-            "result_desc": "Tyrone Taylor pops out to first baseman Freddie Freeman.",
-            "batter": "Tyrone Taylor",
-            "pitcher": "Tanner Scott",
-            "game_pk": 823964
-        },
-        {
-            "date": "2026-04-12",
-            "date_formatted": "April 12, 2026",
-            "challenger": "Danny Jansen",
-            "role": "catching",
-            "team": "opponents",
-            "outcome": "overturned",
-            "result_desc": "Dalton Rushing doubles (1) on a sharp line drive to right fielder Brandon Nimmo.",
-            "batter": "Dalton Rushing",
-            "pitcher": "Jacob Latz",
-            "game_pk": 823966
-        },
-        {
-            "date": "2026-04-12",
-            "date_formatted": "April 12, 2026",
-            "challenger": "Danny Jansen",
-            "role": "catching",
-            "team": "opponents",
-            "outcome": "confirmed",
-            "result_desc": "Max Muncy strikes out swinging.",
-            "batter": "Max Muncy",
-            "pitcher": "Jacob deGrom",
-            "game_pk": 823966
-        },
-        {
-            "date": "2026-04-12",
-            "date_formatted": "April 12, 2026",
-            "challenger": "Dalton Rushing",
-            "role": "catching",
-            "team": "dodgers",
-            "outcome": "confirmed",
-            "result_desc": "Ezequiel Duran grounds out, first baseman Freddie Freeman to pitcher Roki Sasaki.",
-            "batter": "Ezequiel Duran",
-            "pitcher": "Roki Sasaki",
-            "game_pk": 823966
-        },
-        {
-            "date": "2026-04-11",
-            "date_formatted": "April 11, 2026",
-            "challenger": "Kyle Higashioka",
-            "role": "catching",
-            "team": "opponents",
-            "outcome": "confirmed",
-            "result_desc": "Alex Freeland strikes out swinging.",
-            "batter": "Alex Freeland",
-            "pitcher": "Chris Martin",
-            "game_pk": 823967
         }
     ]
 }

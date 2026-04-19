@@ -1,17 +1,17 @@
 {
     "season_summary": {
-        "correct_strikes_pct": 90.88050314465409,
-        "incorrect_strikes_pct": 9.119496855345915,
-        "total_called_strikes": 636,
-        "bad_calls_count": 58
+        "correct_strikes_pct": 90.88191330343797,
+        "incorrect_strikes_pct": 9.118086696562031,
+        "total_called_strikes": 669,
+        "bad_calls_count": 61
     },
     "last_game_summary": {
-        "date": "April 18, 2026",
-        "correct_strikes_pct": 100.0,
-        "incorrect_strikes_pct": 0.0,
-        "total_called_strikes": 18,
-        "bad_calls_count": 0,
-        "home_plate_umpire": "Dan Iassogna"
+        "date": "April 19, 2026",
+        "correct_strikes_pct": 90.9090909090909,
+        "incorrect_strikes_pct": 9.090909090909093,
+        "total_called_strikes": 33,
+        "bad_calls_count": 3,
+        "home_plate_umpire": "James Jean"
     },
     "worst_calls_of_season": [
         {
@@ -56,17 +56,17 @@
         }
     ],
     "pitching_season_summary": {
-        "correct_balls_pct": 95.72107765451663,
-        "incorrect_balls_pct": 4.278922345483366,
-        "total_called_balls": 1262,
-        "bad_calls_count": 54
+        "correct_balls_pct": 95.67854435178165,
+        "incorrect_balls_pct": 4.321455648218347,
+        "total_called_balls": 1319,
+        "bad_calls_count": 57
     },
     "pitching_last_game_summary": {
-        "date": "April 18, 2026",
-        "correct_balls_pct": 95.45454545454545,
-        "incorrect_balls_pct": 4.545454545454547,
-        "total_called_balls": 44,
-        "bad_calls_count": 2
+        "date": "April 19, 2026",
+        "correct_balls_pct": 94.73684210526315,
+        "incorrect_balls_pct": 5.26315789473685,
+        "total_called_balls": 57,
+        "bad_calls_count": 3
     },
     "pitching_worst_calls_of_season": [],
     "abs_challenges": {
