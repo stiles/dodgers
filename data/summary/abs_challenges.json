@@ -11,16 +11,16 @@
             "failed": 2
         },
         "catching": {
-            "total": 31,
-            "successful": 17,
+            "total": 32,
+            "successful": 18,
             "failed": 14
         }
     },
     "opponents": {
         "batting": {
-            "total": 31,
+            "total": 32,
             "successful": 16,
-            "failed": 15
+            "failed": 16
         },
         "pitching": {
             "total": 2,
@@ -28,12 +28,48 @@
             "failed": 2
         },
         "catching": {
-            "total": 37,
-            "successful": 23,
+            "total": 38,
+            "successful": 24,
             "failed": 14
         }
     },
     "challenge_log": [
+        {
+            "date": "2026-04-20",
+            "date_formatted": "April 20, 2026",
+            "challenger": "Brett Sullivan",
+            "role": "catching",
+            "team": "opponents",
+            "outcome": "overturned",
+            "result_desc": "Will Smith flies out to right fielder Troy Johnston.",
+            "batter": "Will Smith",
+            "pitcher": "Tanner Gordon",
+            "game_pk": 824370
+        },
+        {
+            "date": "2026-04-20",
+            "date_formatted": "April 20, 2026",
+            "challenger": "Ezequiel Tovar",
+            "role": "batting",
+            "team": "opponents",
+            "outcome": "confirmed",
+            "result_desc": "Ezequiel Tovar called out on strikes.",
+            "batter": "Ezequiel Tovar",
+            "pitcher": "Justin Wrobleski",
+            "game_pk": 824370
+        },
+        {
+            "date": "2026-04-20",
+            "date_formatted": "April 20, 2026",
+            "challenger": "Will Smith",
+            "role": "catching",
+            "team": "dodgers",
+            "outcome": "overturned",
+            "result_desc": "Brenton Doyle doubles (2) on a sharp line drive to left fielder Teoscar Hern\u00e1ndez. Jordan Beck scores.",
+            "batter": "Brenton Doyle",
+            "pitcher": "Justin Wrobleski",
+            "game_pk": 824370
+        },
         {
             "date": "2026-04-19",
             "date_formatted": "April 19, 2026",
@@ -157,13 +193,13 @@
         {
             "date": "2026-04-15",
             "date_formatted": "April 15, 2026",
-            "challenger": "Will Smith",
+            "challenger": "Francisco Alvarez",
             "role": "catching",
-            "team": "dodgers",
+            "team": "opponents",
             "outcome": "confirmed",
-            "result_desc": "Francisco Lindor strikes out on a foul tip.",
-            "batter": "Francisco Lindor",
-            "pitcher": "Shohei Ohtani",
+            "result_desc": "Alex Freeland strikes out swinging.",
+            "batter": "Alex Freeland",
+            "pitcher": "Clay Holmes",
             "game_pk": 823963
         },
         {
@@ -181,13 +217,13 @@
         {
             "date": "2026-04-15",
             "date_formatted": "April 15, 2026",
-            "challenger": "Francisco Alvarez",
+            "challenger": "Will Smith",
             "role": "catching",
-            "team": "opponents",
+            "team": "dodgers",
             "outcome": "confirmed",
-            "result_desc": "Alex Freeland strikes out swinging.",
-            "batter": "Alex Freeland",
-            "pitcher": "Clay Holmes",
+            "result_desc": "Francisco Lindor strikes out on a foul tip.",
+            "batter": "Francisco Lindor",
+            "pitcher": "Shohei Ohtani",
             "game_pk": 823963
         },
         {
@@ -237,42 +273,6 @@
             "batter": "Freddie Freeman",
             "pitcher": "Nolan McLean",
             "game_pk": 823965
-        },
-        {
-            "date": "2026-04-13",
-            "date_formatted": "April 13, 2026",
-            "challenger": "Will Smith",
-            "role": "catching",
-            "team": "dodgers",
-            "outcome": "overturned",
-            "result_desc": "Tyrone Taylor pops out to first baseman Freddie Freeman.",
-            "batter": "Tyrone Taylor",
-            "pitcher": "Tanner Scott",
-            "game_pk": 823964
-        },
-        {
-            "date": "2026-04-13",
-            "date_formatted": "April 13, 2026",
-            "challenger": "Francisco Alvarez",
-            "role": "catching",
-            "team": "opponents",
-            "outcome": "overturned",
-            "result_desc": "Max Muncy challenged (pitch result), call on the field was confirmed: Max Muncy called out on strikes.",
-            "batter": "Max Muncy",
-            "pitcher": "Joey Gerber",
-            "game_pk": 823964
-        },
-        {
-            "date": "2026-04-13",
-            "date_formatted": "April 13, 2026",
-            "challenger": "Will Smith",
-            "role": "catching",
-            "team": "dodgers",
-            "outcome": "overturned",
-            "result_desc": "Francisco Lindor grounds out, shortstop Miguel Rojas to first baseman Freddie Freeman.",
-            "batter": "Francisco Lindor",
-            "pitcher": "Justin Wrobleski",
-            "game_pk": 823964
         }
     ]
 }

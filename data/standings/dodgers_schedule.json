@@ -1,13 +1,5 @@
 [
     {
-        "date":"Apr 8",
-        "opp_name":"Toronto Blue Jays",
-        "home_away":"away",
-        "result":"loss",
-        "placement":"last",
-        "game_start":"3-4"
-    },
-    {
         "date":"Apr 10",
         "opp_name":"Texas Rangers",
         "home_away":"home",
@@ -83,9 +75,9 @@
         "date":"Apr 20",
         "opp_name":"Colorado Rockies",
         "home_away":"away",
-        "result":"--",
-        "placement":"next",
-        "game_start":"5:40 PM"
+        "result":"win",
+        "placement":"last",
+        "game_start":"12-3"
     },
     {
         "date":"Apr 21",
@@ -158,5 +150,13 @@
         "result":"--",
         "placement":"next",
         "game_start":"12:10 PM"
+    },
+    {
+        "date":"May 1",
+        "opp_name":"St. Louis Cardinals",
+        "home_away":"away",
+        "result":"--",
+        "placement":"next",
+        "game_start":"5:15 PM"
     }
 ]

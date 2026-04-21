@@ -1,17 +1,17 @@
 {
     "season_summary": {
-        "correct_strikes_pct": 90.88191330343797,
-        "incorrect_strikes_pct": 9.118086696562031,
-        "total_called_strikes": 669,
-        "bad_calls_count": 61
+        "correct_strikes_pct": 90.96126255380202,
+        "incorrect_strikes_pct": 9.038737446197985,
+        "total_called_strikes": 697,
+        "bad_calls_count": 63
     },
     "last_game_summary": {
-        "date": "April 19, 2026",
-        "correct_strikes_pct": 90.9090909090909,
-        "incorrect_strikes_pct": 9.090909090909093,
-        "total_called_strikes": 33,
-        "bad_calls_count": 3,
-        "home_plate_umpire": "James Jean"
+        "date": "April 20, 2026",
+        "correct_strikes_pct": 92.85714285714286,
+        "incorrect_strikes_pct": 7.142857142857139,
+        "total_called_strikes": 28,
+        "bad_calls_count": 2,
+        "home_plate_umpire": "Adam Beck"
     },
     "worst_calls_of_season": [
         {
@@ -56,25 +56,25 @@
         }
     ],
     "pitching_season_summary": {
-        "correct_balls_pct": 95.67854435178165,
-        "incorrect_balls_pct": 4.321455648218347,
-        "total_called_balls": 1319,
-        "bad_calls_count": 57
+        "correct_balls_pct": 95.50147492625368,
+        "incorrect_balls_pct": 4.498525073746322,
+        "total_called_balls": 1356,
+        "bad_calls_count": 61
     },
     "pitching_last_game_summary": {
-        "date": "April 19, 2026",
-        "correct_balls_pct": 94.73684210526315,
-        "incorrect_balls_pct": 5.26315789473685,
-        "total_called_balls": 57,
-        "bad_calls_count": 3
+        "date": "April 20, 2026",
+        "correct_balls_pct": 89.1891891891892,
+        "incorrect_balls_pct": 10.810810810810807,
+        "total_called_balls": 37,
+        "bad_calls_count": 4
     },
     "pitching_worst_calls_of_season": [],
     "abs_challenges": {
         "dodgers": {
             "batting": {
-                "total": 6,
+                "total": 7,
                 "successful": 1,
-                "failed": 5
+                "failed": 6
             },
             "pitching": {
                 "total": 0,
@@ -89,9 +89,9 @@
         },
         "opponents": {
             "batting": {
-                "total": 3,
+                "total": 4,
                 "successful": 0,
-                "failed": 3
+                "failed": 4
             },
             "pitching": {
                 "total": 0,
@@ -105,6 +105,30 @@
             }
         },
         "challenge_log": [
+            {
+                "date": "2026-04-20",
+                "date_formatted": "April 20, 2026",
+                "challenger": "Will Smith",
+                "role": "batting",
+                "team": "dodgers",
+                "outcome": "confirmed",
+                "result_desc": "Will Smith called out on strikes.",
+                "batter": "Will Smith",
+                "pitcher": "Tanner Gordon",
+                "game_pk": 824370
+            },
+            {
+                "date": "2026-04-20",
+                "date_formatted": "April 20, 2026",
+                "challenger": "Hunter Goodman",
+                "role": "batting",
+                "team": "opponents",
+                "outcome": "confirmed",
+                "result_desc": "Hunter Goodman called out on strikes.",
+                "batter": "Hunter Goodman",
+                "pitcher": "Edgardo Henriquez",
+                "game_pk": 824370
+            },
             {
                 "date": "2026-04-18",
                 "date_formatted": "April 18, 2026",
@@ -319,30 +343,6 @@
                 "result_desc": "Alex Freeland called out on strikes.",
                 "batter": "Alex Freeland",
                 "pitcher": "Jacob Lopez",
-                "game_pk": 831937
-            },
-            {
-                "date": "2026-03-21",
-                "date_formatted": "March 21, 2026",
-                "challenger": "Austin Wynns",
-                "role": "catching",
-                "team": "opponents",
-                "outcome": "overturned",
-                "result_desc": "Alex Call called out on strikes.",
-                "batter": "Alex Call",
-                "pitcher": "Luis Medina",
-                "game_pk": 831937
-            },
-            {
-                "date": "2026-03-21",
-                "date_formatted": "March 21, 2026",
-                "challenger": "Nick Senzel",
-                "role": "batting",
-                "team": "dodgers",
-                "outcome": "overturned",
-                "result_desc": "Nick Senzel walks.",
-                "batter": "Nick Senzel",
-                "pitcher": "Luis Medina",
                 "game_pk": 831937
             }
         ]
