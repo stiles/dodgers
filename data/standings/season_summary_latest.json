@@ -140,7 +140,7 @@
         "stat":"doubles",
         "value":35,
         "category":"batting",
-        "context_value":"17th",
+        "context_value":"18th",
         "context_value_label":"League rank"
     },
     {
@@ -148,7 +148,7 @@
         "stat":"strikeouts",
         "value":"191",
         "category":"pitching",
-        "context_value":"19th",
+        "context_value":"21st",
         "context_value_label":"League rank"
     },
     {
@@ -164,7 +164,7 @@
         "stat":"era",
         "value":"3.41",
         "category":"pitching",
-        "context_value":"6th",
+        "context_value":"5th",
         "context_value_label":"League rank"
     },
     {
@@ -172,7 +172,7 @@
         "stat":"whip",
         "value":"1.12",
         "category":"pitching",
-        "context_value":"2nd",
+        "context_value":"1st",
         "context_value_label":"League rank"
     },
     {
@@ -180,7 +180,7 @@
         "stat":"avg_against",
         "value":".211",
         "category":"pitching",
-        "context_value":"2nd",
+        "context_value":"1st",
         "context_value_label":"League rank"
     },
     {
@@ -194,7 +194,7 @@
     {
         "stat_label":"Last updated",
         "stat":"update_time",
-        "value":"April 22, 2026, 8:36 AM PT",
+        "value":"April 22, 2026, 4:24 PM PT",
         "category":"summary",
         "context_value":"",
         "context_value_label":""
