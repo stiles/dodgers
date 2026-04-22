@@ -1,17 +1,17 @@
 {
     "season_summary": {
-        "correct_strikes_pct": 90.96126255380202,
-        "incorrect_strikes_pct": 9.038737446197985,
-        "total_called_strikes": 697,
-        "bad_calls_count": 63
+        "correct_strikes_pct": 91.13233287858117,
+        "incorrect_strikes_pct": 8.867667121418833,
+        "total_called_strikes": 733,
+        "bad_calls_count": 65
     },
     "last_game_summary": {
-        "date": "April 20, 2026",
-        "correct_strikes_pct": 92.85714285714286,
-        "incorrect_strikes_pct": 7.142857142857139,
-        "total_called_strikes": 28,
+        "date": "April 21, 2026",
+        "correct_strikes_pct": 94.44444444444444,
+        "incorrect_strikes_pct": 5.555555555555557,
+        "total_called_strikes": 36,
         "bad_calls_count": 2,
-        "home_plate_umpire": "Adam Beck"
+        "home_plate_umpire": "Junior Valentine"
     },
     "worst_calls_of_season": [
         {
@@ -56,24 +56,24 @@
         }
     ],
     "pitching_season_summary": {
-        "correct_balls_pct": 95.50147492625368,
-        "incorrect_balls_pct": 4.498525073746322,
-        "total_called_balls": 1356,
-        "bad_calls_count": 61
+        "correct_balls_pct": 95.49678341672623,
+        "incorrect_balls_pct": 4.503216583273769,
+        "total_called_balls": 1399,
+        "bad_calls_count": 63
     },
     "pitching_last_game_summary": {
-        "date": "April 20, 2026",
-        "correct_balls_pct": 89.1891891891892,
-        "incorrect_balls_pct": 10.810810810810807,
-        "total_called_balls": 37,
-        "bad_calls_count": 4
+        "date": "April 21, 2026",
+        "correct_balls_pct": 95.34883720930233,
+        "incorrect_balls_pct": 4.6511627906976685,
+        "total_called_balls": 43,
+        "bad_calls_count": 2
     },
     "pitching_worst_calls_of_season": [],
     "abs_challenges": {
         "dodgers": {
             "batting": {
-                "total": 7,
-                "successful": 1,
+                "total": 8,
+                "successful": 2,
                 "failed": 6
             },
             "pitching": {
@@ -99,12 +99,36 @@
                 "failed": 0
             },
             "catching": {
-                "total": 7,
+                "total": 8,
                 "successful": 6,
-                "failed": 1
+                "failed": 2
             }
         },
         "challenge_log": [
+            {
+                "date": "2026-04-21",
+                "date_formatted": "April 21, 2026",
+                "challenger": "Dalton Rushing",
+                "role": "batting",
+                "team": "dodgers",
+                "outcome": "overturned",
+                "result_desc": "Dalton Rushing walks. Teoscar Hern\u00e1ndez to 3rd. Max Muncy to 2nd.",
+                "batter": "Dalton Rushing",
+                "pitcher": "Landen Roupp",
+                "game_pk": 823236
+            },
+            {
+                "date": "2026-04-21",
+                "date_formatted": "April 21, 2026",
+                "challenger": "Patrick Bailey",
+                "role": "catching",
+                "team": "opponents",
+                "outcome": "confirmed",
+                "result_desc": "Hyeseong Kim walks. Teoscar Hern\u00e1ndez scores. Max Muncy to 3rd. Dalton Rushing to 2nd.",
+                "batter": "Hyeseong Kim",
+                "pitcher": "Landen Roupp",
+                "game_pk": 823236
+            },
             {
                 "date": "2026-04-20",
                 "date_formatted": "April 20, 2026",
@@ -320,30 +344,6 @@
                 "batter": "Will Smith",
                 "pitcher": "George Klassen",
                 "game_pk": 831804
-            },
-            {
-                "date": "2026-03-22",
-                "date_formatted": "March 22, 2026",
-                "challenger": "Dalton Rushing",
-                "role": "batting",
-                "team": "dodgers",
-                "outcome": "confirmed",
-                "result_desc": "Dalton Rushing called out on strikes.",
-                "batter": "Dalton Rushing",
-                "pitcher": "Shaun Anderson",
-                "game_pk": 831804
-            },
-            {
-                "date": "2026-03-21",
-                "date_formatted": "March 21, 2026",
-                "challenger": "Alex Freeland",
-                "role": "batting",
-                "team": "dodgers",
-                "outcome": "confirmed",
-                "result_desc": "Alex Freeland called out on strikes.",
-                "batter": "Alex Freeland",
-                "pitcher": "Jacob Lopez",
-                "game_pk": 831937
             }
         ]
     }

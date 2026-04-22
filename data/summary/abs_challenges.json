@@ -1,9 +1,9 @@
 {
     "dodgers": {
         "batting": {
-            "total": 21,
-            "successful": 13,
-            "failed": 8
+            "total": 23,
+            "successful": 14,
+            "failed": 9
         },
         "pitching": {
             "total": 2,
@@ -11,8 +11,8 @@
             "failed": 2
         },
         "catching": {
-            "total": 32,
-            "successful": 18,
+            "total": 33,
+            "successful": 19,
             "failed": 14
         }
     },
@@ -28,12 +28,60 @@
             "failed": 2
         },
         "catching": {
-            "total": 38,
+            "total": 39,
             "successful": 24,
-            "failed": 14
+            "failed": 15
         }
     },
     "challenge_log": [
+        {
+            "date": "2026-04-21",
+            "date_formatted": "April 21, 2026",
+            "challenger": "Patrick Bailey",
+            "role": "catching",
+            "team": "opponents",
+            "outcome": "confirmed",
+            "result_desc": "Alex Freeland strikes out swinging.",
+            "batter": "Alex Freeland",
+            "pitcher": "Ryan Walker",
+            "game_pk": 823236
+        },
+        {
+            "date": "2026-04-21",
+            "date_formatted": "April 21, 2026",
+            "challenger": "Will Smith",
+            "role": "catching",
+            "team": "dodgers",
+            "outcome": "overturned",
+            "result_desc": "Matt Chapman walks.",
+            "batter": "Matt Chapman",
+            "pitcher": "Tanner Scott",
+            "game_pk": 823236
+        },
+        {
+            "date": "2026-04-21",
+            "date_formatted": "April 21, 2026",
+            "challenger": "Max Muncy",
+            "role": "batting",
+            "team": "dodgers",
+            "outcome": "overturned",
+            "result_desc": "Max Muncy grounds out softly, second baseman Luis Arraez to first baseman Rafael Devers. Teoscar Hern\u00e1ndez to 2nd.",
+            "batter": "Max Muncy",
+            "pitcher": "Erik Miller",
+            "game_pk": 823236
+        },
+        {
+            "date": "2026-04-21",
+            "date_formatted": "April 21, 2026",
+            "challenger": "Shohei Ohtani",
+            "role": "batting",
+            "team": "dodgers",
+            "outcome": "confirmed",
+            "result_desc": "Shohei Ohtani singles on a ground ball to shortstop Willy Adames. Alex Freeland to 2nd.",
+            "batter": "Shohei Ohtani",
+            "pitcher": "Erik Miller",
+            "game_pk": 823236
+        },
         {
             "date": "2026-04-20",
             "date_formatted": "April 20, 2026",
@@ -169,18 +217,6 @@
         {
             "date": "2026-04-17",
             "date_formatted": "April 17, 2026",
-            "challenger": "TJ Rumfield",
-            "role": "batting",
-            "team": "opponents",
-            "outcome": "confirmed",
-            "result_desc": "TJ Rumfield called out on strikes.",
-            "batter": "TJ Rumfield",
-            "pitcher": "Jack Dreyer",
-            "game_pk": 824373
-        },
-        {
-            "date": "2026-04-17",
-            "date_formatted": "April 17, 2026",
             "challenger": "Brett Sullivan",
             "role": "catching",
             "team": "opponents",
@@ -191,28 +227,16 @@
             "game_pk": 824373
         },
         {
-            "date": "2026-04-15",
-            "date_formatted": "April 15, 2026",
-            "challenger": "Francisco Alvarez",
-            "role": "catching",
+            "date": "2026-04-17",
+            "date_formatted": "April 17, 2026",
+            "challenger": "TJ Rumfield",
+            "role": "batting",
             "team": "opponents",
             "outcome": "confirmed",
-            "result_desc": "Alex Freeland strikes out swinging.",
-            "batter": "Alex Freeland",
-            "pitcher": "Clay Holmes",
-            "game_pk": 823963
-        },
-        {
-            "date": "2026-04-15",
-            "date_formatted": "April 15, 2026",
-            "challenger": "Francisco Alvarez",
-            "role": "catching",
-            "team": "opponents",
-            "outcome": "overturned",
-            "result_desc": "Max Muncy grounds out to first baseman Brett Baty.",
-            "batter": "Max Muncy",
-            "pitcher": "Clay Holmes",
-            "game_pk": 823963
+            "result_desc": "TJ Rumfield called out on strikes.",
+            "batter": "TJ Rumfield",
+            "pitcher": "Jack Dreyer",
+            "game_pk": 824373
         },
         {
             "date": "2026-04-15",
@@ -221,9 +245,9 @@
             "role": "catching",
             "team": "dodgers",
             "outcome": "confirmed",
-            "result_desc": "Francisco Lindor strikes out on a foul tip.",
-            "batter": "Francisco Lindor",
-            "pitcher": "Shohei Ohtani",
+            "result_desc": "Marcus Semien singles on a fly ball to center fielder Andy Pages. Bo Bichette scores. Francisco Alvarez to 2nd.",
+            "batter": "Marcus Semien",
+            "pitcher": "Kyle Hurt",
             "game_pk": 823963
         },
         {
@@ -245,34 +269,10 @@
             "role": "catching",
             "team": "dodgers",
             "outcome": "confirmed",
-            "result_desc": "Marcus Semien singles on a fly ball to center fielder Andy Pages. Bo Bichette scores. Francisco Alvarez to 2nd.",
-            "batter": "Marcus Semien",
-            "pitcher": "Kyle Hurt",
+            "result_desc": "Francisco Lindor strikes out on a foul tip.",
+            "batter": "Francisco Lindor",
+            "pitcher": "Shohei Ohtani",
             "game_pk": 823963
-        },
-        {
-            "date": "2026-04-14",
-            "date_formatted": "April 14, 2026",
-            "challenger": "Will Smith",
-            "role": "catching",
-            "team": "dodgers",
-            "outcome": "confirmed",
-            "result_desc": "Luis Robert Jr. challenged (pitch result), call on the field was confirmed: Luis Robert Jr. called out on strikes.",
-            "batter": "Luis Robert Jr.",
-            "pitcher": "Blake Treinen",
-            "game_pk": 823965
-        },
-        {
-            "date": "2026-04-14",
-            "date_formatted": "April 14, 2026",
-            "challenger": "Francisco Alvarez",
-            "role": "catching",
-            "team": "opponents",
-            "outcome": "overturned",
-            "result_desc": "Freddie Freeman strikes out swinging.",
-            "batter": "Freddie Freeman",
-            "pitcher": "Nolan McLean",
-            "game_pk": 823965
         }
     ]
 }
