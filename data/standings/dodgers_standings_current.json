@@ -504,5 +504,28 @@
     "time":"00:00:00",
     "day_night":"N",
     "game_day":"Monday"
+  },
+  {
+    "gm":23,
+    "gtm":23,
+    "game_date":"2026-04-21",
+    "year":2026,
+    "home_away":"away",
+    "opp":"San Francisco Giants",
+    "r":1,
+    "ra":3,
+    "run_diff":-2,
+    "result":"L",
+    "wins":16,
+    "losses":7,
+    "record":"16-7",
+    "win_pct":0.696,
+    "gb":-0.5,
+    "rank":1,
+    "attendance":0,
+    "time_minutes":0,
+    "time":"00:00:00",
+    "day_night":"N",
+    "game_day":"Tuesday"
   }
 ]
