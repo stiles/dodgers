@@ -1,18 +1,18 @@
 {
     "dodgers": {
         "batting": {
-            "total": 23,
-            "successful": 14,
+            "total": 24,
+            "successful": 15,
             "failed": 9
         },
         "pitching": {
-            "total": 2,
-            "successful": 0,
+            "total": 3,
+            "successful": 1,
             "failed": 2
         },
         "catching": {
-            "total": 35,
-            "successful": 21,
+            "total": 36,
+            "successful": 22,
             "failed": 14
         }
     },
@@ -28,35 +28,59 @@
             "failed": 2
         },
         "catching": {
-            "total": 41,
-            "successful": 24,
+            "total": 42,
+            "successful": 25,
             "failed": 17
         }
     },
     "challenge_log": [
         {
-            "date": "2026-04-22",
-            "date_formatted": "April 22, 2026",
-            "challenger": "Patrick Bailey",
-            "role": "catching",
-            "team": "opponents",
-            "outcome": "confirmed",
-            "result_desc": "Kyle Tucker flies out to center fielder Drew Gilbert.",
-            "batter": "Kyle Tucker",
-            "pitcher": "Caleb Kilian",
-            "game_pk": 823231
-        },
-        {
-            "date": "2026-04-22",
-            "date_formatted": "April 22, 2026",
-            "challenger": "Will Smith",
+            "date": "2026-04-23",
+            "date_formatted": "April 23, 2026",
+            "challenger": "Dalton Rushing",
             "role": "catching",
             "team": "dodgers",
             "outcome": "overturned",
-            "result_desc": "Drew Gilbert out on a sacrifice bunt, first baseman Freddie Freeman to second baseman Miguel Rojas. Jung Hoo Lee to 3rd. Heliot Ramos to 2nd.",
-            "batter": "Drew Gilbert",
-            "pitcher": "Jack Dreyer",
-            "game_pk": 823231
+            "result_desc": "Willy Adames grounds out, third baseman Max Muncy to first baseman Freddie Freeman.",
+            "batter": "Willy Adames",
+            "pitcher": "Tanner Scott",
+            "game_pk": 823233
+        },
+        {
+            "date": "2026-04-23",
+            "date_formatted": "April 23, 2026",
+            "challenger": "Shohei Ohtani",
+            "role": "batting",
+            "team": "dodgers",
+            "outcome": "overturned",
+            "result_desc": "Shohei Ohtani flies out to center fielder Drew Gilbert.",
+            "batter": "Shohei Ohtani",
+            "pitcher": "Blade Tidwell",
+            "game_pk": 823233
+        },
+        {
+            "date": "2026-04-23",
+            "date_formatted": "April 23, 2026",
+            "challenger": "Tyler Glasnow",
+            "role": "pitching",
+            "team": "dodgers",
+            "outcome": "overturned",
+            "result_desc": "Will Brennan grounds out, shortstop Hyeseong Kim to first baseman Freddie Freeman.",
+            "batter": "Will Brennan",
+            "pitcher": "Tyler Glasnow",
+            "game_pk": 823233
+        },
+        {
+            "date": "2026-04-23",
+            "date_formatted": "April 23, 2026",
+            "challenger": "Patrick Bailey",
+            "role": "catching",
+            "team": "opponents",
+            "outcome": "overturned",
+            "result_desc": "Freddie Freeman grounds out, second baseman Luis Arraez to first baseman Rafael Devers.",
+            "batter": "Freddie Freeman",
+            "pitcher": "Logan Webb",
+            "game_pk": 823233
         },
         {
             "date": "2026-04-22",
@@ -92,6 +116,30 @@
             "result_desc": "Will Smith lines out to right fielder Jung Hoo Lee.",
             "batter": "Will Smith",
             "pitcher": "Tyler Mahle",
+            "game_pk": 823231
+        },
+        {
+            "date": "2026-04-22",
+            "date_formatted": "April 22, 2026",
+            "challenger": "Will Smith",
+            "role": "catching",
+            "team": "dodgers",
+            "outcome": "overturned",
+            "result_desc": "Drew Gilbert out on a sacrifice bunt, first baseman Freddie Freeman to second baseman Miguel Rojas. Jung Hoo Lee to 3rd. Heliot Ramos to 2nd.",
+            "batter": "Drew Gilbert",
+            "pitcher": "Jack Dreyer",
+            "game_pk": 823231
+        },
+        {
+            "date": "2026-04-22",
+            "date_formatted": "April 22, 2026",
+            "challenger": "Patrick Bailey",
+            "role": "catching",
+            "team": "opponents",
+            "outcome": "confirmed",
+            "result_desc": "Kyle Tucker flies out to center fielder Drew Gilbert.",
+            "batter": "Kyle Tucker",
+            "pitcher": "Caleb Kilian",
             "game_pk": 823231
         },
         {
@@ -181,10 +229,10 @@
         {
             "date": "2026-04-19",
             "date_formatted": "April 19, 2026",
-            "challenger": "Michael Lorenzen",
-            "role": "pitching",
+            "challenger": "Hunter Goodman",
+            "role": "catching",
             "team": "opponents",
-            "outcome": "confirmed",
+            "outcome": "overturned",
             "result_desc": "Hyeseong Kim doubles (2) on a line drive to center fielder Jake McCarthy.",
             "batter": "Hyeseong Kim",
             "pitcher": "Michael Lorenzen",
@@ -205,25 +253,13 @@
         {
             "date": "2026-04-19",
             "date_formatted": "April 19, 2026",
-            "challenger": "Hunter Goodman",
-            "role": "catching",
+            "challenger": "Michael Lorenzen",
+            "role": "pitching",
             "team": "opponents",
-            "outcome": "overturned",
+            "outcome": "confirmed",
             "result_desc": "Hyeseong Kim doubles (2) on a line drive to center fielder Jake McCarthy.",
             "batter": "Hyeseong Kim",
             "pitcher": "Michael Lorenzen",
-            "game_pk": 824371
-        },
-        {
-            "date": "2026-04-19",
-            "date_formatted": "April 19, 2026",
-            "challenger": "Will Smith",
-            "role": "catching",
-            "team": "dodgers",
-            "outcome": "overturned",
-            "result_desc": "Willi Castro strikes out swinging.",
-            "batter": "Willi Castro",
-            "pitcher": "Will Klein",
             "game_pk": 824371
         },
         {
@@ -237,42 +273,6 @@
             "batter": "Ezequiel Tovar",
             "pitcher": "Jack Dreyer",
             "game_pk": 824371
-        },
-        {
-            "date": "2026-04-18",
-            "date_formatted": "April 18, 2026",
-            "challenger": "Teoscar Hern\u00e1ndez",
-            "role": "batting",
-            "team": "dodgers",
-            "outcome": "overturned",
-            "result_desc": "Teoscar Hern\u00e1ndez grounds out, third baseman Kyle Karros to first baseman Troy Johnston.",
-            "batter": "Teoscar Hern\u00e1ndez",
-            "pitcher": "Ryan Feltner",
-            "game_pk": 824372
-        },
-        {
-            "date": "2026-04-18",
-            "date_formatted": "April 18, 2026",
-            "challenger": "Hunter Goodman",
-            "role": "catching",
-            "team": "opponents",
-            "outcome": "overturned",
-            "result_desc": "Shohei Ohtani grounds out to first baseman Troy Johnston.",
-            "batter": "Shohei Ohtani",
-            "pitcher": "Ryan Feltner",
-            "game_pk": 824372
-        },
-        {
-            "date": "2026-04-18",
-            "date_formatted": "April 18, 2026",
-            "challenger": "Edouard Julien",
-            "role": "batting",
-            "team": "opponents",
-            "outcome": "overturned",
-            "result_desc": "Edouard Julien strikes out swinging.",
-            "batter": "Edouard Julien",
-            "pitcher": "Emmet Sheehan",
-            "game_pk": 824372
         }
     ]
 }

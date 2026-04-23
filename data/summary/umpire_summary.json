@@ -1,17 +1,17 @@
 {
     "season_summary": {
-        "correct_strikes_pct": 91.20734908136482,
-        "incorrect_strikes_pct": 8.792650918635175,
-        "total_called_strikes": 762,
-        "bad_calls_count": 67
+        "correct_strikes_pct": 91.37055837563452,
+        "incorrect_strikes_pct": 8.629441624365484,
+        "total_called_strikes": 788,
+        "bad_calls_count": 68
     },
     "last_game_summary": {
-        "date": "April 22, 2026",
-        "correct_strikes_pct": 93.10344827586206,
-        "incorrect_strikes_pct": 6.896551724137936,
-        "total_called_strikes": 29,
-        "bad_calls_count": 2,
-        "home_plate_umpire": "Jordan Baker"
+        "date": "April 23, 2026",
+        "correct_strikes_pct": 96.15384615384616,
+        "incorrect_strikes_pct": 3.8461538461538396,
+        "total_called_strikes": 26,
+        "bad_calls_count": 1,
+        "home_plate_umpire": "Rob Drake"
     },
     "worst_calls_of_season": [
         {
@@ -56,24 +56,24 @@
         }
     ],
     "pitching_season_summary": {
-        "correct_balls_pct": 95.4608938547486,
-        "incorrect_balls_pct": 4.539106145251395,
-        "total_called_balls": 1432,
+        "correct_balls_pct": 95.578231292517,
+        "incorrect_balls_pct": 4.421768707482997,
+        "total_called_balls": 1470,
         "bad_calls_count": 65
     },
     "pitching_last_game_summary": {
-        "date": "April 22, 2026",
-        "correct_balls_pct": 93.93939393939394,
-        "incorrect_balls_pct": 6.060606060606062,
-        "total_called_balls": 33,
-        "bad_calls_count": 2
+        "date": "April 23, 2026",
+        "correct_balls_pct": 100.0,
+        "incorrect_balls_pct": 0.0,
+        "total_called_balls": 38,
+        "bad_calls_count": 0
     },
     "pitching_worst_calls_of_season": [],
     "abs_challenges": {
         "dodgers": {
             "batting": {
-                "total": 8,
-                "successful": 2,
+                "total": 9,
+                "successful": 3,
                 "failed": 6
             },
             "pitching": {
@@ -99,12 +99,36 @@
                 "failed": 0
             },
             "catching": {
-                "total": 9,
-                "successful": 7,
+                "total": 10,
+                "successful": 8,
                 "failed": 2
             }
         },
         "challenge_log": [
+            {
+                "date": "2026-04-23",
+                "date_formatted": "April 23, 2026",
+                "challenger": "Alex Freeland",
+                "role": "batting",
+                "team": "dodgers",
+                "outcome": "overturned",
+                "result_desc": "Alex Freeland walks.",
+                "batter": "Alex Freeland",
+                "pitcher": "Logan Webb",
+                "game_pk": 823233
+            },
+            {
+                "date": "2026-04-23",
+                "date_formatted": "April 23, 2026",
+                "challenger": "Patrick Bailey",
+                "role": "catching",
+                "team": "opponents",
+                "outcome": "overturned",
+                "result_desc": "Kyle Tucker called out on strikes.",
+                "batter": "Kyle Tucker",
+                "pitcher": "Blade Tidwell",
+                "game_pk": 823233
+            },
             {
                 "date": "2026-04-22",
                 "date_formatted": "April 22, 2026",
@@ -320,30 +344,6 @@
                 "batter": "Alex Freeland",
                 "pitcher": "Shawn Armstrong",
                 "game_pk": 823970
-            },
-            {
-                "date": "2026-03-27",
-                "date_formatted": "March 27, 2026",
-                "challenger": "Will Smith",
-                "role": "catching",
-                "team": "dodgers",
-                "outcome": "overturned",
-                "result_desc": "Geraldo Perdomo called out on strikes.",
-                "batter": "Geraldo Perdomo",
-                "pitcher": "Emmet Sheehan",
-                "game_pk": 823971
-            },
-            {
-                "date": "2026-03-27",
-                "date_formatted": "March 27, 2026",
-                "challenger": "Will Smith",
-                "role": "catching",
-                "team": "dodgers",
-                "outcome": "confirmed",
-                "result_desc": "Alek Thomas walks.",
-                "batter": "Alek Thomas",
-                "pitcher": "Edwin D\u00edaz",
-                "game_pk": 823971
             }
         ]
     }
