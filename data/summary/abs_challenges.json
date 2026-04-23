@@ -11,15 +11,15 @@
             "failed": 2
         },
         "catching": {
-            "total": 33,
-            "successful": 19,
+            "total": 35,
+            "successful": 21,
             "failed": 14
         }
     },
     "opponents": {
         "batting": {
-            "total": 32,
-            "successful": 16,
+            "total": 33,
+            "successful": 17,
             "failed": 16
         },
         "pitching": {
@@ -28,12 +28,72 @@
             "failed": 2
         },
         "catching": {
-            "total": 39,
+            "total": 41,
             "successful": 24,
-            "failed": 15
+            "failed": 17
         }
     },
     "challenge_log": [
+        {
+            "date": "2026-04-22",
+            "date_formatted": "April 22, 2026",
+            "challenger": "Patrick Bailey",
+            "role": "catching",
+            "team": "opponents",
+            "outcome": "confirmed",
+            "result_desc": "Kyle Tucker flies out to center fielder Drew Gilbert.",
+            "batter": "Kyle Tucker",
+            "pitcher": "Caleb Kilian",
+            "game_pk": 823231
+        },
+        {
+            "date": "2026-04-22",
+            "date_formatted": "April 22, 2026",
+            "challenger": "Will Smith",
+            "role": "catching",
+            "team": "dodgers",
+            "outcome": "overturned",
+            "result_desc": "Drew Gilbert out on a sacrifice bunt, first baseman Freddie Freeman to second baseman Miguel Rojas. Jung Hoo Lee to 3rd. Heliot Ramos to 2nd.",
+            "batter": "Drew Gilbert",
+            "pitcher": "Jack Dreyer",
+            "game_pk": 823231
+        },
+        {
+            "date": "2026-04-22",
+            "date_formatted": "April 22, 2026",
+            "challenger": "Will Smith",
+            "role": "catching",
+            "team": "dodgers",
+            "outcome": "overturned",
+            "result_desc": "Drew Gilbert strikes out swinging.",
+            "batter": "Drew Gilbert",
+            "pitcher": "Shohei Ohtani",
+            "game_pk": 823231
+        },
+        {
+            "date": "2026-04-22",
+            "date_formatted": "April 22, 2026",
+            "challenger": "Jung Hoo Lee",
+            "role": "batting",
+            "team": "opponents",
+            "outcome": "overturned",
+            "result_desc": "Jung Hoo Lee grounds out softly, pitcher Shohei Ohtani to first baseman Freddie Freeman.",
+            "batter": "Jung Hoo Lee",
+            "pitcher": "Shohei Ohtani",
+            "game_pk": 823231
+        },
+        {
+            "date": "2026-04-22",
+            "date_formatted": "April 22, 2026",
+            "challenger": "Patrick Bailey",
+            "role": "catching",
+            "team": "opponents",
+            "outcome": "confirmed",
+            "result_desc": "Will Smith lines out to right fielder Jung Hoo Lee.",
+            "batter": "Will Smith",
+            "pitcher": "Tyler Mahle",
+            "game_pk": 823231
+        },
         {
             "date": "2026-04-21",
             "date_formatted": "April 21, 2026",
@@ -121,42 +181,6 @@
         {
             "date": "2026-04-19",
             "date_formatted": "April 19, 2026",
-            "challenger": "Ezequiel Tovar",
-            "role": "batting",
-            "team": "opponents",
-            "outcome": "confirmed",
-            "result_desc": "Ezequiel Tovar strikes out swinging.",
-            "batter": "Ezequiel Tovar",
-            "pitcher": "Jack Dreyer",
-            "game_pk": 824371
-        },
-        {
-            "date": "2026-04-19",
-            "date_formatted": "April 19, 2026",
-            "challenger": "Will Smith",
-            "role": "catching",
-            "team": "dodgers",
-            "outcome": "overturned",
-            "result_desc": "Willi Castro strikes out swinging.",
-            "batter": "Willi Castro",
-            "pitcher": "Will Klein",
-            "game_pk": 824371
-        },
-        {
-            "date": "2026-04-19",
-            "date_formatted": "April 19, 2026",
-            "challenger": "Hunter Goodman",
-            "role": "catching",
-            "team": "opponents",
-            "outcome": "overturned",
-            "result_desc": "Hyeseong Kim doubles (2) on a line drive to center fielder Jake McCarthy.",
-            "batter": "Hyeseong Kim",
-            "pitcher": "Michael Lorenzen",
-            "game_pk": 824371
-        },
-        {
-            "date": "2026-04-19",
-            "date_formatted": "April 19, 2026",
             "challenger": "Michael Lorenzen",
             "role": "pitching",
             "team": "opponents",
@@ -176,6 +200,42 @@
             "result_desc": "Max Muncy singles on a line drive to left fielder Mickey Moniak, deflected by third baseman Kyle Karros.",
             "batter": "Max Muncy",
             "pitcher": "Michael Lorenzen",
+            "game_pk": 824371
+        },
+        {
+            "date": "2026-04-19",
+            "date_formatted": "April 19, 2026",
+            "challenger": "Hunter Goodman",
+            "role": "catching",
+            "team": "opponents",
+            "outcome": "overturned",
+            "result_desc": "Hyeseong Kim doubles (2) on a line drive to center fielder Jake McCarthy.",
+            "batter": "Hyeseong Kim",
+            "pitcher": "Michael Lorenzen",
+            "game_pk": 824371
+        },
+        {
+            "date": "2026-04-19",
+            "date_formatted": "April 19, 2026",
+            "challenger": "Will Smith",
+            "role": "catching",
+            "team": "dodgers",
+            "outcome": "overturned",
+            "result_desc": "Willi Castro strikes out swinging.",
+            "batter": "Willi Castro",
+            "pitcher": "Will Klein",
+            "game_pk": 824371
+        },
+        {
+            "date": "2026-04-19",
+            "date_formatted": "April 19, 2026",
+            "challenger": "Ezequiel Tovar",
+            "role": "batting",
+            "team": "opponents",
+            "outcome": "confirmed",
+            "result_desc": "Ezequiel Tovar strikes out swinging.",
+            "batter": "Ezequiel Tovar",
+            "pitcher": "Jack Dreyer",
             "game_pk": 824371
         },
         {
@@ -213,66 +273,6 @@
             "batter": "Edouard Julien",
             "pitcher": "Emmet Sheehan",
             "game_pk": 824372
-        },
-        {
-            "date": "2026-04-17",
-            "date_formatted": "April 17, 2026",
-            "challenger": "Brett Sullivan",
-            "role": "catching",
-            "team": "opponents",
-            "outcome": "confirmed",
-            "result_desc": "Teoscar Hern\u00e1ndez strikes out swinging.",
-            "batter": "Teoscar Hern\u00e1ndez",
-            "pitcher": "Tomoyuki Sugano",
-            "game_pk": 824373
-        },
-        {
-            "date": "2026-04-17",
-            "date_formatted": "April 17, 2026",
-            "challenger": "TJ Rumfield",
-            "role": "batting",
-            "team": "opponents",
-            "outcome": "confirmed",
-            "result_desc": "TJ Rumfield called out on strikes.",
-            "batter": "TJ Rumfield",
-            "pitcher": "Jack Dreyer",
-            "game_pk": 824373
-        },
-        {
-            "date": "2026-04-15",
-            "date_formatted": "April 15, 2026",
-            "challenger": "Will Smith",
-            "role": "catching",
-            "team": "dodgers",
-            "outcome": "confirmed",
-            "result_desc": "Marcus Semien singles on a fly ball to center fielder Andy Pages. Bo Bichette scores. Francisco Alvarez to 2nd.",
-            "batter": "Marcus Semien",
-            "pitcher": "Kyle Hurt",
-            "game_pk": 823963
-        },
-        {
-            "date": "2026-04-15",
-            "date_formatted": "April 15, 2026",
-            "challenger": "Francisco Alvarez",
-            "role": "catching",
-            "team": "opponents",
-            "outcome": "overturned",
-            "result_desc": "Teoscar Hern\u00e1ndez singles on a ground ball to shortstop Francisco Lindor.",
-            "batter": "Teoscar Hern\u00e1ndez",
-            "pitcher": "Devin Williams",
-            "game_pk": 823963
-        },
-        {
-            "date": "2026-04-15",
-            "date_formatted": "April 15, 2026",
-            "challenger": "Will Smith",
-            "role": "catching",
-            "team": "dodgers",
-            "outcome": "confirmed",
-            "result_desc": "Francisco Lindor strikes out on a foul tip.",
-            "batter": "Francisco Lindor",
-            "pitcher": "Shohei Ohtani",
-            "game_pk": 823963
         }
     ]
 }

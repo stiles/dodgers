@@ -1,17 +1,17 @@
 {
     "season_summary": {
-        "correct_strikes_pct": 91.13233287858117,
-        "incorrect_strikes_pct": 8.867667121418833,
-        "total_called_strikes": 733,
-        "bad_calls_count": 65
+        "correct_strikes_pct": 91.20734908136482,
+        "incorrect_strikes_pct": 8.792650918635175,
+        "total_called_strikes": 762,
+        "bad_calls_count": 67
     },
     "last_game_summary": {
-        "date": "April 21, 2026",
-        "correct_strikes_pct": 94.44444444444444,
-        "incorrect_strikes_pct": 5.555555555555557,
-        "total_called_strikes": 36,
+        "date": "April 22, 2026",
+        "correct_strikes_pct": 93.10344827586206,
+        "incorrect_strikes_pct": 6.896551724137936,
+        "total_called_strikes": 29,
         "bad_calls_count": 2,
-        "home_plate_umpire": "Junior Valentine"
+        "home_plate_umpire": "Jordan Baker"
     },
     "worst_calls_of_season": [
         {
@@ -56,16 +56,16 @@
         }
     ],
     "pitching_season_summary": {
-        "correct_balls_pct": 95.49678341672623,
-        "incorrect_balls_pct": 4.503216583273769,
-        "total_called_balls": 1399,
-        "bad_calls_count": 63
+        "correct_balls_pct": 95.4608938547486,
+        "incorrect_balls_pct": 4.539106145251395,
+        "total_called_balls": 1432,
+        "bad_calls_count": 65
     },
     "pitching_last_game_summary": {
-        "date": "April 21, 2026",
-        "correct_balls_pct": 95.34883720930233,
-        "incorrect_balls_pct": 4.6511627906976685,
-        "total_called_balls": 43,
+        "date": "April 22, 2026",
+        "correct_balls_pct": 93.93939393939394,
+        "incorrect_balls_pct": 6.060606060606062,
+        "total_called_balls": 33,
         "bad_calls_count": 2
     },
     "pitching_worst_calls_of_season": [],
@@ -99,12 +99,24 @@
                 "failed": 0
             },
             "catching": {
-                "total": 8,
-                "successful": 6,
+                "total": 9,
+                "successful": 7,
                 "failed": 2
             }
         },
         "challenge_log": [
+            {
+                "date": "2026-04-22",
+                "date_formatted": "April 22, 2026",
+                "challenger": "Patrick Bailey",
+                "role": "catching",
+                "team": "opponents",
+                "outcome": "overturned",
+                "result_desc": "Kyle Tucker called out on strikes.",
+                "batter": "Kyle Tucker",
+                "pitcher": "Tyler Mahle",
+                "game_pk": 823231
+            },
             {
                 "date": "2026-04-21",
                 "date_formatted": "April 21, 2026",
@@ -332,18 +344,6 @@
                 "batter": "Alek Thomas",
                 "pitcher": "Edwin D\u00edaz",
                 "game_pk": 823971
-            },
-            {
-                "date": "2026-03-22",
-                "date_formatted": "March 22, 2026",
-                "challenger": "Logan O'Hoppe",
-                "role": "catching",
-                "team": "opponents",
-                "outcome": "overturned",
-                "result_desc": "Will Smith called out on strikes.",
-                "batter": "Will Smith",
-                "pitcher": "George Klassen",
-                "game_pk": 831804
             }
         ]
     }
