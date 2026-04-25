@@ -573,5 +573,28 @@
     "time":"00:00:00",
     "day_night":"N",
     "game_day":"Thursday"
+  },
+  {
+    "gm":26,
+    "gtm":26,
+    "game_date":"2026-04-24",
+    "year":2026,
+    "home_away":"home",
+    "opp":"Chicago Cubs",
+    "r":4,
+    "ra":6,
+    "run_diff":-2,
+    "result":"L",
+    "wins":17,
+    "losses":9,
+    "record":"17-9",
+    "win_pct":0.654,
+    "gb":0.5,
+    "rank":1,
+    "attendance":0,
+    "time_minutes":0,
+    "time":"00:00:00",
+    "day_night":"N",
+    "game_day":"Friday"
   }
 ]
