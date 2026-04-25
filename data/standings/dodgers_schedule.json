@@ -1,13 +1,5 @@
 [
     {
-        "date":"Apr 13",
-        "opp_name":"New York Mets",
-        "home_away":"home",
-        "result":"win",
-        "placement":"last",
-        "game_start":"4-0"
-    },
-    {
         "date":"Apr 14",
         "opp_name":"New York Mets",
         "home_away":"home",
@@ -83,9 +75,9 @@
         "date":"Apr 24",
         "opp_name":"Chicago Cubs",
         "home_away":"home",
-        "result":"--",
-        "placement":"next",
-        "game_start":"7:15 PM"
+        "result":"loss",
+        "placement":"last",
+        "game_start":"4-6"
     },
     {
         "date":"Apr 25",
@@ -153,6 +145,14 @@
     },
     {
         "date":"May 4",
+        "opp_name":"Houston Astros",
+        "home_away":"away",
+        "result":"--",
+        "placement":"next",
+        "game_start":"5:10 PM"
+    },
+    {
+        "date":"May 5",
         "opp_name":"Houston Astros",
         "home_away":"away",
         "result":"--",

@@ -1,17 +1,17 @@
 {
     "season_summary": {
-        "correct_strikes_pct": 91.37055837563452,
-        "incorrect_strikes_pct": 8.629441624365484,
-        "total_called_strikes": 788,
+        "correct_strikes_pct": 91.58415841584159,
+        "incorrect_strikes_pct": 8.415841584158414,
+        "total_called_strikes": 808,
         "bad_calls_count": 68
     },
     "last_game_summary": {
-        "date": "April 23, 2026",
-        "correct_strikes_pct": 96.15384615384616,
-        "incorrect_strikes_pct": 3.8461538461538396,
-        "total_called_strikes": 26,
-        "bad_calls_count": 1,
-        "home_plate_umpire": "Rob Drake"
+        "date": "April 24, 2026",
+        "correct_strikes_pct": 100.0,
+        "incorrect_strikes_pct": 0.0,
+        "total_called_strikes": 20,
+        "bad_calls_count": 0,
+        "home_plate_umpire": "Willie Traynor"
     },
     "worst_calls_of_season": [
         {
@@ -56,17 +56,17 @@
         }
     ],
     "pitching_season_summary": {
-        "correct_balls_pct": 95.578231292517,
-        "incorrect_balls_pct": 4.421768707482997,
-        "total_called_balls": 1470,
-        "bad_calls_count": 65
+        "correct_balls_pct": 95.60655737704919,
+        "incorrect_balls_pct": 4.393442622950815,
+        "total_called_balls": 1525,
+        "bad_calls_count": 67
     },
     "pitching_last_game_summary": {
-        "date": "April 23, 2026",
-        "correct_balls_pct": 100.0,
-        "incorrect_balls_pct": 0.0,
-        "total_called_balls": 38,
-        "bad_calls_count": 0
+        "date": "April 24, 2026",
+        "correct_balls_pct": 96.36363636363636,
+        "incorrect_balls_pct": 3.6363636363636402,
+        "total_called_balls": 55,
+        "bad_calls_count": 2
     },
     "pitching_worst_calls_of_season": [],
     "abs_challenges": {
@@ -82,8 +82,8 @@
                 "failed": 0
             },
             "catching": {
-                "total": 5,
-                "successful": 4,
+                "total": 6,
+                "successful": 5,
                 "failed": 1
             }
         },
@@ -99,12 +99,36 @@
                 "failed": 0
             },
             "catching": {
-                "total": 10,
-                "successful": 8,
+                "total": 11,
+                "successful": 9,
                 "failed": 2
             }
         },
         "challenge_log": [
+            {
+                "date": "2026-04-24",
+                "date_formatted": "April 24, 2026",
+                "challenger": "Carson Kelly",
+                "role": "catching",
+                "team": "opponents",
+                "outcome": "overturned",
+                "result_desc": "Shohei Ohtani called out on strikes.",
+                "batter": "Shohei Ohtani",
+                "pitcher": "Ryan Rolison",
+                "game_pk": 823962
+            },
+            {
+                "date": "2026-04-24",
+                "date_formatted": "April 24, 2026",
+                "challenger": "Will Smith",
+                "role": "catching",
+                "team": "dodgers",
+                "outcome": "overturned",
+                "result_desc": "Ian Happ called out on strikes.",
+                "batter": "Ian Happ",
+                "pitcher": "Emmet Sheehan",
+                "game_pk": 823962
+            },
             {
                 "date": "2026-04-23",
                 "date_formatted": "April 23, 2026",
@@ -320,30 +344,6 @@
                 "batter": "Jes\u00fas S\u00e1nchez",
                 "pitcher": "Will Klein",
                 "game_pk": 822832
-            },
-            {
-                "date": "2026-04-04",
-                "date_formatted": "April 4, 2026",
-                "challenger": "Will Smith",
-                "role": "catching",
-                "team": "dodgers",
-                "outcome": "overturned",
-                "result_desc": "James Wood called out on strikes.",
-                "batter": "James Wood",
-                "pitcher": "Tyler Glasnow",
-                "game_pk": 822757
-            },
-            {
-                "date": "2026-04-01",
-                "date_formatted": "April 1, 2026",
-                "challenger": "Alex Freeland",
-                "role": "batting",
-                "team": "dodgers",
-                "outcome": "confirmed",
-                "result_desc": "Alex Freeland called out on strikes.",
-                "batter": "Alex Freeland",
-                "pitcher": "Shawn Armstrong",
-                "game_pk": 823970
             }
         ]
     }
