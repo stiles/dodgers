@@ -90,7 +90,7 @@
     {
         "stat_label":"Home runs\/game",
         "stat":"home_runs_game",
-        "value":1.65,
+        "value":1.59,
         "category":"batting",
         "context_value":1.42,
         "context_value_label":"Last decade average"
@@ -124,7 +124,7 @@
         "stat":"stolen_bases",
         "value":14,
         "category":"batting",
-        "context_value":"22nd",
+        "context_value":"23rd",
         "context_value_label":"League rank"
     },
     {
@@ -164,13 +164,13 @@
         "stat":"era",
         "value":"3.38",
         "category":"pitching",
-        "context_value":"5th",
+        "context_value":"4th",
         "context_value_label":"League rank"
     },
     {
         "stat_label":"WHIP",
         "stat":"whip",
-        "value":"1.09",
+        "value":"1.10",
         "category":"pitching",
         "context_value":"1st",
         "context_value_label":"League rank"
@@ -178,7 +178,7 @@
     {
         "stat_label":"Batting average against",
         "stat":"avg_against",
-        "value":".211",
+        "value":".212",
         "category":"pitching",
         "context_value":"1st",
         "context_value_label":"League rank"
@@ -194,7 +194,7 @@
     {
         "stat_label":"Last updated",
         "stat":"update_time",
-        "value":"April 25, 2026, 8:22 AM PT",
+        "value":"April 25, 2026, 4:20 PM PT",
         "category":"summary",
         "context_value":"",
         "context_value_label":""
@@ -202,7 +202,7 @@
     {
         "stat_label":"Team summary",
         "stat":"summary",
-        "value":"<span class='highlight'>LOS ANGELES<\/span> <span class='updated'>(April 25)<\/span> \u2014 The Dodgers have compiled a <span class='highlight'>17-9<\/span> record in the 2026 regular season, a <span class='highlight'>65%<\/span> winning percentage. The last game was a <span class='highlight'>4-6<\/span> home <span class='highlight'>loss<\/span> against the <span class='highlight'>Chicago Cubs<\/span>. The team next faces the <span class='highlight'>Chicago Cubs<\/span> on Saturday at 4:15 p.m. PDT at <span class='highlight'>UNIQLO Field at Dodger Stadium<\/span>.",
+        "value":"<span class='highlight'>LOS ANGELES<\/span> <span class='updated'>(April 25)<\/span> \u2014 The Dodgers have compiled a <span class='highlight'>17-9<\/span> record in the 2026 regular season, a <span class='highlight'>65%<\/span> winning percentage. The last game was a <span class='highlight'>4-6<\/span> home <span class='highlight'>loss<\/span> against the <span class='highlight'>Chicago Cubs<\/span>. The team next faces the <span class='highlight'>Chicago Cubs<\/span> on Sunday at 1:10 p.m. PDT at <span class='highlight'>UNIQLO Field at Dodger Stadium<\/span>.",
         "category":"summary",
         "context_value":"",
         "context_value_label":""
