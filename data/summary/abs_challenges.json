@@ -11,9 +11,9 @@
             "failed": 2
         },
         "catching": {
-            "total": 36,
+            "total": 37,
             "successful": 22,
-            "failed": 14
+            "failed": 15
         }
     },
     "opponents": {
@@ -28,12 +28,60 @@
             "failed": 2
         },
         "catching": {
-            "total": 42,
-            "successful": 25,
-            "failed": 17
+            "total": 45,
+            "successful": 27,
+            "failed": 18
         }
     },
     "challenge_log": [
+        {
+            "date": "2026-04-25",
+            "date_formatted": "April 25, 2026",
+            "challenger": "Miguel Amaya",
+            "role": "catching",
+            "team": "opponents",
+            "outcome": "overturned",
+            "result_desc": "Alex Call flies out to right fielder Seiya Suzuki.",
+            "batter": "Alex Call",
+            "pitcher": "Vince Velasquez",
+            "game_pk": 823960
+        },
+        {
+            "date": "2026-04-25",
+            "date_formatted": "April 25, 2026",
+            "challenger": "Miguel Amaya",
+            "role": "catching",
+            "team": "opponents",
+            "outcome": "confirmed",
+            "result_desc": "Max Muncy walks. Shohei Ohtani to 3rd. Freddie Freeman to 2nd.",
+            "batter": "Max Muncy",
+            "pitcher": "Javier Assad",
+            "game_pk": 823960
+        },
+        {
+            "date": "2026-04-25",
+            "date_formatted": "April 25, 2026",
+            "challenger": "Miguel Amaya",
+            "role": "catching",
+            "team": "opponents",
+            "outcome": "overturned",
+            "result_desc": "Teoscar Hern\u00e1ndez walks.",
+            "batter": "Teoscar Hern\u00e1ndez",
+            "pitcher": "Colin Rea",
+            "game_pk": 823960
+        },
+        {
+            "date": "2026-04-25",
+            "date_formatted": "April 25, 2026",
+            "challenger": "Dalton Rushing",
+            "role": "catching",
+            "team": "dodgers",
+            "outcome": "confirmed",
+            "result_desc": "Nico Hoerner flies out to right fielder Kyle Tucker. Miguel Amaya to 3rd.",
+            "batter": "Nico Hoerner",
+            "pitcher": "Roki Sasaki",
+            "game_pk": 823960
+        },
         {
             "date": "2026-04-23",
             "date_formatted": "April 23, 2026",
@@ -85,6 +133,30 @@
         {
             "date": "2026-04-22",
             "date_formatted": "April 22, 2026",
+            "challenger": "Patrick Bailey",
+            "role": "catching",
+            "team": "opponents",
+            "outcome": "confirmed",
+            "result_desc": "Kyle Tucker flies out to center fielder Drew Gilbert.",
+            "batter": "Kyle Tucker",
+            "pitcher": "Caleb Kilian",
+            "game_pk": 823231
+        },
+        {
+            "date": "2026-04-22",
+            "date_formatted": "April 22, 2026",
+            "challenger": "Will Smith",
+            "role": "catching",
+            "team": "dodgers",
+            "outcome": "overturned",
+            "result_desc": "Drew Gilbert out on a sacrifice bunt, first baseman Freddie Freeman to second baseman Miguel Rojas. Jung Hoo Lee to 3rd. Heliot Ramos to 2nd.",
+            "batter": "Drew Gilbert",
+            "pitcher": "Jack Dreyer",
+            "game_pk": 823231
+        },
+        {
+            "date": "2026-04-22",
+            "date_formatted": "April 22, 2026",
             "challenger": "Will Smith",
             "role": "catching",
             "team": "dodgers",
@@ -119,42 +191,6 @@
             "game_pk": 823231
         },
         {
-            "date": "2026-04-22",
-            "date_formatted": "April 22, 2026",
-            "challenger": "Will Smith",
-            "role": "catching",
-            "team": "dodgers",
-            "outcome": "overturned",
-            "result_desc": "Drew Gilbert out on a sacrifice bunt, first baseman Freddie Freeman to second baseman Miguel Rojas. Jung Hoo Lee to 3rd. Heliot Ramos to 2nd.",
-            "batter": "Drew Gilbert",
-            "pitcher": "Jack Dreyer",
-            "game_pk": 823231
-        },
-        {
-            "date": "2026-04-22",
-            "date_formatted": "April 22, 2026",
-            "challenger": "Patrick Bailey",
-            "role": "catching",
-            "team": "opponents",
-            "outcome": "confirmed",
-            "result_desc": "Kyle Tucker flies out to center fielder Drew Gilbert.",
-            "batter": "Kyle Tucker",
-            "pitcher": "Caleb Kilian",
-            "game_pk": 823231
-        },
-        {
-            "date": "2026-04-21",
-            "date_formatted": "April 21, 2026",
-            "challenger": "Patrick Bailey",
-            "role": "catching",
-            "team": "opponents",
-            "outcome": "confirmed",
-            "result_desc": "Alex Freeland strikes out swinging.",
-            "batter": "Alex Freeland",
-            "pitcher": "Ryan Walker",
-            "game_pk": 823236
-        },
-        {
             "date": "2026-04-21",
             "date_formatted": "April 21, 2026",
             "challenger": "Will Smith",
@@ -164,6 +200,18 @@
             "result_desc": "Matt Chapman walks.",
             "batter": "Matt Chapman",
             "pitcher": "Tanner Scott",
+            "game_pk": 823236
+        },
+        {
+            "date": "2026-04-21",
+            "date_formatted": "April 21, 2026",
+            "challenger": "Shohei Ohtani",
+            "role": "batting",
+            "team": "dodgers",
+            "outcome": "confirmed",
+            "result_desc": "Shohei Ohtani singles on a ground ball to shortstop Willy Adames. Alex Freeland to 2nd.",
+            "batter": "Shohei Ohtani",
+            "pitcher": "Erik Miller",
             "game_pk": 823236
         },
         {
@@ -181,13 +229,13 @@
         {
             "date": "2026-04-21",
             "date_formatted": "April 21, 2026",
-            "challenger": "Shohei Ohtani",
-            "role": "batting",
-            "team": "dodgers",
+            "challenger": "Patrick Bailey",
+            "role": "catching",
+            "team": "opponents",
             "outcome": "confirmed",
-            "result_desc": "Shohei Ohtani singles on a ground ball to shortstop Willy Adames. Alex Freeland to 2nd.",
-            "batter": "Shohei Ohtani",
-            "pitcher": "Erik Miller",
+            "result_desc": "Alex Freeland strikes out swinging.",
+            "batter": "Alex Freeland",
+            "pitcher": "Ryan Walker",
             "game_pk": 823236
         },
         {
@@ -225,54 +273,6 @@
             "batter": "Brenton Doyle",
             "pitcher": "Justin Wrobleski",
             "game_pk": 824370
-        },
-        {
-            "date": "2026-04-19",
-            "date_formatted": "April 19, 2026",
-            "challenger": "Hunter Goodman",
-            "role": "catching",
-            "team": "opponents",
-            "outcome": "overturned",
-            "result_desc": "Hyeseong Kim doubles (2) on a line drive to center fielder Jake McCarthy.",
-            "batter": "Hyeseong Kim",
-            "pitcher": "Michael Lorenzen",
-            "game_pk": 824371
-        },
-        {
-            "date": "2026-04-19",
-            "date_formatted": "April 19, 2026",
-            "challenger": "Hunter Goodman",
-            "role": "catching",
-            "team": "opponents",
-            "outcome": "overturned",
-            "result_desc": "Max Muncy singles on a line drive to left fielder Mickey Moniak, deflected by third baseman Kyle Karros.",
-            "batter": "Max Muncy",
-            "pitcher": "Michael Lorenzen",
-            "game_pk": 824371
-        },
-        {
-            "date": "2026-04-19",
-            "date_formatted": "April 19, 2026",
-            "challenger": "Michael Lorenzen",
-            "role": "pitching",
-            "team": "opponents",
-            "outcome": "confirmed",
-            "result_desc": "Hyeseong Kim doubles (2) on a line drive to center fielder Jake McCarthy.",
-            "batter": "Hyeseong Kim",
-            "pitcher": "Michael Lorenzen",
-            "game_pk": 824371
-        },
-        {
-            "date": "2026-04-19",
-            "date_formatted": "April 19, 2026",
-            "challenger": "Ezequiel Tovar",
-            "role": "batting",
-            "team": "opponents",
-            "outcome": "confirmed",
-            "result_desc": "Ezequiel Tovar strikes out swinging.",
-            "batter": "Ezequiel Tovar",
-            "pitcher": "Jack Dreyer",
-            "game_pk": 824371
         }
     ]
 }
