@@ -11,16 +11,16 @@
             "failed": 2
         },
         "catching": {
-            "total": 37,
+            "total": 38,
             "successful": 22,
-            "failed": 15
+            "failed": 16
         }
     },
     "opponents": {
         "batting": {
-            "total": 33,
+            "total": 34,
             "successful": 17,
-            "failed": 16
+            "failed": 17
         },
         "pitching": {
             "total": 2,
@@ -34,6 +34,30 @@
         }
     },
     "challenge_log": [
+        {
+            "date": "2026-04-26",
+            "date_formatted": "April 26, 2026",
+            "challenger": "Dalton Rushing",
+            "role": "catching",
+            "team": "dodgers",
+            "outcome": "confirmed",
+            "result_desc": "Michael Busch walks.",
+            "batter": "Michael Busch",
+            "pitcher": "Justin Wrobleski",
+            "game_pk": 823959
+        },
+        {
+            "date": "2026-04-26",
+            "date_formatted": "April 26, 2026",
+            "challenger": "Nico Hoerner",
+            "role": "batting",
+            "team": "opponents",
+            "outcome": "confirmed",
+            "result_desc": "Nico Hoerner strikes out swinging.",
+            "batter": "Nico Hoerner",
+            "pitcher": "Justin Wrobleski",
+            "game_pk": 823959
+        },
         {
             "date": "2026-04-25",
             "date_formatted": "April 25, 2026",
@@ -85,30 +109,6 @@
         {
             "date": "2026-04-23",
             "date_formatted": "April 23, 2026",
-            "challenger": "Dalton Rushing",
-            "role": "catching",
-            "team": "dodgers",
-            "outcome": "overturned",
-            "result_desc": "Willy Adames grounds out, third baseman Max Muncy to first baseman Freddie Freeman.",
-            "batter": "Willy Adames",
-            "pitcher": "Tanner Scott",
-            "game_pk": 823233
-        },
-        {
-            "date": "2026-04-23",
-            "date_formatted": "April 23, 2026",
-            "challenger": "Shohei Ohtani",
-            "role": "batting",
-            "team": "dodgers",
-            "outcome": "overturned",
-            "result_desc": "Shohei Ohtani flies out to center fielder Drew Gilbert.",
-            "batter": "Shohei Ohtani",
-            "pitcher": "Blade Tidwell",
-            "game_pk": 823233
-        },
-        {
-            "date": "2026-04-23",
-            "date_formatted": "April 23, 2026",
             "challenger": "Tyler Glasnow",
             "role": "pitching",
             "team": "dodgers",
@@ -128,6 +128,30 @@
             "result_desc": "Freddie Freeman grounds out, second baseman Luis Arraez to first baseman Rafael Devers.",
             "batter": "Freddie Freeman",
             "pitcher": "Logan Webb",
+            "game_pk": 823233
+        },
+        {
+            "date": "2026-04-23",
+            "date_formatted": "April 23, 2026",
+            "challenger": "Shohei Ohtani",
+            "role": "batting",
+            "team": "dodgers",
+            "outcome": "overturned",
+            "result_desc": "Shohei Ohtani flies out to center fielder Drew Gilbert.",
+            "batter": "Shohei Ohtani",
+            "pitcher": "Blade Tidwell",
+            "game_pk": 823233
+        },
+        {
+            "date": "2026-04-23",
+            "date_formatted": "April 23, 2026",
+            "challenger": "Dalton Rushing",
+            "role": "catching",
+            "team": "dodgers",
+            "outcome": "overturned",
+            "result_desc": "Willy Adames grounds out, third baseman Max Muncy to first baseman Freddie Freeman.",
+            "batter": "Willy Adames",
+            "pitcher": "Tanner Scott",
             "game_pk": 823233
         },
         {
@@ -193,13 +217,13 @@
         {
             "date": "2026-04-21",
             "date_formatted": "April 21, 2026",
-            "challenger": "Will Smith",
-            "role": "catching",
+            "challenger": "Max Muncy",
+            "role": "batting",
             "team": "dodgers",
             "outcome": "overturned",
-            "result_desc": "Matt Chapman walks.",
-            "batter": "Matt Chapman",
-            "pitcher": "Tanner Scott",
+            "result_desc": "Max Muncy grounds out softly, second baseman Luis Arraez to first baseman Rafael Devers. Teoscar Hern\u00e1ndez to 2nd.",
+            "batter": "Max Muncy",
+            "pitcher": "Erik Miller",
             "game_pk": 823236
         },
         {
@@ -217,13 +241,13 @@
         {
             "date": "2026-04-21",
             "date_formatted": "April 21, 2026",
-            "challenger": "Max Muncy",
-            "role": "batting",
+            "challenger": "Will Smith",
+            "role": "catching",
             "team": "dodgers",
             "outcome": "overturned",
-            "result_desc": "Max Muncy grounds out softly, second baseman Luis Arraez to first baseman Rafael Devers. Teoscar Hern\u00e1ndez to 2nd.",
-            "batter": "Max Muncy",
-            "pitcher": "Erik Miller",
+            "result_desc": "Matt Chapman walks.",
+            "batter": "Matt Chapman",
+            "pitcher": "Tanner Scott",
             "game_pk": 823236
         },
         {
@@ -248,30 +272,6 @@
             "result_desc": "Will Smith flies out to right fielder Troy Johnston.",
             "batter": "Will Smith",
             "pitcher": "Tanner Gordon",
-            "game_pk": 824370
-        },
-        {
-            "date": "2026-04-20",
-            "date_formatted": "April 20, 2026",
-            "challenger": "Ezequiel Tovar",
-            "role": "batting",
-            "team": "opponents",
-            "outcome": "confirmed",
-            "result_desc": "Ezequiel Tovar called out on strikes.",
-            "batter": "Ezequiel Tovar",
-            "pitcher": "Justin Wrobleski",
-            "game_pk": 824370
-        },
-        {
-            "date": "2026-04-20",
-            "date_formatted": "April 20, 2026",
-            "challenger": "Will Smith",
-            "role": "catching",
-            "team": "dodgers",
-            "outcome": "overturned",
-            "result_desc": "Brenton Doyle doubles (2) on a sharp line drive to left fielder Teoscar Hern\u00e1ndez. Jordan Beck scores.",
-            "batter": "Brenton Doyle",
-            "pitcher": "Justin Wrobleski",
             "game_pk": 824370
         }
     ]
