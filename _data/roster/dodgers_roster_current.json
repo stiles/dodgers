@@ -702,6 +702,24 @@
     "slug":"miguel-rojas"
   },
   {
+    "player_id":"669899",
+    "thumb_url":"https:\/\/img.mlbstatic.com\/mlb-photos\/image\/upload\/d_people:generic:headshot:silo:current.png\/r_max\/q_auto:best\/v1\/people\/669899\/headshot\/silo\/current",
+    "name":"Ryan Ward",
+    "player_url":"\/player\/669899",
+    "jersey":"67",
+    "position_group":"Infielders",
+    "bat_throw":"L\/R",
+    "height":"5' 10\"",
+    "weight":"200",
+    "dob":"02\/23\/1998",
+    "status":"MINORS",
+    "is_minors":true,
+    "is_il":false,
+    "is_active_roster":false,
+    "is_40_man":true,
+    "slug":"ryan-ward"
+  },
+  {
     "player_id":"669743",
     "thumb_url":"https:\/\/img.mlbstatic.com\/mlb-photos\/image\/upload\/d_people:generic:headshot:silo:current.png\/r_max\/q_auto:best\/v1\/people\/669743\/headshot\/silo\/current",
     "name":"Alex Call",
@@ -790,23 +808,5 @@
     "is_active_roster":true,
     "is_40_man":true,
     "slug":"kyle-tucker"
-  },
-  {
-    "player_id":"669899",
-    "thumb_url":"https:\/\/img.mlbstatic.com\/mlb-photos\/image\/upload\/d_people:generic:headshot:silo:current.png\/r_max\/q_auto:best\/v1\/people\/669899\/headshot\/silo\/current",
-    "name":"Ryan Ward",
-    "player_url":"\/player\/669899",
-    "jersey":"67",
-    "position_group":"Outfielders",
-    "bat_throw":"L\/R",
-    "height":"5' 10\"",
-    "weight":"200",
-    "dob":"02\/23\/1998",
-    "status":"MINORS",
-    "is_minors":true,
-    "is_il":false,
-    "is_active_roster":false,
-    "is_40_man":true,
-    "slug":"ryan-ward"
   }
 ]
