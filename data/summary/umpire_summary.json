@@ -1,17 +1,17 @@
 {
     "season_summary": {
-        "correct_strikes_pct": 91.85098952270081,
-        "incorrect_strikes_pct": 8.149010477299186,
-        "total_called_strikes": 859,
+        "correct_strikes_pct": 92.0814479638009,
+        "incorrect_strikes_pct": 7.918552036199102,
+        "total_called_strikes": 884,
         "bad_calls_count": 70
     },
     "last_game_summary": {
-        "date": "April 26, 2026",
+        "date": "April 27, 2026",
         "correct_strikes_pct": 100.0,
         "incorrect_strikes_pct": 0.0,
-        "total_called_strikes": 19,
+        "total_called_strikes": 25,
         "bad_calls_count": 0,
-        "home_plate_umpire": "Malachi Moore"
+        "home_plate_umpire": "Tripp Gibson"
     },
     "worst_calls_of_season": [
         {
@@ -56,25 +56,25 @@
         }
     ],
     "pitching_season_summary": {
-        "correct_balls_pct": 95.35168195718654,
-        "incorrect_balls_pct": 4.648318042813457,
-        "total_called_balls": 1635,
-        "bad_calls_count": 76
+        "correct_balls_pct": 95.43297746144721,
+        "incorrect_balls_pct": 4.567022538552791,
+        "total_called_balls": 1686,
+        "bad_calls_count": 77
     },
     "pitching_last_game_summary": {
-        "date": "April 26, 2026",
-        "correct_balls_pct": 87.09677419354838,
-        "incorrect_balls_pct": 12.903225806451616,
-        "total_called_balls": 62,
-        "bad_calls_count": 8
+        "date": "April 27, 2026",
+        "correct_balls_pct": 98.0392156862745,
+        "incorrect_balls_pct": 1.9607843137254974,
+        "total_called_balls": 51,
+        "bad_calls_count": 1
     },
     "pitching_worst_calls_of_season": [],
     "abs_challenges": {
         "dodgers": {
             "batting": {
-                "total": 10,
+                "total": 11,
                 "successful": 3,
-                "failed": 7
+                "failed": 8
             },
             "pitching": {
                 "total": 0,
@@ -105,6 +105,18 @@
             }
         },
         "challenge_log": [
+            {
+                "date": "2026-04-27",
+                "date_formatted": "April 27, 2026",
+                "challenger": "Miguel Rojas",
+                "role": "batting",
+                "team": "dodgers",
+                "outcome": "confirmed",
+                "result_desc": "Miguel Rojas called out on strikes.",
+                "batter": "Miguel Rojas",
+                "pitcher": "Andrew Nardi",
+                "game_pk": 823961
+            },
             {
                 "date": "2026-04-25",
                 "date_formatted": "April 25, 2026",
@@ -332,18 +344,6 @@
                 "batter": "Danny Jansen",
                 "pitcher": "Edwin D\u00edaz",
                 "game_pk": 823968
-            },
-            {
-                "date": "2026-04-07",
-                "date_formatted": "April 7, 2026",
-                "challenger": "Will Smith",
-                "role": "catching",
-                "team": "dodgers",
-                "outcome": "overturned",
-                "result_desc": "Davis Schneider called out on strikes.",
-                "batter": "Davis Schneider",
-                "pitcher": "Edwin D\u00edaz",
-                "game_pk": 822831
             }
         ]
     }

@@ -11,9 +11,9 @@
             "failed": 2
         },
         "catching": {
-            "total": 38,
+            "total": 39,
             "successful": 22,
-            "failed": 16
+            "failed": 17
         }
     },
     "opponents": {
@@ -28,12 +28,48 @@
             "failed": 2
         },
         "catching": {
-            "total": 44,
-            "successful": 26,
+            "total": 46,
+            "successful": 28,
             "failed": 18
         }
     },
     "challenge_log": [
+        {
+            "date": "2026-04-27",
+            "date_formatted": "April 27, 2026",
+            "challenger": "Agust\u00edn Ram\u00edrez",
+            "role": "catching",
+            "team": "opponents",
+            "outcome": "overturned",
+            "result_desc": "Alex Freeland flies out to right fielder Owen Caissie.",
+            "batter": "Alex Freeland",
+            "pitcher": "John King",
+            "game_pk": 823961
+        },
+        {
+            "date": "2026-04-27",
+            "date_formatted": "April 27, 2026",
+            "challenger": "Will Smith",
+            "role": "catching",
+            "team": "dodgers",
+            "outcome": "confirmed",
+            "result_desc": "Xavier Edwards walks.",
+            "batter": "Xavier Edwards",
+            "pitcher": "Yoshinobu Yamamoto",
+            "game_pk": 823961
+        },
+        {
+            "date": "2026-04-27",
+            "date_formatted": "April 27, 2026",
+            "challenger": "Agust\u00edn Ram\u00edrez",
+            "role": "catching",
+            "team": "opponents",
+            "outcome": "overturned",
+            "result_desc": "Teoscar Hern\u00e1ndez singles on a ground ball to center fielder Jakob Marsee. Shohei Ohtani scores. Freddie Freeman scores.",
+            "batter": "Teoscar Hern\u00e1ndez",
+            "pitcher": "Chris Paddack",
+            "game_pk": 823961
+        },
         {
             "date": "2026-04-26",
             "date_formatted": "April 26, 2026",
@@ -133,18 +169,6 @@
         {
             "date": "2026-04-23",
             "date_formatted": "April 23, 2026",
-            "challenger": "Shohei Ohtani",
-            "role": "batting",
-            "team": "dodgers",
-            "outcome": "overturned",
-            "result_desc": "Shohei Ohtani flies out to center fielder Drew Gilbert.",
-            "batter": "Shohei Ohtani",
-            "pitcher": "Blade Tidwell",
-            "game_pk": 823233
-        },
-        {
-            "date": "2026-04-23",
-            "date_formatted": "April 23, 2026",
             "challenger": "Dalton Rushing",
             "role": "catching",
             "team": "dodgers",
@@ -152,6 +176,18 @@
             "result_desc": "Willy Adames grounds out, third baseman Max Muncy to first baseman Freddie Freeman.",
             "batter": "Willy Adames",
             "pitcher": "Tanner Scott",
+            "game_pk": 823233
+        },
+        {
+            "date": "2026-04-23",
+            "date_formatted": "April 23, 2026",
+            "challenger": "Shohei Ohtani",
+            "role": "batting",
+            "team": "dodgers",
+            "outcome": "overturned",
+            "result_desc": "Shohei Ohtani flies out to center fielder Drew Gilbert.",
+            "batter": "Shohei Ohtani",
+            "pitcher": "Blade Tidwell",
             "game_pk": 823233
         },
         {
@@ -237,42 +273,6 @@
             "batter": "Shohei Ohtani",
             "pitcher": "Erik Miller",
             "game_pk": 823236
-        },
-        {
-            "date": "2026-04-21",
-            "date_formatted": "April 21, 2026",
-            "challenger": "Will Smith",
-            "role": "catching",
-            "team": "dodgers",
-            "outcome": "overturned",
-            "result_desc": "Matt Chapman walks.",
-            "batter": "Matt Chapman",
-            "pitcher": "Tanner Scott",
-            "game_pk": 823236
-        },
-        {
-            "date": "2026-04-21",
-            "date_formatted": "April 21, 2026",
-            "challenger": "Patrick Bailey",
-            "role": "catching",
-            "team": "opponents",
-            "outcome": "confirmed",
-            "result_desc": "Alex Freeland strikes out swinging.",
-            "batter": "Alex Freeland",
-            "pitcher": "Ryan Walker",
-            "game_pk": 823236
-        },
-        {
-            "date": "2026-04-20",
-            "date_formatted": "April 20, 2026",
-            "challenger": "Brett Sullivan",
-            "role": "catching",
-            "team": "opponents",
-            "outcome": "overturned",
-            "result_desc": "Will Smith flies out to right fielder Troy Johnston.",
-            "batter": "Will Smith",
-            "pitcher": "Tanner Gordon",
-            "game_pk": 824370
         }
     ]
 }
