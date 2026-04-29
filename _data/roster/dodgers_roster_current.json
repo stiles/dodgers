@@ -604,10 +604,10 @@
     "height":"6' 2\"",
     "weight":"214",
     "dob":"09\/15\/1997",
-    "status":"ACTIVE",
-    "is_minors":false,
+    "status":"MINORS",
+    "is_minors":true,
     "is_il":false,
-    "is_active_roster":true,
+    "is_active_roster":false,
     "is_40_man":true,
     "slug":"tyler-fitzgerald"
   },
