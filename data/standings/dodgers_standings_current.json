@@ -665,5 +665,28 @@
     "time":"00:00:00",
     "day_night":"N",
     "game_day":"Monday"
+  },
+  {
+    "gm":30,
+    "gtm":30,
+    "game_date":"2026-04-28",
+    "year":2026,
+    "home_away":"home",
+    "opp":"Miami Marlins",
+    "r":1,
+    "ra":2,
+    "run_diff":-1,
+    "result":"L",
+    "wins":20,
+    "losses":10,
+    "record":"20-10",
+    "win_pct":0.667,
+    "gb":0.0,
+    "rank":1,
+    "attendance":0,
+    "time_minutes":0,
+    "time":"00:00:00",
+    "day_night":"N",
+    "game_day":"Tuesday"
   }
 ]

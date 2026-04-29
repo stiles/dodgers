@@ -4,7 +4,7 @@
         "stat":"wins",
         "value":20,
         "category":"standings",
-        "context_value":19,
+        "context_value":20,
         "context_value_label":"This point last season"
     },
     {
@@ -20,7 +20,7 @@
         "stat":"win_pct",
         "value":"67%",
         "category":"standings",
-        "context_value":"66%",
+        "context_value":"67%",
         "context_value_label":"This point last season"
     },
     {
@@ -60,7 +60,7 @@
         "stat":"runs_against",
         "value":98,
         "category":"standings",
-        "context_value":123,
+        "context_value":125,
         "context_value_label":"This point last season"
     },
     {
@@ -68,7 +68,7 @@
         "stat":"run_differential",
         "value":67,
         "category":"standings",
-        "context_value":17,
+        "context_value":30,
         "context_value_label":"This point last season"
     },
     {
@@ -194,7 +194,7 @@
     {
         "stat_label":"Last updated",
         "stat":"update_time",
-        "value":"April 29, 2026, 1:55 AM PT",
+        "value":"April 29, 2026, 5:44 AM PT",
         "category":"summary",
         "context_value":"",
         "context_value_label":""
