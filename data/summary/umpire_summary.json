@@ -1,17 +1,17 @@
 {
     "season_summary": {
-        "correct_strikes_pct": 92.07920792079209,
-        "incorrect_strikes_pct": 7.920792079207914,
-        "total_called_strikes": 909,
+        "correct_strikes_pct": 92.34042553191489,
+        "incorrect_strikes_pct": 7.659574468085111,
+        "total_called_strikes": 940,
         "bad_calls_count": 72
     },
     "last_game_summary": {
-        "date": "April 28, 2026",
-        "correct_strikes_pct": 92.0,
-        "incorrect_strikes_pct": 8.0,
-        "total_called_strikes": 25,
-        "bad_calls_count": 2,
-        "home_plate_umpire": "Clint Vondrak"
+        "date": "April 29, 2026",
+        "correct_strikes_pct": 100.0,
+        "incorrect_strikes_pct": 0.0,
+        "total_called_strikes": 31,
+        "bad_calls_count": 0,
+        "home_plate_umpire": "Austin Jones"
     },
     "worst_calls_of_season": [
         {
@@ -56,17 +56,17 @@
         }
     ],
     "pitching_season_summary": {
-        "correct_balls_pct": 95.3943580886586,
-        "incorrect_balls_pct": 4.605641911341394,
-        "total_called_balls": 1737,
-        "bad_calls_count": 80
+        "correct_balls_pct": 95.38548114800224,
+        "incorrect_balls_pct": 4.614518851997758,
+        "total_called_balls": 1777,
+        "bad_calls_count": 82
     },
     "pitching_last_game_summary": {
-        "date": "April 28, 2026",
-        "correct_balls_pct": 94.11764705882352,
-        "incorrect_balls_pct": 5.882352941176478,
-        "total_called_balls": 51,
-        "bad_calls_count": 3
+        "date": "April 29, 2026",
+        "correct_balls_pct": 95.0,
+        "incorrect_balls_pct": 5.0,
+        "total_called_balls": 40,
+        "bad_calls_count": 2
     },
     "pitching_worst_calls_of_season": [],
     "abs_challenges": {
@@ -99,12 +99,24 @@
                 "failed": 0
             },
             "catching": {
-                "total": 11,
+                "total": 12,
                 "successful": 9,
-                "failed": 2
+                "failed": 3
             }
         },
         "challenge_log": [
+            {
+                "date": "2026-04-29",
+                "date_formatted": "April 29, 2026",
+                "challenger": "Liam Hicks",
+                "role": "catching",
+                "team": "opponents",
+                "outcome": "confirmed",
+                "result_desc": "Hyeseong Kim walks.",
+                "batter": "Hyeseong Kim",
+                "pitcher": "Calvin Faucher",
+                "game_pk": 823958
+            },
             {
                 "date": "2026-04-28",
                 "date_formatted": "April 28, 2026",
@@ -331,18 +343,6 @@
                 "result_desc": "Dalton Rushing called out on strikes.",
                 "batter": "Dalton Rushing",
                 "pitcher": "Cole Winn",
-                "game_pk": 823966
-            },
-            {
-                "date": "2026-04-12",
-                "date_formatted": "April 12, 2026",
-                "challenger": "Danny Jansen",
-                "role": "catching",
-                "team": "opponents",
-                "outcome": "overturned",
-                "result_desc": "Alex Call called out on strikes.",
-                "batter": "Alex Call",
-                "pitcher": "Jakob Junis",
                 "game_pk": 823966
             }
         ]

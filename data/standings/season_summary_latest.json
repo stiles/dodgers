@@ -4,13 +4,13 @@
         "stat":"wins",
         "value":20,
         "category":"standings",
-        "context_value":20,
+        "context_value":21,
         "context_value_label":"This point last season"
     },
     {
         "stat_label":"Losses",
         "stat":"losses",
-        "value":10,
+        "value":11,
         "category":"standings",
         "context_value":10,
         "context_value_label":"This point last season"
@@ -18,9 +18,9 @@
     {
         "stat_label":"Win percentage",
         "stat":"win_pct",
-        "value":"67%",
+        "value":"64%",
         "category":"standings",
-        "context_value":"67%",
+        "context_value":"68%",
         "context_value_label":"This point last season"
     },
     {
@@ -50,31 +50,31 @@
     {
         "stat_label":"Runs",
         "stat":"runs",
-        "value":165,
+        "value":167,
         "category":"standings",
-        "context_value":"2nd",
+        "context_value":"3rd",
         "context_value_label":"League rank"
     },
     {
         "stat_label":"Runs against",
         "stat":"runs_against",
-        "value":98,
+        "value":101,
         "category":"standings",
-        "context_value":125,
+        "context_value":132,
         "context_value_label":"This point last season"
     },
     {
         "stat_label":"Run differential",
         "stat":"run_differential",
-        "value":67,
+        "value":66,
         "category":"standings",
-        "context_value":30,
+        "context_value":35,
         "context_value_label":"This point last season"
     },
     {
         "stat_label":"Batting average",
         "stat":"batting_average",
-        "value":".274",
+        "value":".273",
         "category":"batting",
         "context_value":".253",
         "context_value_label":"Last decade average"
@@ -90,7 +90,7 @@
     {
         "stat_label":"Home runs\/game",
         "stat":"home_runs_game",
-        "value":1.5,
+        "value":1.45,
         "category":"batting",
         "context_value":1.42,
         "context_value_label":"Last decade average"
@@ -106,15 +106,15 @@
     {
         "stat_label":"Slugging percentage",
         "stat":"slugging_pct",
-        "value":".457",
+        "value":".452",
         "category":"batting",
-        "context_value":"1st",
+        "context_value":"2nd",
         "context_value_label":"League rank"
     },
     {
         "stat_label":"OPS",
         "stat":"ops",
-        "value":".807",
+        "value":".802",
         "category":"batting",
         "context_value":"1st",
         "context_value_label":"League rank"
@@ -122,15 +122,15 @@
     {
         "stat_label":"Stolen bases",
         "stat":"stolen_bases",
-        "value":16,
+        "value":17,
         "category":"batting",
-        "context_value":"22nd",
+        "context_value":"20th",
         "context_value_label":"League rank"
     },
     {
         "stat_label":"Stolen bases\/game",
         "stat":"stolen_bases_game",
-        "value":0.53,
+        "value":0.55,
         "category":"batting",
         "context_value":0.84,
         "context_value_label":"Rate all last season"
@@ -138,25 +138,25 @@
     {
         "stat_label":"Doubles",
         "stat":"doubles",
-        "value":49,
+        "value":51,
         "category":"batting",
-        "context_value":"11th",
+        "context_value":"10th",
         "context_value_label":"League rank"
     },
     {
         "stat_label":"Strikeouts",
         "stat":"strikeouts",
-        "value":"264",
+        "value":"277",
         "category":"pitching",
-        "context_value":"8th",
+        "context_value":"5th",
         "context_value_label":"League rank"
     },
     {
         "stat_label":"Walks",
         "stat":"walks",
-        "value":90,
+        "value":97,
         "category":"pitching",
-        "context_value":"26th",
+        "context_value":"22nd",
         "context_value_label":"League rank"
     },
     {
@@ -170,7 +170,7 @@
     {
         "stat_label":"WHIP",
         "stat":"whip",
-        "value":"1.11",
+        "value":"1.12",
         "category":"pitching",
         "context_value":"1st",
         "context_value_label":"League rank"
@@ -178,23 +178,23 @@
     {
         "stat_label":"Batting average against",
         "stat":"avg_against",
-        "value":".211",
+        "value":".210",
         "category":"pitching",
-        "context_value":"2nd",
+        "context_value":"1st",
         "context_value_label":"League rank"
     },
     {
         "stat_label":"K\/BB ratio",
         "stat":"k_bb_ratio",
-        "value":2.93,
+        "value":2.86,
         "category":"pitching",
-        "context_value":"4th",
+        "context_value":"5th",
         "context_value_label":"League rank"
     },
     {
         "stat_label":"Last updated",
         "stat":"update_time",
-        "value":"April 29, 2026, 8:47 AM PT",
+        "value":"April 29, 2026, 4:27 PM PT",
         "category":"summary",
         "context_value":"",
         "context_value_label":""
@@ -202,7 +202,7 @@
     {
         "stat_label":"Team summary",
         "stat":"summary",
-        "value":"<span class='highlight'>LOS ANGELES<\/span> <span class='updated'>(April 29)<\/span> \u2014 The Dodgers have compiled a <span class='highlight'>20-10<\/span> record in the 2026 regular season, a <span class='highlight'>67%<\/span> winning percentage. The last game was a <span class='highlight'>1-2<\/span> home <span class='highlight'>loss<\/span> against the <span class='highlight'>Miami Marlins<\/span>. The team next faces the <span class='highlight'>Miami Marlins<\/span> on Wednesday at 12:10 p.m. PDT at <span class='highlight'>UNIQLO Field at Dodger Stadium<\/span>.",
+        "value":"<span class='highlight'>LOS ANGELES<\/span> <span class='updated'>(April 29)<\/span> \u2014 The Dodgers have compiled a <span class='highlight'>20-11<\/span> record in the 2026 regular season, a <span class='highlight'>64%<\/span> winning percentage. The last game was a <span class='highlight'>2-3<\/span> home <span class='highlight'>loss<\/span> against the <span class='highlight'>Miami Marlins<\/span>. The team next faces the <span class='highlight'>St. Louis Cardinals<\/span> on Friday at 5:15 p.m. PDT at <span class='highlight'>Busch Stadium<\/span>.",
         "category":"summary",
         "context_value":"",
         "context_value_label":""
