@@ -1,9 +1,9 @@
 {
     "dodgers": {
         "batting": {
-            "total": 24,
+            "total": 25,
             "successful": 15,
-            "failed": 9
+            "failed": 10
         },
         "pitching": {
             "total": 3,
@@ -11,8 +11,8 @@
             "failed": 2
         },
         "catching": {
-            "total": 39,
-            "successful": 22,
+            "total": 40,
+            "successful": 23,
             "failed": 17
         }
     },
@@ -28,12 +28,60 @@
             "failed": 2
         },
         "catching": {
-            "total": 46,
-            "successful": 28,
-            "failed": 18
+            "total": 48,
+            "successful": 29,
+            "failed": 19
         }
     },
     "challenge_log": [
+        {
+            "date": "2026-04-28",
+            "date_formatted": "April 28, 2026",
+            "challenger": "Andy Pages",
+            "role": "batting",
+            "team": "dodgers",
+            "outcome": "confirmed",
+            "result_desc": "Andy Pages singles on a ground ball to shortstop Otto Lopez.",
+            "batter": "Andy Pages",
+            "pitcher": "Tyler Phillips",
+            "game_pk": 823956
+        },
+        {
+            "date": "2026-04-28",
+            "date_formatted": "April 28, 2026",
+            "challenger": "Agust\u00edn Ram\u00edrez",
+            "role": "catching",
+            "team": "opponents",
+            "outcome": "overturned",
+            "result_desc": "Alex Freeland grounds out to pitcher Janson Junk.",
+            "batter": "Alex Freeland",
+            "pitcher": "Janson Junk",
+            "game_pk": 823956
+        },
+        {
+            "date": "2026-04-28",
+            "date_formatted": "April 28, 2026",
+            "challenger": "Agust\u00edn Ram\u00edrez",
+            "role": "catching",
+            "team": "opponents",
+            "outcome": "confirmed",
+            "result_desc": "Hyeseong Kim lines out to second baseman Xavier Edwards.",
+            "batter": "Hyeseong Kim",
+            "pitcher": "Janson Junk",
+            "game_pk": 823956
+        },
+        {
+            "date": "2026-04-28",
+            "date_formatted": "April 28, 2026",
+            "challenger": "Will Smith",
+            "role": "catching",
+            "team": "dodgers",
+            "outcome": "overturned",
+            "result_desc": "Owen Caissie grounds out, shortstop Hyeseong Kim to first baseman Freddie Freeman.",
+            "batter": "Owen Caissie",
+            "pitcher": "Shohei Ohtani",
+            "game_pk": 823956
+        },
         {
             "date": "2026-04-27",
             "date_formatted": "April 27, 2026",
@@ -101,30 +149,6 @@
             "role": "catching",
             "team": "opponents",
             "outcome": "overturned",
-            "result_desc": "Alex Call flies out to right fielder Seiya Suzuki.",
-            "batter": "Alex Call",
-            "pitcher": "Vince Velasquez",
-            "game_pk": 823960
-        },
-        {
-            "date": "2026-04-25",
-            "date_formatted": "April 25, 2026",
-            "challenger": "Miguel Amaya",
-            "role": "catching",
-            "team": "opponents",
-            "outcome": "confirmed",
-            "result_desc": "Max Muncy walks. Shohei Ohtani to 3rd. Freddie Freeman to 2nd.",
-            "batter": "Max Muncy",
-            "pitcher": "Javier Assad",
-            "game_pk": 823960
-        },
-        {
-            "date": "2026-04-25",
-            "date_formatted": "April 25, 2026",
-            "challenger": "Miguel Amaya",
-            "role": "catching",
-            "team": "opponents",
-            "outcome": "overturned",
             "result_desc": "Teoscar Hern\u00e1ndez walks.",
             "batter": "Teoscar Hern\u00e1ndez",
             "pitcher": "Colin Rea",
@@ -143,28 +167,28 @@
             "game_pk": 823960
         },
         {
-            "date": "2026-04-23",
-            "date_formatted": "April 23, 2026",
-            "challenger": "Tyler Glasnow",
-            "role": "pitching",
-            "team": "dodgers",
-            "outcome": "overturned",
-            "result_desc": "Will Brennan grounds out, shortstop Hyeseong Kim to first baseman Freddie Freeman.",
-            "batter": "Will Brennan",
-            "pitcher": "Tyler Glasnow",
-            "game_pk": 823233
-        },
-        {
-            "date": "2026-04-23",
-            "date_formatted": "April 23, 2026",
-            "challenger": "Patrick Bailey",
+            "date": "2026-04-25",
+            "date_formatted": "April 25, 2026",
+            "challenger": "Miguel Amaya",
             "role": "catching",
             "team": "opponents",
             "outcome": "overturned",
-            "result_desc": "Freddie Freeman grounds out, second baseman Luis Arraez to first baseman Rafael Devers.",
-            "batter": "Freddie Freeman",
-            "pitcher": "Logan Webb",
-            "game_pk": 823233
+            "result_desc": "Alex Call flies out to right fielder Seiya Suzuki.",
+            "batter": "Alex Call",
+            "pitcher": "Vince Velasquez",
+            "game_pk": 823960
+        },
+        {
+            "date": "2026-04-25",
+            "date_formatted": "April 25, 2026",
+            "challenger": "Miguel Amaya",
+            "role": "catching",
+            "team": "opponents",
+            "outcome": "confirmed",
+            "result_desc": "Max Muncy walks. Shohei Ohtani to 3rd. Freddie Freeman to 2nd.",
+            "batter": "Max Muncy",
+            "pitcher": "Javier Assad",
+            "game_pk": 823960
         },
         {
             "date": "2026-04-23",
@@ -191,28 +215,28 @@
             "game_pk": 823233
         },
         {
-            "date": "2026-04-22",
-            "date_formatted": "April 22, 2026",
+            "date": "2026-04-23",
+            "date_formatted": "April 23, 2026",
+            "challenger": "Tyler Glasnow",
+            "role": "pitching",
+            "team": "dodgers",
+            "outcome": "overturned",
+            "result_desc": "Will Brennan grounds out, shortstop Hyeseong Kim to first baseman Freddie Freeman.",
+            "batter": "Will Brennan",
+            "pitcher": "Tyler Glasnow",
+            "game_pk": 823233
+        },
+        {
+            "date": "2026-04-23",
+            "date_formatted": "April 23, 2026",
             "challenger": "Patrick Bailey",
             "role": "catching",
             "team": "opponents",
-            "outcome": "confirmed",
-            "result_desc": "Kyle Tucker flies out to center fielder Drew Gilbert.",
-            "batter": "Kyle Tucker",
-            "pitcher": "Caleb Kilian",
-            "game_pk": 823231
-        },
-        {
-            "date": "2026-04-22",
-            "date_formatted": "April 22, 2026",
-            "challenger": "Will Smith",
-            "role": "catching",
-            "team": "dodgers",
             "outcome": "overturned",
-            "result_desc": "Drew Gilbert out on a sacrifice bunt, first baseman Freddie Freeman to second baseman Miguel Rojas. Jung Hoo Lee to 3rd. Heliot Ramos to 2nd.",
-            "batter": "Drew Gilbert",
-            "pitcher": "Jack Dreyer",
-            "game_pk": 823231
+            "result_desc": "Freddie Freeman grounds out, second baseman Luis Arraez to first baseman Rafael Devers.",
+            "batter": "Freddie Freeman",
+            "pitcher": "Logan Webb",
+            "game_pk": 823233
         },
         {
             "date": "2026-04-22",
@@ -229,18 +253,6 @@
         {
             "date": "2026-04-22",
             "date_formatted": "April 22, 2026",
-            "challenger": "Jung Hoo Lee",
-            "role": "batting",
-            "team": "opponents",
-            "outcome": "overturned",
-            "result_desc": "Jung Hoo Lee grounds out softly, pitcher Shohei Ohtani to first baseman Freddie Freeman.",
-            "batter": "Jung Hoo Lee",
-            "pitcher": "Shohei Ohtani",
-            "game_pk": 823231
-        },
-        {
-            "date": "2026-04-22",
-            "date_formatted": "April 22, 2026",
             "challenger": "Patrick Bailey",
             "role": "catching",
             "team": "opponents",
@@ -251,28 +263,16 @@
             "game_pk": 823231
         },
         {
-            "date": "2026-04-21",
-            "date_formatted": "April 21, 2026",
-            "challenger": "Max Muncy",
+            "date": "2026-04-22",
+            "date_formatted": "April 22, 2026",
+            "challenger": "Jung Hoo Lee",
             "role": "batting",
-            "team": "dodgers",
+            "team": "opponents",
             "outcome": "overturned",
-            "result_desc": "Max Muncy grounds out softly, second baseman Luis Arraez to first baseman Rafael Devers. Teoscar Hern\u00e1ndez to 2nd.",
-            "batter": "Max Muncy",
-            "pitcher": "Erik Miller",
-            "game_pk": 823236
-        },
-        {
-            "date": "2026-04-21",
-            "date_formatted": "April 21, 2026",
-            "challenger": "Shohei Ohtani",
-            "role": "batting",
-            "team": "dodgers",
-            "outcome": "confirmed",
-            "result_desc": "Shohei Ohtani singles on a ground ball to shortstop Willy Adames. Alex Freeland to 2nd.",
-            "batter": "Shohei Ohtani",
-            "pitcher": "Erik Miller",
-            "game_pk": 823236
+            "result_desc": "Jung Hoo Lee grounds out softly, pitcher Shohei Ohtani to first baseman Freddie Freeman.",
+            "batter": "Jung Hoo Lee",
+            "pitcher": "Shohei Ohtani",
+            "game_pk": 823231
         }
     ]
 }

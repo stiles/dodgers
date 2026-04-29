@@ -1,17 +1,17 @@
 {
     "season_summary": {
-        "correct_strikes_pct": 92.0814479638009,
-        "incorrect_strikes_pct": 7.918552036199102,
-        "total_called_strikes": 884,
-        "bad_calls_count": 70
+        "correct_strikes_pct": 92.07920792079209,
+        "incorrect_strikes_pct": 7.920792079207914,
+        "total_called_strikes": 909,
+        "bad_calls_count": 72
     },
     "last_game_summary": {
-        "date": "April 27, 2026",
-        "correct_strikes_pct": 100.0,
-        "incorrect_strikes_pct": 0.0,
+        "date": "April 28, 2026",
+        "correct_strikes_pct": 92.0,
+        "incorrect_strikes_pct": 8.0,
         "total_called_strikes": 25,
-        "bad_calls_count": 0,
-        "home_plate_umpire": "Tripp Gibson"
+        "bad_calls_count": 2,
+        "home_plate_umpire": "Clint Vondrak"
     },
     "worst_calls_of_season": [
         {
@@ -56,17 +56,17 @@
         }
     ],
     "pitching_season_summary": {
-        "correct_balls_pct": 95.43297746144721,
-        "incorrect_balls_pct": 4.567022538552791,
-        "total_called_balls": 1686,
-        "bad_calls_count": 77
+        "correct_balls_pct": 95.3943580886586,
+        "incorrect_balls_pct": 4.605641911341394,
+        "total_called_balls": 1737,
+        "bad_calls_count": 80
     },
     "pitching_last_game_summary": {
-        "date": "April 27, 2026",
-        "correct_balls_pct": 98.0392156862745,
-        "incorrect_balls_pct": 1.9607843137254974,
+        "date": "April 28, 2026",
+        "correct_balls_pct": 94.11764705882352,
+        "incorrect_balls_pct": 5.882352941176478,
         "total_called_balls": 51,
-        "bad_calls_count": 1
+        "bad_calls_count": 3
     },
     "pitching_worst_calls_of_season": [],
     "abs_challenges": {
@@ -82,8 +82,8 @@
                 "failed": 0
             },
             "catching": {
-                "total": 6,
-                "successful": 5,
+                "total": 7,
+                "successful": 6,
                 "failed": 1
             }
         },
@@ -105,6 +105,18 @@
             }
         },
         "challenge_log": [
+            {
+                "date": "2026-04-28",
+                "date_formatted": "April 28, 2026",
+                "challenger": "Will Smith",
+                "role": "catching",
+                "team": "dodgers",
+                "outcome": "overturned",
+                "result_desc": "Jakob Marsee called out on strikes.",
+                "batter": "Jakob Marsee",
+                "pitcher": "Shohei Ohtani",
+                "game_pk": 823956
+            },
             {
                 "date": "2026-04-27",
                 "date_formatted": "April 27, 2026",
@@ -332,18 +344,6 @@
                 "batter": "Alex Call",
                 "pitcher": "Jakob Junis",
                 "game_pk": 823966
-            },
-            {
-                "date": "2026-04-10",
-                "date_formatted": "April 10, 2026",
-                "challenger": "Will Smith",
-                "role": "catching",
-                "team": "dodgers",
-                "outcome": "overturned",
-                "result_desc": "Danny Jansen called out on strikes.",
-                "batter": "Danny Jansen",
-                "pitcher": "Edwin D\u00edaz",
-                "game_pk": 823968
             }
         ]
     }
