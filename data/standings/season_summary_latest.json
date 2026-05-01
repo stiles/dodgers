@@ -36,7 +36,7 @@
         "stat":"fielding_pct",
         "value":".991",
         "category":"standings",
-        "context_value":"3rd",
+        "context_value":"4th",
         "context_value_label":"League rank"
     },
     {
@@ -44,7 +44,7 @@
         "stat":"errors",
         "value":10,
         "category":"standings",
-        "context_value":"3rd",
+        "context_value":"4th",
         "context_value_label":"League rank"
     },
     {
@@ -194,7 +194,7 @@
     {
         "stat_label":"Last updated",
         "stat":"update_time",
-        "value":"May 1, 2026, 5:31 AM PT",
+        "value":"May 1, 2026, 8:29 AM PT",
         "category":"summary",
         "context_value":"",
         "context_value_label":""
