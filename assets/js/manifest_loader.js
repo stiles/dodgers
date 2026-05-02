@@ -44,9 +44,10 @@ export async function getManifest() {
 /**
  * Get a dataset URL by ID
  * @param {string} datasetId - The dataset identifier
+ * @param {boolean} preferLocal - If true, try local path first (for development)
  * @returns {Promise<string>} The dataset URL
  */
-export async function getDatasetUrl(datasetId) {
+export async function getDatasetUrl(datasetId, preferLocal = true) {
   const manifest = await getManifest();
   const dataset = manifest.datasets.find(d => d.id === datasetId);
   
@@ -54,6 +55,15 @@ export async function getDatasetUrl(datasetId) {
     throw new Error(`Dataset not found: ${datasetId}`);
   }
   
+  // For local development, try to construct a local path first
+  if (preferLocal && window.location.hostname === 'localhost' || window.location.hostname === '127.0.0.1') {
+    // Extract the path from the S3 URL (e.g., dodgers/data/pitching/file.json -> /data/pitching/file.json)
+    const urlPath = dataset.url.replace('https://stilesdata.com/dodgers', '');
+    console.log(`🔧 Using local path for ${datasetId}: ${urlPath}`);
+    return urlPath;
+  }
+  
+  // Otherwise use the S3 URL with cache busting
   const url = new URL(dataset.url);
   if (dataset.last_updated) {
     url.searchParams.set('v', dataset.last_updated);

@@ -503,6 +503,41 @@ twitter:
     {% endfor %}
   </div>
 
+<h2 class="stat-group">Pitcher stats</h2>
+<p class="chart-chatter">Darker shades represent <span class="win">better</span> performance.</p>
+<div class="tables-container">
+  <div class="table-wrapper">
+      <h3 class="visual-subhead">ERA, WHIP, and strikeouts per 9 innings</h3>
+      <table id="pitcher-table-1" class="data-table">
+          <thead>
+              <tr>
+                  <th>Player</th>
+                  <th>Role</th>
+                  <th class="table-value">ERA</th>
+                  <th class="table-value">WHIP</th>
+                  <th class="table-value">K/9</th>
+              </tr>
+          </thead>
+          <tbody></tbody>
+      </table>
+  </div>
+  <div class="table-wrapper">
+      <h3 class="visual-subhead">Innings pitched, walks per 9, and strikeout-to-walk ratio</h3>
+      <table id="pitcher-table-2" class="data-table">
+          <thead>
+              <tr>
+                  <th>Player</th>
+                  <th class="table-value">IP</th>
+                  <th class="table-value">BB/9</th>
+                  <th class="table-value">K/BB</th>
+              </tr>
+          </thead>
+          <tbody></tbody>
+      </table>
+  </div>
+  <p class="note">Note: Tables include top pitchers by innings pitched. Innings pitched figures rounded.</p>
+</div>
+
 
 <div class="large-chart-container">
 <h3 class="visual-subhead">Team <span class="win">ERA</span> over season: Then and now</h3>

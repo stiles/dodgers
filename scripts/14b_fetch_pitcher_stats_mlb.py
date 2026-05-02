@@ -39,8 +39,8 @@ s3_resource = session.resource("s3")
 
 # Base directory settings
 base_dir = os.getcwd()
-data_dir = os.path.join(base_dir, "data", "batting")
-# os.makedirs(data_dir, exist_ok=True)
+data_dir = os.path.join(base_dir, "data", "pitching")
+os.makedirs(data_dir, exist_ok=True)
 
 profile_name = os.environ.get("AWS_PERSONAL_PROFILE")
 today = datetime.date.today()
@@ -54,64 +54,61 @@ headers = {
     "sec-ch-ua-platform": '"macOS"',
 }
 
-batter_list = requests.get(
-    f"https://bdfed.stitch.mlbinfra.com/bdfed/stats/player?&env=prod&season={year}&sportId=1&stats=season&group=hitting&gameType=R&offset=0&sortStat=plateAppearances&order=desc&teamId=119",
+# Fetch pitcher stats from BDFed API
+pitcher_list = requests.get(
+    f"https://bdfed.stitch.mlbinfra.com/bdfed/stats/player?&env=prod&season={year}&sportId=1&stats=season&group=pitching&gameType=R&offset=0&sortStat=inningsPitched&order=desc&teamId=119",
     headers=headers,
 )
 
+# Select columns we need
 cols = [
     "playerName",
     "positionAbbrev",
-    "plateAppearances",
-    "totalBases",
-    "leftOnBase",
-    "extraBaseHits",
-    "pitchesPerPlateAppearance",
-    "walksPerPlateAppearance",
-    "strikeoutsPerPlateAppearance",
-    "homeRunsPerPlateAppearance",
-    "flyOuts",
-    "totalSwings",
-    "swingAndMisses",
-    "ballsInPlay",
-    "popOuts",
-    "lineOuts",
-    "groundOuts",
-    "flyHits",
-    "popHits",
-    "lineHits",
-    "groundHits",
+    "gamesStarted",
     "gamesPlayed",
-    "airOuts",
-    "runs",
-    "doubles",
-    "triples",
-    "homeRuns",
-    "strikeOuts",
-    "baseOnBalls",
-    "intentionalWalks",
-    "hits",
-    "avg",
-    "atBats",
-    "obp",
-    "slg",
-    "ops",
-    "stolenBases",
-    "groundIntoDoublePlay",
-    "rbi",
+    "inningsPitched",
+    "era",
+    "whip",
+    "strikeoutsPer9",
+    "baseOnBallsPer9",
+    "strikesoutsToWalks",
 ]
 
-df = pd.DataFrame(batter_list.json()["stats"])[cols].rename(
+df = pd.DataFrame(pitcher_list.json()["stats"])[cols].rename(
     columns={
         "playerName": "player",
-        "positionAbbrev": "postion",
-        "walksPerPlateAppearance": "bbper",
-        "strikeoutsPerPlateAppearance": "soper",
-        "homeRunsPerPlateAppearance": "hrper",
+        "positionAbbrev": "position",
+        "gamesStarted": "gs",
+        "gamesPlayed": "gp",
+        "inningsPitched": "ip",
+        "strikeoutsPer9": "k9",
+        "baseOnBallsPer9": "bb9",
+        "strikesoutsToWalks": "kbb",
     }
 )
 
-df["fetched"] = today.strftime("%Y-%m-%d")
+# Derive role from games started
+df["role"] = df["gs"].apply(lambda x: "SP" if x > 0 else "RP")
+
+# Convert IP to float for filtering
+df["ip_float"] = df["ip"].astype(float)
+
+# Filter to pitchers with at least 10 IP
+df_filtered = df[df["ip_float"] >= 10.0].copy()
+
+# Take top 10 by innings pitched (already sorted from API)
+df_top10 = df_filtered.head(10).copy()
+
+# Round IP for display
+df_top10.loc[:, "ip_rounded"] = df_top10["ip_float"].round(0).astype(int)
+
+# Select final columns for output
+output_cols = ["player", "role", "position", "era", "whip", "k9", "bb9", "kbb", "ip", "ip_rounded", "gs", "gp"]
+df_final = df_top10[output_cols]
+
+df_final["fetched"] = today.strftime("%Y-%m-%d")
+
+logging.info(f"Found {len(df_final)} pitchers with 10+ IP")
 
 # Function to save DataFrame to S3
 def save_to_s3(df, base_path, s3_bucket, formats):
@@ -137,26 +134,28 @@ def save_to_s3(df, base_path, s3_bucket, formats):
 
 
 # Saving files locally and to S3
-file_path = os.path.join(data_dir, "dodgers_player_batting_current_table")
+file_path = os.path.join(data_dir, "dodgers_pitcher_stats_current_table")
 formats = ["csv", "json", "parquet"]
 
 # Save locally
 for fmt in formats:
     try:
         if fmt == "csv":
-            df.to_csv(f"{file_path}.{fmt}", index=False)
+            df_final.to_csv(f"{file_path}.{fmt}", index=False)
         elif fmt == "json":
-            df.to_json(f"{file_path}.{fmt}", indent=4, orient="records")
+            df_final.to_json(f"{file_path}.{fmt}", indent=4, orient="records")
         elif fmt == "parquet":
-            df.to_parquet(f"{file_path}.{fmt}", index=False)
+            df_final.to_parquet(f"{file_path}.{fmt}", index=False)
         logging.info(f"Saved local file: {file_path}.{fmt}")
     except Exception as e:
         logging.error(f"Failed to save local {fmt}: {e}")
 
 # Upload to S3
 save_to_s3(
-    df,
-    "dodgers/data/batting/dodgers_player_batting_current_table",
+    df_final,
+    "dodgers/data/pitching/dodgers_pitcher_stats_current_table",
     "stilesdata.com",
     formats,
 )
+
+logging.info("Pitcher stats fetch complete!")

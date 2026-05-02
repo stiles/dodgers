@@ -118,6 +118,16 @@ def build_manifest():
             "source": "mlb_bdfed"
         },
         {
+            "id": "pitcher_stats_current",
+            "version": "v1",
+            "url": "https://stilesdata.com/dodgers/data/pitching/dodgers_pitcher_stats_current_table.json",
+            "content_type": "application/json",
+            "last_updated": get_pacific_time(),
+            "description": "Current season individual pitcher stats",
+            "cadence": "regular_season_daily",
+            "source": "mlb_bdfed"
+        },
+        {
             "id": "xwoba_current",
             "version": "v1",
             "url": "https://stilesdata.com/dodgers/data/batting/dodgers_xwoba_current.json",
