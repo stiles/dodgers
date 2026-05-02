@@ -90,7 +90,7 @@
     {
         "stat_label":"Home runs\/game",
         "stat":"home_runs_game",
-        "value":1.41,
+        "value":1.36,
         "category":"batting",
         "context_value":1.42,
         "context_value_label":"Last decade average"
@@ -106,7 +106,7 @@
     {
         "stat_label":"Slugging percentage",
         "stat":"slugging_pct",
-        "value":".447",
+        "value":".446",
         "category":"batting",
         "context_value":"2nd",
         "context_value_label":"League rank"
@@ -114,7 +114,7 @@
     {
         "stat_label":"OPS",
         "stat":"ops",
-        "value":".796",
+        "value":".795",
         "category":"batting",
         "context_value":"1st",
         "context_value_label":"League rank"
@@ -194,7 +194,7 @@
     {
         "stat_label":"Last updated",
         "stat":"update_time",
-        "value":"May 2, 2026, 3:45 PM PT",
+        "value":"May 2, 2026, 4:22 PM PT",
         "category":"summary",
         "context_value":"",
         "context_value_label":""
