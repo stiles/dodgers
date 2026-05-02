@@ -1,8 +1,8 @@
 {
     "dodgers": {
         "batting": {
-            "total": 27,
-            "successful": 15,
+            "total": 28,
+            "successful": 16,
             "failed": 12
         },
         "pitching": {
@@ -11,8 +11,8 @@
             "failed": 2
         },
         "catching": {
-            "total": 41,
-            "successful": 24,
+            "total": 43,
+            "successful": 26,
             "failed": 17
         }
     },
@@ -28,35 +28,71 @@
             "failed": 2
         },
         "catching": {
-            "total": 50,
-            "successful": 31,
-            "failed": 19
+            "total": 52,
+            "successful": 32,
+            "failed": 20
         }
     },
     "challenge_log": [
         {
-            "date": "2026-04-29",
-            "date_formatted": "April 29, 2026",
-            "challenger": "Liam Hicks",
+            "date": "2026-05-01",
+            "date_formatted": "May 1, 2026",
+            "challenger": "Miguel Rojas",
+            "role": "batting",
+            "team": "dodgers",
+            "outcome": "overturned",
+            "result_desc": "Miguel Rojas grounds out, first baseman Alec Burleson to pitcher Matt Svanson.",
+            "batter": "Miguel Rojas",
+            "pitcher": "Matt Svanson",
+            "game_pk": 823066
+        },
+        {
+            "date": "2026-05-01",
+            "date_formatted": "May 1, 2026",
+            "challenger": "Pedro Pag\u00e9s",
+            "role": "catching",
+            "team": "opponents",
+            "outcome": "confirmed",
+            "result_desc": "Kyle Tucker walks. Freddie Freeman to 2nd.",
+            "batter": "Kyle Tucker",
+            "pitcher": "Gordon Graceffo",
+            "game_pk": 823066
+        },
+        {
+            "date": "2026-05-01",
+            "date_formatted": "May 1, 2026",
+            "challenger": "Will Smith",
+            "role": "catching",
+            "team": "dodgers",
+            "outcome": "overturned",
+            "result_desc": "Pedro Pag\u00e9s called out on strikes.",
+            "batter": "Pedro Pag\u00e9s",
+            "pitcher": "Jack Dreyer",
+            "game_pk": 823066
+        },
+        {
+            "date": "2026-05-01",
+            "date_formatted": "May 1, 2026",
+            "challenger": "Pedro Pag\u00e9s",
             "role": "catching",
             "team": "opponents",
             "outcome": "overturned",
-            "result_desc": "Shohei Ohtani walks.",
-            "batter": "Shohei Ohtani",
-            "pitcher": "Andrew Nardi",
-            "game_pk": 823958
+            "result_desc": "Teoscar Hern\u00e1ndez walks. Freddie Freeman to 3rd. Will Smith to 2nd.",
+            "batter": "Teoscar Hern\u00e1ndez",
+            "pitcher": "Matthew Liberatore",
+            "game_pk": 823066
         },
         {
-            "date": "2026-04-29",
-            "date_formatted": "April 29, 2026",
-            "challenger": "Alex Call",
-            "role": "batting",
+            "date": "2026-05-01",
+            "date_formatted": "May 1, 2026",
+            "challenger": "Will Smith",
+            "role": "catching",
             "team": "dodgers",
-            "outcome": "confirmed",
-            "result_desc": "Alex Call grounds into a force out, third baseman Graham Pauley to second baseman Xavier Edwards. Dalton Rushing to 3rd. Hyeseong Kim out at 2nd. Alex Call to 1st.",
-            "batter": "Alex Call",
-            "pitcher": "Sandy Alcantara",
-            "game_pk": 823958
+            "outcome": "overturned",
+            "result_desc": "Iv\u00e1n Herrera singles on a ground ball to left fielder Teoscar Hern\u00e1ndez.",
+            "batter": "Iv\u00e1n Herrera",
+            "pitcher": "Emmet Sheehan",
+            "game_pk": 823066
         },
         {
             "date": "2026-04-29",
@@ -92,6 +128,30 @@
             "result_desc": "Andy Pages strikes out swinging.",
             "batter": "Andy Pages",
             "pitcher": "Sandy Alcantara",
+            "game_pk": 823958
+        },
+        {
+            "date": "2026-04-29",
+            "date_formatted": "April 29, 2026",
+            "challenger": "Alex Call",
+            "role": "batting",
+            "team": "dodgers",
+            "outcome": "confirmed",
+            "result_desc": "Alex Call grounds into a force out, third baseman Graham Pauley to second baseman Xavier Edwards. Dalton Rushing to 3rd. Hyeseong Kim out at 2nd. Alex Call to 1st.",
+            "batter": "Alex Call",
+            "pitcher": "Sandy Alcantara",
+            "game_pk": 823958
+        },
+        {
+            "date": "2026-04-29",
+            "date_formatted": "April 29, 2026",
+            "challenger": "Liam Hicks",
+            "role": "catching",
+            "team": "opponents",
+            "outcome": "overturned",
+            "result_desc": "Shohei Ohtani walks.",
+            "batter": "Shohei Ohtani",
+            "pitcher": "Andrew Nardi",
             "game_pk": 823958
         },
         {
@@ -208,71 +268,11 @@
             "challenger": "Miguel Amaya",
             "role": "catching",
             "team": "opponents",
-            "outcome": "confirmed",
-            "result_desc": "Max Muncy walks. Shohei Ohtani to 3rd. Freddie Freeman to 2nd.",
-            "batter": "Max Muncy",
-            "pitcher": "Javier Assad",
-            "game_pk": 823960
-        },
-        {
-            "date": "2026-04-25",
-            "date_formatted": "April 25, 2026",
-            "challenger": "Miguel Amaya",
-            "role": "catching",
-            "team": "opponents",
             "outcome": "overturned",
             "result_desc": "Teoscar Hern\u00e1ndez walks.",
             "batter": "Teoscar Hern\u00e1ndez",
             "pitcher": "Colin Rea",
             "game_pk": 823960
-        },
-        {
-            "date": "2026-04-25",
-            "date_formatted": "April 25, 2026",
-            "challenger": "Dalton Rushing",
-            "role": "catching",
-            "team": "dodgers",
-            "outcome": "confirmed",
-            "result_desc": "Nico Hoerner flies out to right fielder Kyle Tucker. Miguel Amaya to 3rd.",
-            "batter": "Nico Hoerner",
-            "pitcher": "Roki Sasaki",
-            "game_pk": 823960
-        },
-        {
-            "date": "2026-04-25",
-            "date_formatted": "April 25, 2026",
-            "challenger": "Miguel Amaya",
-            "role": "catching",
-            "team": "opponents",
-            "outcome": "overturned",
-            "result_desc": "Alex Call flies out to right fielder Seiya Suzuki.",
-            "batter": "Alex Call",
-            "pitcher": "Vince Velasquez",
-            "game_pk": 823960
-        },
-        {
-            "date": "2026-04-23",
-            "date_formatted": "April 23, 2026",
-            "challenger": "Dalton Rushing",
-            "role": "catching",
-            "team": "dodgers",
-            "outcome": "overturned",
-            "result_desc": "Willy Adames grounds out, third baseman Max Muncy to first baseman Freddie Freeman.",
-            "batter": "Willy Adames",
-            "pitcher": "Tanner Scott",
-            "game_pk": 823233
-        },
-        {
-            "date": "2026-04-23",
-            "date_formatted": "April 23, 2026",
-            "challenger": "Shohei Ohtani",
-            "role": "batting",
-            "team": "dodgers",
-            "outcome": "overturned",
-            "result_desc": "Shohei Ohtani flies out to center fielder Drew Gilbert.",
-            "batter": "Shohei Ohtani",
-            "pitcher": "Blade Tidwell",
-            "game_pk": 823233
         }
     ]
 }

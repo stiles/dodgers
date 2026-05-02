@@ -1,17 +1,17 @@
 {
     "season_summary": {
-        "correct_strikes_pct": 92.34042553191489,
-        "incorrect_strikes_pct": 7.659574468085111,
-        "total_called_strikes": 940,
-        "bad_calls_count": 72
+        "correct_strikes_pct": 92.27600411946447,
+        "incorrect_strikes_pct": 7.723995880535526,
+        "total_called_strikes": 971,
+        "bad_calls_count": 75
     },
     "last_game_summary": {
-        "date": "April 29, 2026",
-        "correct_strikes_pct": 100.0,
-        "incorrect_strikes_pct": 0.0,
+        "date": "May 1, 2026",
+        "correct_strikes_pct": 90.32258064516128,
+        "incorrect_strikes_pct": 9.677419354838719,
         "total_called_strikes": 31,
-        "bad_calls_count": 0,
-        "home_plate_umpire": "Austin Jones"
+        "bad_calls_count": 3,
+        "home_plate_umpire": "Chris Guccione"
     },
     "worst_calls_of_season": [
         {
@@ -56,25 +56,25 @@
         }
     ],
     "pitching_season_summary": {
-        "correct_balls_pct": 95.38548114800224,
-        "incorrect_balls_pct": 4.614518851997758,
-        "total_called_balls": 1777,
-        "bad_calls_count": 82
+        "correct_balls_pct": 95.39221064179924,
+        "incorrect_balls_pct": 4.607789358200762,
+        "total_called_balls": 1823,
+        "bad_calls_count": 84
     },
     "pitching_last_game_summary": {
-        "date": "April 29, 2026",
-        "correct_balls_pct": 95.0,
-        "incorrect_balls_pct": 5.0,
-        "total_called_balls": 40,
+        "date": "May 1, 2026",
+        "correct_balls_pct": 95.65217391304348,
+        "incorrect_balls_pct": 4.347826086956516,
+        "total_called_balls": 46,
         "bad_calls_count": 2
     },
     "pitching_worst_calls_of_season": [],
     "abs_challenges": {
         "dodgers": {
             "batting": {
-                "total": 11,
-                "successful": 3,
-                "failed": 8
+                "total": 13,
+                "successful": 4,
+                "failed": 9
             },
             "pitching": {
                 "total": 0,
@@ -105,6 +105,30 @@
             }
         },
         "challenge_log": [
+            {
+                "date": "2026-05-01",
+                "date_formatted": "May 1, 2026",
+                "challenger": "Will Smith",
+                "role": "batting",
+                "team": "dodgers",
+                "outcome": "overturned",
+                "result_desc": "Will Smith walks. Freddie Freeman to 2nd.",
+                "batter": "Will Smith",
+                "pitcher": "Matthew Liberatore",
+                "game_pk": 823066
+            },
+            {
+                "date": "2026-05-01",
+                "date_formatted": "May 1, 2026",
+                "challenger": "Andy Pages",
+                "role": "batting",
+                "team": "dodgers",
+                "outcome": "confirmed",
+                "result_desc": "Andy Pages called out on strikes.",
+                "batter": "Andy Pages",
+                "pitcher": "Gordon Graceffo",
+                "game_pk": 823066
+            },
             {
                 "date": "2026-04-29",
                 "date_formatted": "April 29, 2026",
@@ -319,30 +343,6 @@
                 "result_desc": "Freddie Freeman called out on strikes.",
                 "batter": "Freddie Freeman",
                 "pitcher": "Jacob deGrom",
-                "game_pk": 823966
-            },
-            {
-                "date": "2026-04-12",
-                "date_formatted": "April 12, 2026",
-                "challenger": "Hyeseong Kim",
-                "role": "batting",
-                "team": "dodgers",
-                "outcome": "confirmed",
-                "result_desc": "Hyeseong Kim called out on strikes.",
-                "batter": "Hyeseong Kim",
-                "pitcher": "Jacob deGrom",
-                "game_pk": 823966
-            },
-            {
-                "date": "2026-04-12",
-                "date_formatted": "April 12, 2026",
-                "challenger": "Danny Jansen",
-                "role": "catching",
-                "team": "opponents",
-                "outcome": "overturned",
-                "result_desc": "Dalton Rushing called out on strikes.",
-                "batter": "Dalton Rushing",
-                "pitcher": "Cole Winn",
                 "game_pk": 823966
             }
         ]
