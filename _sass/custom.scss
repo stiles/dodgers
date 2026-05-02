@@ -474,6 +474,8 @@ a {
 
 .masthead {
   background-color: c.$dodger-blue;
+  box-shadow: 0 1px 8px rgba(0, 0, 0, 0.30);
+  border-bottom: 1px solid #666;
   
   &__inner-wrap {
     padding: 0.5em 1em; // Reduced from default 1em to make it shorter
@@ -487,10 +489,6 @@ a {
 .greedy-nav a {
   color: white;
   font-family: 'Roboto Slab', serif;
-}
-
-.greedy-nav a:hover {
-  color: rgb(182, 181, 181);
 }
 
 .social-icons {
@@ -552,6 +550,18 @@ a {
 .greedy-nav a {
   color: #fff;
   font-family: "Roboto Slab", serif;
+  text-decoration: none;
+  transition: opacity 0.2s ease;
+
+  &:before {
+    display: none !important;
+  }
+}
+
+.greedy-nav a:hover {
+  color: #fff;
+  opacity: 0.8;
+  text-decoration: none;
 }
 
 .navicon {
@@ -1507,6 +1517,7 @@ label {
 .site-footer {
   background: #f8f9fa;
   border-top: 1px solid #e9ecef;
+  box-shadow: 0 -2px 8px rgba(0, 0, 0, 0.08);
   margin-top: 60px;
   padding: 40px 0 0 0;
   
