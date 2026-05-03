@@ -28,12 +28,36 @@
             "failed": 2
         },
         "catching": {
-            "total": 52,
-            "successful": 32,
-            "failed": 20
+            "total": 54,
+            "successful": 33,
+            "failed": 21
         }
     },
     "challenge_log": [
+        {
+            "date": "2026-05-02",
+            "date_formatted": "May 2, 2026",
+            "challenger": "Iv\u00e1n Herrera",
+            "role": "catching",
+            "team": "opponents",
+            "outcome": "confirmed",
+            "result_desc": "Kyle Tucker singles on a ground ball to shortstop Masyn Winn.",
+            "batter": "Kyle Tucker",
+            "pitcher": "Riley O'Brien",
+            "game_pk": 823067
+        },
+        {
+            "date": "2026-05-02",
+            "date_formatted": "May 2, 2026",
+            "challenger": "Iv\u00e1n Herrera",
+            "role": "catching",
+            "team": "opponents",
+            "outcome": "overturned",
+            "result_desc": "Freddie Freeman strikes out swinging.",
+            "batter": "Freddie Freeman",
+            "pitcher": "Riley O'Brien",
+            "game_pk": 823067
+        },
         {
             "date": "2026-05-01",
             "date_formatted": "May 1, 2026",
@@ -109,18 +133,6 @@
         {
             "date": "2026-04-29",
             "date_formatted": "April 29, 2026",
-            "challenger": "Dalton Rushing",
-            "role": "catching",
-            "team": "dodgers",
-            "outcome": "overturned",
-            "result_desc": "Graham Pauley walks.",
-            "batter": "Graham Pauley",
-            "pitcher": "Tyler Glasnow",
-            "game_pk": 823958
-        },
-        {
-            "date": "2026-04-29",
-            "date_formatted": "April 29, 2026",
             "challenger": "Andy Pages",
             "role": "batting",
             "team": "dodgers",
@@ -133,13 +145,13 @@
         {
             "date": "2026-04-29",
             "date_formatted": "April 29, 2026",
-            "challenger": "Alex Call",
-            "role": "batting",
+            "challenger": "Dalton Rushing",
+            "role": "catching",
             "team": "dodgers",
-            "outcome": "confirmed",
-            "result_desc": "Alex Call grounds into a force out, third baseman Graham Pauley to second baseman Xavier Edwards. Dalton Rushing to 3rd. Hyeseong Kim out at 2nd. Alex Call to 1st.",
-            "batter": "Alex Call",
-            "pitcher": "Sandy Alcantara",
+            "outcome": "overturned",
+            "result_desc": "Graham Pauley walks.",
+            "batter": "Graham Pauley",
+            "pitcher": "Tyler Glasnow",
             "game_pk": 823958
         },
         {
@@ -152,6 +164,18 @@
             "result_desc": "Shohei Ohtani walks.",
             "batter": "Shohei Ohtani",
             "pitcher": "Andrew Nardi",
+            "game_pk": 823958
+        },
+        {
+            "date": "2026-04-29",
+            "date_formatted": "April 29, 2026",
+            "challenger": "Alex Call",
+            "role": "batting",
+            "team": "dodgers",
+            "outcome": "confirmed",
+            "result_desc": "Alex Call grounds into a force out, third baseman Graham Pauley to second baseman Xavier Edwards. Dalton Rushing to 3rd. Hyeseong Kim out at 2nd. Alex Call to 1st.",
+            "batter": "Alex Call",
+            "pitcher": "Sandy Alcantara",
             "game_pk": 823958
         },
         {
@@ -205,18 +229,6 @@
         {
             "date": "2026-04-27",
             "date_formatted": "April 27, 2026",
-            "challenger": "Agust\u00edn Ram\u00edrez",
-            "role": "catching",
-            "team": "opponents",
-            "outcome": "overturned",
-            "result_desc": "Alex Freeland flies out to right fielder Owen Caissie.",
-            "batter": "Alex Freeland",
-            "pitcher": "John King",
-            "game_pk": 823961
-        },
-        {
-            "date": "2026-04-27",
-            "date_formatted": "April 27, 2026",
             "challenger": "Will Smith",
             "role": "catching",
             "team": "dodgers",
@@ -239,6 +251,18 @@
             "game_pk": 823961
         },
         {
+            "date": "2026-04-27",
+            "date_formatted": "April 27, 2026",
+            "challenger": "Agust\u00edn Ram\u00edrez",
+            "role": "catching",
+            "team": "opponents",
+            "outcome": "overturned",
+            "result_desc": "Alex Freeland flies out to right fielder Owen Caissie.",
+            "batter": "Alex Freeland",
+            "pitcher": "John King",
+            "game_pk": 823961
+        },
+        {
             "date": "2026-04-26",
             "date_formatted": "April 26, 2026",
             "challenger": "Dalton Rushing",
@@ -249,30 +273,6 @@
             "batter": "Michael Busch",
             "pitcher": "Justin Wrobleski",
             "game_pk": 823959
-        },
-        {
-            "date": "2026-04-26",
-            "date_formatted": "April 26, 2026",
-            "challenger": "Nico Hoerner",
-            "role": "batting",
-            "team": "opponents",
-            "outcome": "confirmed",
-            "result_desc": "Nico Hoerner strikes out swinging.",
-            "batter": "Nico Hoerner",
-            "pitcher": "Justin Wrobleski",
-            "game_pk": 823959
-        },
-        {
-            "date": "2026-04-25",
-            "date_formatted": "April 25, 2026",
-            "challenger": "Miguel Amaya",
-            "role": "catching",
-            "team": "opponents",
-            "outcome": "overturned",
-            "result_desc": "Teoscar Hern\u00e1ndez walks.",
-            "batter": "Teoscar Hern\u00e1ndez",
-            "pitcher": "Colin Rea",
-            "game_pk": 823960
         }
     ]
 }
