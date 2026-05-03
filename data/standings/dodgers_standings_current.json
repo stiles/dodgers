@@ -734,5 +734,28 @@
     "time":"00:00:00",
     "day_night":"N",
     "game_day":"Friday"
+  },
+  {
+    "gm":33,
+    "gtm":33,
+    "game_date":"2026-05-02",
+    "year":2026,
+    "home_away":"away",
+    "opp":"St. Louis Cardinals",
+    "r":2,
+    "ra":3,
+    "run_diff":-1,
+    "result":"L",
+    "wins":20,
+    "losses":13,
+    "record":"20-13",
+    "win_pct":0.606,
+    "gb":0.0,
+    "rank":1,
+    "attendance":0,
+    "time_minutes":0,
+    "time":"00:00:00",
+    "day_night":"N",
+    "game_day":"Saturday"
   }
 ]
