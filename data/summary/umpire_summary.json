@@ -1,17 +1,17 @@
 {
     "season_summary": {
-        "correct_strikes_pct": 92.3694779116466,
-        "incorrect_strikes_pct": 7.630522088353402,
-        "total_called_strikes": 996,
-        "bad_calls_count": 76
+        "correct_strikes_pct": 92.33791748526524,
+        "incorrect_strikes_pct": 7.662082514734763,
+        "total_called_strikes": 1018,
+        "bad_calls_count": 78
     },
     "last_game_summary": {
-        "date": "May 2, 2026",
-        "correct_strikes_pct": 96.0,
-        "incorrect_strikes_pct": 4.0,
-        "total_called_strikes": 25,
-        "bad_calls_count": 1,
-        "home_plate_umpire": "Nestor Ceja"
+        "date": "May 3, 2026",
+        "correct_strikes_pct": 90.9090909090909,
+        "incorrect_strikes_pct": 9.090909090909093,
+        "total_called_strikes": 22,
+        "bad_calls_count": 2,
+        "home_plate_umpire": "Charlie Ramos"
     },
     "worst_calls_of_season": [
         {
@@ -56,24 +56,24 @@
         }
     ],
     "pitching_season_summary": {
-        "correct_balls_pct": 95.45940170940172,
-        "incorrect_balls_pct": 4.5405982905982825,
-        "total_called_balls": 1872,
-        "bad_calls_count": 85
+        "correct_balls_pct": 95.39267015706805,
+        "incorrect_balls_pct": 4.6073298429319465,
+        "total_called_balls": 1910,
+        "bad_calls_count": 88
     },
     "pitching_last_game_summary": {
-        "date": "May 2, 2026",
-        "correct_balls_pct": 97.95918367346938,
-        "incorrect_balls_pct": 2.040816326530617,
-        "total_called_balls": 49,
-        "bad_calls_count": 1
+        "date": "May 3, 2026",
+        "correct_balls_pct": 92.10526315789474,
+        "incorrect_balls_pct": 7.89473684210526,
+        "total_called_balls": 38,
+        "bad_calls_count": 3
     },
     "pitching_worst_calls_of_season": [],
     "abs_challenges": {
         "dodgers": {
             "batting": {
-                "total": 13,
-                "successful": 4,
+                "total": 14,
+                "successful": 5,
                 "failed": 9
             },
             "pitching": {
@@ -89,9 +89,9 @@
         },
         "opponents": {
             "batting": {
-                "total": 4,
+                "total": 5,
                 "successful": 0,
-                "failed": 4
+                "failed": 5
             },
             "pitching": {
                 "total": 0,
@@ -99,12 +99,48 @@
                 "failed": 0
             },
             "catching": {
-                "total": 12,
-                "successful": 9,
+                "total": 13,
+                "successful": 10,
                 "failed": 3
             }
         },
         "challenge_log": [
+            {
+                "date": "2026-05-03",
+                "date_formatted": "May 3, 2026",
+                "challenger": "Pedro Pag\u00e9s",
+                "role": "catching",
+                "team": "opponents",
+                "outcome": "overturned",
+                "result_desc": "Teoscar Hern\u00e1ndez called out on strikes.",
+                "batter": "Teoscar Hern\u00e1ndez",
+                "pitcher": "Dustin May",
+                "game_pk": 823065
+            },
+            {
+                "date": "2026-05-03",
+                "date_formatted": "May 3, 2026",
+                "challenger": "Miguel Rojas",
+                "role": "batting",
+                "team": "dodgers",
+                "outcome": "overturned",
+                "result_desc": "Miguel Rojas walks.",
+                "batter": "Miguel Rojas",
+                "pitcher": "Justin Bruihl",
+                "game_pk": 823065
+            },
+            {
+                "date": "2026-05-03",
+                "date_formatted": "May 3, 2026",
+                "challenger": "Pedro Pag\u00e9s",
+                "role": "batting",
+                "team": "opponents",
+                "outcome": "confirmed",
+                "result_desc": "Pedro Pag\u00e9s called out on strikes.",
+                "batter": "Pedro Pag\u00e9s",
+                "pitcher": "Tanner Scott",
+                "game_pk": 823065
+            },
             {
                 "date": "2026-05-01",
                 "date_formatted": "May 1, 2026",
@@ -308,42 +344,6 @@
                 "batter": "Teoscar Hern\u00e1ndez",
                 "pitcher": "Jaden Hill",
                 "game_pk": 824372
-            },
-            {
-                "date": "2026-04-14",
-                "date_formatted": "April 14, 2026",
-                "challenger": "Luis Robert Jr.",
-                "role": "batting",
-                "team": "opponents",
-                "outcome": "confirmed",
-                "result_desc": "Luis Robert Jr. called out on strikes.",
-                "batter": "Luis Robert Jr.",
-                "pitcher": "Blake Treinen",
-                "game_pk": 823965
-            },
-            {
-                "date": "2026-04-13",
-                "date_formatted": "April 13, 2026",
-                "challenger": "Max Muncy",
-                "role": "batting",
-                "team": "dodgers",
-                "outcome": "confirmed",
-                "result_desc": "Max Muncy called out on strikes.",
-                "batter": "Max Muncy",
-                "pitcher": "Joey Gerber",
-                "game_pk": 823964
-            },
-            {
-                "date": "2026-04-12",
-                "date_formatted": "April 12, 2026",
-                "challenger": "Danny Jansen",
-                "role": "catching",
-                "team": "opponents",
-                "outcome": "overturned",
-                "result_desc": "Freddie Freeman called out on strikes.",
-                "batter": "Freddie Freeman",
-                "pitcher": "Jacob deGrom",
-                "game_pk": 823966
             }
         ]
     }

@@ -11,16 +11,16 @@
             "failed": 2
         },
         "catching": {
-            "total": 43,
+            "total": 44,
             "successful": 26,
-            "failed": 17
+            "failed": 18
         }
     },
     "opponents": {
         "batting": {
-            "total": 34,
+            "total": 35,
             "successful": 17,
-            "failed": 17
+            "failed": 18
         },
         "pitching": {
             "total": 3,
@@ -28,12 +28,48 @@
             "failed": 2
         },
         "catching": {
-            "total": 54,
-            "successful": 33,
+            "total": 55,
+            "successful": 34,
             "failed": 21
         }
     },
     "challenge_log": [
+        {
+            "date": "2026-05-03",
+            "date_formatted": "May 3, 2026",
+            "challenger": "Pedro Pag\u00e9s",
+            "role": "catching",
+            "team": "opponents",
+            "outcome": "overturned",
+            "result_desc": "Miguel Rojas grounds out, shortstop Masyn Winn to first baseman Alec Burleson. Andy Pages to 3rd.",
+            "batter": "Miguel Rojas",
+            "pitcher": "Jared Shuster",
+            "game_pk": 823065
+        },
+        {
+            "date": "2026-05-03",
+            "date_formatted": "May 3, 2026",
+            "challenger": "Alec Burleson",
+            "role": "batting",
+            "team": "opponents",
+            "outcome": "confirmed",
+            "result_desc": "Alec Burleson singles on a line drive to center fielder Andy Pages. Jordan Walker scores.",
+            "batter": "Alec Burleson",
+            "pitcher": "Will Klein",
+            "game_pk": 823065
+        },
+        {
+            "date": "2026-05-03",
+            "date_formatted": "May 3, 2026",
+            "challenger": "Dalton Rushing",
+            "role": "catching",
+            "team": "dodgers",
+            "outcome": "confirmed",
+            "result_desc": "Jos\u00e9 Ferm\u00edn pops out to third baseman Max Muncy.",
+            "batter": "Jos\u00e9 Ferm\u00edn",
+            "pitcher": "Justin Wrobleski",
+            "game_pk": 823065
+        },
         {
             "date": "2026-05-02",
             "date_formatted": "May 2, 2026",
@@ -61,42 +97,6 @@
         {
             "date": "2026-05-01",
             "date_formatted": "May 1, 2026",
-            "challenger": "Miguel Rojas",
-            "role": "batting",
-            "team": "dodgers",
-            "outcome": "overturned",
-            "result_desc": "Miguel Rojas grounds out, first baseman Alec Burleson to pitcher Matt Svanson.",
-            "batter": "Miguel Rojas",
-            "pitcher": "Matt Svanson",
-            "game_pk": 823066
-        },
-        {
-            "date": "2026-05-01",
-            "date_formatted": "May 1, 2026",
-            "challenger": "Pedro Pag\u00e9s",
-            "role": "catching",
-            "team": "opponents",
-            "outcome": "confirmed",
-            "result_desc": "Kyle Tucker walks. Freddie Freeman to 2nd.",
-            "batter": "Kyle Tucker",
-            "pitcher": "Gordon Graceffo",
-            "game_pk": 823066
-        },
-        {
-            "date": "2026-05-01",
-            "date_formatted": "May 1, 2026",
-            "challenger": "Will Smith",
-            "role": "catching",
-            "team": "dodgers",
-            "outcome": "overturned",
-            "result_desc": "Pedro Pag\u00e9s called out on strikes.",
-            "batter": "Pedro Pag\u00e9s",
-            "pitcher": "Jack Dreyer",
-            "game_pk": 823066
-        },
-        {
-            "date": "2026-05-01",
-            "date_formatted": "May 1, 2026",
             "challenger": "Pedro Pag\u00e9s",
             "role": "catching",
             "team": "opponents",
@@ -119,40 +119,40 @@
             "game_pk": 823066
         },
         {
-            "date": "2026-04-29",
-            "date_formatted": "April 29, 2026",
-            "challenger": "Liam Hicks",
+            "date": "2026-05-01",
+            "date_formatted": "May 1, 2026",
+            "challenger": "Will Smith",
+            "role": "catching",
+            "team": "dodgers",
+            "outcome": "overturned",
+            "result_desc": "Pedro Pag\u00e9s called out on strikes.",
+            "batter": "Pedro Pag\u00e9s",
+            "pitcher": "Jack Dreyer",
+            "game_pk": 823066
+        },
+        {
+            "date": "2026-05-01",
+            "date_formatted": "May 1, 2026",
+            "challenger": "Pedro Pag\u00e9s",
             "role": "catching",
             "team": "opponents",
-            "outcome": "overturned",
-            "result_desc": "Hyeseong Kim singles on a line drive to center fielder Jakob Marsee. Dalton Rushing to 2nd.",
-            "batter": "Hyeseong Kim",
-            "pitcher": "Sandy Alcantara",
-            "game_pk": 823958
+            "outcome": "confirmed",
+            "result_desc": "Kyle Tucker walks. Freddie Freeman to 2nd.",
+            "batter": "Kyle Tucker",
+            "pitcher": "Gordon Graceffo",
+            "game_pk": 823066
         },
         {
-            "date": "2026-04-29",
-            "date_formatted": "April 29, 2026",
-            "challenger": "Andy Pages",
+            "date": "2026-05-01",
+            "date_formatted": "May 1, 2026",
+            "challenger": "Miguel Rojas",
             "role": "batting",
             "team": "dodgers",
-            "outcome": "confirmed",
-            "result_desc": "Andy Pages strikes out swinging.",
-            "batter": "Andy Pages",
-            "pitcher": "Sandy Alcantara",
-            "game_pk": 823958
-        },
-        {
-            "date": "2026-04-29",
-            "date_formatted": "April 29, 2026",
-            "challenger": "Dalton Rushing",
-            "role": "catching",
-            "team": "dodgers",
             "outcome": "overturned",
-            "result_desc": "Graham Pauley walks.",
-            "batter": "Graham Pauley",
-            "pitcher": "Tyler Glasnow",
-            "game_pk": 823958
+            "result_desc": "Miguel Rojas grounds out, first baseman Alec Burleson to pitcher Matt Svanson.",
+            "batter": "Miguel Rojas",
+            "pitcher": "Matt Svanson",
+            "game_pk": 823066
         },
         {
             "date": "2026-04-29",
@@ -179,16 +179,40 @@
             "game_pk": 823958
         },
         {
-            "date": "2026-04-28",
-            "date_formatted": "April 28, 2026",
+            "date": "2026-04-29",
+            "date_formatted": "April 29, 2026",
+            "challenger": "Liam Hicks",
+            "role": "catching",
+            "team": "opponents",
+            "outcome": "overturned",
+            "result_desc": "Hyeseong Kim singles on a line drive to center fielder Jakob Marsee. Dalton Rushing to 2nd.",
+            "batter": "Hyeseong Kim",
+            "pitcher": "Sandy Alcantara",
+            "game_pk": 823958
+        },
+        {
+            "date": "2026-04-29",
+            "date_formatted": "April 29, 2026",
+            "challenger": "Dalton Rushing",
+            "role": "catching",
+            "team": "dodgers",
+            "outcome": "overturned",
+            "result_desc": "Graham Pauley walks.",
+            "batter": "Graham Pauley",
+            "pitcher": "Tyler Glasnow",
+            "game_pk": 823958
+        },
+        {
+            "date": "2026-04-29",
+            "date_formatted": "April 29, 2026",
             "challenger": "Andy Pages",
             "role": "batting",
             "team": "dodgers",
             "outcome": "confirmed",
-            "result_desc": "Andy Pages singles on a ground ball to shortstop Otto Lopez.",
+            "result_desc": "Andy Pages strikes out swinging.",
             "batter": "Andy Pages",
-            "pitcher": "Tyler Phillips",
-            "game_pk": 823956
+            "pitcher": "Sandy Alcantara",
+            "game_pk": 823958
         },
         {
             "date": "2026-04-28",
@@ -227,28 +251,16 @@
             "game_pk": 823956
         },
         {
-            "date": "2026-04-27",
-            "date_formatted": "April 27, 2026",
-            "challenger": "Will Smith",
-            "role": "catching",
+            "date": "2026-04-28",
+            "date_formatted": "April 28, 2026",
+            "challenger": "Andy Pages",
+            "role": "batting",
             "team": "dodgers",
             "outcome": "confirmed",
-            "result_desc": "Xavier Edwards walks.",
-            "batter": "Xavier Edwards",
-            "pitcher": "Yoshinobu Yamamoto",
-            "game_pk": 823961
-        },
-        {
-            "date": "2026-04-27",
-            "date_formatted": "April 27, 2026",
-            "challenger": "Agust\u00edn Ram\u00edrez",
-            "role": "catching",
-            "team": "opponents",
-            "outcome": "overturned",
-            "result_desc": "Teoscar Hern\u00e1ndez singles on a ground ball to center fielder Jakob Marsee. Shohei Ohtani scores. Freddie Freeman scores.",
-            "batter": "Teoscar Hern\u00e1ndez",
-            "pitcher": "Chris Paddack",
-            "game_pk": 823961
+            "result_desc": "Andy Pages singles on a ground ball to shortstop Otto Lopez.",
+            "batter": "Andy Pages",
+            "pitcher": "Tyler Phillips",
+            "game_pk": 823956
         },
         {
             "date": "2026-04-27",
@@ -261,18 +273,6 @@
             "batter": "Alex Freeland",
             "pitcher": "John King",
             "game_pk": 823961
-        },
-        {
-            "date": "2026-04-26",
-            "date_formatted": "April 26, 2026",
-            "challenger": "Dalton Rushing",
-            "role": "catching",
-            "team": "dodgers",
-            "outcome": "confirmed",
-            "result_desc": "Michael Busch walks.",
-            "batter": "Michael Busch",
-            "pitcher": "Justin Wrobleski",
-            "game_pk": 823959
         }
     ]
 }
