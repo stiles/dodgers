@@ -18,8 +18,8 @@
     },
     "opponents": {
         "batting": {
-            "total": 35,
-            "successful": 17,
+            "total": 36,
+            "successful": 18,
             "failed": 18
         },
         "pitching": {
@@ -28,12 +28,36 @@
             "failed": 2
         },
         "catching": {
-            "total": 55,
+            "total": 56,
             "successful": 34,
-            "failed": 21
+            "failed": 22
         }
     },
     "challenge_log": [
+        {
+            "date": "2026-05-04",
+            "date_formatted": "May 4, 2026",
+            "challenger": "Isaac Paredes",
+            "role": "batting",
+            "team": "opponents",
+            "outcome": "overturned",
+            "result_desc": "Isaac Paredes singles on a line drive to right fielder Kyle Tucker.",
+            "batter": "Isaac Paredes",
+            "pitcher": "Yoshinobu Yamamoto",
+            "game_pk": 824201
+        },
+        {
+            "date": "2026-05-04",
+            "date_formatted": "May 4, 2026",
+            "challenger": "Christian V\u00e1zquez",
+            "role": "catching",
+            "team": "opponents",
+            "outcome": "confirmed",
+            "result_desc": "Teoscar Hern\u00e1ndez called out on strikes.",
+            "batter": "Teoscar Hern\u00e1ndez",
+            "pitcher": "Ryan Weiss",
+            "game_pk": 824201
+        },
         {
             "date": "2026-05-03",
             "date_formatted": "May 3, 2026",
@@ -97,13 +121,13 @@
         {
             "date": "2026-05-01",
             "date_formatted": "May 1, 2026",
-            "challenger": "Pedro Pag\u00e9s",
+            "challenger": "Will Smith",
             "role": "catching",
-            "team": "opponents",
+            "team": "dodgers",
             "outcome": "overturned",
-            "result_desc": "Teoscar Hern\u00e1ndez walks. Freddie Freeman to 3rd. Will Smith to 2nd.",
-            "batter": "Teoscar Hern\u00e1ndez",
-            "pitcher": "Matthew Liberatore",
+            "result_desc": "Pedro Pag\u00e9s called out on strikes.",
+            "batter": "Pedro Pag\u00e9s",
+            "pitcher": "Jack Dreyer",
             "game_pk": 823066
         },
         {
@@ -121,13 +145,13 @@
         {
             "date": "2026-05-01",
             "date_formatted": "May 1, 2026",
-            "challenger": "Will Smith",
+            "challenger": "Pedro Pag\u00e9s",
             "role": "catching",
-            "team": "dodgers",
+            "team": "opponents",
             "outcome": "overturned",
-            "result_desc": "Pedro Pag\u00e9s called out on strikes.",
-            "batter": "Pedro Pag\u00e9s",
-            "pitcher": "Jack Dreyer",
+            "result_desc": "Teoscar Hern\u00e1ndez walks. Freddie Freeman to 3rd. Will Smith to 2nd.",
+            "batter": "Teoscar Hern\u00e1ndez",
+            "pitcher": "Matthew Liberatore",
             "game_pk": 823066
         },
         {
@@ -229,18 +253,6 @@
         {
             "date": "2026-04-28",
             "date_formatted": "April 28, 2026",
-            "challenger": "Agust\u00edn Ram\u00edrez",
-            "role": "catching",
-            "team": "opponents",
-            "outcome": "confirmed",
-            "result_desc": "Hyeseong Kim lines out to second baseman Xavier Edwards.",
-            "batter": "Hyeseong Kim",
-            "pitcher": "Janson Junk",
-            "game_pk": 823956
-        },
-        {
-            "date": "2026-04-28",
-            "date_formatted": "April 28, 2026",
             "challenger": "Will Smith",
             "role": "catching",
             "team": "dodgers",
@@ -253,26 +265,14 @@
         {
             "date": "2026-04-28",
             "date_formatted": "April 28, 2026",
-            "challenger": "Andy Pages",
-            "role": "batting",
-            "team": "dodgers",
-            "outcome": "confirmed",
-            "result_desc": "Andy Pages singles on a ground ball to shortstop Otto Lopez.",
-            "batter": "Andy Pages",
-            "pitcher": "Tyler Phillips",
-            "game_pk": 823956
-        },
-        {
-            "date": "2026-04-27",
-            "date_formatted": "April 27, 2026",
             "challenger": "Agust\u00edn Ram\u00edrez",
             "role": "catching",
             "team": "opponents",
-            "outcome": "overturned",
-            "result_desc": "Alex Freeland flies out to right fielder Owen Caissie.",
-            "batter": "Alex Freeland",
-            "pitcher": "John King",
-            "game_pk": 823961
+            "outcome": "confirmed",
+            "result_desc": "Hyeseong Kim lines out to second baseman Xavier Edwards.",
+            "batter": "Hyeseong Kim",
+            "pitcher": "Janson Junk",
+            "game_pk": 823956
         }
     ]
 }

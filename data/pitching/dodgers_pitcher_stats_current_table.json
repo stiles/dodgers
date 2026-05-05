@@ -1,5 +1,20 @@
 [
     {
+        "player":"Yoshinobu Yamamoto",
+        "role":"SP",
+        "position":"P",
+        "era":"3.09",
+        "whip":"1.01",
+        "k9":"8.24",
+        "bb9":"2.06",
+        "kbb":"4.00",
+        "ip":"43.2",
+        "ip_rounded":43,
+        "gs":7,
+        "gp":7,
+        "fetched":"2026-05-05"
+    },
+    {
         "player":"Tyler Glasnow",
         "role":"SP",
         "position":"P",
@@ -12,22 +27,7 @@
         "ip_rounded":38,
         "gs":6,
         "gp":6,
-        "fetched":"2026-05-04"
-    },
-    {
-        "player":"Yoshinobu Yamamoto",
-        "role":"SP",
-        "position":"P",
-        "era":"2.87",
-        "whip":"1.01",
-        "k9":"7.65",
-        "bb9":"2.15",
-        "kbb":"3.56",
-        "ip":"37.2",
-        "ip_rounded":37,
-        "gs":6,
-        "gp":6,
-        "fetched":"2026-05-04"
+        "fetched":"2026-05-05"
     },
     {
         "player":"Justin Wrobleski",
@@ -42,7 +42,7 @@
         "ip_rounded":36,
         "gs":5,
         "gp":6,
-        "fetched":"2026-05-04"
+        "fetched":"2026-05-05"
     },
     {
         "player":"Emmet Sheehan",
@@ -57,7 +57,7 @@
         "ip_rounded":31,
         "gs":6,
         "gp":6,
-        "fetched":"2026-05-04"
+        "fetched":"2026-05-05"
     },
     {
         "player":"Shohei Ohtani",
@@ -72,7 +72,7 @@
         "ip_rounded":30,
         "gs":5,
         "gp":5,
-        "fetched":"2026-05-04"
+        "fetched":"2026-05-05"
     },
     {
         "player":"Roki Sasaki",
@@ -87,7 +87,22 @@
         "ip_rounded":28,
         "gs":6,
         "gp":6,
-        "fetched":"2026-05-04"
+        "fetched":"2026-05-05"
+    },
+    {
+        "player":"Jack Dreyer",
+        "role":"RP",
+        "position":"P",
+        "era":"2.93",
+        "whip":"1.04",
+        "k9":"11.15",
+        "bb9":"2.93",
+        "kbb":"3.80",
+        "ip":"15.1",
+        "ip_rounded":15,
+        "gs":0,
+        "gp":15,
+        "fetched":"2026-05-05"
     },
     {
         "player":"Will Klein",
@@ -102,22 +117,7 @@
         "ip_rounded":14,
         "gs":0,
         "gp":10,
-        "fetched":"2026-05-04"
-    },
-    {
-        "player":"Jack Dreyer",
-        "role":"RP",
-        "position":"P",
-        "era":"3.14",
-        "whip":"1.05",
-        "k9":"10.67",
-        "bb9":"3.14",
-        "kbb":"3.40",
-        "ip":"14.1",
-        "ip_rounded":14,
-        "gs":0,
-        "gp":14,
-        "fetched":"2026-05-04"
+        "fetched":"2026-05-05"
     },
     {
         "player":"Tanner Scott",
@@ -132,7 +132,7 @@
         "ip_rounded":14,
         "gs":0,
         "gp":16,
-        "fetched":"2026-05-04"
+        "fetched":"2026-05-05"
     },
     {
         "player":"Alex Vesia",
@@ -147,6 +147,6 @@
         "ip_rounded":11,
         "gs":0,
         "gp":14,
-        "fetched":"2026-05-04"
+        "fetched":"2026-05-05"
     }
 ]

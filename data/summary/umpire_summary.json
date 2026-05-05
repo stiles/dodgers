@@ -1,17 +1,17 @@
 {
     "season_summary": {
-        "correct_strikes_pct": 92.33791748526524,
-        "incorrect_strikes_pct": 7.662082514734763,
-        "total_called_strikes": 1018,
-        "bad_calls_count": 78
+        "correct_strikes_pct": 92.28571428571428,
+        "incorrect_strikes_pct": 7.714285714285722,
+        "total_called_strikes": 1050,
+        "bad_calls_count": 81
     },
     "last_game_summary": {
-        "date": "May 3, 2026",
-        "correct_strikes_pct": 90.9090909090909,
-        "incorrect_strikes_pct": 9.090909090909093,
-        "total_called_strikes": 22,
-        "bad_calls_count": 2,
-        "home_plate_umpire": "Charlie Ramos"
+        "date": "May 4, 2026",
+        "correct_strikes_pct": 90.625,
+        "incorrect_strikes_pct": 9.375,
+        "total_called_strikes": 32,
+        "bad_calls_count": 3,
+        "home_plate_umpire": "Mark Ripperger"
     },
     "worst_calls_of_season": [
         {
@@ -56,17 +56,17 @@
         }
     ],
     "pitching_season_summary": {
-        "correct_balls_pct": 95.39267015706805,
-        "incorrect_balls_pct": 4.6073298429319465,
-        "total_called_balls": 1910,
+        "correct_balls_pct": 95.48717948717949,
+        "incorrect_balls_pct": 4.512820512820511,
+        "total_called_balls": 1950,
         "bad_calls_count": 88
     },
     "pitching_last_game_summary": {
-        "date": "May 3, 2026",
-        "correct_balls_pct": 92.10526315789474,
-        "incorrect_balls_pct": 7.89473684210526,
-        "total_called_balls": 38,
-        "bad_calls_count": 3
+        "date": "May 4, 2026",
+        "correct_balls_pct": 100.0,
+        "incorrect_balls_pct": 0.0,
+        "total_called_balls": 40,
+        "bad_calls_count": 0
     },
     "pitching_worst_calls_of_season": [],
     "abs_challenges": {
@@ -99,12 +99,24 @@
                 "failed": 0
             },
             "catching": {
-                "total": 13,
-                "successful": 10,
+                "total": 14,
+                "successful": 11,
                 "failed": 3
             }
         },
         "challenge_log": [
+            {
+                "date": "2026-05-04",
+                "date_formatted": "May 4, 2026",
+                "challenger": "Christian V\u00e1zquez",
+                "role": "catching",
+                "team": "opponents",
+                "outcome": "overturned",
+                "result_desc": "Max Muncy called out on strikes.",
+                "batter": "Max Muncy",
+                "pitcher": "Bryan Abreu",
+                "game_pk": 824201
+            },
             {
                 "date": "2026-05-03",
                 "date_formatted": "May 3, 2026",
@@ -330,18 +342,6 @@
                 "outcome": "overturned",
                 "result_desc": "Andy Pages called out on strikes.",
                 "batter": "Andy Pages",
-                "pitcher": "Jaden Hill",
-                "game_pk": 824372
-            },
-            {
-                "date": "2026-04-18",
-                "date_formatted": "April 18, 2026",
-                "challenger": "Rockies",
-                "role": "catching",
-                "team": "opponents",
-                "outcome": "confirmed",
-                "result_desc": "Teoscar Hern\u00e1ndez walks.",
-                "batter": "Teoscar Hern\u00e1ndez",
                 "pitcher": "Jaden Hill",
                 "game_pk": 824372
             }
