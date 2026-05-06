@@ -1,17 +1,17 @@
 {
     "season_summary": {
-        "correct_strikes_pct": 92.3076923076923,
-        "incorrect_strikes_pct": 7.692307692307693,
-        "total_called_strikes": 1066,
-        "bad_calls_count": 82
+        "correct_strikes_pct": 92.3923006416132,
+        "incorrect_strikes_pct": 7.607699358386796,
+        "total_called_strikes": 1091,
+        "bad_calls_count": 83
     },
     "last_game_summary": {
-        "date": "May 5, 2026",
-        "correct_strikes_pct": 93.75,
-        "incorrect_strikes_pct": 6.25,
-        "total_called_strikes": 16,
+        "date": "May 6, 2026",
+        "correct_strikes_pct": 96.0,
+        "incorrect_strikes_pct": 4.0,
+        "total_called_strikes": 25,
         "bad_calls_count": 1,
-        "home_plate_umpire": "Shane Livensparger"
+        "home_plate_umpire": "Edwin Jimenez"
     },
     "worst_calls_of_season": [
         {
@@ -56,25 +56,25 @@
         }
     ],
     "pitching_season_summary": {
-        "correct_balls_pct": 95.5050505050505,
-        "incorrect_balls_pct": 4.494949494949495,
-        "total_called_balls": 1980,
+        "correct_balls_pct": 95.58531746031747,
+        "incorrect_balls_pct": 4.414682539682531,
+        "total_called_balls": 2016,
         "bad_calls_count": 89
     },
     "pitching_last_game_summary": {
-        "date": "May 5, 2026",
-        "correct_balls_pct": 96.66666666666667,
-        "incorrect_balls_pct": 3.3333333333333286,
-        "total_called_balls": 30,
-        "bad_calls_count": 1
+        "date": "May 6, 2026",
+        "correct_balls_pct": 100.0,
+        "incorrect_balls_pct": 0.0,
+        "total_called_balls": 36,
+        "bad_calls_count": 0
     },
     "pitching_worst_calls_of_season": [],
     "abs_challenges": {
         "dodgers": {
             "batting": {
-                "total": 14,
+                "total": 15,
                 "successful": 5,
-                "failed": 9
+                "failed": 10
             },
             "pitching": {
                 "total": 0,
@@ -105,6 +105,18 @@
             }
         },
         "challenge_log": [
+            {
+                "date": "2026-05-06",
+                "date_formatted": "May 6, 2026",
+                "challenger": "Max Muncy",
+                "role": "batting",
+                "team": "dodgers",
+                "outcome": "confirmed",
+                "result_desc": "Max Muncy called out on strikes.",
+                "batter": "Max Muncy",
+                "pitcher": "Lance McCullers Jr.",
+                "game_pk": 824198
+            },
             {
                 "date": "2026-05-04",
                 "date_formatted": "May 4, 2026",
@@ -332,18 +344,6 @@
                 "batter": "Hunter Goodman",
                 "pitcher": "Edgardo Henriquez",
                 "game_pk": 824370
-            },
-            {
-                "date": "2026-04-18",
-                "date_formatted": "April 18, 2026",
-                "challenger": "Hunter Goodman",
-                "role": "catching",
-                "team": "opponents",
-                "outcome": "overturned",
-                "result_desc": "Andy Pages called out on strikes.",
-                "batter": "Andy Pages",
-                "pitcher": "Jaden Hill",
-                "game_pk": 824372
             }
         ]
     }

@@ -18,9 +18,9 @@
     },
     "opponents": {
         "batting": {
-            "total": 36,
+            "total": 38,
             "successful": 18,
-            "failed": 18
+            "failed": 20
         },
         "pitching": {
             "total": 3,
@@ -34,6 +34,30 @@
         }
     },
     "challenge_log": [
+        {
+            "date": "2026-05-06",
+            "date_formatted": "May 6, 2026",
+            "challenger": "Christian Walker",
+            "role": "batting",
+            "team": "opponents",
+            "outcome": "confirmed",
+            "result_desc": "Christian Walker strikes out swinging.",
+            "batter": "Christian Walker",
+            "pitcher": "Brock Stewart",
+            "game_pk": 824198
+        },
+        {
+            "date": "2026-05-06",
+            "date_formatted": "May 6, 2026",
+            "challenger": "Cam Smith",
+            "role": "batting",
+            "team": "opponents",
+            "outcome": "confirmed",
+            "result_desc": "Cam Smith grounds out, second baseman Alex Freeland to first baseman Freddie Freeman.",
+            "batter": "Cam Smith",
+            "pitcher": "Jack Dreyer",
+            "game_pk": 824198
+        },
         {
             "date": "2026-05-05",
             "date_formatted": "May 5, 2026",
@@ -85,18 +109,6 @@
         {
             "date": "2026-05-03",
             "date_formatted": "May 3, 2026",
-            "challenger": "Pedro Pag\u00e9s",
-            "role": "catching",
-            "team": "opponents",
-            "outcome": "overturned",
-            "result_desc": "Miguel Rojas grounds out, shortstop Masyn Winn to first baseman Alec Burleson. Andy Pages to 3rd.",
-            "batter": "Miguel Rojas",
-            "pitcher": "Jared Shuster",
-            "game_pk": 823065
-        },
-        {
-            "date": "2026-05-03",
-            "date_formatted": "May 3, 2026",
             "challenger": "Alec Burleson",
             "role": "batting",
             "team": "opponents",
@@ -116,6 +128,18 @@
             "result_desc": "Jos\u00e9 Ferm\u00edn pops out to third baseman Max Muncy.",
             "batter": "Jos\u00e9 Ferm\u00edn",
             "pitcher": "Justin Wrobleski",
+            "game_pk": 823065
+        },
+        {
+            "date": "2026-05-03",
+            "date_formatted": "May 3, 2026",
+            "challenger": "Pedro Pag\u00e9s",
+            "role": "catching",
+            "team": "opponents",
+            "outcome": "overturned",
+            "result_desc": "Miguel Rojas grounds out, shortstop Masyn Winn to first baseman Alec Burleson. Andy Pages to 3rd.",
+            "batter": "Miguel Rojas",
+            "pitcher": "Jared Shuster",
             "game_pk": 823065
         },
         {
@@ -145,42 +169,6 @@
         {
             "date": "2026-05-01",
             "date_formatted": "May 1, 2026",
-            "challenger": "Will Smith",
-            "role": "catching",
-            "team": "dodgers",
-            "outcome": "overturned",
-            "result_desc": "Pedro Pag\u00e9s called out on strikes.",
-            "batter": "Pedro Pag\u00e9s",
-            "pitcher": "Jack Dreyer",
-            "game_pk": 823066
-        },
-        {
-            "date": "2026-05-01",
-            "date_formatted": "May 1, 2026",
-            "challenger": "Will Smith",
-            "role": "catching",
-            "team": "dodgers",
-            "outcome": "overturned",
-            "result_desc": "Iv\u00e1n Herrera singles on a ground ball to left fielder Teoscar Hern\u00e1ndez.",
-            "batter": "Iv\u00e1n Herrera",
-            "pitcher": "Emmet Sheehan",
-            "game_pk": 823066
-        },
-        {
-            "date": "2026-05-01",
-            "date_formatted": "May 1, 2026",
-            "challenger": "Pedro Pag\u00e9s",
-            "role": "catching",
-            "team": "opponents",
-            "outcome": "overturned",
-            "result_desc": "Teoscar Hern\u00e1ndez walks. Freddie Freeman to 3rd. Will Smith to 2nd.",
-            "batter": "Teoscar Hern\u00e1ndez",
-            "pitcher": "Matthew Liberatore",
-            "game_pk": 823066
-        },
-        {
-            "date": "2026-05-01",
-            "date_formatted": "May 1, 2026",
             "challenger": "Miguel Rojas",
             "role": "batting",
             "team": "dodgers",
@@ -203,28 +191,40 @@
             "game_pk": 823066
         },
         {
-            "date": "2026-04-29",
-            "date_formatted": "April 29, 2026",
-            "challenger": "Liam Hicks",
+            "date": "2026-05-01",
+            "date_formatted": "May 1, 2026",
+            "challenger": "Will Smith",
+            "role": "catching",
+            "team": "dodgers",
+            "outcome": "overturned",
+            "result_desc": "Pedro Pag\u00e9s called out on strikes.",
+            "batter": "Pedro Pag\u00e9s",
+            "pitcher": "Jack Dreyer",
+            "game_pk": 823066
+        },
+        {
+            "date": "2026-05-01",
+            "date_formatted": "May 1, 2026",
+            "challenger": "Pedro Pag\u00e9s",
             "role": "catching",
             "team": "opponents",
             "outcome": "overturned",
-            "result_desc": "Shohei Ohtani walks.",
-            "batter": "Shohei Ohtani",
-            "pitcher": "Andrew Nardi",
-            "game_pk": 823958
+            "result_desc": "Teoscar Hern\u00e1ndez walks. Freddie Freeman to 3rd. Will Smith to 2nd.",
+            "batter": "Teoscar Hern\u00e1ndez",
+            "pitcher": "Matthew Liberatore",
+            "game_pk": 823066
         },
         {
-            "date": "2026-04-29",
-            "date_formatted": "April 29, 2026",
-            "challenger": "Alex Call",
-            "role": "batting",
+            "date": "2026-05-01",
+            "date_formatted": "May 1, 2026",
+            "challenger": "Will Smith",
+            "role": "catching",
             "team": "dodgers",
-            "outcome": "confirmed",
-            "result_desc": "Alex Call grounds into a force out, third baseman Graham Pauley to second baseman Xavier Edwards. Dalton Rushing to 3rd. Hyeseong Kim out at 2nd. Alex Call to 1st.",
-            "batter": "Alex Call",
-            "pitcher": "Sandy Alcantara",
-            "game_pk": 823958
+            "outcome": "overturned",
+            "result_desc": "Iv\u00e1n Herrera singles on a ground ball to left fielder Teoscar Hern\u00e1ndez.",
+            "batter": "Iv\u00e1n Herrera",
+            "pitcher": "Emmet Sheehan",
+            "game_pk": 823066
         },
         {
             "date": "2026-04-29",
@@ -235,6 +235,18 @@
             "outcome": "overturned",
             "result_desc": "Hyeseong Kim singles on a line drive to center fielder Jakob Marsee. Dalton Rushing to 2nd.",
             "batter": "Hyeseong Kim",
+            "pitcher": "Sandy Alcantara",
+            "game_pk": 823958
+        },
+        {
+            "date": "2026-04-29",
+            "date_formatted": "April 29, 2026",
+            "challenger": "Andy Pages",
+            "role": "batting",
+            "team": "dodgers",
+            "outcome": "confirmed",
+            "result_desc": "Andy Pages strikes out swinging.",
+            "batter": "Andy Pages",
             "pitcher": "Sandy Alcantara",
             "game_pk": 823958
         },
@@ -253,26 +265,14 @@
         {
             "date": "2026-04-29",
             "date_formatted": "April 29, 2026",
-            "challenger": "Andy Pages",
+            "challenger": "Alex Call",
             "role": "batting",
             "team": "dodgers",
             "outcome": "confirmed",
-            "result_desc": "Andy Pages strikes out swinging.",
-            "batter": "Andy Pages",
+            "result_desc": "Alex Call grounds into a force out, third baseman Graham Pauley to second baseman Xavier Edwards. Dalton Rushing to 3rd. Hyeseong Kim out at 2nd. Alex Call to 1st.",
+            "batter": "Alex Call",
             "pitcher": "Sandy Alcantara",
             "game_pk": 823958
-        },
-        {
-            "date": "2026-04-28",
-            "date_formatted": "April 28, 2026",
-            "challenger": "Agust\u00edn Ram\u00edrez",
-            "role": "catching",
-            "team": "opponents",
-            "outcome": "confirmed",
-            "result_desc": "Hyeseong Kim lines out to second baseman Xavier Edwards.",
-            "batter": "Hyeseong Kim",
-            "pitcher": "Janson Junk",
-            "game_pk": 823956
         }
     ]
 }
