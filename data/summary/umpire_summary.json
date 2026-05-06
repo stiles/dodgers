@@ -1,17 +1,17 @@
 {
     "season_summary": {
-        "correct_strikes_pct": 92.28571428571428,
-        "incorrect_strikes_pct": 7.714285714285722,
-        "total_called_strikes": 1050,
-        "bad_calls_count": 81
+        "correct_strikes_pct": 92.3076923076923,
+        "incorrect_strikes_pct": 7.692307692307693,
+        "total_called_strikes": 1066,
+        "bad_calls_count": 82
     },
     "last_game_summary": {
-        "date": "May 4, 2026",
-        "correct_strikes_pct": 90.625,
-        "incorrect_strikes_pct": 9.375,
-        "total_called_strikes": 32,
-        "bad_calls_count": 3,
-        "home_plate_umpire": "Mark Ripperger"
+        "date": "May 5, 2026",
+        "correct_strikes_pct": 93.75,
+        "incorrect_strikes_pct": 6.25,
+        "total_called_strikes": 16,
+        "bad_calls_count": 1,
+        "home_plate_umpire": "Shane Livensparger"
     },
     "worst_calls_of_season": [
         {
@@ -23,6 +23,16 @@
             "date": "2026-04-06",
             "date_formatted": "April 6, 2026",
             "video_link": "https://baseballsavant.mlb.com/sporty-videos?playId=452d33b9-5600-30b5-93d2-2b65dda57411"
+        },
+        {
+            "distance_inches": 4.3578575427,
+            "batter": "Santiago Espinal",
+            "pitcher": "Bryan King",
+            "pitch_type": "4-Seam Fastball",
+            "velocity_mph": 90.6,
+            "date": "2026-05-05",
+            "date_formatted": "May 5, 2026",
+            "video_link": "https://baseballsavant.mlb.com/sporty-videos?playId=383d8667-b191-3bac-95e2-2468f77e7813"
         },
         {
             "distance_inches": 2.6846937843,
@@ -43,30 +53,20 @@
             "date": "2026-04-06",
             "date_formatted": "April 6, 2026",
             "video_link": "https://baseballsavant.mlb.com/sporty-videos?playId=11cd9ed6-6185-3b7d-b576-eceb7dcfc7fd"
-        },
-        {
-            "distance_inches": 2.4670354695,
-            "batter": "Eduardo Quintero",
-            "pitcher": "Logan Gillaspie",
-            "pitch_type": "Sinker",
-            "velocity_mph": 93.8,
-            "date": "2026-03-20",
-            "date_formatted": "March 20, 2026",
-            "video_link": "https://baseballsavant.mlb.com/sporty-videos?playId=4e421a2f-a67b-3f68-a9a8-0404ca31c89e"
         }
     ],
     "pitching_season_summary": {
-        "correct_balls_pct": 95.48717948717949,
-        "incorrect_balls_pct": 4.512820512820511,
-        "total_called_balls": 1950,
-        "bad_calls_count": 88
+        "correct_balls_pct": 95.5050505050505,
+        "incorrect_balls_pct": 4.494949494949495,
+        "total_called_balls": 1980,
+        "bad_calls_count": 89
     },
     "pitching_last_game_summary": {
-        "date": "May 4, 2026",
-        "correct_balls_pct": 100.0,
-        "incorrect_balls_pct": 0.0,
-        "total_called_balls": 40,
-        "bad_calls_count": 0
+        "date": "May 5, 2026",
+        "correct_balls_pct": 96.66666666666667,
+        "incorrect_balls_pct": 3.3333333333333286,
+        "total_called_balls": 30,
+        "bad_calls_count": 1
     },
     "pitching_worst_calls_of_season": [],
     "abs_challenges": {

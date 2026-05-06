@@ -1,8 +1,8 @@
 {
     "dodgers": {
         "batting": {
-            "total": 28,
-            "successful": 16,
+            "total": 29,
+            "successful": 17,
             "failed": 12
         },
         "pitching": {
@@ -11,8 +11,8 @@
             "failed": 2
         },
         "catching": {
-            "total": 44,
-            "successful": 26,
+            "total": 45,
+            "successful": 27,
             "failed": 18
         }
     },
@@ -34,6 +34,30 @@
         }
     },
     "challenge_log": [
+        {
+            "date": "2026-05-05",
+            "date_formatted": "May 5, 2026",
+            "challenger": "Miguel Rojas",
+            "role": "batting",
+            "team": "dodgers",
+            "outcome": "overturned",
+            "result_desc": "Miguel Rojas pops out to first baseman Isaac Paredes.",
+            "batter": "Miguel Rojas",
+            "pitcher": "Bryan King",
+            "game_pk": 824200
+        },
+        {
+            "date": "2026-05-05",
+            "date_formatted": "May 5, 2026",
+            "challenger": "Will Smith",
+            "role": "catching",
+            "team": "dodgers",
+            "outcome": "overturned",
+            "result_desc": "Jose Altuve grounds out, second baseman Alex Freeland to first baseman Freddie Freeman.",
+            "batter": "Jose Altuve",
+            "pitcher": "Shohei Ohtani",
+            "game_pk": 824200
+        },
         {
             "date": "2026-05-04",
             "date_formatted": "May 4, 2026",
@@ -157,18 +181,6 @@
         {
             "date": "2026-05-01",
             "date_formatted": "May 1, 2026",
-            "challenger": "Pedro Pag\u00e9s",
-            "role": "catching",
-            "team": "opponents",
-            "outcome": "confirmed",
-            "result_desc": "Kyle Tucker walks. Freddie Freeman to 2nd.",
-            "batter": "Kyle Tucker",
-            "pitcher": "Gordon Graceffo",
-            "game_pk": 823066
-        },
-        {
-            "date": "2026-05-01",
-            "date_formatted": "May 1, 2026",
             "challenger": "Miguel Rojas",
             "role": "batting",
             "team": "dodgers",
@@ -176,6 +188,18 @@
             "result_desc": "Miguel Rojas grounds out, first baseman Alec Burleson to pitcher Matt Svanson.",
             "batter": "Miguel Rojas",
             "pitcher": "Matt Svanson",
+            "game_pk": 823066
+        },
+        {
+            "date": "2026-05-01",
+            "date_formatted": "May 1, 2026",
+            "challenger": "Pedro Pag\u00e9s",
+            "role": "catching",
+            "team": "opponents",
+            "outcome": "confirmed",
+            "result_desc": "Kyle Tucker walks. Freddie Freeman to 2nd.",
+            "batter": "Kyle Tucker",
+            "pitcher": "Gordon Graceffo",
             "game_pk": 823066
         },
         {
@@ -237,30 +261,6 @@
             "batter": "Andy Pages",
             "pitcher": "Sandy Alcantara",
             "game_pk": 823958
-        },
-        {
-            "date": "2026-04-28",
-            "date_formatted": "April 28, 2026",
-            "challenger": "Agust\u00edn Ram\u00edrez",
-            "role": "catching",
-            "team": "opponents",
-            "outcome": "overturned",
-            "result_desc": "Alex Freeland grounds out to pitcher Janson Junk.",
-            "batter": "Alex Freeland",
-            "pitcher": "Janson Junk",
-            "game_pk": 823956
-        },
-        {
-            "date": "2026-04-28",
-            "date_formatted": "April 28, 2026",
-            "challenger": "Will Smith",
-            "role": "catching",
-            "team": "dodgers",
-            "outcome": "overturned",
-            "result_desc": "Owen Caissie grounds out, shortstop Hyeseong Kim to first baseman Freddie Freeman.",
-            "batter": "Owen Caissie",
-            "pitcher": "Shohei Ohtani",
-            "game_pk": 823956
         },
         {
             "date": "2026-04-28",

@@ -1,28 +1,28 @@
 stat_label,stat,value,category,context_value,context_value_label
 Wins,wins,22,standings,24,This point last season
-Losses,losses,13,standings,11,This point last season
-Win percentage,win_pct,63%,standings,69%,This point last season
-Games up/back,games_up_back,1.5,standings,1st,Division rank
-Fielding percentage,fielding_pct,.989,standings,5th,League rank
+Losses,losses,14,standings,12,This point last season
+Win percentage,win_pct,61%,standings,67%,This point last season
+Games up/back,games_up_back,1,standings,1st,Division rank
+Fielding percentage,fielding_pct,.990,standings,5th,League rank
 Errors,errors,13,standings,4th,League rank
-Runs,runs,183,standings,4th,League rank
-Runs against,runs_against,115,standings,144,This point last season
-Run differential,run_differential,68,standings,45,This point last season
-Batting average,batting_average,.273,batting,.253,Last decade average
-Home runs,home_runs,47,batting,3rd,League rank
-Home runs/game,home_runs_game,1.34,batting,1.42,Last decade average
-On-base percentage,on_base_pct,.352,batting,1st,League rank
-Slugging percentage,slugging_pct,.443,batting,3rd,League rank
-OPS,ops,.795,batting,2nd,League rank
-Stolen bases,stolen_bases,18,batting,22nd,League rank
-Stolen bases/game,stolen_bases_game,0.51,batting,0.84,Rate all last season
-Doubles,doubles,58,batting,9th,League rank
-Strikeouts,strikeouts,310,pitching,9th,League rank
-Walks,walks,105,pitching,26th,League rank
-ERA,era,3.21,pitching,2nd,League rank
-WHIP,whip,1.12,pitching,1st,League rank
-Batting average against,avg_against,.213,pitching,1st,League rank
-K/BB ratio,k_bb_ratio,2.95,pitching,4th,League rank
-Last updated,update_time,"May 5, 2026, 4:26 PM PT",summary,,
-Team summary,summary,"<span class='highlight'>LOS ANGELES</span> <span class='updated'>(May 5)</span> — The Dodgers have compiled a <span class='highlight'>22-13</span> record in the 2026 regular season, a <span class='highlight'>63%</span> winning percentage. The last game was a <span class='highlight'>8-3</span> away <span class='highlight'>win</span> against the <span class='highlight'>Houston Astros</span>. The team next faces the <span class='highlight'>Houston Astros</span> on Tuesday at 5:10 p.m. PDT at <span class='highlight'>Daikin Park</span>.",summary,,
-Last game result,last_game_result,win,summary,,
+Runs,runs,184,standings,4th,League rank
+Runs against,runs_against,117,standings,149,This point last season
+Run differential,run_differential,67,standings,44,This point last season
+Batting average,batting_average,.271,batting,.253,Last decade average
+Home runs,home_runs,47,batting,4th,League rank
+Home runs/game,home_runs_game,1.31,batting,1.42,Last decade average
+On-base percentage,on_base_pct,.350,batting,2nd,League rank
+Slugging percentage,slugging_pct,.438,batting,3rd,League rank
+OPS,ops,.788,batting,3rd,League rank
+Stolen bases,stolen_bases,19,batting,21st,League rank
+Stolen bases/game,stolen_bases_game,0.53,batting,0.84,Rate all last season
+Doubles,doubles,60,batting,9th,League rank
+Strikeouts,strikeouts,319,pitching,7th,League rank
+Walks,walks,105,pitching,27th,League rank
+ERA,era,3.19,pitching,2nd,League rank
+WHIP,whip,1.11,pitching,1st,League rank
+Batting average against,avg_against,.212,pitching,1st,League rank
+K/BB ratio,k_bb_ratio,3.04,pitching,4th,League rank
+Last updated,update_time,"May 5, 2026, 7:46 PM PT",summary,,
+Team summary,summary,"<span class='highlight'>LOS ANGELES</span> <span class='updated'>(May 5)</span> — The Dodgers have compiled a <span class='highlight'>22-14</span> record in the 2026 regular season, a <span class='highlight'>61%</span> winning percentage. The last game was a <span class='highlight'>1-2</span> away <span class='highlight'>loss</span> against the <span class='highlight'>Houston Astros</span>. The team next faces the <span class='highlight'>Houston Astros</span> on Wednesday at 11:10 a.m. PDT at <span class='highlight'>Daikin Park</span>.",summary,,
+Last game result,last_game_result,loss,summary,,

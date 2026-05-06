@@ -12,7 +12,7 @@
         "ip_rounded":43,
         "gs":7,
         "gp":7,
-        "fetched":"2026-05-05"
+        "fetched":"2026-05-06"
     },
     {
         "player":"Tyler Glasnow",
@@ -27,7 +27,22 @@
         "ip_rounded":38,
         "gs":6,
         "gp":6,
-        "fetched":"2026-05-05"
+        "fetched":"2026-05-06"
+    },
+    {
+        "player":"Shohei Ohtani",
+        "role":"SP",
+        "position":"TWP",
+        "era":"0.97",
+        "whip":"0.81",
+        "k9":"10.22",
+        "bb9":"2.19",
+        "kbb":"4.67",
+        "ip":"37.0",
+        "ip_rounded":37,
+        "gs":6,
+        "gp":6,
+        "fetched":"2026-05-06"
     },
     {
         "player":"Justin Wrobleski",
@@ -42,7 +57,7 @@
         "ip_rounded":36,
         "gs":5,
         "gp":6,
-        "fetched":"2026-05-05"
+        "fetched":"2026-05-06"
     },
     {
         "player":"Emmet Sheehan",
@@ -57,22 +72,7 @@
         "ip_rounded":31,
         "gs":6,
         "gp":6,
-        "fetched":"2026-05-05"
-    },
-    {
-        "player":"Shohei Ohtani",
-        "role":"SP",
-        "position":"TWP",
-        "era":"0.60",
-        "whip":"0.87",
-        "k9":"10.20",
-        "bb9":"2.70",
-        "kbb":"3.78",
-        "ip":"30.0",
-        "ip_rounded":30,
-        "gs":5,
-        "gp":5,
-        "fetched":"2026-05-05"
+        "fetched":"2026-05-06"
     },
     {
         "player":"Roki Sasaki",
@@ -87,7 +87,7 @@
         "ip_rounded":28,
         "gs":6,
         "gp":6,
-        "fetched":"2026-05-05"
+        "fetched":"2026-05-06"
     },
     {
         "player":"Jack Dreyer",
@@ -102,7 +102,7 @@
         "ip_rounded":15,
         "gs":0,
         "gp":15,
-        "fetched":"2026-05-05"
+        "fetched":"2026-05-06"
     },
     {
         "player":"Will Klein",
@@ -117,7 +117,7 @@
         "ip_rounded":14,
         "gs":0,
         "gp":10,
-        "fetched":"2026-05-05"
+        "fetched":"2026-05-06"
     },
     {
         "player":"Tanner Scott",
@@ -132,21 +132,21 @@
         "ip_rounded":14,
         "gs":0,
         "gp":16,
-        "fetched":"2026-05-05"
+        "fetched":"2026-05-06"
     },
     {
         "player":"Alex Vesia",
         "role":"RP",
         "position":"P",
-        "era":"1.54",
-        "whip":"0.86",
-        "k9":"11.57",
-        "bb9":"4.63",
-        "kbb":"2.50",
-        "ip":"11.2",
-        "ip_rounded":11,
+        "era":"1.42",
+        "whip":"0.79",
+        "k9":"11.37",
+        "bb9":"4.26",
+        "kbb":"2.67",
+        "ip":"12.2",
+        "ip_rounded":12,
         "gs":0,
-        "gp":14,
-        "fetched":"2026-05-05"
+        "gp":15,
+        "fetched":"2026-05-06"
     }
 ]
