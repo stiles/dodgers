@@ -84,7 +84,7 @@
         "stat":"home_runs",
         "value":50,
         "category":"batting",
-        "context_value":"3rd",
+        "context_value":"4th",
         "context_value_label":"League rank"
     },
     {
@@ -148,7 +148,7 @@
         "stat":"strikeouts",
         "value":"327",
         "category":"pitching",
-        "context_value":"9th",
+        "context_value":"10th",
         "context_value_label":"League rank"
     },
     {
@@ -194,7 +194,7 @@
     {
         "stat_label":"Last updated",
         "stat":"update_time",
-        "value":"May 7, 2026, 8:53 AM PT",
+        "value":"May 7, 2026, 4:26 PM PT",
         "category":"summary",
         "context_value":"",
         "context_value_label":""
