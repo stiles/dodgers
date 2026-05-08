@@ -2,7 +2,7 @@ stat_label,stat,value,category,context_value,context_value_label
 Wins,wins,23,standings,25,This point last season
 Losses,losses,14,standings,12,This point last season
 Win percentage,win_pct,62%,standings,68%,This point last season
-Games up/back,games_up_back,0.5,standings,1st,Division rank
+Games up/back,games_up_back,1,standings,1st,Division rank
 Fielding percentage,fielding_pct,.990,standings,5th,League rank
 Errors,errors,13,standings,4th,League rank
 Runs,runs,196,standings,5th,League rank
@@ -16,13 +16,13 @@ Slugging percentage,slugging_pct,.446,batting,3rd,League rank
 OPS,ops,.798,batting,1st,League rank
 Stolen bases,stolen_bases,20,batting,21st,League rank
 Stolen bases/game,stolen_bases_game,0.54,batting,0.84,Rate all last season
-Doubles,doubles,63,batting,9th,League rank
+Doubles,doubles,63,batting,10th,League rank
 Strikeouts,strikeouts,327,pitching,10th,League rank
 Walks,walks,105,pitching,29th,League rank
 ERA,era,3.16,pitching,2nd,League rank
 WHIP,whip,1.09,pitching,1st,League rank
 Batting average against,avg_against,.210,pitching,1st,League rank
 K/BB ratio,k_bb_ratio,3.11,pitching,2nd,League rank
-Last updated,update_time,"May 7, 2026, 4:26 PM PT",summary,,
-Team summary,summary,"<span class='highlight'>LOS ANGELES</span> <span class='updated'>(May 7)</span> — The Dodgers have compiled a <span class='highlight'>23-14</span> record in the 2026 regular season, a <span class='highlight'>62%</span> winning percentage. The last game was a <span class='highlight'>12-2</span> away <span class='highlight'>win</span> against the <span class='highlight'>Houston Astros</span>. The team next faces the <span class='highlight'>Atlanta Braves</span> on Friday at 7:10 p.m. PDT at <span class='highlight'>UNIQLO Field at Dodger Stadium</span>.",summary,,
+Last updated,update_time,"May 8, 2026, 1:42 AM PT",summary,,
+Team summary,summary,"<span class='highlight'>LOS ANGELES</span> <span class='updated'>(May 8)</span> — The Dodgers have compiled a <span class='highlight'>23-14</span> record in the 2026 regular season, a <span class='highlight'>62%</span> winning percentage. The last game was a <span class='highlight'>12-2</span> away <span class='highlight'>win</span> against the <span class='highlight'>Houston Astros</span>. The team next faces the <span class='highlight'>Atlanta Braves</span> on Friday at 7:10 p.m. PDT at <span class='highlight'>UNIQLO Field at Dodger Stadium</span>.",summary,,
 Last game result,last_game_result,win,summary,,
