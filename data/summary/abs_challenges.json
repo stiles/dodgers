@@ -11,8 +11,8 @@
             "failed": 2
         },
         "catching": {
-            "total": 45,
-            "successful": 27,
+            "total": 46,
+            "successful": 28,
             "failed": 18
         }
     },
@@ -28,12 +28,36 @@
             "failed": 2
         },
         "catching": {
-            "total": 56,
-            "successful": 34,
+            "total": 57,
+            "successful": 35,
             "failed": 22
         }
     },
     "challenge_log": [
+        {
+            "date": "2026-05-08",
+            "date_formatted": "May 8, 2026",
+            "challenger": "Will Smith",
+            "role": "catching",
+            "team": "dodgers",
+            "outcome": "overturned",
+            "result_desc": "Mauricio Dub\u00f3n singles on a line drive to center fielder Andy Pages. Michael Harris II to 2nd.",
+            "batter": "Mauricio Dub\u00f3n",
+            "pitcher": "Kyle Hurt",
+            "game_pk": 823957
+        },
+        {
+            "date": "2026-05-08",
+            "date_formatted": "May 8, 2026",
+            "challenger": "Drake Baldwin",
+            "role": "catching",
+            "team": "opponents",
+            "outcome": "overturned",
+            "result_desc": "Max Muncy strikes out swinging.",
+            "batter": "Max Muncy",
+            "pitcher": "Chris Sale",
+            "game_pk": 823957
+        },
         {
             "date": "2026-05-06",
             "date_formatted": "May 6, 2026",
@@ -109,18 +133,6 @@
         {
             "date": "2026-05-03",
             "date_formatted": "May 3, 2026",
-            "challenger": "Alec Burleson",
-            "role": "batting",
-            "team": "opponents",
-            "outcome": "confirmed",
-            "result_desc": "Alec Burleson singles on a line drive to center fielder Andy Pages. Jordan Walker scores.",
-            "batter": "Alec Burleson",
-            "pitcher": "Will Klein",
-            "game_pk": 823065
-        },
-        {
-            "date": "2026-05-03",
-            "date_formatted": "May 3, 2026",
             "challenger": "Dalton Rushing",
             "role": "catching",
             "team": "dodgers",
@@ -128,6 +140,18 @@
             "result_desc": "Jos\u00e9 Ferm\u00edn pops out to third baseman Max Muncy.",
             "batter": "Jos\u00e9 Ferm\u00edn",
             "pitcher": "Justin Wrobleski",
+            "game_pk": 823065
+        },
+        {
+            "date": "2026-05-03",
+            "date_formatted": "May 3, 2026",
+            "challenger": "Alec Burleson",
+            "role": "batting",
+            "team": "opponents",
+            "outcome": "confirmed",
+            "result_desc": "Alec Burleson singles on a line drive to center fielder Andy Pages. Jordan Walker scores.",
+            "batter": "Alec Burleson",
+            "pitcher": "Will Klein",
             "game_pk": 823065
         },
         {
@@ -229,30 +253,6 @@
         {
             "date": "2026-04-29",
             "date_formatted": "April 29, 2026",
-            "challenger": "Liam Hicks",
-            "role": "catching",
-            "team": "opponents",
-            "outcome": "overturned",
-            "result_desc": "Hyeseong Kim singles on a line drive to center fielder Jakob Marsee. Dalton Rushing to 2nd.",
-            "batter": "Hyeseong Kim",
-            "pitcher": "Sandy Alcantara",
-            "game_pk": 823958
-        },
-        {
-            "date": "2026-04-29",
-            "date_formatted": "April 29, 2026",
-            "challenger": "Andy Pages",
-            "role": "batting",
-            "team": "dodgers",
-            "outcome": "confirmed",
-            "result_desc": "Andy Pages strikes out swinging.",
-            "batter": "Andy Pages",
-            "pitcher": "Sandy Alcantara",
-            "game_pk": 823958
-        },
-        {
-            "date": "2026-04-29",
-            "date_formatted": "April 29, 2026",
             "challenger": "Dalton Rushing",
             "role": "catching",
             "team": "dodgers",
@@ -265,12 +265,12 @@
         {
             "date": "2026-04-29",
             "date_formatted": "April 29, 2026",
-            "challenger": "Alex Call",
+            "challenger": "Andy Pages",
             "role": "batting",
             "team": "dodgers",
             "outcome": "confirmed",
-            "result_desc": "Alex Call grounds into a force out, third baseman Graham Pauley to second baseman Xavier Edwards. Dalton Rushing to 3rd. Hyeseong Kim out at 2nd. Alex Call to 1st.",
-            "batter": "Alex Call",
+            "result_desc": "Andy Pages strikes out swinging.",
+            "batter": "Andy Pages",
             "pitcher": "Sandy Alcantara",
             "game_pk": 823958
         }

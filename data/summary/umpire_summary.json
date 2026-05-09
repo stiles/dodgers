@@ -1,17 +1,17 @@
 {
     "season_summary": {
-        "correct_strikes_pct": 92.3923006416132,
-        "incorrect_strikes_pct": 7.607699358386796,
-        "total_called_strikes": 1091,
-        "bad_calls_count": 83
+        "correct_strikes_pct": 92.34923492349235,
+        "incorrect_strikes_pct": 7.650765076507653,
+        "total_called_strikes": 1111,
+        "bad_calls_count": 85
     },
     "last_game_summary": {
-        "date": "May 6, 2026",
-        "correct_strikes_pct": 96.0,
-        "incorrect_strikes_pct": 4.0,
-        "total_called_strikes": 25,
-        "bad_calls_count": 1,
-        "home_plate_umpire": "Edwin Jimenez"
+        "date": "May 8, 2026",
+        "correct_strikes_pct": 90.0,
+        "incorrect_strikes_pct": 10.0,
+        "total_called_strikes": 20,
+        "bad_calls_count": 2,
+        "home_plate_umpire": "Chris Conroy"
     },
     "worst_calls_of_season": [
         {
@@ -56,16 +56,16 @@
         }
     ],
     "pitching_season_summary": {
-        "correct_balls_pct": 95.58531746031747,
-        "incorrect_balls_pct": 4.414682539682531,
-        "total_called_balls": 2016,
+        "correct_balls_pct": 95.68798449612403,
+        "incorrect_balls_pct": 4.312015503875969,
+        "total_called_balls": 2064,
         "bad_calls_count": 89
     },
     "pitching_last_game_summary": {
-        "date": "May 6, 2026",
+        "date": "May 8, 2026",
         "correct_balls_pct": 100.0,
         "incorrect_balls_pct": 0.0,
-        "total_called_balls": 36,
+        "total_called_balls": 48,
         "bad_calls_count": 0
     },
     "pitching_worst_calls_of_season": [],
@@ -99,12 +99,24 @@
                 "failed": 0
             },
             "catching": {
-                "total": 14,
-                "successful": 11,
+                "total": 15,
+                "successful": 12,
                 "failed": 3
             }
         },
         "challenge_log": [
+            {
+                "date": "2026-05-08",
+                "date_formatted": "May 8, 2026",
+                "challenger": "Drake Baldwin",
+                "role": "catching",
+                "team": "opponents",
+                "outcome": "overturned",
+                "result_desc": "Teoscar Hern\u00e1ndez called out on strikes.",
+                "batter": "Teoscar Hern\u00e1ndez",
+                "pitcher": "Chris Sale",
+                "game_pk": 823957
+            },
             {
                 "date": "2026-05-06",
                 "date_formatted": "May 6, 2026",
@@ -331,18 +343,6 @@
                 "result_desc": "Will Smith called out on strikes.",
                 "batter": "Will Smith",
                 "pitcher": "Tanner Gordon",
-                "game_pk": 824370
-            },
-            {
-                "date": "2026-04-20",
-                "date_formatted": "April 20, 2026",
-                "challenger": "Hunter Goodman",
-                "role": "batting",
-                "team": "opponents",
-                "outcome": "confirmed",
-                "result_desc": "Hunter Goodman called out on strikes.",
-                "batter": "Hunter Goodman",
-                "pitcher": "Edgardo Henriquez",
                 "game_pk": 824370
             }
         ]
