@@ -36,7 +36,7 @@
         "stat":"fielding_pct",
         "value":".990",
         "category":"standings",
-        "context_value":"5th",
+        "context_value":"4th",
         "context_value_label":"League rank"
     },
     {
@@ -84,7 +84,7 @@
         "stat":"home_runs",
         "value":51,
         "category":"batting",
-        "context_value":"4th",
+        "context_value":"5th",
         "context_value_label":"League rank"
     },
     {
@@ -140,7 +140,7 @@
         "stat":"doubles",
         "value":64,
         "category":"batting",
-        "context_value":"11th",
+        "context_value":"12th",
         "context_value_label":"League rank"
     },
     {
@@ -194,7 +194,7 @@
     {
         "stat_label":"Last updated",
         "stat":"update_time",
-        "value":"May 9, 2026, 8:27 AM PT",
+        "value":"May 9, 2026, 4:24 PM PT",
         "category":"summary",
         "context_value":"",
         "context_value_label":""
