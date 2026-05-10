@@ -26,9 +26,9 @@
     {
         "stat_label":"Games up\/back",
         "stat":"games_up_back",
-        "value":0.5,
+        "value":0,
         "category":"standings",
-        "context_value":"1st",
+        "context_value":"2nd",
         "context_value_label":"Division rank"
     },
     {
@@ -194,7 +194,7 @@
     {
         "stat_label":"Last updated",
         "stat":"update_time",
-        "value":"May 10, 2026, 3:44 PM PT",
+        "value":"May 10, 2026, 4:26 PM PT",
         "category":"summary",
         "context_value":"",
         "context_value_label":""
