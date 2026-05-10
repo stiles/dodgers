@@ -1,5 +1,20 @@
 [
     {
+        "player":"Justin Wrobleski",
+        "role":"SP",
+        "position":"P",
+        "era":"2.42",
+        "whip":"0.99",
+        "k9":"4.43",
+        "bb9":"2.22",
+        "kbb":"2.00",
+        "ip":"44.2",
+        "ip_rounded":44,
+        "gs":6,
+        "gp":7,
+        "fetched":"2026-05-10"
+    },
+    {
         "player":"Yoshinobu Yamamoto",
         "role":"SP",
         "position":"P",
@@ -41,21 +56,6 @@
         "ip":"37.0",
         "ip_rounded":37,
         "gs":6,
-        "gp":6,
-        "fetched":"2026-05-10"
-    },
-    {
-        "player":"Justin Wrobleski",
-        "role":"SP",
-        "position":"P",
-        "era":"1.25",
-        "whip":"1.00",
-        "k9":"3.75",
-        "bb9":"2.50",
-        "kbb":"1.50",
-        "ip":"36.0",
-        "ip_rounded":36,
-        "gs":5,
         "gp":6,
         "fetched":"2026-05-10"
     },

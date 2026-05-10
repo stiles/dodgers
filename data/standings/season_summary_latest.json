@@ -10,23 +10,23 @@
     {
         "stat_label":"Losses",
         "stat":"losses",
-        "value":15,
+        "value":16,
         "category":"standings",
-        "context_value":13,
+        "context_value":14,
         "context_value_label":"This point last season"
     },
     {
         "stat_label":"Win percentage",
         "stat":"win_pct",
-        "value":"62%",
+        "value":"60%",
         "category":"standings",
-        "context_value":"67%",
+        "context_value":"65%",
         "context_value_label":"This point last season"
     },
     {
         "stat_label":"Games up\/back",
         "stat":"games_up_back",
-        "value":1,
+        "value":0.5,
         "category":"standings",
         "context_value":"1st",
         "context_value_label":"Division rank"
@@ -50,31 +50,31 @@
     {
         "stat_label":"Runs",
         "stat":"runs",
-        "value":201,
+        "value":203,
         "category":"standings",
-        "context_value":"5th",
+        "context_value":"6th",
         "context_value_label":"League rank"
     },
     {
         "stat_label":"Runs against",
         "stat":"runs_against",
-        "value":127,
+        "value":134,
         "category":"standings",
-        "context_value":166,
+        "context_value":169,
         "context_value_label":"This point last season"
     },
     {
         "stat_label":"Run differential",
         "stat":"run_differential",
-        "value":74,
+        "value":69,
         "category":"standings",
-        "context_value":54,
+        "context_value":51,
         "context_value_label":"This point last season"
     },
     {
         "stat_label":"Batting average",
         "stat":"batting_average",
-        "value":".269",
+        "value":".265",
         "category":"batting",
         "context_value":".253",
         "context_value_label":"Last decade average"
@@ -82,7 +82,7 @@
     {
         "stat_label":"Home runs",
         "stat":"home_runs",
-        "value":52,
+        "value":53,
         "category":"batting",
         "context_value":"3rd",
         "context_value_label":"League rank"
@@ -90,7 +90,7 @@
     {
         "stat_label":"Home runs\/game",
         "stat":"home_runs_game",
-        "value":1.33,
+        "value":1.32,
         "category":"batting",
         "context_value":1.42,
         "context_value_label":"Last decade average"
@@ -98,7 +98,7 @@
     {
         "stat_label":"On-base percentage",
         "stat":"on_base_pct",
-        "value":".347",
+        "value":".344",
         "category":"batting",
         "context_value":"2nd",
         "context_value_label":"League rank"
@@ -106,7 +106,7 @@
     {
         "stat_label":"Slugging percentage",
         "stat":"slugging_pct",
-        "value":".440",
+        "value":".434",
         "category":"batting",
         "context_value":"3rd",
         "context_value_label":"League rank"
@@ -114,9 +114,9 @@
     {
         "stat_label":"OPS",
         "stat":"ops",
-        "value":".787",
+        "value":".778",
         "category":"batting",
-        "context_value":"1st",
+        "context_value":"2nd",
         "context_value_label":"League rank"
     },
     {
@@ -130,7 +130,7 @@
     {
         "stat_label":"Stolen bases\/game",
         "stat":"stolen_bases_game",
-        "value":0.51,
+        "value":0.5,
         "category":"batting",
         "context_value":0.84,
         "context_value_label":"Rate all last season"
@@ -140,21 +140,21 @@
         "stat":"doubles",
         "value":65,
         "category":"batting",
-        "context_value":"11th",
+        "context_value":"12th",
         "context_value_label":"League rank"
     },
     {
         "stat_label":"Strikeouts",
         "stat":"strikeouts",
-        "value":"349",
+        "value":"356",
         "category":"pitching",
-        "context_value":"8th",
+        "context_value":"10th",
         "context_value_label":"League rank"
     },
     {
         "stat_label":"Walks",
         "stat":"walks",
-        "value":112,
+        "value":113,
         "category":"pitching",
         "context_value":"29th",
         "context_value_label":"League rank"
@@ -162,7 +162,7 @@
     {
         "stat_label":"ERA",
         "stat":"era",
-        "value":"3.17",
+        "value":"3.27",
         "category":"pitching",
         "context_value":"3rd",
         "context_value_label":"League rank"
@@ -178,7 +178,7 @@
     {
         "stat_label":"Batting average against",
         "stat":"avg_against",
-        "value":".215",
+        "value":".216",
         "category":"pitching",
         "context_value":"2nd",
         "context_value_label":"League rank"
@@ -186,7 +186,7 @@
     {
         "stat_label":"K\/BB ratio",
         "stat":"k_bb_ratio",
-        "value":3.12,
+        "value":3.15,
         "category":"pitching",
         "context_value":"2nd",
         "context_value_label":"League rank"
@@ -194,7 +194,7 @@
     {
         "stat_label":"Last updated",
         "stat":"update_time",
-        "value":"May 10, 2026, 8:28 AM PT",
+        "value":"May 10, 2026, 3:44 PM PT",
         "category":"summary",
         "context_value":"",
         "context_value_label":""
@@ -202,7 +202,7 @@
     {
         "stat_label":"Team summary",
         "stat":"summary",
-        "value":"<span class='highlight'>LOS ANGELES<\/span> <span class='updated'>(May 10)<\/span> \u2014 The Dodgers have compiled a <span class='highlight'>24-15<\/span> record in the 2026 regular season, a <span class='highlight'>62%<\/span> winning percentage. The last game was a <span class='highlight'>2-7<\/span> home <span class='highlight'>loss<\/span> against the <span class='highlight'>Atlanta Braves<\/span>. The team next faces the <span class='highlight'>Atlanta Braves<\/span> on Sunday at 1:10 p.m. PDT at <span class='highlight'>UNIQLO Field at Dodger Stadium<\/span>.",
+        "value":"<span class='highlight'>LOS ANGELES<\/span> <span class='updated'>(May 10)<\/span> \u2014 The Dodgers have compiled a <span class='highlight'>24-16<\/span> record in the 2026 regular season, a <span class='highlight'>60%<\/span> winning percentage. The last game was a <span class='highlight'>2-7<\/span> home <span class='highlight'>loss<\/span> against the <span class='highlight'>Atlanta Braves<\/span>. The team next faces the <span class='highlight'>San Francisco Giants<\/span> on Monday at 7:10 p.m. PDT at <span class='highlight'>UNIQLO Field at Dodger Stadium<\/span>.",
         "category":"summary",
         "context_value":"",
         "context_value_label":""
