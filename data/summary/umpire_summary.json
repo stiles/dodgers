@@ -1,17 +1,17 @@
 {
     "season_summary": {
-        "correct_strikes_pct": 92.34923492349235,
-        "incorrect_strikes_pct": 7.650765076507653,
-        "total_called_strikes": 1111,
-        "bad_calls_count": 85
+        "correct_strikes_pct": 92.26033421284082,
+        "incorrect_strikes_pct": 7.739665787159183,
+        "total_called_strikes": 1137,
+        "bad_calls_count": 88
     },
     "last_game_summary": {
-        "date": "May 8, 2026",
-        "correct_strikes_pct": 90.0,
-        "incorrect_strikes_pct": 10.0,
-        "total_called_strikes": 20,
-        "bad_calls_count": 2,
-        "home_plate_umpire": "Chris Conroy"
+        "date": "May 9, 2026",
+        "correct_strikes_pct": 88.46153846153845,
+        "incorrect_strikes_pct": 11.538461538461547,
+        "total_called_strikes": 26,
+        "bad_calls_count": 3,
+        "home_plate_umpire": "Ben May"
     },
     "worst_calls_of_season": [
         {
@@ -56,16 +56,16 @@
         }
     ],
     "pitching_season_summary": {
-        "correct_balls_pct": 95.68798449612403,
-        "incorrect_balls_pct": 4.312015503875969,
-        "total_called_balls": 2064,
+        "correct_balls_pct": 95.79792256846082,
+        "incorrect_balls_pct": 4.2020774315391805,
+        "total_called_balls": 2118,
         "bad_calls_count": 89
     },
     "pitching_last_game_summary": {
-        "date": "May 8, 2026",
+        "date": "May 9, 2026",
         "correct_balls_pct": 100.0,
         "incorrect_balls_pct": 0.0,
-        "total_called_balls": 48,
+        "total_called_balls": 54,
         "bad_calls_count": 0
     },
     "pitching_worst_calls_of_season": [],
@@ -99,12 +99,24 @@
                 "failed": 0
             },
             "catching": {
-                "total": 15,
-                "successful": 12,
+                "total": 16,
+                "successful": 13,
                 "failed": 3
             }
         },
         "challenge_log": [
+            {
+                "date": "2026-05-09",
+                "date_formatted": "May 9, 2026",
+                "challenger": "Sean Murphy",
+                "role": "catching",
+                "team": "opponents",
+                "outcome": "overturned",
+                "result_desc": "Hyeseong Kim called out on strikes.",
+                "batter": "Hyeseong Kim",
+                "pitcher": "Spencer Strider",
+                "game_pk": 823955
+            },
             {
                 "date": "2026-05-08",
                 "date_formatted": "May 8, 2026",
@@ -332,18 +344,6 @@
                 "batter": "Hyeseong Kim",
                 "pitcher": "Landen Roupp",
                 "game_pk": 823236
-            },
-            {
-                "date": "2026-04-20",
-                "date_formatted": "April 20, 2026",
-                "challenger": "Will Smith",
-                "role": "batting",
-                "team": "dodgers",
-                "outcome": "confirmed",
-                "result_desc": "Will Smith called out on strikes.",
-                "batter": "Will Smith",
-                "pitcher": "Tanner Gordon",
-                "game_pk": 824370
             }
         ]
     }

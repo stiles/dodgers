@@ -28,12 +28,24 @@
             "failed": 2
         },
         "catching": {
-            "total": 57,
-            "successful": 35,
+            "total": 58,
+            "successful": 36,
             "failed": 22
         }
     },
     "challenge_log": [
+        {
+            "date": "2026-05-09",
+            "date_formatted": "May 9, 2026",
+            "challenger": "Sean Murphy",
+            "role": "catching",
+            "team": "opponents",
+            "outcome": "overturned",
+            "result_desc": "Kyle Tucker grounds into a force out, second baseman Ozzie Albies to shortstop Jorge Mateo. Will Smith out at 2nd. Kyle Tucker to 1st.",
+            "batter": "Kyle Tucker",
+            "pitcher": "Spencer Strider",
+            "game_pk": 823955
+        },
         {
             "date": "2026-05-08",
             "date_formatted": "May 8, 2026",
@@ -253,24 +265,12 @@
         {
             "date": "2026-04-29",
             "date_formatted": "April 29, 2026",
-            "challenger": "Dalton Rushing",
+            "challenger": "Liam Hicks",
             "role": "catching",
-            "team": "dodgers",
+            "team": "opponents",
             "outcome": "overturned",
-            "result_desc": "Graham Pauley walks.",
-            "batter": "Graham Pauley",
-            "pitcher": "Tyler Glasnow",
-            "game_pk": 823958
-        },
-        {
-            "date": "2026-04-29",
-            "date_formatted": "April 29, 2026",
-            "challenger": "Andy Pages",
-            "role": "batting",
-            "team": "dodgers",
-            "outcome": "confirmed",
-            "result_desc": "Andy Pages strikes out swinging.",
-            "batter": "Andy Pages",
+            "result_desc": "Hyeseong Kim singles on a line drive to center fielder Jakob Marsee. Dalton Rushing to 2nd.",
+            "batter": "Hyeseong Kim",
             "pitcher": "Sandy Alcantara",
             "game_pk": 823958
         }
