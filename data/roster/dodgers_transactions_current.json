@@ -1,5 +1,27 @@
 [
   {
+    "date":"2026-05-12",
+    "transaction":"Dodgers designated CF Michael Siani for assignment.",
+    "players":[
+      "Michael Siani"
+    ]
+  },
+  {
+    "date":"2026-05-12",
+    "transaction":"Dodgers optioned CF Alek Thomas to ACL Dodgers.",
+    "players":[
+      "Alek Thomas"
+    ]
+  },
+  {
+    "date":"2026-05-12",
+    "transaction":"Dodgers traded OF Jose Requena to Arizona Diamondbacks for CF Alek Thomas.",
+    "players":[
+      "Jose Requena",
+      "Alek Thomas"
+    ]
+  },
+  {
     "date":"2026-05-11",
     "transaction":"Dodgers activated SS Mookie Betts from the 10-day injured list.",
     "players":[
@@ -36,9 +58,9 @@
   },
   {
     "date":"2026-05-09",
-    "transaction":"Dodgers activated LHP Blake Snell from the 15-day injured list.",
+    "transaction":"Dodgers claimed LHP Charlie Barnes off waivers from Chicago Cubs.",
     "players":[
-      "Blake Snell"
+      "Charlie Barnes"
     ]
   },
   {
@@ -57,9 +79,9 @@
   },
   {
     "date":"2026-05-09",
-    "transaction":"Dodgers claimed LHP Charlie Barnes off waivers from Chicago Cubs.",
+    "transaction":"Dodgers activated LHP Blake Snell from the 15-day injured list.",
     "players":[
-      "Charlie Barnes"
+      "Blake Snell"
     ]
   },
   {
@@ -92,16 +114,16 @@
   },
   {
     "date":"2026-05-06",
-    "transaction":"Dodgers optioned LHP Jake Eder to Oklahoma City Comets.",
+    "transaction":"Dodgers activated RHP Brock Stewart from the 15-day injured list.",
     "players":[
-      "Jake Eder"
+      "Brock Stewart"
     ]
   },
   {
     "date":"2026-05-06",
-    "transaction":"Dodgers activated RHP Brock Stewart from the 15-day injured list.",
+    "transaction":"Dodgers optioned LHP Jake Eder to Oklahoma City Comets.",
     "players":[
-      "Brock Stewart"
+      "Jake Eder"
     ]
   },
   {
@@ -148,13 +170,6 @@
   },
   {
     "date":"2026-04-21",
-    "transaction":"Dodgers optioned LF Ryan Ward to Oklahoma City Comets.",
-    "players":[
-      "Ryan Ward"
-    ]
-  },
-  {
-    "date":"2026-04-21",
     "transaction":"Dodgers activated 1B Freddie Freeman from the paternity list.",
     "players":[
       "Freddie Freeman"
@@ -168,10 +183,10 @@
     ]
   },
   {
-    "date":"2026-04-20",
-    "transaction":"Dodgers recalled LHP Jake Eder from Oklahoma City Comets.",
+    "date":"2026-04-21",
+    "transaction":"Dodgers optioned LF Ryan Ward to Oklahoma City Comets.",
     "players":[
-      "Jake Eder"
+      "Ryan Ward"
     ]
   },
   {
@@ -179,6 +194,13 @@
     "transaction":"Dodgers placed RHP Edwin Díaz on the 15-day injured list. Right elbow loose bodies.",
     "players":[
       "Edwin Díaz"
+    ]
+  },
+  {
+    "date":"2026-04-20",
+    "transaction":"Dodgers recalled LHP Jake Eder from Oklahoma City Comets.",
+    "players":[
+      "Jake Eder"
     ]
   },
   {
@@ -197,37 +219,23 @@
   },
   {
     "date":"2026-04-16",
-    "transaction":"RHP Emmet Sheehan changed number to 80.",
+    "transaction":"RHP Chayce McDermott roster status changed by Dodgers.",
     "players":[
-      "Emmet Sheehan"
+      "Chayce McDermott"
     ]
   },
   {
     "date":"2026-04-16",
-    "transaction":"TWP Shohei Ohtani changed number to 17.",
+    "transaction":"RHP Kyle Hurt changed number to 63.",
     "players":[
-      "Shohei Ohtani"
+      "Kyle Hurt"
     ]
   },
   {
     "date":"2026-04-16",
-    "transaction":"C Dalton Rushing changed number to 68.",
+    "transaction":"Dodgers reassigned RHP Chayce McDermott to the minor leagues.",
     "players":[
-      "Dalton Rushing"
-    ]
-  },
-  {
-    "date":"2026-04-16",
-    "transaction":"CF Andy Pages changed number to 44.",
-    "players":[
-      "Andy Pages"
-    ]
-  },
-  {
-    "date":"2026-04-16",
-    "transaction":"RHP Will Klein changed number to 61.",
-    "players":[
-      "Will Klein"
+      "Chayce McDermott"
     ]
   },
   {
@@ -246,9 +254,9 @@
   },
   {
     "date":"2026-04-16",
-    "transaction":"RHP Tyler Glasnow changed number to 31.",
+    "transaction":"TWP Shohei Ohtani changed number to 17.",
     "players":[
-      "Tyler Glasnow"
+      "Shohei Ohtani"
     ]
   },
   {
@@ -260,23 +268,37 @@
   },
   {
     "date":"2026-04-16",
-    "transaction":"RHP Kyle Hurt changed number to 63.",
+    "transaction":"RHP Will Klein changed number to 61.",
     "players":[
-      "Kyle Hurt"
+      "Will Klein"
     ]
   },
   {
     "date":"2026-04-16",
-    "transaction":"1B Freddie Freeman changed number to 5.",
+    "transaction":"RHP Tyler Glasnow changed number to 31.",
     "players":[
-      "Freddie Freeman"
+      "Tyler Glasnow"
     ]
   },
   {
     "date":"2026-04-16",
-    "transaction":"LHP Jack Dreyer changed number to 86.",
+    "transaction":"2B Miguel Rojas changed number to 72.",
     "players":[
-      "Jack Dreyer"
+      "Miguel Rojas"
+    ]
+  },
+  {
+    "date":"2026-04-16",
+    "transaction":"C Dalton Rushing changed number to 68.",
+    "players":[
+      "Dalton Rushing"
+    ]
+  },
+  {
+    "date":"2026-04-16",
+    "transaction":"CF Andy Pages changed number to 44.",
+    "players":[
+      "Andy Pages"
     ]
   },
   {
@@ -284,6 +306,13 @@
     "transaction":"Dodgers optioned RHP Chayce McDermott to Oklahoma City Comets.",
     "players":[
       "Chayce McDermott"
+    ]
+  },
+  {
+    "date":"2026-04-16",
+    "transaction":"LHP Tanner Scott changed number to 66.",
+    "players":[
+      "Tanner Scott"
     ]
   },
   {
@@ -296,51 +325,9 @@
   },
   {
     "date":"2026-04-16",
-    "transaction":"2B Miguel Rojas changed number to 72.",
+    "transaction":"RHP Edwin Díaz changed number to 3.",
     "players":[
-      "Miguel Rojas"
-    ]
-  },
-  {
-    "date":"2026-04-16",
-    "transaction":"3B Santiago Espinal changed number to 21.",
-    "players":[
-      "Santiago Espinal"
-    ]
-  },
-  {
-    "date":"2026-04-16",
-    "transaction":"LHP Tanner Scott changed number to 66.",
-    "players":[
-      "Tanner Scott"
-    ]
-  },
-  {
-    "date":"2026-04-16",
-    "transaction":"LHP Alex Vesia changed number to 51.",
-    "players":[
-      "Alex Vesia"
-    ]
-  },
-  {
-    "date":"2026-04-16",
-    "transaction":"LHP Justin Wrobleski changed number to 70.",
-    "players":[
-      "Justin Wrobleski"
-    ]
-  },
-  {
-    "date":"2026-04-16",
-    "transaction":"RHP Edgardo Henriquez changed number to 60.",
-    "players":[
-      "Edgardo Henriquez"
-    ]
-  },
-  {
-    "date":"2026-04-16",
-    "transaction":"RHP Roki Sasaki changed number to 11.",
-    "players":[
-      "Roki Sasaki"
+      "Edwin Díaz"
     ]
   },
   {
@@ -352,16 +339,16 @@
   },
   {
     "date":"2026-04-16",
-    "transaction":"RHP Yoshinobu Yamamoto changed number to 18.",
+    "transaction":"RF Alex Call changed number to 12.",
     "players":[
-      "Yoshinobu Yamamoto"
+      "Alex Call"
     ]
   },
   {
     "date":"2026-04-16",
-    "transaction":"RF Kyle Tucker changed number to 23.",
+    "transaction":"LHP Alex Vesia changed number to 51.",
     "players":[
-      "Kyle Tucker"
+      "Alex Vesia"
     ]
   },
   {
@@ -373,6 +360,41 @@
   },
   {
     "date":"2026-04-16",
+    "transaction":"LHP Justin Wrobleski changed number to 70.",
+    "players":[
+      "Justin Wrobleski"
+    ]
+  },
+  {
+    "date":"2026-04-16",
+    "transaction":"RF Kyle Tucker changed number to 23.",
+    "players":[
+      "Kyle Tucker"
+    ]
+  },
+  {
+    "date":"2026-04-16",
+    "transaction":"RHP Yoshinobu Yamamoto changed number to 18.",
+    "players":[
+      "Yoshinobu Yamamoto"
+    ]
+  },
+  {
+    "date":"2026-04-16",
+    "transaction":"RHP Roki Sasaki changed number to 11.",
+    "players":[
+      "Roki Sasaki"
+    ]
+  },
+  {
+    "date":"2026-04-16",
+    "transaction":"RHP Emmet Sheehan changed number to 80.",
+    "players":[
+      "Emmet Sheehan"
+    ]
+  },
+  {
+    "date":"2026-04-16",
     "transaction":"2B Alex Freeland changed number to 76.",
     "players":[
       "Alex Freeland"
@@ -380,107 +402,30 @@
   },
   {
     "date":"2026-04-16",
-    "transaction":"RF Alex Call changed number to 12.",
+    "transaction":"RHP Edgardo Henriquez changed number to 60.",
     "players":[
-      "Alex Call"
+      "Edgardo Henriquez"
     ]
   },
   {
     "date":"2026-04-16",
-    "transaction":"RHP Edwin Díaz changed number to 3.",
-    "players":[
-      "Edwin Díaz"
-    ]
-  },
-  {
-    "date":"2026-04-16",
-    "transaction":"RHP Chayce McDermott roster status changed by Dodgers.",
-    "players":[
-      "Chayce McDermott"
-    ]
-  },
-  {
-    "date":"2026-04-16",
-    "transaction":"Dodgers reassigned RHP Chayce McDermott to the minor leagues.",
-    "players":[
-      "Chayce McDermott"
-    ]
-  },
-  {
-    "date":"2026-04-15",
-    "transaction":"LHP Alex Vesia changed number to 42.",
-    "players":[
-      "Alex Vesia"
-    ]
-  },
-  {
-    "date":"2026-04-15",
-    "transaction":"LHP Justin Wrobleski changed number to 42.",
-    "players":[
-      "Justin Wrobleski"
-    ]
-  },
-  {
-    "date":"2026-04-15",
-    "transaction":"2B Miguel Rojas changed number to 42.",
-    "players":[
-      "Miguel Rojas"
-    ]
-  },
-  {
-    "date":"2026-04-15",
-    "transaction":"3B Max Muncy changed number to 42.",
-    "players":[
-      "Max Muncy"
-    ]
-  },
-  {
-    "date":"2026-04-15",
-    "transaction":"RHP Kyle Hurt changed number to 42.",
-    "players":[
-      "Kyle Hurt"
-    ]
-  },
-  {
-    "date":"2026-04-15",
-    "transaction":"1B Freddie Freeman changed number to 42.",
-    "players":[
-      "Freddie Freeman"
-    ]
-  },
-  {
-    "date":"2026-04-15",
-    "transaction":"3B Santiago Espinal changed number to 42.",
+    "transaction":"3B Santiago Espinal changed number to 21.",
     "players":[
       "Santiago Espinal"
     ]
   },
   {
-    "date":"2026-04-15",
-    "transaction":"C Dalton Rushing changed number to 42.",
+    "date":"2026-04-16",
+    "transaction":"LHP Jack Dreyer changed number to 86.",
     "players":[
-      "Dalton Rushing"
+      "Jack Dreyer"
     ]
   },
   {
-    "date":"2026-04-15",
-    "transaction":"RHP Yoshinobu Yamamoto changed number to 42.",
+    "date":"2026-04-16",
+    "transaction":"1B Freddie Freeman changed number to 5.",
     "players":[
-      "Yoshinobu Yamamoto"
-    ]
-  },
-  {
-    "date":"2026-04-15",
-    "transaction":"RHP Blake Treinen changed number to 42.",
-    "players":[
-      "Blake Treinen"
-    ]
-  },
-  {
-    "date":"2026-04-15",
-    "transaction":"RHP Roki Sasaki changed number to 42.",
-    "players":[
-      "Roki Sasaki"
+      "Freddie Freeman"
     ]
   },
   {
@@ -492,13 +437,6 @@
   },
   {
     "date":"2026-04-15",
-    "transaction":"RHP Emmet Sheehan changed number to 42.",
-    "players":[
-      "Emmet Sheehan"
-    ]
-  },
-  {
-    "date":"2026-04-15",
     "transaction":"LHP Tanner Scott changed number to 42.",
     "players":[
       "Tanner Scott"
@@ -506,9 +444,86 @@
   },
   {
     "date":"2026-04-15",
-    "transaction":"C Will Smith changed number to 42.",
+    "transaction":"RHP Roki Sasaki changed number to 42.",
     "players":[
-      "Will Smith"
+      "Roki Sasaki"
+    ]
+  },
+  {
+    "date":"2026-04-15",
+    "transaction":"RHP Blake Treinen changed number to 42.",
+    "players":[
+      "Blake Treinen"
+    ]
+  },
+  {
+    "date":"2026-04-15",
+    "transaction":"LHP Alex Vesia changed number to 42.",
+    "players":[
+      "Alex Vesia"
+    ]
+  },
+  {
+    "date":"2026-04-15",
+    "transaction":"1B Freddie Freeman changed number to 42.",
+    "players":[
+      "Freddie Freeman"
+    ]
+  },
+  {
+    "date":"2026-04-15",
+    "transaction":"RHP Kyle Hurt changed number to 42.",
+    "players":[
+      "Kyle Hurt"
+    ]
+  },
+  {
+    "date":"2026-04-15",
+    "transaction":"3B Max Muncy changed number to 42.",
+    "players":[
+      "Max Muncy"
+    ]
+  },
+  {
+    "date":"2026-04-15",
+    "transaction":"2B Miguel Rojas changed number to 42.",
+    "players":[
+      "Miguel Rojas"
+    ]
+  },
+  {
+    "date":"2026-04-15",
+    "transaction":"LHP Justin Wrobleski changed number to 42.",
+    "players":[
+      "Justin Wrobleski"
+    ]
+  },
+  {
+    "date":"2026-04-15",
+    "transaction":"RHP Emmet Sheehan changed number to 42.",
+    "players":[
+      "Emmet Sheehan"
+    ]
+  },
+  {
+    "date":"2026-04-15",
+    "transaction":"RHP Yoshinobu Yamamoto changed number to 42.",
+    "players":[
+      "Yoshinobu Yamamoto"
+    ]
+  },
+  {
+    "date":"2026-04-15",
+    "transaction":"3B Santiago Espinal changed number to 42.",
+    "players":[
+      "Santiago Espinal"
+    ]
+  },
+  {
+    "date":"2026-04-15",
+    "transaction":"LHP Jack Dreyer changed number to 42.",
+    "players":[
+      "Jack Dreyer"
     ]
   },
   {
@@ -520,9 +535,16 @@
   },
   {
     "date":"2026-04-15",
-    "transaction":"LHP Jack Dreyer changed number to 42.",
+    "transaction":"C Dalton Rushing changed number to 42.",
     "players":[
-      "Jack Dreyer"
+      "Dalton Rushing"
+    ]
+  },
+  {
+    "date":"2026-04-15",
+    "transaction":"C Will Smith changed number to 42.",
+    "players":[
+      "Will Smith"
     ]
   },
   {
@@ -555,6 +577,13 @@
   },
   {
     "date":"2026-04-15",
+    "transaction":"2B Alex Freeland changed number to 42.",
+    "players":[
+      "Alex Freeland"
+    ]
+  },
+  {
+    "date":"2026-04-15",
     "transaction":"RHP Edgardo Henriquez changed number to 42.",
     "players":[
       "Edgardo Henriquez"
@@ -562,9 +591,9 @@
   },
   {
     "date":"2026-04-15",
-    "transaction":"RF Teoscar Hernández changed number to 42.",
+    "transaction":"TWP Shohei Ohtani changed number to 42.",
     "players":[
-      "Teoscar Hernández"
+      "Shohei Ohtani"
     ]
   },
   {
@@ -576,16 +605,9 @@
   },
   {
     "date":"2026-04-15",
-    "transaction":"2B Alex Freeland changed number to 42.",
+    "transaction":"RF Teoscar Hernández changed number to 42.",
     "players":[
-      "Alex Freeland"
-    ]
-  },
-  {
-    "date":"2026-04-15",
-    "transaction":"TWP Shohei Ohtani changed number to 42.",
-    "players":[
-      "Shohei Ohtani"
+      "Teoscar Hernández"
     ]
   },
   {
@@ -611,16 +633,16 @@
   },
   {
     "date":"2026-04-13",
-    "transaction":"Dodgers placed RHP Ben Casparius on the 15-day injured list. Right shoulder inflammation.",
+    "transaction":"Dodgers recalled RHP Kyle Hurt from Oklahoma City Comets.",
     "players":[
-      "Ben Casparius"
+      "Kyle Hurt"
     ]
   },
   {
     "date":"2026-04-13",
-    "transaction":"Dodgers recalled RHP Kyle Hurt from Oklahoma City Comets.",
+    "transaction":"Dodgers placed RHP Ben Casparius on the 15-day injured list. Right shoulder inflammation.",
     "players":[
-      "Kyle Hurt"
+      "Ben Casparius"
     ]
   },
   {
@@ -646,20 +668,6 @@
   },
   {
     "date":"2026-04-01",
-    "transaction":"Washington Nationals traded LHP Jake Eder to Dodgers for cash.",
-    "players":[
-      "Jake Eder"
-    ]
-  },
-  {
-    "date":"2026-04-01",
-    "transaction":"Dodgers optioned LHP Jake Eder to Oklahoma City Comets.",
-    "players":[
-      "Jake Eder"
-    ]
-  },
-  {
-    "date":"2026-04-01",
     "transaction":"Dodgers claimed RHP Grant Holman off waivers from Arizona Diamondbacks.",
     "players":[
       "Grant Holman"
@@ -674,6 +682,13 @@
   },
   {
     "date":"2026-04-01",
+    "transaction":"Washington Nationals traded LHP Jake Eder to Dodgers for cash.",
+    "players":[
+      "Jake Eder"
+    ]
+  },
+  {
+    "date":"2026-04-01",
     "transaction":"Dodgers transferred RHP Jake Cousins from the 15-day injured list to the 60-day injured list.",
     "players":[
       "Jake Cousins"
@@ -681,23 +696,9 @@
   },
   {
     "date":"2026-04-01",
-    "transaction":"Dodgers reassigned RHP Grant Holman to the minor leagues.",
+    "transaction":"Dodgers optioned LHP Jake Eder to Oklahoma City Comets.",
     "players":[
-      "Grant Holman"
-    ]
-  },
-  {
-    "date":"2026-04-01",
-    "transaction":"Dodgers transferred RHP Gavin Stone from the 15-day injured list to the 60-day injured list. Right shoulder inflammation.",
-    "players":[
-      "Gavin Stone"
-    ]
-  },
-  {
-    "date":"2026-03-27",
-    "transaction":"Dodgers traded RF Damon Keith to Milwaukee Brewers.",
-    "players":[
-      "Damon Keith"
+      "Jake Eder"
     ]
   }
 ]
