@@ -12,7 +12,7 @@
         "ip_rounded":44,
         "gs":6,
         "gp":7,
-        "fetched":"2026-05-11"
+        "fetched":"2026-05-12"
     },
     {
         "player":"Yoshinobu Yamamoto",
@@ -27,7 +27,7 @@
         "ip_rounded":43,
         "gs":7,
         "gp":7,
-        "fetched":"2026-05-11"
+        "fetched":"2026-05-12"
     },
     {
         "player":"Tyler Glasnow",
@@ -42,7 +42,7 @@
         "ip_rounded":39,
         "gs":7,
         "gp":7,
-        "fetched":"2026-05-11"
+        "fetched":"2026-05-12"
     },
     {
         "player":"Shohei Ohtani",
@@ -57,7 +57,7 @@
         "ip_rounded":37,
         "gs":6,
         "gp":6,
-        "fetched":"2026-05-11"
+        "fetched":"2026-05-12"
     },
     {
         "player":"Emmet Sheehan",
@@ -72,37 +72,52 @@
         "ip_rounded":35,
         "gs":7,
         "gp":7,
-        "fetched":"2026-05-11"
+        "fetched":"2026-05-12"
     },
     {
         "player":"Roki Sasaki",
         "role":"SP",
         "position":"P",
-        "era":"5.97",
-        "whip":"1.67",
-        "k9":"8.16",
-        "bb9":"4.71",
-        "kbb":"1.73",
-        "ip":"28.2",
-        "ip_rounded":28,
-        "gs":6,
-        "gp":6,
-        "fetched":"2026-05-11"
+        "era":"5.88",
+        "whip":"1.63",
+        "k9":"8.29",
+        "bb9":"4.28",
+        "kbb":"1.94",
+        "ip":"33.2",
+        "ip_rounded":33,
+        "gs":7,
+        "gp":7,
+        "fetched":"2026-05-12"
     },
     {
         "player":"Jack Dreyer",
         "role":"RP",
         "position":"P",
-        "era":"2.41",
-        "whip":"0.96",
-        "k9":"9.64",
-        "bb9":"2.41",
+        "era":"2.29",
+        "whip":"0.97",
+        "k9":"9.15",
+        "bb9":"2.29",
         "kbb":"4.00",
-        "ip":"18.2",
-        "ip_rounded":18,
+        "ip":"19.2",
+        "ip_rounded":19,
         "gs":0,
-        "gp":17,
-        "fetched":"2026-05-11"
+        "gp":18,
+        "fetched":"2026-05-12"
+    },
+    {
+        "player":"Will Klein",
+        "role":"RP",
+        "position":"P",
+        "era":"2.76",
+        "whip":"1.41",
+        "k9":"9.37",
+        "bb9":"3.31",
+        "kbb":"2.83",
+        "ip":"16.1",
+        "ip_rounded":16,
+        "gs":0,
+        "gp":12,
+        "fetched":"2026-05-12"
     },
     {
         "player":"Tanner Scott",
@@ -117,22 +132,7 @@
         "ip_rounded":16,
         "gs":0,
         "gp":18,
-        "fetched":"2026-05-11"
-    },
-    {
-        "player":"Will Klein",
-        "role":"RP",
-        "position":"P",
-        "era":"2.87",
-        "whip":"1.40",
-        "k9":"9.19",
-        "bb9":"3.45",
-        "kbb":"2.67",
-        "ip":"15.2",
-        "ip_rounded":15,
-        "gs":0,
-        "gp":11,
-        "fetched":"2026-05-11"
+        "fetched":"2026-05-12"
     },
     {
         "player":"Edgardo Henriquez",
@@ -147,6 +147,6 @@
         "ip_rounded":14,
         "gs":0,
         "gp":13,
-        "fetched":"2026-05-11"
+        "fetched":"2026-05-12"
     }
 ]

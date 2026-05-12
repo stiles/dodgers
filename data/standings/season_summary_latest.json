@@ -10,7 +10,7 @@
     {
         "stat_label":"Losses",
         "stat":"losses",
-        "value":16,
+        "value":17,
         "category":"standings",
         "context_value":14,
         "context_value_label":"This point last season"
@@ -18,7 +18,7 @@
     {
         "stat_label":"Win percentage",
         "stat":"win_pct",
-        "value":"60%",
+        "value":"58%",
         "category":"standings",
         "context_value":"65%",
         "context_value_label":"This point last season"
@@ -26,7 +26,7 @@
     {
         "stat_label":"Games up\/back",
         "stat":"games_up_back",
-        "value":0,
+        "value":0.5,
         "category":"standings",
         "context_value":"2nd",
         "context_value_label":"Division rank"
@@ -50,15 +50,15 @@
     {
         "stat_label":"Runs",
         "stat":"runs",
-        "value":203,
+        "value":206,
         "category":"standings",
-        "context_value":"6th",
+        "context_value":"5th",
         "context_value_label":"League rank"
     },
     {
         "stat_label":"Runs against",
         "stat":"runs_against",
-        "value":134,
+        "value":143,
         "category":"standings",
         "context_value":169,
         "context_value_label":"This point last season"
@@ -66,7 +66,7 @@
     {
         "stat_label":"Run differential",
         "stat":"run_differential",
-        "value":69,
+        "value":63,
         "category":"standings",
         "context_value":51,
         "context_value_label":"This point last season"
@@ -82,7 +82,7 @@
     {
         "stat_label":"Home runs",
         "stat":"home_runs",
-        "value":53,
+        "value":54,
         "category":"batting",
         "context_value":"3rd",
         "context_value_label":"League rank"
@@ -130,7 +130,7 @@
     {
         "stat_label":"Stolen bases\/game",
         "stat":"stolen_bases_game",
-        "value":0.5,
+        "value":0.49,
         "category":"batting",
         "context_value":0.84,
         "context_value_label":"Rate all last season"
@@ -138,7 +138,7 @@
     {
         "stat_label":"Doubles",
         "stat":"doubles",
-        "value":65,
+        "value":67,
         "category":"batting",
         "context_value":"12th",
         "context_value_label":"League rank"
@@ -146,15 +146,15 @@
     {
         "stat_label":"Strikeouts",
         "stat":"strikeouts",
-        "value":"356",
+        "value":"363",
         "category":"pitching",
-        "context_value":"11th",
+        "context_value":"9th",
         "context_value_label":"League rank"
     },
     {
         "stat_label":"Walks",
         "stat":"walks",
-        "value":113,
+        "value":119,
         "category":"pitching",
         "context_value":"29th",
         "context_value_label":"League rank"
@@ -162,7 +162,7 @@
     {
         "stat_label":"ERA",
         "stat":"era",
-        "value":"3.27",
+        "value":"3.42",
         "category":"pitching",
         "context_value":"3rd",
         "context_value_label":"League rank"
@@ -170,7 +170,7 @@
     {
         "stat_label":"WHIP",
         "stat":"whip",
-        "value":"1.12",
+        "value":"1.14",
         "category":"pitching",
         "context_value":"1st",
         "context_value_label":"League rank"
@@ -178,7 +178,7 @@
     {
         "stat_label":"Batting average against",
         "stat":"avg_against",
-        "value":".216",
+        "value":".218",
         "category":"pitching",
         "context_value":"2nd",
         "context_value_label":"League rank"
@@ -186,15 +186,15 @@
     {
         "stat_label":"K\/BB ratio",
         "stat":"k_bb_ratio",
-        "value":3.15,
+        "value":3.05,
         "category":"pitching",
-        "context_value":"2nd",
+        "context_value":"3rd",
         "context_value_label":"League rank"
     },
     {
         "stat_label":"Last updated",
         "stat":"update_time",
-        "value":"May 11, 2026, 4:28 PM PT",
+        "value":"May 12, 2026, 2:09 AM PT",
         "category":"summary",
         "context_value":"",
         "context_value_label":""
@@ -202,7 +202,7 @@
     {
         "stat_label":"Team summary",
         "stat":"summary",
-        "value":"<span class='highlight'>LOS ANGELES<\/span> <span class='updated'>(May 11)<\/span> \u2014 The Dodgers have compiled a <span class='highlight'>24-16<\/span> record in the 2026 regular season, a <span class='highlight'>60%<\/span> winning percentage. The last game was a <span class='highlight'>2-7<\/span> home <span class='highlight'>loss<\/span> against the <span class='highlight'>Atlanta Braves<\/span>. The team next faces the <span class='highlight'>San Francisco Giants<\/span> on Monday at 7:10 p.m. PDT at <span class='highlight'>UNIQLO Field at Dodger Stadium<\/span>.",
+        "value":"<span class='highlight'>LOS ANGELES<\/span> <span class='updated'>(May 12)<\/span> \u2014 The Dodgers have compiled a <span class='highlight'>24-17<\/span> record in the 2026 regular season, a <span class='highlight'>58%<\/span> winning percentage. The last game was a <span class='highlight'>3-9<\/span> home <span class='highlight'>loss<\/span> against the <span class='highlight'>San Francisco Giants<\/span>. The team next faces the <span class='highlight'>San Francisco Giants<\/span> on Tuesday at 7:10 p.m. PDT at <span class='highlight'>UNIQLO Field at Dodger Stadium<\/span>.",
         "category":"summary",
         "context_value":"",
         "context_value_label":""

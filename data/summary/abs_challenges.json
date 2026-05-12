@@ -1,9 +1,9 @@
 {
     "dodgers": {
         "batting": {
-            "total": 32,
-            "successful": 19,
-            "failed": 13
+            "total": 34,
+            "successful": 20,
+            "failed": 14
         },
         "pitching": {
             "total": 3,
@@ -11,15 +11,15 @@
             "failed": 2
         },
         "catching": {
-            "total": 46,
-            "successful": 28,
+            "total": 48,
+            "successful": 30,
             "failed": 18
         }
     },
     "opponents": {
         "batting": {
-            "total": 38,
-            "successful": 18,
+            "total": 39,
+            "successful": 19,
             "failed": 20
         },
         "pitching": {
@@ -34,6 +34,66 @@
         }
     },
     "challenge_log": [
+        {
+            "date": "2026-05-11",
+            "date_formatted": "May 11, 2026",
+            "challenger": "Will Smith",
+            "role": "catching",
+            "team": "dodgers",
+            "outcome": "overturned",
+            "result_desc": "Luis Arraez grounds out, shortstop Mookie Betts to first baseman Freddie Freeman.",
+            "batter": "Luis Arraez",
+            "pitcher": "Wyatt Mills",
+            "game_pk": 823953
+        },
+        {
+            "date": "2026-05-11",
+            "date_formatted": "May 11, 2026",
+            "challenger": "Miguel Rojas",
+            "role": "batting",
+            "team": "dodgers",
+            "outcome": "confirmed",
+            "result_desc": "Miguel Rojas grounds out, second baseman Luis Arraez to first baseman Casey Schmitt. Teoscar Hern\u00e1ndez to 2nd.",
+            "batter": "Miguel Rojas",
+            "pitcher": "Matt Gage",
+            "game_pk": 823953
+        },
+        {
+            "date": "2026-05-11",
+            "date_formatted": "May 11, 2026",
+            "challenger": "Will Smith",
+            "role": "catching",
+            "team": "dodgers",
+            "outcome": "overturned",
+            "result_desc": "Heliot Ramos doubles (11) on a ground ball to left fielder Teoscar Hern\u00e1ndez. Casey Schmitt scores. Rafael Devers scores.",
+            "batter": "Heliot Ramos",
+            "pitcher": "Roki Sasaki",
+            "game_pk": 823953
+        },
+        {
+            "date": "2026-05-11",
+            "date_formatted": "May 11, 2026",
+            "challenger": "Teoscar Hern\u00e1ndez",
+            "role": "batting",
+            "team": "dodgers",
+            "outcome": "overturned",
+            "result_desc": "Teoscar Hern\u00e1ndez walks.",
+            "batter": "Teoscar Hern\u00e1ndez",
+            "pitcher": "Trevor McDonald",
+            "game_pk": 823953
+        },
+        {
+            "date": "2026-05-11",
+            "date_formatted": "May 11, 2026",
+            "challenger": "Matt Chapman",
+            "role": "batting",
+            "team": "opponents",
+            "outcome": "overturned",
+            "result_desc": "Matt Chapman strikes out swinging.",
+            "batter": "Matt Chapman",
+            "pitcher": "Roki Sasaki",
+            "game_pk": 823953
+        },
         {
             "date": "2026-05-10",
             "date_formatted": "May 10, 2026",
@@ -97,18 +157,6 @@
         {
             "date": "2026-05-08",
             "date_formatted": "May 8, 2026",
-            "challenger": "Will Smith",
-            "role": "catching",
-            "team": "dodgers",
-            "outcome": "overturned",
-            "result_desc": "Mauricio Dub\u00f3n singles on a line drive to center fielder Andy Pages. Michael Harris II to 2nd.",
-            "batter": "Mauricio Dub\u00f3n",
-            "pitcher": "Kyle Hurt",
-            "game_pk": 823957
-        },
-        {
-            "date": "2026-05-08",
-            "date_formatted": "May 8, 2026",
             "challenger": "Drake Baldwin",
             "role": "catching",
             "team": "opponents",
@@ -116,6 +164,18 @@
             "result_desc": "Max Muncy strikes out swinging.",
             "batter": "Max Muncy",
             "pitcher": "Chris Sale",
+            "game_pk": 823957
+        },
+        {
+            "date": "2026-05-08",
+            "date_formatted": "May 8, 2026",
+            "challenger": "Will Smith",
+            "role": "catching",
+            "team": "dodgers",
+            "outcome": "overturned",
+            "result_desc": "Mauricio Dub\u00f3n singles on a line drive to center fielder Andy Pages. Michael Harris II to 2nd.",
+            "batter": "Mauricio Dub\u00f3n",
+            "pitcher": "Kyle Hurt",
             "game_pk": 823957
         },
         {
@@ -145,18 +205,6 @@
         {
             "date": "2026-05-05",
             "date_formatted": "May 5, 2026",
-            "challenger": "Will Smith",
-            "role": "catching",
-            "team": "dodgers",
-            "outcome": "overturned",
-            "result_desc": "Jose Altuve grounds out, second baseman Alex Freeland to first baseman Freddie Freeman.",
-            "batter": "Jose Altuve",
-            "pitcher": "Shohei Ohtani",
-            "game_pk": 824200
-        },
-        {
-            "date": "2026-05-05",
-            "date_formatted": "May 5, 2026",
             "challenger": "Miguel Rojas",
             "role": "batting",
             "team": "dodgers",
@@ -164,6 +212,18 @@
             "result_desc": "Miguel Rojas pops out to first baseman Isaac Paredes.",
             "batter": "Miguel Rojas",
             "pitcher": "Bryan King",
+            "game_pk": 824200
+        },
+        {
+            "date": "2026-05-05",
+            "date_formatted": "May 5, 2026",
+            "challenger": "Will Smith",
+            "role": "catching",
+            "team": "dodgers",
+            "outcome": "overturned",
+            "result_desc": "Jose Altuve grounds out, second baseman Alex Freeland to first baseman Freddie Freeman.",
+            "batter": "Jose Altuve",
+            "pitcher": "Shohei Ohtani",
             "game_pk": 824200
         },
         {
@@ -213,66 +273,6 @@
             "batter": "Alec Burleson",
             "pitcher": "Will Klein",
             "game_pk": 823065
-        },
-        {
-            "date": "2026-05-03",
-            "date_formatted": "May 3, 2026",
-            "challenger": "Dalton Rushing",
-            "role": "catching",
-            "team": "dodgers",
-            "outcome": "confirmed",
-            "result_desc": "Jos\u00e9 Ferm\u00edn pops out to third baseman Max Muncy.",
-            "batter": "Jos\u00e9 Ferm\u00edn",
-            "pitcher": "Justin Wrobleski",
-            "game_pk": 823065
-        },
-        {
-            "date": "2026-05-02",
-            "date_formatted": "May 2, 2026",
-            "challenger": "Iv\u00e1n Herrera",
-            "role": "catching",
-            "team": "opponents",
-            "outcome": "confirmed",
-            "result_desc": "Kyle Tucker singles on a ground ball to shortstop Masyn Winn.",
-            "batter": "Kyle Tucker",
-            "pitcher": "Riley O'Brien",
-            "game_pk": 823067
-        },
-        {
-            "date": "2026-05-02",
-            "date_formatted": "May 2, 2026",
-            "challenger": "Iv\u00e1n Herrera",
-            "role": "catching",
-            "team": "opponents",
-            "outcome": "overturned",
-            "result_desc": "Freddie Freeman strikes out swinging.",
-            "batter": "Freddie Freeman",
-            "pitcher": "Riley O'Brien",
-            "game_pk": 823067
-        },
-        {
-            "date": "2026-05-01",
-            "date_formatted": "May 1, 2026",
-            "challenger": "Pedro Pag\u00e9s",
-            "role": "catching",
-            "team": "opponents",
-            "outcome": "overturned",
-            "result_desc": "Teoscar Hern\u00e1ndez walks. Freddie Freeman to 3rd. Will Smith to 2nd.",
-            "batter": "Teoscar Hern\u00e1ndez",
-            "pitcher": "Matthew Liberatore",
-            "game_pk": 823066
-        },
-        {
-            "date": "2026-05-01",
-            "date_formatted": "May 1, 2026",
-            "challenger": "Will Smith",
-            "role": "catching",
-            "team": "dodgers",
-            "outcome": "overturned",
-            "result_desc": "Iv\u00e1n Herrera singles on a ground ball to left fielder Teoscar Hern\u00e1ndez.",
-            "batter": "Iv\u00e1n Herrera",
-            "pitcher": "Emmet Sheehan",
-            "game_pk": 823066
         }
     ]
 }

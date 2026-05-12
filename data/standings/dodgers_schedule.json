@@ -1,13 +1,5 @@
 [
     {
-        "date":"Apr 29",
-        "opp_name":"Miami Marlins",
-        "home_away":"home",
-        "result":"loss",
-        "placement":"last",
-        "game_start":"2-3"
-    },
-    {
         "date":"May 1",
         "opp_name":"St. Louis Cardinals",
         "home_away":"away",
@@ -83,9 +75,9 @@
         "date":"May 11",
         "opp_name":"San Francisco Giants",
         "home_away":"home",
-        "result":"--",
-        "placement":"next",
-        "game_start":"7:10 PM"
+        "result":"loss",
+        "placement":"last",
+        "game_start":"3-9"
     },
     {
         "date":"May 12",
@@ -158,5 +150,13 @@
         "result":"--",
         "placement":"next",
         "game_start":"5:40 PM"
+    },
+    {
+        "date":"May 22",
+        "opp_name":"Milwaukee Brewers",
+        "home_away":"away",
+        "result":"--",
+        "placement":"next",
+        "game_start":"4:40 PM"
     }
 ]
