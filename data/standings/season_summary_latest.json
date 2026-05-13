@@ -116,7 +116,7 @@
         "stat":"ops",
         "value":".772",
         "category":"batting",
-        "context_value":"3rd",
+        "context_value":"2nd",
         "context_value_label":"League rank"
     },
     {
@@ -148,7 +148,7 @@
         "stat":"strikeouts",
         "value":"374",
         "category":"pitching",
-        "context_value":"7th",
+        "context_value":"8th",
         "context_value_label":"League rank"
     },
     {
@@ -164,7 +164,7 @@
         "stat":"era",
         "value":"3.48",
         "category":"pitching",
-        "context_value":"4th",
+        "context_value":"5th",
         "context_value_label":"League rank"
     },
     {
@@ -194,7 +194,7 @@
     {
         "stat_label":"Last updated",
         "stat":"update_time",
-        "value":"May 13, 2026, 9:00 AM PT",
+        "value":"May 13, 2026, 4:32 PM PT",
         "category":"summary",
         "context_value":"",
         "context_value_label":""
