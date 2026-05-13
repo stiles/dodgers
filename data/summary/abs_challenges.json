@@ -1,8 +1,8 @@
 {
     "dodgers": {
         "batting": {
-            "total": 34,
-            "successful": 20,
+            "total": 35,
+            "successful": 21,
             "failed": 14
         },
         "pitching": {
@@ -18,8 +18,8 @@
     },
     "opponents": {
         "batting": {
-            "total": 39,
-            "successful": 19,
+            "total": 40,
+            "successful": 20,
             "failed": 20
         },
         "pitching": {
@@ -28,12 +28,60 @@
             "failed": 2
         },
         "catching": {
-            "total": 59,
-            "successful": 36,
-            "failed": 23
+            "total": 61,
+            "successful": 37,
+            "failed": 24
         }
     },
     "challenge_log": [
+        {
+            "date": "2026-05-12",
+            "date_formatted": "May 12, 2026",
+            "challenger": "Eric Haase",
+            "role": "catching",
+            "team": "opponents",
+            "outcome": "overturned",
+            "result_desc": "Shohei Ohtani walks.",
+            "batter": "Shohei Ohtani",
+            "pitcher": "Adrian Houser",
+            "game_pk": 823951
+        },
+        {
+            "date": "2026-05-12",
+            "date_formatted": "May 12, 2026",
+            "challenger": "Eric Haase",
+            "role": "catching",
+            "team": "opponents",
+            "outcome": "confirmed",
+            "result_desc": "Max Muncy flies out sharply to right fielder Jung Hoo Lee.",
+            "batter": "Max Muncy",
+            "pitcher": "Adrian Houser",
+            "game_pk": 823951
+        },
+        {
+            "date": "2026-05-12",
+            "date_formatted": "May 12, 2026",
+            "challenger": "Jung Hoo Lee",
+            "role": "batting",
+            "team": "opponents",
+            "outcome": "overturned",
+            "result_desc": "Jung Hoo Lee grounds out, shortstop Mookie Betts to first baseman Freddie Freeman.",
+            "batter": "Jung Hoo Lee",
+            "pitcher": "Yoshinobu Yamamoto",
+            "game_pk": 823951
+        },
+        {
+            "date": "2026-05-12",
+            "date_formatted": "May 12, 2026",
+            "challenger": "Andy Pages",
+            "role": "batting",
+            "team": "dodgers",
+            "outcome": "overturned",
+            "result_desc": "Andy Pages strikes out swinging.",
+            "batter": "Andy Pages",
+            "pitcher": "Adrian Houser",
+            "game_pk": 823951
+        },
         {
             "date": "2026-05-11",
             "date_formatted": "May 11, 2026",
@@ -97,30 +145,6 @@
         {
             "date": "2026-05-10",
             "date_formatted": "May 10, 2026",
-            "challenger": "Alex Call",
-            "role": "batting",
-            "team": "dodgers",
-            "outcome": "confirmed",
-            "result_desc": "Alex Call strikes out on a foul tip.",
-            "batter": "Alex Call",
-            "pitcher": "Tyler Kinley",
-            "game_pk": 823954
-        },
-        {
-            "date": "2026-05-10",
-            "date_formatted": "May 10, 2026",
-            "challenger": "Alex Call",
-            "role": "batting",
-            "team": "dodgers",
-            "outcome": "overturned",
-            "result_desc": "Alex Call strikes out on a foul tip.",
-            "batter": "Alex Call",
-            "pitcher": "Tyler Kinley",
-            "game_pk": 823954
-        },
-        {
-            "date": "2026-05-10",
-            "date_formatted": "May 10, 2026",
             "challenger": "Sean Murphy",
             "role": "catching",
             "team": "opponents",
@@ -143,6 +167,30 @@
             "game_pk": 823954
         },
         {
+            "date": "2026-05-10",
+            "date_formatted": "May 10, 2026",
+            "challenger": "Alex Call",
+            "role": "batting",
+            "team": "dodgers",
+            "outcome": "overturned",
+            "result_desc": "Alex Call strikes out on a foul tip.",
+            "batter": "Alex Call",
+            "pitcher": "Tyler Kinley",
+            "game_pk": 823954
+        },
+        {
+            "date": "2026-05-10",
+            "date_formatted": "May 10, 2026",
+            "challenger": "Alex Call",
+            "role": "batting",
+            "team": "dodgers",
+            "outcome": "confirmed",
+            "result_desc": "Alex Call strikes out on a foul tip.",
+            "batter": "Alex Call",
+            "pitcher": "Tyler Kinley",
+            "game_pk": 823954
+        },
+        {
             "date": "2026-05-09",
             "date_formatted": "May 9, 2026",
             "challenger": "Sean Murphy",
@@ -157,18 +205,6 @@
         {
             "date": "2026-05-08",
             "date_formatted": "May 8, 2026",
-            "challenger": "Drake Baldwin",
-            "role": "catching",
-            "team": "opponents",
-            "outcome": "overturned",
-            "result_desc": "Max Muncy strikes out swinging.",
-            "batter": "Max Muncy",
-            "pitcher": "Chris Sale",
-            "game_pk": 823957
-        },
-        {
-            "date": "2026-05-08",
-            "date_formatted": "May 8, 2026",
             "challenger": "Will Smith",
             "role": "catching",
             "team": "dodgers",
@@ -176,6 +212,18 @@
             "result_desc": "Mauricio Dub\u00f3n singles on a line drive to center fielder Andy Pages. Michael Harris II to 2nd.",
             "batter": "Mauricio Dub\u00f3n",
             "pitcher": "Kyle Hurt",
+            "game_pk": 823957
+        },
+        {
+            "date": "2026-05-08",
+            "date_formatted": "May 8, 2026",
+            "challenger": "Drake Baldwin",
+            "role": "catching",
+            "team": "opponents",
+            "outcome": "overturned",
+            "result_desc": "Max Muncy strikes out swinging.",
+            "batter": "Max Muncy",
+            "pitcher": "Chris Sale",
             "game_pk": 823957
         },
         {
@@ -225,54 +273,6 @@
             "batter": "Jose Altuve",
             "pitcher": "Shohei Ohtani",
             "game_pk": 824200
-        },
-        {
-            "date": "2026-05-04",
-            "date_formatted": "May 4, 2026",
-            "challenger": "Isaac Paredes",
-            "role": "batting",
-            "team": "opponents",
-            "outcome": "overturned",
-            "result_desc": "Isaac Paredes singles on a line drive to right fielder Kyle Tucker.",
-            "batter": "Isaac Paredes",
-            "pitcher": "Yoshinobu Yamamoto",
-            "game_pk": 824201
-        },
-        {
-            "date": "2026-05-04",
-            "date_formatted": "May 4, 2026",
-            "challenger": "Christian V\u00e1zquez",
-            "role": "catching",
-            "team": "opponents",
-            "outcome": "confirmed",
-            "result_desc": "Teoscar Hern\u00e1ndez called out on strikes.",
-            "batter": "Teoscar Hern\u00e1ndez",
-            "pitcher": "Ryan Weiss",
-            "game_pk": 824201
-        },
-        {
-            "date": "2026-05-03",
-            "date_formatted": "May 3, 2026",
-            "challenger": "Pedro Pag\u00e9s",
-            "role": "catching",
-            "team": "opponents",
-            "outcome": "overturned",
-            "result_desc": "Miguel Rojas grounds out, shortstop Masyn Winn to first baseman Alec Burleson. Andy Pages to 3rd.",
-            "batter": "Miguel Rojas",
-            "pitcher": "Jared Shuster",
-            "game_pk": 823065
-        },
-        {
-            "date": "2026-05-03",
-            "date_formatted": "May 3, 2026",
-            "challenger": "Alec Burleson",
-            "role": "batting",
-            "team": "opponents",
-            "outcome": "confirmed",
-            "result_desc": "Alec Burleson singles on a line drive to center fielder Andy Pages. Jordan Walker scores.",
-            "batter": "Alec Burleson",
-            "pitcher": "Will Klein",
-            "game_pk": 823065
         }
     ]
 }

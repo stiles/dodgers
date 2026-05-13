@@ -1,17 +1,17 @@
 {
     "season_summary": {
-        "correct_strikes_pct": 92.36641221374046,
-        "incorrect_strikes_pct": 7.63358778625954,
-        "total_called_strikes": 1179,
-        "bad_calls_count": 90
+        "correct_strikes_pct": 92.13576158940397,
+        "incorrect_strikes_pct": 7.86423841059603,
+        "total_called_strikes": 1208,
+        "bad_calls_count": 95
     },
     "last_game_summary": {
-        "date": "May 11, 2026",
-        "correct_strikes_pct": 90.47619047619048,
-        "incorrect_strikes_pct": 9.523809523809518,
-        "total_called_strikes": 21,
-        "bad_calls_count": 2,
-        "home_plate_umpire": "Ryan Blakney"
+        "date": "May 12, 2026",
+        "correct_strikes_pct": 82.75862068965517,
+        "incorrect_strikes_pct": 17.241379310344826,
+        "total_called_strikes": 29,
+        "bad_calls_count": 5,
+        "home_plate_umpire": "Brian Walsh"
     },
     "worst_calls_of_season": [
         {
@@ -56,25 +56,25 @@
         }
     ],
     "pitching_season_summary": {
-        "correct_balls_pct": 95.66591422121896,
-        "incorrect_balls_pct": 4.334085778781045,
-        "total_called_balls": 2215,
-        "bad_calls_count": 96
+        "correct_balls_pct": 95.69844789356985,
+        "incorrect_balls_pct": 4.301552106430151,
+        "total_called_balls": 2255,
+        "bad_calls_count": 97
     },
     "pitching_last_game_summary": {
-        "date": "May 11, 2026",
-        "correct_balls_pct": 93.54838709677419,
-        "incorrect_balls_pct": 6.451612903225808,
-        "total_called_balls": 62,
-        "bad_calls_count": 4
+        "date": "May 12, 2026",
+        "correct_balls_pct": 97.5,
+        "incorrect_balls_pct": 2.5,
+        "total_called_balls": 40,
+        "bad_calls_count": 1
     },
     "pitching_worst_calls_of_season": [],
     "abs_challenges": {
         "dodgers": {
             "batting": {
-                "total": 15,
+                "total": 16,
                 "successful": 5,
-                "failed": 10
+                "failed": 11
             },
             "pitching": {
                 "total": 0,
@@ -105,6 +105,18 @@
             }
         },
         "challenge_log": [
+            {
+                "date": "2026-05-12",
+                "date_formatted": "May 12, 2026",
+                "challenger": "Teoscar Hern\u00e1ndez",
+                "role": "batting",
+                "team": "dodgers",
+                "outcome": "confirmed",
+                "result_desc": "Teoscar Hern\u00e1ndez called out on strikes.",
+                "batter": "Teoscar Hern\u00e1ndez",
+                "pitcher": "Caleb Kilian",
+                "game_pk": 823951
+            },
             {
                 "date": "2026-05-09",
                 "date_formatted": "May 9, 2026",
@@ -330,18 +342,6 @@
                 "outcome": "overturned",
                 "result_desc": "Dalton Rushing walks. Teoscar Hern\u00e1ndez to 3rd. Max Muncy to 2nd.",
                 "batter": "Dalton Rushing",
-                "pitcher": "Landen Roupp",
-                "game_pk": 823236
-            },
-            {
-                "date": "2026-04-21",
-                "date_formatted": "April 21, 2026",
-                "challenger": "Patrick Bailey",
-                "role": "catching",
-                "team": "opponents",
-                "outcome": "confirmed",
-                "result_desc": "Hyeseong Kim walks. Teoscar Hern\u00e1ndez scores. Max Muncy to 3rd. Dalton Rushing to 2nd.",
-                "batter": "Hyeseong Kim",
                 "pitcher": "Landen Roupp",
                 "game_pk": 823236
             }
