@@ -26,7 +26,7 @@
     {
         "stat_label":"Games up\/back",
         "stat":"games_up_back",
-        "value":0.5,
+        "value":0,
         "category":"standings",
         "context_value":"2nd",
         "context_value_label":"Division rank"
@@ -36,7 +36,7 @@
         "stat":"fielding_pct",
         "value":".990",
         "category":"standings",
-        "context_value":"4th",
+        "context_value":"3rd",
         "context_value_label":"League rank"
     },
     {
@@ -84,7 +84,7 @@
         "stat":"home_runs",
         "value":57,
         "category":"batting",
-        "context_value":"3rd",
+        "context_value":"4th",
         "context_value_label":"League rank"
     },
     {
@@ -124,7 +124,7 @@
         "stat":"stolen_bases",
         "value":21,
         "category":"batting",
-        "context_value":"21st",
+        "context_value":"22nd",
         "context_value_label":"League rank"
     },
     {
@@ -148,7 +148,7 @@
         "stat":"strikeouts",
         "value":"384",
         "category":"pitching",
-        "context_value":"7th",
+        "context_value":"8th",
         "context_value_label":"League rank"
     },
     {
@@ -164,7 +164,7 @@
         "stat":"era",
         "value":"3.40",
         "category":"pitching",
-        "context_value":"3rd",
+        "context_value":"4th",
         "context_value_label":"League rank"
     },
     {
@@ -194,7 +194,7 @@
     {
         "stat_label":"Last updated",
         "stat":"update_time",
-        "value":"May 14, 2026, 8:55 AM PT",
+        "value":"May 14, 2026, 4:27 PM PT",
         "category":"summary",
         "context_value":"",
         "context_value_label":""
