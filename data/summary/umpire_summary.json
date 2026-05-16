@@ -1,17 +1,17 @@
 {
     "season_summary": {
-        "correct_strikes_pct": 91.7401764234162,
-        "incorrect_strikes_pct": 8.259823576583798,
-        "total_called_strikes": 1247,
-        "bad_calls_count": 103
+        "correct_strikes_pct": 91.73228346456693,
+        "incorrect_strikes_pct": 8.267716535433067,
+        "total_called_strikes": 1270,
+        "bad_calls_count": 105
     },
     "last_game_summary": {
-        "date": "May 14, 2026",
-        "correct_strikes_pct": 72.0,
-        "incorrect_strikes_pct": 28.0,
-        "total_called_strikes": 25,
-        "bad_calls_count": 7,
-        "home_plate_umpire": "Marvin Hudson"
+        "date": "May 15, 2026",
+        "correct_strikes_pct": 91.30434782608695,
+        "incorrect_strikes_pct": 8.695652173913047,
+        "total_called_strikes": 23,
+        "bad_calls_count": 2,
+        "home_plate_umpire": "Jim Wolf"
     },
     "worst_calls_of_season": [
         {
@@ -56,17 +56,17 @@
         }
     ],
     "pitching_season_summary": {
-        "correct_balls_pct": 95.73560767590618,
-        "incorrect_balls_pct": 4.264392324093819,
-        "total_called_balls": 2345,
-        "bad_calls_count": 100
+        "correct_balls_pct": 95.78815679733111,
+        "incorrect_balls_pct": 4.211843202668888,
+        "total_called_balls": 2398,
+        "bad_calls_count": 101
     },
     "pitching_last_game_summary": {
-        "date": "May 14, 2026",
-        "correct_balls_pct": 95.91836734693877,
-        "incorrect_balls_pct": 4.081632653061234,
-        "total_called_balls": 49,
-        "bad_calls_count": 2
+        "date": "May 15, 2026",
+        "correct_balls_pct": 98.11320754716981,
+        "incorrect_balls_pct": 1.8867924528301927,
+        "total_called_balls": 53,
+        "bad_calls_count": 1
     },
     "pitching_worst_calls_of_season": [],
     "abs_challenges": {
@@ -99,12 +99,24 @@
                 "failed": 0
             },
             "catching": {
-                "total": 16,
-                "successful": 13,
+                "total": 17,
+                "successful": 14,
                 "failed": 3
             }
         },
         "challenge_log": [
+            {
+                "date": "2026-05-15",
+                "date_formatted": "May 15, 2026",
+                "challenger": "Logan O'Hoppe",
+                "role": "catching",
+                "team": "opponents",
+                "outcome": "overturned",
+                "result_desc": "Andy Pages called out on strikes.",
+                "batter": "Andy Pages",
+                "pitcher": "Jack Kochanowicz",
+                "game_pk": 824037
+            },
             {
                 "date": "2026-05-14",
                 "date_formatted": "May 14, 2026",
@@ -331,18 +343,6 @@
                 "result_desc": "Alex Freeland walks.",
                 "batter": "Alex Freeland",
                 "pitcher": "Logan Webb",
-                "game_pk": 823233
-            },
-            {
-                "date": "2026-04-23",
-                "date_formatted": "April 23, 2026",
-                "challenger": "Patrick Bailey",
-                "role": "catching",
-                "team": "opponents",
-                "outcome": "overturned",
-                "result_desc": "Kyle Tucker called out on strikes.",
-                "batter": "Kyle Tucker",
-                "pitcher": "Blade Tidwell",
                 "game_pk": 823233
             }
         ]

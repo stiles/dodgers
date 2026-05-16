@@ -1,28 +1,28 @@
 stat_label,stat,value,category,context_value,context_value_label
-Wins,wins,26,standings,29,This point last season
-Losses,losses,18,standings,15,This point last season
-Win percentage,win_pct,59%,standings,66%,This point last season
+Wins,wins,27,standings,29,This point last season
+Losses,losses,18,standings,16,This point last season
+Win percentage,win_pct,60%,standings,64%,This point last season
 Games up/back,games_up_back,0.5,standings,1st,Division rank
 Fielding percentage,fielding_pct,.990,standings,3rd,League rank
 Errors,errors,15,standings,3rd,League rank
-Runs,runs,217,standings,6th,League rank
-Runs against,runs_against,151,standings,186,This point last season
-Run differential,run_differential,66,standings,71,This point last season
-Batting average,batting_average,.263,batting,.253,Last decade average
-Home runs,home_runs,58,batting,3rd,League rank
-Home runs/game,home_runs_game,1.32,batting,1.42,Last decade average
-On-base percentage,on_base_pct,.342,batting,1st,League rank
-Slugging percentage,slugging_pct,.433,batting,2nd,League rank
-OPS,ops,.775,batting,2nd,League rank
-Stolen bases,stolen_bases,21,batting,22nd,League rank
-Stolen bases/game,stolen_bases_game,0.48,batting,0.84,Rate all last season
-Doubles,doubles,72,batting,10th,League rank
-Strikeouts,strikeouts,394,pitching,5th,League rank
-Walks,walks,125,pitching,29th,League rank
-ERA,era,3.36,pitching,4th,League rank
-WHIP,whip,1.12,pitching,1st,League rank
-Batting average against,avg_against,.216,pitching,2nd,League rank
-K/BB ratio,k_bb_ratio,3.15,pitching,3rd,League rank
-Last updated,update_time,"May 15, 2026, 4:28 PM PT",summary,,
-Team summary,summary,"<span class='highlight'>LOS ANGELES</span> <span class='updated'>(May 15)</span> — The Dodgers have compiled a <span class='highlight'>26-18</span> record in the 2026 regular season, a <span class='highlight'>59%</span> winning percentage. The last game was a <span class='highlight'>5-2</span> home <span class='highlight'>win</span> against the <span class='highlight'>San Francisco Giants</span>. The team next faces the <span class='highlight'>Los Angeles Angels</span> on Friday at 6:38 p.m. PDT at <span class='highlight'>Angel Stadium</span>.",summary,,
+Runs,runs,223,standings,6th,League rank
+Runs against,runs_against,151,standings,192,This point last season
+Run differential,run_differential,72,standings,67,This point last season
+Batting average,batting_average,.262,batting,.253,Last decade average
+Home runs,home_runs,61,batting,3rd,League rank
+Home runs/game,home_runs_game,1.36,batting,1.42,Last decade average
+On-base percentage,on_base_pct,.341,batting,2nd,League rank
+Slugging percentage,slugging_pct,.434,batting,2nd,League rank
+OPS,ops,.775,batting,1st,League rank
+Stolen bases,stolen_bases,21,batting,23rd,League rank
+Stolen bases/game,stolen_bases_game,0.47,batting,0.84,Rate all last season
+Doubles,doubles,73,batting,11th,League rank
+Strikeouts,strikeouts,405,pitching,5th,League rank
+Walks,walks,129,pitching,29th,League rank
+ERA,era,3.29,pitching,3rd,League rank
+WHIP,whip,1.11,pitching,1st,League rank
+Batting average against,avg_against,.213,pitching,2nd,League rank
+K/BB ratio,k_bb_ratio,3.14,pitching,3rd,League rank
+Last updated,update_time,"May 15, 2026, 9:32 PM PT",summary,,
+Team summary,summary,"<span class='highlight'>LOS ANGELES</span> <span class='updated'>(May 15)</span> — The Dodgers have compiled a <span class='highlight'>27-18</span> record in the 2026 regular season, a <span class='highlight'>60%</span> winning percentage. The last game was a <span class='highlight'>6-0</span> away <span class='highlight'>win</span> against the <span class='highlight'>Los Angeles Angels</span>. The team next faces the <span class='highlight'>Los Angeles Angels</span> on Saturday at 6:38 p.m. PDT at <span class='highlight'>Angel Stadium</span>.",summary,,
 Last game result,last_game_result,win,summary,,
