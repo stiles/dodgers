@@ -47,7 +47,7 @@ twitter:
               <span class="news-ticker__text">{{ article.title }}</span>
               <i class="fa-solid fa-arrow-up-right-from-square news-ticker__icon"></i>
             </a>
-            <!-- <span class="news-ticker__sep" aria-hidden="true"></span> -->
+            <span class="news-ticker__sep" aria-hidden="true"></span>
           {% endfor %}
         {% endif %}
         {% assign ticker_transactions = site.data.roster.dodgers_transactions_current | slice: 0, 5 %}
@@ -57,7 +57,7 @@ twitter:
             <span class="news-ticker__source">{{ transaction.date | date: "%b %-d" }}</span>
             <span class="news-ticker__text">{{ transaction.transaction }}</span>
           </span>
-          <!-- <span class="news-ticker__sep" aria-hidden="true"></span> -->
+          <span class="news-ticker__sep" aria-hidden="true"></span>
         {% endfor %}
       {% endfor %}
     </div>
