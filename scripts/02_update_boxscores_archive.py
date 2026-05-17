@@ -72,6 +72,12 @@ def create_session_with_retries():
     return session
 
 
+USER_AGENT = (
+    "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) "
+    "AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36"
+)
+
+
 def fetch_text(url: str, max_retries: int = 3, base_delay: float = 1.0) -> Optional[str]:
     """
     Fetch text from URL with retry logic and exponential backoff.
@@ -85,10 +91,11 @@ def fetch_text(url: str, max_retries: int = 3, base_delay: float = 1.0) -> Optio
         Response text or None if all retries failed
     """
     session = create_session_with_retries()
+    headers = {"User-Agent": USER_AGENT, "Accept": "text/html,application/xhtml+xml"}
     
     for attempt in range(max_retries + 1):
         try:
-            response = session.get(url, timeout=30)
+            response = session.get(url, timeout=30, headers=headers)
             response.raise_for_status()
             return response.text
             
@@ -389,8 +396,18 @@ def main() -> None:
     if html is None:
         logging.error("Failed to fetch gamelog data from Baseball Savant. Skipping boxscore update.")
         return
-        
-    table = find_gamelog_table(html)
+
+    try:
+        table = find_gamelog_table(html)
+    except RuntimeError as exc:
+        logging.warning(
+            "Gamelog table not found on Baseball Savant (response size: %d bytes). "
+            "Skipping boxscore update; will retry on next run. Detail: %s",
+            len(html),
+            exc,
+        )
+        return
+
     logs_df = parse_game_log_rows(table)
 
     archive_df = load_archive(args.profile)
