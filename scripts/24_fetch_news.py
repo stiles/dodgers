@@ -339,10 +339,7 @@ if __name__ == '__main__':
     la_tz = ZoneInfo("America/Los_Angeles")
     today_str = datetime.now(la_tz).strftime('%Y-%m-%d')
 
-    # Check if we should post (unless forced)
-    if not args.force and not should_post_news():
-        exit()
-
+    # Always fetch articles so the site has fresh data, regardless of tweet timing
     articles = []
     
     latimes_news = fetch_latimes_news()
@@ -361,18 +358,25 @@ if __name__ == '__main__':
     if katie_woo_news:
         articles.append(katie_woo_news)
 
-    if articles:
-        # Save to JSON file if requested
-        if args.save_json:
-            save_news_to_json(articles)
-        
+    if not articles:
+        logging.info("No articles found.")
+        exit()
+
+    # Save JSON every run so the homepage ticker stays fresh
+    if args.save_json:
+        save_news_to_json(articles)
+
+    # Tweet posting is rate-limited separately (once/day during prime hours)
+    if args.post_tweet:
+        if args.force or should_post_news():
+            tweet_text = format_news_tweet(articles)
+            print("--- Generated Tweet ---")
+            print(tweet_text)
+            post_tweet(tweet_text, tweet_type)
+        else:
+            logging.info("Skipping tweet (already posted today or outside prime hours). JSON still saved.")
+    else:
         tweet_text = format_news_tweet(articles)
         print("--- Generated Tweet ---")
         print(tweet_text)
-
-        if args.post_tweet:
-            post_tweet(tweet_text, tweet_type)
-        else:
-            logging.info("Dry run: --post-tweet flag not provided. Not posting to Twitter.")
-    else:
-        logging.info("No articles found to tweet.") 
+        logging.info("Dry run: --post-tweet flag not provided. Not posting to Twitter.") 

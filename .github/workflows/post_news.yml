@@ -53,8 +53,16 @@ jobs:
 
       - name: Commit and push news data
         run: |
+          if [ ! -f _data/latest_news.json ]; then
+            echo "No news JSON file produced this run; skipping commit."
+            exit 0
+          fi
           git config --local user.email "github-actions[bot]@users.noreply.github.com"
           git config --local user.name "github-actions[bot]"
           git add _data/latest_news.json
-          git diff --staged --quiet || git commit -m "Update latest news data"
+          if git diff --staged --quiet; then
+            echo "News data unchanged; nothing to commit."
+            exit 0
+          fi
+          git commit -m "Update latest news data"
           git push 
