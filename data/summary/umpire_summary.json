@@ -1,17 +1,17 @@
 {
     "season_summary": {
-        "correct_strikes_pct": 91.73228346456693,
-        "incorrect_strikes_pct": 8.267716535433067,
-        "total_called_strikes": 1270,
-        "bad_calls_count": 105
+        "correct_strikes_pct": 91.73106646058733,
+        "incorrect_strikes_pct": 8.268933539412672,
+        "total_called_strikes": 1294,
+        "bad_calls_count": 107
     },
     "last_game_summary": {
-        "date": "May 15, 2026",
-        "correct_strikes_pct": 91.30434782608695,
-        "incorrect_strikes_pct": 8.695652173913047,
-        "total_called_strikes": 23,
+        "date": "May 16, 2026",
+        "correct_strikes_pct": 91.66666666666666,
+        "incorrect_strikes_pct": 8.333333333333343,
+        "total_called_strikes": 24,
         "bad_calls_count": 2,
-        "home_plate_umpire": "Jim Wolf"
+        "home_plate_umpire": "Scott Barry"
     },
     "worst_calls_of_season": [
         {
@@ -56,17 +56,17 @@
         }
     ],
     "pitching_season_summary": {
-        "correct_balls_pct": 95.78815679733111,
-        "incorrect_balls_pct": 4.211843202668888,
-        "total_called_balls": 2398,
-        "bad_calls_count": 101
+        "correct_balls_pct": 95.71778140293638,
+        "incorrect_balls_pct": 4.282218597063618,
+        "total_called_balls": 2452,
+        "bad_calls_count": 105
     },
     "pitching_last_game_summary": {
-        "date": "May 15, 2026",
-        "correct_balls_pct": 98.11320754716981,
-        "incorrect_balls_pct": 1.8867924528301927,
-        "total_called_balls": 53,
-        "bad_calls_count": 1
+        "date": "May 16, 2026",
+        "correct_balls_pct": 92.5925925925926,
+        "incorrect_balls_pct": 7.407407407407405,
+        "total_called_balls": 54,
+        "bad_calls_count": 4
     },
     "pitching_worst_calls_of_season": [],
     "abs_challenges": {
@@ -82,9 +82,9 @@
                 "failed": 0
             },
             "catching": {
-                "total": 7,
+                "total": 8,
                 "successful": 6,
-                "failed": 1
+                "failed": 2
             }
         },
         "opponents": {
@@ -99,12 +99,36 @@
                 "failed": 0
             },
             "catching": {
-                "total": 17,
+                "total": 18,
                 "successful": 14,
-                "failed": 3
+                "failed": 4
             }
         },
         "challenge_log": [
+            {
+                "date": "2026-05-16",
+                "date_formatted": "May 16, 2026",
+                "challenger": "Logan O'Hoppe",
+                "role": "catching",
+                "team": "opponents",
+                "outcome": "confirmed",
+                "result_desc": "Mookie Betts walks.",
+                "batter": "Mookie Betts",
+                "pitcher": "Jos\u00e9 Soriano",
+                "game_pk": 824038
+            },
+            {
+                "date": "2026-05-16",
+                "date_formatted": "May 16, 2026",
+                "challenger": "Will Smith",
+                "role": "catching",
+                "team": "dodgers",
+                "outcome": "confirmed",
+                "result_desc": "Jorge Soler walks.",
+                "batter": "Jorge Soler",
+                "pitcher": "Wyatt Mills",
+                "game_pk": 824038
+            },
             {
                 "date": "2026-05-15",
                 "date_formatted": "May 15, 2026",
@@ -320,30 +344,6 @@
                 "batter": "Shohei Ohtani",
                 "pitcher": "Ryan Rolison",
                 "game_pk": 823962
-            },
-            {
-                "date": "2026-04-24",
-                "date_formatted": "April 24, 2026",
-                "challenger": "Will Smith",
-                "role": "catching",
-                "team": "dodgers",
-                "outcome": "overturned",
-                "result_desc": "Ian Happ called out on strikes.",
-                "batter": "Ian Happ",
-                "pitcher": "Emmet Sheehan",
-                "game_pk": 823962
-            },
-            {
-                "date": "2026-04-23",
-                "date_formatted": "April 23, 2026",
-                "challenger": "Alex Freeland",
-                "role": "batting",
-                "team": "dodgers",
-                "outcome": "overturned",
-                "result_desc": "Alex Freeland walks.",
-                "batter": "Alex Freeland",
-                "pitcher": "Logan Webb",
-                "game_pk": 823233
             }
         ]
     }

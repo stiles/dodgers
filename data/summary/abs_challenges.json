@@ -18,9 +18,9 @@
     },
     "opponents": {
         "batting": {
-            "total": 41,
+            "total": 42,
             "successful": 20,
-            "failed": 21
+            "failed": 22
         },
         "pitching": {
             "total": 3,
@@ -34,6 +34,18 @@
         }
     },
     "challenge_log": [
+        {
+            "date": "2026-05-16",
+            "date_formatted": "May 16, 2026",
+            "challenger": "Nolan Schanuel",
+            "role": "batting",
+            "team": "opponents",
+            "outcome": "confirmed",
+            "result_desc": "Nolan Schanuel flies out to left fielder Teoscar Hern\u00e1ndez.",
+            "batter": "Nolan Schanuel",
+            "pitcher": "Justin Wrobleski",
+            "game_pk": 824038
+        },
         {
             "date": "2026-05-15",
             "date_formatted": "May 15, 2026",
@@ -261,18 +273,6 @@
             "batter": "Alex Call",
             "pitcher": "Bryce Elder",
             "game_pk": 823954
-        },
-        {
-            "date": "2026-05-09",
-            "date_formatted": "May 9, 2026",
-            "challenger": "Sean Murphy",
-            "role": "catching",
-            "team": "opponents",
-            "outcome": "overturned",
-            "result_desc": "Kyle Tucker grounds into a force out, second baseman Ozzie Albies to shortstop Jorge Mateo. Will Smith out at 2nd. Kyle Tucker to 1st.",
-            "batter": "Kyle Tucker",
-            "pitcher": "Spencer Strider",
-            "game_pk": 823955
         }
     ]
 }
