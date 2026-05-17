@@ -2511,6 +2511,225 @@ label {
   background-color: transparent;
 }
 
+// News ticker (home page)
+.news-ticker {
+  display: flex;
+  align-items: stretch;
+  width: 100%;
+  margin: 30px 0 40px 0;
+  background: #fff;
+  border: 1px solid #e8e8e8;
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.05);
+  font-family: 'Roboto', sans-serif;
+
+  @media (max-width: 767px) {
+    margin: 20px 0 30px 0;
+    border-radius: 6px;
+  }
+}
+
+.news-ticker__label {
+  flex-shrink: 0;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 0 16px;
+  background: c.$dodger-blue;
+  color: #fff;
+  font-family: 'Roboto Slab', serif;
+  font-size: 12px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 1.5px;
+  position: relative;
+
+  &::after {
+    content: '';
+    position: absolute;
+    right: -10px;
+    top: 0;
+    bottom: 0;
+    width: 10px;
+    background: c.$dodger-blue;
+    clip-path: polygon(0 0, 100% 50%, 0 100%);
+    z-index: 2;
+  }
+
+  i {
+    font-size: 11px;
+    animation: tickerPulse 1.8s ease-in-out infinite;
+  }
+
+  @media (max-width: 767px) {
+    padding: 0 12px;
+    font-size: 11px;
+    letter-spacing: 1px;
+
+    span {
+      display: none;
+    }
+
+    i {
+      font-size: 13px;
+    }
+  }
+}
+
+@keyframes tickerPulse {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.4; }
+}
+
+.news-ticker__viewport {
+  flex: 1;
+  overflow: hidden;
+  position: relative;
+  padding-left: 16px;
+
+  &::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    width: 40px;
+    background: linear-gradient(to right, rgba(255,255,255,0), #fff);
+    pointer-events: none;
+    z-index: 1;
+  }
+}
+
+.news-ticker__track {
+  display: inline-flex;
+  align-items: center;
+  white-space: nowrap;
+  animation: tickerScroll 90s linear infinite;
+  padding: 12px 0;
+
+  .news-ticker:hover & {
+    animation-play-state: paused;
+  }
+
+  @media (max-width: 767px) {
+    animation-duration: 60s;
+  }
+}
+
+@keyframes tickerScroll {
+  from { transform: translateX(0); }
+  to { transform: translateX(-50%); }
+}
+
+.news-ticker__item {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 14px;
+  color: #333;
+  text-decoration: none;
+  padding: 4px 0;
+
+  &--news:hover {
+    .news-ticker__text {
+      color: c.$dodger-blue;
+      text-decoration: underline;
+      text-decoration-thickness: 1.5px;
+      text-underline-offset: 3px;
+    }
+
+    .news-ticker__icon {
+      opacity: 1;
+      transform: translate(2px, -2px);
+    }
+  }
+
+  @media (max-width: 767px) {
+    gap: 8px;
+    font-size: 13px;
+  }
+}
+
+.news-ticker__tag {
+  display: inline-block;
+  font-size: 9px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  padding: 3px 7px;
+  border-radius: 3px;
+  line-height: 1;
+
+  &--news {
+    background: rgba(0, 90, 156, 0.1);
+    color: c.$dodger-blue;
+  }
+
+  &--move {
+    background: rgba(239, 62, 66, 0.1);
+    color: c.$dodger-red;
+  }
+}
+
+.news-ticker__source {
+  font-weight: 600;
+  font-size: 12px;
+  color: #888;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.news-ticker__text {
+  color: #222;
+  font-weight: 400;
+  transition: color 0.15s ease;
+}
+
+.news-ticker__icon {
+  font-size: 10px;
+  color: #aaa;
+  opacity: 0;
+  transition: opacity 0.15s ease, transform 0.15s ease;
+}
+
+.news-ticker__sep {
+  display: inline-block;
+  width: 4px;
+  height: 4px;
+  margin: 0 24px;
+  background: #ccc;
+  border-radius: 50%;
+  flex-shrink: 0;
+
+  @media (max-width: 767px) {
+    margin: 0 16px;
+  }
+}
+
+.news-ticker__more {
+  flex-shrink: 0;
+  display: flex;
+  align-items: center;
+  padding: 0 16px;
+  color: #888;
+  background: #f8f9fa;
+  border-left: 1px solid #e8e8e8;
+  text-decoration: none;
+  font-size: 12px;
+  transition: background 0.15s ease, color 0.15s ease;
+
+  &:hover {
+    background: c.$dodger-blue;
+    color: #fff;
+    text-decoration: none;
+  }
+
+  @media (max-width: 767px) {
+    padding: 0 12px;
+  }
+}
+
 // Transaction page styles
 .transactions-grid {
   display: grid;

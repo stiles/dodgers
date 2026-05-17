@@ -46,7 +46,15 @@ jobs:
           DODGERS_TWITTER_TOKEN_SECRET: ${{ secrets.DODGERS_TWITTER_TOKEN_SECRET }}
         run: |
           if [ "${{ github.event.inputs.force }}" = "true" ]; then
-            python scripts/24_fetch_news.py --post-tweet --force
+            python scripts/24_fetch_news.py --post-tweet --save-json --force
           else
-            python scripts/24_fetch_news.py --post-tweet
-          fi 
+            python scripts/24_fetch_news.py --post-tweet --save-json
+          fi
+
+      - name: Commit and push news data
+        run: |
+          git config --local user.email "github-actions[bot]@users.noreply.github.com"
+          git config --local user.name "github-actions[bot]"
+          git add _data/latest_news.json
+          git diff --staged --quiet || git commit -m "Update latest news data"
+          git push 

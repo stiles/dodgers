@@ -284,6 +284,30 @@ def format_news_tweet(articles):
             tweet_lines.append(f"- {article['source']}: {article['title']} {article['url']}")
     return "\n\n".join(tweet_lines)
 
+def save_news_to_json(articles, output_path='_data/latest_news.json'):
+    """Saves the latest news articles to a JSON file for Jekyll to read."""
+    la_tz = ZoneInfo("America/Los_Angeles")
+    fetched_at = datetime.now(la_tz).strftime('%Y-%m-%d %H:%M:%S %Z')
+    
+    # Take only the first 3 articles
+    latest_articles = articles[:3] if len(articles) > 3 else articles
+    
+    # Add fetched timestamp
+    news_data = {
+        'fetched_at': fetched_at,
+        'articles': latest_articles
+    }
+    
+    # Ensure directory exists
+    os.makedirs(os.path.dirname(output_path), exist_ok=True)
+    
+    # Write to file
+    with open(output_path, 'w') as f:
+        json.dump(news_data, f, indent=2)
+    
+    logging.info(f"Saved {len(latest_articles)} articles to {output_path}")
+    return output_path
+
 def should_post_news():
     """Determines if news should be posted based on time and whether it's been posted today."""
     la_tz = ZoneInfo("America/Los_Angeles")
@@ -308,6 +332,7 @@ if __name__ == '__main__':
     parser = argparse.ArgumentParser(description="Fetch Dodgers news and optionally post to Twitter.")
     parser.add_argument("--post-tweet", action="store_true", help="Post the news roundup to Twitter.")
     parser.add_argument("--force", action="store_true", help="Force posting regardless of time (still respects daily limit).")
+    parser.add_argument("--save-json", action="store_true", help="Save news to JSON file for Jekyll.")
     args = parser.parse_args()
 
     tweet_type = "news"
@@ -337,6 +362,10 @@ if __name__ == '__main__':
         articles.append(katie_woo_news)
 
     if articles:
+        # Save to JSON file if requested
+        if args.save_json:
+            save_news_to_json(articles)
+        
         tweet_text = format_news_tweet(articles)
         print("--- Generated Tweet ---")
         print(tweet_text)
