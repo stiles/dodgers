@@ -223,6 +223,59 @@ def fetch_mlb_news():
     story_data['source'] = 'MLB.com'
     return story_data
 
+def fetch_athletic_katie_woo_news():
+    """
+    Fetches the top story from Katie Woo's Athletic author page.
+    """
+    url = "https://www.nytimes.com/athletic/author/katie-woo/"
+    headers = {
+        'User-Agent': 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/91.0.4472.114 Safari/537.36'
+    }
+    try:
+        response = requests.get(url, headers=headers)
+        response.raise_for_status()
+    except requests.exceptions.RequestException as e:
+        print(f"Error fetching the URL: {e}")
+        return None
+
+    soup = BeautifulSoup(response.text, 'html.parser')
+
+    # Find the first article (top story in the featured section)
+    featured_section = soup.find('div', class_='Content_ImageTopContainer__Q_T1Y')
+    
+    if not featured_section:
+        print("Could not find featured story on Katie Woo's page.")
+        return None
+
+    story_data = {}
+
+    # Extract title
+    title_tag = featured_section.find('h4')
+    if title_tag:
+        story_data['title'] = title_tag.get_text(strip=True)
+    else:
+        story_data['title'] = None
+
+    # Extract description
+    description_tag = featured_section.find('p', class_='excerpt')
+    if description_tag:
+        story_data['description'] = description_tag.get_text(strip=True)
+    else:
+        story_data['description'] = None
+
+    # Extract URL - the featured section is wrapped in an <a> tag
+    parent_link = featured_section.find_parent('a', href=True)
+    if parent_link:
+        story_data['url'] = parent_link['href']
+        if not story_data['url'].startswith('http'):
+            story_data['url'] = f"https://www.nytimes.com{story_data['url']}"
+    else:
+        story_data['url'] = None
+
+    story_data['time'] = None
+    story_data['source'] = 'The Athletic (Katie Woo)'
+    return story_data
+
 def format_news_tweet(articles):
     """Formats a list of articles into a tweet."""
     tweet_lines = []
@@ -278,6 +331,10 @@ if __name__ == '__main__':
     mlb_news = fetch_mlb_news()
     if mlb_news:
         articles.append(mlb_news)
+    
+    katie_woo_news = fetch_athletic_katie_woo_news()
+    if katie_woo_news:
+        articles.append(katie_woo_news)
 
     if articles:
         tweet_text = format_news_tweet(articles)
