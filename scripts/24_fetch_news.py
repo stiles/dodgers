@@ -332,7 +332,7 @@ if __name__ == '__main__':
     parser = argparse.ArgumentParser(description="Fetch Dodgers news and optionally post to Twitter.")
     parser.add_argument("--post-tweet", action="store_true", help="Post the news roundup to Twitter.")
     parser.add_argument("--force", action="store_true", help="Force posting regardless of time (still respects daily limit).")
-    parser.add_argument("--save-json", action="store_true", help="Save news to JSON file for Jekyll.")
+    parser.add_argument("--no-save", action="store_true", help="Skip writing _data/latest_news.json (default: always save).")
     args = parser.parse_args()
 
     tweet_type = "news"
@@ -362,8 +362,8 @@ if __name__ == '__main__':
         logging.info("No articles found.")
         exit()
 
-    # Save JSON every run so the homepage ticker stays fresh
-    if args.save_json:
+    # Save JSON by default so the homepage ticker stays fresh on every run
+    if not args.no_save:
         save_news_to_json(articles)
 
     # Tweet posting is rate-limited separately (once/day during prime hours)

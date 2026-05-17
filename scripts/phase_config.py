@@ -32,6 +32,8 @@ PHASE_CONFIG = {
             "scripts/11_fetch_process_attendance.py",
             # Projection only during regular season
             "scripts/18_generate_projection.py",
+            # News for homepage ticker (no-op for tweet; JSON saved by default)
+            "scripts/24_fetch_news.py",
             # Summary aggregates
             "scripts/07_create_toplines_summary.py",
         ],
@@ -46,6 +48,8 @@ PHASE_CONFIG = {
             # Keep roster/transactions active
             "scripts/19_fetch_roster.py",
             "scripts/26_post_transactions.py",
+            # News for homepage ticker
+            "scripts/24_fetch_news.py",
             # Optionally refresh final regular season snapshots (low frequency)
             "scripts/00_fetch_league_standings.py",
             "scripts/07_create_toplines_summary.py",

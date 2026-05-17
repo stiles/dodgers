@@ -46,23 +46,10 @@ jobs:
           DODGERS_TWITTER_TOKEN_SECRET: ${{ secrets.DODGERS_TWITTER_TOKEN_SECRET }}
         run: |
           if [ "${{ github.event.inputs.force }}" = "true" ]; then
-            python scripts/24_fetch_news.py --post-tweet --save-json --force
+            python scripts/24_fetch_news.py --post-tweet --force
           else
-            python scripts/24_fetch_news.py --post-tweet --save-json
+            python scripts/24_fetch_news.py --post-tweet
           fi
-
-      - name: Commit and push news data
-        run: |
-          if [ ! -f _data/latest_news.json ]; then
-            echo "No news JSON file produced this run; skipping commit."
-            exit 0
-          fi
-          git config --local user.email "github-actions[bot]@users.noreply.github.com"
-          git config --local user.name "github-actions[bot]"
-          git add _data/latest_news.json
-          if git diff --staged --quiet; then
-            echo "News data unchanged; nothing to commit."
-            exit 0
-          fi
-          git commit -m "Update latest news data"
-          git push 
+      # Note: the homepage ticker's _data/latest_news.json is produced by
+      # fetch.yml during its data pipeline (see scripts/phase_config.py).
+      # This workflow only handles the rate-limited Twitter post. 
