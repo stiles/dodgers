@@ -1,17 +1,17 @@
 {
     "season_summary": {
-        "correct_strikes_pct": 91.73106646058733,
-        "incorrect_strikes_pct": 8.268933539412672,
-        "total_called_strikes": 1294,
-        "bad_calls_count": 107
+        "correct_strikes_pct": 91.8429003021148,
+        "incorrect_strikes_pct": 8.1570996978852,
+        "total_called_strikes": 1324,
+        "bad_calls_count": 108
     },
     "last_game_summary": {
-        "date": "May 16, 2026",
-        "correct_strikes_pct": 91.66666666666666,
-        "incorrect_strikes_pct": 8.333333333333343,
-        "total_called_strikes": 24,
-        "bad_calls_count": 2,
-        "home_plate_umpire": "Scott Barry"
+        "date": "May 17, 2026",
+        "correct_strikes_pct": 96.66666666666667,
+        "incorrect_strikes_pct": 3.3333333333333286,
+        "total_called_strikes": 30,
+        "bad_calls_count": 1,
+        "home_plate_umpire": "Alex MacKay"
     },
     "worst_calls_of_season": [
         {
@@ -56,17 +56,17 @@
         }
     ],
     "pitching_season_summary": {
-        "correct_balls_pct": 95.71778140293638,
-        "incorrect_balls_pct": 4.282218597063618,
-        "total_called_balls": 2452,
-        "bad_calls_count": 105
+        "correct_balls_pct": 95.73097060008054,
+        "incorrect_balls_pct": 4.269029399919461,
+        "total_called_balls": 2483,
+        "bad_calls_count": 106
     },
     "pitching_last_game_summary": {
-        "date": "May 16, 2026",
-        "correct_balls_pct": 92.5925925925926,
-        "incorrect_balls_pct": 7.407407407407405,
-        "total_called_balls": 54,
-        "bad_calls_count": 4
+        "date": "May 17, 2026",
+        "correct_balls_pct": 96.7741935483871,
+        "incorrect_balls_pct": 3.225806451612897,
+        "total_called_balls": 31,
+        "bad_calls_count": 1
     },
     "pitching_worst_calls_of_season": [],
     "abs_challenges": {
@@ -99,12 +99,24 @@
                 "failed": 0
             },
             "catching": {
-                "total": 18,
-                "successful": 14,
+                "total": 19,
+                "successful": 15,
                 "failed": 4
             }
         },
         "challenge_log": [
+            {
+                "date": "2026-05-17",
+                "date_formatted": "May 17, 2026",
+                "challenger": "Logan O'Hoppe",
+                "role": "catching",
+                "team": "opponents",
+                "outcome": "overturned",
+                "result_desc": "Shohei Ohtani called out on strikes.",
+                "batter": "Shohei Ohtani",
+                "pitcher": "Grayson Rodriguez",
+                "game_pk": 824034
+            },
             {
                 "date": "2026-05-16",
                 "date_formatted": "May 16, 2026",
@@ -332,18 +344,6 @@
                 "batter": "Kyle Tucker",
                 "pitcher": "Colin Rea",
                 "game_pk": 823960
-            },
-            {
-                "date": "2026-04-24",
-                "date_formatted": "April 24, 2026",
-                "challenger": "Carson Kelly",
-                "role": "catching",
-                "team": "opponents",
-                "outcome": "overturned",
-                "result_desc": "Shohei Ohtani called out on strikes.",
-                "batter": "Shohei Ohtani",
-                "pitcher": "Ryan Rolison",
-                "game_pk": 823962
             }
         ]
     }

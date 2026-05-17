@@ -28,12 +28,36 @@
             "failed": 2
         },
         "catching": {
-            "total": 63,
-            "successful": 38,
+            "total": 65,
+            "successful": 40,
             "failed": 25
         }
     },
     "challenge_log": [
+        {
+            "date": "2026-05-17",
+            "date_formatted": "May 17, 2026",
+            "challenger": "Logan O'Hoppe",
+            "role": "catching",
+            "team": "opponents",
+            "outcome": "overturned",
+            "result_desc": "Max Muncy strikes out on a foul tip.",
+            "batter": "Max Muncy",
+            "pitcher": "Ryan Johnson",
+            "game_pk": 824034
+        },
+        {
+            "date": "2026-05-17",
+            "date_formatted": "May 17, 2026",
+            "challenger": "Logan O'Hoppe",
+            "role": "catching",
+            "team": "opponents",
+            "outcome": "overturned",
+            "result_desc": "Freddie Freeman strikes out on a foul tip.",
+            "batter": "Freddie Freeman",
+            "pitcher": "Grayson Rodriguez",
+            "game_pk": 824034
+        },
         {
             "date": "2026-05-16",
             "date_formatted": "May 16, 2026",
@@ -124,21 +148,21 @@
             "challenger": "Eric Haase",
             "role": "catching",
             "team": "opponents",
-            "outcome": "overturned",
-            "result_desc": "Shohei Ohtani walks.",
-            "batter": "Shohei Ohtani",
+            "outcome": "confirmed",
+            "result_desc": "Max Muncy flies out sharply to right fielder Jung Hoo Lee.",
+            "batter": "Max Muncy",
             "pitcher": "Adrian Houser",
             "game_pk": 823951
         },
         {
             "date": "2026-05-12",
             "date_formatted": "May 12, 2026",
-            "challenger": "Eric Haase",
-            "role": "catching",
-            "team": "opponents",
-            "outcome": "confirmed",
-            "result_desc": "Max Muncy flies out sharply to right fielder Jung Hoo Lee.",
-            "batter": "Max Muncy",
+            "challenger": "Andy Pages",
+            "role": "batting",
+            "team": "dodgers",
+            "outcome": "overturned",
+            "result_desc": "Andy Pages strikes out swinging.",
+            "batter": "Andy Pages",
             "pitcher": "Adrian Houser",
             "game_pk": 823951
         },
@@ -157,50 +181,14 @@
         {
             "date": "2026-05-12",
             "date_formatted": "May 12, 2026",
-            "challenger": "Andy Pages",
-            "role": "batting",
-            "team": "dodgers",
-            "outcome": "overturned",
-            "result_desc": "Andy Pages strikes out swinging.",
-            "batter": "Andy Pages",
-            "pitcher": "Adrian Houser",
-            "game_pk": 823951
-        },
-        {
-            "date": "2026-05-11",
-            "date_formatted": "May 11, 2026",
-            "challenger": "Will Smith",
+            "challenger": "Eric Haase",
             "role": "catching",
-            "team": "dodgers",
-            "outcome": "overturned",
-            "result_desc": "Heliot Ramos doubles (11) on a ground ball to left fielder Teoscar Hern\u00e1ndez. Casey Schmitt scores. Rafael Devers scores.",
-            "batter": "Heliot Ramos",
-            "pitcher": "Roki Sasaki",
-            "game_pk": 823953
-        },
-        {
-            "date": "2026-05-11",
-            "date_formatted": "May 11, 2026",
-            "challenger": "Matt Chapman",
-            "role": "batting",
             "team": "opponents",
             "outcome": "overturned",
-            "result_desc": "Matt Chapman strikes out swinging.",
-            "batter": "Matt Chapman",
-            "pitcher": "Roki Sasaki",
-            "game_pk": 823953
-        },
-        {
-            "date": "2026-05-11",
-            "date_formatted": "May 11, 2026",
-            "challenger": "Teoscar Hern\u00e1ndez",
-            "role": "batting",
-            "team": "dodgers",
-            "outcome": "overturned",
-            "result_desc": "Teoscar Hern\u00e1ndez walks.",
-            "batter": "Teoscar Hern\u00e1ndez",
-            "pitcher": "Trevor McDonald",
-            "game_pk": 823953
+            "result_desc": "Shohei Ohtani walks.",
+            "batter": "Shohei Ohtani",
+            "pitcher": "Adrian Houser",
+            "game_pk": 823951
         },
         {
             "date": "2026-05-11",
@@ -227,39 +215,51 @@
             "game_pk": 823953
         },
         {
-            "date": "2026-05-10",
-            "date_formatted": "May 10, 2026",
-            "challenger": "Alex Call",
-            "role": "batting",
-            "team": "dodgers",
-            "outcome": "confirmed",
-            "result_desc": "Alex Call strikes out on a foul tip.",
-            "batter": "Alex Call",
-            "pitcher": "Tyler Kinley",
-            "game_pk": 823954
-        },
-        {
-            "date": "2026-05-10",
-            "date_formatted": "May 10, 2026",
-            "challenger": "Alex Call",
-            "role": "batting",
-            "team": "dodgers",
-            "outcome": "overturned",
-            "result_desc": "Alex Call strikes out on a foul tip.",
-            "batter": "Alex Call",
-            "pitcher": "Tyler Kinley",
-            "game_pk": 823954
-        },
-        {
-            "date": "2026-05-10",
-            "date_formatted": "May 10, 2026",
-            "challenger": "Sean Murphy",
+            "date": "2026-05-11",
+            "date_formatted": "May 11, 2026",
+            "challenger": "Will Smith",
             "role": "catching",
+            "team": "dodgers",
+            "outcome": "overturned",
+            "result_desc": "Heliot Ramos doubles (11) on a ground ball to left fielder Teoscar Hern\u00e1ndez. Casey Schmitt scores. Rafael Devers scores.",
+            "batter": "Heliot Ramos",
+            "pitcher": "Roki Sasaki",
+            "game_pk": 823953
+        },
+        {
+            "date": "2026-05-11",
+            "date_formatted": "May 11, 2026",
+            "challenger": "Teoscar Hern\u00e1ndez",
+            "role": "batting",
+            "team": "dodgers",
+            "outcome": "overturned",
+            "result_desc": "Teoscar Hern\u00e1ndez walks.",
+            "batter": "Teoscar Hern\u00e1ndez",
+            "pitcher": "Trevor McDonald",
+            "game_pk": 823953
+        },
+        {
+            "date": "2026-05-11",
+            "date_formatted": "May 11, 2026",
+            "challenger": "Matt Chapman",
+            "role": "batting",
             "team": "opponents",
+            "outcome": "overturned",
+            "result_desc": "Matt Chapman strikes out swinging.",
+            "batter": "Matt Chapman",
+            "pitcher": "Roki Sasaki",
+            "game_pk": 823953
+        },
+        {
+            "date": "2026-05-10",
+            "date_formatted": "May 10, 2026",
+            "challenger": "Alex Call",
+            "role": "batting",
+            "team": "dodgers",
             "outcome": "confirmed",
-            "result_desc": "Kyle Tucker walks. Freddie Freeman to 3rd. Andy Pages to 2nd.",
-            "batter": "Kyle Tucker",
-            "pitcher": "Bryce Elder",
+            "result_desc": "Alex Call strikes out on a foul tip.",
+            "batter": "Alex Call",
+            "pitcher": "Tyler Kinley",
             "game_pk": 823954
         },
         {
@@ -271,7 +271,7 @@
             "outcome": "overturned",
             "result_desc": "Alex Call strikes out on a foul tip.",
             "batter": "Alex Call",
-            "pitcher": "Bryce Elder",
+            "pitcher": "Tyler Kinley",
             "game_pk": 823954
         }
     ]
