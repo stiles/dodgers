@@ -1,5 +1,20 @@
 [
     {
+        "player":"Yoshinobu Yamamoto",
+        "role":"SP",
+        "position":"P",
+        "era":"3.32",
+        "whip":"0.96",
+        "k9":"8.84",
+        "bb9":"1.89",
+        "kbb":"4.67",
+        "ip":"57.0",
+        "ip_rounded":57,
+        "gs":9,
+        "gp":9,
+        "fetched":"2026-05-19"
+    },
+    {
         "player":"Justin Wrobleski",
         "role":"SP",
         "position":"P",
@@ -12,22 +27,7 @@
         "ip_rounded":50,
         "gs":7,
         "gp":8,
-        "fetched":"2026-05-18"
-    },
-    {
-        "player":"Yoshinobu Yamamoto",
-        "role":"SP",
-        "position":"P",
-        "era":"3.60",
-        "whip":"1.00",
-        "k9":"8.64",
-        "bb9":"1.80",
-        "kbb":"4.80",
-        "ip":"50.0",
-        "ip_rounded":50,
-        "gs":8,
-        "gp":8,
-        "fetched":"2026-05-18"
+        "fetched":"2026-05-19"
     },
     {
         "player":"Shohei Ohtani",
@@ -42,7 +42,7 @@
         "ip_rounded":44,
         "gs":7,
         "gp":7,
-        "fetched":"2026-05-18"
+        "fetched":"2026-05-19"
     },
     {
         "player":"Emmet Sheehan",
@@ -57,7 +57,7 @@
         "ip_rounded":41,
         "gs":8,
         "gp":8,
-        "fetched":"2026-05-18"
+        "fetched":"2026-05-19"
     },
     {
         "player":"Roki Sasaki",
@@ -72,7 +72,7 @@
         "ip_rounded":40,
         "gs":8,
         "gp":8,
-        "fetched":"2026-05-18"
+        "fetched":"2026-05-19"
     },
     {
         "player":"Tyler Glasnow",
@@ -87,7 +87,7 @@
         "ip_rounded":39,
         "gs":7,
         "gp":7,
-        "fetched":"2026-05-18"
+        "fetched":"2026-05-19"
     },
     {
         "player":"Jack Dreyer",
@@ -102,7 +102,7 @@
         "ip_rounded":21,
         "gs":0,
         "gp":20,
-        "fetched":"2026-05-18"
+        "fetched":"2026-05-19"
     },
     {
         "player":"Will Klein",
@@ -117,7 +117,7 @@
         "ip_rounded":18,
         "gs":1,
         "gp":13,
-        "fetched":"2026-05-18"
+        "fetched":"2026-05-19"
     },
     {
         "player":"Tanner Scott",
@@ -132,7 +132,7 @@
         "ip_rounded":18,
         "gs":0,
         "gp":20,
-        "fetched":"2026-05-18"
+        "fetched":"2026-05-19"
     },
     {
         "player":"Edgardo Henriquez",
@@ -147,6 +147,6 @@
         "ip_rounded":17,
         "gs":0,
         "gp":16,
-        "fetched":"2026-05-18"
+        "fetched":"2026-05-19"
     }
 ]

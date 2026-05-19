@@ -1,17 +1,17 @@
 {
     "season_summary": {
-        "correct_strikes_pct": 91.8429003021148,
-        "incorrect_strikes_pct": 8.1570996978852,
-        "total_called_strikes": 1324,
-        "bad_calls_count": 108
+        "correct_strikes_pct": 91.8141592920354,
+        "incorrect_strikes_pct": 8.185840707964601,
+        "total_called_strikes": 1356,
+        "bad_calls_count": 111
     },
     "last_game_summary": {
-        "date": "May 17, 2026",
-        "correct_strikes_pct": 96.66666666666667,
-        "incorrect_strikes_pct": 3.3333333333333286,
-        "total_called_strikes": 30,
-        "bad_calls_count": 1,
-        "home_plate_umpire": "Alex MacKay"
+        "date": "May 18, 2026",
+        "correct_strikes_pct": 90.625,
+        "incorrect_strikes_pct": 9.375,
+        "total_called_strikes": 32,
+        "bad_calls_count": 3,
+        "home_plate_umpire": "Nate Tomlinson"
     },
     "worst_calls_of_season": [
         {
@@ -56,25 +56,25 @@
         }
     ],
     "pitching_season_summary": {
-        "correct_balls_pct": 95.73097060008054,
-        "incorrect_balls_pct": 4.269029399919461,
-        "total_called_balls": 2483,
+        "correct_balls_pct": 95.79865239793897,
+        "incorrect_balls_pct": 4.201347602061034,
+        "total_called_balls": 2523,
         "bad_calls_count": 106
     },
     "pitching_last_game_summary": {
-        "date": "May 17, 2026",
-        "correct_balls_pct": 96.7741935483871,
-        "incorrect_balls_pct": 3.225806451612897,
-        "total_called_balls": 31,
-        "bad_calls_count": 1
+        "date": "May 18, 2026",
+        "correct_balls_pct": 100.0,
+        "incorrect_balls_pct": 0.0,
+        "total_called_balls": 40,
+        "bad_calls_count": 0
     },
     "pitching_worst_calls_of_season": [],
     "abs_challenges": {
         "dodgers": {
             "batting": {
-                "total": 17,
-                "successful": 5,
-                "failed": 12
+                "total": 19,
+                "successful": 6,
+                "failed": 13
             },
             "pitching": {
                 "total": 0,
@@ -99,12 +99,48 @@
                 "failed": 0
             },
             "catching": {
-                "total": 19,
-                "successful": 15,
+                "total": 20,
+                "successful": 16,
                 "failed": 4
             }
         },
         "challenge_log": [
+            {
+                "date": "2026-05-18",
+                "date_formatted": "May 18, 2026",
+                "challenger": "Rodolfo Dur\u00e1n",
+                "role": "catching",
+                "team": "opponents",
+                "outcome": "overturned",
+                "result_desc": "Max Muncy called out on strikes.",
+                "batter": "Max Muncy",
+                "pitcher": "Michael King",
+                "game_pk": 823301
+            },
+            {
+                "date": "2026-05-18",
+                "date_formatted": "May 18, 2026",
+                "challenger": "Kyle Tucker",
+                "role": "batting",
+                "team": "dodgers",
+                "outcome": "confirmed",
+                "result_desc": "Kyle Tucker called out on strikes.",
+                "batter": "Kyle Tucker",
+                "pitcher": "Michael King",
+                "game_pk": 823301
+            },
+            {
+                "date": "2026-05-18",
+                "date_formatted": "May 18, 2026",
+                "challenger": "Freddie Freeman",
+                "role": "batting",
+                "team": "dodgers",
+                "outcome": "overturned",
+                "result_desc": "Freddie Freeman walks.",
+                "batter": "Freddie Freeman",
+                "pitcher": "Michael King",
+                "game_pk": 823301
+            },
             {
                 "date": "2026-05-17",
                 "date_formatted": "May 17, 2026",
@@ -308,42 +344,6 @@
                 "batter": "Hyeseong Kim",
                 "pitcher": "Calvin Faucher",
                 "game_pk": 823958
-            },
-            {
-                "date": "2026-04-28",
-                "date_formatted": "April 28, 2026",
-                "challenger": "Will Smith",
-                "role": "catching",
-                "team": "dodgers",
-                "outcome": "overturned",
-                "result_desc": "Jakob Marsee called out on strikes.",
-                "batter": "Jakob Marsee",
-                "pitcher": "Shohei Ohtani",
-                "game_pk": 823956
-            },
-            {
-                "date": "2026-04-27",
-                "date_formatted": "April 27, 2026",
-                "challenger": "Miguel Rojas",
-                "role": "batting",
-                "team": "dodgers",
-                "outcome": "confirmed",
-                "result_desc": "Miguel Rojas called out on strikes.",
-                "batter": "Miguel Rojas",
-                "pitcher": "Andrew Nardi",
-                "game_pk": 823961
-            },
-            {
-                "date": "2026-04-25",
-                "date_formatted": "April 25, 2026",
-                "challenger": "Kyle Tucker",
-                "role": "batting",
-                "team": "dodgers",
-                "outcome": "confirmed",
-                "result_desc": "Kyle Tucker called out on strikes.",
-                "batter": "Kyle Tucker",
-                "pitcher": "Colin Rea",
-                "game_pk": 823960
             }
         ]
     }

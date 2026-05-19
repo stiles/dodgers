@@ -28,12 +28,36 @@
             "failed": 2
         },
         "catching": {
-            "total": 65,
-            "successful": 40,
+            "total": 67,
+            "successful": 42,
             "failed": 25
         }
     },
     "challenge_log": [
+        {
+            "date": "2026-05-18",
+            "date_formatted": "May 18, 2026",
+            "challenger": "Rodolfo Dur\u00e1n",
+            "role": "catching",
+            "team": "opponents",
+            "outcome": "overturned",
+            "result_desc": "Will Smith flies out to center fielder Jackson Merrill.",
+            "batter": "Will Smith",
+            "pitcher": "Mason Miller",
+            "game_pk": 823301
+        },
+        {
+            "date": "2026-05-18",
+            "date_formatted": "May 18, 2026",
+            "challenger": "Rodolfo Dur\u00e1n",
+            "role": "catching",
+            "team": "opponents",
+            "outcome": "overturned",
+            "result_desc": "Mookie Betts lines out to shortstop Xander Bogaerts.",
+            "batter": "Mookie Betts",
+            "pitcher": "Michael King",
+            "game_pk": 823301
+        },
         {
             "date": "2026-05-17",
             "date_formatted": "May 17, 2026",
@@ -145,13 +169,13 @@
         {
             "date": "2026-05-12",
             "date_formatted": "May 12, 2026",
-            "challenger": "Eric Haase",
-            "role": "catching",
+            "challenger": "Jung Hoo Lee",
+            "role": "batting",
             "team": "opponents",
-            "outcome": "confirmed",
-            "result_desc": "Max Muncy flies out sharply to right fielder Jung Hoo Lee.",
-            "batter": "Max Muncy",
-            "pitcher": "Adrian Houser",
+            "outcome": "overturned",
+            "result_desc": "Jung Hoo Lee grounds out, shortstop Mookie Betts to first baseman Freddie Freeman.",
+            "batter": "Jung Hoo Lee",
+            "pitcher": "Yoshinobu Yamamoto",
             "game_pk": 823951
         },
         {
@@ -169,13 +193,13 @@
         {
             "date": "2026-05-12",
             "date_formatted": "May 12, 2026",
-            "challenger": "Jung Hoo Lee",
-            "role": "batting",
+            "challenger": "Eric Haase",
+            "role": "catching",
             "team": "opponents",
             "outcome": "overturned",
-            "result_desc": "Jung Hoo Lee grounds out, shortstop Mookie Betts to first baseman Freddie Freeman.",
-            "batter": "Jung Hoo Lee",
-            "pitcher": "Yoshinobu Yamamoto",
+            "result_desc": "Shohei Ohtani walks.",
+            "batter": "Shohei Ohtani",
+            "pitcher": "Adrian Houser",
             "game_pk": 823951
         },
         {
@@ -184,9 +208,9 @@
             "challenger": "Eric Haase",
             "role": "catching",
             "team": "opponents",
-            "outcome": "overturned",
-            "result_desc": "Shohei Ohtani walks.",
-            "batter": "Shohei Ohtani",
+            "outcome": "confirmed",
+            "result_desc": "Max Muncy flies out sharply to right fielder Jung Hoo Lee.",
+            "batter": "Max Muncy",
             "pitcher": "Adrian Houser",
             "game_pk": 823951
         },
@@ -249,30 +273,6 @@
             "batter": "Matt Chapman",
             "pitcher": "Roki Sasaki",
             "game_pk": 823953
-        },
-        {
-            "date": "2026-05-10",
-            "date_formatted": "May 10, 2026",
-            "challenger": "Alex Call",
-            "role": "batting",
-            "team": "dodgers",
-            "outcome": "confirmed",
-            "result_desc": "Alex Call strikes out on a foul tip.",
-            "batter": "Alex Call",
-            "pitcher": "Tyler Kinley",
-            "game_pk": 823954
-        },
-        {
-            "date": "2026-05-10",
-            "date_formatted": "May 10, 2026",
-            "challenger": "Alex Call",
-            "role": "batting",
-            "team": "dodgers",
-            "outcome": "overturned",
-            "result_desc": "Alex Call strikes out on a foul tip.",
-            "batter": "Alex Call",
-            "pitcher": "Tyler Kinley",
-            "game_pk": 823954
         }
     ]
 }
