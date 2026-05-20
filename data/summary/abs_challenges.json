@@ -18,8 +18,8 @@
     },
     "opponents": {
         "batting": {
-            "total": 42,
-            "successful": 20,
+            "total": 43,
+            "successful": 21,
             "failed": 22
         },
         "pitching": {
@@ -28,12 +28,36 @@
             "failed": 2
         },
         "catching": {
-            "total": 67,
-            "successful": 42,
+            "total": 68,
+            "successful": 43,
             "failed": 25
         }
     },
     "challenge_log": [
+        {
+            "date": "2026-05-19",
+            "date_formatted": "May 19, 2026",
+            "challenger": "Freddy Fermin",
+            "role": "batting",
+            "team": "opponents",
+            "outcome": "overturned",
+            "result_desc": "Freddy Fermin grounds out, second baseman Hyeseong Kim to first baseman Freddie Freeman.",
+            "batter": "Freddy Fermin",
+            "pitcher": "Emmet Sheehan",
+            "game_pk": 823302
+        },
+        {
+            "date": "2026-05-19",
+            "date_formatted": "May 19, 2026",
+            "challenger": "Freddy Fermin",
+            "role": "catching",
+            "team": "opponents",
+            "outcome": "overturned",
+            "result_desc": "Mookie Betts lines out to left fielder Gavin Sheets.",
+            "batter": "Mookie Betts",
+            "pitcher": "Griffin Canning",
+            "game_pk": 823302
+        },
         {
             "date": "2026-05-18",
             "date_formatted": "May 18, 2026",
@@ -169,30 +193,6 @@
         {
             "date": "2026-05-12",
             "date_formatted": "May 12, 2026",
-            "challenger": "Jung Hoo Lee",
-            "role": "batting",
-            "team": "opponents",
-            "outcome": "overturned",
-            "result_desc": "Jung Hoo Lee grounds out, shortstop Mookie Betts to first baseman Freddie Freeman.",
-            "batter": "Jung Hoo Lee",
-            "pitcher": "Yoshinobu Yamamoto",
-            "game_pk": 823951
-        },
-        {
-            "date": "2026-05-12",
-            "date_formatted": "May 12, 2026",
-            "challenger": "Andy Pages",
-            "role": "batting",
-            "team": "dodgers",
-            "outcome": "overturned",
-            "result_desc": "Andy Pages strikes out swinging.",
-            "batter": "Andy Pages",
-            "pitcher": "Adrian Houser",
-            "game_pk": 823951
-        },
-        {
-            "date": "2026-05-12",
-            "date_formatted": "May 12, 2026",
             "challenger": "Eric Haase",
             "role": "catching",
             "team": "opponents",
@@ -211,6 +211,30 @@
             "outcome": "confirmed",
             "result_desc": "Max Muncy flies out sharply to right fielder Jung Hoo Lee.",
             "batter": "Max Muncy",
+            "pitcher": "Adrian Houser",
+            "game_pk": 823951
+        },
+        {
+            "date": "2026-05-12",
+            "date_formatted": "May 12, 2026",
+            "challenger": "Jung Hoo Lee",
+            "role": "batting",
+            "team": "opponents",
+            "outcome": "overturned",
+            "result_desc": "Jung Hoo Lee grounds out, shortstop Mookie Betts to first baseman Freddie Freeman.",
+            "batter": "Jung Hoo Lee",
+            "pitcher": "Yoshinobu Yamamoto",
+            "game_pk": 823951
+        },
+        {
+            "date": "2026-05-12",
+            "date_formatted": "May 12, 2026",
+            "challenger": "Andy Pages",
+            "role": "batting",
+            "team": "dodgers",
+            "outcome": "overturned",
+            "result_desc": "Andy Pages strikes out swinging.",
+            "batter": "Andy Pages",
             "pitcher": "Adrian Houser",
             "game_pk": 823951
         },
@@ -247,30 +271,6 @@
             "outcome": "overturned",
             "result_desc": "Heliot Ramos doubles (11) on a ground ball to left fielder Teoscar Hern\u00e1ndez. Casey Schmitt scores. Rafael Devers scores.",
             "batter": "Heliot Ramos",
-            "pitcher": "Roki Sasaki",
-            "game_pk": 823953
-        },
-        {
-            "date": "2026-05-11",
-            "date_formatted": "May 11, 2026",
-            "challenger": "Teoscar Hern\u00e1ndez",
-            "role": "batting",
-            "team": "dodgers",
-            "outcome": "overturned",
-            "result_desc": "Teoscar Hern\u00e1ndez walks.",
-            "batter": "Teoscar Hern\u00e1ndez",
-            "pitcher": "Trevor McDonald",
-            "game_pk": 823953
-        },
-        {
-            "date": "2026-05-11",
-            "date_formatted": "May 11, 2026",
-            "challenger": "Matt Chapman",
-            "role": "batting",
-            "team": "opponents",
-            "outcome": "overturned",
-            "result_desc": "Matt Chapman strikes out swinging.",
-            "batter": "Matt Chapman",
             "pitcher": "Roki Sasaki",
             "game_pk": 823953
         }

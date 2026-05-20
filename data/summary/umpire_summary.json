@@ -1,17 +1,17 @@
 {
     "season_summary": {
-        "correct_strikes_pct": 91.8141592920354,
-        "incorrect_strikes_pct": 8.185840707964601,
-        "total_called_strikes": 1356,
-        "bad_calls_count": 111
+        "correct_strikes_pct": 91.66666666666666,
+        "incorrect_strikes_pct": 8.333333333333343,
+        "total_called_strikes": 1380,
+        "bad_calls_count": 115
     },
     "last_game_summary": {
-        "date": "May 18, 2026",
-        "correct_strikes_pct": 90.625,
-        "incorrect_strikes_pct": 9.375,
-        "total_called_strikes": 32,
-        "bad_calls_count": 3,
-        "home_plate_umpire": "Nate Tomlinson"
+        "date": "May 19, 2026",
+        "correct_strikes_pct": 83.33333333333334,
+        "incorrect_strikes_pct": 16.666666666666657,
+        "total_called_strikes": 24,
+        "bad_calls_count": 4,
+        "home_plate_umpire": "Rob Drake"
     },
     "worst_calls_of_season": [
         {
@@ -56,25 +56,25 @@
         }
     ],
     "pitching_season_summary": {
-        "correct_balls_pct": 95.79865239793897,
-        "incorrect_balls_pct": 4.201347602061034,
-        "total_called_balls": 2523,
+        "correct_balls_pct": 95.8706661472536,
+        "incorrect_balls_pct": 4.129333852746399,
+        "total_called_balls": 2567,
         "bad_calls_count": 106
     },
     "pitching_last_game_summary": {
-        "date": "May 18, 2026",
+        "date": "May 19, 2026",
         "correct_balls_pct": 100.0,
         "incorrect_balls_pct": 0.0,
-        "total_called_balls": 40,
+        "total_called_balls": 44,
         "bad_calls_count": 0
     },
     "pitching_worst_calls_of_season": [],
     "abs_challenges": {
         "dodgers": {
             "batting": {
-                "total": 19,
-                "successful": 6,
-                "failed": 13
+                "total": 21,
+                "successful": 7,
+                "failed": 14
             },
             "pitching": {
                 "total": 0,
@@ -105,6 +105,30 @@
             }
         },
         "challenge_log": [
+            {
+                "date": "2026-05-19",
+                "date_formatted": "May 19, 2026",
+                "challenger": "Max Muncy",
+                "role": "batting",
+                "team": "dodgers",
+                "outcome": "overturned",
+                "result_desc": "Max Muncy walks.",
+                "batter": "Max Muncy",
+                "pitcher": "Mason Miller",
+                "game_pk": 823302
+            },
+            {
+                "date": "2026-05-19",
+                "date_formatted": "May 19, 2026",
+                "challenger": "Teoscar Hern\u00e1ndez",
+                "role": "batting",
+                "team": "dodgers",
+                "outcome": "confirmed",
+                "result_desc": "Teoscar Hern\u00e1ndez called out on strikes.",
+                "batter": "Teoscar Hern\u00e1ndez",
+                "pitcher": "Ron Marinaccio",
+                "game_pk": 823302
+            },
             {
                 "date": "2026-05-18",
                 "date_formatted": "May 18, 2026",
@@ -320,30 +344,6 @@
                 "batter": "Will Smith",
                 "pitcher": "Matthew Liberatore",
                 "game_pk": 823066
-            },
-            {
-                "date": "2026-05-01",
-                "date_formatted": "May 1, 2026",
-                "challenger": "Andy Pages",
-                "role": "batting",
-                "team": "dodgers",
-                "outcome": "confirmed",
-                "result_desc": "Andy Pages called out on strikes.",
-                "batter": "Andy Pages",
-                "pitcher": "Gordon Graceffo",
-                "game_pk": 823066
-            },
-            {
-                "date": "2026-04-29",
-                "date_formatted": "April 29, 2026",
-                "challenger": "Liam Hicks",
-                "role": "catching",
-                "team": "opponents",
-                "outcome": "confirmed",
-                "result_desc": "Hyeseong Kim walks.",
-                "batter": "Hyeseong Kim",
-                "pitcher": "Calvin Faucher",
-                "game_pk": 823958
             }
         ]
     }
