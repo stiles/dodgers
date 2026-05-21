@@ -1,17 +1,17 @@
 {
     "season_summary": {
-        "correct_strikes_pct": 91.66666666666666,
-        "incorrect_strikes_pct": 8.333333333333343,
-        "total_called_strikes": 1380,
-        "bad_calls_count": 115
+        "correct_strikes_pct": 91.66072701354241,
+        "incorrect_strikes_pct": 8.339272986457587,
+        "total_called_strikes": 1403,
+        "bad_calls_count": 117
     },
     "last_game_summary": {
-        "date": "May 19, 2026",
-        "correct_strikes_pct": 83.33333333333334,
-        "incorrect_strikes_pct": 16.666666666666657,
-        "total_called_strikes": 24,
-        "bad_calls_count": 4,
-        "home_plate_umpire": "Rob Drake"
+        "date": "May 20, 2026",
+        "correct_strikes_pct": 91.30434782608695,
+        "incorrect_strikes_pct": 8.695652173913047,
+        "total_called_strikes": 23,
+        "bad_calls_count": 2,
+        "home_plate_umpire": "Bruce Dreckman"
     },
     "worst_calls_of_season": [
         {
@@ -56,17 +56,17 @@
         }
     ],
     "pitching_season_summary": {
-        "correct_balls_pct": 95.8706661472536,
-        "incorrect_balls_pct": 4.129333852746399,
-        "total_called_balls": 2567,
-        "bad_calls_count": 106
+        "correct_balls_pct": 95.86365377250095,
+        "incorrect_balls_pct": 4.136346227499047,
+        "total_called_balls": 2611,
+        "bad_calls_count": 108
     },
     "pitching_last_game_summary": {
-        "date": "May 19, 2026",
-        "correct_balls_pct": 100.0,
-        "incorrect_balls_pct": 0.0,
+        "date": "May 20, 2026",
+        "correct_balls_pct": 95.45454545454545,
+        "incorrect_balls_pct": 4.545454545454547,
         "total_called_balls": 44,
-        "bad_calls_count": 0
+        "bad_calls_count": 2
     },
     "pitching_worst_calls_of_season": [],
     "abs_challenges": {
@@ -99,12 +99,24 @@
                 "failed": 0
             },
             "catching": {
-                "total": 20,
+                "total": 21,
                 "successful": 16,
-                "failed": 4
+                "failed": 5
             }
         },
         "challenge_log": [
+            {
+                "date": "2026-05-20",
+                "date_formatted": "May 20, 2026",
+                "challenger": "Freddy Fermin",
+                "role": "catching",
+                "team": "opponents",
+                "outcome": "confirmed",
+                "result_desc": "Kyle Tucker walks.",
+                "batter": "Kyle Tucker",
+                "pitcher": "Yuki Matsui",
+                "game_pk": 823299
+            },
             {
                 "date": "2026-05-19",
                 "date_formatted": "May 19, 2026",
@@ -332,18 +344,6 @@
                 "batter": "Pedro Pag\u00e9s",
                 "pitcher": "Tanner Scott",
                 "game_pk": 823065
-            },
-            {
-                "date": "2026-05-01",
-                "date_formatted": "May 1, 2026",
-                "challenger": "Will Smith",
-                "role": "batting",
-                "team": "dodgers",
-                "outcome": "overturned",
-                "result_desc": "Will Smith walks. Freddie Freeman to 2nd.",
-                "batter": "Will Smith",
-                "pitcher": "Matthew Liberatore",
-                "game_pk": 823066
             }
         ]
     }

@@ -18,9 +18,9 @@
     },
     "opponents": {
         "batting": {
-            "total": 43,
+            "total": 44,
             "successful": 21,
-            "failed": 22
+            "failed": 23
         },
         "pitching": {
             "total": 3,
@@ -34,6 +34,18 @@
         }
     },
     "challenge_log": [
+        {
+            "date": "2026-05-20",
+            "date_formatted": "May 20, 2026",
+            "challenger": "Miguel Andujar",
+            "role": "batting",
+            "team": "opponents",
+            "outcome": "confirmed",
+            "result_desc": "Miguel Andujar grounds into a double play, shortstop Mookie Betts to second baseman Hyeseong Kim to first baseman Freddie Freeman. Fernando Tatis Jr. out at 2nd. Miguel Andujar out at 1st.",
+            "batter": "Miguel Andujar",
+            "pitcher": "Kyle Hurt",
+            "game_pk": 823299
+        },
         {
             "date": "2026-05-19",
             "date_formatted": "May 19, 2026",
@@ -157,18 +169,6 @@
         {
             "date": "2026-05-14",
             "date_formatted": "May 14, 2026",
-            "challenger": "Teoscar Hern\u00e1ndez",
-            "role": "batting",
-            "team": "dodgers",
-            "outcome": "overturned",
-            "result_desc": "Teoscar Hern\u00e1ndez strikes out swinging, catcher Eric Haase to first baseman Rafael Devers.",
-            "batter": "Teoscar Hern\u00e1ndez",
-            "pitcher": "JT Brubaker",
-            "game_pk": 823950
-        },
-        {
-            "date": "2026-05-14",
-            "date_formatted": "May 14, 2026",
             "challenger": "Eric Haase",
             "role": "catching",
             "team": "opponents",
@@ -176,6 +176,18 @@
             "result_desc": "Max Muncy grounds into a force out, second baseman Luis Arraez to shortstop Willy Adames. Andy Pages out at 2nd. Max Muncy to 1st.",
             "batter": "Max Muncy",
             "pitcher": "Landen Roupp",
+            "game_pk": 823950
+        },
+        {
+            "date": "2026-05-14",
+            "date_formatted": "May 14, 2026",
+            "challenger": "Teoscar Hern\u00e1ndez",
+            "role": "batting",
+            "team": "dodgers",
+            "outcome": "overturned",
+            "result_desc": "Teoscar Hern\u00e1ndez strikes out swinging, catcher Eric Haase to first baseman Rafael Devers.",
+            "batter": "Teoscar Hern\u00e1ndez",
+            "pitcher": "JT Brubaker",
             "game_pk": 823950
         },
         {
@@ -260,18 +272,6 @@
             "result_desc": "Miguel Rojas grounds out, second baseman Luis Arraez to first baseman Casey Schmitt. Teoscar Hern\u00e1ndez to 2nd.",
             "batter": "Miguel Rojas",
             "pitcher": "Matt Gage",
-            "game_pk": 823953
-        },
-        {
-            "date": "2026-05-11",
-            "date_formatted": "May 11, 2026",
-            "challenger": "Will Smith",
-            "role": "catching",
-            "team": "dodgers",
-            "outcome": "overturned",
-            "result_desc": "Heliot Ramos doubles (11) on a ground ball to left fielder Teoscar Hern\u00e1ndez. Casey Schmitt scores. Rafael Devers scores.",
-            "batter": "Heliot Ramos",
-            "pitcher": "Roki Sasaki",
             "game_pk": 823953
         }
     ]
