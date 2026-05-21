@@ -36,29 +36,30 @@ twitter:
     <span>Latest</span>
   </div>
   <div class="news-ticker__viewport">
+    {% comment %}
+      Items render once here in source order; ticker.js shuffles them and
+      duplicates the set on page load so the CSS marquee loops seamlessly.
+    {% endcomment %}
     <div class="news-ticker__track">
-      {% comment %} Build items twice for seamless looping {% endcomment %}
-      {% for pass in (1..2) %}
-        {% if site.data.latest_news.articles %}
-          {% for article in site.data.latest_news.articles %}
-            <a class="news-ticker__item news-ticker__item--news" href="{{ article.url }}" target="_blank" rel="noopener">
-              <span class="news-ticker__tag news-ticker__tag--news">News</span>
-              <span class="news-ticker__source">{{ article.source }}</span>
-              <span class="news-ticker__text">{{ article.title }}</span>
-              <i class="fa-solid fa-arrow-up-right-from-square news-ticker__icon"></i>
-            </a>
-            <span class="news-ticker__sep" aria-hidden="true"></span>
-          {% endfor %}
-        {% endif %}
-        {% assign ticker_transactions = site.data.roster.dodgers_transactions_current | slice: 0, 5 %}
-        {% for transaction in ticker_transactions %}
-          <span class="news-ticker__item news-ticker__item--move">
-            <span class="news-ticker__tag news-ticker__tag--move">Transaction</span>
-            <span class="news-ticker__source">{{ transaction.date | date: "%b %-d" }}</span>
-            <span class="news-ticker__text">{{ transaction.transaction }}</span>
-          </span>
+      {% if site.data.latest_news.articles %}
+        {% for article in site.data.latest_news.articles %}
+          <a class="news-ticker__item news-ticker__item--news" href="{{ article.url }}" target="_blank" rel="noopener">
+            <span class="news-ticker__tag news-ticker__tag--news">News</span>
+            <span class="news-ticker__source">{{ article.source }}</span>
+            <span class="news-ticker__text">{{ article.title }}</span>
+            <i class="fa-solid fa-arrow-up-right-from-square news-ticker__icon"></i>
+          </a>
           <span class="news-ticker__sep" aria-hidden="true"></span>
         {% endfor %}
+      {% endif %}
+      {% assign ticker_transactions = site.data.roster.dodgers_transactions_current | slice: 0, 5 %}
+      {% for transaction in ticker_transactions %}
+        <span class="news-ticker__item news-ticker__item--move">
+          <span class="news-ticker__tag news-ticker__tag--move">Transaction</span>
+          <span class="news-ticker__source">{{ transaction.date | date: "%b %-d" }}</span>
+          <span class="news-ticker__text">{{ transaction.transaction }}</span>
+        </span>
+        <span class="news-ticker__sep" aria-hidden="true"></span>
       {% endfor %}
     </div>
   </div>
@@ -66,6 +67,7 @@ twitter:
     <i class="fa-solid fa-chevron-right"></i>
   </a>
 </div>
+<script src="{{ '/assets/js/ticker.js' | relative_url }}" defer></script>
 
 <div class="postseason-stats-section">
   <h2 class="stat-group postseason-header" id="postseason-header">Postseason</h2>

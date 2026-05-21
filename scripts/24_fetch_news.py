@@ -1,3 +1,4 @@
+import re
 import requests
 from bs4 import BeautifulSoup
 import json
@@ -9,6 +10,20 @@ from datetime import datetime
 from zoneinfo import ZoneInfo
 import boto3
 from botocore.exceptions import ClientError
+
+
+def clean_text(element):
+    """Extract text from a BS4 element, preserving spaces around inline children.
+
+    Using get_text(strip=True) strips whitespace from each text node individually,
+    which drops the space before inline wrappers like <span class="nowrap"> that
+    The Athletic uses for orphan-control. This joins text nodes with a space then
+    collapses any whitespace runs.
+    """
+    if element is None:
+        return None
+    text = element.get_text(separator=' ')
+    return re.sub(r'\s+', ' ', text).strip()
 
 # --- Setup ---
 logging.basicConfig(level=logging.INFO, format='%(asctime)s - %(levelname)s - %(message)s')
@@ -141,39 +156,27 @@ def fetch_dodgers_nation_news():
 
     soup = BeautifulSoup(response.text, 'html.parser')
 
-    # Find the first post item
-    post_item = soup.find('li', class_='post-item')
+    # Site uses an Elementor-based grid: <article class="elementor-post ...">
+    post_item = soup.find('article', class_='elementor-post')
 
     if not post_item:
         print("Could not find the main story on Dodgers Nation.")
         return None
 
-    story_data = {}
+    story_data = {
+        'title': None,
+        'url': None,
+        'description': None,
+        'time': None,
+        'source': 'Dodgers Nation',
+    }
 
-    # Extract title and URL
-    title_tag = post_item.find('h2', class_='post-title')
+    # Title and URL live inside h3.elementor-post__title > a
+    title_tag = post_item.find(['h2', 'h3'], class_='elementor-post__title')
     if title_tag and title_tag.find('a'):
-        story_data['title'] = title_tag.find('a').get_text(strip=True)
-        story_data['url'] = title_tag.find('a')['href']
-    else:
-        story_data['title'] = None
-        story_data['url'] = None
-    
-    # Extract description
-    description_tag = post_item.find('p', class_='post-excerpt')
-    if description_tag:
-        story_data['description'] = description_tag.get_text(strip=True)
-    else:
-        story_data['description'] = None
-    
-    # Extract time
-    time_tag = post_item.find('span', class_='date')
-    if time_tag:
-        story_data['time'] = time_tag.get_text(strip=True)
-    else:
-        story_data['time'] = None
-
-    story_data['source'] = 'Dodgers Nation'
+        link = title_tag.find('a')
+        story_data['title'] = clean_text(link)
+        story_data['url'] = link.get('href')
     return story_data
 
 def fetch_mlb_news():
@@ -249,19 +252,11 @@ def fetch_athletic_katie_woo_news():
 
     story_data = {}
 
-    # Extract title
-    title_tag = featured_section.find('h4')
-    if title_tag:
-        story_data['title'] = title_tag.get_text(strip=True)
-    else:
-        story_data['title'] = None
+    # Extract title (use clean_text to preserve spaces around <span class="nowrap">)
+    story_data['title'] = clean_text(featured_section.find('h4'))
 
     # Extract description
-    description_tag = featured_section.find('p', class_='excerpt')
-    if description_tag:
-        story_data['description'] = description_tag.get_text(strip=True)
-    else:
-        story_data['description'] = None
+    story_data['description'] = clean_text(featured_section.find('p', class_='excerpt'))
 
     # Extract URL - the featured section is wrapped in an <a> tag
     parent_link = featured_section.find_parent('a', href=True)
@@ -273,7 +268,7 @@ def fetch_athletic_katie_woo_news():
         story_data['url'] = None
 
     story_data['time'] = None
-    story_data['source'] = 'The Athletic (Katie Woo)'
+    story_data['source'] = 'The Athletic'
     return story_data
 
 def format_news_tweet(articles):
