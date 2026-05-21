@@ -29,21 +29,18 @@
     groups[k] = tmp;
   }
 
-  // Rebuild the track with the shuffled set, then a clone of it so the
+  // Clear track and rebuild with shuffled set plus a clone so the
   // CSS marquee (translateX 0 -> -50%) loops seamlessly.
-  var frag = document.createDocumentFragment();
-  groups.forEach(function (g) {
-    g.forEach(function (node) { frag.appendChild(node); });
-  });
-
-  // Clone the freshly-shuffled set before we attach the original, so the
-  // cloned nodes are identical to the originals.
-  var clones = [];
-  Array.from(frag.children).forEach(function (node) {
-    clones.push(node.cloneNode(true));
-  });
-
   track.innerHTML = '';
-  track.appendChild(frag);
-  clones.forEach(function (node) { track.appendChild(node); });
+  
+  // Append the shuffled groups
+  groups.forEach(function (g) {
+    g.forEach(function (node) { track.appendChild(node); });
+  });
+
+  // Clone all nodes we just appended (must do this after appending)
+  var allNodes = Array.from(track.children);
+  allNodes.forEach(function (node) {
+    track.appendChild(node.cloneNode(true));
+  });
 })();
