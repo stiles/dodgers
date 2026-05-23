@@ -1,17 +1,17 @@
 {
     "season_summary": {
-        "correct_strikes_pct": 91.66072701354241,
-        "incorrect_strikes_pct": 8.339272986457587,
-        "total_called_strikes": 1403,
-        "bad_calls_count": 117
+        "correct_strikes_pct": 91.53846153846153,
+        "incorrect_strikes_pct": 8.461538461538467,
+        "total_called_strikes": 1430,
+        "bad_calls_count": 121
     },
     "last_game_summary": {
-        "date": "May 20, 2026",
-        "correct_strikes_pct": 91.30434782608695,
-        "incorrect_strikes_pct": 8.695652173913047,
-        "total_called_strikes": 23,
-        "bad_calls_count": 2,
-        "home_plate_umpire": "Bruce Dreckman"
+        "date": "May 22, 2026",
+        "correct_strikes_pct": 85.18518518518519,
+        "incorrect_strikes_pct": 14.81481481481481,
+        "total_called_strikes": 27,
+        "bad_calls_count": 4,
+        "home_plate_umpire": "Nick Mahrley"
     },
     "worst_calls_of_season": [
         {
@@ -56,17 +56,17 @@
         }
     ],
     "pitching_season_summary": {
-        "correct_balls_pct": 95.86365377250095,
-        "incorrect_balls_pct": 4.136346227499047,
-        "total_called_balls": 2611,
-        "bad_calls_count": 108
+        "correct_balls_pct": 95.77995478522983,
+        "incorrect_balls_pct": 4.220045214770167,
+        "total_called_balls": 2654,
+        "bad_calls_count": 112
     },
     "pitching_last_game_summary": {
-        "date": "May 20, 2026",
-        "correct_balls_pct": 95.45454545454545,
-        "incorrect_balls_pct": 4.545454545454547,
-        "total_called_balls": 44,
-        "bad_calls_count": 2
+        "date": "May 22, 2026",
+        "correct_balls_pct": 90.69767441860465,
+        "incorrect_balls_pct": 9.302325581395351,
+        "total_called_balls": 43,
+        "bad_calls_count": 4
     },
     "pitching_worst_calls_of_season": [],
     "abs_challenges": {
@@ -99,12 +99,24 @@
                 "failed": 0
             },
             "catching": {
-                "total": 21,
+                "total": 22,
                 "successful": 16,
-                "failed": 5
+                "failed": 6
             }
         },
         "challenge_log": [
+            {
+                "date": "2026-05-22",
+                "date_formatted": "May 22, 2026",
+                "challenger": "Brewers challenged (tag play), call on the field was overturned: William Contreras",
+                "role": "catching",
+                "team": "opponents",
+                "outcome": "confirmed",
+                "result_desc": "Shohei Ohtani caught stealing 2nd base, catcher William Contreras to shortstop Joey Ortiz.",
+                "batter": "Kyle Tucker",
+                "pitcher": "Logan Henderson",
+                "game_pk": 823788
+            },
             {
                 "date": "2026-05-20",
                 "date_formatted": "May 20, 2026",
@@ -331,18 +343,6 @@
                 "result_desc": "Miguel Rojas walks.",
                 "batter": "Miguel Rojas",
                 "pitcher": "Justin Bruihl",
-                "game_pk": 823065
-            },
-            {
-                "date": "2026-05-03",
-                "date_formatted": "May 3, 2026",
-                "challenger": "Pedro Pag\u00e9s",
-                "role": "batting",
-                "team": "opponents",
-                "outcome": "confirmed",
-                "result_desc": "Pedro Pag\u00e9s called out on strikes.",
-                "batter": "Pedro Pag\u00e9s",
-                "pitcher": "Tanner Scott",
                 "game_pk": 823065
             }
         ]

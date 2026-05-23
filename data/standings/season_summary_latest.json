@@ -10,7 +10,7 @@
     {
         "stat_label":"Losses",
         "stat":"losses",
-        "value":19,
+        "value":20,
         "category":"standings",
         "context_value":19,
         "context_value_label":"This point last season"
@@ -18,7 +18,7 @@
     {
         "stat_label":"Win percentage",
         "stat":"win_pct",
-        "value":"62%",
+        "value":"61%",
         "category":"standings",
         "context_value":"62%",
         "context_value_label":"This point last season"
@@ -26,7 +26,7 @@
     {
         "stat_label":"Games up\/back",
         "stat":"games_up_back",
-        "value":1.5,
+        "value":0.5,
         "category":"standings",
         "context_value":"1st",
         "context_value_label":"Division rank"
@@ -50,7 +50,7 @@
     {
         "stat_label":"Runs",
         "stat":"runs",
-        "value":257,
+        "value":258,
         "category":"standings",
         "context_value":"3rd",
         "context_value_label":"League rank"
@@ -58,7 +58,7 @@
     {
         "stat_label":"Runs against",
         "stat":"runs_against",
-        "value":159,
+        "value":164,
         "category":"standings",
         "context_value":222,
         "context_value_label":"This point last season"
@@ -66,7 +66,7 @@
     {
         "stat_label":"Run differential",
         "stat":"run_differential",
-        "value":98,
+        "value":94,
         "category":"standings",
         "context_value":62,
         "context_value_label":"This point last season"
@@ -74,7 +74,7 @@
     {
         "stat_label":"Batting average",
         "stat":"batting_average",
-        "value":".262",
+        "value":".259",
         "category":"batting",
         "context_value":".253",
         "context_value_label":"Last decade average"
@@ -90,7 +90,7 @@
     {
         "stat_label":"Home runs\/game",
         "stat":"home_runs_game",
-        "value":1.32,
+        "value":1.29,
         "category":"batting",
         "context_value":1.42,
         "context_value_label":"Last decade average"
@@ -98,7 +98,7 @@
     {
         "stat_label":"On-base percentage",
         "stat":"on_base_pct",
-        "value":".344",
+        "value":".342",
         "category":"batting",
         "context_value":"1st",
         "context_value_label":"League rank"
@@ -106,7 +106,7 @@
     {
         "stat_label":"Slugging percentage",
         "stat":"slugging_pct",
-        "value":".432",
+        "value":".427",
         "category":"batting",
         "context_value":"2nd",
         "context_value_label":"League rank"
@@ -114,9 +114,9 @@
     {
         "stat_label":"OPS",
         "stat":"ops",
-        "value":".776",
+        "value":".769",
         "category":"batting",
-        "context_value":"1st",
+        "context_value":"2nd",
         "context_value_label":"League rank"
     },
     {
@@ -130,7 +130,7 @@
     {
         "stat_label":"Stolen bases\/game",
         "stat":"stolen_bases_game",
-        "value":0.46,
+        "value":0.45,
         "category":"batting",
         "context_value":0.84,
         "context_value_label":"Rate all last season"
@@ -146,31 +146,31 @@
     {
         "stat_label":"Strikeouts",
         "stat":"strikeouts",
-        "value":"445",
+        "value":"449",
         "category":"pitching",
-        "context_value":"8th",
+        "context_value":"10th",
         "context_value_label":"League rank"
     },
     {
         "stat_label":"Walks",
         "stat":"walks",
-        "value":141,
+        "value":144,
         "category":"pitching",
-        "context_value":"29th",
+        "context_value":"28th",
         "context_value_label":"League rank"
     },
     {
         "stat_label":"ERA",
         "stat":"era",
-        "value":"3.12",
+        "value":"3.17",
         "category":"pitching",
-        "context_value":"2nd",
+        "context_value":"3rd",
         "context_value_label":"League rank"
     },
     {
         "stat_label":"WHIP",
         "stat":"whip",
-        "value":"1.09",
+        "value":"1.10",
         "category":"pitching",
         "context_value":"1st",
         "context_value_label":"League rank"
@@ -178,7 +178,7 @@
     {
         "stat_label":"Batting average against",
         "stat":"avg_against",
-        "value":".210",
+        "value":".212",
         "category":"pitching",
         "context_value":"2nd",
         "context_value_label":"League rank"
@@ -186,7 +186,7 @@
     {
         "stat_label":"K\/BB ratio",
         "stat":"k_bb_ratio",
-        "value":3.16,
+        "value":3.12,
         "category":"pitching",
         "context_value":"3rd",
         "context_value_label":"League rank"
@@ -194,7 +194,7 @@
     {
         "stat_label":"Last updated",
         "stat":"update_time",
-        "value":"May 22, 2026, 4:33 PM PT",
+        "value":"May 23, 2026, 1:51 AM PT",
         "category":"summary",
         "context_value":"",
         "context_value_label":""
@@ -202,7 +202,7 @@
     {
         "stat_label":"Team summary",
         "stat":"summary",
-        "value":"<span class='highlight'>LOS ANGELES<\/span> <span class='updated'>(May 22)<\/span> \u2014 The Dodgers have compiled a <span class='highlight'>31-19<\/span> record in the 2026 regular season, a <span class='highlight'>62%<\/span> winning percentage. The last game was a <span class='highlight'>4-0<\/span> away <span class='highlight'>win<\/span> against the <span class='highlight'>San Diego Padres<\/span>. The team next faces the <span class='highlight'>Milwaukee Brewers<\/span> on Saturday at 4:15 p.m. PDT at <span class='highlight'>American Family Field<\/span>.",
+        "value":"<span class='highlight'>LOS ANGELES<\/span> <span class='updated'>(May 23)<\/span> \u2014 The Dodgers have compiled a <span class='highlight'>31-20<\/span> record in the 2026 regular season, a <span class='highlight'>61%<\/span> winning percentage. The last game was a <span class='highlight'>1-5<\/span> away <span class='highlight'>loss<\/span> against the <span class='highlight'>Milwaukee Brewers<\/span>. The team next faces the <span class='highlight'>Milwaukee Brewers<\/span> on Saturday at 4:15 p.m. PDT at <span class='highlight'>American Family Field<\/span>.",
         "category":"summary",
         "context_value":"",
         "context_value_label":""
@@ -210,7 +210,7 @@
     {
         "stat_label":"Last game result",
         "stat":"last_game_result",
-        "value":"win",
+        "value":"loss",
         "category":"summary",
         "context_value":"",
         "context_value_label":""

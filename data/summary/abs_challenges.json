@@ -28,12 +28,36 @@
             "failed": 2
         },
         "catching": {
-            "total": 68,
+            "total": 70,
             "successful": 43,
-            "failed": 25
+            "failed": 27
         }
     },
     "challenge_log": [
+        {
+            "date": "2026-05-22",
+            "date_formatted": "May 22, 2026",
+            "challenger": "William Contreras",
+            "role": "catching",
+            "team": "opponents",
+            "outcome": "confirmed",
+            "result_desc": "Andy Pages walks. Shohei Ohtani to 3rd. Freddie Freeman to 2nd.",
+            "batter": "Andy Pages",
+            "pitcher": "Logan Henderson",
+            "game_pk": 823788
+        },
+        {
+            "date": "2026-05-22",
+            "date_formatted": "May 22, 2026",
+            "challenger": "William Contreras",
+            "role": "catching",
+            "team": "opponents",
+            "outcome": "confirmed",
+            "result_desc": "Brewers challenged (tag play), call on the field was overturned: William Contreras challenged (pitch result), call on the field was confirmed: Shohei Ohtani caught stealing 2nd base, catcher William Contreras to shortstop Joey Ortiz.",
+            "batter": "Kyle Tucker",
+            "pitcher": "Logan Henderson",
+            "game_pk": 823788
+        },
         {
             "date": "2026-05-20",
             "date_formatted": "May 20, 2026",
@@ -133,18 +157,6 @@
         {
             "date": "2026-05-15",
             "date_formatted": "May 15, 2026",
-            "challenger": "Sebasti\u00e1n Rivero",
-            "role": "catching",
-            "team": "opponents",
-            "outcome": "confirmed",
-            "result_desc": "Teoscar Hern\u00e1ndez singles on a line drive to left fielder Bryce Teodosio. Max Muncy to 3rd.",
-            "batter": "Teoscar Hern\u00e1ndez",
-            "pitcher": "Ryan Johnson",
-            "game_pk": 824037
-        },
-        {
-            "date": "2026-05-15",
-            "date_formatted": "May 15, 2026",
             "challenger": "Teoscar Hern\u00e1ndez",
             "role": "batting",
             "team": "dodgers",
@@ -167,16 +179,16 @@
             "game_pk": 824037
         },
         {
-            "date": "2026-05-14",
-            "date_formatted": "May 14, 2026",
-            "challenger": "Eric Haase",
+            "date": "2026-05-15",
+            "date_formatted": "May 15, 2026",
+            "challenger": "Sebasti\u00e1n Rivero",
             "role": "catching",
             "team": "opponents",
-            "outcome": "overturned",
-            "result_desc": "Max Muncy grounds into a force out, second baseman Luis Arraez to shortstop Willy Adames. Andy Pages out at 2nd. Max Muncy to 1st.",
-            "batter": "Max Muncy",
-            "pitcher": "Landen Roupp",
-            "game_pk": 823950
+            "outcome": "confirmed",
+            "result_desc": "Teoscar Hern\u00e1ndez singles on a line drive to left fielder Bryce Teodosio. Max Muncy to 3rd.",
+            "batter": "Teoscar Hern\u00e1ndez",
+            "pitcher": "Ryan Johnson",
+            "game_pk": 824037
         },
         {
             "date": "2026-05-14",
@@ -188,6 +200,18 @@
             "result_desc": "Teoscar Hern\u00e1ndez strikes out swinging, catcher Eric Haase to first baseman Rafael Devers.",
             "batter": "Teoscar Hern\u00e1ndez",
             "pitcher": "JT Brubaker",
+            "game_pk": 823950
+        },
+        {
+            "date": "2026-05-14",
+            "date_formatted": "May 14, 2026",
+            "challenger": "Eric Haase",
+            "role": "catching",
+            "team": "opponents",
+            "outcome": "overturned",
+            "result_desc": "Max Muncy grounds into a force out, second baseman Luis Arraez to shortstop Willy Adames. Andy Pages out at 2nd. Max Muncy to 1st.",
+            "batter": "Max Muncy",
+            "pitcher": "Landen Roupp",
             "game_pk": 823950
         },
         {
@@ -249,30 +273,6 @@
             "batter": "Andy Pages",
             "pitcher": "Adrian Houser",
             "game_pk": 823951
-        },
-        {
-            "date": "2026-05-11",
-            "date_formatted": "May 11, 2026",
-            "challenger": "Will Smith",
-            "role": "catching",
-            "team": "dodgers",
-            "outcome": "overturned",
-            "result_desc": "Luis Arraez grounds out, shortstop Mookie Betts to first baseman Freddie Freeman.",
-            "batter": "Luis Arraez",
-            "pitcher": "Wyatt Mills",
-            "game_pk": 823953
-        },
-        {
-            "date": "2026-05-11",
-            "date_formatted": "May 11, 2026",
-            "challenger": "Miguel Rojas",
-            "role": "batting",
-            "team": "dodgers",
-            "outcome": "confirmed",
-            "result_desc": "Miguel Rojas grounds out, second baseman Luis Arraez to first baseman Casey Schmitt. Teoscar Hern\u00e1ndez to 2nd.",
-            "batter": "Miguel Rojas",
-            "pitcher": "Matt Gage",
-            "game_pk": 823953
         }
     ]
 }
