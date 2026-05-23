@@ -74,7 +74,7 @@
     {
         "stat_label":"Batting average",
         "stat":"batting_average",
-        "value":".259",
+        "value":".258",
         "category":"batting",
         "context_value":".253",
         "context_value_label":"Last decade average"
@@ -90,7 +90,7 @@
     {
         "stat_label":"Home runs\/game",
         "stat":"home_runs_game",
-        "value":1.29,
+        "value":1.27,
         "category":"batting",
         "context_value":1.42,
         "context_value_label":"Last decade average"
@@ -106,7 +106,7 @@
     {
         "stat_label":"Slugging percentage",
         "stat":"slugging_pct",
-        "value":".427",
+        "value":".426",
         "category":"batting",
         "context_value":"2nd",
         "context_value_label":"League rank"
@@ -114,9 +114,9 @@
     {
         "stat_label":"OPS",
         "stat":"ops",
-        "value":".769",
+        "value":".768",
         "category":"batting",
-        "context_value":"2nd",
+        "context_value":"1st",
         "context_value_label":"League rank"
     },
     {
@@ -140,7 +140,7 @@
         "stat":"doubles",
         "value":82,
         "category":"batting",
-        "context_value":"12th",
+        "context_value":"14th",
         "context_value_label":"League rank"
     },
     {
@@ -156,7 +156,7 @@
         "stat":"walks",
         "value":144,
         "category":"pitching",
-        "context_value":"28th",
+        "context_value":"29th",
         "context_value_label":"League rank"
     },
     {
@@ -194,7 +194,7 @@
     {
         "stat_label":"Last updated",
         "stat":"update_time",
-        "value":"May 23, 2026, 8:32 AM PT",
+        "value":"May 23, 2026, 4:26 PM PT",
         "category":"summary",
         "context_value":"",
         "context_value_label":""
@@ -202,7 +202,7 @@
     {
         "stat_label":"Team summary",
         "stat":"summary",
-        "value":"<span class='highlight'>LOS ANGELES<\/span> <span class='updated'>(May 23)<\/span> \u2014 The Dodgers have compiled a <span class='highlight'>31-20<\/span> record in the 2026 regular season, a <span class='highlight'>61%<\/span> winning percentage. The last game was a <span class='highlight'>1-5<\/span> away <span class='highlight'>loss<\/span> against the <span class='highlight'>Milwaukee Brewers<\/span>. The team next faces the <span class='highlight'>Milwaukee Brewers<\/span> on Saturday at 4:15 p.m. PDT at <span class='highlight'>American Family Field<\/span>.",
+        "value":"<span class='highlight'>LOS ANGELES<\/span> <span class='updated'>(May 23)<\/span> \u2014 The Dodgers have compiled a <span class='highlight'>31-20<\/span> record in the 2026 regular season, a <span class='highlight'>61%<\/span> winning percentage. The last game was a <span class='highlight'>1-5<\/span> away <span class='highlight'>loss<\/span> against the <span class='highlight'>Milwaukee Brewers<\/span>. The team next faces the <span class='highlight'>Milwaukee Brewers<\/span> on Sunday at 11:10 a.m. PDT at <span class='highlight'>American Family Field<\/span>.",
         "category":"summary",
         "context_value":"",
         "context_value_label":""
