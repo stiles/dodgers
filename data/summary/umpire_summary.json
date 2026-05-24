@@ -1,17 +1,17 @@
 {
     "season_summary": {
-        "correct_strikes_pct": 91.46174863387978,
-        "incorrect_strikes_pct": 8.538251366120221,
-        "total_called_strikes": 1464,
+        "correct_strikes_pct": 91.57113958192852,
+        "incorrect_strikes_pct": 8.42886041807148,
+        "total_called_strikes": 1483,
         "bad_calls_count": 125
     },
     "last_game_summary": {
-        "date": "May 23, 2026",
-        "correct_strikes_pct": 88.23529411764706,
-        "incorrect_strikes_pct": 11.764705882352942,
-        "total_called_strikes": 34,
-        "bad_calls_count": 4,
-        "home_plate_umpire": "Tripp Gibson"
+        "date": "May 24, 2026",
+        "correct_strikes_pct": 100.0,
+        "incorrect_strikes_pct": 0.0,
+        "total_called_strikes": 19,
+        "bad_calls_count": 0,
+        "home_plate_umpire": "Tyler Jones"
     },
     "worst_calls_of_season": [
         {
@@ -56,25 +56,25 @@
         }
     ],
     "pitching_season_summary": {
-        "correct_balls_pct": 95.75489110372831,
-        "incorrect_balls_pct": 4.245108896271688,
-        "total_called_balls": 2709,
-        "bad_calls_count": 115
+        "correct_balls_pct": 95.74545454545455,
+        "incorrect_balls_pct": 4.25454545454545,
+        "total_called_balls": 2750,
+        "bad_calls_count": 117
     },
     "pitching_last_game_summary": {
-        "date": "May 23, 2026",
-        "correct_balls_pct": 94.54545454545455,
-        "incorrect_balls_pct": 5.454545454545453,
-        "total_called_balls": 55,
-        "bad_calls_count": 3
+        "date": "May 24, 2026",
+        "correct_balls_pct": 95.1219512195122,
+        "incorrect_balls_pct": 4.878048780487802,
+        "total_called_balls": 41,
+        "bad_calls_count": 2
     },
     "pitching_worst_calls_of_season": [],
     "abs_challenges": {
         "dodgers": {
             "batting": {
-                "total": 21,
+                "total": 22,
                 "successful": 7,
-                "failed": 14
+                "failed": 15
             },
             "pitching": {
                 "total": 0,
@@ -105,6 +105,18 @@
             }
         },
         "challenge_log": [
+            {
+                "date": "2026-05-24",
+                "date_formatted": "May 24, 2026",
+                "challenger": "Mookie Betts",
+                "role": "batting",
+                "team": "dodgers",
+                "outcome": "confirmed",
+                "result_desc": "Mookie Betts called out on strikes.",
+                "batter": "Mookie Betts",
+                "pitcher": "Shane Drohan",
+                "game_pk": 823786
+            },
             {
                 "date": "2026-05-22",
                 "date_formatted": "May 22, 2026",
@@ -331,18 +343,6 @@
                 "result_desc": "Teoscar Hern\u00e1ndez called out on strikes.",
                 "batter": "Teoscar Hern\u00e1ndez",
                 "pitcher": "Dustin May",
-                "game_pk": 823065
-            },
-            {
-                "date": "2026-05-03",
-                "date_formatted": "May 3, 2026",
-                "challenger": "Miguel Rojas",
-                "role": "batting",
-                "team": "dodgers",
-                "outcome": "overturned",
-                "result_desc": "Miguel Rojas walks.",
-                "batter": "Miguel Rojas",
-                "pitcher": "Justin Bruihl",
                 "game_pk": 823065
             }
         ]

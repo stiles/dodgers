@@ -11,8 +11,8 @@
             "failed": 2
         },
         "catching": {
-            "total": 51,
-            "successful": 32,
+            "total": 52,
+            "successful": 33,
             "failed": 19
         }
     },
@@ -28,12 +28,48 @@
             "failed": 2
         },
         "catching": {
-            "total": 72,
-            "successful": 44,
-            "failed": 28
+            "total": 74,
+            "successful": 45,
+            "failed": 29
         }
     },
     "challenge_log": [
+        {
+            "date": "2026-05-24",
+            "date_formatted": "May 24, 2026",
+            "challenger": "Dalton Rushing",
+            "role": "catching",
+            "team": "dodgers",
+            "outcome": "overturned",
+            "result_desc": "Joey Ortiz grounds out, shortstop Mookie Betts to first baseman Freddie Freeman.",
+            "batter": "Joey Ortiz",
+            "pitcher": "Yoshinobu Yamamoto",
+            "game_pk": 823786
+        },
+        {
+            "date": "2026-05-24",
+            "date_formatted": "May 24, 2026",
+            "challenger": "William Contreras",
+            "role": "catching",
+            "team": "opponents",
+            "outcome": "overturned",
+            "result_desc": "Dalton Rushing walks. Teoscar Hern\u00e1ndez to 2nd.",
+            "batter": "Dalton Rushing",
+            "pitcher": "Brandon Sproat",
+            "game_pk": 823786
+        },
+        {
+            "date": "2026-05-24",
+            "date_formatted": "May 24, 2026",
+            "challenger": "William Contreras",
+            "role": "catching",
+            "team": "opponents",
+            "outcome": "confirmed",
+            "result_desc": "Teoscar Hern\u00e1ndez walks.",
+            "batter": "Teoscar Hern\u00e1ndez",
+            "pitcher": "Brandon Sproat",
+            "game_pk": 823786
+        },
         {
             "date": "2026-05-23",
             "date_formatted": "May 23, 2026",
@@ -161,9 +197,9 @@
             "role": "catching",
             "team": "opponents",
             "outcome": "overturned",
-            "result_desc": "Mookie Betts lines out to shortstop Xander Bogaerts.",
-            "batter": "Mookie Betts",
-            "pitcher": "Michael King",
+            "result_desc": "Will Smith flies out to center fielder Jackson Merrill.",
+            "batter": "Will Smith",
+            "pitcher": "Mason Miller",
             "game_pk": 823301
         },
         {
@@ -173,9 +209,9 @@
             "role": "catching",
             "team": "opponents",
             "outcome": "overturned",
-            "result_desc": "Will Smith flies out to center fielder Jackson Merrill.",
-            "batter": "Will Smith",
-            "pitcher": "Mason Miller",
+            "result_desc": "Mookie Betts lines out to shortstop Xander Bogaerts.",
+            "batter": "Mookie Betts",
+            "pitcher": "Michael King",
             "game_pk": 823301
         },
         {
@@ -237,42 +273,6 @@
             "batter": "Teoscar Hern\u00e1ndez",
             "pitcher": "Ryan Johnson",
             "game_pk": 824037
-        },
-        {
-            "date": "2026-05-15",
-            "date_formatted": "May 15, 2026",
-            "challenger": "Jorge Soler",
-            "role": "batting",
-            "team": "opponents",
-            "outcome": "confirmed",
-            "result_desc": "Jorge Soler strikes out swinging.",
-            "batter": "Jorge Soler",
-            "pitcher": "Will Klein",
-            "game_pk": 824037
-        },
-        {
-            "date": "2026-05-14",
-            "date_formatted": "May 14, 2026",
-            "challenger": "Teoscar Hern\u00e1ndez",
-            "role": "batting",
-            "team": "dodgers",
-            "outcome": "overturned",
-            "result_desc": "Teoscar Hern\u00e1ndez strikes out swinging, catcher Eric Haase to first baseman Rafael Devers.",
-            "batter": "Teoscar Hern\u00e1ndez",
-            "pitcher": "JT Brubaker",
-            "game_pk": 823950
-        },
-        {
-            "date": "2026-05-14",
-            "date_formatted": "May 14, 2026",
-            "challenger": "Eric Haase",
-            "role": "catching",
-            "team": "opponents",
-            "outcome": "overturned",
-            "result_desc": "Max Muncy grounds into a force out, second baseman Luis Arraez to shortstop Willy Adames. Andy Pages out at 2nd. Max Muncy to 1st.",
-            "batter": "Max Muncy",
-            "pitcher": "Landen Roupp",
-            "game_pk": 823950
         }
     ]
 }
