@@ -26,7 +26,7 @@
     {
         "stat_label":"Games up\/back",
         "stat":"games_up_back",
-        "value":1,
+        "value":0.5,
         "category":"standings",
         "context_value":"1st",
         "context_value_label":"Division rank"
@@ -194,7 +194,7 @@
     {
         "stat_label":"Last updated",
         "stat":"update_time",
-        "value":"May 23, 2026, 8:15 PM PT",
+        "value":"May 24, 2026, 2:00 AM PT",
         "category":"summary",
         "context_value":"",
         "context_value_label":""
@@ -202,7 +202,7 @@
     {
         "stat_label":"Team summary",
         "stat":"summary",
-        "value":"<span class='highlight'>LOS ANGELES<\/span> <span class='updated'>(May 23)<\/span> \u2014 The Dodgers have compiled a <span class='highlight'>32-20<\/span> record in the 2026 regular season, a <span class='highlight'>62%<\/span> winning percentage. The last game was a <span class='highlight'>11-3<\/span> away <span class='highlight'>win<\/span> against the <span class='highlight'>Milwaukee Brewers<\/span>. The team next faces the <span class='highlight'>Milwaukee Brewers<\/span> on Sunday at 11:10 a.m. PDT at <span class='highlight'>American Family Field<\/span>.",
+        "value":"<span class='highlight'>LOS ANGELES<\/span> <span class='updated'>(May 24)<\/span> \u2014 The Dodgers have compiled a <span class='highlight'>32-20<\/span> record in the 2026 regular season, a <span class='highlight'>62%<\/span> winning percentage. The last game was a <span class='highlight'>11-3<\/span> away <span class='highlight'>win<\/span> against the <span class='highlight'>Milwaukee Brewers<\/span>. The team next faces the <span class='highlight'>Milwaukee Brewers<\/span> on Sunday at 11:10 a.m. PDT at <span class='highlight'>American Family Field<\/span>.",
         "category":"summary",
         "context_value":"",
         "context_value_label":""
