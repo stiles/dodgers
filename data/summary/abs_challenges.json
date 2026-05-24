@@ -1,8 +1,8 @@
 {
     "dodgers": {
         "batting": {
-            "total": 37,
-            "successful": 22,
+            "total": 38,
+            "successful": 23,
             "failed": 15
         },
         "pitching": {
@@ -11,9 +11,9 @@
             "failed": 2
         },
         "catching": {
-            "total": 49,
-            "successful": 31,
-            "failed": 18
+            "total": 51,
+            "successful": 32,
+            "failed": 19
         }
     },
     "opponents": {
@@ -28,12 +28,72 @@
             "failed": 2
         },
         "catching": {
-            "total": 70,
-            "successful": 43,
-            "failed": 27
+            "total": 72,
+            "successful": 44,
+            "failed": 28
         }
     },
     "challenge_log": [
+        {
+            "date": "2026-05-23",
+            "date_formatted": "May 23, 2026",
+            "challenger": "Gary S\u00e1nchez",
+            "role": "catching",
+            "team": "opponents",
+            "outcome": "confirmed",
+            "result_desc": "Freddie Freeman walks.",
+            "batter": "Freddie Freeman",
+            "pitcher": "DL Hall",
+            "game_pk": 823787
+        },
+        {
+            "date": "2026-05-23",
+            "date_formatted": "May 23, 2026",
+            "challenger": "Will Smith",
+            "role": "catching",
+            "team": "dodgers",
+            "outcome": "overturned",
+            "result_desc": "Sal Frelick lines out to center fielder Andy Pages.",
+            "batter": "Sal Frelick",
+            "pitcher": "Alex Vesia",
+            "game_pk": 823787
+        },
+        {
+            "date": "2026-05-23",
+            "date_formatted": "May 23, 2026",
+            "challenger": "Teoscar Hern\u00e1ndez",
+            "role": "batting",
+            "team": "dodgers",
+            "outcome": "overturned",
+            "result_desc": "Teoscar Hern\u00e1ndez walks.",
+            "batter": "Teoscar Hern\u00e1ndez",
+            "pitcher": "Grant Anderson",
+            "game_pk": 823787
+        },
+        {
+            "date": "2026-05-23",
+            "date_formatted": "May 23, 2026",
+            "challenger": "Gary S\u00e1nchez",
+            "role": "catching",
+            "team": "opponents",
+            "outcome": "overturned",
+            "result_desc": "Kyle Tucker walks.",
+            "batter": "Kyle Tucker",
+            "pitcher": "Robert Gasser",
+            "game_pk": 823787
+        },
+        {
+            "date": "2026-05-23",
+            "date_formatted": "May 23, 2026",
+            "challenger": "Will Smith",
+            "role": "catching",
+            "team": "dodgers",
+            "outcome": "confirmed",
+            "result_desc": "Jake Bauers strikes out swinging.",
+            "batter": "Jake Bauers",
+            "pitcher": "Roki Sasaki",
+            "game_pk": 823787
+        },
         {
             "date": "2026-05-22",
             "date_formatted": "May 22, 2026",
@@ -101,9 +161,9 @@
             "role": "catching",
             "team": "opponents",
             "outcome": "overturned",
-            "result_desc": "Will Smith flies out to center fielder Jackson Merrill.",
-            "batter": "Will Smith",
-            "pitcher": "Mason Miller",
+            "result_desc": "Mookie Betts lines out to shortstop Xander Bogaerts.",
+            "batter": "Mookie Betts",
+            "pitcher": "Michael King",
             "game_pk": 823301
         },
         {
@@ -113,9 +173,9 @@
             "role": "catching",
             "team": "opponents",
             "outcome": "overturned",
-            "result_desc": "Mookie Betts lines out to shortstop Xander Bogaerts.",
-            "batter": "Mookie Betts",
-            "pitcher": "Michael King",
+            "result_desc": "Will Smith flies out to center fielder Jackson Merrill.",
+            "batter": "Will Smith",
+            "pitcher": "Mason Miller",
             "game_pk": 823301
         },
         {
@@ -157,6 +217,18 @@
         {
             "date": "2026-05-15",
             "date_formatted": "May 15, 2026",
+            "challenger": "Sebasti\u00e1n Rivero",
+            "role": "catching",
+            "team": "opponents",
+            "outcome": "confirmed",
+            "result_desc": "Teoscar Hern\u00e1ndez singles on a line drive to left fielder Bryce Teodosio. Max Muncy to 3rd.",
+            "batter": "Teoscar Hern\u00e1ndez",
+            "pitcher": "Ryan Johnson",
+            "game_pk": 824037
+        },
+        {
+            "date": "2026-05-15",
+            "date_formatted": "May 15, 2026",
             "challenger": "Teoscar Hern\u00e1ndez",
             "role": "batting",
             "team": "dodgers",
@@ -176,18 +248,6 @@
             "result_desc": "Jorge Soler strikes out swinging.",
             "batter": "Jorge Soler",
             "pitcher": "Will Klein",
-            "game_pk": 824037
-        },
-        {
-            "date": "2026-05-15",
-            "date_formatted": "May 15, 2026",
-            "challenger": "Sebasti\u00e1n Rivero",
-            "role": "catching",
-            "team": "opponents",
-            "outcome": "confirmed",
-            "result_desc": "Teoscar Hern\u00e1ndez singles on a line drive to left fielder Bryce Teodosio. Max Muncy to 3rd.",
-            "batter": "Teoscar Hern\u00e1ndez",
-            "pitcher": "Ryan Johnson",
             "game_pk": 824037
         },
         {
@@ -213,66 +273,6 @@
             "batter": "Max Muncy",
             "pitcher": "Landen Roupp",
             "game_pk": 823950
-        },
-        {
-            "date": "2026-05-13",
-            "date_formatted": "May 13, 2026",
-            "challenger": "Will Smith",
-            "role": "catching",
-            "team": "dodgers",
-            "outcome": "overturned",
-            "result_desc": "Rafael Devers strikes out swinging.",
-            "batter": "Rafael Devers",
-            "pitcher": "Shohei Ohtani",
-            "game_pk": 823952
-        },
-        {
-            "date": "2026-05-12",
-            "date_formatted": "May 12, 2026",
-            "challenger": "Eric Haase",
-            "role": "catching",
-            "team": "opponents",
-            "outcome": "overturned",
-            "result_desc": "Shohei Ohtani walks.",
-            "batter": "Shohei Ohtani",
-            "pitcher": "Adrian Houser",
-            "game_pk": 823951
-        },
-        {
-            "date": "2026-05-12",
-            "date_formatted": "May 12, 2026",
-            "challenger": "Eric Haase",
-            "role": "catching",
-            "team": "opponents",
-            "outcome": "confirmed",
-            "result_desc": "Max Muncy flies out sharply to right fielder Jung Hoo Lee.",
-            "batter": "Max Muncy",
-            "pitcher": "Adrian Houser",
-            "game_pk": 823951
-        },
-        {
-            "date": "2026-05-12",
-            "date_formatted": "May 12, 2026",
-            "challenger": "Jung Hoo Lee",
-            "role": "batting",
-            "team": "opponents",
-            "outcome": "overturned",
-            "result_desc": "Jung Hoo Lee grounds out, shortstop Mookie Betts to first baseman Freddie Freeman.",
-            "batter": "Jung Hoo Lee",
-            "pitcher": "Yoshinobu Yamamoto",
-            "game_pk": 823951
-        },
-        {
-            "date": "2026-05-12",
-            "date_formatted": "May 12, 2026",
-            "challenger": "Andy Pages",
-            "role": "batting",
-            "team": "dodgers",
-            "outcome": "overturned",
-            "result_desc": "Andy Pages strikes out swinging.",
-            "batter": "Andy Pages",
-            "pitcher": "Adrian Houser",
-            "game_pk": 823951
         }
     ]
 }
