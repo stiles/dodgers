@@ -648,24 +648,6 @@
     "slug":"tommy-edman"
   },
   {
-    "player_id":"669289",
-    "thumb_url":"https:\/\/img.mlbstatic.com\/mlb-photos\/image\/upload\/d_people:generic:headshot:silo:current.png\/r_max\/q_auto:best\/v1\/people\/669289\/headshot\/silo\/current",
-    "name":"Santiago Espinal",
-    "player_url":"\/player\/669289",
-    "jersey":"21",
-    "position_group":"Infielders",
-    "bat_throw":"R\/R",
-    "height":"5' 9\"",
-    "weight":"185",
-    "dob":"11\/13\/1994",
-    "status":"ACTIVE",
-    "is_minors":false,
-    "is_il":false,
-    "is_active_roster":true,
-    "is_40_man":true,
-    "slug":"santiago-espinal"
-  },
-  {
     "player_id":"666149",
     "thumb_url":"https:\/\/img.mlbstatic.com\/mlb-photos\/image\/upload\/d_people:generic:headshot:silo:current.png\/r_max\/q_auto:best\/v1\/people\/666149\/headshot\/silo\/current",
     "name":"Tyler Fitzgerald",
@@ -730,10 +712,10 @@
     "height":"5' 10\"",
     "weight":"195",
     "dob":"08\/24\/1991",
-    "status":"IL-60",
+    "status":"ACTIVE",
     "is_minors":false,
-    "is_il":true,
-    "is_active_roster":false,
+    "is_il":false,
+    "is_active_roster":true,
     "is_40_man":true,
     "slug":"enrique-hernandez"
   },

@@ -84,7 +84,7 @@
         "stat":"home_runs",
         "value":68,
         "category":"batting",
-        "context_value":"4th",
+        "context_value":"5th",
         "context_value_label":"League rank"
     },
     {
@@ -140,7 +140,7 @@
         "stat":"doubles",
         "value":86,
         "category":"batting",
-        "context_value":"11th",
+        "context_value":"12th",
         "context_value_label":"League rank"
     },
     {
@@ -194,7 +194,7 @@
     {
         "stat_label":"Last updated",
         "stat":"update_time",
-        "value":"May 25, 2026, 9:03 AM PT",
+        "value":"May 25, 2026, 4:31 PM PT",
         "category":"summary",
         "context_value":"",
         "context_value_label":""
