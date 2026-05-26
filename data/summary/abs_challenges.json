@@ -1,8 +1,8 @@
 {
     "dodgers": {
         "batting": {
-            "total": 38,
-            "successful": 23,
+            "total": 39,
+            "successful": 24,
             "failed": 15
         },
         "pitching": {
@@ -18,9 +18,9 @@
     },
     "opponents": {
         "batting": {
-            "total": 44,
+            "total": 46,
             "successful": 21,
-            "failed": 23
+            "failed": 25
         },
         "pitching": {
             "total": 3,
@@ -34,6 +34,42 @@
         }
     },
     "challenge_log": [
+        {
+            "date": "2026-05-25",
+            "date_formatted": "May 25, 2026",
+            "challenger": "Troy Johnston",
+            "role": "batting",
+            "team": "opponents",
+            "outcome": "confirmed",
+            "result_desc": "Troy Johnston grounds out, second baseman Hyeseong Kim to first baseman Freddie Freeman.",
+            "batter": "Troy Johnston",
+            "pitcher": "Alex Vesia",
+            "game_pk": 823948
+        },
+        {
+            "date": "2026-05-25",
+            "date_formatted": "May 25, 2026",
+            "challenger": "Edouard Julien",
+            "role": "batting",
+            "team": "opponents",
+            "outcome": "confirmed",
+            "result_desc": "Edouard Julien walks.",
+            "batter": "Edouard Julien",
+            "pitcher": "Emmet Sheehan",
+            "game_pk": 823948
+        },
+        {
+            "date": "2026-05-25",
+            "date_formatted": "May 25, 2026",
+            "challenger": "Mookie Betts",
+            "role": "batting",
+            "team": "dodgers",
+            "outcome": "overturned",
+            "result_desc": "Mookie Betts flies out to center fielder Jake McCarthy.",
+            "batter": "Mookie Betts",
+            "pitcher": "Tanner Gordon",
+            "game_pk": 823948
+        },
         {
             "date": "2026-05-24",
             "date_formatted": "May 24, 2026",
@@ -137,8 +173,8 @@
             "role": "catching",
             "team": "opponents",
             "outcome": "confirmed",
-            "result_desc": "Andy Pages walks. Shohei Ohtani to 3rd. Freddie Freeman to 2nd.",
-            "batter": "Andy Pages",
+            "result_desc": "Brewers challenged (tag play), call on the field was overturned: William Contreras challenged (pitch result), call on the field was confirmed: Shohei Ohtani caught stealing 2nd base, catcher William Contreras to shortstop Joey Ortiz.",
+            "batter": "Kyle Tucker",
             "pitcher": "Logan Henderson",
             "game_pk": 823788
         },
@@ -149,8 +185,8 @@
             "role": "catching",
             "team": "opponents",
             "outcome": "confirmed",
-            "result_desc": "Brewers challenged (tag play), call on the field was overturned: William Contreras challenged (pitch result), call on the field was confirmed: Shohei Ohtani caught stealing 2nd base, catcher William Contreras to shortstop Joey Ortiz.",
-            "batter": "Kyle Tucker",
+            "result_desc": "Andy Pages walks. Shohei Ohtani to 3rd. Freddie Freeman to 2nd.",
+            "batter": "Andy Pages",
             "pitcher": "Logan Henderson",
             "game_pk": 823788
         },
@@ -237,42 +273,6 @@
             "batter": "Freddie Freeman",
             "pitcher": "Grayson Rodriguez",
             "game_pk": 824034
-        },
-        {
-            "date": "2026-05-16",
-            "date_formatted": "May 16, 2026",
-            "challenger": "Nolan Schanuel",
-            "role": "batting",
-            "team": "opponents",
-            "outcome": "confirmed",
-            "result_desc": "Nolan Schanuel flies out to left fielder Teoscar Hern\u00e1ndez.",
-            "batter": "Nolan Schanuel",
-            "pitcher": "Justin Wrobleski",
-            "game_pk": 824038
-        },
-        {
-            "date": "2026-05-15",
-            "date_formatted": "May 15, 2026",
-            "challenger": "Sebasti\u00e1n Rivero",
-            "role": "catching",
-            "team": "opponents",
-            "outcome": "confirmed",
-            "result_desc": "Teoscar Hern\u00e1ndez singles on a line drive to left fielder Bryce Teodosio. Max Muncy to 3rd.",
-            "batter": "Teoscar Hern\u00e1ndez",
-            "pitcher": "Ryan Johnson",
-            "game_pk": 824037
-        },
-        {
-            "date": "2026-05-15",
-            "date_formatted": "May 15, 2026",
-            "challenger": "Teoscar Hern\u00e1ndez",
-            "role": "batting",
-            "team": "dodgers",
-            "outcome": "confirmed",
-            "result_desc": "Teoscar Hern\u00e1ndez singles on a line drive to left fielder Bryce Teodosio. Max Muncy to 3rd.",
-            "batter": "Teoscar Hern\u00e1ndez",
-            "pitcher": "Ryan Johnson",
-            "game_pk": 824037
         }
     ]
 }
