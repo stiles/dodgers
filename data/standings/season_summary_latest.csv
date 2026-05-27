@@ -1,13 +1,13 @@
 stat_label,stat,value,category,context_value,context_value_label
-Wins,wins,35,standings,33,This point last season
+Wins,wins,35,standings,34,This point last season
 Losses,losses,20,standings,21,This point last season
-Win percentage,win_pct,64%,standings,61%,This point last season
+Win percentage,win_pct,64%,standings,62%,This point last season
 Games up/back,games_up_back,3.5,standings,1st,Division rank
 Fielding percentage,fielding_pct,.991,standings,2nd,League rank
 Errors,errors,18,standings,2nd,League rank
 Runs,runs,294,standings,2nd,League rank
-Runs against,runs_against,177,standings,237,This point last season
-Run differential,run_differential,117,standings,64,This point last season
+Runs against,runs_against,177,standings,242,This point last season
+Run differential,run_differential,117,standings,68,This point last season
 Batting average,batting_average,.262,batting,.253,Last decade average
 Home runs,home_runs,73,batting,3rd,League rank
 Home runs/game,home_runs_game,1.33,batting,1.42,Last decade average
@@ -23,6 +23,6 @@ ERA,era,3.15,pitching,2nd,League rank
 WHIP,whip,1.10,pitching,1st,League rank
 Batting average against,avg_against,.213,pitching,2nd,League rank
 K/BB ratio,k_bb_ratio,3.18,pitching,3rd,League rank
-Last updated,update_time,"May 27, 2026, 6:25 AM PT",summary,,
+Last updated,update_time,"May 27, 2026, 6:50 AM PT",summary,,
 Team summary,summary,"<span class='highlight'>LOS ANGELES</span> <span class='updated'>(May 27)</span> — The Dodgers have compiled a <span class='highlight'>35-20</span> record in the 2026 regular season, a <span class='highlight'>64%</span> winning percentage. The last game was a <span class='highlight'>15-6</span> home <span class='highlight'>win</span> against the <span class='highlight'>Colorado Rockies</span>. The team next faces the <span class='highlight'>Colorado Rockies</span> on Wednesday at 7:10 p.m. PDT at <span class='highlight'>UNIQLO Field at Dodger Stadium</span>.",summary,,
 Last game result,last_game_result,win,summary,,
