@@ -1,13 +1,5 @@
 [
     {
-        "date":"May 15",
-        "opp_name":"Los Angeles Angels",
-        "home_away":"away",
-        "result":"win",
-        "placement":"last",
-        "game_start":"6-0"
-    },
-    {
         "date":"May 16",
         "opp_name":"Los Angeles Angels",
         "home_away":"away",
@@ -83,9 +75,9 @@
         "date":"May 26",
         "opp_name":"Colorado Rockies",
         "home_away":"home",
-        "result":"--",
-        "placement":"next",
-        "game_start":"7:10 PM"
+        "result":"win",
+        "placement":"last",
+        "game_start":"15-6"
     },
     {
         "date":"May 27",
@@ -153,6 +145,14 @@
     },
     {
         "date":"Jun 5",
+        "opp_name":"Los Angeles Angels",
+        "home_away":"home",
+        "result":"--",
+        "placement":"next",
+        "game_start":"7:10 PM"
+    },
+    {
+        "date":"Jun 6",
         "opp_name":"Los Angeles Angels",
         "home_away":"home",
         "result":"--",
