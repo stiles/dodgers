@@ -1,8 +1,8 @@
 {
     "dodgers": {
         "batting": {
-            "total": 39,
-            "successful": 24,
+            "total": 40,
+            "successful": 25,
             "failed": 15
         },
         "pitching": {
@@ -11,16 +11,16 @@
             "failed": 2
         },
         "catching": {
-            "total": 52,
+            "total": 53,
             "successful": 33,
-            "failed": 19
+            "failed": 20
         }
     },
     "opponents": {
         "batting": {
-            "total": 47,
+            "total": 48,
             "successful": 21,
-            "failed": 26
+            "failed": 27
         },
         "pitching": {
             "total": 3,
@@ -34,6 +34,42 @@
         }
     },
     "challenge_log": [
+        {
+            "date": "2026-05-27",
+            "date_formatted": "May 27, 2026",
+            "challenger": "Edouard Julien",
+            "role": "batting",
+            "team": "opponents",
+            "outcome": "confirmed",
+            "result_desc": "Edouard Julien lines out softly to second baseman Alex Freeland.",
+            "batter": "Edouard Julien",
+            "pitcher": "Shohei Ohtani",
+            "game_pk": 823947
+        },
+        {
+            "date": "2026-05-27",
+            "date_formatted": "May 27, 2026",
+            "challenger": "Will Smith",
+            "role": "catching",
+            "team": "dodgers",
+            "outcome": "confirmed",
+            "result_desc": "Troy Johnston grounds into a force out, second baseman Alex Freeland to shortstop Mookie Betts. TJ Rumfield to 3rd. Hunter Goodman out at 2nd. Troy Johnston to 1st.",
+            "batter": "Troy Johnston",
+            "pitcher": "Shohei Ohtani",
+            "game_pk": 823947
+        },
+        {
+            "date": "2026-05-27",
+            "date_formatted": "May 27, 2026",
+            "challenger": "Mookie Betts",
+            "role": "batting",
+            "team": "dodgers",
+            "outcome": "overturned",
+            "result_desc": "Mookie Betts flies out to center fielder Jake McCarthy.",
+            "batter": "Mookie Betts",
+            "pitcher": "Tomoyuki Sugano",
+            "game_pk": 823947
+        },
         {
             "date": "2026-05-26",
             "date_formatted": "May 26, 2026",
@@ -237,42 +273,6 @@
             "batter": "Freddy Fermin",
             "pitcher": "Emmet Sheehan",
             "game_pk": 823302
-        },
-        {
-            "date": "2026-05-19",
-            "date_formatted": "May 19, 2026",
-            "challenger": "Freddy Fermin",
-            "role": "catching",
-            "team": "opponents",
-            "outcome": "overturned",
-            "result_desc": "Mookie Betts lines out to left fielder Gavin Sheets.",
-            "batter": "Mookie Betts",
-            "pitcher": "Griffin Canning",
-            "game_pk": 823302
-        },
-        {
-            "date": "2026-05-18",
-            "date_formatted": "May 18, 2026",
-            "challenger": "Rodolfo Dur\u00e1n",
-            "role": "catching",
-            "team": "opponents",
-            "outcome": "overturned",
-            "result_desc": "Will Smith flies out to center fielder Jackson Merrill.",
-            "batter": "Will Smith",
-            "pitcher": "Mason Miller",
-            "game_pk": 823301
-        },
-        {
-            "date": "2026-05-18",
-            "date_formatted": "May 18, 2026",
-            "challenger": "Rodolfo Dur\u00e1n",
-            "role": "catching",
-            "team": "opponents",
-            "outcome": "overturned",
-            "result_desc": "Mookie Betts lines out to shortstop Xander Bogaerts.",
-            "batter": "Mookie Betts",
-            "pitcher": "Michael King",
-            "game_pk": 823301
         }
     ]
 }
