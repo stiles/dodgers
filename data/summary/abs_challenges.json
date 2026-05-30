@@ -11,9 +11,9 @@
             "failed": 2
         },
         "catching": {
-            "total": 53,
-            "successful": 33,
-            "failed": 20
+            "total": 55,
+            "successful": 34,
+            "failed": 21
         }
     },
     "opponents": {
@@ -34,6 +34,30 @@
         }
     },
     "challenge_log": [
+        {
+            "date": "2026-05-29",
+            "date_formatted": "May 29, 2026",
+            "challenger": "Will Smith",
+            "role": "catching",
+            "team": "dodgers",
+            "outcome": "confirmed",
+            "result_desc": "Alec Bohm flies out to right fielder Kyle Tucker.",
+            "batter": "Alec Bohm",
+            "pitcher": "Tanner Scott",
+            "game_pk": 823946
+        },
+        {
+            "date": "2026-05-29",
+            "date_formatted": "May 29, 2026",
+            "challenger": "Will Smith",
+            "role": "catching",
+            "team": "dodgers",
+            "outcome": "overturned",
+            "result_desc": "J.T. Realmuto pops out to first baseman Freddie Freeman.",
+            "batter": "J.T. Realmuto",
+            "pitcher": "Edgardo Henriquez",
+            "game_pk": 823946
+        },
         {
             "date": "2026-05-27",
             "date_formatted": "May 27, 2026",
@@ -133,18 +157,6 @@
         {
             "date": "2026-05-24",
             "date_formatted": "May 24, 2026",
-            "challenger": "Dalton Rushing",
-            "role": "catching",
-            "team": "dodgers",
-            "outcome": "overturned",
-            "result_desc": "Joey Ortiz grounds out, shortstop Mookie Betts to first baseman Freddie Freeman.",
-            "batter": "Joey Ortiz",
-            "pitcher": "Yoshinobu Yamamoto",
-            "game_pk": 823786
-        },
-        {
-            "date": "2026-05-24",
-            "date_formatted": "May 24, 2026",
             "challenger": "William Contreras",
             "role": "catching",
             "team": "opponents",
@@ -167,6 +179,42 @@
             "game_pk": 823786
         },
         {
+            "date": "2026-05-24",
+            "date_formatted": "May 24, 2026",
+            "challenger": "Dalton Rushing",
+            "role": "catching",
+            "team": "dodgers",
+            "outcome": "overturned",
+            "result_desc": "Joey Ortiz grounds out, shortstop Mookie Betts to first baseman Freddie Freeman.",
+            "batter": "Joey Ortiz",
+            "pitcher": "Yoshinobu Yamamoto",
+            "game_pk": 823786
+        },
+        {
+            "date": "2026-05-23",
+            "date_formatted": "May 23, 2026",
+            "challenger": "Gary S\u00e1nchez",
+            "role": "catching",
+            "team": "opponents",
+            "outcome": "confirmed",
+            "result_desc": "Freddie Freeman walks.",
+            "batter": "Freddie Freeman",
+            "pitcher": "DL Hall",
+            "game_pk": 823787
+        },
+        {
+            "date": "2026-05-23",
+            "date_formatted": "May 23, 2026",
+            "challenger": "Will Smith",
+            "role": "catching",
+            "team": "dodgers",
+            "outcome": "overturned",
+            "result_desc": "Sal Frelick lines out to center fielder Andy Pages.",
+            "batter": "Sal Frelick",
+            "pitcher": "Alex Vesia",
+            "game_pk": 823787
+        },
+        {
             "date": "2026-05-23",
             "date_formatted": "May 23, 2026",
             "challenger": "Teoscar Hern\u00e1ndez",
@@ -176,18 +224,6 @@
             "result_desc": "Teoscar Hern\u00e1ndez walks.",
             "batter": "Teoscar Hern\u00e1ndez",
             "pitcher": "Grant Anderson",
-            "game_pk": 823787
-        },
-        {
-            "date": "2026-05-23",
-            "date_formatted": "May 23, 2026",
-            "challenger": "Will Smith",
-            "role": "catching",
-            "team": "dodgers",
-            "outcome": "confirmed",
-            "result_desc": "Jake Bauers strikes out swinging.",
-            "batter": "Jake Bauers",
-            "pitcher": "Roki Sasaki",
             "game_pk": 823787
         },
         {
@@ -208,22 +244,10 @@
             "challenger": "Will Smith",
             "role": "catching",
             "team": "dodgers",
-            "outcome": "overturned",
-            "result_desc": "Sal Frelick lines out to center fielder Andy Pages.",
-            "batter": "Sal Frelick",
-            "pitcher": "Alex Vesia",
-            "game_pk": 823787
-        },
-        {
-            "date": "2026-05-23",
-            "date_formatted": "May 23, 2026",
-            "challenger": "Gary S\u00e1nchez",
-            "role": "catching",
-            "team": "opponents",
             "outcome": "confirmed",
-            "result_desc": "Freddie Freeman walks.",
-            "batter": "Freddie Freeman",
-            "pitcher": "DL Hall",
+            "result_desc": "Jake Bauers strikes out swinging.",
+            "batter": "Jake Bauers",
+            "pitcher": "Roki Sasaki",
             "game_pk": 823787
         },
         {
@@ -249,30 +273,6 @@
             "batter": "Kyle Tucker",
             "pitcher": "Logan Henderson",
             "game_pk": 823788
-        },
-        {
-            "date": "2026-05-20",
-            "date_formatted": "May 20, 2026",
-            "challenger": "Miguel Andujar",
-            "role": "batting",
-            "team": "opponents",
-            "outcome": "confirmed",
-            "result_desc": "Miguel Andujar grounds into a double play, shortstop Mookie Betts to second baseman Hyeseong Kim to first baseman Freddie Freeman. Fernando Tatis Jr. out at 2nd. Miguel Andujar out at 1st.",
-            "batter": "Miguel Andujar",
-            "pitcher": "Kyle Hurt",
-            "game_pk": 823299
-        },
-        {
-            "date": "2026-05-19",
-            "date_formatted": "May 19, 2026",
-            "challenger": "Freddy Fermin",
-            "role": "batting",
-            "team": "opponents",
-            "outcome": "overturned",
-            "result_desc": "Freddy Fermin grounds out, second baseman Hyeseong Kim to first baseman Freddie Freeman.",
-            "batter": "Freddy Fermin",
-            "pitcher": "Emmet Sheehan",
-            "game_pk": 823302
         }
     ]
 }

@@ -1,17 +1,17 @@
 {
     "season_summary": {
-        "correct_strikes_pct": 91.54293092317624,
-        "incorrect_strikes_pct": 8.457069076823757,
-        "total_called_strikes": 1549,
-        "bad_calls_count": 131
+        "correct_strikes_pct": 91.53405474220241,
+        "incorrect_strikes_pct": 8.465945257797586,
+        "total_called_strikes": 1571,
+        "bad_calls_count": 133
     },
     "last_game_summary": {
-        "date": "May 27, 2026",
-        "correct_strikes_pct": 100.0,
-        "incorrect_strikes_pct": 0.0,
-        "total_called_strikes": 25,
-        "bad_calls_count": 0,
-        "home_plate_umpire": "Laz Diaz"
+        "date": "May 29, 2026",
+        "correct_strikes_pct": 90.9090909090909,
+        "incorrect_strikes_pct": 9.090909090909093,
+        "total_called_strikes": 22,
+        "bad_calls_count": 2,
+        "home_plate_umpire": "Steven Jaschinski"
     },
     "worst_calls_of_season": [
         {
@@ -56,17 +56,17 @@
         }
     ],
     "pitching_season_summary": {
-        "correct_balls_pct": 95.73361082206036,
-        "incorrect_balls_pct": 4.266389177939644,
-        "total_called_balls": 2883,
-        "bad_calls_count": 123
+        "correct_balls_pct": 95.71330589849109,
+        "incorrect_balls_pct": 4.286694101508914,
+        "total_called_balls": 2916,
+        "bad_calls_count": 125
     },
     "pitching_last_game_summary": {
-        "date": "May 27, 2026",
-        "correct_balls_pct": 94.11764705882352,
-        "incorrect_balls_pct": 5.882352941176478,
-        "total_called_balls": 51,
-        "bad_calls_count": 3
+        "date": "May 29, 2026",
+        "correct_balls_pct": 93.93939393939394,
+        "incorrect_balls_pct": 6.060606060606062,
+        "total_called_balls": 33,
+        "bad_calls_count": 2
     },
     "pitching_worst_calls_of_season": [],
     "abs_challenges": {
@@ -89,9 +89,9 @@
         },
         "opponents": {
             "batting": {
-                "total": 7,
+                "total": 8,
                 "successful": 1,
-                "failed": 6
+                "failed": 7
             },
             "pitching": {
                 "total": 0,
@@ -105,6 +105,18 @@
             }
         },
         "challenge_log": [
+            {
+                "date": "2026-05-29",
+                "date_formatted": "May 29, 2026",
+                "challenger": "Trea Turner",
+                "role": "batting",
+                "team": "opponents",
+                "outcome": "confirmed",
+                "result_desc": "Trea Turner called out on strikes.",
+                "batter": "Trea Turner",
+                "pitcher": "Justin Wrobleski",
+                "game_pk": 823946
+            },
             {
                 "date": "2026-05-27",
                 "date_formatted": "May 27, 2026",
@@ -332,18 +344,6 @@
                 "batter": "Teoscar Hern\u00e1ndez",
                 "pitcher": "Chris Sale",
                 "game_pk": 823957
-            },
-            {
-                "date": "2026-05-06",
-                "date_formatted": "May 6, 2026",
-                "challenger": "Max Muncy",
-                "role": "batting",
-                "team": "dodgers",
-                "outcome": "confirmed",
-                "result_desc": "Max Muncy called out on strikes.",
-                "batter": "Max Muncy",
-                "pitcher": "Lance McCullers Jr.",
-                "game_pk": 824198
             }
         ]
     }
