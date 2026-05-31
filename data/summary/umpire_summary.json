@@ -1,17 +1,17 @@
 {
     "season_summary": {
-        "correct_strikes_pct": 91.53405474220241,
-        "incorrect_strikes_pct": 8.465945257797586,
-        "total_called_strikes": 1571,
-        "bad_calls_count": 133
+        "correct_strikes_pct": 91.48936170212765,
+        "incorrect_strikes_pct": 8.510638297872347,
+        "total_called_strikes": 1598,
+        "bad_calls_count": 136
     },
     "last_game_summary": {
-        "date": "May 29, 2026",
-        "correct_strikes_pct": 90.9090909090909,
-        "incorrect_strikes_pct": 9.090909090909093,
-        "total_called_strikes": 22,
-        "bad_calls_count": 2,
-        "home_plate_umpire": "Steven Jaschinski"
+        "date": "May 30, 2026",
+        "correct_strikes_pct": 88.88888888888889,
+        "incorrect_strikes_pct": 11.111111111111114,
+        "total_called_strikes": 27,
+        "bad_calls_count": 3,
+        "home_plate_umpire": "James Hoye"
     },
     "worst_calls_of_season": [
         {
@@ -56,17 +56,17 @@
         }
     ],
     "pitching_season_summary": {
-        "correct_balls_pct": 95.71330589849109,
-        "incorrect_balls_pct": 4.286694101508914,
-        "total_called_balls": 2916,
-        "bad_calls_count": 125
+        "correct_balls_pct": 95.73604060913705,
+        "incorrect_balls_pct": 4.263959390862951,
+        "total_called_balls": 2955,
+        "bad_calls_count": 126
     },
     "pitching_last_game_summary": {
-        "date": "May 29, 2026",
-        "correct_balls_pct": 93.93939393939394,
-        "incorrect_balls_pct": 6.060606060606062,
-        "total_called_balls": 33,
-        "bad_calls_count": 2
+        "date": "May 30, 2026",
+        "correct_balls_pct": 97.43589743589743,
+        "incorrect_balls_pct": 2.564102564102569,
+        "total_called_balls": 39,
+        "bad_calls_count": 1
     },
     "pitching_worst_calls_of_season": [],
     "abs_challenges": {
@@ -99,12 +99,24 @@
                 "failed": 0
             },
             "catching": {
-                "total": 22,
-                "successful": 16,
+                "total": 23,
+                "successful": 17,
                 "failed": 6
             }
         },
         "challenge_log": [
+            {
+                "date": "2026-05-30",
+                "date_formatted": "May 30, 2026",
+                "challenger": "J.T. Realmuto",
+                "role": "catching",
+                "team": "opponents",
+                "outcome": "overturned",
+                "result_desc": "Shohei Ohtani called out on strikes.",
+                "batter": "Shohei Ohtani",
+                "pitcher": "Jes\u00fas Luzardo",
+                "game_pk": 823945
+            },
             {
                 "date": "2026-05-29",
                 "date_formatted": "May 29, 2026",
@@ -332,18 +344,6 @@
                 "batter": "Hyeseong Kim",
                 "pitcher": "Spencer Strider",
                 "game_pk": 823955
-            },
-            {
-                "date": "2026-05-08",
-                "date_formatted": "May 8, 2026",
-                "challenger": "Drake Baldwin",
-                "role": "catching",
-                "team": "opponents",
-                "outcome": "overturned",
-                "result_desc": "Teoscar Hern\u00e1ndez called out on strikes.",
-                "batter": "Teoscar Hern\u00e1ndez",
-                "pitcher": "Chris Sale",
-                "game_pk": 823957
             }
         ]
     }
