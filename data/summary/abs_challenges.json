@@ -11,15 +11,15 @@
             "failed": 2
         },
         "catching": {
-            "total": 57,
+            "total": 58,
             "successful": 34,
-            "failed": 23
+            "failed": 24
         }
     },
     "opponents": {
         "batting": {
-            "total": 49,
-            "successful": 22,
+            "total": 50,
+            "successful": 23,
             "failed": 27
         },
         "pitching": {
@@ -28,12 +28,84 @@
             "failed": 2
         },
         "catching": {
-            "total": 75,
-            "successful": 46,
+            "total": 79,
+            "successful": 50,
             "failed": 29
         }
     },
     "challenge_log": [
+        {
+            "date": "2026-05-31",
+            "date_formatted": "May 31, 2026",
+            "challenger": "Rafael March\u00e1n",
+            "role": "catching",
+            "team": "opponents",
+            "outcome": "overturned",
+            "result_desc": "Freddie Freeman out on a sacrifice fly to left fielder Brandon Marsh. Alex Freeland scores.",
+            "batter": "Freddie Freeman",
+            "pitcher": "Nolan Hoffman",
+            "game_pk": 823944
+        },
+        {
+            "date": "2026-05-31",
+            "date_formatted": "May 31, 2026",
+            "challenger": "Rafael March\u00e1n",
+            "role": "catching",
+            "team": "opponents",
+            "outcome": "overturned",
+            "result_desc": "Mookie Betts walks.",
+            "batter": "Mookie Betts",
+            "pitcher": "Tanner Banks",
+            "game_pk": 823944
+        },
+        {
+            "date": "2026-05-31",
+            "date_formatted": "May 31, 2026",
+            "challenger": "Dalton Rushing",
+            "role": "catching",
+            "team": "dodgers",
+            "outcome": "confirmed",
+            "result_desc": "Bryson Stott flies out to left fielder Ryan Ward.",
+            "batter": "Bryson Stott",
+            "pitcher": "Yoshinobu Yamamoto",
+            "game_pk": 823944
+        },
+        {
+            "date": "2026-05-31",
+            "date_formatted": "May 31, 2026",
+            "challenger": "Bryce Harper",
+            "role": "batting",
+            "team": "opponents",
+            "outcome": "overturned",
+            "result_desc": "Bryce Harper flies out to shortstop Mookie Betts.",
+            "batter": "Bryce Harper",
+            "pitcher": "Yoshinobu Yamamoto",
+            "game_pk": 823944
+        },
+        {
+            "date": "2026-05-31",
+            "date_formatted": "May 31, 2026",
+            "challenger": "J.T. Realmuto",
+            "role": "catching",
+            "team": "opponents",
+            "outcome": "overturned",
+            "result_desc": "Freddie Freeman singles on a line drive to shortstop Trea Turner, deflected by pitcher Andrew Painter.",
+            "batter": "Freddie Freeman",
+            "pitcher": "Andrew Painter",
+            "game_pk": 823944
+        },
+        {
+            "date": "2026-05-31",
+            "date_formatted": "May 31, 2026",
+            "challenger": "J.T. Realmuto",
+            "role": "catching",
+            "team": "opponents",
+            "outcome": "overturned",
+            "result_desc": "Shohei Ohtani strikes out swinging.",
+            "batter": "Shohei Ohtani",
+            "pitcher": "Andrew Painter",
+            "game_pk": 823944
+        },
         {
             "date": "2026-05-30",
             "date_formatted": "May 30, 2026",
@@ -97,18 +169,6 @@
         {
             "date": "2026-05-27",
             "date_formatted": "May 27, 2026",
-            "challenger": "Edouard Julien",
-            "role": "batting",
-            "team": "opponents",
-            "outcome": "confirmed",
-            "result_desc": "Edouard Julien lines out softly to second baseman Alex Freeland.",
-            "batter": "Edouard Julien",
-            "pitcher": "Shohei Ohtani",
-            "game_pk": 823947
-        },
-        {
-            "date": "2026-05-27",
-            "date_formatted": "May 27, 2026",
             "challenger": "Will Smith",
             "role": "catching",
             "team": "dodgers",
@@ -128,6 +188,18 @@
             "result_desc": "Mookie Betts flies out to center fielder Jake McCarthy.",
             "batter": "Mookie Betts",
             "pitcher": "Tomoyuki Sugano",
+            "game_pk": 823947
+        },
+        {
+            "date": "2026-05-27",
+            "date_formatted": "May 27, 2026",
+            "challenger": "Edouard Julien",
+            "role": "batting",
+            "team": "opponents",
+            "outcome": "confirmed",
+            "result_desc": "Edouard Julien lines out softly to second baseman Alex Freeland.",
+            "batter": "Edouard Julien",
+            "pitcher": "Shohei Ohtani",
             "game_pk": 823947
         },
         {
@@ -157,6 +229,18 @@
         {
             "date": "2026-05-25",
             "date_formatted": "May 25, 2026",
+            "challenger": "Troy Johnston",
+            "role": "batting",
+            "team": "opponents",
+            "outcome": "confirmed",
+            "result_desc": "Troy Johnston grounds out, second baseman Hyeseong Kim to first baseman Freddie Freeman.",
+            "batter": "Troy Johnston",
+            "pitcher": "Alex Vesia",
+            "game_pk": 823948
+        },
+        {
+            "date": "2026-05-25",
+            "date_formatted": "May 25, 2026",
             "challenger": "Edouard Julien",
             "role": "batting",
             "team": "opponents",
@@ -179,18 +263,6 @@
             "game_pk": 823948
         },
         {
-            "date": "2026-05-25",
-            "date_formatted": "May 25, 2026",
-            "challenger": "Troy Johnston",
-            "role": "batting",
-            "team": "opponents",
-            "outcome": "confirmed",
-            "result_desc": "Troy Johnston grounds out, second baseman Hyeseong Kim to first baseman Freddie Freeman.",
-            "batter": "Troy Johnston",
-            "pitcher": "Alex Vesia",
-            "game_pk": 823948
-        },
-        {
             "date": "2026-05-24",
             "date_formatted": "May 24, 2026",
             "challenger": "Dalton Rushing",
@@ -201,78 +273,6 @@
             "batter": "Joey Ortiz",
             "pitcher": "Yoshinobu Yamamoto",
             "game_pk": 823786
-        },
-        {
-            "date": "2026-05-24",
-            "date_formatted": "May 24, 2026",
-            "challenger": "William Contreras",
-            "role": "catching",
-            "team": "opponents",
-            "outcome": "overturned",
-            "result_desc": "Dalton Rushing walks. Teoscar Hern\u00e1ndez to 2nd.",
-            "batter": "Dalton Rushing",
-            "pitcher": "Brandon Sproat",
-            "game_pk": 823786
-        },
-        {
-            "date": "2026-05-24",
-            "date_formatted": "May 24, 2026",
-            "challenger": "William Contreras",
-            "role": "catching",
-            "team": "opponents",
-            "outcome": "confirmed",
-            "result_desc": "Teoscar Hern\u00e1ndez walks.",
-            "batter": "Teoscar Hern\u00e1ndez",
-            "pitcher": "Brandon Sproat",
-            "game_pk": 823786
-        },
-        {
-            "date": "2026-05-23",
-            "date_formatted": "May 23, 2026",
-            "challenger": "Gary S\u00e1nchez",
-            "role": "catching",
-            "team": "opponents",
-            "outcome": "confirmed",
-            "result_desc": "Freddie Freeman walks.",
-            "batter": "Freddie Freeman",
-            "pitcher": "DL Hall",
-            "game_pk": 823787
-        },
-        {
-            "date": "2026-05-23",
-            "date_formatted": "May 23, 2026",
-            "challenger": "Will Smith",
-            "role": "catching",
-            "team": "dodgers",
-            "outcome": "overturned",
-            "result_desc": "Sal Frelick lines out to center fielder Andy Pages.",
-            "batter": "Sal Frelick",
-            "pitcher": "Alex Vesia",
-            "game_pk": 823787
-        },
-        {
-            "date": "2026-05-23",
-            "date_formatted": "May 23, 2026",
-            "challenger": "Teoscar Hern\u00e1ndez",
-            "role": "batting",
-            "team": "dodgers",
-            "outcome": "overturned",
-            "result_desc": "Teoscar Hern\u00e1ndez walks.",
-            "batter": "Teoscar Hern\u00e1ndez",
-            "pitcher": "Grant Anderson",
-            "game_pk": 823787
-        },
-        {
-            "date": "2026-05-23",
-            "date_formatted": "May 23, 2026",
-            "challenger": "Gary S\u00e1nchez",
-            "role": "catching",
-            "team": "opponents",
-            "outcome": "overturned",
-            "result_desc": "Kyle Tucker walks.",
-            "batter": "Kyle Tucker",
-            "pitcher": "Robert Gasser",
-            "game_pk": 823787
         }
     ]
 }

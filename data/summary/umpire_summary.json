@@ -1,17 +1,17 @@
 {
     "season_summary": {
-        "correct_strikes_pct": 91.48936170212765,
-        "incorrect_strikes_pct": 8.510638297872347,
-        "total_called_strikes": 1598,
-        "bad_calls_count": 136
+        "correct_strikes_pct": 91.50246305418719,
+        "incorrect_strikes_pct": 8.497536945812811,
+        "total_called_strikes": 1624,
+        "bad_calls_count": 138
     },
     "last_game_summary": {
-        "date": "May 30, 2026",
-        "correct_strikes_pct": 88.88888888888889,
-        "incorrect_strikes_pct": 11.111111111111114,
-        "total_called_strikes": 27,
-        "bad_calls_count": 3,
-        "home_plate_umpire": "James Hoye"
+        "date": "May 31, 2026",
+        "correct_strikes_pct": 92.3076923076923,
+        "incorrect_strikes_pct": 7.692307692307693,
+        "total_called_strikes": 26,
+        "bad_calls_count": 2,
+        "home_plate_umpire": "Sean Barber"
     },
     "worst_calls_of_season": [
         {
@@ -56,17 +56,17 @@
         }
     ],
     "pitching_season_summary": {
-        "correct_balls_pct": 95.73604060913705,
-        "incorrect_balls_pct": 4.263959390862951,
-        "total_called_balls": 2955,
-        "bad_calls_count": 126
+        "correct_balls_pct": 95.67243675099867,
+        "incorrect_balls_pct": 4.327563249001329,
+        "total_called_balls": 3004,
+        "bad_calls_count": 130
     },
     "pitching_last_game_summary": {
-        "date": "May 30, 2026",
-        "correct_balls_pct": 97.43589743589743,
-        "incorrect_balls_pct": 2.564102564102569,
-        "total_called_balls": 39,
-        "bad_calls_count": 1
+        "date": "May 31, 2026",
+        "correct_balls_pct": 91.83673469387756,
+        "incorrect_balls_pct": 8.16326530612244,
+        "total_called_balls": 49,
+        "bad_calls_count": 4
     },
     "pitching_worst_calls_of_season": [],
     "abs_challenges": {
@@ -82,16 +82,16 @@
                 "failed": 0
             },
             "catching": {
-                "total": 8,
-                "successful": 6,
+                "total": 10,
+                "successful": 8,
                 "failed": 2
             }
         },
         "opponents": {
             "batting": {
-                "total": 8,
+                "total": 9,
                 "successful": 1,
-                "failed": 7
+                "failed": 8
             },
             "pitching": {
                 "total": 0,
@@ -99,12 +99,60 @@
                 "failed": 0
             },
             "catching": {
-                "total": 23,
-                "successful": 17,
+                "total": 24,
+                "successful": 18,
                 "failed": 6
             }
         },
         "challenge_log": [
+            {
+                "date": "2026-05-31",
+                "date_formatted": "May 31, 2026",
+                "challenger": "J.T. Realmuto",
+                "role": "catching",
+                "team": "opponents",
+                "outcome": "overturned",
+                "result_desc": "Freddie Freeman called out on strikes.",
+                "batter": "Freddie Freeman",
+                "pitcher": "Andrew Painter",
+                "game_pk": 823944
+            },
+            {
+                "date": "2026-05-31",
+                "date_formatted": "May 31, 2026",
+                "challenger": "Dalton Rushing",
+                "role": "catching",
+                "team": "dodgers",
+                "outcome": "overturned",
+                "result_desc": "Kyle Schwarber called out on strikes.",
+                "batter": "Kyle Schwarber",
+                "pitcher": "Yoshinobu Yamamoto",
+                "game_pk": 823944
+            },
+            {
+                "date": "2026-05-31",
+                "date_formatted": "May 31, 2026",
+                "challenger": "Dalton Rushing",
+                "role": "catching",
+                "team": "dodgers",
+                "outcome": "overturned",
+                "result_desc": "Bryce Harper called out on strikes.",
+                "batter": "Bryce Harper",
+                "pitcher": "Yoshinobu Yamamoto",
+                "game_pk": 823944
+            },
+            {
+                "date": "2026-05-31",
+                "date_formatted": "May 31, 2026",
+                "challenger": "Trea Turner",
+                "role": "batting",
+                "team": "opponents",
+                "outcome": "confirmed",
+                "result_desc": "Trea Turner called out on strikes.",
+                "batter": "Trea Turner",
+                "pitcher": "Yoshinobu Yamamoto",
+                "game_pk": 823944
+            },
             {
                 "date": "2026-05-30",
                 "date_formatted": "May 30, 2026",
@@ -296,54 +344,6 @@
                 "batter": "Andy Pages",
                 "pitcher": "Jack Kochanowicz",
                 "game_pk": 824037
-            },
-            {
-                "date": "2026-05-14",
-                "date_formatted": "May 14, 2026",
-                "challenger": "Dalton Rushing",
-                "role": "batting",
-                "team": "dodgers",
-                "outcome": "confirmed",
-                "result_desc": "Dalton Rushing called out on strikes.",
-                "batter": "Dalton Rushing",
-                "pitcher": "Landen Roupp",
-                "game_pk": 823950
-            },
-            {
-                "date": "2026-05-14",
-                "date_formatted": "May 14, 2026",
-                "challenger": "Drew Gilbert",
-                "role": "batting",
-                "team": "opponents",
-                "outcome": "overturned",
-                "result_desc": "Drew Gilbert walks.",
-                "batter": "Drew Gilbert",
-                "pitcher": "Emmet Sheehan",
-                "game_pk": 823950
-            },
-            {
-                "date": "2026-05-12",
-                "date_formatted": "May 12, 2026",
-                "challenger": "Teoscar Hern\u00e1ndez",
-                "role": "batting",
-                "team": "dodgers",
-                "outcome": "confirmed",
-                "result_desc": "Teoscar Hern\u00e1ndez called out on strikes.",
-                "batter": "Teoscar Hern\u00e1ndez",
-                "pitcher": "Caleb Kilian",
-                "game_pk": 823951
-            },
-            {
-                "date": "2026-05-09",
-                "date_formatted": "May 9, 2026",
-                "challenger": "Sean Murphy",
-                "role": "catching",
-                "team": "opponents",
-                "outcome": "overturned",
-                "result_desc": "Hyeseong Kim called out on strikes.",
-                "batter": "Hyeseong Kim",
-                "pitcher": "Spencer Strider",
-                "game_pk": 823955
             }
         ]
     }
