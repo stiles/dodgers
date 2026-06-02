@@ -1,9 +1,9 @@
 {
     "dodgers": {
         "batting": {
-            "total": 40,
-            "successful": 25,
-            "failed": 15
+            "total": 43,
+            "successful": 27,
+            "failed": 16
         },
         "pitching": {
             "total": 3,
@@ -28,12 +28,60 @@
             "failed": 2
         },
         "catching": {
-            "total": 79,
-            "successful": 50,
+            "total": 80,
+            "successful": 51,
             "failed": 29
         }
     },
     "challenge_log": [
+        {
+            "date": "2026-06-01",
+            "date_formatted": "June 1, 2026",
+            "challenger": "Kyle Tucker",
+            "role": "batting",
+            "team": "dodgers",
+            "outcome": "confirmed",
+            "result_desc": "Kyle Tucker grounds out, second baseman Ketel Marte to first baseman Ildemaro Vargas.",
+            "batter": "Kyle Tucker",
+            "pitcher": "Paul Sewald",
+            "game_pk": 825078
+        },
+        {
+            "date": "2026-06-01",
+            "date_formatted": "June 1, 2026",
+            "challenger": "Gabriel Moreno",
+            "role": "catching",
+            "team": "opponents",
+            "outcome": "overturned",
+            "result_desc": "Freddie Freeman flies out to left fielder Tommy Troy.",
+            "batter": "Freddie Freeman",
+            "pitcher": "Eduardo Rodriguez",
+            "game_pk": 825078
+        },
+        {
+            "date": "2026-06-01",
+            "date_formatted": "June 1, 2026",
+            "challenger": "Miguel Rojas",
+            "role": "batting",
+            "team": "dodgers",
+            "outcome": "overturned",
+            "result_desc": "Miguel Rojas challenged (pitch result), call on the field was confirmed: Miguel Rojas called out on strikes.",
+            "batter": "Miguel Rojas",
+            "pitcher": "Eduardo Rodriguez",
+            "game_pk": 825078
+        },
+        {
+            "date": "2026-06-01",
+            "date_formatted": "June 1, 2026",
+            "challenger": "Miguel Rojas",
+            "role": "batting",
+            "team": "dodgers",
+            "outcome": "overturned",
+            "result_desc": "Miguel Rojas challenged (pitch result), call on the field was confirmed: Miguel Rojas called out on strikes.",
+            "batter": "Miguel Rojas",
+            "pitcher": "Eduardo Rodriguez",
+            "game_pk": 825078
+        },
         {
             "date": "2026-05-31",
             "date_formatted": "May 31, 2026",
@@ -148,10 +196,10 @@
             "challenger": "Will Smith",
             "role": "catching",
             "team": "dodgers",
-            "outcome": "confirmed",
-            "result_desc": "Alec Bohm flies out to right fielder Kyle Tucker.",
-            "batter": "Alec Bohm",
-            "pitcher": "Tanner Scott",
+            "outcome": "overturned",
+            "result_desc": "J.T. Realmuto pops out to first baseman Freddie Freeman.",
+            "batter": "J.T. Realmuto",
+            "pitcher": "Edgardo Henriquez",
             "game_pk": 823946
         },
         {
@@ -160,11 +208,23 @@
             "challenger": "Will Smith",
             "role": "catching",
             "team": "dodgers",
-            "outcome": "overturned",
-            "result_desc": "J.T. Realmuto pops out to first baseman Freddie Freeman.",
-            "batter": "J.T. Realmuto",
-            "pitcher": "Edgardo Henriquez",
+            "outcome": "confirmed",
+            "result_desc": "Alec Bohm flies out to right fielder Kyle Tucker.",
+            "batter": "Alec Bohm",
+            "pitcher": "Tanner Scott",
             "game_pk": 823946
+        },
+        {
+            "date": "2026-05-27",
+            "date_formatted": "May 27, 2026",
+            "challenger": "Edouard Julien",
+            "role": "batting",
+            "team": "opponents",
+            "outcome": "confirmed",
+            "result_desc": "Edouard Julien lines out softly to second baseman Alex Freeland.",
+            "batter": "Edouard Julien",
+            "pitcher": "Shohei Ohtani",
+            "game_pk": 823947
         },
         {
             "date": "2026-05-27",
@@ -191,18 +251,6 @@
             "game_pk": 823947
         },
         {
-            "date": "2026-05-27",
-            "date_formatted": "May 27, 2026",
-            "challenger": "Edouard Julien",
-            "role": "batting",
-            "team": "opponents",
-            "outcome": "confirmed",
-            "result_desc": "Edouard Julien lines out softly to second baseman Alex Freeland.",
-            "batter": "Edouard Julien",
-            "pitcher": "Shohei Ohtani",
-            "game_pk": 823947
-        },
-        {
             "date": "2026-05-26",
             "date_formatted": "May 26, 2026",
             "challenger": "Sterlin Thompson",
@@ -225,54 +273,6 @@
             "batter": "Will Smith",
             "pitcher": "Zach Agnos",
             "game_pk": 823949
-        },
-        {
-            "date": "2026-05-25",
-            "date_formatted": "May 25, 2026",
-            "challenger": "Troy Johnston",
-            "role": "batting",
-            "team": "opponents",
-            "outcome": "confirmed",
-            "result_desc": "Troy Johnston grounds out, second baseman Hyeseong Kim to first baseman Freddie Freeman.",
-            "batter": "Troy Johnston",
-            "pitcher": "Alex Vesia",
-            "game_pk": 823948
-        },
-        {
-            "date": "2026-05-25",
-            "date_formatted": "May 25, 2026",
-            "challenger": "Edouard Julien",
-            "role": "batting",
-            "team": "opponents",
-            "outcome": "confirmed",
-            "result_desc": "Edouard Julien walks.",
-            "batter": "Edouard Julien",
-            "pitcher": "Emmet Sheehan",
-            "game_pk": 823948
-        },
-        {
-            "date": "2026-05-25",
-            "date_formatted": "May 25, 2026",
-            "challenger": "Mookie Betts",
-            "role": "batting",
-            "team": "dodgers",
-            "outcome": "overturned",
-            "result_desc": "Mookie Betts flies out to center fielder Jake McCarthy.",
-            "batter": "Mookie Betts",
-            "pitcher": "Tanner Gordon",
-            "game_pk": 823948
-        },
-        {
-            "date": "2026-05-24",
-            "date_formatted": "May 24, 2026",
-            "challenger": "Dalton Rushing",
-            "role": "catching",
-            "team": "dodgers",
-            "outcome": "overturned",
-            "result_desc": "Joey Ortiz grounds out, shortstop Mookie Betts to first baseman Freddie Freeman.",
-            "batter": "Joey Ortiz",
-            "pitcher": "Yoshinobu Yamamoto",
-            "game_pk": 823786
         }
     ]
 }

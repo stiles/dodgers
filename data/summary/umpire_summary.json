@@ -1,17 +1,17 @@
 {
     "season_summary": {
-        "correct_strikes_pct": 91.50246305418719,
-        "incorrect_strikes_pct": 8.497536945812811,
-        "total_called_strikes": 1624,
+        "correct_strikes_pct": 91.65659008464328,
+        "incorrect_strikes_pct": 8.343409915356716,
+        "total_called_strikes": 1654,
         "bad_calls_count": 138
     },
     "last_game_summary": {
-        "date": "May 31, 2026",
-        "correct_strikes_pct": 92.3076923076923,
-        "incorrect_strikes_pct": 7.692307692307693,
-        "total_called_strikes": 26,
-        "bad_calls_count": 2,
-        "home_plate_umpire": "Sean Barber"
+        "date": "June 1, 2026",
+        "correct_strikes_pct": 100.0,
+        "incorrect_strikes_pct": 0.0,
+        "total_called_strikes": 30,
+        "bad_calls_count": 0,
+        "home_plate_umpire": "Rob Drake"
     },
     "worst_calls_of_season": [
         {
@@ -56,25 +56,25 @@
         }
     ],
     "pitching_season_summary": {
-        "correct_balls_pct": 95.67243675099867,
-        "incorrect_balls_pct": 4.327563249001329,
-        "total_called_balls": 3004,
-        "bad_calls_count": 130
+        "correct_balls_pct": 95.65789473684211,
+        "incorrect_balls_pct": 4.34210526315789,
+        "total_called_balls": 3040,
+        "bad_calls_count": 132
     },
     "pitching_last_game_summary": {
-        "date": "May 31, 2026",
-        "correct_balls_pct": 91.83673469387756,
-        "incorrect_balls_pct": 8.16326530612244,
-        "total_called_balls": 49,
-        "bad_calls_count": 4
+        "date": "June 1, 2026",
+        "correct_balls_pct": 94.44444444444444,
+        "incorrect_balls_pct": 5.555555555555557,
+        "total_called_balls": 36,
+        "bad_calls_count": 2
     },
     "pitching_worst_calls_of_season": [],
     "abs_challenges": {
         "dodgers": {
             "batting": {
-                "total": 23,
+                "total": 24,
                 "successful": 7,
-                "failed": 16
+                "failed": 17
             },
             "pitching": {
                 "total": 0,
@@ -105,6 +105,18 @@
             }
         },
         "challenge_log": [
+            {
+                "date": "2026-06-01",
+                "date_formatted": "June 1, 2026",
+                "challenger": "Miguel Rojas",
+                "role": "batting",
+                "team": "dodgers",
+                "outcome": "confirmed",
+                "result_desc": "Miguel Rojas called out on strikes.",
+                "batter": "Miguel Rojas",
+                "pitcher": "Eduardo Rodriguez",
+                "game_pk": 825078
+            },
             {
                 "date": "2026-05-31",
                 "date_formatted": "May 31, 2026",
@@ -332,18 +344,6 @@
                 "batter": "Jorge Soler",
                 "pitcher": "Wyatt Mills",
                 "game_pk": 824038
-            },
-            {
-                "date": "2026-05-15",
-                "date_formatted": "May 15, 2026",
-                "challenger": "Logan O'Hoppe",
-                "role": "catching",
-                "team": "opponents",
-                "outcome": "overturned",
-                "result_desc": "Andy Pages called out on strikes.",
-                "batter": "Andy Pages",
-                "pitcher": "Jack Kochanowicz",
-                "game_pk": 824037
             }
         ]
     }

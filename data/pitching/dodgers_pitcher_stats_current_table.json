@@ -12,7 +12,7 @@
         "ip_rounded":69,
         "gs":11,
         "gp":11,
-        "fetched":"2026-06-01"
+        "fetched":"2026-06-02"
     },
     {
         "player":"Justin Wrobleski",
@@ -27,7 +27,22 @@
         "ip_rounded":62,
         "gs":9,
         "gp":10,
-        "fetched":"2026-06-01"
+        "fetched":"2026-06-02"
+    },
+    {
+        "player":"Emmet Sheehan",
+        "role":"SP",
+        "position":"P",
+        "era":"4.50",
+        "whip":"1.16",
+        "k9":"9.62",
+        "bb9":"2.17",
+        "kbb":"4.43",
+        "ip":"58.0",
+        "ip_rounded":58,
+        "gs":11,
+        "gp":11,
+        "fetched":"2026-06-02"
     },
     {
         "player":"Shohei Ohtani",
@@ -42,22 +57,7 @@
         "ip_rounded":55,
         "gs":9,
         "gp":9,
-        "fetched":"2026-06-01"
-    },
-    {
-        "player":"Emmet Sheehan",
-        "role":"SP",
-        "position":"P",
-        "era":"4.70",
-        "whip":"1.24",
-        "k9":"10.28",
-        "bb9":"2.44",
-        "kbb":"4.21",
-        "ip":"51.2",
-        "ip_rounded":51,
-        "gs":10,
-        "gp":10,
-        "fetched":"2026-06-01"
+        "fetched":"2026-06-02"
     },
     {
         "player":"Roki Sasaki",
@@ -72,7 +72,7 @@
         "ip_rounded":51,
         "gs":10,
         "gp":10,
-        "fetched":"2026-06-01"
+        "fetched":"2026-06-02"
     },
     {
         "player":"Tyler Glasnow",
@@ -87,7 +87,7 @@
         "ip_rounded":39,
         "gs":7,
         "gp":7,
-        "fetched":"2026-06-01"
+        "fetched":"2026-06-02"
     },
     {
         "player":"Tanner Scott",
@@ -102,7 +102,7 @@
         "ip_rounded":24,
         "gs":0,
         "gp":26,
-        "fetched":"2026-06-01"
+        "fetched":"2026-06-02"
     },
     {
         "player":"Will Klein",
@@ -117,22 +117,22 @@
         "ip_rounded":24,
         "gs":1,
         "gp":19,
-        "fetched":"2026-06-01"
+        "fetched":"2026-06-02"
     },
     {
         "player":"Jack Dreyer",
         "role":"RP",
         "position":"P",
-        "era":"2.08",
-        "whip":"0.97",
-        "k9":"9.97",
-        "bb9":"2.49",
+        "era":"2.78",
+        "whip":"1.01",
+        "k9":"9.53",
+        "bb9":"2.38",
         "kbb":"4.00",
-        "ip":"21.2",
-        "ip_rounded":21,
+        "ip":"22.2",
+        "ip_rounded":22,
         "gs":0,
-        "gp":20,
-        "fetched":"2026-06-01"
+        "gp":21,
+        "fetched":"2026-06-02"
     },
     {
         "player":"Edgardo Henriquez",
@@ -147,6 +147,6 @@
         "ip_rounded":21,
         "gs":0,
         "gp":20,
-        "fetched":"2026-06-01"
+        "fetched":"2026-06-02"
     }
 ]
