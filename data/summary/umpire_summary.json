@@ -1,17 +1,17 @@
 {
     "season_summary": {
-        "correct_strikes_pct": 91.65659008464328,
-        "incorrect_strikes_pct": 8.343409915356716,
-        "total_called_strikes": 1654,
-        "bad_calls_count": 138
+        "correct_strikes_pct": 91.48809523809524,
+        "incorrect_strikes_pct": 8.51190476190476,
+        "total_called_strikes": 1680,
+        "bad_calls_count": 143
     },
     "last_game_summary": {
-        "date": "June 1, 2026",
-        "correct_strikes_pct": 100.0,
-        "incorrect_strikes_pct": 0.0,
-        "total_called_strikes": 30,
-        "bad_calls_count": 0,
-        "home_plate_umpire": "Rob Drake"
+        "date": "June 2, 2026",
+        "correct_strikes_pct": 80.76923076923077,
+        "incorrect_strikes_pct": 19.230769230769226,
+        "total_called_strikes": 26,
+        "bad_calls_count": 5,
+        "home_plate_umpire": "Stu Scheurwater"
     },
     "worst_calls_of_season": [
         {
@@ -56,17 +56,17 @@
         }
     ],
     "pitching_season_summary": {
-        "correct_balls_pct": 95.65789473684211,
-        "incorrect_balls_pct": 4.34210526315789,
-        "total_called_balls": 3040,
+        "correct_balls_pct": 95.74742268041237,
+        "incorrect_balls_pct": 4.25257731958763,
+        "total_called_balls": 3104,
         "bad_calls_count": 132
     },
     "pitching_last_game_summary": {
-        "date": "June 1, 2026",
-        "correct_balls_pct": 94.44444444444444,
-        "incorrect_balls_pct": 5.555555555555557,
-        "total_called_balls": 36,
-        "bad_calls_count": 2
+        "date": "June 2, 2026",
+        "correct_balls_pct": 100.0,
+        "incorrect_balls_pct": 0.0,
+        "total_called_balls": 64,
+        "bad_calls_count": 0
     },
     "pitching_worst_calls_of_season": [],
     "abs_challenges": {
@@ -82,9 +82,9 @@
                 "failed": 0
             },
             "catching": {
-                "total": 10,
+                "total": 11,
                 "successful": 8,
-                "failed": 2
+                "failed": 3
             }
         },
         "opponents": {
@@ -105,6 +105,18 @@
             }
         },
         "challenge_log": [
+            {
+                "date": "2026-06-02",
+                "date_formatted": "June 2, 2026",
+                "challenger": "Dalton Rushing",
+                "role": "catching",
+                "team": "dodgers",
+                "outcome": "confirmed",
+                "result_desc": "Pavin Smith walks. Nolan Arenado scores. Ildemaro Vargas to 3rd. Geraldo Perdomo to 2nd.",
+                "batter": "Pavin Smith",
+                "pitcher": "Will Klein",
+                "game_pk": 825079
+            },
             {
                 "date": "2026-06-01",
                 "date_formatted": "June 1, 2026",
@@ -331,18 +343,6 @@
                 "result_desc": "Mookie Betts walks.",
                 "batter": "Mookie Betts",
                 "pitcher": "Jos\u00e9 Soriano",
-                "game_pk": 824038
-            },
-            {
-                "date": "2026-05-16",
-                "date_formatted": "May 16, 2026",
-                "challenger": "Will Smith",
-                "role": "catching",
-                "team": "dodgers",
-                "outcome": "confirmed",
-                "result_desc": "Jorge Soler walks.",
-                "batter": "Jorge Soler",
-                "pitcher": "Wyatt Mills",
                 "game_pk": 824038
             }
         ]
