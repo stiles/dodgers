@@ -1,17 +1,17 @@
 {
     "season_summary": {
-        "correct_strikes_pct": 91.48809523809524,
-        "incorrect_strikes_pct": 8.51190476190476,
-        "total_called_strikes": 1680,
-        "bad_calls_count": 143
+        "correct_strikes_pct": 91.49679673849738,
+        "incorrect_strikes_pct": 8.50320326150262,
+        "total_called_strikes": 1717,
+        "bad_calls_count": 146
     },
     "last_game_summary": {
-        "date": "June 2, 2026",
-        "correct_strikes_pct": 80.76923076923077,
-        "incorrect_strikes_pct": 19.230769230769226,
-        "total_called_strikes": 26,
-        "bad_calls_count": 5,
-        "home_plate_umpire": "Stu Scheurwater"
+        "date": "June 3, 2026",
+        "correct_strikes_pct": 91.8918918918919,
+        "incorrect_strikes_pct": 8.108108108108098,
+        "total_called_strikes": 37,
+        "bad_calls_count": 3,
+        "home_plate_umpire": "Junior Valentine"
     },
     "worst_calls_of_season": [
         {
@@ -56,17 +56,17 @@
         }
     ],
     "pitching_season_summary": {
-        "correct_balls_pct": 95.74742268041237,
-        "incorrect_balls_pct": 4.25257731958763,
-        "total_called_balls": 3104,
-        "bad_calls_count": 132
+        "correct_balls_pct": 95.75142675967025,
+        "incorrect_balls_pct": 4.248573240329748,
+        "total_called_balls": 3154,
+        "bad_calls_count": 134
     },
     "pitching_last_game_summary": {
-        "date": "June 2, 2026",
-        "correct_balls_pct": 100.0,
-        "incorrect_balls_pct": 0.0,
-        "total_called_balls": 64,
-        "bad_calls_count": 0
+        "date": "June 3, 2026",
+        "correct_balls_pct": 96.0,
+        "incorrect_balls_pct": 4.0,
+        "total_called_balls": 50,
+        "bad_calls_count": 2
     },
     "pitching_worst_calls_of_season": [],
     "abs_challenges": {
@@ -89,9 +89,9 @@
         },
         "opponents": {
             "batting": {
-                "total": 9,
+                "total": 10,
                 "successful": 1,
-                "failed": 8
+                "failed": 9
             },
             "pitching": {
                 "total": 0,
@@ -105,6 +105,18 @@
             }
         },
         "challenge_log": [
+            {
+                "date": "2026-06-03",
+                "date_formatted": "June 3, 2026",
+                "challenger": "Geraldo Perdomo",
+                "role": "batting",
+                "team": "opponents",
+                "outcome": "confirmed",
+                "result_desc": "Geraldo Perdomo called out on strikes.",
+                "batter": "Geraldo Perdomo",
+                "pitcher": "Shohei Ohtani",
+                "game_pk": 825077
+            },
             {
                 "date": "2026-06-02",
                 "date_formatted": "June 2, 2026",
@@ -332,18 +344,6 @@
                 "batter": "Shohei Ohtani",
                 "pitcher": "Grayson Rodriguez",
                 "game_pk": 824034
-            },
-            {
-                "date": "2026-05-16",
-                "date_formatted": "May 16, 2026",
-                "challenger": "Logan O'Hoppe",
-                "role": "catching",
-                "team": "opponents",
-                "outcome": "confirmed",
-                "result_desc": "Mookie Betts walks.",
-                "batter": "Mookie Betts",
-                "pitcher": "Jos\u00e9 Soriano",
-                "game_pk": 824038
             }
         ]
     }
