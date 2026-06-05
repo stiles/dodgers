@@ -11,15 +11,15 @@
             "failed": 3
         },
         "catching": {
-            "total": 58,
-            "successful": 34,
+            "total": 60,
+            "successful": 36,
             "failed": 24
         }
     },
     "opponents": {
         "batting": {
-            "total": 55,
-            "successful": 27,
+            "total": 56,
+            "successful": 28,
             "failed": 28
         },
         "pitching": {
@@ -34,6 +34,42 @@
         }
     },
     "challenge_log": [
+        {
+            "date": "2026-06-04",
+            "date_formatted": "June 4, 2026",
+            "challenger": "Geraldo Perdomo",
+            "role": "batting",
+            "team": "opponents",
+            "outcome": "overturned",
+            "result_desc": "Geraldo Perdomo lines out to second baseman Alex Freeland.",
+            "batter": "Geraldo Perdomo",
+            "pitcher": "Kyle Hurt",
+            "game_pk": 825076
+        },
+        {
+            "date": "2026-06-04",
+            "date_formatted": "June 4, 2026",
+            "challenger": "Dalton Rushing",
+            "role": "catching",
+            "team": "dodgers",
+            "outcome": "overturned",
+            "result_desc": "Pavin Smith grounds out, second baseman Alex Freeland to first baseman Freddie Freeman.",
+            "batter": "Pavin Smith",
+            "pitcher": "Justin Wrobleski",
+            "game_pk": 825076
+        },
+        {
+            "date": "2026-06-04",
+            "date_formatted": "June 4, 2026",
+            "challenger": "Dalton Rushing",
+            "role": "catching",
+            "team": "dodgers",
+            "outcome": "overturned",
+            "result_desc": "Pavin Smith grounds out, second baseman Alex Freeland to first baseman Freddie Freeman.",
+            "batter": "Pavin Smith",
+            "pitcher": "Justin Wrobleski",
+            "game_pk": 825076
+        },
         {
             "date": "2026-06-03",
             "date_formatted": "June 3, 2026",
@@ -133,18 +169,6 @@
         {
             "date": "2026-06-01",
             "date_formatted": "June 1, 2026",
-            "challenger": "Kyle Tucker",
-            "role": "batting",
-            "team": "dodgers",
-            "outcome": "confirmed",
-            "result_desc": "Kyle Tucker grounds out, second baseman Ketel Marte to first baseman Ildemaro Vargas.",
-            "batter": "Kyle Tucker",
-            "pitcher": "Paul Sewald",
-            "game_pk": 825078
-        },
-        {
-            "date": "2026-06-01",
-            "date_formatted": "June 1, 2026",
             "challenger": "Gabriel Moreno",
             "role": "catching",
             "team": "opponents",
@@ -179,39 +203,27 @@
             "game_pk": 825078
         },
         {
-            "date": "2026-05-31",
-            "date_formatted": "May 31, 2026",
-            "challenger": "Bryce Harper",
+            "date": "2026-06-01",
+            "date_formatted": "June 1, 2026",
+            "challenger": "Kyle Tucker",
             "role": "batting",
-            "team": "opponents",
-            "outcome": "overturned",
-            "result_desc": "Bryce Harper flies out to shortstop Mookie Betts.",
-            "batter": "Bryce Harper",
-            "pitcher": "Yoshinobu Yamamoto",
-            "game_pk": 823944
+            "team": "dodgers",
+            "outcome": "confirmed",
+            "result_desc": "Kyle Tucker grounds out, second baseman Ketel Marte to first baseman Ildemaro Vargas.",
+            "batter": "Kyle Tucker",
+            "pitcher": "Paul Sewald",
+            "game_pk": 825078
         },
         {
             "date": "2026-05-31",
             "date_formatted": "May 31, 2026",
-            "challenger": "J.T. Realmuto",
+            "challenger": "Rafael March\u00e1n",
             "role": "catching",
             "team": "opponents",
             "outcome": "overturned",
-            "result_desc": "Shohei Ohtani strikes out swinging.",
-            "batter": "Shohei Ohtani",
-            "pitcher": "Andrew Painter",
-            "game_pk": 823944
-        },
-        {
-            "date": "2026-05-31",
-            "date_formatted": "May 31, 2026",
-            "challenger": "J.T. Realmuto",
-            "role": "catching",
-            "team": "opponents",
-            "outcome": "overturned",
-            "result_desc": "Freddie Freeman singles on a line drive to shortstop Trea Turner, deflected by pitcher Andrew Painter.",
+            "result_desc": "Freddie Freeman out on a sacrifice fly to left fielder Brandon Marsh. Alex Freeland scores.",
             "batter": "Freddie Freeman",
-            "pitcher": "Andrew Painter",
+            "pitcher": "Nolan Hoffman",
             "game_pk": 823944
         },
         {
@@ -241,38 +253,26 @@
         {
             "date": "2026-05-31",
             "date_formatted": "May 31, 2026",
-            "challenger": "Rafael March\u00e1n",
-            "role": "catching",
+            "challenger": "Bryce Harper",
+            "role": "batting",
             "team": "opponents",
             "outcome": "overturned",
-            "result_desc": "Freddie Freeman out on a sacrifice fly to left fielder Brandon Marsh. Alex Freeland scores.",
-            "batter": "Freddie Freeman",
-            "pitcher": "Nolan Hoffman",
+            "result_desc": "Bryce Harper flies out to shortstop Mookie Betts.",
+            "batter": "Bryce Harper",
+            "pitcher": "Yoshinobu Yamamoto",
             "game_pk": 823944
         },
         {
-            "date": "2026-05-30",
-            "date_formatted": "May 30, 2026",
-            "challenger": "Will Smith",
+            "date": "2026-05-31",
+            "date_formatted": "May 31, 2026",
+            "challenger": "J.T. Realmuto",
             "role": "catching",
-            "team": "dodgers",
-            "outcome": "confirmed",
-            "result_desc": "Adolis Garc\u00eda strikes out swinging.",
-            "batter": "Adolis Garc\u00eda",
-            "pitcher": "Kyle Hurt",
-            "game_pk": 823945
-        },
-        {
-            "date": "2026-05-30",
-            "date_formatted": "May 30, 2026",
-            "challenger": "Will Smith",
-            "role": "catching",
-            "team": "dodgers",
-            "outcome": "confirmed",
-            "result_desc": "Bryce Harper walks. Kyle Schwarber to 3rd. Trea Turner to 2nd.",
-            "batter": "Bryce Harper",
-            "pitcher": "Alex Vesia",
-            "game_pk": 823945
+            "team": "opponents",
+            "outcome": "overturned",
+            "result_desc": "Freddie Freeman singles on a line drive to shortstop Trea Turner, deflected by pitcher Andrew Painter.",
+            "batter": "Freddie Freeman",
+            "pitcher": "Andrew Painter",
+            "game_pk": 823944
         }
     ]
 }
