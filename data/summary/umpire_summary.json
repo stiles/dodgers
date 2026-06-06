@@ -1,17 +1,17 @@
 {
     "season_summary": {
-        "correct_strikes_pct": 91.49305555555556,
-        "incorrect_strikes_pct": 8.506944444444443,
-        "total_called_strikes": 1728,
+        "correct_strikes_pct": 91.60479725870931,
+        "incorrect_strikes_pct": 8.395202741290689,
+        "total_called_strikes": 1751,
         "bad_calls_count": 147
     },
     "last_game_summary": {
-        "date": "June 4, 2026",
-        "correct_strikes_pct": 90.9090909090909,
-        "incorrect_strikes_pct": 9.090909090909093,
-        "total_called_strikes": 11,
-        "bad_calls_count": 1,
-        "home_plate_umpire": "Jordan Baker"
+        "date": "June 5, 2026",
+        "correct_strikes_pct": 100.0,
+        "incorrect_strikes_pct": 0.0,
+        "total_called_strikes": 23,
+        "bad_calls_count": 0,
+        "home_plate_umpire": "Jen Pawol"
     },
     "worst_calls_of_season": [
         {
@@ -56,16 +56,16 @@
         }
     ],
     "pitching_season_summary": {
-        "correct_balls_pct": 95.80200501253134,
-        "incorrect_balls_pct": 4.197994987468661,
-        "total_called_balls": 3192,
+        "correct_balls_pct": 95.84624922504649,
+        "incorrect_balls_pct": 4.153750774953508,
+        "total_called_balls": 3226,
         "bad_calls_count": 134
     },
     "pitching_last_game_summary": {
-        "date": "June 4, 2026",
+        "date": "June 5, 2026",
         "correct_balls_pct": 100.0,
         "incorrect_balls_pct": 0.0,
-        "total_called_balls": 38,
+        "total_called_balls": 34,
         "bad_calls_count": 0
     },
     "pitching_worst_calls_of_season": [],
@@ -99,12 +99,24 @@
                 "failed": 0
             },
             "catching": {
-                "total": 24,
-                "successful": 18,
+                "total": 25,
+                "successful": 19,
                 "failed": 6
             }
         },
         "challenge_log": [
+            {
+                "date": "2026-06-05",
+                "date_formatted": "June 5, 2026",
+                "challenger": "Logan O'Hoppe",
+                "role": "catching",
+                "team": "opponents",
+                "outcome": "overturned",
+                "result_desc": "Shohei Ohtani called out on strikes.",
+                "batter": "Shohei Ohtani",
+                "pitcher": "Reid Detmers",
+                "game_pk": 823943
+            },
             {
                 "date": "2026-06-04",
                 "date_formatted": "June 4, 2026",
@@ -330,18 +342,6 @@
                 "outcome": "confirmed",
                 "result_desc": "Kyle Tucker called out on strikes.",
                 "batter": "Kyle Tucker",
-                "pitcher": "Michael King",
-                "game_pk": 823301
-            },
-            {
-                "date": "2026-05-18",
-                "date_formatted": "May 18, 2026",
-                "challenger": "Freddie Freeman",
-                "role": "batting",
-                "team": "dodgers",
-                "outcome": "overturned",
-                "result_desc": "Freddie Freeman walks.",
-                "batter": "Freddie Freeman",
                 "pitcher": "Michael King",
                 "game_pk": 823301
             }

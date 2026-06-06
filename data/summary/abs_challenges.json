@@ -11,9 +11,9 @@
             "failed": 3
         },
         "catching": {
-            "total": 60,
-            "successful": 36,
-            "failed": 24
+            "total": 62,
+            "successful": 37,
+            "failed": 25
         }
     },
     "opponents": {
@@ -28,12 +28,72 @@
             "failed": 2
         },
         "catching": {
-            "total": 80,
-            "successful": 51,
-            "failed": 29
+            "total": 83,
+            "successful": 52,
+            "failed": 31
         }
     },
     "challenge_log": [
+        {
+            "date": "2026-06-05",
+            "date_formatted": "June 5, 2026",
+            "challenger": "Will Smith",
+            "role": "catching",
+            "team": "dodgers",
+            "outcome": "confirmed",
+            "result_desc": "Jo Adell singles on a fly ball to right fielder Kyle Tucker.",
+            "batter": "Jo Adell",
+            "pitcher": "Tanner Scott",
+            "game_pk": 823943
+        },
+        {
+            "date": "2026-06-05",
+            "date_formatted": "June 5, 2026",
+            "challenger": "Will Smith",
+            "role": "catching",
+            "team": "dodgers",
+            "outcome": "overturned",
+            "result_desc": "Zach Neto hit by pitch.",
+            "batter": "Zach Neto",
+            "pitcher": "Edgardo Henriquez",
+            "game_pk": 823943
+        },
+        {
+            "date": "2026-06-05",
+            "date_formatted": "June 5, 2026",
+            "challenger": "Logan O'Hoppe",
+            "role": "catching",
+            "team": "opponents",
+            "outcome": "confirmed",
+            "result_desc": "Will Smith walks.",
+            "batter": "Will Smith",
+            "pitcher": "Chase Silseth",
+            "game_pk": 823943
+        },
+        {
+            "date": "2026-06-05",
+            "date_formatted": "June 5, 2026",
+            "challenger": "Logan O'Hoppe",
+            "role": "catching",
+            "team": "opponents",
+            "outcome": "overturned",
+            "result_desc": "Freddie Freeman singles on a sharp line drive to center fielder Mike Trout.",
+            "batter": "Freddie Freeman",
+            "pitcher": "Reid Detmers",
+            "game_pk": 823943
+        },
+        {
+            "date": "2026-06-05",
+            "date_formatted": "June 5, 2026",
+            "challenger": "Logan O'Hoppe",
+            "role": "catching",
+            "team": "opponents",
+            "outcome": "confirmed",
+            "result_desc": "Santiago Espinal lines out to first baseman Oswald Peraza.",
+            "batter": "Santiago Espinal",
+            "pitcher": "Reid Detmers",
+            "game_pk": 823943
+        },
         {
             "date": "2026-06-04",
             "date_formatted": "June 4, 2026",
@@ -85,42 +145,6 @@
         {
             "date": "2026-06-02",
             "date_formatted": "June 2, 2026",
-            "challenger": "Ryan Waldschmidt",
-            "role": "batting",
-            "team": "opponents",
-            "outcome": "overturned",
-            "result_desc": "Ryan Waldschmidt strikes out on a foul tip.",
-            "batter": "Ryan Waldschmidt",
-            "pitcher": "Tanner Scott",
-            "game_pk": 825079
-        },
-        {
-            "date": "2026-06-02",
-            "date_formatted": "June 2, 2026",
-            "challenger": "Geraldo Perdomo",
-            "role": "batting",
-            "team": "opponents",
-            "outcome": "overturned",
-            "result_desc": "Geraldo Perdomo singles on a line drive to left fielder Ryan Ward. Nolan Arenado to 3rd. Ildemaro Vargas to 2nd.",
-            "batter": "Geraldo Perdomo",
-            "pitcher": "Will Klein",
-            "game_pk": 825079
-        },
-        {
-            "date": "2026-06-02",
-            "date_formatted": "June 2, 2026",
-            "challenger": "Nolan Arenado",
-            "role": "batting",
-            "team": "opponents",
-            "outcome": "overturned",
-            "result_desc": "Nolan Arenado doubles (12) on a sharp line drive to left fielder Ryan Ward. Ketel Marte scores. Gabriel Moreno scores.",
-            "batter": "Nolan Arenado",
-            "pitcher": "Kyle Hurt",
-            "game_pk": 825079
-        },
-        {
-            "date": "2026-06-02",
-            "date_formatted": "June 2, 2026",
             "challenger": "Kyle Hurt",
             "role": "pitching",
             "team": "dodgers",
@@ -128,6 +152,18 @@
             "result_desc": "Gabriel Moreno walks. Ketel Marte to 2nd.",
             "batter": "Gabriel Moreno",
             "pitcher": "Kyle Hurt",
+            "game_pk": 825079
+        },
+        {
+            "date": "2026-06-02",
+            "date_formatted": "June 2, 2026",
+            "challenger": "Mookie Betts",
+            "role": "batting",
+            "team": "dodgers",
+            "outcome": "overturned",
+            "result_desc": "Mookie Betts walks.",
+            "batter": "Mookie Betts",
+            "pitcher": "Michael Soroka",
             "game_pk": 825079
         },
         {
@@ -157,14 +193,50 @@
         {
             "date": "2026-06-02",
             "date_formatted": "June 2, 2026",
-            "challenger": "Mookie Betts",
+            "challenger": "Nolan Arenado",
+            "role": "batting",
+            "team": "opponents",
+            "outcome": "overturned",
+            "result_desc": "Nolan Arenado doubles (12) on a sharp line drive to left fielder Ryan Ward. Ketel Marte scores. Gabriel Moreno scores.",
+            "batter": "Nolan Arenado",
+            "pitcher": "Kyle Hurt",
+            "game_pk": 825079
+        },
+        {
+            "date": "2026-06-02",
+            "date_formatted": "June 2, 2026",
+            "challenger": "Ryan Waldschmidt",
+            "role": "batting",
+            "team": "opponents",
+            "outcome": "overturned",
+            "result_desc": "Ryan Waldschmidt strikes out on a foul tip.",
+            "batter": "Ryan Waldschmidt",
+            "pitcher": "Tanner Scott",
+            "game_pk": 825079
+        },
+        {
+            "date": "2026-06-02",
+            "date_formatted": "June 2, 2026",
+            "challenger": "Geraldo Perdomo",
+            "role": "batting",
+            "team": "opponents",
+            "outcome": "overturned",
+            "result_desc": "Geraldo Perdomo singles on a line drive to left fielder Ryan Ward. Nolan Arenado to 3rd. Ildemaro Vargas to 2nd.",
+            "batter": "Geraldo Perdomo",
+            "pitcher": "Will Klein",
+            "game_pk": 825079
+        },
+        {
+            "date": "2026-06-01",
+            "date_formatted": "June 1, 2026",
+            "challenger": "Kyle Tucker",
             "role": "batting",
             "team": "dodgers",
-            "outcome": "overturned",
-            "result_desc": "Mookie Betts walks.",
-            "batter": "Mookie Betts",
-            "pitcher": "Michael Soroka",
-            "game_pk": 825079
+            "outcome": "confirmed",
+            "result_desc": "Kyle Tucker grounds out, second baseman Ketel Marte to first baseman Ildemaro Vargas.",
+            "batter": "Kyle Tucker",
+            "pitcher": "Paul Sewald",
+            "game_pk": 825078
         },
         {
             "date": "2026-06-01",
@@ -201,78 +273,6 @@
             "batter": "Miguel Rojas",
             "pitcher": "Eduardo Rodriguez",
             "game_pk": 825078
-        },
-        {
-            "date": "2026-06-01",
-            "date_formatted": "June 1, 2026",
-            "challenger": "Kyle Tucker",
-            "role": "batting",
-            "team": "dodgers",
-            "outcome": "confirmed",
-            "result_desc": "Kyle Tucker grounds out, second baseman Ketel Marte to first baseman Ildemaro Vargas.",
-            "batter": "Kyle Tucker",
-            "pitcher": "Paul Sewald",
-            "game_pk": 825078
-        },
-        {
-            "date": "2026-05-31",
-            "date_formatted": "May 31, 2026",
-            "challenger": "Rafael March\u00e1n",
-            "role": "catching",
-            "team": "opponents",
-            "outcome": "overturned",
-            "result_desc": "Freddie Freeman out on a sacrifice fly to left fielder Brandon Marsh. Alex Freeland scores.",
-            "batter": "Freddie Freeman",
-            "pitcher": "Nolan Hoffman",
-            "game_pk": 823944
-        },
-        {
-            "date": "2026-05-31",
-            "date_formatted": "May 31, 2026",
-            "challenger": "Rafael March\u00e1n",
-            "role": "catching",
-            "team": "opponents",
-            "outcome": "overturned",
-            "result_desc": "Mookie Betts walks.",
-            "batter": "Mookie Betts",
-            "pitcher": "Tanner Banks",
-            "game_pk": 823944
-        },
-        {
-            "date": "2026-05-31",
-            "date_formatted": "May 31, 2026",
-            "challenger": "Dalton Rushing",
-            "role": "catching",
-            "team": "dodgers",
-            "outcome": "confirmed",
-            "result_desc": "Bryson Stott flies out to left fielder Ryan Ward.",
-            "batter": "Bryson Stott",
-            "pitcher": "Yoshinobu Yamamoto",
-            "game_pk": 823944
-        },
-        {
-            "date": "2026-05-31",
-            "date_formatted": "May 31, 2026",
-            "challenger": "Bryce Harper",
-            "role": "batting",
-            "team": "opponents",
-            "outcome": "overturned",
-            "result_desc": "Bryce Harper flies out to shortstop Mookie Betts.",
-            "batter": "Bryce Harper",
-            "pitcher": "Yoshinobu Yamamoto",
-            "game_pk": 823944
-        },
-        {
-            "date": "2026-05-31",
-            "date_formatted": "May 31, 2026",
-            "challenger": "J.T. Realmuto",
-            "role": "catching",
-            "team": "opponents",
-            "outcome": "overturned",
-            "result_desc": "Freddie Freeman singles on a line drive to shortstop Trea Turner, deflected by pitcher Andrew Painter.",
-            "batter": "Freddie Freeman",
-            "pitcher": "Andrew Painter",
-            "game_pk": 823944
         }
     ]
 }
