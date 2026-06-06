@@ -26,7 +26,7 @@
     {
         "stat_label":"Games up\/back",
         "stat":"games_up_back",
-        "value":7.5,
+        "value":8,
         "category":"standings",
         "context_value":"1st",
         "context_value_label":"Division rank"
@@ -148,7 +148,7 @@
         "stat":"strikeouts",
         "value":"569",
         "category":"pitching",
-        "context_value":"6th",
+        "context_value":"8th",
         "context_value_label":"League rank"
     },
     {
@@ -194,7 +194,7 @@
     {
         "stat_label":"Last updated",
         "stat":"update_time",
-        "value":"June 6, 2026, 8:36 AM PT",
+        "value":"June 6, 2026, 4:31 PM PT",
         "category":"summary",
         "context_value":"",
         "context_value_label":""
