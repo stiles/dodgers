@@ -45,6 +45,21 @@
         "fetched":"2026-06-07"
     },
     {
+        "player":"Emmet Sheehan",
+        "role":"SP",
+        "position":"P",
+        "era":"4.70",
+        "whip":"1.21",
+        "k9":"9.71",
+        "bb9":"2.43",
+        "kbb":"4.00",
+        "ip":"59.1",
+        "ip_rounded":59,
+        "gs":12,
+        "gp":12,
+        "fetched":"2026-06-07"
+    },
+    {
         "player":"Roki Sasaki",
         "role":"SP",
         "position":"P",
@@ -53,21 +68,6 @@
         "k9":"9.31",
         "bb9":"3.26",
         "kbb":"2.86",
-        "ip":"58.0",
-        "ip_rounded":58,
-        "gs":11,
-        "gp":11,
-        "fetched":"2026-06-07"
-    },
-    {
-        "player":"Emmet Sheehan",
-        "role":"SP",
-        "position":"P",
-        "era":"4.50",
-        "whip":"1.16",
-        "k9":"9.62",
-        "bb9":"2.17",
-        "kbb":"4.43",
         "ip":"58.0",
         "ip_rounded":58,
         "gs":11,
@@ -105,6 +105,21 @@
         "fetched":"2026-06-07"
     },
     {
+        "player":"Jack Dreyer",
+        "role":"RP",
+        "position":"P",
+        "era":"2.77",
+        "whip":"0.92",
+        "k9":"9.35",
+        "bb9":"2.08",
+        "kbb":"4.50",
+        "ip":"26.0",
+        "ip_rounded":26,
+        "gs":0,
+        "gp":24,
+        "fetched":"2026-06-07"
+    },
+    {
         "player":"Will Klein",
         "role":"SP",
         "position":"P",
@@ -120,33 +135,18 @@
         "fetched":"2026-06-07"
     },
     {
-        "player":"Jack Dreyer",
+        "player":"Edgardo Henriquez",
         "role":"RP",
         "position":"P",
         "era":"2.92",
         "whip":"0.97",
         "k9":"9.12",
-        "bb9":"2.19",
-        "kbb":"4.17",
+        "bb9":"3.28",
+        "kbb":"2.78",
         "ip":"24.2",
         "ip_rounded":24,
         "gs":0,
         "gp":23,
-        "fetched":"2026-06-07"
-    },
-    {
-        "player":"Edgardo Henriquez",
-        "role":"RP",
-        "position":"P",
-        "era":"3.13",
-        "whip":"1.04",
-        "k9":"8.61",
-        "bb9":"3.52",
-        "kbb":"2.44",
-        "ip":"23.0",
-        "ip_rounded":23,
-        "gs":0,
-        "gp":22,
         "fetched":"2026-06-07"
     }
 ]

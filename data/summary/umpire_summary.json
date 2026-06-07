@@ -1,17 +1,17 @@
 {
     "season_summary": {
-        "correct_strikes_pct": 91.53112731351655,
-        "incorrect_strikes_pct": 8.46887268648345,
-        "total_called_strikes": 1783,
-        "bad_calls_count": 151
+        "correct_strikes_pct": 91.50471960022209,
+        "incorrect_strikes_pct": 8.495280399777911,
+        "total_called_strikes": 1801,
+        "bad_calls_count": 153
     },
     "last_game_summary": {
-        "date": "June 6, 2026",
-        "correct_strikes_pct": 87.5,
-        "incorrect_strikes_pct": 12.5,
-        "total_called_strikes": 32,
-        "bad_calls_count": 4,
-        "home_plate_umpire": "Jeremie Rehak"
+        "date": "June 7, 2026",
+        "correct_strikes_pct": 88.88888888888889,
+        "incorrect_strikes_pct": 11.111111111111114,
+        "total_called_strikes": 18,
+        "bad_calls_count": 2,
+        "home_plate_umpire": "Dan Iassogna"
     },
     "worst_calls_of_season": [
         {
@@ -56,16 +56,16 @@
         }
     ],
     "pitching_season_summary": {
-        "correct_balls_pct": 95.82052858020897,
-        "incorrect_balls_pct": 4.179471419791028,
-        "total_called_balls": 3254,
-        "bad_calls_count": 136
+        "correct_balls_pct": 95.8446251129178,
+        "incorrect_balls_pct": 4.155374887082203,
+        "total_called_balls": 3321,
+        "bad_calls_count": 138
     },
     "pitching_last_game_summary": {
-        "date": "June 6, 2026",
-        "correct_balls_pct": 92.85714285714286,
-        "incorrect_balls_pct": 7.142857142857139,
-        "total_called_balls": 28,
+        "date": "June 7, 2026",
+        "correct_balls_pct": 97.01492537313433,
+        "incorrect_balls_pct": 2.985074626865668,
+        "total_called_balls": 67,
         "bad_calls_count": 2
     },
     "pitching_worst_calls_of_season": [],
@@ -89,8 +89,8 @@
         },
         "opponents": {
             "batting": {
-                "total": 10,
-                "successful": 1,
+                "total": 11,
+                "successful": 2,
                 "failed": 9
             },
             "pitching": {
@@ -99,12 +99,36 @@
                 "failed": 0
             },
             "catching": {
-                "total": 25,
-                "successful": 19,
+                "total": 26,
+                "successful": 20,
                 "failed": 6
             }
         },
         "challenge_log": [
+            {
+                "date": "2026-06-07",
+                "date_formatted": "June 7, 2026",
+                "challenger": "Sebasti\u00e1n Rivero",
+                "role": "catching",
+                "team": "opponents",
+                "outcome": "overturned",
+                "result_desc": "Alex Call called out on strikes.",
+                "batter": "Alex Call",
+                "pitcher": "Chase Silseth",
+                "game_pk": 823941
+            },
+            {
+                "date": "2026-06-07",
+                "date_formatted": "June 7, 2026",
+                "challenger": "Nick Madrigal",
+                "role": "batting",
+                "team": "opponents",
+                "outcome": "overturned",
+                "result_desc": "Nick Madrigal walks. Jo Adell to 2nd.",
+                "batter": "Nick Madrigal",
+                "pitcher": "Emmet Sheehan",
+                "game_pk": 823941
+            },
             {
                 "date": "2026-06-06",
                 "date_formatted": "June 6, 2026",
@@ -320,30 +344,6 @@
                 "batter": "Max Muncy",
                 "pitcher": "Mason Miller",
                 "game_pk": 823302
-            },
-            {
-                "date": "2026-05-19",
-                "date_formatted": "May 19, 2026",
-                "challenger": "Teoscar Hern\u00e1ndez",
-                "role": "batting",
-                "team": "dodgers",
-                "outcome": "confirmed",
-                "result_desc": "Teoscar Hern\u00e1ndez called out on strikes.",
-                "batter": "Teoscar Hern\u00e1ndez",
-                "pitcher": "Ron Marinaccio",
-                "game_pk": 823302
-            },
-            {
-                "date": "2026-05-18",
-                "date_formatted": "May 18, 2026",
-                "challenger": "Rodolfo Dur\u00e1n",
-                "role": "catching",
-                "team": "opponents",
-                "outcome": "overturned",
-                "result_desc": "Max Muncy called out on strikes.",
-                "batter": "Max Muncy",
-                "pitcher": "Michael King",
-                "game_pk": 823301
             }
         ]
     }
