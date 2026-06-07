@@ -11,16 +11,16 @@
             "failed": 3
         },
         "catching": {
-            "total": 62,
-            "successful": 37,
+            "total": 63,
+            "successful": 38,
             "failed": 25
         }
     },
     "opponents": {
         "batting": {
-            "total": 56,
+            "total": 57,
             "successful": 28,
-            "failed": 28
+            "failed": 29
         },
         "pitching": {
             "total": 3,
@@ -28,12 +28,48 @@
             "failed": 2
         },
         "catching": {
-            "total": 83,
-            "successful": 52,
+            "total": 84,
+            "successful": 53,
             "failed": 31
         }
     },
     "challenge_log": [
+        {
+            "date": "2026-06-06",
+            "date_formatted": "June 6, 2026",
+            "challenger": "Logan O'Hoppe",
+            "role": "batting",
+            "team": "opponents",
+            "outcome": "confirmed",
+            "result_desc": "Logan O'Hoppe lines out to right fielder Alex Call.",
+            "batter": "Logan O'Hoppe",
+            "pitcher": "Jack Dreyer",
+            "game_pk": 823942
+        },
+        {
+            "date": "2026-06-06",
+            "date_formatted": "June 6, 2026",
+            "challenger": "Logan O'Hoppe",
+            "role": "catching",
+            "team": "opponents",
+            "outcome": "overturned",
+            "result_desc": "Dalton Rushing walks.",
+            "batter": "Dalton Rushing",
+            "pitcher": "Jack Kochanowicz",
+            "game_pk": 823942
+        },
+        {
+            "date": "2026-06-06",
+            "date_formatted": "June 6, 2026",
+            "challenger": "Dalton Rushing",
+            "role": "catching",
+            "team": "dodgers",
+            "outcome": "overturned",
+            "result_desc": "Wade Meckler singles on a bunt ground ball to pitcher Yoshinobu Yamamoto.",
+            "batter": "Wade Meckler",
+            "pitcher": "Yoshinobu Yamamoto",
+            "game_pk": 823942
+        },
         {
             "date": "2026-06-05",
             "date_formatted": "June 5, 2026",
@@ -169,18 +205,6 @@
         {
             "date": "2026-06-02",
             "date_formatted": "June 2, 2026",
-            "challenger": "Jose Fernandez",
-            "role": "batting",
-            "team": "opponents",
-            "outcome": "confirmed",
-            "result_desc": "Diamondbacks challenged (force play), call on the field was overturned: Jose Fernandez reaches on a fielder's choice, fielded by third baseman Max Muncy. Ryan Waldschmidt to 2nd.",
-            "batter": "Jose Fernandez",
-            "pitcher": "Edgardo Henriquez",
-            "game_pk": 825079
-        },
-        {
-            "date": "2026-06-02",
-            "date_formatted": "June 2, 2026",
             "challenger": "Gabriel Moreno",
             "role": "batting",
             "team": "opponents",
@@ -188,6 +212,18 @@
             "result_desc": "Gabriel Moreno walks.",
             "batter": "Gabriel Moreno",
             "pitcher": "Blake Treinen",
+            "game_pk": 825079
+        },
+        {
+            "date": "2026-06-02",
+            "date_formatted": "June 2, 2026",
+            "challenger": "Jose Fernandez",
+            "role": "batting",
+            "team": "opponents",
+            "outcome": "confirmed",
+            "result_desc": "Diamondbacks challenged (force play), call on the field was overturned: Jose Fernandez reaches on a fielder's choice, fielded by third baseman Max Muncy. Ryan Waldschmidt to 2nd.",
+            "batter": "Jose Fernandez",
+            "pitcher": "Edgardo Henriquez",
             "game_pk": 825079
         },
         {
@@ -205,18 +241,6 @@
         {
             "date": "2026-06-02",
             "date_formatted": "June 2, 2026",
-            "challenger": "Ryan Waldschmidt",
-            "role": "batting",
-            "team": "opponents",
-            "outcome": "overturned",
-            "result_desc": "Ryan Waldschmidt strikes out on a foul tip.",
-            "batter": "Ryan Waldschmidt",
-            "pitcher": "Tanner Scott",
-            "game_pk": 825079
-        },
-        {
-            "date": "2026-06-02",
-            "date_formatted": "June 2, 2026",
             "challenger": "Geraldo Perdomo",
             "role": "batting",
             "team": "opponents",
@@ -224,6 +248,18 @@
             "result_desc": "Geraldo Perdomo singles on a line drive to left fielder Ryan Ward. Nolan Arenado to 3rd. Ildemaro Vargas to 2nd.",
             "batter": "Geraldo Perdomo",
             "pitcher": "Will Klein",
+            "game_pk": 825079
+        },
+        {
+            "date": "2026-06-02",
+            "date_formatted": "June 2, 2026",
+            "challenger": "Ryan Waldschmidt",
+            "role": "batting",
+            "team": "opponents",
+            "outcome": "overturned",
+            "result_desc": "Ryan Waldschmidt strikes out on a foul tip.",
+            "batter": "Ryan Waldschmidt",
+            "pitcher": "Tanner Scott",
             "game_pk": 825079
         },
         {
@@ -236,42 +272,6 @@
             "result_desc": "Kyle Tucker grounds out, second baseman Ketel Marte to first baseman Ildemaro Vargas.",
             "batter": "Kyle Tucker",
             "pitcher": "Paul Sewald",
-            "game_pk": 825078
-        },
-        {
-            "date": "2026-06-01",
-            "date_formatted": "June 1, 2026",
-            "challenger": "Gabriel Moreno",
-            "role": "catching",
-            "team": "opponents",
-            "outcome": "overturned",
-            "result_desc": "Freddie Freeman flies out to left fielder Tommy Troy.",
-            "batter": "Freddie Freeman",
-            "pitcher": "Eduardo Rodriguez",
-            "game_pk": 825078
-        },
-        {
-            "date": "2026-06-01",
-            "date_formatted": "June 1, 2026",
-            "challenger": "Miguel Rojas",
-            "role": "batting",
-            "team": "dodgers",
-            "outcome": "overturned",
-            "result_desc": "Miguel Rojas challenged (pitch result), call on the field was confirmed: Miguel Rojas called out on strikes.",
-            "batter": "Miguel Rojas",
-            "pitcher": "Eduardo Rodriguez",
-            "game_pk": 825078
-        },
-        {
-            "date": "2026-06-01",
-            "date_formatted": "June 1, 2026",
-            "challenger": "Miguel Rojas",
-            "role": "batting",
-            "team": "dodgers",
-            "outcome": "overturned",
-            "result_desc": "Miguel Rojas challenged (pitch result), call on the field was confirmed: Miguel Rojas called out on strikes.",
-            "batter": "Miguel Rojas",
-            "pitcher": "Eduardo Rodriguez",
             "game_pk": 825078
         }
     ]

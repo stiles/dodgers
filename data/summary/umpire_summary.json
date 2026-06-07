@@ -1,17 +1,17 @@
 {
     "season_summary": {
-        "correct_strikes_pct": 91.60479725870931,
-        "incorrect_strikes_pct": 8.395202741290689,
-        "total_called_strikes": 1751,
-        "bad_calls_count": 147
+        "correct_strikes_pct": 91.53112731351655,
+        "incorrect_strikes_pct": 8.46887268648345,
+        "total_called_strikes": 1783,
+        "bad_calls_count": 151
     },
     "last_game_summary": {
-        "date": "June 5, 2026",
-        "correct_strikes_pct": 100.0,
-        "incorrect_strikes_pct": 0.0,
-        "total_called_strikes": 23,
-        "bad_calls_count": 0,
-        "home_plate_umpire": "Jen Pawol"
+        "date": "June 6, 2026",
+        "correct_strikes_pct": 87.5,
+        "incorrect_strikes_pct": 12.5,
+        "total_called_strikes": 32,
+        "bad_calls_count": 4,
+        "home_plate_umpire": "Jeremie Rehak"
     },
     "worst_calls_of_season": [
         {
@@ -56,25 +56,25 @@
         }
     ],
     "pitching_season_summary": {
-        "correct_balls_pct": 95.84624922504649,
-        "incorrect_balls_pct": 4.153750774953508,
-        "total_called_balls": 3226,
-        "bad_calls_count": 134
+        "correct_balls_pct": 95.82052858020897,
+        "incorrect_balls_pct": 4.179471419791028,
+        "total_called_balls": 3254,
+        "bad_calls_count": 136
     },
     "pitching_last_game_summary": {
-        "date": "June 5, 2026",
-        "correct_balls_pct": 100.0,
-        "incorrect_balls_pct": 0.0,
-        "total_called_balls": 34,
-        "bad_calls_count": 0
+        "date": "June 6, 2026",
+        "correct_balls_pct": 92.85714285714286,
+        "incorrect_balls_pct": 7.142857142857139,
+        "total_called_balls": 28,
+        "bad_calls_count": 2
     },
     "pitching_worst_calls_of_season": [],
     "abs_challenges": {
         "dodgers": {
             "batting": {
-                "total": 24,
+                "total": 25,
                 "successful": 7,
-                "failed": 17
+                "failed": 18
             },
             "pitching": {
                 "total": 0,
@@ -105,6 +105,18 @@
             }
         },
         "challenge_log": [
+            {
+                "date": "2026-06-06",
+                "date_formatted": "June 6, 2026",
+                "challenger": "Andy Pages",
+                "role": "batting",
+                "team": "dodgers",
+                "outcome": "confirmed",
+                "result_desc": "Andy Pages called out on strikes.",
+                "batter": "Andy Pages",
+                "pitcher": "Brent Suter",
+                "game_pk": 823942
+            },
             {
                 "date": "2026-06-05",
                 "date_formatted": "June 5, 2026",
@@ -330,18 +342,6 @@
                 "outcome": "overturned",
                 "result_desc": "Max Muncy called out on strikes.",
                 "batter": "Max Muncy",
-                "pitcher": "Michael King",
-                "game_pk": 823301
-            },
-            {
-                "date": "2026-05-18",
-                "date_formatted": "May 18, 2026",
-                "challenger": "Kyle Tucker",
-                "role": "batting",
-                "team": "dodgers",
-                "outcome": "confirmed",
-                "result_desc": "Kyle Tucker called out on strikes.",
-                "batter": "Kyle Tucker",
                 "pitcher": "Michael King",
                 "game_pk": 823301
             }
