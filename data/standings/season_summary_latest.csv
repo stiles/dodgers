@@ -1,28 +1,28 @@
 stat_label,stat,value,category,context_value,context_value_label
-Wins,wins,42,standings,38,This point last season
-Losses,losses,23,standings,27,This point last season
-Win percentage,win_pct,65%,standings,58%,This point last season
-Games up/back,games_up_back,8,standings,1st,Division rank
+Wins,wins,42,standings,39,This point last season
+Losses,losses,24,standings,27,This point last season
+Win percentage,win_pct,64%,standings,59%,This point last season
+Games up/back,games_up_back,7.5,standings,1st,Division rank
 Fielding percentage,fielding_pct,.990,standings,2nd,League rank
 Errors,errors,22,standings,2nd,League rank
-Runs,runs,340,standings,2nd,League rank
-Runs against,runs_against,199,standings,290,This point last season
-Run differential,run_differential,141,standings,70,This point last season
-Batting average,batting_average,.263,batting,.253,Last decade average
+Runs,runs,345,standings,2nd,League rank
+Runs against,runs_against,212,standings,293,This point last season
+Run differential,run_differential,133,standings,74,This point last season
+Batting average,batting_average,.262,batting,.253,Last decade average
 Home runs,home_runs,90,batting,2nd,League rank
 Home runs/game,home_runs_game,1.36,batting,1.42,Last decade average
 On-base percentage,on_base_pct,.343,batting,1st,League rank
-Slugging percentage,slugging_pct,.442,batting,1st,League rank
-OPS,ops,.785,batting,1st,League rank
+Slugging percentage,slugging_pct,.441,batting,1st,League rank
+OPS,ops,.784,batting,1st,League rank
 Stolen bases,stolen_bases,27,batting,26th,League rank
-Stolen bases/game,stolen_bases_game,0.42,batting,0.84,Rate all last season
+Stolen bases/game,stolen_bases_game,0.41,batting,0.84,Rate all last season
 Doubles,doubles,110,batting,8th,League rank
-Strikeouts,strikeouts,586,pitching,6th,League rank
+Strikeouts,strikeouts,588,pitching,6th,League rank
 Walks,walks,180,pitching,28th,League rank
 ERA,era,3.17,pitching,1st,League rank
 WHIP,whip,1.07,pitching,1st,League rank
-Batting average against,avg_against,.209,pitching,1st,League rank
-K/BB ratio,k_bb_ratio,3.26,pitching,3rd,League rank
-Last updated,update_time,"June 7, 2026, 4:32 PM PT",summary,,
-Team summary,summary,"<span class='highlight'>LOS ANGELES</span> <span class='updated'>(June 7)</span> — The Dodgers have compiled a <span class='highlight'>42-23</span> record in the 2026 regular season, a <span class='highlight'>65%</span> winning percentage. The last game was a <span class='highlight'>9-2</span> home <span class='highlight'>win</span> against the <span class='highlight'>Los Angeles Angels</span>. The team next faces the <span class='highlight'>Pittsburgh Pirates</span> on Tuesday at 3:40 p.m. PDT at <span class='highlight'>PNC Park</span>.",summary,,
-Last game result,last_game_result,win,summary,,
+Batting average against,avg_against,.208,pitching,1st,League rank
+K/BB ratio,k_bb_ratio,3.27,pitching,3rd,League rank
+Last updated,update_time,"June 7, 2026, 5:31 PM PT",summary,,
+Team summary,summary,"<span class='highlight'>LOS ANGELES</span> <span class='updated'>(June 7)</span> — The Dodgers have compiled a <span class='highlight'>42-24</span> record in the 2026 regular season, a <span class='highlight'>64%</span> winning percentage. The last game was a <span class='highlight'>5-13</span> home <span class='highlight'>loss</span> against the <span class='highlight'>Los Angeles Angels</span>. The team next faces the <span class='highlight'>Pittsburgh Pirates</span> on Tuesday at 3:40 p.m. PDT at <span class='highlight'>PNC Park</span>.",summary,,
+Last game result,last_game_result,loss,summary,,

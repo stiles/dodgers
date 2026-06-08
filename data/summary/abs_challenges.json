@@ -1,8 +1,8 @@
 {
     "dodgers": {
         "batting": {
-            "total": 45,
-            "successful": 28,
+            "total": 47,
+            "successful": 30,
             "failed": 17
         },
         "pitching": {
@@ -18,8 +18,8 @@
     },
     "opponents": {
         "batting": {
-            "total": 57,
-            "successful": 28,
+            "total": 59,
+            "successful": 30,
             "failed": 29
         },
         "pitching": {
@@ -34,6 +34,54 @@
         }
     },
     "challenge_log": [
+        {
+            "date": "2026-06-07",
+            "date_formatted": "June 7, 2026",
+            "challenger": "Kyle Tucker",
+            "role": "batting",
+            "team": "dodgers",
+            "outcome": "overturned",
+            "result_desc": "Kyle Tucker strikes out swinging.",
+            "batter": "Kyle Tucker",
+            "pitcher": "Drew Pomeranz",
+            "game_pk": 823941
+        },
+        {
+            "date": "2026-06-07",
+            "date_formatted": "June 7, 2026",
+            "challenger": "Kyle Tucker",
+            "role": "batting",
+            "team": "dodgers",
+            "outcome": "overturned",
+            "result_desc": "Kyle Tucker strikes out swinging.",
+            "batter": "Kyle Tucker",
+            "pitcher": "Drew Pomeranz",
+            "game_pk": 823941
+        },
+        {
+            "date": "2026-06-07",
+            "date_formatted": "June 7, 2026",
+            "challenger": "Nick Madrigal",
+            "role": "batting",
+            "team": "opponents",
+            "outcome": "overturned",
+            "result_desc": "Nick Madrigal walks. Jo Adell to 2nd.",
+            "batter": "Nick Madrigal",
+            "pitcher": "Alex Vesia",
+            "game_pk": 823941
+        },
+        {
+            "date": "2026-06-07",
+            "date_formatted": "June 7, 2026",
+            "challenger": "Nick Madrigal",
+            "role": "batting",
+            "team": "opponents",
+            "outcome": "overturned",
+            "result_desc": "Nick Madrigal challenged (pitch result), call on the field was overturned: Nick Madrigal walks. Jo Adell to 2nd.",
+            "batter": "Nick Madrigal",
+            "pitcher": "Emmet Sheehan",
+            "game_pk": 823941
+        },
         {
             "date": "2026-06-06",
             "date_formatted": "June 6, 2026",
@@ -133,6 +181,30 @@
         {
             "date": "2026-06-04",
             "date_formatted": "June 4, 2026",
+            "challenger": "Dalton Rushing",
+            "role": "catching",
+            "team": "dodgers",
+            "outcome": "overturned",
+            "result_desc": "Pavin Smith grounds out, second baseman Alex Freeland to first baseman Freddie Freeman.",
+            "batter": "Pavin Smith",
+            "pitcher": "Justin Wrobleski",
+            "game_pk": 825076
+        },
+        {
+            "date": "2026-06-04",
+            "date_formatted": "June 4, 2026",
+            "challenger": "Dalton Rushing",
+            "role": "catching",
+            "team": "dodgers",
+            "outcome": "overturned",
+            "result_desc": "Pavin Smith grounds out, second baseman Alex Freeland to first baseman Freddie Freeman.",
+            "batter": "Pavin Smith",
+            "pitcher": "Justin Wrobleski",
+            "game_pk": 825076
+        },
+        {
+            "date": "2026-06-04",
+            "date_formatted": "June 4, 2026",
             "challenger": "Geraldo Perdomo",
             "role": "batting",
             "team": "opponents",
@@ -140,30 +212,6 @@
             "result_desc": "Geraldo Perdomo lines out to second baseman Alex Freeland.",
             "batter": "Geraldo Perdomo",
             "pitcher": "Kyle Hurt",
-            "game_pk": 825076
-        },
-        {
-            "date": "2026-06-04",
-            "date_formatted": "June 4, 2026",
-            "challenger": "Dalton Rushing",
-            "role": "catching",
-            "team": "dodgers",
-            "outcome": "overturned",
-            "result_desc": "Pavin Smith grounds out, second baseman Alex Freeland to first baseman Freddie Freeman.",
-            "batter": "Pavin Smith",
-            "pitcher": "Justin Wrobleski",
-            "game_pk": 825076
-        },
-        {
-            "date": "2026-06-04",
-            "date_formatted": "June 4, 2026",
-            "challenger": "Dalton Rushing",
-            "role": "catching",
-            "team": "dodgers",
-            "outcome": "overturned",
-            "result_desc": "Pavin Smith grounds out, second baseman Alex Freeland to first baseman Freddie Freeman.",
-            "batter": "Pavin Smith",
-            "pitcher": "Justin Wrobleski",
             "game_pk": 825076
         },
         {
@@ -181,61 +229,13 @@
         {
             "date": "2026-06-02",
             "date_formatted": "June 2, 2026",
-            "challenger": "Kyle Hurt",
-            "role": "pitching",
-            "team": "dodgers",
-            "outcome": "confirmed",
-            "result_desc": "Gabriel Moreno walks. Ketel Marte to 2nd.",
-            "batter": "Gabriel Moreno",
-            "pitcher": "Kyle Hurt",
-            "game_pk": 825079
-        },
-        {
-            "date": "2026-06-02",
-            "date_formatted": "June 2, 2026",
-            "challenger": "Mookie Betts",
-            "role": "batting",
-            "team": "dodgers",
-            "outcome": "overturned",
-            "result_desc": "Mookie Betts walks.",
-            "batter": "Mookie Betts",
-            "pitcher": "Michael Soroka",
-            "game_pk": 825079
-        },
-        {
-            "date": "2026-06-02",
-            "date_formatted": "June 2, 2026",
-            "challenger": "Gabriel Moreno",
+            "challenger": "Ryan Waldschmidt",
             "role": "batting",
             "team": "opponents",
             "outcome": "overturned",
-            "result_desc": "Gabriel Moreno walks.",
-            "batter": "Gabriel Moreno",
-            "pitcher": "Blake Treinen",
-            "game_pk": 825079
-        },
-        {
-            "date": "2026-06-02",
-            "date_formatted": "June 2, 2026",
-            "challenger": "Jose Fernandez",
-            "role": "batting",
-            "team": "opponents",
-            "outcome": "confirmed",
-            "result_desc": "Diamondbacks challenged (force play), call on the field was overturned: Jose Fernandez reaches on a fielder's choice, fielded by third baseman Max Muncy. Ryan Waldschmidt to 2nd.",
-            "batter": "Jose Fernandez",
-            "pitcher": "Edgardo Henriquez",
-            "game_pk": 825079
-        },
-        {
-            "date": "2026-06-02",
-            "date_formatted": "June 2, 2026",
-            "challenger": "Nolan Arenado",
-            "role": "batting",
-            "team": "opponents",
-            "outcome": "overturned",
-            "result_desc": "Nolan Arenado doubles (12) on a sharp line drive to left fielder Ryan Ward. Ketel Marte scores. Gabriel Moreno scores.",
-            "batter": "Nolan Arenado",
-            "pitcher": "Kyle Hurt",
+            "result_desc": "Ryan Waldschmidt strikes out on a foul tip.",
+            "batter": "Ryan Waldschmidt",
+            "pitcher": "Tanner Scott",
             "game_pk": 825079
         },
         {
@@ -253,26 +253,26 @@
         {
             "date": "2026-06-02",
             "date_formatted": "June 2, 2026",
-            "challenger": "Ryan Waldschmidt",
+            "challenger": "Nolan Arenado",
             "role": "batting",
             "team": "opponents",
             "outcome": "overturned",
-            "result_desc": "Ryan Waldschmidt strikes out on a foul tip.",
-            "batter": "Ryan Waldschmidt",
-            "pitcher": "Tanner Scott",
+            "result_desc": "Nolan Arenado doubles (12) on a sharp line drive to left fielder Ryan Ward. Ketel Marte scores. Gabriel Moreno scores.",
+            "batter": "Nolan Arenado",
+            "pitcher": "Kyle Hurt",
             "game_pk": 825079
         },
         {
-            "date": "2026-06-01",
-            "date_formatted": "June 1, 2026",
-            "challenger": "Kyle Tucker",
-            "role": "batting",
+            "date": "2026-06-02",
+            "date_formatted": "June 2, 2026",
+            "challenger": "Kyle Hurt",
+            "role": "pitching",
             "team": "dodgers",
             "outcome": "confirmed",
-            "result_desc": "Kyle Tucker grounds out, second baseman Ketel Marte to first baseman Ildemaro Vargas.",
-            "batter": "Kyle Tucker",
-            "pitcher": "Paul Sewald",
-            "game_pk": 825078
+            "result_desc": "Gabriel Moreno walks. Ketel Marte to 2nd.",
+            "batter": "Gabriel Moreno",
+            "pitcher": "Kyle Hurt",
+            "game_pk": 825079
         }
     ]
 }
