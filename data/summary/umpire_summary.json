@@ -1,16 +1,16 @@
 {
     "season_summary": {
-        "correct_strikes_pct": 91.54696132596685,
-        "incorrect_strikes_pct": 8.453038674033152,
-        "total_called_strikes": 1810,
-        "bad_calls_count": 153
+        "correct_strikes_pct": 91.41607435757244,
+        "incorrect_strikes_pct": 8.583925642427559,
+        "total_called_strikes": 1829,
+        "bad_calls_count": 157
     },
     "last_game_summary": {
         "date": "June 9, 2026",
-        "correct_strikes_pct": 100.0,
-        "incorrect_strikes_pct": 0.0,
-        "total_called_strikes": 9,
-        "bad_calls_count": 0,
+        "correct_strikes_pct": 85.71428571428571,
+        "incorrect_strikes_pct": 14.285714285714292,
+        "total_called_strikes": 28,
+        "bad_calls_count": 4,
         "home_plate_umpire": "Brennan Miller"
     },
     "worst_calls_of_season": [
@@ -35,6 +35,16 @@
             "video_link": "https://baseballsavant.mlb.com/sporty-videos?playId=383d8667-b191-3bac-95e2-2468f77e7813"
         },
         {
+            "distance_inches": 3.3788422277,
+            "batter": "Mookie Betts",
+            "pitcher": "Tyler Callihan",
+            "pitch_type": "Slider",
+            "velocity_mph": 75.8,
+            "date": "2026-06-09",
+            "date_formatted": "June 9, 2026",
+            "video_link": "https://baseballsavant.mlb.com/sporty-videos?playId=f4c2b7bc-9b50-3756-8910-502ad527e7c2"
+        },
+        {
             "distance_inches": 2.7998286828,
             "batter": "Kyle Tucker",
             "pitcher": "Landen Roupp",
@@ -43,29 +53,19 @@
             "date": "2026-05-14",
             "date_formatted": "May 14, 2026",
             "video_link": "https://baseballsavant.mlb.com/sporty-videos?playId=4e7c1229-b041-35e7-92e4-1818fd014e2c"
-        },
-        {
-            "distance_inches": 2.6846937843,
-            "batter": "Teoscar Hern\u00e1ndez",
-            "pitcher": "Tyler Heineman",
-            "pitch_type": "Fastball",
-            "velocity_mph": 69.1,
-            "date": "2026-04-06",
-            "date_formatted": "April 6, 2026",
-            "video_link": "https://baseballsavant.mlb.com/sporty-videos?playId=1e90bf04-fb2d-3a5f-9c86-af576f5a1e49"
         }
     ],
     "pitching_season_summary": {
-        "correct_balls_pct": 95.85834333733494,
-        "incorrect_balls_pct": 4.141656662665056,
-        "total_called_balls": 3332,
+        "correct_balls_pct": 95.9013959013959,
+        "incorrect_balls_pct": 4.098604098604099,
+        "total_called_balls": 3367,
         "bad_calls_count": 138
     },
     "pitching_last_game_summary": {
         "date": "June 9, 2026",
         "correct_balls_pct": 100.0,
         "incorrect_balls_pct": 0.0,
-        "total_called_balls": 11,
+        "total_called_balls": 46,
         "bad_calls_count": 0
     },
     "pitching_worst_calls_of_season": [],
@@ -82,8 +82,8 @@
                 "failed": 0
             },
             "catching": {
-                "total": 12,
-                "successful": 9,
+                "total": 13,
+                "successful": 10,
                 "failed": 3
             }
         },
@@ -99,12 +99,36 @@
                 "failed": 0
             },
             "catching": {
-                "total": 26,
+                "total": 27,
                 "successful": 20,
-                "failed": 6
+                "failed": 7
             }
         },
         "challenge_log": [
+            {
+                "date": "2026-06-09",
+                "date_formatted": "June 9, 2026",
+                "challenger": "Henry Davis",
+                "role": "catching",
+                "team": "opponents",
+                "outcome": "confirmed",
+                "result_desc": "Max Muncy walks. Mookie Betts to 2nd.",
+                "batter": "Max Muncy",
+                "pitcher": "Brandan Bidois",
+                "game_pk": 823374
+            },
+            {
+                "date": "2026-06-09",
+                "date_formatted": "June 9, 2026",
+                "challenger": "Dalton Rushing",
+                "role": "catching",
+                "team": "dodgers",
+                "outcome": "overturned",
+                "result_desc": "Endy Rodr\u00edguez called out on strikes.",
+                "batter": "Endy Rodr\u00edguez",
+                "pitcher": "Blake Treinen",
+                "game_pk": 823374
+            },
             {
                 "date": "2026-06-07",
                 "date_formatted": "June 7, 2026",
@@ -320,30 +344,6 @@
                 "batter": "Kyle Tucker",
                 "pitcher": "Logan Henderson",
                 "game_pk": 823788
-            },
-            {
-                "date": "2026-05-20",
-                "date_formatted": "May 20, 2026",
-                "challenger": "Freddy Fermin",
-                "role": "catching",
-                "team": "opponents",
-                "outcome": "confirmed",
-                "result_desc": "Kyle Tucker walks.",
-                "batter": "Kyle Tucker",
-                "pitcher": "Yuki Matsui",
-                "game_pk": 823299
-            },
-            {
-                "date": "2026-05-19",
-                "date_formatted": "May 19, 2026",
-                "challenger": "Max Muncy",
-                "role": "batting",
-                "team": "dodgers",
-                "outcome": "overturned",
-                "result_desc": "Max Muncy walks.",
-                "batter": "Max Muncy",
-                "pitcher": "Mason Miller",
-                "game_pk": 823302
             }
         ]
     }

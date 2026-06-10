@@ -1,8 +1,8 @@
 {
     "dodgers": {
         "batting": {
-            "total": 47,
-            "successful": 30,
+            "total": 49,
+            "successful": 32,
             "failed": 17
         },
         "pitching": {
@@ -11,16 +11,16 @@
             "failed": 3
         },
         "catching": {
-            "total": 63,
-            "successful": 38,
+            "total": 64,
+            "successful": 39,
             "failed": 25
         }
     },
     "opponents": {
         "batting": {
-            "total": 59,
+            "total": 60,
             "successful": 30,
-            "failed": 29
+            "failed": 30
         },
         "pitching": {
             "total": 3,
@@ -28,12 +28,84 @@
             "failed": 2
         },
         "catching": {
-            "total": 84,
-            "successful": 53,
+            "total": 86,
+            "successful": 55,
             "failed": 31
         }
     },
     "challenge_log": [
+        {
+            "date": "2026-06-09",
+            "date_formatted": "June 9, 2026",
+            "challenger": "Andy Pages",
+            "role": "batting",
+            "team": "dodgers",
+            "outcome": "overturned",
+            "result_desc": "Andy Pages lines out to first baseman Davis Wendzel.",
+            "batter": "Andy Pages",
+            "pitcher": "Paul Skenes",
+            "game_pk": 823374
+        },
+        {
+            "date": "2026-06-09",
+            "date_formatted": "June 9, 2026",
+            "challenger": "Andy Pages",
+            "role": "batting",
+            "team": "dodgers",
+            "outcome": "overturned",
+            "result_desc": "Andy Pages lines out to first baseman Davis Wendzel.",
+            "batter": "Andy Pages",
+            "pitcher": "Paul Skenes",
+            "game_pk": 823374
+        },
+        {
+            "date": "2026-06-09",
+            "date_formatted": "June 9, 2026",
+            "challenger": "Marcell Ozuna",
+            "role": "batting",
+            "team": "opponents",
+            "outcome": "confirmed",
+            "result_desc": "Marcell Ozuna grounds out, shortstop Mookie Betts to first baseman Freddie Freeman.",
+            "batter": "Marcell Ozuna",
+            "pitcher": "Eric Lauer",
+            "game_pk": 823374
+        },
+        {
+            "date": "2026-06-09",
+            "date_formatted": "June 9, 2026",
+            "challenger": "Henry Davis",
+            "role": "catching",
+            "team": "opponents",
+            "outcome": "overturned",
+            "result_desc": "Andy Pages grounds out, second baseman Brandon Lowe to first baseman Davis Wendzel. Alex Freeland to 2nd.",
+            "batter": "Andy Pages",
+            "pitcher": "Paul Skenes",
+            "game_pk": 823374
+        },
+        {
+            "date": "2026-06-09",
+            "date_formatted": "June 9, 2026",
+            "challenger": "Dalton Rushing",
+            "role": "catching",
+            "team": "dodgers",
+            "outcome": "overturned",
+            "result_desc": "Jake Mangum grounds out, shortstop Mookie Betts to first baseman Freddie Freeman.",
+            "batter": "Jake Mangum",
+            "pitcher": "Eric Lauer",
+            "game_pk": 823374
+        },
+        {
+            "date": "2026-06-09",
+            "date_formatted": "June 9, 2026",
+            "challenger": "Henry Davis",
+            "role": "catching",
+            "team": "opponents",
+            "outcome": "overturned",
+            "result_desc": "Ryan Ward strikes out swinging.",
+            "batter": "Ryan Ward",
+            "pitcher": "Paul Skenes",
+            "game_pk": 823374
+        },
         {
             "date": "2026-06-07",
             "date_formatted": "June 7, 2026",
@@ -121,25 +193,13 @@
         {
             "date": "2026-06-05",
             "date_formatted": "June 5, 2026",
-            "challenger": "Will Smith",
+            "challenger": "Logan O'Hoppe",
             "role": "catching",
-            "team": "dodgers",
+            "team": "opponents",
             "outcome": "confirmed",
-            "result_desc": "Jo Adell singles on a fly ball to right fielder Kyle Tucker.",
-            "batter": "Jo Adell",
-            "pitcher": "Tanner Scott",
-            "game_pk": 823943
-        },
-        {
-            "date": "2026-06-05",
-            "date_formatted": "June 5, 2026",
-            "challenger": "Will Smith",
-            "role": "catching",
-            "team": "dodgers",
-            "outcome": "overturned",
-            "result_desc": "Zach Neto hit by pitch.",
-            "batter": "Zach Neto",
-            "pitcher": "Edgardo Henriquez",
+            "result_desc": "Will Smith walks.",
+            "batter": "Will Smith",
+            "pitcher": "Chase Silseth",
             "game_pk": 823943
         },
         {
@@ -149,9 +209,9 @@
             "role": "catching",
             "team": "opponents",
             "outcome": "confirmed",
-            "result_desc": "Will Smith walks.",
-            "batter": "Will Smith",
-            "pitcher": "Chase Silseth",
+            "result_desc": "Santiago Espinal lines out to first baseman Oswald Peraza.",
+            "batter": "Santiago Espinal",
+            "pitcher": "Reid Detmers",
             "game_pk": 823943
         },
         {
@@ -169,38 +229,26 @@
         {
             "date": "2026-06-05",
             "date_formatted": "June 5, 2026",
-            "challenger": "Logan O'Hoppe",
+            "challenger": "Will Smith",
             "role": "catching",
-            "team": "opponents",
-            "outcome": "confirmed",
-            "result_desc": "Santiago Espinal lines out to first baseman Oswald Peraza.",
-            "batter": "Santiago Espinal",
-            "pitcher": "Reid Detmers",
+            "team": "dodgers",
+            "outcome": "overturned",
+            "result_desc": "Zach Neto hit by pitch.",
+            "batter": "Zach Neto",
+            "pitcher": "Edgardo Henriquez",
             "game_pk": 823943
         },
         {
-            "date": "2026-06-04",
-            "date_formatted": "June 4, 2026",
-            "challenger": "Dalton Rushing",
+            "date": "2026-06-05",
+            "date_formatted": "June 5, 2026",
+            "challenger": "Will Smith",
             "role": "catching",
             "team": "dodgers",
-            "outcome": "overturned",
-            "result_desc": "Pavin Smith grounds out, second baseman Alex Freeland to first baseman Freddie Freeman.",
-            "batter": "Pavin Smith",
-            "pitcher": "Justin Wrobleski",
-            "game_pk": 825076
-        },
-        {
-            "date": "2026-06-04",
-            "date_formatted": "June 4, 2026",
-            "challenger": "Dalton Rushing",
-            "role": "catching",
-            "team": "dodgers",
-            "outcome": "overturned",
-            "result_desc": "Pavin Smith grounds out, second baseman Alex Freeland to first baseman Freddie Freeman.",
-            "batter": "Pavin Smith",
-            "pitcher": "Justin Wrobleski",
-            "game_pk": 825076
+            "outcome": "confirmed",
+            "result_desc": "Jo Adell singles on a fly ball to right fielder Kyle Tucker.",
+            "batter": "Jo Adell",
+            "pitcher": "Tanner Scott",
+            "game_pk": 823943
         },
         {
             "date": "2026-06-04",
@@ -215,64 +263,16 @@
             "game_pk": 825076
         },
         {
-            "date": "2026-06-03",
-            "date_formatted": "June 3, 2026",
-            "challenger": "Andy Pages",
-            "role": "batting",
+            "date": "2026-06-04",
+            "date_formatted": "June 4, 2026",
+            "challenger": "Dalton Rushing",
+            "role": "catching",
             "team": "dodgers",
-            "outcome": "confirmed",
-            "result_desc": "Andy Pages strikes out swinging.",
-            "batter": "Andy Pages",
-            "pitcher": "Ryan Thompson",
-            "game_pk": 825077
-        },
-        {
-            "date": "2026-06-02",
-            "date_formatted": "June 2, 2026",
-            "challenger": "Ryan Waldschmidt",
-            "role": "batting",
-            "team": "opponents",
             "outcome": "overturned",
-            "result_desc": "Ryan Waldschmidt strikes out on a foul tip.",
-            "batter": "Ryan Waldschmidt",
-            "pitcher": "Tanner Scott",
-            "game_pk": 825079
-        },
-        {
-            "date": "2026-06-02",
-            "date_formatted": "June 2, 2026",
-            "challenger": "Geraldo Perdomo",
-            "role": "batting",
-            "team": "opponents",
-            "outcome": "overturned",
-            "result_desc": "Geraldo Perdomo singles on a line drive to left fielder Ryan Ward. Nolan Arenado to 3rd. Ildemaro Vargas to 2nd.",
-            "batter": "Geraldo Perdomo",
-            "pitcher": "Will Klein",
-            "game_pk": 825079
-        },
-        {
-            "date": "2026-06-02",
-            "date_formatted": "June 2, 2026",
-            "challenger": "Nolan Arenado",
-            "role": "batting",
-            "team": "opponents",
-            "outcome": "overturned",
-            "result_desc": "Nolan Arenado doubles (12) on a sharp line drive to left fielder Ryan Ward. Ketel Marte scores. Gabriel Moreno scores.",
-            "batter": "Nolan Arenado",
-            "pitcher": "Kyle Hurt",
-            "game_pk": 825079
-        },
-        {
-            "date": "2026-06-02",
-            "date_formatted": "June 2, 2026",
-            "challenger": "Kyle Hurt",
-            "role": "pitching",
-            "team": "dodgers",
-            "outcome": "confirmed",
-            "result_desc": "Gabriel Moreno walks. Ketel Marte to 2nd.",
-            "batter": "Gabriel Moreno",
-            "pitcher": "Kyle Hurt",
-            "game_pk": 825079
+            "result_desc": "Pavin Smith grounds out, second baseman Alex Freeland to first baseman Freddie Freeman.",
+            "batter": "Pavin Smith",
+            "pitcher": "Justin Wrobleski",
+            "game_pk": 825076
         }
     ]
 }
