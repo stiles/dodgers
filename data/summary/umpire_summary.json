@@ -1,16 +1,16 @@
 {
     "season_summary": {
-        "correct_strikes_pct": 91.41770776751765,
-        "incorrect_strikes_pct": 8.582292232482345,
-        "total_called_strikes": 1841,
-        "bad_calls_count": 158
+        "correct_strikes_pct": 91.39784946236558,
+        "incorrect_strikes_pct": 8.602150537634415,
+        "total_called_strikes": 1860,
+        "bad_calls_count": 160
     },
     "last_game_summary": {
         "date": "June 10, 2026",
-        "correct_strikes_pct": 91.66666666666666,
-        "incorrect_strikes_pct": 8.333333333333343,
-        "total_called_strikes": 12,
-        "bad_calls_count": 1,
+        "correct_strikes_pct": 90.32258064516128,
+        "incorrect_strikes_pct": 9.677419354838719,
+        "total_called_strikes": 31,
+        "bad_calls_count": 3,
         "home_plate_umpire": "Felix Neon"
     },
     "worst_calls_of_season": [
@@ -56,25 +56,25 @@
         }
     ],
     "pitching_season_summary": {
-        "correct_balls_pct": 95.92680047225501,
-        "incorrect_balls_pct": 4.07319952774499,
-        "total_called_balls": 3388,
-        "bad_calls_count": 138
+        "correct_balls_pct": 95.85280373831776,
+        "incorrect_balls_pct": 4.1471962616822395,
+        "total_called_balls": 3424,
+        "bad_calls_count": 142
     },
     "pitching_last_game_summary": {
         "date": "June 10, 2026",
-        "correct_balls_pct": 100.0,
-        "incorrect_balls_pct": 0.0,
-        "total_called_balls": 21,
-        "bad_calls_count": 0
+        "correct_balls_pct": 92.98245614035088,
+        "incorrect_balls_pct": 7.017543859649123,
+        "total_called_balls": 57,
+        "bad_calls_count": 4
     },
     "pitching_worst_calls_of_season": [],
     "abs_challenges": {
         "dodgers": {
             "batting": {
-                "total": 25,
+                "total": 26,
                 "successful": 7,
-                "failed": 18
+                "failed": 19
             },
             "pitching": {
                 "total": 0,
@@ -105,6 +105,18 @@
             }
         },
         "challenge_log": [
+            {
+                "date": "2026-06-10",
+                "date_formatted": "June 10, 2026",
+                "challenger": "Alex Call",
+                "role": "batting",
+                "team": "dodgers",
+                "outcome": "confirmed",
+                "result_desc": "Alex Call called out on strikes.",
+                "batter": "Alex Call",
+                "pitcher": "Evan Sisk",
+                "game_pk": 823372
+            },
             {
                 "date": "2026-06-09",
                 "date_formatted": "June 9, 2026",
@@ -332,18 +344,6 @@
                 "batter": "Mookie Betts",
                 "pitcher": "Shane Drohan",
                 "game_pk": 823786
-            },
-            {
-                "date": "2026-05-22",
-                "date_formatted": "May 22, 2026",
-                "challenger": "Brewers challenged (tag play), call on the field was overturned: William Contreras",
-                "role": "catching",
-                "team": "opponents",
-                "outcome": "confirmed",
-                "result_desc": "Shohei Ohtani caught stealing 2nd base, catcher William Contreras to shortstop Joey Ortiz.",
-                "batter": "Kyle Tucker",
-                "pitcher": "Logan Henderson",
-                "game_pk": 823788
             }
         ]
     }
