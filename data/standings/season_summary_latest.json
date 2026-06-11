@@ -82,7 +82,7 @@
     {
         "stat_label":"Home runs",
         "stat":"home_runs",
-        "value":93,
+        "value":94,
         "category":"batting",
         "context_value":"2nd",
         "context_value_label":"League rank"
@@ -90,7 +90,7 @@
     {
         "stat_label":"Home runs\/game",
         "stat":"home_runs_game",
-        "value":1.37,
+        "value":1.36,
         "category":"batting",
         "context_value":1.42,
         "context_value_label":"Last decade average"
@@ -98,7 +98,7 @@
     {
         "stat_label":"On-base percentage",
         "stat":"on_base_pct",
-        "value":".345",
+        "value":".346",
         "category":"batting",
         "context_value":"1st",
         "context_value_label":"League rank"
@@ -114,7 +114,7 @@
     {
         "stat_label":"OPS",
         "stat":"ops",
-        "value":".789",
+        "value":".790",
         "category":"batting",
         "context_value":"1st",
         "context_value_label":"League rank"
@@ -122,7 +122,7 @@
     {
         "stat_label":"Stolen bases",
         "stat":"stolen_bases",
-        "value":27,
+        "value":28,
         "category":"batting",
         "context_value":"26th",
         "context_value_label":"League rank"
@@ -130,7 +130,7 @@
     {
         "stat_label":"Stolen bases\/game",
         "stat":"stolen_bases_game",
-        "value":0.4,
+        "value":0.41,
         "category":"batting",
         "context_value":0.84,
         "context_value_label":"Rate all last season"
@@ -146,7 +146,7 @@
     {
         "stat_label":"Strikeouts",
         "stat":"strikeouts",
-        "value":"607",
+        "value":"608",
         "category":"pitching",
         "context_value":"8th",
         "context_value_label":"League rank"
@@ -154,7 +154,7 @@
     {
         "stat_label":"Walks",
         "stat":"walks",
-        "value":187,
+        "value":189,
         "category":"pitching",
         "context_value":"28th",
         "context_value_label":"League rank"
@@ -162,7 +162,7 @@
     {
         "stat_label":"ERA",
         "stat":"era",
-        "value":"3.24",
+        "value":"3.23",
         "category":"pitching",
         "context_value":"2nd",
         "context_value_label":"League rank"
@@ -186,7 +186,7 @@
     {
         "stat_label":"K\/BB ratio",
         "stat":"k_bb_ratio",
-        "value":3.25,
+        "value":3.22,
         "category":"pitching",
         "context_value":"3rd",
         "context_value_label":"League rank"
@@ -194,7 +194,7 @@
     {
         "stat_label":"Last updated",
         "stat":"update_time",
-        "value":"June 11, 2026, 9:30 AM PT",
+        "value":"June 11, 2026, 4:40 PM PT",
         "category":"summary",
         "context_value":"",
         "context_value_label":""
@@ -202,7 +202,7 @@
     {
         "stat_label":"Team summary",
         "stat":"summary",
-        "value":"<span class='highlight'>LOS ANGELES<\/span> <span class='updated'>(June 11)<\/span> \u2014 The Dodgers have compiled a <span class='highlight'>43-25<\/span> record in the 2026 regular season, a <span class='highlight'>63%<\/span> winning percentage. The last game was a <span class='highlight'>8-9<\/span> away <span class='highlight'>loss<\/span> against the <span class='highlight'>Pittsburgh Pirates<\/span>. The team next faces the <span class='highlight'>Pittsburgh Pirates<\/span> on Thursday at 3:40 p.m. PDT at <span class='highlight'>PNC Park<\/span>.",
+        "value":"<span class='highlight'>LOS ANGELES<\/span> <span class='updated'>(June 11)<\/span> \u2014 The Dodgers have compiled a <span class='highlight'>43-25<\/span> record in the 2026 regular season, a <span class='highlight'>63%<\/span> winning percentage. The last game was a <span class='highlight'>8-9<\/span> away <span class='highlight'>loss<\/span> against the <span class='highlight'>Pittsburgh Pirates<\/span>. The team next faces the <span class='highlight'>Chicago White Sox<\/span> on Friday at 4:40 p.m. PDT at <span class='highlight'>Rate Field<\/span>.",
         "category":"summary",
         "context_value":"",
         "context_value_label":""
