@@ -1,9 +1,9 @@
 {
     "dodgers": {
         "batting": {
-            "total": 51,
-            "successful": 34,
-            "failed": 17
+            "total": 54,
+            "successful": 35,
+            "failed": 19
         },
         "pitching": {
             "total": 4,
@@ -18,9 +18,9 @@
     },
     "opponents": {
         "batting": {
-            "total": 60,
+            "total": 61,
             "successful": 30,
-            "failed": 30
+            "failed": 31
         },
         "pitching": {
             "total": 3,
@@ -35,28 +35,52 @@
     },
     "challenge_log": [
         {
-            "date": "2026-06-10",
-            "date_formatted": "June 10, 2026",
-            "challenger": "Alex Call",
+            "date": "2026-06-11",
+            "date_formatted": "June 11, 2026",
+            "challenger": "Kyle Tucker",
+            "role": "batting",
+            "team": "dodgers",
+            "outcome": "confirmed",
+            "result_desc": "Kyle Tucker called out on strikes.",
+            "batter": "Kyle Tucker",
+            "pitcher": "Evan Sisk",
+            "game_pk": 823371
+        },
+        {
+            "date": "2026-06-11",
+            "date_formatted": "June 11, 2026",
+            "challenger": "Mookie Betts",
+            "role": "batting",
+            "team": "dodgers",
+            "outcome": "confirmed",
+            "result_desc": "Mookie Betts flies out to center fielder Jake Mangum.",
+            "batter": "Mookie Betts",
+            "pitcher": "Yohan Ram\u00edrez",
+            "game_pk": 823371
+        },
+        {
+            "date": "2026-06-11",
+            "date_formatted": "June 11, 2026",
+            "challenger": "Ryan O'Hearn",
+            "role": "batting",
+            "team": "opponents",
+            "outcome": "confirmed",
+            "result_desc": "Ryan O'Hearn singles on a ground ball to left fielder Ryan Ward. Bryan Reynolds to 2nd.",
+            "batter": "Ryan O'Hearn",
+            "pitcher": "Will Klein",
+            "game_pk": 823371
+        },
+        {
+            "date": "2026-06-11",
+            "date_formatted": "June 11, 2026",
+            "challenger": "Mookie Betts",
             "role": "batting",
             "team": "dodgers",
             "outcome": "overturned",
-            "result_desc": "Alex Call challenged (pitch result), call on the field was confirmed: Alex Call called out on strikes.",
-            "batter": "Alex Call",
-            "pitcher": "Evan Sisk",
-            "game_pk": 823372
-        },
-        {
-            "date": "2026-06-10",
-            "date_formatted": "June 10, 2026",
-            "challenger": "Dalton Rushing",
-            "role": "catching",
-            "team": "dodgers",
-            "outcome": "confirmed",
-            "result_desc": "Spencer Horwitz called out on strikes.",
-            "batter": "Spencer Horwitz",
-            "pitcher": "Shohei Ohtani",
-            "game_pk": 823372
+            "result_desc": "Mookie Betts walks. Freddie Freeman to 2nd.",
+            "batter": "Mookie Betts",
+            "pitcher": "Mitch Keller",
+            "game_pk": 823371
         },
         {
             "date": "2026-06-10",
@@ -68,6 +92,18 @@
             "result_desc": "Ryan Ward grounds out, second baseman Brandon Lowe to first baseman Spencer Horwitz.",
             "batter": "Ryan Ward",
             "pitcher": "Jared Jones",
+            "game_pk": 823372
+        },
+        {
+            "date": "2026-06-10",
+            "date_formatted": "June 10, 2026",
+            "challenger": "Dalton Rushing",
+            "role": "catching",
+            "team": "dodgers",
+            "outcome": "overturned",
+            "result_desc": "Ryan O'Hearn lines out to right fielder Kyle Tucker.",
+            "batter": "Ryan O'Hearn",
+            "pitcher": "Shohei Ohtani",
             "game_pk": 823372
         },
         {
@@ -100,10 +136,22 @@
             "challenger": "Dalton Rushing",
             "role": "catching",
             "team": "dodgers",
-            "outcome": "overturned",
-            "result_desc": "Ryan O'Hearn lines out to right fielder Kyle Tucker.",
-            "batter": "Ryan O'Hearn",
+            "outcome": "confirmed",
+            "result_desc": "Spencer Horwitz called out on strikes.",
+            "batter": "Spencer Horwitz",
             "pitcher": "Shohei Ohtani",
+            "game_pk": 823372
+        },
+        {
+            "date": "2026-06-10",
+            "date_formatted": "June 10, 2026",
+            "challenger": "Alex Call",
+            "role": "batting",
+            "team": "dodgers",
+            "outcome": "overturned",
+            "result_desc": "Alex Call challenged (pitch result), call on the field was confirmed: Alex Call called out on strikes.",
+            "batter": "Alex Call",
+            "pitcher": "Evan Sisk",
             "game_pk": 823372
         },
         {
@@ -181,13 +229,13 @@
         {
             "date": "2026-06-07",
             "date_formatted": "June 7, 2026",
-            "challenger": "Kyle Tucker",
+            "challenger": "Nick Madrigal",
             "role": "batting",
-            "team": "dodgers",
+            "team": "opponents",
             "outcome": "overturned",
-            "result_desc": "Kyle Tucker strikes out swinging.",
-            "batter": "Kyle Tucker",
-            "pitcher": "Drew Pomeranz",
+            "result_desc": "Nick Madrigal walks. Jo Adell to 2nd.",
+            "batter": "Nick Madrigal",
+            "pitcher": "Alex Vesia",
             "game_pk": 823941
         },
         {
@@ -205,13 +253,13 @@
         {
             "date": "2026-06-07",
             "date_formatted": "June 7, 2026",
-            "challenger": "Nick Madrigal",
+            "challenger": "Kyle Tucker",
             "role": "batting",
-            "team": "opponents",
+            "team": "dodgers",
             "outcome": "overturned",
-            "result_desc": "Nick Madrigal walks. Jo Adell to 2nd.",
-            "batter": "Nick Madrigal",
-            "pitcher": "Alex Vesia",
+            "result_desc": "Kyle Tucker strikes out swinging.",
+            "batter": "Kyle Tucker",
+            "pitcher": "Drew Pomeranz",
             "game_pk": 823941
         },
         {
@@ -225,54 +273,6 @@
             "batter": "Kyle Tucker",
             "pitcher": "Drew Pomeranz",
             "game_pk": 823941
-        },
-        {
-            "date": "2026-06-06",
-            "date_formatted": "June 6, 2026",
-            "challenger": "Logan O'Hoppe",
-            "role": "batting",
-            "team": "opponents",
-            "outcome": "confirmed",
-            "result_desc": "Logan O'Hoppe lines out to right fielder Alex Call.",
-            "batter": "Logan O'Hoppe",
-            "pitcher": "Jack Dreyer",
-            "game_pk": 823942
-        },
-        {
-            "date": "2026-06-06",
-            "date_formatted": "June 6, 2026",
-            "challenger": "Logan O'Hoppe",
-            "role": "catching",
-            "team": "opponents",
-            "outcome": "overturned",
-            "result_desc": "Dalton Rushing walks.",
-            "batter": "Dalton Rushing",
-            "pitcher": "Jack Kochanowicz",
-            "game_pk": 823942
-        },
-        {
-            "date": "2026-06-06",
-            "date_formatted": "June 6, 2026",
-            "challenger": "Dalton Rushing",
-            "role": "catching",
-            "team": "dodgers",
-            "outcome": "overturned",
-            "result_desc": "Wade Meckler singles on a bunt ground ball to pitcher Yoshinobu Yamamoto.",
-            "batter": "Wade Meckler",
-            "pitcher": "Yoshinobu Yamamoto",
-            "game_pk": 823942
-        },
-        {
-            "date": "2026-06-05",
-            "date_formatted": "June 5, 2026",
-            "challenger": "Will Smith",
-            "role": "catching",
-            "team": "dodgers",
-            "outcome": "confirmed",
-            "result_desc": "Jo Adell singles on a fly ball to right fielder Kyle Tucker.",
-            "batter": "Jo Adell",
-            "pitcher": "Tanner Scott",
-            "game_pk": 823943
         }
     ]
 }

@@ -1,16 +1,16 @@
 {
     "season_summary": {
-        "correct_strikes_pct": 91.29738387613455,
-        "incorrect_strikes_pct": 8.702616123865454,
-        "total_called_strikes": 1873,
-        "bad_calls_count": 163
+        "correct_strikes_pct": 91.3365029054411,
+        "incorrect_strikes_pct": 8.663497094558906,
+        "total_called_strikes": 1893,
+        "bad_calls_count": 164
     },
     "last_game_summary": {
         "date": "June 11, 2026",
-        "correct_strikes_pct": 76.92307692307693,
-        "incorrect_strikes_pct": 23.076923076923066,
-        "total_called_strikes": 13,
-        "bad_calls_count": 3,
+        "correct_strikes_pct": 87.87878787878788,
+        "incorrect_strikes_pct": 12.121212121212125,
+        "total_called_strikes": 33,
+        "bad_calls_count": 4,
         "home_plate_umpire": "Chris Conroy"
     },
     "worst_calls_of_season": [
@@ -56,17 +56,17 @@
         }
     ],
     "pitching_season_summary": {
-        "correct_balls_pct": 95.87688734030198,
-        "incorrect_balls_pct": 4.123112659698023,
-        "total_called_balls": 3444,
-        "bad_calls_count": 142
+        "correct_balls_pct": 95.88725913143514,
+        "incorrect_balls_pct": 4.112740868564856,
+        "total_called_balls": 3477,
+        "bad_calls_count": 143
     },
     "pitching_last_game_summary": {
         "date": "June 11, 2026",
-        "correct_balls_pct": 100.0,
-        "incorrect_balls_pct": 0.0,
-        "total_called_balls": 20,
-        "bad_calls_count": 0
+        "correct_balls_pct": 98.11320754716981,
+        "incorrect_balls_pct": 1.8867924528301927,
+        "total_called_balls": 53,
+        "bad_calls_count": 1
     },
     "pitching_worst_calls_of_season": [],
     "abs_challenges": {
@@ -89,9 +89,9 @@
         },
         "opponents": {
             "batting": {
-                "total": 11,
+                "total": 12,
                 "successful": 2,
-                "failed": 9
+                "failed": 10
             },
             "pitching": {
                 "total": 0,
@@ -105,6 +105,18 @@
             }
         },
         "challenge_log": [
+            {
+                "date": "2026-06-11",
+                "date_formatted": "June 11, 2026",
+                "challenger": "Jake Mangum",
+                "role": "batting",
+                "team": "opponents",
+                "outcome": "confirmed",
+                "result_desc": "Jake Mangum called out on strikes.",
+                "batter": "Jake Mangum",
+                "pitcher": "Will Klein",
+                "game_pk": 823371
+            },
             {
                 "date": "2026-06-10",
                 "date_formatted": "June 10, 2026",
@@ -332,18 +344,6 @@
                 "batter": "Dalton Rushing",
                 "pitcher": "Welinton Herrera",
                 "game_pk": 823949
-            },
-            {
-                "date": "2026-05-24",
-                "date_formatted": "May 24, 2026",
-                "challenger": "Mookie Betts",
-                "role": "batting",
-                "team": "dodgers",
-                "outcome": "confirmed",
-                "result_desc": "Mookie Betts called out on strikes.",
-                "batter": "Mookie Betts",
-                "pitcher": "Shane Drohan",
-                "game_pk": 823786
             }
         ]
     }
