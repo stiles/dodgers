@@ -12,7 +12,7 @@
         "stat":"losses",
         "value":26,
         "category":"standings",
-        "context_value":28,
+        "context_value":29,
         "context_value_label":"This point last season"
     },
     {
@@ -60,7 +60,7 @@
         "stat":"runs_against",
         "value":238,
         "category":"standings",
-        "context_value":313,
+        "context_value":319,
         "context_value_label":"This point last season"
     },
     {
@@ -68,7 +68,7 @@
         "stat":"run_differential",
         "value":137,
         "category":"standings",
-        "context_value":68,
+        "context_value":64,
         "context_value_label":"This point last season"
     },
     {
@@ -194,7 +194,7 @@
     {
         "stat_label":"Last updated",
         "stat":"update_time",
-        "value":"June 13, 2026, 2:14 AM PT",
+        "value":"June 13, 2026, 5:49 AM PT",
         "category":"summary",
         "context_value":"",
         "context_value_label":""
