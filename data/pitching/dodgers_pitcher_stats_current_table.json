@@ -12,7 +12,7 @@
         "ip_rounded":77,
         "gs":12,
         "gp":12,
-        "fetched":"2026-06-12"
+        "fetched":"2026-06-13"
     },
     {
         "player":"Justin Wrobleski",
@@ -27,7 +27,7 @@
         "ip_rounded":73,
         "gs":11,
         "gp":12,
-        "fetched":"2026-06-12"
+        "fetched":"2026-06-13"
     },
     {
         "player":"Shohei Ohtani",
@@ -42,7 +42,22 @@
         "ip_rounded":67,
         "gs":11,
         "gp":11,
-        "fetched":"2026-06-12"
+        "fetched":"2026-06-13"
+    },
+    {
+        "player":"Roki Sasaki",
+        "role":"SP",
+        "position":"P",
+        "era":"4.76",
+        "whip":"1.33",
+        "k9":"9.24",
+        "bb9":"3.47",
+        "kbb":"2.67",
+        "ip":"62.1",
+        "ip_rounded":62,
+        "gs":12,
+        "gp":12,
+        "fetched":"2026-06-13"
     },
     {
         "player":"Emmet Sheehan",
@@ -57,22 +72,7 @@
         "ip_rounded":59,
         "gs":12,
         "gp":12,
-        "fetched":"2026-06-12"
-    },
-    {
-        "player":"Roki Sasaki",
-        "role":"SP",
-        "position":"P",
-        "era":"4.03",
-        "whip":"1.26",
-        "k9":"9.31",
-        "bb9":"3.26",
-        "kbb":"2.86",
-        "ip":"58.0",
-        "ip_rounded":58,
-        "gs":11,
-        "gp":11,
-        "fetched":"2026-06-12"
+        "fetched":"2026-06-13"
     },
     {
         "player":"Tyler Glasnow",
@@ -87,7 +87,7 @@
         "ip_rounded":39,
         "gs":7,
         "gp":7,
-        "fetched":"2026-06-12"
+        "fetched":"2026-06-13"
     },
     {
         "player":"Tanner Scott",
@@ -102,7 +102,7 @@
         "ip_rounded":29,
         "gs":0,
         "gp":31,
-        "fetched":"2026-06-12"
+        "fetched":"2026-06-13"
     },
     {
         "player":"Will Klein",
@@ -117,7 +117,7 @@
         "ip_rounded":28,
         "gs":1,
         "gp":23,
-        "fetched":"2026-06-12"
+        "fetched":"2026-06-13"
     },
     {
         "player":"Jack Dreyer",
@@ -132,21 +132,21 @@
         "ip_rounded":27,
         "gs":0,
         "gp":26,
-        "fetched":"2026-06-12"
+        "fetched":"2026-06-13"
     },
     {
         "player":"Edgardo Henriquez",
         "role":"RP",
         "position":"P",
-        "era":"3.55",
-        "whip":"1.07",
-        "k9":"9.24",
-        "bb9":"3.20",
-        "kbb":"2.89",
-        "ip":"25.1",
-        "ip_rounded":25,
+        "era":"3.42",
+        "whip":"1.06",
+        "k9":"9.57",
+        "bb9":"3.08",
+        "kbb":"3.11",
+        "ip":"26.1",
+        "ip_rounded":26,
         "gs":0,
-        "gp":24,
-        "fetched":"2026-06-12"
+        "gp":25,
+        "fetched":"2026-06-13"
     }
 ]

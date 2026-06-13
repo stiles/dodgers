@@ -1,9 +1,9 @@
 {
     "dodgers": {
         "batting": {
-            "total": 54,
-            "successful": 35,
-            "failed": 19
+            "total": 56,
+            "successful": 36,
+            "failed": 20
         },
         "pitching": {
             "total": 4,
@@ -28,12 +28,48 @@
             "failed": 2
         },
         "catching": {
-            "total": 88,
-            "successful": 55,
+            "total": 89,
+            "successful": 56,
             "failed": 33
         }
     },
     "challenge_log": [
+        {
+            "date": "2026-06-12",
+            "date_formatted": "June 12, 2026",
+            "challenger": "Andy Pages",
+            "role": "batting",
+            "team": "dodgers",
+            "outcome": "overturned",
+            "result_desc": "Andy Pages strikes out swinging.",
+            "batter": "Andy Pages",
+            "pitcher": "Trevor Richards",
+            "game_pk": 824588
+        },
+        {
+            "date": "2026-06-12",
+            "date_formatted": "June 12, 2026",
+            "challenger": "Alex Call",
+            "role": "batting",
+            "team": "dodgers",
+            "outcome": "confirmed",
+            "result_desc": "Alex Call hit by pitch.",
+            "batter": "Alex Call",
+            "pitcher": "Anthony Kay",
+            "game_pk": 824588
+        },
+        {
+            "date": "2026-06-12",
+            "date_formatted": "June 12, 2026",
+            "challenger": "Drew Romo",
+            "role": "catching",
+            "team": "opponents",
+            "outcome": "overturned",
+            "result_desc": "Mookie Betts grounds into a force out, third baseman Miguel Vargas to second baseman Chase Meidroth. Alex Call out at 2nd.",
+            "batter": "Mookie Betts",
+            "pitcher": "Anthony Kay",
+            "game_pk": 824588
+        },
         {
             "date": "2026-06-11",
             "date_formatted": "June 11, 2026",
@@ -85,13 +121,13 @@
         {
             "date": "2026-06-10",
             "date_formatted": "June 10, 2026",
-            "challenger": "Endy Rodr\u00edguez",
-            "role": "catching",
-            "team": "opponents",
-            "outcome": "confirmed",
-            "result_desc": "Ryan Ward grounds out, second baseman Brandon Lowe to first baseman Spencer Horwitz.",
-            "batter": "Ryan Ward",
-            "pitcher": "Jared Jones",
+            "challenger": "Alex Call",
+            "role": "batting",
+            "team": "dodgers",
+            "outcome": "overturned",
+            "result_desc": "Alex Call challenged (pitch result), call on the field was confirmed: Alex Call called out on strikes.",
+            "batter": "Alex Call",
+            "pitcher": "Evan Sisk",
             "game_pk": 823372
         },
         {
@@ -100,10 +136,22 @@
             "challenger": "Dalton Rushing",
             "role": "catching",
             "team": "dodgers",
-            "outcome": "overturned",
-            "result_desc": "Ryan O'Hearn lines out to right fielder Kyle Tucker.",
-            "batter": "Ryan O'Hearn",
+            "outcome": "confirmed",
+            "result_desc": "Spencer Horwitz called out on strikes.",
+            "batter": "Spencer Horwitz",
             "pitcher": "Shohei Ohtani",
+            "game_pk": 823372
+        },
+        {
+            "date": "2026-06-10",
+            "date_formatted": "June 10, 2026",
+            "challenger": "Endy Rodr\u00edguez",
+            "role": "catching",
+            "team": "opponents",
+            "outcome": "confirmed",
+            "result_desc": "Ryan Ward grounds out, second baseman Brandon Lowe to first baseman Spencer Horwitz.",
+            "batter": "Ryan Ward",
+            "pitcher": "Jared Jones",
             "game_pk": 823372
         },
         {
@@ -136,47 +184,11 @@
             "challenger": "Dalton Rushing",
             "role": "catching",
             "team": "dodgers",
-            "outcome": "confirmed",
-            "result_desc": "Spencer Horwitz called out on strikes.",
-            "batter": "Spencer Horwitz",
+            "outcome": "overturned",
+            "result_desc": "Ryan O'Hearn lines out to right fielder Kyle Tucker.",
+            "batter": "Ryan O'Hearn",
             "pitcher": "Shohei Ohtani",
             "game_pk": 823372
-        },
-        {
-            "date": "2026-06-10",
-            "date_formatted": "June 10, 2026",
-            "challenger": "Alex Call",
-            "role": "batting",
-            "team": "dodgers",
-            "outcome": "overturned",
-            "result_desc": "Alex Call challenged (pitch result), call on the field was confirmed: Alex Call called out on strikes.",
-            "batter": "Alex Call",
-            "pitcher": "Evan Sisk",
-            "game_pk": 823372
-        },
-        {
-            "date": "2026-06-09",
-            "date_formatted": "June 9, 2026",
-            "challenger": "Andy Pages",
-            "role": "batting",
-            "team": "dodgers",
-            "outcome": "overturned",
-            "result_desc": "Andy Pages lines out to first baseman Davis Wendzel.",
-            "batter": "Andy Pages",
-            "pitcher": "Paul Skenes",
-            "game_pk": 823374
-        },
-        {
-            "date": "2026-06-09",
-            "date_formatted": "June 9, 2026",
-            "challenger": "Andy Pages",
-            "role": "batting",
-            "team": "dodgers",
-            "outcome": "overturned",
-            "result_desc": "Andy Pages lines out to first baseman Davis Wendzel.",
-            "batter": "Andy Pages",
-            "pitcher": "Paul Skenes",
-            "game_pk": 823374
         },
         {
             "date": "2026-06-09",
@@ -197,8 +209,8 @@
             "role": "catching",
             "team": "opponents",
             "outcome": "overturned",
-            "result_desc": "Andy Pages grounds out, second baseman Brandon Lowe to first baseman Davis Wendzel. Alex Freeland to 2nd.",
-            "batter": "Andy Pages",
+            "result_desc": "Ryan Ward strikes out swinging.",
+            "batter": "Ryan Ward",
             "pitcher": "Paul Skenes",
             "game_pk": 823374
         },
@@ -221,46 +233,34 @@
             "role": "catching",
             "team": "opponents",
             "outcome": "overturned",
-            "result_desc": "Ryan Ward strikes out swinging.",
-            "batter": "Ryan Ward",
+            "result_desc": "Andy Pages grounds out, second baseman Brandon Lowe to first baseman Davis Wendzel. Alex Freeland to 2nd.",
+            "batter": "Andy Pages",
             "pitcher": "Paul Skenes",
             "game_pk": 823374
         },
         {
-            "date": "2026-06-07",
-            "date_formatted": "June 7, 2026",
-            "challenger": "Nick Madrigal",
-            "role": "batting",
-            "team": "opponents",
-            "outcome": "overturned",
-            "result_desc": "Nick Madrigal walks. Jo Adell to 2nd.",
-            "batter": "Nick Madrigal",
-            "pitcher": "Alex Vesia",
-            "game_pk": 823941
-        },
-        {
-            "date": "2026-06-07",
-            "date_formatted": "June 7, 2026",
-            "challenger": "Nick Madrigal",
-            "role": "batting",
-            "team": "opponents",
-            "outcome": "overturned",
-            "result_desc": "Nick Madrigal challenged (pitch result), call on the field was overturned: Nick Madrigal walks. Jo Adell to 2nd.",
-            "batter": "Nick Madrigal",
-            "pitcher": "Emmet Sheehan",
-            "game_pk": 823941
-        },
-        {
-            "date": "2026-06-07",
-            "date_formatted": "June 7, 2026",
-            "challenger": "Kyle Tucker",
+            "date": "2026-06-09",
+            "date_formatted": "June 9, 2026",
+            "challenger": "Andy Pages",
             "role": "batting",
             "team": "dodgers",
             "outcome": "overturned",
-            "result_desc": "Kyle Tucker strikes out swinging.",
-            "batter": "Kyle Tucker",
-            "pitcher": "Drew Pomeranz",
-            "game_pk": 823941
+            "result_desc": "Andy Pages lines out to first baseman Davis Wendzel.",
+            "batter": "Andy Pages",
+            "pitcher": "Paul Skenes",
+            "game_pk": 823374
+        },
+        {
+            "date": "2026-06-09",
+            "date_formatted": "June 9, 2026",
+            "challenger": "Andy Pages",
+            "role": "batting",
+            "team": "dodgers",
+            "outcome": "overturned",
+            "result_desc": "Andy Pages lines out to first baseman Davis Wendzel.",
+            "batter": "Andy Pages",
+            "pitcher": "Paul Skenes",
+            "game_pk": 823374
         },
         {
             "date": "2026-06-07",
