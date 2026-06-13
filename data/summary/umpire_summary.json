@@ -1,17 +1,17 @@
 {
     "season_summary": {
-        "correct_strikes_pct": 91.31799163179917,
-        "incorrect_strikes_pct": 8.682008368200826,
-        "total_called_strikes": 1912,
-        "bad_calls_count": 166
+        "correct_strikes_pct": 91.34020618556701,
+        "incorrect_strikes_pct": 8.659793814432987,
+        "total_called_strikes": 1940,
+        "bad_calls_count": 168
     },
     "last_game_summary": {
-        "date": "June 12, 2026",
-        "correct_strikes_pct": 89.47368421052632,
-        "incorrect_strikes_pct": 10.526315789473685,
-        "total_called_strikes": 19,
+        "date": "June 13, 2026",
+        "correct_strikes_pct": 92.85714285714286,
+        "incorrect_strikes_pct": 7.142857142857139,
+        "total_called_strikes": 28,
         "bad_calls_count": 2,
-        "home_plate_umpire": "Manny Gonzalez"
+        "home_plate_umpire": "Tom Hanahan"
     },
     "worst_calls_of_season": [
         {
@@ -56,25 +56,25 @@
         }
     ],
     "pitching_season_summary": {
-        "correct_balls_pct": 95.90279740039558,
-        "incorrect_balls_pct": 4.097202599604415,
-        "total_called_balls": 3539,
-        "bad_calls_count": 145
+        "correct_balls_pct": 95.8904109589041,
+        "incorrect_balls_pct": 4.1095890410959015,
+        "total_called_balls": 3577,
+        "bad_calls_count": 147
     },
     "pitching_last_game_summary": {
-        "date": "June 12, 2026",
-        "correct_balls_pct": 96.7741935483871,
-        "incorrect_balls_pct": 3.225806451612897,
-        "total_called_balls": 62,
+        "date": "June 13, 2026",
+        "correct_balls_pct": 94.73684210526315,
+        "incorrect_balls_pct": 5.26315789473685,
+        "total_called_balls": 38,
         "bad_calls_count": 2
     },
     "pitching_worst_calls_of_season": [],
     "abs_challenges": {
         "dodgers": {
             "batting": {
-                "total": 26,
+                "total": 27,
                 "successful": 7,
-                "failed": 19
+                "failed": 20
             },
             "pitching": {
                 "total": 0,
@@ -99,12 +99,36 @@
                 "failed": 0
             },
             "catching": {
-                "total": 27,
+                "total": 28,
                 "successful": 20,
-                "failed": 7
+                "failed": 8
             }
         },
         "challenge_log": [
+            {
+                "date": "2026-06-13",
+                "date_formatted": "June 13, 2026",
+                "challenger": "Andy Pages",
+                "role": "batting",
+                "team": "dodgers",
+                "outcome": "confirmed",
+                "result_desc": "Andy Pages called out on strikes.",
+                "batter": "Andy Pages",
+                "pitcher": "Sean Burke",
+                "game_pk": 824587
+            },
+            {
+                "date": "2026-06-13",
+                "date_formatted": "June 13, 2026",
+                "challenger": "Edgar Quero",
+                "role": "catching",
+                "team": "opponents",
+                "outcome": "confirmed",
+                "result_desc": "Andy Pages walks. Shohei Ohtani to 2nd.",
+                "batter": "Andy Pages",
+                "pitcher": "Joe Rock",
+                "game_pk": 824587
+            },
             {
                 "date": "2026-06-11",
                 "date_formatted": "June 11, 2026",
@@ -320,30 +344,6 @@
                 "batter": "Trea Turner",
                 "pitcher": "Justin Wrobleski",
                 "game_pk": 823946
-            },
-            {
-                "date": "2026-05-27",
-                "date_formatted": "May 27, 2026",
-                "challenger": "Willi Castro",
-                "role": "batting",
-                "team": "opponents",
-                "outcome": "confirmed",
-                "result_desc": "Willi Castro called out on strikes.",
-                "batter": "Willi Castro",
-                "pitcher": "Shohei Ohtani",
-                "game_pk": 823947
-            },
-            {
-                "date": "2026-05-26",
-                "date_formatted": "May 26, 2026",
-                "challenger": "Dalton Rushing",
-                "role": "batting",
-                "team": "dodgers",
-                "outcome": "confirmed",
-                "result_desc": "Dalton Rushing called out on strikes.",
-                "batter": "Dalton Rushing",
-                "pitcher": "Welinton Herrera",
-                "game_pk": 823949
             }
         ]
     }
