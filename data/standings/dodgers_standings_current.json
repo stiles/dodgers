@@ -1631,5 +1631,28 @@
     "time":"00:00:00",
     "day_night":"N",
     "game_day":"Saturday"
+  },
+  {
+    "gm":72,
+    "gtm":72,
+    "game_date":"2026-06-14",
+    "year":2026,
+    "home_away":"away",
+    "opp":"Chicago White Sox",
+    "r":4,
+    "ra":6,
+    "run_diff":-2,
+    "result":"L",
+    "wins":45,
+    "losses":27,
+    "record":"45-27",
+    "win_pct":0.625,
+    "gb":-7.0,
+    "rank":1,
+    "attendance":0,
+    "time_minutes":0,
+    "time":"00:00:00",
+    "day_night":"N",
+    "game_day":"Sunday"
   }
 ]

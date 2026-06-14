@@ -1,17 +1,17 @@
 {
     "season_summary": {
-        "correct_strikes_pct": 91.34020618556701,
-        "incorrect_strikes_pct": 8.659793814432987,
-        "total_called_strikes": 1940,
-        "bad_calls_count": 168
+        "correct_strikes_pct": 91.30213631739574,
+        "incorrect_strikes_pct": 8.697863682604265,
+        "total_called_strikes": 1966,
+        "bad_calls_count": 171
     },
     "last_game_summary": {
-        "date": "June 13, 2026",
-        "correct_strikes_pct": 92.85714285714286,
-        "incorrect_strikes_pct": 7.142857142857139,
-        "total_called_strikes": 28,
-        "bad_calls_count": 2,
-        "home_plate_umpire": "Tom Hanahan"
+        "date": "June 14, 2026",
+        "correct_strikes_pct": 88.46153846153845,
+        "incorrect_strikes_pct": 11.538461538461547,
+        "total_called_strikes": 26,
+        "bad_calls_count": 3,
+        "home_plate_umpire": "Dillon Wilson"
     },
     "worst_calls_of_season": [
         {
@@ -56,17 +56,17 @@
         }
     ],
     "pitching_season_summary": {
-        "correct_balls_pct": 95.8904109589041,
-        "incorrect_balls_pct": 4.1095890410959015,
-        "total_called_balls": 3577,
-        "bad_calls_count": 147
+        "correct_balls_pct": 95.91498757935413,
+        "incorrect_balls_pct": 4.085012420645867,
+        "total_called_balls": 3623,
+        "bad_calls_count": 148
     },
     "pitching_last_game_summary": {
-        "date": "June 13, 2026",
-        "correct_balls_pct": 94.73684210526315,
-        "incorrect_balls_pct": 5.26315789473685,
-        "total_called_balls": 38,
-        "bad_calls_count": 2
+        "date": "June 14, 2026",
+        "correct_balls_pct": 97.82608695652173,
+        "incorrect_balls_pct": 2.173913043478265,
+        "total_called_balls": 46,
+        "bad_calls_count": 1
     },
     "pitching_worst_calls_of_season": [],
     "abs_challenges": {
@@ -99,12 +99,24 @@
                 "failed": 0
             },
             "catching": {
-                "total": 28,
-                "successful": 20,
+                "total": 29,
+                "successful": 21,
                 "failed": 8
             }
         },
         "challenge_log": [
+            {
+                "date": "2026-06-14",
+                "date_formatted": "June 14, 2026",
+                "challenger": "Drew Romo",
+                "role": "catching",
+                "team": "opponents",
+                "outcome": "overturned",
+                "result_desc": "Kyle Tucker called out on strikes.",
+                "batter": "Kyle Tucker",
+                "pitcher": "Erick Fedde",
+                "game_pk": 824586
+            },
             {
                 "date": "2026-06-13",
                 "date_formatted": "June 13, 2026",
@@ -332,18 +344,6 @@
                 "batter": "Shohei Ohtani",
                 "pitcher": "Jes\u00fas Luzardo",
                 "game_pk": 823945
-            },
-            {
-                "date": "2026-05-29",
-                "date_formatted": "May 29, 2026",
-                "challenger": "Trea Turner",
-                "role": "batting",
-                "team": "opponents",
-                "outcome": "confirmed",
-                "result_desc": "Trea Turner called out on strikes.",
-                "batter": "Trea Turner",
-                "pitcher": "Justin Wrobleski",
-                "game_pk": 823946
             }
         ]
     }
