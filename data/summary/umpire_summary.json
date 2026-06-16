@@ -1,17 +1,17 @@
 {
     "season_summary": {
-        "correct_strikes_pct": 91.30213631739574,
-        "incorrect_strikes_pct": 8.697863682604265,
-        "total_called_strikes": 1966,
-        "bad_calls_count": 171
+        "correct_strikes_pct": 91.31751640585563,
+        "incorrect_strikes_pct": 8.682483594144372,
+        "total_called_strikes": 1981,
+        "bad_calls_count": 172
     },
     "last_game_summary": {
-        "date": "June 14, 2026",
-        "correct_strikes_pct": 88.46153846153845,
-        "incorrect_strikes_pct": 11.538461538461547,
-        "total_called_strikes": 26,
-        "bad_calls_count": 3,
-        "home_plate_umpire": "Dillon Wilson"
+        "date": "June 15, 2026",
+        "correct_strikes_pct": 93.33333333333333,
+        "incorrect_strikes_pct": 6.666666666666671,
+        "total_called_strikes": 15,
+        "bad_calls_count": 1,
+        "home_plate_umpire": "Dan Merzel"
     },
     "worst_calls_of_season": [
         {
@@ -56,17 +56,17 @@
         }
     ],
     "pitching_season_summary": {
-        "correct_balls_pct": 95.91498757935413,
-        "incorrect_balls_pct": 4.085012420645867,
-        "total_called_balls": 3623,
-        "bad_calls_count": 148
+        "correct_balls_pct": 95.9139199128303,
+        "incorrect_balls_pct": 4.086080087169705,
+        "total_called_balls": 3671,
+        "bad_calls_count": 150
     },
     "pitching_last_game_summary": {
-        "date": "June 14, 2026",
-        "correct_balls_pct": 97.82608695652173,
-        "incorrect_balls_pct": 2.173913043478265,
-        "total_called_balls": 46,
-        "bad_calls_count": 1
+        "date": "June 15, 2026",
+        "correct_balls_pct": 95.83333333333334,
+        "incorrect_balls_pct": 4.166666666666657,
+        "total_called_balls": 48,
+        "bad_calls_count": 2
     },
     "pitching_worst_calls_of_season": [],
     "abs_challenges": {

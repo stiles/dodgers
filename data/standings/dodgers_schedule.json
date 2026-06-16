@@ -1,13 +1,5 @@
 [
     {
-        "date":"Jun 4",
-        "opp_name":"Arizona Diamondbacks",
-        "home_away":"away",
-        "result":"loss",
-        "placement":"last",
-        "game_start":"2-3"
-    },
-    {
         "date":"Jun 5",
         "opp_name":"Los Angeles Angels",
         "home_away":"home",
@@ -83,9 +75,9 @@
         "date":"Jun 15",
         "opp_name":"Tampa Bay Rays",
         "home_away":"home",
-        "result":"--",
-        "placement":"next",
-        "game_start":"7:10 PM"
+        "result":"win",
+        "placement":"last",
+        "game_start":"4-3"
     },
     {
         "date":"Jun 16",
@@ -158,5 +150,13 @@
         "result":"--",
         "placement":"next",
         "game_start":"6:45 PM"
+    },
+    {
+        "date":"Jun 27",
+        "opp_name":"San Diego Padres",
+        "home_away":"away",
+        "result":"--",
+        "placement":"next",
+        "game_start":"5:40 PM"
     }
 ]
