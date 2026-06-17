@@ -11,16 +11,16 @@
             "failed": 3
         },
         "catching": {
-            "total": 70,
+            "total": 71,
             "successful": 44,
-            "failed": 26
+            "failed": 27
         }
     },
     "opponents": {
         "batting": {
-            "total": 67,
+            "total": 68,
             "successful": 33,
-            "failed": 34
+            "failed": 35
         },
         "pitching": {
             "total": 3,
@@ -28,12 +28,48 @@
             "failed": 2
         },
         "catching": {
-            "total": 91,
+            "total": 92,
             "successful": 57,
-            "failed": 34
+            "failed": 35
         }
     },
     "challenge_log": [
+        {
+            "date": "2026-06-17",
+            "date_formatted": "June 17, 2026",
+            "challenger": "Jonathan Aranda",
+            "role": "batting",
+            "team": "opponents",
+            "outcome": "confirmed",
+            "result_desc": "Jonathan Aranda walks. Austin Slater to 3rd. Yandy D\u00edaz to 2nd.",
+            "batter": "Jonathan Aranda",
+            "pitcher": "Alex Vesia",
+            "game_pk": 823940
+        },
+        {
+            "date": "2026-06-17",
+            "date_formatted": "June 17, 2026",
+            "challenger": "Hunter Feduccia",
+            "role": "catching",
+            "team": "opponents",
+            "outcome": "confirmed",
+            "result_desc": "Freddie Freeman lines into a double play, shortstop Taylor Walls to first baseman Jonathan Aranda. Andy Pages out at 1st.",
+            "batter": "Freddie Freeman",
+            "pitcher": "Cole Sulser",
+            "game_pk": 823940
+        },
+        {
+            "date": "2026-06-17",
+            "date_formatted": "June 17, 2026",
+            "challenger": "Dalton Rushing",
+            "role": "catching",
+            "team": "dodgers",
+            "outcome": "confirmed",
+            "result_desc": "Hunter Feduccia strikes out swinging.",
+            "batter": "Hunter Feduccia",
+            "pitcher": "Shohei Ohtani",
+            "game_pk": 823940
+        },
         {
             "date": "2026-06-16",
             "date_formatted": "June 16, 2026",
@@ -181,6 +217,18 @@
         {
             "date": "2026-06-13",
             "date_formatted": "June 13, 2026",
+            "challenger": "Sam Antonacci",
+            "role": "batting",
+            "team": "opponents",
+            "outcome": "overturned",
+            "result_desc": "Sam Antonacci strikes out swinging.",
+            "batter": "Sam Antonacci",
+            "pitcher": "Yoshinobu Yamamoto",
+            "game_pk": 824587
+        },
+        {
+            "date": "2026-06-13",
+            "date_formatted": "June 13, 2026",
             "challenger": "Miguel Vargas",
             "role": "batting",
             "team": "opponents",
@@ -191,16 +239,16 @@
             "game_pk": 824587
         },
         {
-            "date": "2026-06-13",
-            "date_formatted": "June 13, 2026",
-            "challenger": "Sam Antonacci",
+            "date": "2026-06-12",
+            "date_formatted": "June 12, 2026",
+            "challenger": "Andy Pages",
             "role": "batting",
-            "team": "opponents",
+            "team": "dodgers",
             "outcome": "overturned",
-            "result_desc": "Sam Antonacci strikes out swinging.",
-            "batter": "Sam Antonacci",
-            "pitcher": "Yoshinobu Yamamoto",
-            "game_pk": 824587
+            "result_desc": "Andy Pages strikes out swinging.",
+            "batter": "Andy Pages",
+            "pitcher": "Trevor Richards",
+            "game_pk": 824588
         },
         {
             "date": "2026-06-12",
@@ -225,54 +273,6 @@
             "batter": "Mookie Betts",
             "pitcher": "Anthony Kay",
             "game_pk": 824588
-        },
-        {
-            "date": "2026-06-12",
-            "date_formatted": "June 12, 2026",
-            "challenger": "Andy Pages",
-            "role": "batting",
-            "team": "dodgers",
-            "outcome": "overturned",
-            "result_desc": "Andy Pages strikes out swinging.",
-            "batter": "Andy Pages",
-            "pitcher": "Trevor Richards",
-            "game_pk": 824588
-        },
-        {
-            "date": "2026-06-11",
-            "date_formatted": "June 11, 2026",
-            "challenger": "Kyle Tucker",
-            "role": "batting",
-            "team": "dodgers",
-            "outcome": "confirmed",
-            "result_desc": "Kyle Tucker called out on strikes.",
-            "batter": "Kyle Tucker",
-            "pitcher": "Evan Sisk",
-            "game_pk": 823371
-        },
-        {
-            "date": "2026-06-11",
-            "date_formatted": "June 11, 2026",
-            "challenger": "Mookie Betts",
-            "role": "batting",
-            "team": "dodgers",
-            "outcome": "confirmed",
-            "result_desc": "Mookie Betts flies out to center fielder Jake Mangum.",
-            "batter": "Mookie Betts",
-            "pitcher": "Yohan Ram\u00edrez",
-            "game_pk": 823371
-        },
-        {
-            "date": "2026-06-11",
-            "date_formatted": "June 11, 2026",
-            "challenger": "Ryan O'Hearn",
-            "role": "batting",
-            "team": "opponents",
-            "outcome": "confirmed",
-            "result_desc": "Ryan O'Hearn singles on a ground ball to left fielder Ryan Ward. Bryan Reynolds to 2nd.",
-            "batter": "Ryan O'Hearn",
-            "pitcher": "Will Klein",
-            "game_pk": 823371
         }
     ]
 }

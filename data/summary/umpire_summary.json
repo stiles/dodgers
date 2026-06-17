@@ -1,17 +1,17 @@
 {
     "season_summary": {
-        "correct_strikes_pct": 91.29564782391195,
-        "incorrect_strikes_pct": 8.704352176088051,
-        "total_called_strikes": 1999,
-        "bad_calls_count": 174
+        "correct_strikes_pct": 91.2871287128713,
+        "incorrect_strikes_pct": 8.712871287128706,
+        "total_called_strikes": 2020,
+        "bad_calls_count": 176
     },
     "last_game_summary": {
-        "date": "June 16, 2026",
-        "correct_strikes_pct": 88.88888888888889,
-        "incorrect_strikes_pct": 11.111111111111114,
-        "total_called_strikes": 18,
+        "date": "June 17, 2026",
+        "correct_strikes_pct": 90.47619047619048,
+        "incorrect_strikes_pct": 9.523809523809518,
+        "total_called_strikes": 21,
         "bad_calls_count": 2,
-        "home_plate_umpire": "Dan Bellino"
+        "home_plate_umpire": "Mark Ripperger"
     },
     "worst_calls_of_season": [
         {
@@ -23,6 +23,16 @@
             "date": "2026-04-06",
             "date_formatted": "April 6, 2026",
             "video_link": "https://baseballsavant.mlb.com/sporty-videos?playId=452d33b9-5600-30b5-93d2-2b65dda57411"
+        },
+        {
+            "distance_inches": 4.6424140542,
+            "batter": "Miguel Rojas",
+            "pitcher": "Shane McClanahan",
+            "pitch_type": "Curveball",
+            "velocity_mph": 81.9,
+            "date": "2026-06-17",
+            "date_formatted": "June 17, 2026",
+            "video_link": "https://baseballsavant.mlb.com/sporty-videos?playId=2fea65ae-c036-33b2-bd33-87048cffc04f"
         },
         {
             "distance_inches": 4.3578575427,
@@ -43,38 +53,28 @@
             "date": "2026-06-09",
             "date_formatted": "June 9, 2026",
             "video_link": "https://baseballsavant.mlb.com/sporty-videos?playId=f4c2b7bc-9b50-3756-8910-502ad527e7c2"
-        },
-        {
-            "distance_inches": 2.7998286828,
-            "batter": "Kyle Tucker",
-            "pitcher": "Landen Roupp",
-            "pitch_type": "Curveball",
-            "velocity_mph": 76.8,
-            "date": "2026-05-14",
-            "date_formatted": "May 14, 2026",
-            "video_link": "https://baseballsavant.mlb.com/sporty-videos?playId=4e7c1229-b041-35e7-92e4-1818fd014e2c"
         }
     ],
     "pitching_season_summary": {
-        "correct_balls_pct": 95.8603896103896,
-        "incorrect_balls_pct": 4.139610389610397,
-        "total_called_balls": 3696,
-        "bad_calls_count": 153
+        "correct_balls_pct": 95.86114819759679,
+        "incorrect_balls_pct": 4.1388518024032095,
+        "total_called_balls": 3745,
+        "bad_calls_count": 155
     },
     "pitching_last_game_summary": {
-        "date": "June 16, 2026",
-        "correct_balls_pct": 88.0,
-        "incorrect_balls_pct": 12.0,
-        "total_called_balls": 25,
-        "bad_calls_count": 3
+        "date": "June 17, 2026",
+        "correct_balls_pct": 95.91836734693877,
+        "incorrect_balls_pct": 4.081632653061234,
+        "total_called_balls": 49,
+        "bad_calls_count": 2
     },
     "pitching_worst_calls_of_season": [],
     "abs_challenges": {
         "dodgers": {
             "batting": {
-                "total": 27,
-                "successful": 7,
-                "failed": 20
+                "total": 30,
+                "successful": 9,
+                "failed": 21
             },
             "pitching": {
                 "total": 0,
@@ -105,6 +105,42 @@
             }
         },
         "challenge_log": [
+            {
+                "date": "2026-06-17",
+                "date_formatted": "June 17, 2026",
+                "challenger": "Mookie Betts",
+                "role": "batting",
+                "team": "dodgers",
+                "outcome": "overturned",
+                "result_desc": "Mookie Betts walks.",
+                "batter": "Mookie Betts",
+                "pitcher": "Shane McClanahan",
+                "game_pk": 823940
+            },
+            {
+                "date": "2026-06-17",
+                "date_formatted": "June 17, 2026",
+                "challenger": "Miguel Rojas",
+                "role": "batting",
+                "team": "dodgers",
+                "outcome": "confirmed",
+                "result_desc": "Miguel Rojas called out on strikes.",
+                "batter": "Miguel Rojas",
+                "pitcher": "Shane McClanahan",
+                "game_pk": 823940
+            },
+            {
+                "date": "2026-06-17",
+                "date_formatted": "June 17, 2026",
+                "challenger": "Dalton Rushing",
+                "role": "batting",
+                "team": "dodgers",
+                "outcome": "overturned",
+                "result_desc": "Dalton Rushing walks.",
+                "batter": "Dalton Rushing",
+                "pitcher": "Shane McClanahan",
+                "game_pk": 823940
+            },
             {
                 "date": "2026-06-14",
                 "date_formatted": "June 14, 2026",
@@ -308,42 +344,6 @@
                 "batter": "Kyle Schwarber",
                 "pitcher": "Yoshinobu Yamamoto",
                 "game_pk": 823944
-            },
-            {
-                "date": "2026-05-31",
-                "date_formatted": "May 31, 2026",
-                "challenger": "Dalton Rushing",
-                "role": "catching",
-                "team": "dodgers",
-                "outcome": "overturned",
-                "result_desc": "Bryce Harper called out on strikes.",
-                "batter": "Bryce Harper",
-                "pitcher": "Yoshinobu Yamamoto",
-                "game_pk": 823944
-            },
-            {
-                "date": "2026-05-31",
-                "date_formatted": "May 31, 2026",
-                "challenger": "Trea Turner",
-                "role": "batting",
-                "team": "opponents",
-                "outcome": "confirmed",
-                "result_desc": "Trea Turner called out on strikes.",
-                "batter": "Trea Turner",
-                "pitcher": "Yoshinobu Yamamoto",
-                "game_pk": 823944
-            },
-            {
-                "date": "2026-05-30",
-                "date_formatted": "May 30, 2026",
-                "challenger": "J.T. Realmuto",
-                "role": "catching",
-                "team": "opponents",
-                "outcome": "overturned",
-                "result_desc": "Shohei Ohtani called out on strikes.",
-                "batter": "Shohei Ohtani",
-                "pitcher": "Jes\u00fas Luzardo",
-                "game_pk": 823945
             }
         ]
     }
