@@ -1,8 +1,8 @@
 {
     "dodgers": {
         "batting": {
-            "total": 57,
-            "successful": 37,
+            "total": 58,
+            "successful": 38,
             "failed": 20
         },
         "pitching": {
@@ -11,15 +11,15 @@
             "failed": 3
         },
         "catching": {
-            "total": 69,
-            "successful": 43,
+            "total": 70,
+            "successful": 44,
             "failed": 26
         }
     },
     "opponents": {
         "batting": {
-            "total": 66,
-            "successful": 32,
+            "total": 67,
+            "successful": 33,
             "failed": 34
         },
         "pitching": {
@@ -28,12 +28,60 @@
             "failed": 2
         },
         "catching": {
-            "total": 90,
-            "successful": 56,
+            "total": 91,
+            "successful": 57,
             "failed": 34
         }
     },
     "challenge_log": [
+        {
+            "date": "2026-06-16",
+            "date_formatted": "June 16, 2026",
+            "challenger": "Chuckie Robinson",
+            "role": "catching",
+            "team": "dodgers",
+            "outcome": "overturned",
+            "result_desc": "Chandler Simpson grounds out, shortstop Mookie Betts to first baseman Freddie Freeman.",
+            "batter": "Chandler Simpson",
+            "pitcher": "Kyle Hurt",
+            "game_pk": 823939
+        },
+        {
+            "date": "2026-06-16",
+            "date_formatted": "June 16, 2026",
+            "challenger": "Nick Fortes",
+            "role": "catching",
+            "team": "opponents",
+            "outcome": "overturned",
+            "result_desc": "Kyle Tucker grounds out sharply, second baseman Ben Williamson to first baseman Jonathan Aranda.",
+            "batter": "Kyle Tucker",
+            "pitcher": "Drew Rasmussen",
+            "game_pk": 823939
+        },
+        {
+            "date": "2026-06-16",
+            "date_formatted": "June 16, 2026",
+            "challenger": "Ryan Vilade",
+            "role": "batting",
+            "team": "opponents",
+            "outcome": "overturned",
+            "result_desc": "Ryan Vilade pops out to first baseman Freddie Freeman in foul territory.",
+            "batter": "Ryan Vilade",
+            "pitcher": "Will Klein",
+            "game_pk": 823939
+        },
+        {
+            "date": "2026-06-16",
+            "date_formatted": "June 16, 2026",
+            "challenger": "Shohei Ohtani",
+            "role": "batting",
+            "team": "dodgers",
+            "outcome": "overturned",
+            "result_desc": "Shohei Ohtani grounds out, second baseman Ben Williamson to first baseman Jonathan Aranda.",
+            "batter": "Shohei Ohtani",
+            "pitcher": "Drew Rasmussen",
+            "game_pk": 823939
+        },
         {
             "date": "2026-06-15",
             "date_formatted": "June 15, 2026",
@@ -157,18 +205,6 @@
         {
             "date": "2026-06-12",
             "date_formatted": "June 12, 2026",
-            "challenger": "Andy Pages",
-            "role": "batting",
-            "team": "dodgers",
-            "outcome": "overturned",
-            "result_desc": "Andy Pages strikes out swinging.",
-            "batter": "Andy Pages",
-            "pitcher": "Trevor Richards",
-            "game_pk": 824588
-        },
-        {
-            "date": "2026-06-12",
-            "date_formatted": "June 12, 2026",
             "challenger": "Alex Call",
             "role": "batting",
             "team": "dodgers",
@@ -189,6 +225,30 @@
             "batter": "Mookie Betts",
             "pitcher": "Anthony Kay",
             "game_pk": 824588
+        },
+        {
+            "date": "2026-06-12",
+            "date_formatted": "June 12, 2026",
+            "challenger": "Andy Pages",
+            "role": "batting",
+            "team": "dodgers",
+            "outcome": "overturned",
+            "result_desc": "Andy Pages strikes out swinging.",
+            "batter": "Andy Pages",
+            "pitcher": "Trevor Richards",
+            "game_pk": 824588
+        },
+        {
+            "date": "2026-06-11",
+            "date_formatted": "June 11, 2026",
+            "challenger": "Kyle Tucker",
+            "role": "batting",
+            "team": "dodgers",
+            "outcome": "confirmed",
+            "result_desc": "Kyle Tucker called out on strikes.",
+            "batter": "Kyle Tucker",
+            "pitcher": "Evan Sisk",
+            "game_pk": 823371
         },
         {
             "date": "2026-06-11",
@@ -213,66 +273,6 @@
             "batter": "Ryan O'Hearn",
             "pitcher": "Will Klein",
             "game_pk": 823371
-        },
-        {
-            "date": "2026-06-11",
-            "date_formatted": "June 11, 2026",
-            "challenger": "Mookie Betts",
-            "role": "batting",
-            "team": "dodgers",
-            "outcome": "overturned",
-            "result_desc": "Mookie Betts walks. Freddie Freeman to 2nd.",
-            "batter": "Mookie Betts",
-            "pitcher": "Mitch Keller",
-            "game_pk": 823371
-        },
-        {
-            "date": "2026-06-11",
-            "date_formatted": "June 11, 2026",
-            "challenger": "Kyle Tucker",
-            "role": "batting",
-            "team": "dodgers",
-            "outcome": "confirmed",
-            "result_desc": "Kyle Tucker called out on strikes.",
-            "batter": "Kyle Tucker",
-            "pitcher": "Evan Sisk",
-            "game_pk": 823371
-        },
-        {
-            "date": "2026-06-10",
-            "date_formatted": "June 10, 2026",
-            "challenger": "Alex Call",
-            "role": "batting",
-            "team": "dodgers",
-            "outcome": "overturned",
-            "result_desc": "Alex Call challenged (pitch result), call on the field was confirmed: Alex Call called out on strikes.",
-            "batter": "Alex Call",
-            "pitcher": "Evan Sisk",
-            "game_pk": 823372
-        },
-        {
-            "date": "2026-06-10",
-            "date_formatted": "June 10, 2026",
-            "challenger": "Dalton Rushing",
-            "role": "catching",
-            "team": "dodgers",
-            "outcome": "confirmed",
-            "result_desc": "Spencer Horwitz called out on strikes.",
-            "batter": "Spencer Horwitz",
-            "pitcher": "Shohei Ohtani",
-            "game_pk": 823372
-        },
-        {
-            "date": "2026-06-10",
-            "date_formatted": "June 10, 2026",
-            "challenger": "Endy Rodr\u00edguez",
-            "role": "catching",
-            "team": "opponents",
-            "outcome": "confirmed",
-            "result_desc": "Ryan Ward grounds out, second baseman Brandon Lowe to first baseman Spencer Horwitz.",
-            "batter": "Ryan Ward",
-            "pitcher": "Jared Jones",
-            "game_pk": 823372
         }
     ]
 }
