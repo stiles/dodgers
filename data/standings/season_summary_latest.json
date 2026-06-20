@@ -84,7 +84,7 @@
         "stat":"home_runs",
         "value":104,
         "category":"batting",
-        "context_value":"2nd",
+        "context_value":"3rd",
         "context_value_label":"League rank"
     },
     {
@@ -108,7 +108,7 @@
         "stat":"slugging_pct",
         "value":".441",
         "category":"batting",
-        "context_value":"2nd",
+        "context_value":"1st",
         "context_value_label":"League rank"
     },
     {
@@ -140,7 +140,7 @@
         "stat":"doubles",
         "value":129,
         "category":"batting",
-        "context_value":"5th",
+        "context_value":"6th",
         "context_value_label":"League rank"
     },
     {
@@ -148,7 +148,7 @@
         "stat":"strikeouts",
         "value":"673",
         "category":"pitching",
-        "context_value":"6th",
+        "context_value":"7th",
         "context_value_label":"League rank"
     },
     {
@@ -164,7 +164,7 @@
         "stat":"era",
         "value":"3.35",
         "category":"pitching",
-        "context_value":"2nd",
+        "context_value":"3rd",
         "context_value_label":"League rank"
     },
     {
@@ -194,7 +194,7 @@
     {
         "stat_label":"Last updated",
         "stat":"update_time",
-        "value":"June 20, 2026, 8:42 AM PT",
+        "value":"June 20, 2026, 4:35 PM PT",
         "category":"summary",
         "context_value":"",
         "context_value_label":""
