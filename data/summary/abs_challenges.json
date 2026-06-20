@@ -1,8 +1,8 @@
 {
     "dodgers": {
         "batting": {
-            "total": 58,
-            "successful": 38,
+            "total": 59,
+            "successful": 39,
             "failed": 20
         },
         "pitching": {
@@ -11,9 +11,9 @@
             "failed": 3
         },
         "catching": {
-            "total": 71,
+            "total": 72,
             "successful": 44,
-            "failed": 27
+            "failed": 28
         }
     },
     "opponents": {
@@ -28,12 +28,60 @@
             "failed": 2
         },
         "catching": {
-            "total": 92,
+            "total": 94,
             "successful": 57,
-            "failed": 35
+            "failed": 37
         }
     },
     "challenge_log": [
+        {
+            "date": "2026-06-19",
+            "date_formatted": "June 19, 2026",
+            "challenger": "Samuel Basallo",
+            "role": "catching",
+            "team": "opponents",
+            "outcome": "confirmed",
+            "result_desc": "Tommy Edman pops out to first baseman Pete Alonso in foul territory.",
+            "batter": "Tommy Edman",
+            "pitcher": "Ryan Helsley",
+            "game_pk": 823936
+        },
+        {
+            "date": "2026-06-19",
+            "date_formatted": "June 19, 2026",
+            "challenger": "Samuel Basallo",
+            "role": "catching",
+            "team": "opponents",
+            "outcome": "confirmed",
+            "result_desc": "Dalton Rushing strikes out swinging.",
+            "batter": "Dalton Rushing",
+            "pitcher": "Trey Gibson",
+            "game_pk": 823936
+        },
+        {
+            "date": "2026-06-19",
+            "date_formatted": "June 19, 2026",
+            "challenger": "Dalton Rushing",
+            "role": "catching",
+            "team": "dodgers",
+            "outcome": "confirmed",
+            "result_desc": "Coby Mayo flies out to center fielder Andy Pages.",
+            "batter": "Coby Mayo",
+            "pitcher": "Roki Sasaki",
+            "game_pk": 823936
+        },
+        {
+            "date": "2026-06-19",
+            "date_formatted": "June 19, 2026",
+            "challenger": "Mookie Betts",
+            "role": "batting",
+            "team": "dodgers",
+            "outcome": "overturned",
+            "result_desc": "Mookie Betts singles on a line drive to right fielder Leody Taveras.",
+            "batter": "Mookie Betts",
+            "pitcher": "Trey Gibson",
+            "game_pk": 823936
+        },
         {
             "date": "2026-06-17",
             "date_formatted": "June 17, 2026",
@@ -73,30 +121,6 @@
         {
             "date": "2026-06-16",
             "date_formatted": "June 16, 2026",
-            "challenger": "Chuckie Robinson",
-            "role": "catching",
-            "team": "dodgers",
-            "outcome": "overturned",
-            "result_desc": "Chandler Simpson grounds out, shortstop Mookie Betts to first baseman Freddie Freeman.",
-            "batter": "Chandler Simpson",
-            "pitcher": "Kyle Hurt",
-            "game_pk": 823939
-        },
-        {
-            "date": "2026-06-16",
-            "date_formatted": "June 16, 2026",
-            "challenger": "Nick Fortes",
-            "role": "catching",
-            "team": "opponents",
-            "outcome": "overturned",
-            "result_desc": "Kyle Tucker grounds out sharply, second baseman Ben Williamson to first baseman Jonathan Aranda.",
-            "batter": "Kyle Tucker",
-            "pitcher": "Drew Rasmussen",
-            "game_pk": 823939
-        },
-        {
-            "date": "2026-06-16",
-            "date_formatted": "June 16, 2026",
             "challenger": "Ryan Vilade",
             "role": "batting",
             "team": "opponents",
@@ -115,6 +139,30 @@
             "outcome": "overturned",
             "result_desc": "Shohei Ohtani grounds out, second baseman Ben Williamson to first baseman Jonathan Aranda.",
             "batter": "Shohei Ohtani",
+            "pitcher": "Drew Rasmussen",
+            "game_pk": 823939
+        },
+        {
+            "date": "2026-06-16",
+            "date_formatted": "June 16, 2026",
+            "challenger": "Chuckie Robinson",
+            "role": "catching",
+            "team": "dodgers",
+            "outcome": "overturned",
+            "result_desc": "Chandler Simpson grounds out, shortstop Mookie Betts to first baseman Freddie Freeman.",
+            "batter": "Chandler Simpson",
+            "pitcher": "Kyle Hurt",
+            "game_pk": 823939
+        },
+        {
+            "date": "2026-06-16",
+            "date_formatted": "June 16, 2026",
+            "challenger": "Nick Fortes",
+            "role": "catching",
+            "team": "opponents",
+            "outcome": "overturned",
+            "result_desc": "Kyle Tucker grounds out sharply, second baseman Ben Williamson to first baseman Jonathan Aranda.",
+            "batter": "Kyle Tucker",
             "pitcher": "Drew Rasmussen",
             "game_pk": 823939
         },
@@ -181,13 +229,13 @@
         {
             "date": "2026-06-14",
             "date_formatted": "June 14, 2026",
-            "challenger": "Shohei Ohtani",
-            "role": "batting",
-            "team": "dodgers",
-            "outcome": "overturned",
-            "result_desc": "Shohei Ohtani strikes out swinging.",
-            "batter": "Shohei Ohtani",
-            "pitcher": "Grant Taylor",
+            "challenger": "Drew Romo",
+            "role": "catching",
+            "team": "opponents",
+            "outcome": "confirmed",
+            "result_desc": "Max Muncy strikes out swinging.",
+            "batter": "Max Muncy",
+            "pitcher": "Erick Fedde",
             "game_pk": 824586
         },
         {
@@ -205,26 +253,14 @@
         {
             "date": "2026-06-14",
             "date_formatted": "June 14, 2026",
-            "challenger": "Drew Romo",
-            "role": "catching",
-            "team": "opponents",
-            "outcome": "confirmed",
-            "result_desc": "Max Muncy strikes out swinging.",
-            "batter": "Max Muncy",
-            "pitcher": "Erick Fedde",
-            "game_pk": 824586
-        },
-        {
-            "date": "2026-06-13",
-            "date_formatted": "June 13, 2026",
-            "challenger": "Sam Antonacci",
+            "challenger": "Shohei Ohtani",
             "role": "batting",
-            "team": "opponents",
+            "team": "dodgers",
             "outcome": "overturned",
-            "result_desc": "Sam Antonacci strikes out swinging.",
-            "batter": "Sam Antonacci",
-            "pitcher": "Yoshinobu Yamamoto",
-            "game_pk": 824587
+            "result_desc": "Shohei Ohtani strikes out swinging.",
+            "batter": "Shohei Ohtani",
+            "pitcher": "Grant Taylor",
+            "game_pk": 824586
         },
         {
             "date": "2026-06-13",
@@ -237,42 +273,6 @@
             "batter": "Miguel Vargas",
             "pitcher": "Yoshinobu Yamamoto",
             "game_pk": 824587
-        },
-        {
-            "date": "2026-06-12",
-            "date_formatted": "June 12, 2026",
-            "challenger": "Andy Pages",
-            "role": "batting",
-            "team": "dodgers",
-            "outcome": "overturned",
-            "result_desc": "Andy Pages strikes out swinging.",
-            "batter": "Andy Pages",
-            "pitcher": "Trevor Richards",
-            "game_pk": 824588
-        },
-        {
-            "date": "2026-06-12",
-            "date_formatted": "June 12, 2026",
-            "challenger": "Alex Call",
-            "role": "batting",
-            "team": "dodgers",
-            "outcome": "confirmed",
-            "result_desc": "Alex Call hit by pitch.",
-            "batter": "Alex Call",
-            "pitcher": "Anthony Kay",
-            "game_pk": 824588
-        },
-        {
-            "date": "2026-06-12",
-            "date_formatted": "June 12, 2026",
-            "challenger": "Drew Romo",
-            "role": "catching",
-            "team": "opponents",
-            "outcome": "overturned",
-            "result_desc": "Mookie Betts grounds into a force out, third baseman Miguel Vargas to second baseman Chase Meidroth. Alex Call out at 2nd.",
-            "batter": "Mookie Betts",
-            "pitcher": "Anthony Kay",
-            "game_pk": 824588
         }
     ]
 }
