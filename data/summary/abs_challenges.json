@@ -1,8 +1,8 @@
 {
     "dodgers": {
         "batting": {
-            "total": 59,
-            "successful": 39,
+            "total": 60,
+            "successful": 40,
             "failed": 20
         },
         "pitching": {
@@ -11,21 +11,21 @@
             "failed": 3
         },
         "catching": {
-            "total": 72,
+            "total": 73,
             "successful": 44,
-            "failed": 28
+            "failed": 29
         }
     },
     "opponents": {
         "batting": {
-            "total": 68,
-            "successful": 33,
+            "total": 70,
+            "successful": 35,
             "failed": 35
         },
         "pitching": {
-            "total": 3,
+            "total": 4,
             "successful": 1,
-            "failed": 2
+            "failed": 3
         },
         "catching": {
             "total": 94,
@@ -35,16 +35,64 @@
     },
     "challenge_log": [
         {
-            "date": "2026-06-19",
-            "date_formatted": "June 19, 2026",
-            "challenger": "Samuel Basallo",
-            "role": "catching",
+            "date": "2026-06-20",
+            "date_formatted": "June 20, 2026",
+            "challenger": "Yennier Cano",
+            "role": "pitching",
             "team": "opponents",
             "outcome": "confirmed",
-            "result_desc": "Tommy Edman pops out to first baseman Pete Alonso in foul territory.",
-            "batter": "Tommy Edman",
-            "pitcher": "Ryan Helsley",
-            "game_pk": 823936
+            "result_desc": "Alex Freeland flies out to left fielder Taylor Ward.",
+            "batter": "Alex Freeland",
+            "pitcher": "Yennier Cano",
+            "game_pk": 823937
+        },
+        {
+            "date": "2026-06-20",
+            "date_formatted": "June 20, 2026",
+            "challenger": "Freddie Freeman",
+            "role": "batting",
+            "team": "dodgers",
+            "outcome": "overturned",
+            "result_desc": "Freddie Freeman walks.",
+            "batter": "Freddie Freeman",
+            "pitcher": "Andrew Kittredge",
+            "game_pk": 823937
+        },
+        {
+            "date": "2026-06-20",
+            "date_formatted": "June 20, 2026",
+            "challenger": "Dalton Rushing",
+            "role": "catching",
+            "team": "dodgers",
+            "outcome": "confirmed",
+            "result_desc": "Coby Mayo pops out to second baseman Miguel Rojas.",
+            "batter": "Coby Mayo",
+            "pitcher": "Alex Vesia",
+            "game_pk": 823937
+        },
+        {
+            "date": "2026-06-20",
+            "date_formatted": "June 20, 2026",
+            "challenger": "Jackson Holliday",
+            "role": "batting",
+            "team": "opponents",
+            "outcome": "overturned",
+            "result_desc": "Jackson Holliday grounds out, first baseman Freddie Freeman to pitcher Yoshinobu Yamamoto.",
+            "batter": "Jackson Holliday",
+            "pitcher": "Yoshinobu Yamamoto",
+            "game_pk": 823937
+        },
+        {
+            "date": "2026-06-20",
+            "date_formatted": "June 20, 2026",
+            "challenger": "Colton Cowser",
+            "role": "batting",
+            "team": "opponents",
+            "outcome": "overturned",
+            "result_desc": "Colton Cowser grounds out softly, pitcher Yoshinobu Yamamoto to first baseman Freddie Freeman.",
+            "batter": "Colton Cowser",
+            "pitcher": "Yoshinobu Yamamoto",
+            "game_pk": 823937
         },
         {
             "date": "2026-06-19",
@@ -80,6 +128,18 @@
             "result_desc": "Mookie Betts singles on a line drive to right fielder Leody Taveras.",
             "batter": "Mookie Betts",
             "pitcher": "Trey Gibson",
+            "game_pk": 823936
+        },
+        {
+            "date": "2026-06-19",
+            "date_formatted": "June 19, 2026",
+            "challenger": "Samuel Basallo",
+            "role": "catching",
+            "team": "opponents",
+            "outcome": "confirmed",
+            "result_desc": "Tommy Edman pops out to first baseman Pete Alonso in foul territory.",
+            "batter": "Tommy Edman",
+            "pitcher": "Ryan Helsley",
             "game_pk": 823936
         },
         {
@@ -121,30 +181,6 @@
         {
             "date": "2026-06-16",
             "date_formatted": "June 16, 2026",
-            "challenger": "Ryan Vilade",
-            "role": "batting",
-            "team": "opponents",
-            "outcome": "overturned",
-            "result_desc": "Ryan Vilade pops out to first baseman Freddie Freeman in foul territory.",
-            "batter": "Ryan Vilade",
-            "pitcher": "Will Klein",
-            "game_pk": 823939
-        },
-        {
-            "date": "2026-06-16",
-            "date_formatted": "June 16, 2026",
-            "challenger": "Shohei Ohtani",
-            "role": "batting",
-            "team": "dodgers",
-            "outcome": "overturned",
-            "result_desc": "Shohei Ohtani grounds out, second baseman Ben Williamson to first baseman Jonathan Aranda.",
-            "batter": "Shohei Ohtani",
-            "pitcher": "Drew Rasmussen",
-            "game_pk": 823939
-        },
-        {
-            "date": "2026-06-16",
-            "date_formatted": "June 16, 2026",
             "challenger": "Chuckie Robinson",
             "role": "catching",
             "team": "dodgers",
@@ -167,28 +203,28 @@
             "game_pk": 823939
         },
         {
-            "date": "2026-06-15",
-            "date_formatted": "June 15, 2026",
-            "challenger": "Dalton Rushing",
-            "role": "catching",
-            "team": "dodgers",
-            "outcome": "overturned",
-            "result_desc": "Yandy D\u00edaz grounds out, second baseman Miguel Rojas to first baseman Freddie Freeman.",
-            "batter": "Yandy D\u00edaz",
-            "pitcher": "Tanner Scott",
-            "game_pk": 823938
-        },
-        {
-            "date": "2026-06-15",
-            "date_formatted": "June 15, 2026",
-            "challenger": "Taylor Walls",
+            "date": "2026-06-16",
+            "date_formatted": "June 16, 2026",
+            "challenger": "Ryan Vilade",
             "role": "batting",
             "team": "opponents",
-            "outcome": "confirmed",
-            "result_desc": "Taylor Walls called out on strikes.",
-            "batter": "Taylor Walls",
-            "pitcher": "Tanner Scott",
-            "game_pk": 823938
+            "outcome": "overturned",
+            "result_desc": "Ryan Vilade pops out to first baseman Freddie Freeman in foul territory.",
+            "batter": "Ryan Vilade",
+            "pitcher": "Will Klein",
+            "game_pk": 823939
+        },
+        {
+            "date": "2026-06-16",
+            "date_formatted": "June 16, 2026",
+            "challenger": "Shohei Ohtani",
+            "role": "batting",
+            "team": "dodgers",
+            "outcome": "overturned",
+            "result_desc": "Shohei Ohtani grounds out, second baseman Ben Williamson to first baseman Jonathan Aranda.",
+            "batter": "Shohei Ohtani",
+            "pitcher": "Drew Rasmussen",
+            "game_pk": 823939
         },
         {
             "date": "2026-06-15",
@@ -200,6 +236,18 @@
             "result_desc": "Ben Williamson grounds out, second baseman Miguel Rojas to first baseman Freddie Freeman. Chandler Simpson to 2nd.",
             "batter": "Ben Williamson",
             "pitcher": "Will Klein",
+            "game_pk": 823938
+        },
+        {
+            "date": "2026-06-15",
+            "date_formatted": "June 15, 2026",
+            "challenger": "Junior Caminero",
+            "role": "batting",
+            "team": "opponents",
+            "outcome": "confirmed",
+            "result_desc": "Junior Caminero grounds out, third baseman Max Muncy to first baseman Freddie Freeman. Jonathan Aranda to 2nd.",
+            "batter": "Junior Caminero",
+            "pitcher": "Eric Lauer",
             "game_pk": 823938
         },
         {
@@ -217,62 +265,14 @@
         {
             "date": "2026-06-15",
             "date_formatted": "June 15, 2026",
-            "challenger": "Junior Caminero",
+            "challenger": "Taylor Walls",
             "role": "batting",
             "team": "opponents",
             "outcome": "confirmed",
-            "result_desc": "Junior Caminero grounds out, third baseman Max Muncy to first baseman Freddie Freeman. Jonathan Aranda to 2nd.",
-            "batter": "Junior Caminero",
-            "pitcher": "Eric Lauer",
+            "result_desc": "Taylor Walls called out on strikes.",
+            "batter": "Taylor Walls",
+            "pitcher": "Tanner Scott",
             "game_pk": 823938
-        },
-        {
-            "date": "2026-06-14",
-            "date_formatted": "June 14, 2026",
-            "challenger": "Drew Romo",
-            "role": "catching",
-            "team": "opponents",
-            "outcome": "confirmed",
-            "result_desc": "Max Muncy strikes out swinging.",
-            "batter": "Max Muncy",
-            "pitcher": "Erick Fedde",
-            "game_pk": 824586
-        },
-        {
-            "date": "2026-06-14",
-            "date_formatted": "June 14, 2026",
-            "challenger": "Sam Antonacci",
-            "role": "batting",
-            "team": "opponents",
-            "outcome": "confirmed",
-            "result_desc": "Sam Antonacci homers (2) on a fly ball to right field.",
-            "batter": "Sam Antonacci",
-            "pitcher": "Emmet Sheehan",
-            "game_pk": 824586
-        },
-        {
-            "date": "2026-06-14",
-            "date_formatted": "June 14, 2026",
-            "challenger": "Shohei Ohtani",
-            "role": "batting",
-            "team": "dodgers",
-            "outcome": "overturned",
-            "result_desc": "Shohei Ohtani strikes out swinging.",
-            "batter": "Shohei Ohtani",
-            "pitcher": "Grant Taylor",
-            "game_pk": 824586
-        },
-        {
-            "date": "2026-06-13",
-            "date_formatted": "June 13, 2026",
-            "challenger": "Miguel Vargas",
-            "role": "batting",
-            "team": "opponents",
-            "outcome": "overturned",
-            "result_desc": "Miguel Vargas lines out sharply to left fielder Alex Call.",
-            "batter": "Miguel Vargas",
-            "pitcher": "Yoshinobu Yamamoto",
-            "game_pk": 824587
         }
     ]
 }

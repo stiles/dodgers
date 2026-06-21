@@ -1,17 +1,17 @@
 {
     "season_summary": {
-        "correct_strikes_pct": 91.30859375,
-        "incorrect_strikes_pct": 8.69140625,
-        "total_called_strikes": 2048,
+        "correct_strikes_pct": 91.37596899224806,
+        "incorrect_strikes_pct": 8.624031007751938,
+        "total_called_strikes": 2064,
         "bad_calls_count": 178
     },
     "last_game_summary": {
-        "date": "June 19, 2026",
-        "correct_strikes_pct": 92.85714285714286,
-        "incorrect_strikes_pct": 7.142857142857139,
-        "total_called_strikes": 28,
-        "bad_calls_count": 2,
-        "home_plate_umpire": "Nestor Ceja"
+        "date": "June 20, 2026",
+        "correct_strikes_pct": 100.0,
+        "incorrect_strikes_pct": 0.0,
+        "total_called_strikes": 16,
+        "bad_calls_count": 0,
+        "home_plate_umpire": "Charlie Ramos"
     },
     "worst_calls_of_season": [
         {
@@ -56,17 +56,17 @@
         }
     ],
     "pitching_season_summary": {
-        "correct_balls_pct": 95.85204755614268,
-        "incorrect_balls_pct": 4.147952443857321,
-        "total_called_balls": 3785,
-        "bad_calls_count": 157
+        "correct_balls_pct": 95.82354476637953,
+        "incorrect_balls_pct": 4.176455233620473,
+        "total_called_balls": 3831,
+        "bad_calls_count": 160
     },
     "pitching_last_game_summary": {
-        "date": "June 19, 2026",
-        "correct_balls_pct": 95.0,
-        "incorrect_balls_pct": 5.0,
-        "total_called_balls": 40,
-        "bad_calls_count": 2
+        "date": "June 20, 2026",
+        "correct_balls_pct": 93.47826086956522,
+        "incorrect_balls_pct": 6.521739130434781,
+        "total_called_balls": 46,
+        "bad_calls_count": 3
     },
     "pitching_worst_calls_of_season": [],
     "abs_challenges": {
@@ -99,12 +99,36 @@
                 "failed": 0
             },
             "catching": {
-                "total": 29,
-                "successful": 21,
+                "total": 31,
+                "successful": 23,
                 "failed": 8
             }
         },
         "challenge_log": [
+            {
+                "date": "2026-06-20",
+                "date_formatted": "June 20, 2026",
+                "challenger": "Samuel Basallo",
+                "role": "catching",
+                "team": "opponents",
+                "outcome": "overturned",
+                "result_desc": "Kyle Tucker called out on strikes.",
+                "batter": "Kyle Tucker",
+                "pitcher": "Trevor Rogers",
+                "game_pk": 823937
+            },
+            {
+                "date": "2026-06-20",
+                "date_formatted": "June 20, 2026",
+                "challenger": "Samuel Basallo",
+                "role": "catching",
+                "team": "opponents",
+                "outcome": "overturned",
+                "result_desc": "Max Muncy called out on strikes.",
+                "batter": "Max Muncy",
+                "pitcher": "Rico Garcia",
+                "game_pk": 823937
+            },
             {
                 "date": "2026-06-17",
                 "date_formatted": "June 17, 2026",
@@ -320,30 +344,6 @@
                 "batter": "Miguel Rojas",
                 "pitcher": "Eduardo Rodriguez",
                 "game_pk": 825078
-            },
-            {
-                "date": "2026-05-31",
-                "date_formatted": "May 31, 2026",
-                "challenger": "J.T. Realmuto",
-                "role": "catching",
-                "team": "opponents",
-                "outcome": "overturned",
-                "result_desc": "Freddie Freeman called out on strikes.",
-                "batter": "Freddie Freeman",
-                "pitcher": "Andrew Painter",
-                "game_pk": 823944
-            },
-            {
-                "date": "2026-05-31",
-                "date_formatted": "May 31, 2026",
-                "challenger": "Dalton Rushing",
-                "role": "catching",
-                "team": "dodgers",
-                "outcome": "overturned",
-                "result_desc": "Kyle Schwarber called out on strikes.",
-                "batter": "Kyle Schwarber",
-                "pitcher": "Yoshinobu Yamamoto",
-                "game_pk": 823944
             }
         ]
     }
