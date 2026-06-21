@@ -1,17 +1,17 @@
 {
     "season_summary": {
-        "correct_strikes_pct": 91.37596899224806,
-        "incorrect_strikes_pct": 8.624031007751938,
-        "total_called_strikes": 2064,
-        "bad_calls_count": 178
+        "correct_strikes_pct": 91.33141762452107,
+        "incorrect_strikes_pct": 8.668582375478934,
+        "total_called_strikes": 2088,
+        "bad_calls_count": 181
     },
     "last_game_summary": {
-        "date": "June 20, 2026",
-        "correct_strikes_pct": 100.0,
-        "incorrect_strikes_pct": 0.0,
-        "total_called_strikes": 16,
-        "bad_calls_count": 0,
-        "home_plate_umpire": "Charlie Ramos"
+        "date": "June 21, 2026",
+        "correct_strikes_pct": 87.5,
+        "incorrect_strikes_pct": 12.5,
+        "total_called_strikes": 24,
+        "bad_calls_count": 3,
+        "home_plate_umpire": "Derek Thomas"
     },
     "worst_calls_of_season": [
         {
@@ -56,25 +56,25 @@
         }
     ],
     "pitching_season_summary": {
-        "correct_balls_pct": 95.82354476637953,
-        "incorrect_balls_pct": 4.176455233620473,
-        "total_called_balls": 3831,
+        "correct_balls_pct": 95.89322381930184,
+        "incorrect_balls_pct": 4.106776180698162,
+        "total_called_balls": 3896,
         "bad_calls_count": 160
     },
     "pitching_last_game_summary": {
-        "date": "June 20, 2026",
-        "correct_balls_pct": 93.47826086956522,
-        "incorrect_balls_pct": 6.521739130434781,
-        "total_called_balls": 46,
-        "bad_calls_count": 3
+        "date": "June 21, 2026",
+        "correct_balls_pct": 100.0,
+        "incorrect_balls_pct": 0.0,
+        "total_called_balls": 65,
+        "bad_calls_count": 0
     },
     "pitching_worst_calls_of_season": [],
     "abs_challenges": {
         "dodgers": {
             "batting": {
-                "total": 30,
+                "total": 31,
                 "successful": 9,
-                "failed": 21
+                "failed": 22
             },
             "pitching": {
                 "total": 0,
@@ -105,6 +105,18 @@
             }
         },
         "challenge_log": [
+            {
+                "date": "2026-06-21",
+                "date_formatted": "June 21, 2026",
+                "challenger": "Mookie Betts",
+                "role": "batting",
+                "team": "dodgers",
+                "outcome": "confirmed",
+                "result_desc": "Mookie Betts called out on strikes.",
+                "batter": "Mookie Betts",
+                "pitcher": "Brandon Young",
+                "game_pk": 823934
+            },
             {
                 "date": "2026-06-20",
                 "date_formatted": "June 20, 2026",
@@ -332,18 +344,6 @@
                 "batter": "Pavin Smith",
                 "pitcher": "Will Klein",
                 "game_pk": 825079
-            },
-            {
-                "date": "2026-06-01",
-                "date_formatted": "June 1, 2026",
-                "challenger": "Miguel Rojas",
-                "role": "batting",
-                "team": "dodgers",
-                "outcome": "confirmed",
-                "result_desc": "Miguel Rojas called out on strikes.",
-                "batter": "Miguel Rojas",
-                "pitcher": "Eduardo Rodriguez",
-                "game_pk": 825078
             }
         ]
     }

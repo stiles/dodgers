@@ -1,13 +1,5 @@
 [
     {
-        "date":"Jun 10",
-        "opp_name":"Pittsburgh Pirates",
-        "home_away":"away",
-        "result":"loss",
-        "placement":"last",
-        "game_start":"8-9"
-    },
-    {
         "date":"Jun 11",
         "opp_name":"Pittsburgh Pirates",
         "home_away":"away",
@@ -83,9 +75,9 @@
         "date":"Jun 21",
         "opp_name":"Baltimore Orioles",
         "home_away":"home",
-        "result":"--",
-        "placement":"next",
-        "game_start":"1:10 PM"
+        "result":"loss",
+        "placement":"last",
+        "game_start":"1-12"
     },
     {
         "date":"Jun 22",
@@ -158,5 +150,13 @@
         "result":"--",
         "placement":"next",
         "game_start":"6:40 PM"
+    },
+    {
+        "date":"Jul 2",
+        "opp_name":"San Diego Padres",
+        "home_away":"home",
+        "result":"--",
+        "placement":"next",
+        "game_start":"7:10 PM"
     }
 ]

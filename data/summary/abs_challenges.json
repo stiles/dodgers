@@ -18,9 +18,9 @@
     },
     "opponents": {
         "batting": {
-            "total": 70,
+            "total": 72,
             "successful": 35,
-            "failed": 35
+            "failed": 37
         },
         "pitching": {
             "total": 4,
@@ -34,6 +34,30 @@
         }
     },
     "challenge_log": [
+        {
+            "date": "2026-06-21",
+            "date_formatted": "June 21, 2026",
+            "challenger": "Leody Taveras",
+            "role": "batting",
+            "team": "opponents",
+            "outcome": "confirmed",
+            "result_desc": "Leody Taveras strikes out swinging, catcher Chuckie Robinson to first baseman Freddie Freeman.",
+            "batter": "Leody Taveras",
+            "pitcher": "Jack Dreyer",
+            "game_pk": 823934
+        },
+        {
+            "date": "2026-06-21",
+            "date_formatted": "June 21, 2026",
+            "challenger": "Colton Cowser",
+            "role": "batting",
+            "team": "opponents",
+            "outcome": "confirmed",
+            "result_desc": "Colton Cowser homers (8) on a fly ball to center field.",
+            "batter": "Colton Cowser",
+            "pitcher": "Emmet Sheehan",
+            "game_pk": 823934
+        },
         {
             "date": "2026-06-20",
             "date_formatted": "June 20, 2026",
@@ -109,18 +133,6 @@
         {
             "date": "2026-06-19",
             "date_formatted": "June 19, 2026",
-            "challenger": "Dalton Rushing",
-            "role": "catching",
-            "team": "dodgers",
-            "outcome": "confirmed",
-            "result_desc": "Coby Mayo flies out to center fielder Andy Pages.",
-            "batter": "Coby Mayo",
-            "pitcher": "Roki Sasaki",
-            "game_pk": 823936
-        },
-        {
-            "date": "2026-06-19",
-            "date_formatted": "June 19, 2026",
             "challenger": "Mookie Betts",
             "role": "batting",
             "team": "dodgers",
@@ -128,6 +140,18 @@
             "result_desc": "Mookie Betts singles on a line drive to right fielder Leody Taveras.",
             "batter": "Mookie Betts",
             "pitcher": "Trey Gibson",
+            "game_pk": 823936
+        },
+        {
+            "date": "2026-06-19",
+            "date_formatted": "June 19, 2026",
+            "challenger": "Dalton Rushing",
+            "role": "catching",
+            "team": "dodgers",
+            "outcome": "confirmed",
+            "result_desc": "Coby Mayo flies out to center fielder Andy Pages.",
+            "batter": "Coby Mayo",
+            "pitcher": "Roki Sasaki",
             "game_pk": 823936
         },
         {
@@ -248,30 +272,6 @@
             "result_desc": "Junior Caminero grounds out, third baseman Max Muncy to first baseman Freddie Freeman. Jonathan Aranda to 2nd.",
             "batter": "Junior Caminero",
             "pitcher": "Eric Lauer",
-            "game_pk": 823938
-        },
-        {
-            "date": "2026-06-15",
-            "date_formatted": "June 15, 2026",
-            "challenger": "Dalton Rushing",
-            "role": "catching",
-            "team": "dodgers",
-            "outcome": "overturned",
-            "result_desc": "Junior Caminero singles on a sharp line drive to left fielder Ryan Ward. Jonathan Aranda to 2nd.",
-            "batter": "Junior Caminero",
-            "pitcher": "Eric Lauer",
-            "game_pk": 823938
-        },
-        {
-            "date": "2026-06-15",
-            "date_formatted": "June 15, 2026",
-            "challenger": "Taylor Walls",
-            "role": "batting",
-            "team": "opponents",
-            "outcome": "confirmed",
-            "result_desc": "Taylor Walls called out on strikes.",
-            "batter": "Taylor Walls",
-            "pitcher": "Tanner Scott",
             "game_pk": 823938
         }
     ]
