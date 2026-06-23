@@ -1,17 +1,17 @@
 {
     "season_summary": {
-        "correct_strikes_pct": 91.33141762452107,
-        "incorrect_strikes_pct": 8.668582375478934,
-        "total_called_strikes": 2088,
-        "bad_calls_count": 181
+        "correct_strikes_pct": 91.35977337110481,
+        "incorrect_strikes_pct": 8.640226628895192,
+        "total_called_strikes": 2118,
+        "bad_calls_count": 183
     },
     "last_game_summary": {
-        "date": "June 21, 2026",
-        "correct_strikes_pct": 87.5,
-        "incorrect_strikes_pct": 12.5,
-        "total_called_strikes": 24,
-        "bad_calls_count": 3,
-        "home_plate_umpire": "Derek Thomas"
+        "date": "June 22, 2026",
+        "correct_strikes_pct": 93.33333333333333,
+        "incorrect_strikes_pct": 6.666666666666671,
+        "total_called_strikes": 30,
+        "bad_calls_count": 2,
+        "home_plate_umpire": "Lance Barksdale"
     },
     "worst_calls_of_season": [
         {
@@ -56,17 +56,17 @@
         }
     ],
     "pitching_season_summary": {
-        "correct_balls_pct": 95.89322381930184,
-        "incorrect_balls_pct": 4.106776180698162,
-        "total_called_balls": 3896,
-        "bad_calls_count": 160
+        "correct_balls_pct": 95.8681875792142,
+        "incorrect_balls_pct": 4.131812420785806,
+        "total_called_balls": 3945,
+        "bad_calls_count": 163
     },
     "pitching_last_game_summary": {
-        "date": "June 21, 2026",
-        "correct_balls_pct": 100.0,
-        "incorrect_balls_pct": 0.0,
-        "total_called_balls": 65,
-        "bad_calls_count": 0
+        "date": "June 22, 2026",
+        "correct_balls_pct": 93.87755102040816,
+        "incorrect_balls_pct": 6.122448979591837,
+        "total_called_balls": 49,
+        "bad_calls_count": 3
     },
     "pitching_worst_calls_of_season": [],
     "abs_challenges": {
@@ -89,8 +89,8 @@
         },
         "opponents": {
             "batting": {
-                "total": 12,
-                "successful": 2,
+                "total": 13,
+                "successful": 3,
                 "failed": 10
             },
             "pitching": {
@@ -99,12 +99,36 @@
                 "failed": 0
             },
             "catching": {
-                "total": 31,
-                "successful": 23,
+                "total": 32,
+                "successful": 24,
                 "failed": 8
             }
         },
         "challenge_log": [
+            {
+                "date": "2026-06-22",
+                "date_formatted": "June 22, 2026",
+                "challenger": "Victor Caratini",
+                "role": "catching",
+                "team": "opponents",
+                "outcome": "overturned",
+                "result_desc": "Freddie Freeman called out on strikes.",
+                "batter": "Freddie Freeman",
+                "pitcher": "Taylor Rogers",
+                "game_pk": 823692
+            },
+            {
+                "date": "2026-06-22",
+                "date_formatted": "June 22, 2026",
+                "challenger": "Kody Clemens",
+                "role": "batting",
+                "team": "opponents",
+                "outcome": "overturned",
+                "result_desc": "Kody Clemens walks.",
+                "batter": "Kody Clemens",
+                "pitcher": "Eric Lauer",
+                "game_pk": 823692
+            },
             {
                 "date": "2026-06-21",
                 "date_formatted": "June 21, 2026",
@@ -320,30 +344,6 @@
                 "batter": "Tommy Troy",
                 "pitcher": "Kyle Hurt",
                 "game_pk": 825076
-            },
-            {
-                "date": "2026-06-03",
-                "date_formatted": "June 3, 2026",
-                "challenger": "Geraldo Perdomo",
-                "role": "batting",
-                "team": "opponents",
-                "outcome": "confirmed",
-                "result_desc": "Geraldo Perdomo called out on strikes.",
-                "batter": "Geraldo Perdomo",
-                "pitcher": "Shohei Ohtani",
-                "game_pk": 825077
-            },
-            {
-                "date": "2026-06-02",
-                "date_formatted": "June 2, 2026",
-                "challenger": "Dalton Rushing",
-                "role": "catching",
-                "team": "dodgers",
-                "outcome": "confirmed",
-                "result_desc": "Pavin Smith walks. Nolan Arenado scores. Ildemaro Vargas to 3rd. Geraldo Perdomo to 2nd.",
-                "batter": "Pavin Smith",
-                "pitcher": "Will Klein",
-                "game_pk": 825079
             }
         ]
     }

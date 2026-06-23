@@ -1,8 +1,8 @@
 {
     "dodgers": {
         "batting": {
-            "total": 60,
-            "successful": 40,
+            "total": 61,
+            "successful": 41,
             "failed": 20
         },
         "pitching": {
@@ -18,8 +18,8 @@
     },
     "opponents": {
         "batting": {
-            "total": 72,
-            "successful": 35,
+            "total": 74,
+            "successful": 37,
             "failed": 37
         },
         "pitching": {
@@ -28,12 +28,96 @@
             "failed": 3
         },
         "catching": {
-            "total": 94,
-            "successful": 57,
-            "failed": 37
+            "total": 98,
+            "successful": 60,
+            "failed": 38
         }
     },
     "challenge_log": [
+        {
+            "date": "2026-06-22",
+            "date_formatted": "June 22, 2026",
+            "challenger": "Victor Caratini",
+            "role": "catching",
+            "team": "opponents",
+            "outcome": "confirmed",
+            "result_desc": "Tommy Edman flies out to left fielder Austin Martin.",
+            "batter": "Tommy Edman",
+            "pitcher": "Andrew Morris",
+            "game_pk": 823692
+        },
+        {
+            "date": "2026-06-22",
+            "date_formatted": "June 22, 2026",
+            "challenger": "Victor Caratini",
+            "role": "catching",
+            "team": "opponents",
+            "outcome": "overturned",
+            "result_desc": "Mookie Betts walks.",
+            "batter": "Mookie Betts",
+            "pitcher": "Zebby Matthews",
+            "game_pk": 823692
+        },
+        {
+            "date": "2026-06-22",
+            "date_formatted": "June 22, 2026",
+            "challenger": "Luke Keaschall",
+            "role": "batting",
+            "team": "opponents",
+            "outcome": "overturned",
+            "result_desc": "Luke Keaschall strikes out swinging.",
+            "batter": "Luke Keaschall",
+            "pitcher": "Eric Lauer",
+            "game_pk": 823692
+        },
+        {
+            "date": "2026-06-22",
+            "date_formatted": "June 22, 2026",
+            "challenger": "Victor Caratini",
+            "role": "catching",
+            "team": "opponents",
+            "outcome": "overturned",
+            "result_desc": "Mookie Betts strikes out swinging.",
+            "batter": "Mookie Betts",
+            "pitcher": "Zebby Matthews",
+            "game_pk": 823692
+        },
+        {
+            "date": "2026-06-22",
+            "date_formatted": "June 22, 2026",
+            "challenger": "Victor Caratini",
+            "role": "catching",
+            "team": "opponents",
+            "outcome": "overturned",
+            "result_desc": "Freddie Freeman flies out to center fielder Byron Buxton.",
+            "batter": "Freddie Freeman",
+            "pitcher": "Zebby Matthews",
+            "game_pk": 823692
+        },
+        {
+            "date": "2026-06-22",
+            "date_formatted": "June 22, 2026",
+            "challenger": "Luke Keaschall",
+            "role": "batting",
+            "team": "opponents",
+            "outcome": "overturned",
+            "result_desc": "Luke Keaschall grounds out, shortstop Mookie Betts to first baseman Freddie Freeman.",
+            "batter": "Luke Keaschall",
+            "pitcher": "Eric Lauer",
+            "game_pk": 823692
+        },
+        {
+            "date": "2026-06-22",
+            "date_formatted": "June 22, 2026",
+            "challenger": "Andy Pages",
+            "role": "batting",
+            "team": "dodgers",
+            "outcome": "overturned",
+            "result_desc": "Andy Pages lines out to right fielder Kody Clemens.",
+            "batter": "Andy Pages",
+            "pitcher": "Zebby Matthews",
+            "game_pk": 823692
+        },
         {
             "date": "2026-06-21",
             "date_formatted": "June 21, 2026",
@@ -125,20 +209,20 @@
             "role": "catching",
             "team": "opponents",
             "outcome": "confirmed",
-            "result_desc": "Dalton Rushing strikes out swinging.",
-            "batter": "Dalton Rushing",
-            "pitcher": "Trey Gibson",
+            "result_desc": "Tommy Edman pops out to first baseman Pete Alonso in foul territory.",
+            "batter": "Tommy Edman",
+            "pitcher": "Ryan Helsley",
             "game_pk": 823936
         },
         {
             "date": "2026-06-19",
             "date_formatted": "June 19, 2026",
-            "challenger": "Mookie Betts",
-            "role": "batting",
-            "team": "dodgers",
-            "outcome": "overturned",
-            "result_desc": "Mookie Betts singles on a line drive to right fielder Leody Taveras.",
-            "batter": "Mookie Betts",
+            "challenger": "Samuel Basallo",
+            "role": "catching",
+            "team": "opponents",
+            "outcome": "confirmed",
+            "result_desc": "Dalton Rushing strikes out swinging.",
+            "batter": "Dalton Rushing",
             "pitcher": "Trey Gibson",
             "game_pk": 823936
         },
@@ -157,38 +241,14 @@
         {
             "date": "2026-06-19",
             "date_formatted": "June 19, 2026",
-            "challenger": "Samuel Basallo",
-            "role": "catching",
-            "team": "opponents",
-            "outcome": "confirmed",
-            "result_desc": "Tommy Edman pops out to first baseman Pete Alonso in foul territory.",
-            "batter": "Tommy Edman",
-            "pitcher": "Ryan Helsley",
-            "game_pk": 823936
-        },
-        {
-            "date": "2026-06-17",
-            "date_formatted": "June 17, 2026",
-            "challenger": "Jonathan Aranda",
+            "challenger": "Mookie Betts",
             "role": "batting",
-            "team": "opponents",
-            "outcome": "confirmed",
-            "result_desc": "Jonathan Aranda walks. Austin Slater to 3rd. Yandy D\u00edaz to 2nd.",
-            "batter": "Jonathan Aranda",
-            "pitcher": "Alex Vesia",
-            "game_pk": 823940
-        },
-        {
-            "date": "2026-06-17",
-            "date_formatted": "June 17, 2026",
-            "challenger": "Hunter Feduccia",
-            "role": "catching",
-            "team": "opponents",
-            "outcome": "confirmed",
-            "result_desc": "Freddie Freeman lines into a double play, shortstop Taylor Walls to first baseman Jonathan Aranda. Andy Pages out at 1st.",
-            "batter": "Freddie Freeman",
-            "pitcher": "Cole Sulser",
-            "game_pk": 823940
+            "team": "dodgers",
+            "outcome": "overturned",
+            "result_desc": "Mookie Betts singles on a line drive to right fielder Leody Taveras.",
+            "batter": "Mookie Betts",
+            "pitcher": "Trey Gibson",
+            "game_pk": 823936
         },
         {
             "date": "2026-06-17",
@@ -203,76 +263,16 @@
             "game_pk": 823940
         },
         {
-            "date": "2026-06-16",
-            "date_formatted": "June 16, 2026",
-            "challenger": "Chuckie Robinson",
+            "date": "2026-06-17",
+            "date_formatted": "June 17, 2026",
+            "challenger": "Hunter Feduccia",
             "role": "catching",
-            "team": "dodgers",
-            "outcome": "overturned",
-            "result_desc": "Chandler Simpson grounds out, shortstop Mookie Betts to first baseman Freddie Freeman.",
-            "batter": "Chandler Simpson",
-            "pitcher": "Kyle Hurt",
-            "game_pk": 823939
-        },
-        {
-            "date": "2026-06-16",
-            "date_formatted": "June 16, 2026",
-            "challenger": "Nick Fortes",
-            "role": "catching",
-            "team": "opponents",
-            "outcome": "overturned",
-            "result_desc": "Kyle Tucker grounds out sharply, second baseman Ben Williamson to first baseman Jonathan Aranda.",
-            "batter": "Kyle Tucker",
-            "pitcher": "Drew Rasmussen",
-            "game_pk": 823939
-        },
-        {
-            "date": "2026-06-16",
-            "date_formatted": "June 16, 2026",
-            "challenger": "Ryan Vilade",
-            "role": "batting",
-            "team": "opponents",
-            "outcome": "overturned",
-            "result_desc": "Ryan Vilade pops out to first baseman Freddie Freeman in foul territory.",
-            "batter": "Ryan Vilade",
-            "pitcher": "Will Klein",
-            "game_pk": 823939
-        },
-        {
-            "date": "2026-06-16",
-            "date_formatted": "June 16, 2026",
-            "challenger": "Shohei Ohtani",
-            "role": "batting",
-            "team": "dodgers",
-            "outcome": "overturned",
-            "result_desc": "Shohei Ohtani grounds out, second baseman Ben Williamson to first baseman Jonathan Aranda.",
-            "batter": "Shohei Ohtani",
-            "pitcher": "Drew Rasmussen",
-            "game_pk": 823939
-        },
-        {
-            "date": "2026-06-15",
-            "date_formatted": "June 15, 2026",
-            "challenger": "Dalton Rushing",
-            "role": "catching",
-            "team": "dodgers",
-            "outcome": "overturned",
-            "result_desc": "Ben Williamson grounds out, second baseman Miguel Rojas to first baseman Freddie Freeman. Chandler Simpson to 2nd.",
-            "batter": "Ben Williamson",
-            "pitcher": "Will Klein",
-            "game_pk": 823938
-        },
-        {
-            "date": "2026-06-15",
-            "date_formatted": "June 15, 2026",
-            "challenger": "Junior Caminero",
-            "role": "batting",
             "team": "opponents",
             "outcome": "confirmed",
-            "result_desc": "Junior Caminero grounds out, third baseman Max Muncy to first baseman Freddie Freeman. Jonathan Aranda to 2nd.",
-            "batter": "Junior Caminero",
-            "pitcher": "Eric Lauer",
-            "game_pk": 823938
+            "result_desc": "Freddie Freeman lines into a double play, shortstop Taylor Walls to first baseman Jonathan Aranda. Andy Pages out at 1st.",
+            "batter": "Freddie Freeman",
+            "pitcher": "Cole Sulser",
+            "game_pk": 823940
         }
     ]
 }

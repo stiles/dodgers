@@ -12,7 +12,7 @@
         "ip_rounded":91,
         "gs":14,
         "gp":14,
-        "fetched":"2026-06-22"
+        "fetched":"2026-06-23"
     },
     {
         "player":"Justin Wrobleski",
@@ -27,7 +27,7 @@
         "ip_rounded":79,
         "gs":12,
         "gp":13,
-        "fetched":"2026-06-22"
+        "fetched":"2026-06-23"
     },
     {
         "player":"Shohei Ohtani",
@@ -42,7 +42,7 @@
         "ip_rounded":73,
         "gs":12,
         "gp":12,
-        "fetched":"2026-06-22"
+        "fetched":"2026-06-23"
     },
     {
         "player":"Roki Sasaki",
@@ -57,7 +57,7 @@
         "ip_rounded":68,
         "gs":13,
         "gp":13,
-        "fetched":"2026-06-22"
+        "fetched":"2026-06-23"
     },
     {
         "player":"Emmet Sheehan",
@@ -72,7 +72,7 @@
         "ip_rounded":67,
         "gs":14,
         "gp":14,
-        "fetched":"2026-06-22"
+        "fetched":"2026-06-23"
     },
     {
         "player":"Tyler Glasnow",
@@ -87,22 +87,37 @@
         "ip_rounded":39,
         "gs":7,
         "gp":7,
-        "fetched":"2026-06-22"
+        "fetched":"2026-06-23"
     },
     {
         "player":"Tanner Scott",
         "role":"RP",
         "position":"P",
-        "era":"2.32",
-        "whip":"0.71",
-        "k9":"11.03",
-        "bb9":"0.87",
+        "era":"2.25",
+        "whip":"0.69",
+        "k9":"10.69",
+        "bb9":"0.84",
         "kbb":"12.67",
-        "ip":"31.0",
-        "ip_rounded":31,
+        "ip":"32.0",
+        "ip_rounded":32,
         "gs":0,
-        "gp":33,
-        "fetched":"2026-06-22"
+        "gp":34,
+        "fetched":"2026-06-23"
+    },
+    {
+        "player":"Will Klein",
+        "role":"SP",
+        "position":"P",
+        "era":"2.59",
+        "whip":"1.40",
+        "k9":"9.77",
+        "bb9":"3.73",
+        "kbb":"2.62",
+        "ip":"31.1",
+        "ip_rounded":31,
+        "gs":2,
+        "gp":27,
+        "fetched":"2026-06-23"
     },
     {
         "player":"Jack Dreyer",
@@ -117,22 +132,7 @@
         "ip_rounded":30,
         "gs":0,
         "gp":30,
-        "fetched":"2026-06-22"
-    },
-    {
-        "player":"Will Klein",
-        "role":"SP",
-        "position":"P",
-        "era":"2.37",
-        "whip":"1.35",
-        "k9":"9.49",
-        "bb9":"3.56",
-        "kbb":"2.67",
-        "ip":"30.1",
-        "ip_rounded":30,
-        "gs":1,
-        "gp":26,
-        "fetched":"2026-06-22"
+        "fetched":"2026-06-23"
     },
     {
         "player":"Edgardo Henriquez",
@@ -147,6 +147,6 @@
         "ip_rounded":29,
         "gs":0,
         "gp":28,
-        "fetched":"2026-06-22"
+        "fetched":"2026-06-23"
     }
 ]
