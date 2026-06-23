@@ -140,7 +140,7 @@
         "stat":"doubles",
         "value":131,
         "category":"batting",
-        "context_value":"8th",
+        "context_value":"10th",
         "context_value_label":"League rank"
     },
     {
@@ -148,7 +148,7 @@
         "stat":"strikeouts",
         "value":"698",
         "category":"pitching",
-        "context_value":"5th",
+        "context_value":"6th",
         "context_value_label":"League rank"
     },
     {
@@ -194,7 +194,7 @@
     {
         "stat_label":"Last updated",
         "stat":"update_time",
-        "value":"June 23, 2026, 9:05 AM PT",
+        "value":"June 23, 2026, 4:32 PM PT",
         "category":"summary",
         "context_value":"",
         "context_value_label":""
