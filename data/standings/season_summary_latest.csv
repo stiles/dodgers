@@ -1,13 +1,13 @@
 stat_label,stat,value,category,context_value,context_value_label
-Wins,wins,51,standings,48,This point last season
+Wins,wins,51,standings,49,This point last season
 Losses,losses,29,standings,31,This point last season
 Win percentage,win_pct,64%,standings,61%,This point last season
 Games up/back,games_up_back,9,standings,1st,Division rank
 Fielding percentage,fielding_pct,.991,standings,2nd,League rank
 Errors,errors,26,standings,2nd,League rank
 Runs,runs,419,standings,2nd,League rank
-Runs against,runs_against,276,standings,364,This point last season
-Run differential,run_differential,143,standings,78,This point last season
+Runs against,runs_against,276,standings,371,This point last season
+Run differential,run_differential,143,standings,80,This point last season
 Batting average,batting_average,.261,batting,.253,Last decade average
 Home runs,home_runs,108,batting,2nd,League rank
 Home runs/game,home_runs_game,1.35,batting,1.42,Last decade average
@@ -23,6 +23,6 @@ ERA,era,3.42,pitching,4th,League rank
 WHIP,whip,1.10,pitching,1st,League rank
 Batting average against,avg_against,.212,pitching,1st,League rank
 K/BB ratio,k_bb_ratio,3.14,pitching,3rd,League rank
-Last updated,update_time,"June 24, 2026, 5:59 AM PT",summary,,
+Last updated,update_time,"June 24, 2026, 8:53 AM PT",summary,,
 Team summary,summary,"<span class='highlight'>LOS ANGELES</span> <span class='updated'>(June 24)</span> — The Dodgers have compiled a <span class='highlight'>51-29</span> record in the 2026 regular season, a <span class='highlight'>64%</span> winning percentage. The last game was a <span class='highlight'>12-3</span> away <span class='highlight'>win</span> against the <span class='highlight'>Minnesota Twins</span>. The team next faces the <span class='highlight'>Minnesota Twins</span> on Wednesday at 4:40 p.m. PDT at <span class='highlight'>Target Field</span>.",summary,,
 Last game result,last_game_result,win,summary,,
