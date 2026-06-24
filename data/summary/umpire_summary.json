@@ -1,17 +1,17 @@
 {
     "season_summary": {
-        "correct_strikes_pct": 91.35977337110481,
-        "incorrect_strikes_pct": 8.640226628895192,
-        "total_called_strikes": 2118,
-        "bad_calls_count": 183
+        "correct_strikes_pct": 91.43787808282923,
+        "incorrect_strikes_pct": 8.56212191717077,
+        "total_called_strikes": 2149,
+        "bad_calls_count": 184
     },
     "last_game_summary": {
-        "date": "June 22, 2026",
-        "correct_strikes_pct": 93.33333333333333,
-        "incorrect_strikes_pct": 6.666666666666671,
-        "total_called_strikes": 30,
-        "bad_calls_count": 2,
-        "home_plate_umpire": "Lance Barksdale"
+        "date": "June 23, 2026",
+        "correct_strikes_pct": 96.7741935483871,
+        "incorrect_strikes_pct": 3.225806451612897,
+        "total_called_strikes": 31,
+        "bad_calls_count": 1,
+        "home_plate_umpire": "Will Little"
     },
     "worst_calls_of_season": [
         {
@@ -56,25 +56,25 @@
         }
     ],
     "pitching_season_summary": {
-        "correct_balls_pct": 95.8681875792142,
-        "incorrect_balls_pct": 4.131812420785806,
-        "total_called_balls": 3945,
-        "bad_calls_count": 163
+        "correct_balls_pct": 95.82914572864321,
+        "incorrect_balls_pct": 4.170854271356788,
+        "total_called_balls": 3980,
+        "bad_calls_count": 166
     },
     "pitching_last_game_summary": {
-        "date": "June 22, 2026",
-        "correct_balls_pct": 93.87755102040816,
-        "incorrect_balls_pct": 6.122448979591837,
-        "total_called_balls": 49,
+        "date": "June 23, 2026",
+        "correct_balls_pct": 91.42857142857143,
+        "incorrect_balls_pct": 8.57142857142857,
+        "total_called_balls": 35,
         "bad_calls_count": 3
     },
     "pitching_worst_calls_of_season": [],
     "abs_challenges": {
         "dodgers": {
             "batting": {
-                "total": 31,
+                "total": 32,
                 "successful": 9,
-                "failed": 22
+                "failed": 23
             },
             "pitching": {
                 "total": 0,
@@ -105,6 +105,18 @@
             }
         },
         "challenge_log": [
+            {
+                "date": "2026-06-23",
+                "date_formatted": "June 23, 2026",
+                "challenger": "Mookie Betts",
+                "role": "batting",
+                "team": "dodgers",
+                "outcome": "confirmed",
+                "result_desc": "Mookie Betts called out on strikes.",
+                "batter": "Mookie Betts",
+                "pitcher": "Kendry Rojas",
+                "game_pk": 823690
+            },
             {
                 "date": "2026-06-22",
                 "date_formatted": "June 22, 2026",
@@ -332,18 +344,6 @@
                 "batter": "Shohei Ohtani",
                 "pitcher": "Reid Detmers",
                 "game_pk": 823943
-            },
-            {
-                "date": "2026-06-04",
-                "date_formatted": "June 4, 2026",
-                "challenger": "Dalton Rushing",
-                "role": "catching",
-                "team": "dodgers",
-                "outcome": "overturned",
-                "result_desc": "Tommy Troy called out on strikes.",
-                "batter": "Tommy Troy",
-                "pitcher": "Kyle Hurt",
-                "game_pk": 825076
             }
         ]
     }

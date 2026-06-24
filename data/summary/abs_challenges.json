@@ -1,9 +1,9 @@
 {
     "dodgers": {
         "batting": {
-            "total": 61,
-            "successful": 41,
-            "failed": 20
+            "total": 63,
+            "successful": 42,
+            "failed": 21
         },
         "pitching": {
             "total": 4,
@@ -18,9 +18,9 @@
     },
     "opponents": {
         "batting": {
-            "total": 74,
+            "total": 75,
             "successful": 37,
-            "failed": 37
+            "failed": 38
         },
         "pitching": {
             "total": 4,
@@ -28,47 +28,59 @@
             "failed": 3
         },
         "catching": {
-            "total": 98,
+            "total": 99,
             "successful": 60,
-            "failed": 38
+            "failed": 39
         }
     },
     "challenge_log": [
         {
-            "date": "2026-06-22",
-            "date_formatted": "June 22, 2026",
+            "date": "2026-06-23",
+            "date_formatted": "June 23, 2026",
+            "challenger": "Mookie Betts",
+            "role": "batting",
+            "team": "dodgers",
+            "outcome": "confirmed",
+            "result_desc": "Mookie Betts singles on a line drive to right fielder Kyler Fedko. Andy Pages to 2nd.",
+            "batter": "Mookie Betts",
+            "pitcher": "Taylor Rogers",
+            "game_pk": 823690
+        },
+        {
+            "date": "2026-06-23",
+            "date_formatted": "June 23, 2026",
             "challenger": "Victor Caratini",
             "role": "catching",
             "team": "opponents",
             "outcome": "confirmed",
-            "result_desc": "Tommy Edman flies out to left fielder Austin Martin.",
-            "batter": "Tommy Edman",
-            "pitcher": "Andrew Morris",
-            "game_pk": 823692
+            "result_desc": "Shohei Ohtani lines out sharply to center fielder Byron Buxton.",
+            "batter": "Shohei Ohtani",
+            "pitcher": "Austin Voth",
+            "game_pk": 823690
         },
         {
-            "date": "2026-06-22",
-            "date_formatted": "June 22, 2026",
-            "challenger": "Victor Caratini",
-            "role": "catching",
-            "team": "opponents",
+            "date": "2026-06-23",
+            "date_formatted": "June 23, 2026",
+            "challenger": "Andy Pages",
+            "role": "batting",
+            "team": "dodgers",
             "outcome": "overturned",
-            "result_desc": "Mookie Betts walks.",
-            "batter": "Mookie Betts",
-            "pitcher": "Zebby Matthews",
-            "game_pk": 823692
+            "result_desc": "Andy Pages flies out to left fielder Austin Martin.",
+            "batter": "Andy Pages",
+            "pitcher": "Austin Voth",
+            "game_pk": 823690
         },
         {
-            "date": "2026-06-22",
-            "date_formatted": "June 22, 2026",
-            "challenger": "Luke Keaschall",
+            "date": "2026-06-23",
+            "date_formatted": "June 23, 2026",
+            "challenger": "Victor Caratini",
             "role": "batting",
             "team": "opponents",
-            "outcome": "overturned",
-            "result_desc": "Luke Keaschall strikes out swinging.",
-            "batter": "Luke Keaschall",
-            "pitcher": "Eric Lauer",
-            "game_pk": 823692
+            "outcome": "confirmed",
+            "result_desc": "Victor Caratini homers (6) on a fly ball to left center field.",
+            "batter": "Victor Caratini",
+            "pitcher": "Justin Wrobleski",
+            "game_pk": 823690
         },
         {
             "date": "2026-06-22",
@@ -79,6 +91,18 @@
             "outcome": "overturned",
             "result_desc": "Mookie Betts strikes out swinging.",
             "batter": "Mookie Betts",
+            "pitcher": "Zebby Matthews",
+            "game_pk": 823692
+        },
+        {
+            "date": "2026-06-22",
+            "date_formatted": "June 22, 2026",
+            "challenger": "Andy Pages",
+            "role": "batting",
+            "team": "dodgers",
+            "outcome": "overturned",
+            "result_desc": "Andy Pages lines out to right fielder Kody Clemens.",
+            "batter": "Andy Pages",
             "pitcher": "Zebby Matthews",
             "game_pk": 823692
         },
@@ -109,13 +133,37 @@
         {
             "date": "2026-06-22",
             "date_formatted": "June 22, 2026",
-            "challenger": "Andy Pages",
+            "challenger": "Luke Keaschall",
             "role": "batting",
-            "team": "dodgers",
+            "team": "opponents",
             "outcome": "overturned",
-            "result_desc": "Andy Pages lines out to right fielder Kody Clemens.",
-            "batter": "Andy Pages",
+            "result_desc": "Luke Keaschall strikes out swinging.",
+            "batter": "Luke Keaschall",
+            "pitcher": "Eric Lauer",
+            "game_pk": 823692
+        },
+        {
+            "date": "2026-06-22",
+            "date_formatted": "June 22, 2026",
+            "challenger": "Victor Caratini",
+            "role": "catching",
+            "team": "opponents",
+            "outcome": "overturned",
+            "result_desc": "Mookie Betts walks.",
+            "batter": "Mookie Betts",
             "pitcher": "Zebby Matthews",
+            "game_pk": 823692
+        },
+        {
+            "date": "2026-06-22",
+            "date_formatted": "June 22, 2026",
+            "challenger": "Victor Caratini",
+            "role": "catching",
+            "team": "opponents",
+            "outcome": "confirmed",
+            "result_desc": "Tommy Edman flies out to left fielder Austin Martin.",
+            "batter": "Tommy Edman",
+            "pitcher": "Andrew Morris",
             "game_pk": 823692
         },
         {
@@ -205,30 +253,6 @@
         {
             "date": "2026-06-19",
             "date_formatted": "June 19, 2026",
-            "challenger": "Samuel Basallo",
-            "role": "catching",
-            "team": "opponents",
-            "outcome": "confirmed",
-            "result_desc": "Tommy Edman pops out to first baseman Pete Alonso in foul territory.",
-            "batter": "Tommy Edman",
-            "pitcher": "Ryan Helsley",
-            "game_pk": 823936
-        },
-        {
-            "date": "2026-06-19",
-            "date_formatted": "June 19, 2026",
-            "challenger": "Samuel Basallo",
-            "role": "catching",
-            "team": "opponents",
-            "outcome": "confirmed",
-            "result_desc": "Dalton Rushing strikes out swinging.",
-            "batter": "Dalton Rushing",
-            "pitcher": "Trey Gibson",
-            "game_pk": 823936
-        },
-        {
-            "date": "2026-06-19",
-            "date_formatted": "June 19, 2026",
             "challenger": "Dalton Rushing",
             "role": "catching",
             "team": "dodgers",
@@ -249,30 +273,6 @@
             "batter": "Mookie Betts",
             "pitcher": "Trey Gibson",
             "game_pk": 823936
-        },
-        {
-            "date": "2026-06-17",
-            "date_formatted": "June 17, 2026",
-            "challenger": "Dalton Rushing",
-            "role": "catching",
-            "team": "dodgers",
-            "outcome": "confirmed",
-            "result_desc": "Hunter Feduccia strikes out swinging.",
-            "batter": "Hunter Feduccia",
-            "pitcher": "Shohei Ohtani",
-            "game_pk": 823940
-        },
-        {
-            "date": "2026-06-17",
-            "date_formatted": "June 17, 2026",
-            "challenger": "Hunter Feduccia",
-            "role": "catching",
-            "team": "opponents",
-            "outcome": "confirmed",
-            "result_desc": "Freddie Freeman lines into a double play, shortstop Taylor Walls to first baseman Jonathan Aranda. Andy Pages out at 1st.",
-            "batter": "Freddie Freeman",
-            "pitcher": "Cole Sulser",
-            "game_pk": 823940
         }
     ]
 }
