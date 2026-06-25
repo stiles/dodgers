@@ -1,17 +1,17 @@
 {
     "season_summary": {
-        "correct_strikes_pct": 91.43787808282923,
-        "incorrect_strikes_pct": 8.56212191717077,
-        "total_called_strikes": 2149,
-        "bad_calls_count": 184
+        "correct_strikes_pct": 91.49034038638455,
+        "incorrect_strikes_pct": 8.509659613615455,
+        "total_called_strikes": 2174,
+        "bad_calls_count": 185
     },
     "last_game_summary": {
-        "date": "June 23, 2026",
-        "correct_strikes_pct": 96.7741935483871,
-        "incorrect_strikes_pct": 3.225806451612897,
-        "total_called_strikes": 31,
+        "date": "June 24, 2026",
+        "correct_strikes_pct": 96.0,
+        "incorrect_strikes_pct": 4.0,
+        "total_called_strikes": 25,
         "bad_calls_count": 1,
-        "home_plate_umpire": "Will Little"
+        "home_plate_umpire": "Ryan Additon"
     },
     "worst_calls_of_season": [
         {
@@ -56,17 +56,17 @@
         }
     ],
     "pitching_season_summary": {
-        "correct_balls_pct": 95.82914572864321,
-        "incorrect_balls_pct": 4.170854271356788,
-        "total_called_balls": 3980,
-        "bad_calls_count": 166
+        "correct_balls_pct": 95.85505088111194,
+        "incorrect_balls_pct": 4.144949118888064,
+        "total_called_balls": 4029,
+        "bad_calls_count": 167
     },
     "pitching_last_game_summary": {
-        "date": "June 23, 2026",
-        "correct_balls_pct": 91.42857142857143,
-        "incorrect_balls_pct": 8.57142857142857,
-        "total_called_balls": 35,
-        "bad_calls_count": 3
+        "date": "June 24, 2026",
+        "correct_balls_pct": 97.95918367346938,
+        "incorrect_balls_pct": 2.040816326530617,
+        "total_called_balls": 49,
+        "bad_calls_count": 1
     },
     "pitching_worst_calls_of_season": [],
     "abs_challenges": {
@@ -89,9 +89,9 @@
         },
         "opponents": {
             "batting": {
-                "total": 13,
+                "total": 14,
                 "successful": 3,
-                "failed": 10
+                "failed": 11
             },
             "pitching": {
                 "total": 0,
@@ -99,12 +99,36 @@
                 "failed": 0
             },
             "catching": {
-                "total": 32,
-                "successful": 24,
+                "total": 33,
+                "successful": 25,
                 "failed": 8
             }
         },
         "challenge_log": [
+            {
+                "date": "2026-06-24",
+                "date_formatted": "June 24, 2026",
+                "challenger": "Victor Caratini",
+                "role": "catching",
+                "team": "opponents",
+                "outcome": "overturned",
+                "result_desc": "Shohei Ohtani called out on strikes.",
+                "batter": "Shohei Ohtani",
+                "pitcher": "Anthony Banda",
+                "game_pk": 823691
+            },
+            {
+                "date": "2026-06-24",
+                "date_formatted": "June 24, 2026",
+                "challenger": "Byron Buxton",
+                "role": "batting",
+                "team": "opponents",
+                "outcome": "confirmed",
+                "result_desc": "Byron Buxton called out on strikes.",
+                "batter": "Byron Buxton",
+                "pitcher": "Shohei Ohtani",
+                "game_pk": 823691
+            },
             {
                 "date": "2026-06-23",
                 "date_formatted": "June 23, 2026",
@@ -320,30 +344,6 @@
                 "batter": "Nick Madrigal",
                 "pitcher": "Emmet Sheehan",
                 "game_pk": 823941
-            },
-            {
-                "date": "2026-06-06",
-                "date_formatted": "June 6, 2026",
-                "challenger": "Andy Pages",
-                "role": "batting",
-                "team": "dodgers",
-                "outcome": "confirmed",
-                "result_desc": "Andy Pages called out on strikes.",
-                "batter": "Andy Pages",
-                "pitcher": "Brent Suter",
-                "game_pk": 823942
-            },
-            {
-                "date": "2026-06-05",
-                "date_formatted": "June 5, 2026",
-                "challenger": "Logan O'Hoppe",
-                "role": "catching",
-                "team": "opponents",
-                "outcome": "overturned",
-                "result_desc": "Shohei Ohtani called out on strikes.",
-                "batter": "Shohei Ohtani",
-                "pitcher": "Reid Detmers",
-                "game_pk": 823943
             }
         ]
     }

@@ -1,13 +1,5 @@
 [
     {
-        "date":"Jun 13",
-        "opp_name":"Chicago White Sox",
-        "home_away":"away",
-        "result":"win",
-        "placement":"last",
-        "game_start":"7-1"
-    },
-    {
         "date":"Jun 14",
         "opp_name":"Chicago White Sox",
         "home_away":"away",
@@ -83,9 +75,9 @@
         "date":"Jun 24",
         "opp_name":"Minnesota Twins",
         "home_away":"away",
-        "result":"--",
-        "placement":"next",
-        "game_start":"Warmup"
+        "result":"win",
+        "placement":"last",
+        "game_start":"4-3"
     },
     {
         "date":"Jun 26",
@@ -158,5 +150,13 @@
         "result":"--",
         "placement":"next",
         "game_start":"7:10 PM"
+    },
+    {
+        "date":"Jul 5",
+        "opp_name":"San Diego Padres",
+        "home_away":"home",
+        "result":"--",
+        "placement":"next",
+        "game_start":"4:20 PM"
     }
 ]
