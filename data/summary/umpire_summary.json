@@ -1,17 +1,17 @@
 {
     "season_summary": {
-        "correct_strikes_pct": 91.49034038638455,
-        "incorrect_strikes_pct": 8.509659613615455,
-        "total_called_strikes": 2174,
-        "bad_calls_count": 185
+        "correct_strikes_pct": 91.45065939063211,
+        "incorrect_strikes_pct": 8.549340609367889,
+        "total_called_strikes": 2199,
+        "bad_calls_count": 188
     },
     "last_game_summary": {
-        "date": "June 24, 2026",
-        "correct_strikes_pct": 96.0,
-        "incorrect_strikes_pct": 4.0,
+        "date": "June 26, 2026",
+        "correct_strikes_pct": 88.0,
+        "incorrect_strikes_pct": 12.0,
         "total_called_strikes": 25,
-        "bad_calls_count": 1,
-        "home_plate_umpire": "Ryan Additon"
+        "bad_calls_count": 3,
+        "home_plate_umpire": "Adrian Johnson"
     },
     "worst_calls_of_season": [
         {
@@ -45,27 +45,27 @@
             "video_link": "https://baseballsavant.mlb.com/sporty-videos?playId=383d8667-b191-3bac-95e2-2468f77e7813"
         },
         {
-            "distance_inches": 3.3788422277,
-            "batter": "Mookie Betts",
-            "pitcher": "Tyler Callihan",
-            "pitch_type": "Slider",
-            "velocity_mph": 75.8,
-            "date": "2026-06-09",
-            "date_formatted": "June 9, 2026",
-            "video_link": "https://baseballsavant.mlb.com/sporty-videos?playId=f4c2b7bc-9b50-3756-8910-502ad527e7c2"
+            "distance_inches": 4.0185215262,
+            "batter": "Kyle Tucker",
+            "pitcher": "Walker Buehler",
+            "pitch_type": "4-Seam Fastball",
+            "velocity_mph": 93.6,
+            "date": "2026-06-26",
+            "date_formatted": "June 26, 2026",
+            "video_link": "https://baseballsavant.mlb.com/sporty-videos?playId=44dcbbd0-aa82-3b34-930d-b44c71bfe65c"
         }
     ],
     "pitching_season_summary": {
-        "correct_balls_pct": 95.85505088111194,
-        "incorrect_balls_pct": 4.144949118888064,
-        "total_called_balls": 4029,
-        "bad_calls_count": 167
+        "correct_balls_pct": 95.8904109589041,
+        "incorrect_balls_pct": 4.1095890410959015,
+        "total_called_balls": 4088,
+        "bad_calls_count": 168
     },
     "pitching_last_game_summary": {
-        "date": "June 24, 2026",
-        "correct_balls_pct": 97.95918367346938,
-        "incorrect_balls_pct": 2.040816326530617,
-        "total_called_balls": 49,
+        "date": "June 26, 2026",
+        "correct_balls_pct": 98.30508474576271,
+        "incorrect_balls_pct": 1.6949152542372872,
+        "total_called_balls": 59,
         "bad_calls_count": 1
     },
     "pitching_worst_calls_of_season": [],
@@ -82,8 +82,8 @@
                 "failed": 0
             },
             "catching": {
-                "total": 13,
-                "successful": 10,
+                "total": 14,
+                "successful": 11,
                 "failed": 3
             }
         },
@@ -105,6 +105,18 @@
             }
         },
         "challenge_log": [
+            {
+                "date": "2026-06-26",
+                "date_formatted": "June 26, 2026",
+                "challenger": "Dalton Rushing",
+                "role": "catching",
+                "team": "dodgers",
+                "outcome": "overturned",
+                "result_desc": "Fernando Tatis Jr. called out on strikes.",
+                "batter": "Fernando Tatis Jr.",
+                "pitcher": "Roki Sasaki",
+                "game_pk": 823285
+            },
             {
                 "date": "2026-06-24",
                 "date_formatted": "June 24, 2026",
@@ -331,18 +343,6 @@
                 "result_desc": "Alex Call called out on strikes.",
                 "batter": "Alex Call",
                 "pitcher": "Chase Silseth",
-                "game_pk": 823941
-            },
-            {
-                "date": "2026-06-07",
-                "date_formatted": "June 7, 2026",
-                "challenger": "Nick Madrigal",
-                "role": "batting",
-                "team": "opponents",
-                "outcome": "overturned",
-                "result_desc": "Nick Madrigal walks. Jo Adell to 2nd.",
-                "batter": "Nick Madrigal",
-                "pitcher": "Emmet Sheehan",
                 "game_pk": 823941
             }
         ]

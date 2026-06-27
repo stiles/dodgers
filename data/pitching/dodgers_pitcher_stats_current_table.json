@@ -12,7 +12,7 @@
         "ip_rounded":91,
         "gs":14,
         "gp":14,
-        "fetched":"2026-06-26"
+        "fetched":"2026-06-27"
     },
     {
         "player":"Justin Wrobleski",
@@ -27,7 +27,7 @@
         "ip_rounded":86,
         "gs":13,
         "gp":14,
-        "fetched":"2026-06-26"
+        "fetched":"2026-06-27"
     },
     {
         "player":"Shohei Ohtani",
@@ -42,22 +42,22 @@
         "ip_rounded":79,
         "gs":13,
         "gp":13,
-        "fetched":"2026-06-26"
+        "fetched":"2026-06-27"
     },
     {
         "player":"Roki Sasaki",
         "role":"SP",
         "position":"P",
-        "era":"4.76",
-        "whip":"1.29",
-        "k9":"9.26",
-        "bb9":"3.31",
-        "kbb":"2.80",
-        "ip":"68.0",
-        "ip_rounded":68,
-        "gs":13,
-        "gp":13,
-        "fetched":"2026-06-26"
+        "era":"4.88",
+        "whip":"1.33",
+        "k9":"9.00",
+        "bb9":"3.75",
+        "kbb":"2.40",
+        "ip":"72.0",
+        "ip_rounded":72,
+        "gs":14,
+        "gp":14,
+        "fetched":"2026-06-27"
     },
     {
         "player":"Emmet Sheehan",
@@ -72,7 +72,7 @@
         "ip_rounded":67,
         "gs":14,
         "gp":14,
-        "fetched":"2026-06-26"
+        "fetched":"2026-06-27"
     },
     {
         "player":"Tyler Glasnow",
@@ -87,7 +87,7 @@
         "ip_rounded":39,
         "gs":7,
         "gp":7,
-        "fetched":"2026-06-26"
+        "fetched":"2026-06-27"
     },
     {
         "player":"Tanner Scott",
@@ -102,7 +102,37 @@
         "ip_rounded":33,
         "gs":0,
         "gp":35,
-        "fetched":"2026-06-26"
+        "fetched":"2026-06-27"
+    },
+    {
+        "player":"Jack Dreyer",
+        "role":"RP",
+        "position":"P",
+        "era":"3.69",
+        "whip":"1.04",
+        "k9":"9.95",
+        "bb9":"2.27",
+        "kbb":"4.38",
+        "ip":"31.2",
+        "ip_rounded":31,
+        "gs":0,
+        "gp":31,
+        "fetched":"2026-06-27"
+    },
+    {
+        "player":"Edgardo Henriquez",
+        "role":"RP",
+        "position":"P",
+        "era":"2.84",
+        "whip":"0.95",
+        "k9":"9.38",
+        "bb9":"2.84",
+        "kbb":"3.30",
+        "ip":"31.2",
+        "ip_rounded":31,
+        "gs":0,
+        "gp":30,
+        "fetched":"2026-06-27"
     },
     {
         "player":"Will Klein",
@@ -117,36 +147,6 @@
         "ip_rounded":31,
         "gs":2,
         "gp":27,
-        "fetched":"2026-06-26"
-    },
-    {
-        "player":"Jack Dreyer",
-        "role":"RP",
-        "position":"P",
-        "era":"3.82",
-        "whip":"1.04",
-        "k9":"10.27",
-        "bb9":"2.05",
-        "kbb":"5.00",
-        "ip":"30.2",
-        "ip_rounded":30,
-        "gs":0,
-        "gp":30,
-        "fetched":"2026-06-26"
-    },
-    {
-        "player":"Edgardo Henriquez",
-        "role":"RP",
-        "position":"P",
-        "era":"2.93",
-        "whip":"0.98",
-        "k9":"9.39",
-        "bb9":"2.93",
-        "kbb":"3.20",
-        "ip":"30.2",
-        "ip_rounded":30,
-        "gs":0,
-        "gp":29,
-        "fetched":"2026-06-26"
+        "fetched":"2026-06-27"
     }
 ]
