@@ -1,17 +1,17 @@
 {
     "season_summary": {
-        "correct_strikes_pct": 91.50943396226415,
-        "incorrect_strikes_pct": 8.490566037735846,
-        "total_called_strikes": 2226,
-        "bad_calls_count": 189
+        "correct_strikes_pct": 91.37010676156584,
+        "incorrect_strikes_pct": 8.629893238434164,
+        "total_called_strikes": 2248,
+        "bad_calls_count": 194
     },
     "last_game_summary": {
-        "date": "June 27, 2026",
-        "correct_strikes_pct": 96.29629629629629,
-        "incorrect_strikes_pct": 3.7037037037037095,
-        "total_called_strikes": 27,
-        "bad_calls_count": 1,
-        "home_plate_umpire": "Quinn Wolcott"
+        "date": "June 28, 2026",
+        "correct_strikes_pct": 77.27272727272727,
+        "incorrect_strikes_pct": 22.727272727272734,
+        "total_called_strikes": 22,
+        "bad_calls_count": 5,
+        "home_plate_umpire": "Ramon De Jesus"
     },
     "worst_calls_of_season": [
         {
@@ -56,25 +56,25 @@
         }
     ],
     "pitching_season_summary": {
-        "correct_balls_pct": 95.91392649903288,
-        "incorrect_balls_pct": 4.086073500967117,
-        "total_called_balls": 4136,
-        "bad_calls_count": 169
+        "correct_balls_pct": 95.91104734576757,
+        "incorrect_balls_pct": 4.088952654232429,
+        "total_called_balls": 4182,
+        "bad_calls_count": 171
     },
     "pitching_last_game_summary": {
-        "date": "June 27, 2026",
-        "correct_balls_pct": 97.91666666666666,
-        "incorrect_balls_pct": 2.083333333333343,
-        "total_called_balls": 48,
-        "bad_calls_count": 1
+        "date": "June 28, 2026",
+        "correct_balls_pct": 95.65217391304348,
+        "incorrect_balls_pct": 4.347826086956516,
+        "total_called_balls": 46,
+        "bad_calls_count": 2
     },
     "pitching_worst_calls_of_season": [],
     "abs_challenges": {
         "dodgers": {
             "batting": {
-                "total": 32,
+                "total": 33,
                 "successful": 9,
-                "failed": 23
+                "failed": 24
             },
             "pitching": {
                 "total": 0,
@@ -105,6 +105,18 @@
             }
         },
         "challenge_log": [
+            {
+                "date": "2026-06-28",
+                "date_formatted": "June 28, 2026",
+                "challenger": "Kyle Tucker",
+                "role": "batting",
+                "team": "dodgers",
+                "outcome": "confirmed",
+                "result_desc": "Kyle Tucker called out on strikes.",
+                "batter": "Kyle Tucker",
+                "pitcher": "Wandy Peralta",
+                "game_pk": 823281
+            },
             {
                 "date": "2026-06-26",
                 "date_formatted": "June 26, 2026",
@@ -332,18 +344,6 @@
                 "batter": "Endy Rodr\u00edguez",
                 "pitcher": "Blake Treinen",
                 "game_pk": 823374
-            },
-            {
-                "date": "2026-06-07",
-                "date_formatted": "June 7, 2026",
-                "challenger": "Sebasti\u00e1n Rivero",
-                "role": "catching",
-                "team": "opponents",
-                "outcome": "overturned",
-                "result_desc": "Alex Call called out on strikes.",
-                "batter": "Alex Call",
-                "pitcher": "Chase Silseth",
-                "game_pk": 823941
             }
         ]
     }

@@ -1,9 +1,9 @@
 {
     "dodgers": {
         "batting": {
-            "total": 65,
+            "total": 66,
             "successful": 43,
-            "failed": 22
+            "failed": 23
         },
         "pitching": {
             "total": 5,
@@ -23,17 +23,53 @@
             "failed": 39
         },
         "pitching": {
-            "total": 4,
-            "successful": 1,
+            "total": 5,
+            "successful": 2,
             "failed": 3
         },
         "catching": {
-            "total": 101,
-            "successful": 60,
+            "total": 102,
+            "successful": 61,
             "failed": 41
         }
     },
     "challenge_log": [
+        {
+            "date": "2026-06-28",
+            "date_formatted": "June 28, 2026",
+            "challenger": "Freddy Fermin",
+            "role": "catching",
+            "team": "opponents",
+            "outcome": "overturned",
+            "result_desc": "Andy Pages flies out to center fielder Jackson Merrill.",
+            "batter": "Andy Pages",
+            "pitcher": "Wandy Peralta",
+            "game_pk": 823281
+        },
+        {
+            "date": "2026-06-28",
+            "date_formatted": "June 28, 2026",
+            "challenger": "Andy Pages",
+            "role": "batting",
+            "team": "dodgers",
+            "outcome": "confirmed",
+            "result_desc": "Andy Pages strikes out swinging.",
+            "batter": "Andy Pages",
+            "pitcher": "Michael King",
+            "game_pk": 823281
+        },
+        {
+            "date": "2026-06-28",
+            "date_formatted": "June 28, 2026",
+            "challenger": "Michael King",
+            "role": "pitching",
+            "team": "opponents",
+            "outcome": "overturned",
+            "result_desc": "Kyle Tucker strikes out swinging.",
+            "batter": "Kyle Tucker",
+            "pitcher": "Michael King",
+            "game_pk": 823281
+        },
         {
             "date": "2026-06-27",
             "date_formatted": "June 27, 2026",
@@ -97,13 +133,13 @@
         {
             "date": "2026-06-24",
             "date_formatted": "June 24, 2026",
-            "challenger": "Trevor Larnach",
+            "challenger": "Shohei Ohtani",
             "role": "batting",
-            "team": "opponents",
-            "outcome": "overturned",
-            "result_desc": "Trevor Larnach grounds out, first baseman Freddie Freeman to pitcher Shohei Ohtani.",
-            "batter": "Trevor Larnach",
-            "pitcher": "Shohei Ohtani",
+            "team": "dodgers",
+            "outcome": "confirmed",
+            "result_desc": "Victor Caratini challenged (pitch result), call on the field was overturned: Shohei Ohtani called out on strikes.",
+            "batter": "Shohei Ohtani",
+            "pitcher": "Anthony Banda",
             "game_pk": 823691
         },
         {
@@ -121,13 +157,13 @@
         {
             "date": "2026-06-24",
             "date_formatted": "June 24, 2026",
-            "challenger": "Shohei Ohtani",
+            "challenger": "Trevor Larnach",
             "role": "batting",
-            "team": "dodgers",
-            "outcome": "confirmed",
-            "result_desc": "Victor Caratini challenged (pitch result), call on the field was overturned: Shohei Ohtani called out on strikes.",
-            "batter": "Shohei Ohtani",
-            "pitcher": "Anthony Banda",
+            "team": "opponents",
+            "outcome": "overturned",
+            "result_desc": "Trevor Larnach grounds out, first baseman Freddie Freeman to pitcher Shohei Ohtani.",
+            "batter": "Trevor Larnach",
+            "pitcher": "Shohei Ohtani",
             "game_pk": 823691
         },
         {
@@ -217,30 +253,6 @@
         {
             "date": "2026-06-22",
             "date_formatted": "June 22, 2026",
-            "challenger": "Luke Keaschall",
-            "role": "batting",
-            "team": "opponents",
-            "outcome": "overturned",
-            "result_desc": "Luke Keaschall grounds out, shortstop Mookie Betts to first baseman Freddie Freeman.",
-            "batter": "Luke Keaschall",
-            "pitcher": "Eric Lauer",
-            "game_pk": 823692
-        },
-        {
-            "date": "2026-06-22",
-            "date_formatted": "June 22, 2026",
-            "challenger": "Victor Caratini",
-            "role": "catching",
-            "team": "opponents",
-            "outcome": "overturned",
-            "result_desc": "Freddie Freeman flies out to center fielder Byron Buxton.",
-            "batter": "Freddie Freeman",
-            "pitcher": "Zebby Matthews",
-            "game_pk": 823692
-        },
-        {
-            "date": "2026-06-22",
-            "date_formatted": "June 22, 2026",
             "challenger": "Andy Pages",
             "role": "batting",
             "team": "dodgers",
@@ -257,21 +269,9 @@
             "role": "batting",
             "team": "opponents",
             "outcome": "overturned",
-            "result_desc": "Luke Keaschall strikes out swinging.",
+            "result_desc": "Luke Keaschall grounds out, shortstop Mookie Betts to first baseman Freddie Freeman.",
             "batter": "Luke Keaschall",
             "pitcher": "Eric Lauer",
-            "game_pk": 823692
-        },
-        {
-            "date": "2026-06-22",
-            "date_formatted": "June 22, 2026",
-            "challenger": "Victor Caratini",
-            "role": "catching",
-            "team": "opponents",
-            "outcome": "overturned",
-            "result_desc": "Mookie Betts walks.",
-            "batter": "Mookie Betts",
-            "pitcher": "Zebby Matthews",
             "game_pk": 823692
         }
     ]
