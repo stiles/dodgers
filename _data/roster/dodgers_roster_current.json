@@ -820,10 +820,10 @@
     "height":"6' 0\"",
     "weight":"215",
     "dob":"10\/15\/1992",
-    "status":"IL-10",
+    "status":"ACTIVE",
     "is_minors":false,
-    "is_il":true,
-    "is_active_roster":false,
+    "is_il":false,
+    "is_active_roster":true,
     "is_40_man":true,
     "slug":"teoscar-hernandez"
   },
@@ -892,10 +892,10 @@
     "height":"5' 10\"",
     "weight":"200",
     "dob":"02\/23\/1998",
-    "status":"ACTIVE",
-    "is_minors":false,
+    "status":"MINORS",
+    "is_minors":true,
     "is_il":false,
-    "is_active_roster":true,
+    "is_active_roster":false,
     "is_40_man":true,
     "slug":"ryan-ward"
   }
