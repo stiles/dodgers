@@ -1,8 +1,8 @@
 {
     "dodgers": {
         "batting": {
-            "total": 66,
-            "successful": 43,
+            "total": 68,
+            "successful": 45,
             "failed": 23
         },
         "pitching": {
@@ -18,9 +18,9 @@
     },
     "opponents": {
         "batting": {
-            "total": 77,
+            "total": 78,
             "successful": 38,
-            "failed": 39
+            "failed": 40
         },
         "pitching": {
             "total": 5,
@@ -34,6 +34,42 @@
         }
     },
     "challenge_log": [
+        {
+            "date": "2026-06-29",
+            "date_formatted": "June 29, 2026",
+            "challenger": "Alex Freeland",
+            "role": "batting",
+            "team": "dodgers",
+            "outcome": "overturned",
+            "result_desc": "Alex Freeland strikes out swinging.",
+            "batter": "Alex Freeland",
+            "pitcher": "Kade Morris",
+            "game_pk": 824986
+        },
+        {
+            "date": "2026-06-29",
+            "date_formatted": "June 29, 2026",
+            "challenger": "Kyle Tucker",
+            "role": "batting",
+            "team": "dodgers",
+            "outcome": "overturned",
+            "result_desc": "Kyle Tucker walks.",
+            "batter": "Kyle Tucker",
+            "pitcher": "Kade Morris",
+            "game_pk": 824986
+        },
+        {
+            "date": "2026-06-29",
+            "date_formatted": "June 29, 2026",
+            "challenger": "Jeff McNeil",
+            "role": "batting",
+            "team": "opponents",
+            "outcome": "confirmed",
+            "result_desc": "Jeff McNeil flies out to center fielder Andy Pages.",
+            "batter": "Jeff McNeil",
+            "pitcher": "Jonathan Hern\u00e1ndez",
+            "game_pk": 824986
+        },
         {
             "date": "2026-06-28",
             "date_formatted": "June 28, 2026",
@@ -169,18 +205,6 @@
         {
             "date": "2026-06-24",
             "date_formatted": "June 24, 2026",
-            "challenger": "Dalton Rushing",
-            "role": "catching",
-            "team": "dodgers",
-            "outcome": "overturned",
-            "result_desc": "Brooks Lee walks.",
-            "batter": "Brooks Lee",
-            "pitcher": "Kyle Hurt",
-            "game_pk": 823691
-        },
-        {
-            "date": "2026-06-24",
-            "date_formatted": "June 24, 2026",
             "challenger": "Alex Jackson",
             "role": "catching",
             "team": "opponents",
@@ -188,6 +212,18 @@
             "result_desc": "Shohei Ohtani singles on a line drive to right fielder Kody Clemens.",
             "batter": "Shohei Ohtani",
             "pitcher": "Andrew Morris",
+            "game_pk": 823691
+        },
+        {
+            "date": "2026-06-24",
+            "date_formatted": "June 24, 2026",
+            "challenger": "Dalton Rushing",
+            "role": "catching",
+            "team": "dodgers",
+            "outcome": "overturned",
+            "result_desc": "Brooks Lee walks.",
+            "batter": "Brooks Lee",
+            "pitcher": "Kyle Hurt",
             "game_pk": 823691
         },
         {
@@ -237,42 +273,6 @@
             "batter": "Victor Caratini",
             "pitcher": "Justin Wrobleski",
             "game_pk": 823690
-        },
-        {
-            "date": "2026-06-22",
-            "date_formatted": "June 22, 2026",
-            "challenger": "Victor Caratini",
-            "role": "catching",
-            "team": "opponents",
-            "outcome": "overturned",
-            "result_desc": "Mookie Betts strikes out swinging.",
-            "batter": "Mookie Betts",
-            "pitcher": "Zebby Matthews",
-            "game_pk": 823692
-        },
-        {
-            "date": "2026-06-22",
-            "date_formatted": "June 22, 2026",
-            "challenger": "Andy Pages",
-            "role": "batting",
-            "team": "dodgers",
-            "outcome": "overturned",
-            "result_desc": "Andy Pages lines out to right fielder Kody Clemens.",
-            "batter": "Andy Pages",
-            "pitcher": "Zebby Matthews",
-            "game_pk": 823692
-        },
-        {
-            "date": "2026-06-22",
-            "date_formatted": "June 22, 2026",
-            "challenger": "Luke Keaschall",
-            "role": "batting",
-            "team": "opponents",
-            "outcome": "overturned",
-            "result_desc": "Luke Keaschall grounds out, shortstop Mookie Betts to first baseman Freddie Freeman.",
-            "batter": "Luke Keaschall",
-            "pitcher": "Eric Lauer",
-            "game_pk": 823692
         }
     ]
 }

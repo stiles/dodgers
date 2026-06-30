@@ -1,13 +1,5 @@
 [
     {
-        "date":"Jun 17",
-        "opp_name":"Tampa Bay Rays",
-        "home_away":"home",
-        "result":"win",
-        "placement":"last",
-        "game_start":"5-4"
-    },
-    {
         "date":"Jun 19",
         "opp_name":"Baltimore Orioles",
         "home_away":"home",
@@ -83,9 +75,9 @@
         "date":"Jun 29",
         "opp_name":"Athletics",
         "home_away":"away",
-        "result":"--",
-        "placement":"next",
-        "game_start":"6:40 PM"
+        "result":"win",
+        "placement":"last",
+        "game_start":"9-4"
     },
     {
         "date":"Jun 30",
@@ -154,6 +146,14 @@
     {
         "date":"Jul 8",
         "opp_name":"Colorado Rockies",
+        "home_away":"home",
+        "result":"--",
+        "placement":"next",
+        "game_start":"7:10 PM"
+    },
+    {
+        "date":"Jul 10",
+        "opp_name":"Arizona Diamondbacks",
         "home_away":"home",
         "result":"--",
         "placement":"next",

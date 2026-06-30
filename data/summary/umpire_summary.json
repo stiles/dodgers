@@ -1,17 +1,17 @@
 {
     "season_summary": {
-        "correct_strikes_pct": 91.37010676156584,
-        "incorrect_strikes_pct": 8.629893238434164,
-        "total_called_strikes": 2248,
-        "bad_calls_count": 194
+        "correct_strikes_pct": 91.37323943661971,
+        "incorrect_strikes_pct": 8.626760563380287,
+        "total_called_strikes": 2272,
+        "bad_calls_count": 196
     },
     "last_game_summary": {
-        "date": "June 28, 2026",
-        "correct_strikes_pct": 77.27272727272727,
-        "incorrect_strikes_pct": 22.727272727272734,
-        "total_called_strikes": 22,
-        "bad_calls_count": 5,
-        "home_plate_umpire": "Ramon De Jesus"
+        "date": "June 29, 2026",
+        "correct_strikes_pct": 91.66666666666666,
+        "incorrect_strikes_pct": 8.333333333333343,
+        "total_called_strikes": 24,
+        "bad_calls_count": 2,
+        "home_plate_umpire": "Manny Gonzalez"
     },
     "worst_calls_of_season": [
         {
@@ -56,17 +56,17 @@
         }
     ],
     "pitching_season_summary": {
-        "correct_balls_pct": 95.91104734576757,
-        "incorrect_balls_pct": 4.088952654232429,
-        "total_called_balls": 4182,
-        "bad_calls_count": 171
+        "correct_balls_pct": 95.88846880907373,
+        "incorrect_balls_pct": 4.1115311909262715,
+        "total_called_balls": 4232,
+        "bad_calls_count": 174
     },
     "pitching_last_game_summary": {
-        "date": "June 28, 2026",
-        "correct_balls_pct": 95.65217391304348,
-        "incorrect_balls_pct": 4.347826086956516,
-        "total_called_balls": 46,
-        "bad_calls_count": 2
+        "date": "June 29, 2026",
+        "correct_balls_pct": 94.0,
+        "incorrect_balls_pct": 6.0,
+        "total_called_balls": 50,
+        "bad_calls_count": 3
     },
     "pitching_worst_calls_of_season": [],
     "abs_challenges": {
@@ -99,12 +99,24 @@
                 "failed": 0
             },
             "catching": {
-                "total": 33,
-                "successful": 25,
+                "total": 34,
+                "successful": 26,
                 "failed": 8
             }
         },
         "challenge_log": [
+            {
+                "date": "2026-06-29",
+                "date_formatted": "June 29, 2026",
+                "challenger": "Shea Langeliers",
+                "role": "catching",
+                "team": "opponents",
+                "outcome": "overturned",
+                "result_desc": "Shohei Ohtani called out on strikes.",
+                "batter": "Shohei Ohtani",
+                "pitcher": "Gage Jump",
+                "game_pk": 824986
+            },
             {
                 "date": "2026-06-28",
                 "date_formatted": "June 28, 2026",
@@ -331,18 +343,6 @@
                 "result_desc": "Max Muncy walks. Mookie Betts to 2nd.",
                 "batter": "Max Muncy",
                 "pitcher": "Brandan Bidois",
-                "game_pk": 823374
-            },
-            {
-                "date": "2026-06-09",
-                "date_formatted": "June 9, 2026",
-                "challenger": "Dalton Rushing",
-                "role": "catching",
-                "team": "dodgers",
-                "outcome": "overturned",
-                "result_desc": "Endy Rodr\u00edguez called out on strikes.",
-                "batter": "Endy Rodr\u00edguez",
-                "pitcher": "Blake Treinen",
                 "game_pk": 823374
             }
         ]
