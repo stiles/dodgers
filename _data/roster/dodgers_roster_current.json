@@ -198,24 +198,6 @@
     "slug":"edgardo-henriquez"
   },
   {
-    "player_id":"642546",
-    "thumb_url":"https:\/\/img.mlbstatic.com\/mlb-photos\/image\/upload\/d_people:generic:headshot:silo:current.png\/r_max\/q_auto:best\/v1\/people\/642546\/headshot\/silo\/current",
-    "name":"Jonathan Hernández",
-    "player_url":"\/player\/642546",
-    "jersey":"29",
-    "position_group":"Pitchers",
-    "bat_throw":"R\/R",
-    "height":"6' 3\"",
-    "weight":"190",
-    "dob":"07\/06\/1996",
-    "status":"ACTIVE",
-    "is_minors":false,
-    "is_il":false,
-    "is_active_roster":true,
-    "is_40_man":true,
-    "slug":"jonathan-hernandez"
-  },
-  {
     "player_id":"669165",
     "thumb_url":"https:\/\/img.mlbstatic.com\/mlb-photos\/image\/upload\/d_people:generic:headshot:silo:current.png\/r_max\/q_auto:best\/v1\/people\/669165\/headshot\/silo\/current",
     "name":"Kyle Hurt",
@@ -352,10 +334,10 @@
     "height":"6' 4\"",
     "weight":"220",
     "dob":"01\/25\/1995",
-    "status":"MINORS",
-    "is_minors":true,
+    "status":"ACTIVE",
+    "is_minors":false,
     "is_il":false,
-    "is_active_roster":false,
+    "is_active_roster":true,
     "is_40_man":true,
     "slug":"wyatt-mills"
   },
