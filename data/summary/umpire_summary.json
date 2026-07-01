@@ -1,17 +1,17 @@
 {
     "season_summary": {
-        "correct_strikes_pct": 91.37323943661971,
-        "incorrect_strikes_pct": 8.626760563380287,
-        "total_called_strikes": 2272,
-        "bad_calls_count": 196
+        "correct_strikes_pct": 91.38609532138172,
+        "incorrect_strikes_pct": 8.613904678618283,
+        "total_called_strikes": 2287,
+        "bad_calls_count": 197
     },
     "last_game_summary": {
-        "date": "June 29, 2026",
-        "correct_strikes_pct": 91.66666666666666,
-        "incorrect_strikes_pct": 8.333333333333343,
-        "total_called_strikes": 24,
-        "bad_calls_count": 2,
-        "home_plate_umpire": "Manny Gonzalez"
+        "date": "June 30, 2026",
+        "correct_strikes_pct": 93.33333333333333,
+        "incorrect_strikes_pct": 6.666666666666671,
+        "total_called_strikes": 15,
+        "bad_calls_count": 1,
+        "home_plate_umpire": "Steven Jaschinski"
     },
     "worst_calls_of_season": [
         {
@@ -56,24 +56,24 @@
         }
     ],
     "pitching_season_summary": {
-        "correct_balls_pct": 95.88846880907373,
-        "incorrect_balls_pct": 4.1115311909262715,
-        "total_called_balls": 4232,
-        "bad_calls_count": 174
+        "correct_balls_pct": 95.90547496490407,
+        "incorrect_balls_pct": 4.094525035095927,
+        "total_called_balls": 4274,
+        "bad_calls_count": 175
     },
     "pitching_last_game_summary": {
-        "date": "June 29, 2026",
-        "correct_balls_pct": 94.0,
-        "incorrect_balls_pct": 6.0,
-        "total_called_balls": 50,
-        "bad_calls_count": 3
+        "date": "June 30, 2026",
+        "correct_balls_pct": 97.61904761904762,
+        "incorrect_balls_pct": 2.3809523809523796,
+        "total_called_balls": 42,
+        "bad_calls_count": 1
     },
     "pitching_worst_calls_of_season": [],
     "abs_challenges": {
         "dodgers": {
             "batting": {
-                "total": 33,
-                "successful": 9,
+                "total": 34,
+                "successful": 10,
                 "failed": 24
             },
             "pitching": {
@@ -89,9 +89,9 @@
         },
         "opponents": {
             "batting": {
-                "total": 14,
+                "total": 15,
                 "successful": 3,
-                "failed": 11
+                "failed": 12
             },
             "pitching": {
                 "total": 0,
@@ -99,12 +99,48 @@
                 "failed": 0
             },
             "catching": {
-                "total": 34,
-                "successful": 26,
+                "total": 35,
+                "successful": 27,
                 "failed": 8
             }
         },
         "challenge_log": [
+            {
+                "date": "2026-06-30",
+                "date_formatted": "June 30, 2026",
+                "challenger": "Freddie Freeman",
+                "role": "batting",
+                "team": "dodgers",
+                "outcome": "overturned",
+                "result_desc": "Freddie Freeman walks. Andy Pages to 2nd.",
+                "batter": "Freddie Freeman",
+                "pitcher": "Jeffrey Springs",
+                "game_pk": 824984
+            },
+            {
+                "date": "2026-06-30",
+                "date_formatted": "June 30, 2026",
+                "challenger": "Shea Langeliers",
+                "role": "catching",
+                "team": "opponents",
+                "outcome": "overturned",
+                "result_desc": "Dalton Rushing called out on strikes.",
+                "batter": "Dalton Rushing",
+                "pitcher": "Jeffrey Springs",
+                "game_pk": 824984
+            },
+            {
+                "date": "2026-06-30",
+                "date_formatted": "June 30, 2026",
+                "challenger": "Carlos Cortes",
+                "role": "batting",
+                "team": "opponents",
+                "outcome": "confirmed",
+                "result_desc": "Carlos Cortes called out on strikes.",
+                "batter": "Carlos Cortes",
+                "pitcher": "Wyatt Mills",
+                "game_pk": 824984
+            },
             {
                 "date": "2026-06-29",
                 "date_formatted": "June 29, 2026",
@@ -308,42 +344,6 @@
                 "batter": "Andy Pages",
                 "pitcher": "Joe Rock",
                 "game_pk": 824587
-            },
-            {
-                "date": "2026-06-11",
-                "date_formatted": "June 11, 2026",
-                "challenger": "Jake Mangum",
-                "role": "batting",
-                "team": "opponents",
-                "outcome": "confirmed",
-                "result_desc": "Jake Mangum called out on strikes.",
-                "batter": "Jake Mangum",
-                "pitcher": "Will Klein",
-                "game_pk": 823371
-            },
-            {
-                "date": "2026-06-10",
-                "date_formatted": "June 10, 2026",
-                "challenger": "Alex Call",
-                "role": "batting",
-                "team": "dodgers",
-                "outcome": "confirmed",
-                "result_desc": "Alex Call called out on strikes.",
-                "batter": "Alex Call",
-                "pitcher": "Evan Sisk",
-                "game_pk": 823372
-            },
-            {
-                "date": "2026-06-09",
-                "date_formatted": "June 9, 2026",
-                "challenger": "Henry Davis",
-                "role": "catching",
-                "team": "opponents",
-                "outcome": "confirmed",
-                "result_desc": "Max Muncy walks. Mookie Betts to 2nd.",
-                "batter": "Max Muncy",
-                "pitcher": "Brandan Bidois",
-                "game_pk": 823374
             }
         ]
     }
