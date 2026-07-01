@@ -26,7 +26,7 @@
     {
         "stat_label":"Games up\/back",
         "stat":"games_up_back",
-        "value":12,
+        "value":12.5,
         "category":"standings",
         "context_value":"1st",
         "context_value_label":"Division rank"
@@ -52,7 +52,7 @@
         "stat":"runs",
         "value":461,
         "category":"standings",
-        "context_value":"1st",
+        "context_value":"2nd",
         "context_value_label":"League rank"
     },
     {
@@ -84,7 +84,7 @@
         "stat":"home_runs",
         "value":118,
         "category":"batting",
-        "context_value":"2nd",
+        "context_value":"3rd",
         "context_value_label":"League rank"
     },
     {
@@ -148,7 +148,7 @@
         "stat":"strikeouts",
         "value":"759",
         "category":"pitching",
-        "context_value":"7th",
+        "context_value":"8th",
         "context_value_label":"League rank"
     },
     {
@@ -156,7 +156,7 @@
         "stat":"walks",
         "value":248,
         "category":"pitching",
-        "context_value":"25th",
+        "context_value":"27th",
         "context_value_label":"League rank"
     },
     {
@@ -164,7 +164,7 @@
         "stat":"era",
         "value":"3.43",
         "category":"pitching",
-        "context_value":"4th",
+        "context_value":"3rd",
         "context_value_label":"League rank"
     },
     {
@@ -194,7 +194,7 @@
     {
         "stat_label":"Last updated",
         "stat":"update_time",
-        "value":"July 1, 2026, 8:58 AM PT",
+        "value":"July 1, 2026, 4:38 PM PT",
         "category":"summary",
         "context_value":"",
         "context_value_label":""
