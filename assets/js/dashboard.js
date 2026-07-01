@@ -610,12 +610,14 @@ document.addEventListener('DOMContentLoaded', function() {
         {
           elementId: 'cumulative-doubles-chart',
           dataField: '2b_cum',
-          yAxisLabel: 'Cumulative doubles'
+          yAxisLabel: 'Cumulative doubles',
+          pastAnnotationY: 100
         },
         {
           elementId: 'cumulative-homers-chart',
           dataField: 'hr_cum',
-          yAxisLabel: 'Cumulative homers'
+          yAxisLabel: 'Cumulative homers',
+          pastAnnotationY: 50
         }
       ];
     
@@ -739,7 +741,7 @@ document.addEventListener('DOMContentLoaded', function() {
         svg
           .append('text')
           .attr('x', isMobile ? xScale(90) : xScale(90))
-          .attr('y', yScale(100))
+          .attr('y', yScale(config.pastAnnotationY))
           .attr('class', 'anno')
           .text(`Past: 1958-${currentYear - 1}`)
           .attr('text-anchor', 'start')
@@ -802,12 +804,14 @@ document.addEventListener('DOMContentLoaded', function() {
     {
       elementId: 'cumulative-strikeouts-chart',
       dataField: 'so_cum',
-      yAxisLabel: 'Cumulative strikeouts'
+      yAxisLabel: 'Cumulative strikeouts',
+      pastAnnotationY: 600
     },
     {
       elementId: 'cumulative-hits-chart',
       dataField: 'h_cum',
-      yAxisLabel: 'Cumulative hits'
+      yAxisLabel: 'Cumulative hits',
+      pastAnnotationY: 1200
     }
   ];
 
@@ -929,7 +933,7 @@ document.addEventListener('DOMContentLoaded', function() {
     svg
       .append('text')
       .attr('x', isMobile ? xScale(110) : xScale(110))
-      .attr('y', yScale(600))
+      .attr('y', yScale(config.pastAnnotationY))
       .attr('class', 'anno')
       .text(`Past: 1958-${currentYear - 1}`)
       .attr('text-anchor', 'start')
