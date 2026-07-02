@@ -648,24 +648,6 @@
     "slug":"mookie-betts"
   },
   {
-    "player_id":"669242",
-    "thumb_url":"https:\/\/img.mlbstatic.com\/mlb-photos\/image\/upload\/d_people:generic:headshot:silo:current.png\/r_max\/q_auto:best\/v1\/people\/669242\/headshot\/silo\/current",
-    "name":"Tommy Edman",
-    "player_url":"\/player\/669242",
-    "jersey":"25",
-    "position_group":"Infielders",
-    "bat_throw":"S\/R",
-    "height":"5' 10\"",
-    "weight":"193",
-    "dob":"05\/09\/1995",
-    "status":"ACTIVE",
-    "is_minors":false,
-    "is_il":false,
-    "is_active_roster":true,
-    "is_40_man":true,
-    "slug":"tommy-edman"
-  },
-  {
     "player_id":"690976",
     "thumb_url":"https:\/\/img.mlbstatic.com\/mlb-photos\/image\/upload\/d_people:generic:headshot:silo:current.png\/r_max\/q_auto:best\/v1\/people\/690976\/headshot\/silo\/current",
     "name":"Alex Freeland",
@@ -790,6 +772,24 @@
     "is_active_roster":true,
     "is_40_man":true,
     "slug":"alex-call"
+  },
+  {
+    "player_id":"669242",
+    "thumb_url":"https:\/\/img.mlbstatic.com\/mlb-photos\/image\/upload\/d_people:generic:headshot:silo:current.png\/r_max\/q_auto:best\/v1\/people\/669242\/headshot\/silo\/current",
+    "name":"Tommy Edman",
+    "player_url":"\/player\/669242",
+    "jersey":"25",
+    "position_group":"Outfielders",
+    "bat_throw":"S\/R",
+    "height":"5' 10\"",
+    "weight":"193",
+    "dob":"05\/09\/1995",
+    "status":"ACTIVE",
+    "is_minors":false,
+    "is_il":false,
+    "is_active_roster":true,
+    "is_40_man":true,
+    "slug":"tommy-edman"
   },
   {
     "player_id":"606192",
