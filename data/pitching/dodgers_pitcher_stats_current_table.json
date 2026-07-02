@@ -12,7 +12,7 @@
         "ip_rounded":97,
         "gs":15,
         "gp":15,
-        "fetched":"2026-07-01"
+        "fetched":"2026-07-02"
     },
     {
         "player":"Justin Wrobleski",
@@ -27,7 +27,7 @@
         "ip_rounded":93,
         "gs":14,
         "gp":15,
-        "fetched":"2026-07-01"
+        "fetched":"2026-07-02"
     },
     {
         "player":"Shohei Ohtani",
@@ -42,7 +42,7 @@
         "ip_rounded":79,
         "gs":13,
         "gp":13,
-        "fetched":"2026-07-01"
+        "fetched":"2026-07-02"
     },
     {
         "player":"Emmet Sheehan",
@@ -57,7 +57,7 @@
         "ip_rounded":72,
         "gs":15,
         "gp":15,
-        "fetched":"2026-07-01"
+        "fetched":"2026-07-02"
     },
     {
         "player":"Roki Sasaki",
@@ -72,7 +72,7 @@
         "ip_rounded":72,
         "gs":14,
         "gp":14,
-        "fetched":"2026-07-01"
+        "fetched":"2026-07-02"
     },
     {
         "player":"Tyler Glasnow",
@@ -87,7 +87,22 @@
         "ip_rounded":39,
         "gs":7,
         "gp":7,
-        "fetched":"2026-07-01"
+        "fetched":"2026-07-02"
+    },
+    {
+        "player":"Jack Dreyer",
+        "role":"SP",
+        "position":"P",
+        "era":"3.41",
+        "whip":"1.05",
+        "k9":"10.49",
+        "bb9":"2.36",
+        "kbb":"4.44",
+        "ip":"34.1",
+        "ip_rounded":34,
+        "gs":1,
+        "gp":34,
+        "fetched":"2026-07-02"
     },
     {
         "player":"Eric Lauer",
@@ -102,7 +117,7 @@
         "ip_rounded":34,
         "gs":5,
         "gp":6,
-        "fetched":"2026-07-01"
+        "fetched":"2026-07-02"
     },
     {
         "player":"Tanner Scott",
@@ -117,22 +132,7 @@
         "ip_rounded":34,
         "gs":0,
         "gp":36,
-        "fetched":"2026-07-01"
-    },
-    {
-        "player":"Jack Dreyer",
-        "role":"RP",
-        "position":"P",
-        "era":"3.51",
-        "whip":"1.08",
-        "k9":"9.99",
-        "bb9":"2.43",
-        "kbb":"4.11",
-        "ip":"33.1",
-        "ip_rounded":33,
-        "gs":0,
-        "gp":33,
-        "fetched":"2026-07-01"
+        "fetched":"2026-07-02"
     },
     {
         "player":"Edgardo Henriquez",
@@ -147,6 +147,6 @@
         "ip_rounded":32,
         "gs":0,
         "gp":31,
-        "fetched":"2026-07-01"
+        "fetched":"2026-07-02"
     }
 ]

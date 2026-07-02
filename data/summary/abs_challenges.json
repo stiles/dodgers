@@ -1,8 +1,8 @@
 {
     "dodgers": {
         "batting": {
-            "total": 68,
-            "successful": 45,
+            "total": 69,
+            "successful": 46,
             "failed": 23
         },
         "pitching": {
@@ -28,12 +28,36 @@
             "failed": 3
         },
         "catching": {
-            "total": 102,
-            "successful": 61,
+            "total": 103,
+            "successful": 62,
             "failed": 41
         }
     },
     "challenge_log": [
+        {
+            "date": "2026-07-01",
+            "date_formatted": "July 1, 2026",
+            "challenger": "Jonah Heim",
+            "role": "catching",
+            "team": "opponents",
+            "outcome": "overturned",
+            "result_desc": "Tommy Edman strikes out swinging.",
+            "batter": "Tommy Edman",
+            "pitcher": "Hogan Harris",
+            "game_pk": 824985
+        },
+        {
+            "date": "2026-07-01",
+            "date_formatted": "July 1, 2026",
+            "challenger": "Kyle Tucker",
+            "role": "batting",
+            "team": "dodgers",
+            "outcome": "overturned",
+            "result_desc": "Kyle Tucker walks.",
+            "batter": "Kyle Tucker",
+            "pitcher": "Luis Medina",
+            "game_pk": 824985
+        },
         {
             "date": "2026-06-29",
             "date_formatted": "June 29, 2026",
@@ -169,42 +193,6 @@
         {
             "date": "2026-06-24",
             "date_formatted": "June 24, 2026",
-            "challenger": "Shohei Ohtani",
-            "role": "batting",
-            "team": "dodgers",
-            "outcome": "confirmed",
-            "result_desc": "Victor Caratini challenged (pitch result), call on the field was overturned: Shohei Ohtani called out on strikes.",
-            "batter": "Shohei Ohtani",
-            "pitcher": "Anthony Banda",
-            "game_pk": 823691
-        },
-        {
-            "date": "2026-06-24",
-            "date_formatted": "June 24, 2026",
-            "challenger": "Shohei Ohtani",
-            "role": "pitching",
-            "team": "dodgers",
-            "outcome": "overturned",
-            "result_desc": "Ryan Kreidler singles on a ground ball to center fielder Andy Pages. Brooks Lee scores. Tristan Gray scores. Ryan Kreidler out at 2nd on the throw, center fielder Andy Pages to second baseman Alex Freeland.",
-            "batter": "Ryan Kreidler",
-            "pitcher": "Shohei Ohtani",
-            "game_pk": 823691
-        },
-        {
-            "date": "2026-06-24",
-            "date_formatted": "June 24, 2026",
-            "challenger": "Trevor Larnach",
-            "role": "batting",
-            "team": "opponents",
-            "outcome": "overturned",
-            "result_desc": "Trevor Larnach grounds out, first baseman Freddie Freeman to pitcher Shohei Ohtani.",
-            "batter": "Trevor Larnach",
-            "pitcher": "Shohei Ohtani",
-            "game_pk": 823691
-        },
-        {
-            "date": "2026-06-24",
-            "date_formatted": "June 24, 2026",
             "challenger": "Alex Jackson",
             "role": "catching",
             "team": "opponents",
@@ -227,28 +215,40 @@
             "game_pk": 823691
         },
         {
-            "date": "2026-06-23",
-            "date_formatted": "June 23, 2026",
-            "challenger": "Mookie Betts",
+            "date": "2026-06-24",
+            "date_formatted": "June 24, 2026",
+            "challenger": "Shohei Ohtani",
             "role": "batting",
             "team": "dodgers",
             "outcome": "confirmed",
-            "result_desc": "Mookie Betts singles on a line drive to right fielder Kyler Fedko. Andy Pages to 2nd.",
-            "batter": "Mookie Betts",
-            "pitcher": "Taylor Rogers",
-            "game_pk": 823690
+            "result_desc": "Victor Caratini challenged (pitch result), call on the field was overturned: Shohei Ohtani called out on strikes.",
+            "batter": "Shohei Ohtani",
+            "pitcher": "Anthony Banda",
+            "game_pk": 823691
         },
         {
-            "date": "2026-06-23",
-            "date_formatted": "June 23, 2026",
-            "challenger": "Victor Caratini",
-            "role": "catching",
+            "date": "2026-06-24",
+            "date_formatted": "June 24, 2026",
+            "challenger": "Trevor Larnach",
+            "role": "batting",
             "team": "opponents",
-            "outcome": "confirmed",
-            "result_desc": "Shohei Ohtani lines out sharply to center fielder Byron Buxton.",
-            "batter": "Shohei Ohtani",
-            "pitcher": "Austin Voth",
-            "game_pk": 823690
+            "outcome": "overturned",
+            "result_desc": "Trevor Larnach grounds out, first baseman Freddie Freeman to pitcher Shohei Ohtani.",
+            "batter": "Trevor Larnach",
+            "pitcher": "Shohei Ohtani",
+            "game_pk": 823691
+        },
+        {
+            "date": "2026-06-24",
+            "date_formatted": "June 24, 2026",
+            "challenger": "Shohei Ohtani",
+            "role": "pitching",
+            "team": "dodgers",
+            "outcome": "overturned",
+            "result_desc": "Ryan Kreidler singles on a ground ball to center fielder Andy Pages. Brooks Lee scores. Tristan Gray scores. Ryan Kreidler out at 2nd on the throw, center fielder Andy Pages to second baseman Alex Freeland.",
+            "batter": "Ryan Kreidler",
+            "pitcher": "Shohei Ohtani",
+            "game_pk": 823691
         },
         {
             "date": "2026-06-23",
