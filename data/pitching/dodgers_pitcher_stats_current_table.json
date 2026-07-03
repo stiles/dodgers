@@ -45,6 +45,21 @@
         "fetched":"2026-07-03"
     },
     {
+        "player":"Roki Sasaki",
+        "role":"SP",
+        "position":"P",
+        "era":"5.40",
+        "whip":"1.40",
+        "k9":"9.00",
+        "bb9":"3.84",
+        "kbb":"2.34",
+        "ip":"75.0",
+        "ip_rounded":75,
+        "gs":15,
+        "gp":15,
+        "fetched":"2026-07-03"
+    },
+    {
         "player":"Emmet Sheehan",
         "role":"SP",
         "position":"P",
@@ -57,21 +72,6 @@
         "ip_rounded":72,
         "gs":15,
         "gp":15,
-        "fetched":"2026-07-03"
-    },
-    {
-        "player":"Roki Sasaki",
-        "role":"SP",
-        "position":"P",
-        "era":"4.88",
-        "whip":"1.33",
-        "k9":"9.00",
-        "bb9":"3.75",
-        "kbb":"2.40",
-        "ip":"72.0",
-        "ip_rounded":72,
-        "gs":14,
-        "gp":14,
         "fetched":"2026-07-03"
     },
     {
@@ -90,6 +90,21 @@
         "fetched":"2026-07-03"
     },
     {
+        "player":"Tanner Scott",
+        "role":"RP",
+        "position":"P",
+        "era":"2.08",
+        "whip":"0.72",
+        "k9":"10.90",
+        "bb9":"0.78",
+        "kbb":"14.00",
+        "ip":"34.2",
+        "ip_rounded":34,
+        "gs":0,
+        "gp":37,
+        "fetched":"2026-07-03"
+    },
+    {
         "player":"Jack Dreyer",
         "role":"SP",
         "position":"P",
@@ -105,6 +120,21 @@
         "fetched":"2026-07-03"
     },
     {
+        "player":"Will Klein",
+        "role":"SP",
+        "position":"P",
+        "era":"2.36",
+        "whip":"1.37",
+        "k9":"10.22",
+        "bb9":"3.41",
+        "kbb":"3.00",
+        "ip":"34.1",
+        "ip_rounded":34,
+        "gs":2,
+        "gp":29,
+        "fetched":"2026-07-03"
+    },
+    {
         "player":"Eric Lauer",
         "role":"SP",
         "position":"P",
@@ -117,36 +147,6 @@
         "ip_rounded":34,
         "gs":5,
         "gp":6,
-        "fetched":"2026-07-03"
-    },
-    {
-        "player":"Tanner Scott",
-        "role":"RP",
-        "position":"P",
-        "era":"2.10",
-        "whip":"0.70",
-        "k9":"11.01",
-        "bb9":"0.79",
-        "kbb":"14.00",
-        "ip":"34.1",
-        "ip_rounded":34,
-        "gs":0,
-        "gp":36,
-        "fetched":"2026-07-03"
-    },
-    {
-        "player":"Edgardo Henriquez",
-        "role":"RP",
-        "position":"P",
-        "era":"2.76",
-        "whip":"0.95",
-        "k9":"9.09",
-        "bb9":"3.03",
-        "kbb":"3.00",
-        "ip":"32.2",
-        "ip_rounded":32,
-        "gs":0,
-        "gp":31,
         "fetched":"2026-07-03"
     }
 ]

@@ -11,16 +11,16 @@
             "failed": 3
         },
         "catching": {
-            "total": 76,
+            "total": 77,
             "successful": 45,
-            "failed": 31
+            "failed": 32
         }
     },
     "opponents": {
         "batting": {
-            "total": 78,
+            "total": 79,
             "successful": 38,
-            "failed": 40
+            "failed": 41
         },
         "pitching": {
             "total": 5,
@@ -28,12 +28,48 @@
             "failed": 3
         },
         "catching": {
-            "total": 103,
-            "successful": 62,
+            "total": 104,
+            "successful": 63,
             "failed": 41
         }
     },
     "challenge_log": [
+        {
+            "date": "2026-07-02",
+            "date_formatted": "July 2, 2026",
+            "challenger": "Samad Taylor",
+            "role": "batting",
+            "team": "opponents",
+            "outcome": "confirmed",
+            "result_desc": "Samad Taylor walks.",
+            "batter": "Samad Taylor",
+            "pitcher": "Paul Gervase",
+            "game_pk": 823935
+        },
+        {
+            "date": "2026-07-02",
+            "date_formatted": "July 2, 2026",
+            "challenger": "Dalton Rushing",
+            "role": "catching",
+            "team": "dodgers",
+            "outcome": "confirmed",
+            "result_desc": "Fernando Tatis Jr. walks.",
+            "batter": "Fernando Tatis Jr.",
+            "pitcher": "Roki Sasaki",
+            "game_pk": 823935
+        },
+        {
+            "date": "2026-07-02",
+            "date_formatted": "July 2, 2026",
+            "challenger": "Freddy Fermin",
+            "role": "catching",
+            "team": "opponents",
+            "outcome": "overturned",
+            "result_desc": "Freddie Freeman singles on a sharp ground ball to right fielder Fernando Tatis Jr. Shohei Ohtani to 2nd.",
+            "batter": "Freddie Freeman",
+            "pitcher": "Randy V\u00e1squez",
+            "game_pk": 823935
+        },
         {
             "date": "2026-07-01",
             "date_formatted": "July 1, 2026",
@@ -97,18 +133,6 @@
         {
             "date": "2026-06-28",
             "date_formatted": "June 28, 2026",
-            "challenger": "Freddy Fermin",
-            "role": "catching",
-            "team": "opponents",
-            "outcome": "overturned",
-            "result_desc": "Andy Pages flies out to center fielder Jackson Merrill.",
-            "batter": "Andy Pages",
-            "pitcher": "Wandy Peralta",
-            "game_pk": 823281
-        },
-        {
-            "date": "2026-06-28",
-            "date_formatted": "June 28, 2026",
             "challenger": "Andy Pages",
             "role": "batting",
             "team": "dodgers",
@@ -128,6 +152,18 @@
             "result_desc": "Kyle Tucker strikes out swinging.",
             "batter": "Kyle Tucker",
             "pitcher": "Michael King",
+            "game_pk": 823281
+        },
+        {
+            "date": "2026-06-28",
+            "date_formatted": "June 28, 2026",
+            "challenger": "Freddy Fermin",
+            "role": "catching",
+            "team": "opponents",
+            "outcome": "overturned",
+            "result_desc": "Andy Pages flies out to center fielder Jackson Merrill.",
+            "batter": "Andy Pages",
+            "pitcher": "Wandy Peralta",
             "game_pk": 823281
         },
         {
@@ -193,30 +229,6 @@
         {
             "date": "2026-06-24",
             "date_formatted": "June 24, 2026",
-            "challenger": "Alex Jackson",
-            "role": "catching",
-            "team": "opponents",
-            "outcome": "confirmed",
-            "result_desc": "Shohei Ohtani singles on a line drive to right fielder Kody Clemens.",
-            "batter": "Shohei Ohtani",
-            "pitcher": "Andrew Morris",
-            "game_pk": 823691
-        },
-        {
-            "date": "2026-06-24",
-            "date_formatted": "June 24, 2026",
-            "challenger": "Dalton Rushing",
-            "role": "catching",
-            "team": "dodgers",
-            "outcome": "overturned",
-            "result_desc": "Brooks Lee walks.",
-            "batter": "Brooks Lee",
-            "pitcher": "Kyle Hurt",
-            "game_pk": 823691
-        },
-        {
-            "date": "2026-06-24",
-            "date_formatted": "June 24, 2026",
             "challenger": "Shohei Ohtani",
             "role": "batting",
             "team": "dodgers",
@@ -224,6 +236,18 @@
             "result_desc": "Victor Caratini challenged (pitch result), call on the field was overturned: Shohei Ohtani called out on strikes.",
             "batter": "Shohei Ohtani",
             "pitcher": "Anthony Banda",
+            "game_pk": 823691
+        },
+        {
+            "date": "2026-06-24",
+            "date_formatted": "June 24, 2026",
+            "challenger": "Shohei Ohtani",
+            "role": "pitching",
+            "team": "dodgers",
+            "outcome": "overturned",
+            "result_desc": "Ryan Kreidler singles on a ground ball to center fielder Andy Pages. Brooks Lee scores. Tristan Gray scores. Ryan Kreidler out at 2nd on the throw, center fielder Andy Pages to second baseman Alex Freeland.",
+            "batter": "Ryan Kreidler",
+            "pitcher": "Shohei Ohtani",
             "game_pk": 823691
         },
         {
@@ -241,38 +265,14 @@
         {
             "date": "2026-06-24",
             "date_formatted": "June 24, 2026",
-            "challenger": "Shohei Ohtani",
-            "role": "pitching",
+            "challenger": "Dalton Rushing",
+            "role": "catching",
             "team": "dodgers",
             "outcome": "overturned",
-            "result_desc": "Ryan Kreidler singles on a ground ball to center fielder Andy Pages. Brooks Lee scores. Tristan Gray scores. Ryan Kreidler out at 2nd on the throw, center fielder Andy Pages to second baseman Alex Freeland.",
-            "batter": "Ryan Kreidler",
-            "pitcher": "Shohei Ohtani",
+            "result_desc": "Brooks Lee walks.",
+            "batter": "Brooks Lee",
+            "pitcher": "Kyle Hurt",
             "game_pk": 823691
-        },
-        {
-            "date": "2026-06-23",
-            "date_formatted": "June 23, 2026",
-            "challenger": "Andy Pages",
-            "role": "batting",
-            "team": "dodgers",
-            "outcome": "overturned",
-            "result_desc": "Andy Pages flies out to left fielder Austin Martin.",
-            "batter": "Andy Pages",
-            "pitcher": "Austin Voth",
-            "game_pk": 823690
-        },
-        {
-            "date": "2026-06-23",
-            "date_formatted": "June 23, 2026",
-            "challenger": "Victor Caratini",
-            "role": "batting",
-            "team": "opponents",
-            "outcome": "confirmed",
-            "result_desc": "Victor Caratini homers (6) on a fly ball to left center field.",
-            "batter": "Victor Caratini",
-            "pitcher": "Justin Wrobleski",
-            "game_pk": 823690
         }
     ]
 }
