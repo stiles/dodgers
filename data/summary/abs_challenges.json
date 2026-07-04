@@ -1,9 +1,9 @@
 {
     "dodgers": {
         "batting": {
-            "total": 69,
+            "total": 70,
             "successful": 46,
-            "failed": 23
+            "failed": 24
         },
         "pitching": {
             "total": 5,
@@ -18,8 +18,8 @@
     },
     "opponents": {
         "batting": {
-            "total": 79,
-            "successful": 38,
+            "total": 80,
+            "successful": 39,
             "failed": 41
         },
         "pitching": {
@@ -28,12 +28,48 @@
             "failed": 3
         },
         "catching": {
-            "total": 104,
+            "total": 105,
             "successful": 63,
-            "failed": 41
+            "failed": 42
         }
     },
     "challenge_log": [
+        {
+            "date": "2026-07-03",
+            "date_formatted": "July 3, 2026",
+            "challenger": "Kyle Tucker",
+            "role": "batting",
+            "team": "dodgers",
+            "outcome": "confirmed",
+            "result_desc": "Kyle Tucker flies out to shortstop Xander Bogaerts.",
+            "batter": "Kyle Tucker",
+            "pitcher": "Bradgley Rodriguez",
+            "game_pk": 823933
+        },
+        {
+            "date": "2026-07-03",
+            "date_formatted": "July 3, 2026",
+            "challenger": "Rodolfo Dur\u00e1n",
+            "role": "catching",
+            "team": "opponents",
+            "outcome": "confirmed",
+            "result_desc": "Kyle Tucker reaches on a fielder's choice, fielded by second baseman Jake Cronenworth. Mookie Betts to 3rd. Max Muncy to 2nd. Fielding error by second baseman Jake Cronenworth.",
+            "batter": "Kyle Tucker",
+            "pitcher": "Adrian Morejon",
+            "game_pk": 823933
+        },
+        {
+            "date": "2026-07-03",
+            "date_formatted": "July 3, 2026",
+            "challenger": "Jackson Merrill",
+            "role": "batting",
+            "team": "opponents",
+            "outcome": "overturned",
+            "result_desc": "Jackson Merrill homers (10) on a fly ball to center field.",
+            "batter": "Jackson Merrill",
+            "pitcher": "Shohei Ohtani",
+            "game_pk": 823933
+        },
         {
             "date": "2026-07-02",
             "date_formatted": "July 2, 2026",
@@ -133,6 +169,18 @@
         {
             "date": "2026-06-28",
             "date_formatted": "June 28, 2026",
+            "challenger": "Freddy Fermin",
+            "role": "catching",
+            "team": "opponents",
+            "outcome": "overturned",
+            "result_desc": "Andy Pages flies out to center fielder Jackson Merrill.",
+            "batter": "Andy Pages",
+            "pitcher": "Wandy Peralta",
+            "game_pk": 823281
+        },
+        {
+            "date": "2026-06-28",
+            "date_formatted": "June 28, 2026",
             "challenger": "Andy Pages",
             "role": "batting",
             "team": "dodgers",
@@ -152,18 +200,6 @@
             "result_desc": "Kyle Tucker strikes out swinging.",
             "batter": "Kyle Tucker",
             "pitcher": "Michael King",
-            "game_pk": 823281
-        },
-        {
-            "date": "2026-06-28",
-            "date_formatted": "June 28, 2026",
-            "challenger": "Freddy Fermin",
-            "role": "catching",
-            "team": "opponents",
-            "outcome": "overturned",
-            "result_desc": "Andy Pages flies out to center fielder Jackson Merrill.",
-            "batter": "Andy Pages",
-            "pitcher": "Wandy Peralta",
             "game_pk": 823281
         },
         {
@@ -193,18 +229,6 @@
         {
             "date": "2026-06-26",
             "date_formatted": "June 26, 2026",
-            "challenger": "Miguel Rojas",
-            "role": "batting",
-            "team": "dodgers",
-            "outcome": "overturned",
-            "result_desc": "Miguel Rojas grounds into a force out, third baseman Manny Machado to second baseman Sung-Mun Song. Alex Call out at 2nd. Miguel Rojas to 1st.",
-            "batter": "Miguel Rojas",
-            "pitcher": "Wandy Peralta",
-            "game_pk": 823285
-        },
-        {
-            "date": "2026-06-26",
-            "date_formatted": "June 26, 2026",
             "challenger": "Manny Machado",
             "role": "batting",
             "team": "opponents",
@@ -227,51 +251,27 @@
             "game_pk": 823285
         },
         {
-            "date": "2026-06-24",
-            "date_formatted": "June 24, 2026",
-            "challenger": "Shohei Ohtani",
+            "date": "2026-06-26",
+            "date_formatted": "June 26, 2026",
+            "challenger": "Miguel Rojas",
             "role": "batting",
             "team": "dodgers",
-            "outcome": "confirmed",
-            "result_desc": "Victor Caratini challenged (pitch result), call on the field was overturned: Shohei Ohtani called out on strikes.",
-            "batter": "Shohei Ohtani",
-            "pitcher": "Anthony Banda",
-            "game_pk": 823691
-        },
-        {
-            "date": "2026-06-24",
-            "date_formatted": "June 24, 2026",
-            "challenger": "Shohei Ohtani",
-            "role": "pitching",
-            "team": "dodgers",
             "outcome": "overturned",
-            "result_desc": "Ryan Kreidler singles on a ground ball to center fielder Andy Pages. Brooks Lee scores. Tristan Gray scores. Ryan Kreidler out at 2nd on the throw, center fielder Andy Pages to second baseman Alex Freeland.",
-            "batter": "Ryan Kreidler",
-            "pitcher": "Shohei Ohtani",
-            "game_pk": 823691
+            "result_desc": "Miguel Rojas grounds into a force out, third baseman Manny Machado to second baseman Sung-Mun Song. Alex Call out at 2nd. Miguel Rojas to 1st.",
+            "batter": "Miguel Rojas",
+            "pitcher": "Wandy Peralta",
+            "game_pk": 823285
         },
         {
             "date": "2026-06-24",
             "date_formatted": "June 24, 2026",
-            "challenger": "Trevor Larnach",
-            "role": "batting",
-            "team": "opponents",
-            "outcome": "overturned",
-            "result_desc": "Trevor Larnach grounds out, first baseman Freddie Freeman to pitcher Shohei Ohtani.",
-            "batter": "Trevor Larnach",
-            "pitcher": "Shohei Ohtani",
-            "game_pk": 823691
-        },
-        {
-            "date": "2026-06-24",
-            "date_formatted": "June 24, 2026",
-            "challenger": "Dalton Rushing",
+            "challenger": "Alex Jackson",
             "role": "catching",
-            "team": "dodgers",
-            "outcome": "overturned",
-            "result_desc": "Brooks Lee walks.",
-            "batter": "Brooks Lee",
-            "pitcher": "Kyle Hurt",
+            "team": "opponents",
+            "outcome": "confirmed",
+            "result_desc": "Shohei Ohtani singles on a line drive to right fielder Kody Clemens.",
+            "batter": "Shohei Ohtani",
+            "pitcher": "Andrew Morris",
             "game_pk": 823691
         }
     ]

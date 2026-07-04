@@ -1,13 +1,5 @@
 [
     {
-        "date":"Jun 22",
-        "opp_name":"Minnesota Twins",
-        "home_away":"away",
-        "result":"win",
-        "placement":"last",
-        "game_start":"2-1"
-    },
-    {
         "date":"Jun 23",
         "opp_name":"Minnesota Twins",
         "home_away":"away",
@@ -83,9 +75,9 @@
         "date":"Jul 3",
         "opp_name":"San Diego Padres",
         "home_away":"home",
-        "result":"--",
-        "placement":"next",
-        "game_start":"7:10 PM"
+        "result":"win",
+        "placement":"last",
+        "game_start":"4-3"
     },
     {
         "date":"Jul 4",
@@ -158,5 +150,13 @@
         "result":"--",
         "placement":"next",
         "game_start":"4:05 PM"
+    },
+    {
+        "date":"Jul 18",
+        "opp_name":"New York Yankees",
+        "home_away":"away",
+        "result":"--",
+        "placement":"next",
+        "game_start":"5:08 PM"
     }
 ]
