@@ -42,14 +42,15 @@ ALLOWED_BATTERS = [
     "Will Smith",
     "Freddie Freeman",
     "Andy Pages",
-    "Teo Hernandex",  # will be normalized/matched to Teoscar Hernández
+    "Teo Hernandez",
     "Max Muncy",
     "Miguel Rojas",
     "Tommy Edman",
     # "Hyeseong Kim",  # not enough plate appearances
-    "Michael Conforto",
+    "Kyle Tucker",
     "Alex Call",
-    # "Alex Freeland",  # not enough plate appearances
+    "Alex Freeland",  
+    "Dalton Rushing",
 ]
 
 # Known corrections to help match allowlist typos or alternate spellings
