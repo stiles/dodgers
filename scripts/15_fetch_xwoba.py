@@ -48,7 +48,7 @@ ALLOWED_BATTERS = [
     "Tommy Edman",
     # "Hyeseong Kim",  # not enough plate appearances
     "Kyle Tucker",
-    "Alex Call",
+    # "Alex Call", # not enough plate appearances
     "Alex Freeland",  
     "Dalton Rushing",
 ]
