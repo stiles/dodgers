@@ -1,13 +1,13 @@
 stat_label,stat,value,category,context_value,context_value_label
 Wins,wins,59,standings,56,This point last season
-Losses,losses,31,standings,33,This point last season
-Win percentage,win_pct,66%,standings,63%,This point last season
+Losses,losses,31,standings,34,This point last season
+Win percentage,win_pct,66%,standings,62%,This point last season
 Games up/back,games_up_back,14,standings,1st,Division rank
 Fielding percentage,fielding_pct,.992,standings,1st,League rank
 Errors,errors,26,standings,1st,League rank
 Runs,runs,481,standings,1st,League rank
-Runs against,runs_against,315,standings,412,This point last season
-Run differential,run_differential,166,standings,83,This point last season
+Runs against,runs_against,315,standings,418,This point last season
+Run differential,run_differential,166,standings,81,This point last season
 Batting average,batting_average,.265,batting,.253,Last decade average
 Home runs,home_runs,122,batting,3rd,League rank
 Home runs/game,home_runs_game,1.36,batting,1.42,Last decade average
@@ -23,6 +23,6 @@ ERA,era,3.47,pitching,4th,League rank
 WHIP,whip,1.12,pitching,1st,League rank
 Batting average against,avg_against,.216,pitching,1st,League rank
 K/BB ratio,k_bb_ratio,3.08,pitching,3rd,League rank
-Last updated,update_time,"July 5, 2026, 3:21 AM PT",summary,,
+Last updated,update_time,"July 5, 2026, 6:49 AM PT",summary,,
 Team summary,summary,"<span class='highlight'>LOS ANGELES</span> <span class='updated'>(July 5)</span> — The Dodgers have compiled a <span class='highlight'>59-31</span> record in the 2026 regular season, a <span class='highlight'>66%</span> winning percentage. The last game was a <span class='highlight'>3-0</span> home <span class='highlight'>win</span> against the <span class='highlight'>San Diego Padres</span>. The team next faces the <span class='highlight'>San Diego Padres</span> on Sunday at 4:20 p.m. PDT at <span class='highlight'>UNIQLO Field at Dodger Stadium</span>.",summary,,
 Last game result,last_game_result,win,summary,,
