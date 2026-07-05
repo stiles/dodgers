@@ -1,9 +1,9 @@
 {
     "dodgers": {
         "batting": {
-            "total": 70,
+            "total": 71,
             "successful": 46,
-            "failed": 24
+            "failed": 25
         },
         "pitching": {
             "total": 5,
@@ -18,9 +18,9 @@
     },
     "opponents": {
         "batting": {
-            "total": 80,
+            "total": 82,
             "successful": 39,
-            "failed": 41
+            "failed": 43
         },
         "pitching": {
             "total": 5,
@@ -34,6 +34,42 @@
         }
     },
     "challenge_log": [
+        {
+            "date": "2026-07-04",
+            "date_formatted": "July 4, 2026",
+            "challenger": "Max Muncy",
+            "role": "batting",
+            "team": "dodgers",
+            "outcome": "confirmed",
+            "result_desc": "Max Muncy flies out to left fielder Gavin Sheets.",
+            "batter": "Max Muncy",
+            "pitcher": "Griffin Canning",
+            "game_pk": 823932
+        },
+        {
+            "date": "2026-07-04",
+            "date_formatted": "July 4, 2026",
+            "challenger": "Xander Bogaerts",
+            "role": "batting",
+            "team": "opponents",
+            "outcome": "confirmed",
+            "result_desc": "Xander Bogaerts called out on strikes.",
+            "batter": "Xander Bogaerts",
+            "pitcher": "Yoshinobu Yamamoto",
+            "game_pk": 823932
+        },
+        {
+            "date": "2026-07-04",
+            "date_formatted": "July 4, 2026",
+            "challenger": "Gavin Sheets",
+            "role": "batting",
+            "team": "opponents",
+            "outcome": "confirmed",
+            "result_desc": "Gavin Sheets walks.",
+            "batter": "Gavin Sheets",
+            "pitcher": "Yoshinobu Yamamoto",
+            "game_pk": 823932
+        },
         {
             "date": "2026-07-03",
             "date_formatted": "July 3, 2026",
@@ -109,18 +145,6 @@
         {
             "date": "2026-07-01",
             "date_formatted": "July 1, 2026",
-            "challenger": "Jonah Heim",
-            "role": "catching",
-            "team": "opponents",
-            "outcome": "overturned",
-            "result_desc": "Tommy Edman strikes out swinging.",
-            "batter": "Tommy Edman",
-            "pitcher": "Hogan Harris",
-            "game_pk": 824985
-        },
-        {
-            "date": "2026-07-01",
-            "date_formatted": "July 1, 2026",
             "challenger": "Kyle Tucker",
             "role": "batting",
             "team": "dodgers",
@@ -128,6 +152,18 @@
             "result_desc": "Kyle Tucker walks.",
             "batter": "Kyle Tucker",
             "pitcher": "Luis Medina",
+            "game_pk": 824985
+        },
+        {
+            "date": "2026-07-01",
+            "date_formatted": "July 1, 2026",
+            "challenger": "Jonah Heim",
+            "role": "catching",
+            "team": "opponents",
+            "outcome": "overturned",
+            "result_desc": "Tommy Edman strikes out swinging.",
+            "batter": "Tommy Edman",
+            "pitcher": "Hogan Harris",
             "game_pk": 824985
         },
         {
@@ -229,18 +265,6 @@
         {
             "date": "2026-06-26",
             "date_formatted": "June 26, 2026",
-            "challenger": "Manny Machado",
-            "role": "batting",
-            "team": "opponents",
-            "outcome": "confirmed",
-            "result_desc": "Manny Machado flies out to right fielder Kyle Tucker.",
-            "batter": "Manny Machado",
-            "pitcher": "Jonathan Hern\u00e1ndez",
-            "game_pk": 823285
-        },
-        {
-            "date": "2026-06-26",
-            "date_formatted": "June 26, 2026",
             "challenger": "Dalton Rushing",
             "role": "catching",
             "team": "dodgers",
@@ -249,30 +273,6 @@
             "batter": "Jackson Merrill",
             "pitcher": "Roki Sasaki",
             "game_pk": 823285
-        },
-        {
-            "date": "2026-06-26",
-            "date_formatted": "June 26, 2026",
-            "challenger": "Miguel Rojas",
-            "role": "batting",
-            "team": "dodgers",
-            "outcome": "overturned",
-            "result_desc": "Miguel Rojas grounds into a force out, third baseman Manny Machado to second baseman Sung-Mun Song. Alex Call out at 2nd. Miguel Rojas to 1st.",
-            "batter": "Miguel Rojas",
-            "pitcher": "Wandy Peralta",
-            "game_pk": 823285
-        },
-        {
-            "date": "2026-06-24",
-            "date_formatted": "June 24, 2026",
-            "challenger": "Alex Jackson",
-            "role": "catching",
-            "team": "opponents",
-            "outcome": "confirmed",
-            "result_desc": "Shohei Ohtani singles on a line drive to right fielder Kody Clemens.",
-            "batter": "Shohei Ohtani",
-            "pitcher": "Andrew Morris",
-            "game_pk": 823691
         }
     ]
 }

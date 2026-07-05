@@ -1,17 +1,17 @@
 {
     "season_summary": {
-        "correct_strikes_pct": 91.3338997451147,
-        "incorrect_strikes_pct": 8.666100254885293,
-        "total_called_strikes": 2354,
-        "bad_calls_count": 204
+        "correct_strikes_pct": 91.3575042158516,
+        "incorrect_strikes_pct": 8.642495784148394,
+        "total_called_strikes": 2372,
+        "bad_calls_count": 205
     },
     "last_game_summary": {
-        "date": "July 3, 2026",
-        "correct_strikes_pct": 100.0,
-        "incorrect_strikes_pct": 0.0,
+        "date": "July 4, 2026",
+        "correct_strikes_pct": 94.44444444444444,
+        "incorrect_strikes_pct": 5.555555555555557,
         "total_called_strikes": 18,
-        "bad_calls_count": 0,
-        "home_plate_umpire": "Tripp Gibson"
+        "bad_calls_count": 1,
+        "home_plate_umpire": "Ryan Blakney"
     },
     "worst_calls_of_season": [
         {
@@ -56,17 +56,17 @@
         }
     ],
     "pitching_season_summary": {
-        "correct_balls_pct": 95.88793492995933,
-        "incorrect_balls_pct": 4.112065070040671,
-        "total_called_balls": 4426,
-        "bad_calls_count": 182
+        "correct_balls_pct": 95.87813620071685,
+        "incorrect_balls_pct": 4.1218637992831475,
+        "total_called_balls": 4464,
+        "bad_calls_count": 184
     },
     "pitching_last_game_summary": {
-        "date": "July 3, 2026",
-        "correct_balls_pct": 94.33962264150944,
-        "incorrect_balls_pct": 5.660377358490564,
-        "total_called_balls": 53,
-        "bad_calls_count": 3
+        "date": "July 4, 2026",
+        "correct_balls_pct": 94.73684210526315,
+        "incorrect_balls_pct": 5.26315789473685,
+        "total_called_balls": 38,
+        "bad_calls_count": 2
     },
     "pitching_worst_calls_of_season": [],
     "abs_challenges": {
