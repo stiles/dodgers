@@ -17,10 +17,62 @@ from datetime import datetime, timedelta
 
 # === Configuration ===
 OUTPUT_DIR = "data/summary"
+S3_PREFIX = "dodgers/data/summary"
 LOCAL_JSON_PATH = os.path.join(OUTPUT_DIR, "abs_challenges.json")
 S3_BUCKET = "stilesdata.com"
-S3_KEY = "dodgers/data/summary/abs_challenges.json"
+S3_KEY = f"{S3_PREFIX}/abs_challenges.json"
 DODGERS_TEAM_ID = 119
+
+
+def archive_paths(year):
+    """
+    Return local paths and S3 keys for the challenge archive.
+
+    The year-stamped keys are the canonical, permanent record; the `_current`
+    keys are a stable alias for the front end so download links don't need to
+    change each season.
+    """
+    return {
+        "csv_local": os.path.join(OUTPUT_DIR, f"abs_challenges_archive_{year}.csv"),
+        "json_local": os.path.join(OUTPUT_DIR, f"abs_challenges_archive_{year}.json"),
+        "csv_s3": f"{S3_PREFIX}/abs_challenges_archive_{year}.csv",
+        "json_s3": f"{S3_PREFIX}/abs_challenges_archive_{year}.json",
+        "csv_s3_current": f"{S3_PREFIX}/abs_challenges_archive_current.csv",
+        "json_s3_current": f"{S3_PREFIX}/abs_challenges_archive_current.json",
+    }
+
+# Column order for the full per-challenge archive.
+ARCHIVE_COLUMNS = [
+    "date",
+    "game_pk",
+    "inning",
+    "half_inning",
+    "team",
+    "challenge_team_id",
+    "challenger",
+    "challenger_id",
+    "role",
+    "outcome",
+    "is_overturned",
+    "call",
+    "count_balls",
+    "count_strikes",
+    "count_outs",
+    "pitch_number",
+    "pitch_type",
+    "pitch_type_desc",
+    "start_speed",
+    "zone",
+    "plate_x",
+    "plate_z",
+    "sz_top",
+    "sz_bot",
+    "batter",
+    "batter_id",
+    "pitcher",
+    "pitcher_id",
+    "result_desc",
+]
 
 # === AWS Session Setup ===
 is_github_actions = os.getenv('GITHUB_ACTIONS') == 'true'
@@ -38,15 +90,15 @@ else:
 s3 = session.resource('s3')
 
 
-def upload_to_s3(file_path):
-    """Uploads a file to the configured S3 bucket."""
+def upload_to_s3(file_path, s3_key):
+    """Uploads a file to the configured S3 bucket under the given key."""
     if not S3_BUCKET:
         print("S3 upload skipped: Bucket name is not configured.")
         return
     
     try:
-        s3.Bucket(S3_BUCKET).upload_file(file_path, S3_KEY)
-        print(f"Successfully uploaded {os.path.basename(file_path)} to {S3_BUCKET}/{S3_KEY}")
+        s3.Bucket(S3_BUCKET).upload_file(file_path, s3_key)
+        print(f"Successfully uploaded {os.path.basename(file_path)} to {S3_BUCKET}/{s3_key}")
     except FileNotFoundError:
         print(f"Error: The file {file_path} was not found for S3 upload.")
     except NoCredentialsError:
@@ -150,7 +202,11 @@ def fetch_game_challenges(game_pk):
                 
                 # Get pitch details
                 pitch_data = event.get("pitchData", {})
-                call = event.get("details", {}).get("call", {}).get("description", "Unknown")
+                coords = pitch_data.get("coordinates", {})
+                count = event.get("count", {})
+                details = event.get("details", {})
+                pitch_type = details.get("type", {})
+                call = details.get("call", {}).get("description", "Unknown")
                 
                 # Get matchup info from the play level
                 matchup = play.get("matchup", {})
@@ -185,10 +241,26 @@ def fetch_game_challenges(game_pk):
                     "challenger_id": challenger_id,
                     "role": role,
                     "team": team,
+                    "challenge_team_id": challenge_team_id,
                     "outcome": "overturned" if is_overturned else "confirmed",
+                    "is_overturned": is_overturned,
                     "call": call,
+                    "count_balls": count.get("balls"),
+                    "count_strikes": count.get("strikes"),
+                    "count_outs": count.get("outs"),
+                    "pitch_number": event.get("pitchNumber"),
+                    "pitch_type": pitch_type.get("code"),
+                    "pitch_type_desc": pitch_type.get("description"),
+                    "start_speed": pitch_data.get("startSpeed"),
+                    "zone": pitch_data.get("zone"),
+                    "plate_x": coords.get("pX"),
+                    "plate_z": coords.get("pZ"),
+                    "sz_top": pitch_data.get("strikeZoneTop"),
+                    "sz_bot": pitch_data.get("strikeZoneBottom"),
                     "batter": batter_name,
+                    "batter_id": batter_id,
                     "pitcher": pitcher_name,
+                    "pitcher_id": pitcher_id,
                     "result_desc": result_desc,
                 })
         
@@ -273,6 +345,36 @@ def process_challenges(challenges):
     return summary
 
 
+def save_archive(challenges, csv_path, json_path):
+    """
+    Write the complete, uncapped per-challenge archive to CSV and JSON.
+
+    Rebuilt from scratch each run (the script already refetches every game),
+    so there's no incremental drift to manage.
+
+    Args:
+        challenges: List of challenge dicts
+        csv_path: Local path for the CSV archive
+        json_path: Local path for the JSON archive
+
+    Returns:
+        Number of rows written
+    """
+    df = pd.DataFrame(challenges, columns=ARCHIVE_COLUMNS)
+
+    if not df.empty:
+        df["date"] = pd.to_datetime(df["date"])
+        df = df.sort_values(
+            ["date", "game_pk", "inning", "pitch_number"], ascending=True
+        )
+        df["date"] = df["date"].dt.strftime("%Y-%m-%d")
+
+    df.to_csv(csv_path, index=False)
+    df.to_json(json_path, orient="records", indent=2)
+    print(f"Archive saved to {csv_path} and {json_path} ({len(df)} rows)")
+    return len(df)
+
+
 def main():
     """Main execution function."""
     # Get current year
@@ -308,8 +410,17 @@ def main():
         json.dump(summary, f, indent=4)
     print(f"Summary saved to {LOCAL_JSON_PATH}")
     
-    # Upload to S3
-    upload_to_s3(LOCAL_JSON_PATH)
+    # Save the full per-challenge archive (all challenges, richer fields),
+    # year-stamped so it rolls over automatically each season
+    paths = archive_paths(year)
+    save_archive(all_challenges, paths["csv_local"], paths["json_local"])
+    
+    # Upload to S3: year-stamped canonical files plus stable "current" aliases
+    upload_to_s3(LOCAL_JSON_PATH, S3_KEY)
+    upload_to_s3(paths["csv_local"], paths["csv_s3"])
+    upload_to_s3(paths["json_local"], paths["json_s3"])
+    upload_to_s3(paths["csv_local"], paths["csv_s3_current"])
+    upload_to_s3(paths["json_local"], paths["json_s3_current"])
     
     # Print summary
     print("\n" + "="*50)
