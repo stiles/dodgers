@@ -612,6 +612,7 @@ twitter:
 <p class="chart-chatter">MLB's Automated Ball-Strike system allows batters, pitchers and catchers to challenge calls at the plate. Tracking <span style="background-color: #53A796; color: #fff; font-weight: bold; padding: 1px 6px; border-radius: 5px;">successful</span> and <span style="background-color: #F18851; color: #fff; font-weight: bold; padding: 1px 6px; border-radius: 5px;">unsuccessful</span> challenges this season by the Dodgers and their opponents:</p>
 <div class="abs-challenges-section">
   <div id="abs-challenge-summary"></div>
+  <div id="abs-challenge-breakdown"></div>
   <div id="abs-challenge-log"></div>
 </div>
 

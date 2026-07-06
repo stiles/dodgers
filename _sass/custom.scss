@@ -2229,6 +2229,73 @@ label {
   }
 }
 
+// Dodgers-only breakdown tables (by player, by inning)
+.abs-breakdown-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 40px;
+  margin-bottom: 32px;
+}
+
+.abs-breakdown-panel {
+  h4 {
+    font-family: 'Roboto Slab', serif;
+    font-size: 15px;
+    font-weight: 600;
+    color: #333;
+    margin-bottom: 16px;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+  }
+}
+
+.abs-breakdown-row {
+  display: grid;
+  grid-template-columns: minmax(72px, 34%) 1fr 34px;
+  align-items: center;
+  gap: 10px;
+  padding: 5px 0;
+  border-bottom: 1px solid #f0f0f0;
+
+  &:last-child {
+    border-bottom: none;
+  }
+}
+
+.abs-breakdown-name {
+  font-family: 'Roboto', sans-serif;
+  font-size: 13px;
+  font-weight: 300;
+  color: #444;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.abs-breakdown-bar-cell {
+  min-width: 0;
+}
+
+.abs-breakdown-value {
+  font-family: 'Roboto', sans-serif;
+  font-size: 12px;
+  font-weight: 600;
+  color: #333;
+  text-align: right;
+  font-variant-numeric: tabular-nums;
+}
+
+.abs-bar-container.compact {
+  height: 20px;
+  border-radius: 4px;
+  box-shadow: none;
+
+  .abs-bar-segment {
+    font-size: 11px;
+    font-weight: 600;
+  }
+}
+
 .abs-log-heading {
   font-family: 'Roboto Slab', serif;
   font-size: 15px;
@@ -2376,6 +2443,11 @@ label {
   .abs-summary-grid {
     grid-template-columns: 1fr;
     gap: 24px;
+  }
+
+  .abs-breakdown-grid {
+    grid-template-columns: 1fr;
+    gap: 28px;
   }
 
   .abs-log-table {

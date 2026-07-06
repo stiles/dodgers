@@ -4100,6 +4100,81 @@ if (document.readyState === 'loading') {
     }
   }
 
+  function renderBreakdownRow(container, label, data, opts) {
+    const total = data.total || 0;
+    const successful = data.successful || 0;
+    const failed = data.failed || 0;
+    if (total === 0) return;
+
+    // scale = fraction of the bar column the whole bar fills (1 = normalized,
+    // < 1 = volume-proportional). Segment widths are always relative to the bar.
+    const scale = opts && opts.scale != null ? opts.scale : 1;
+    const wonPct = (successful / total) * 100;
+    const lostPct = (failed / total) * 100;
+
+    const row = container.append('div').attr('class', 'abs-breakdown-row');
+    row.append('div').attr('class', 'abs-breakdown-name').text(label);
+
+    const barCell = row.append('div').attr('class', 'abs-breakdown-bar-cell');
+    const bar = barCell.append('div')
+      .attr('class', 'abs-bar-container compact')
+      .style('width', `${Math.max(scale * 100, 4)}%`);
+    if (successful > 0) {
+      const wonSegment = bar.append('div')
+        .attr('class', 'abs-bar-segment won')
+        .style('width', `${wonPct}%`);
+      if (wonPct * scale > 14) wonSegment.text(`${successful}`);
+    }
+    if (failed > 0) {
+      const lostSegment = bar.append('div')
+        .attr('class', 'abs-bar-segment lost')
+        .style('width', `${lostPct}%`);
+      if (lostPct * scale > 14) lostSegment.text(`${failed}`);
+    }
+
+    row.append('div').attr('class', 'abs-breakdown-value')
+      .text(opts && opts.rightLabel != null ? opts.rightLabel : '');
+  }
+
+  function renderAbsBreakdown(abs) {
+    const breakdownDiv = d3.select('#abs-challenge-breakdown');
+    if (breakdownDiv.empty()) return;
+    breakdownDiv.html('');
+
+    // Players: story is effectiveness -> sort by success rate, label the rate.
+    const byPlayer = (abs.dodgers_by_player || [])
+      .filter(p => p.total >= 3)
+      .sort((a, b) => b.success_rate - a.success_rate || b.total - a.total);
+    // Innings: story is distribution -> keep 1->9 order, bars scaled by volume.
+    const byInning = abs.dodgers_by_inning || [];
+    if (byPlayer.length === 0 && byInning.length === 0) return;
+
+    const grid = breakdownDiv.append('div').attr('class', 'abs-breakdown-grid');
+
+    if (byPlayer.length > 0) {
+      const playerPanel = grid.append('div').attr('class', 'abs-breakdown-panel');
+      const playerHeading = playerPanel.append('h4');
+      playerHeading.append('span').text('Players, by success');
+      playerHeading.append('span').attr('class', 'abs-team-count').text(': regular season, min. 3 challenges');
+      byPlayer.forEach(p => renderBreakdownRow(playerPanel, p.challenger, p, {
+        rightLabel: `${Math.round(p.success_rate)}%`,
+        scale: 1,
+      }));
+    }
+
+    if (byInning.length > 0) {
+      const inningPanel = grid.append('div').attr('class', 'abs-breakdown-panel');
+      const inningHeading = inningPanel.append('h4');
+      inningHeading.append('span').text('Dodgers, by inning');
+      inningHeading.append('span').attr('class', 'abs-team-count').text(': regular season, total challenges');
+      const maxInning = d3.max(byInning, i => i.total) || 1;
+      byInning.forEach(i => renderBreakdownRow(inningPanel, `Inning ${i.inning}`, i, {
+        rightLabel: `${i.total}`,
+        scale: i.total / maxInning,
+      }));
+    }
+  }
+
   function renderAbsChallenges(abs) {
     const summaryDiv = d3.select('#abs-challenge-summary');
     const logDiv = d3.select('#abs-challenge-log');
@@ -4107,6 +4182,7 @@ if (document.readyState === 'loading') {
 
     summaryDiv.html('');
     logDiv.html('');
+    d3.select('#abs-challenge-breakdown').html('');
 
     if (!abs) {
       summaryDiv.append('p')
@@ -4156,6 +4232,8 @@ if (document.readyState === 'loading') {
     renderRoleChart(opponentsSection, 'Batter', opponents.batting);
     renderRoleChart(opponentsSection, 'Pitcher', opponents.pitching);
     renderRoleChart(opponentsSection, 'Catcher', opponents.catching);
+
+    renderAbsBreakdown(abs);
 
     const log = abs.challenge_log;
     if (!log || log.length === 0) return;

@@ -45,6 +45,7 @@ def archive_paths(year):
 ARCHIVE_COLUMNS = [
     "date",
     "game_pk",
+    "game_type",
     "inning",
     "half_inning",
     "team",
@@ -166,8 +167,9 @@ def fetch_game_challenges(game_pk):
         if not abs_info.get("hasChallenges"):
             return []
         
-        # Get game date and teams
+        # Get game date, type and teams
         game_date = data.get("gameData", {}).get("datetime", {}).get("officialDate")
+        game_type = data.get("gameData", {}).get("game", {}).get("type")
         teams = data.get("gameData", {}).get("teams", {})
         home_team_id = teams.get("home", {}).get("id")
         away_team_id = teams.get("away", {}).get("id")
@@ -235,6 +237,7 @@ def fetch_game_challenges(game_pk):
                 challenges.append({
                     "game_pk": game_pk,
                     "date": game_date,
+                    "game_type": game_type,
                     "inning": inning,
                     "half_inning": half_inning,
                     "challenger": challenger_name,
@@ -293,6 +296,8 @@ def process_challenges(challenges):
                 "pitching": {"total": 0, "successful": 0, "failed": 0},
                 "catching": {"total": 0, "successful": 0, "failed": 0},
             },
+            "dodgers_by_player": [],
+            "dodgers_by_inning": [],
             "challenge_log": []
         }
     
@@ -342,7 +347,42 @@ def process_challenges(challenges):
         else:
             bucket['failed'] += 1
     
+    # Dodgers-only, regular-season-only breakdowns for the front-end tables.
+    # game_type "R" excludes spring training (and postseason), and keys off the
+    # live-feed value so it needs no per-season maintenance.
+    dodgers_reg = df[(df['team'] == 'dodgers') & (df['game_type'] == 'R')]
+    summary['dodgers_by_player'] = _breakdown(dodgers_reg, 'challenger')
+    summary['dodgers_by_inning'] = _breakdown(dodgers_reg, 'inning')
+    
     return summary
+
+
+def _breakdown(df, group_col):
+    """
+    Aggregate challenge win/loss counts by a single column.
+
+    Player breakdowns sort by volume (then success rate); inning breakdowns
+    sort by inning number so the chart reads 1 through 9.
+
+    Returns a list of dicts: {<group_col>, total, successful, failed, success_rate}.
+    """
+    rows = []
+    for key, g in df.groupby(group_col):
+        total = len(g)
+        successful = int(g['is_overturned'].sum())
+        rows.append({
+            group_col: int(key) if group_col == 'inning' else key,
+            "total": total,
+            "successful": successful,
+            "failed": total - successful,
+            "success_rate": round(successful / total * 100, 1) if total else 0,
+        })
+
+    if group_col == 'inning':
+        rows.sort(key=lambda r: r['inning'])
+    else:
+        rows.sort(key=lambda r: (-r['total'], -r['success_rate'], r[group_col]))
+    return rows
 
 
 def save_archive(challenges, csv_path, json_path):
