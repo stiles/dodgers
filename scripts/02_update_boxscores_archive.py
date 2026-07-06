@@ -1,7 +1,7 @@
 import argparse
 import json
 import os
-from datetime import datetime
+from datetime import datetime, timedelta
 from typing import List, Optional
 from urllib.parse import urlparse, parse_qs
 
@@ -23,6 +23,8 @@ logging.basicConfig(
 )
 
 DODGERS_TEAM_ID = 119
+# Days of MLB schedule to backfill (in addition to today) to cover Savant lag.
+SCHEDULE_LOOKBACK_DAYS = 3
 BUCKET = "stilesdata.com"
 ARCHIVE_KEY_JSON = "dodgers/data/standings/dodgers_boxscores.json"
 ARCHIVE_KEY_CSV = "dodgers/data/standings/dodgers_boxscores.csv"  # legacy fallback
@@ -417,10 +419,14 @@ def main() -> None:
     # Candidate ids from Savant gamelog table
     candidate_pks = set(logs_df["game_pk"].dropna().astype(int).tolist())
 
-    # Augment with same-day Final games from MLB schedule (LA local date)
-    la_date = get_los_angeles_date_iso()
-    schedule_pks = set(get_dodgers_final_gamepks_for_date(la_date))
-    candidate_pks.update(schedule_pks)
+    # Augment with recent Final games from the MLB schedule (LA local dates).
+    # The Savant gamelog page lags after night games, so relying on it alone can
+    # silently drop a prior day's game. The MLB Stats API is authoritative and
+    # immediate, so backfill a short lookback window to cover that lag.
+    la_today = datetime.now(ZoneInfo("America/Los_Angeles")).date()
+    for delta in range(SCHEDULE_LOOKBACK_DAYS + 1):
+        day_iso = (la_today - timedelta(days=delta)).strftime("%Y-%m-%d")
+        candidate_pks.update(get_dodgers_final_gamepks_for_date(day_iso))
 
     # Re-fetch any archived games still marked as not final
     stale_pks = set()
