@@ -1,9 +1,9 @@
 {
     "dodgers": {
         "batting": {
-            "total": 71,
-            "successful": 46,
-            "failed": 25
+            "total": 73,
+            "successful": 47,
+            "failed": 26
         },
         "pitching": {
             "total": 5,
@@ -11,9 +11,9 @@
             "failed": 3
         },
         "catching": {
-            "total": 77,
+            "total": 78,
             "successful": 45,
-            "failed": 32
+            "failed": 33
         }
     },
     "opponents": {
@@ -28,12 +28,60 @@
             "failed": 3
         },
         "catching": {
-            "total": 105,
-            "successful": 63,
+            "total": 106,
+            "successful": 64,
             "failed": 42
         }
     },
     "challenge_log": [
+        {
+            "date": "2026-07-05",
+            "date_formatted": "July 5, 2026",
+            "challenger": "Alex Freeland",
+            "role": "batting",
+            "team": "dodgers",
+            "outcome": "confirmed",
+            "result_desc": "Alex Freeland flies out to left fielder Jase Bowen.",
+            "batter": "Alex Freeland",
+            "pitcher": "Mason Miller",
+            "game_pk": 823931
+        },
+        {
+            "date": "2026-07-05",
+            "date_formatted": "July 5, 2026",
+            "challenger": "Teoscar Hern\u00e1ndez",
+            "role": "batting",
+            "team": "dodgers",
+            "outcome": "overturned",
+            "result_desc": "Teoscar Hern\u00e1ndez walks.",
+            "batter": "Teoscar Hern\u00e1ndez",
+            "pitcher": "Bradgley Rodriguez",
+            "game_pk": 823931
+        },
+        {
+            "date": "2026-07-05",
+            "date_formatted": "July 5, 2026",
+            "challenger": "Luis Campusano",
+            "role": "catching",
+            "team": "opponents",
+            "outcome": "overturned",
+            "result_desc": "Alex Call called out on strikes.",
+            "batter": "Alex Call",
+            "pitcher": "JP Sears",
+            "game_pk": 823931
+        },
+        {
+            "date": "2026-07-05",
+            "date_formatted": "July 5, 2026",
+            "challenger": "Eliezer Alfonzo",
+            "role": "catching",
+            "team": "dodgers",
+            "outcome": "confirmed",
+            "result_desc": "Xander Bogaerts challenged (pitch result), call on the field was confirmed: Xander Bogaerts called out on strikes.",
+            "batter": "Xander Bogaerts",
+            "pitcher": "Emmet Sheehan",
+            "game_pk": 823931
+        },
         {
             "date": "2026-07-04",
             "date_formatted": "July 4, 2026",
@@ -73,13 +121,13 @@
         {
             "date": "2026-07-03",
             "date_formatted": "July 3, 2026",
-            "challenger": "Kyle Tucker",
+            "challenger": "Jackson Merrill",
             "role": "batting",
-            "team": "dodgers",
-            "outcome": "confirmed",
-            "result_desc": "Kyle Tucker flies out to shortstop Xander Bogaerts.",
-            "batter": "Kyle Tucker",
-            "pitcher": "Bradgley Rodriguez",
+            "team": "opponents",
+            "outcome": "overturned",
+            "result_desc": "Jackson Merrill homers (10) on a fly ball to center field.",
+            "batter": "Jackson Merrill",
+            "pitcher": "Shohei Ohtani",
             "game_pk": 823933
         },
         {
@@ -97,13 +145,13 @@
         {
             "date": "2026-07-03",
             "date_formatted": "July 3, 2026",
-            "challenger": "Jackson Merrill",
+            "challenger": "Kyle Tucker",
             "role": "batting",
-            "team": "opponents",
-            "outcome": "overturned",
-            "result_desc": "Jackson Merrill homers (10) on a fly ball to center field.",
-            "batter": "Jackson Merrill",
-            "pitcher": "Shohei Ohtani",
+            "team": "dodgers",
+            "outcome": "confirmed",
+            "result_desc": "Kyle Tucker flies out to shortstop Xander Bogaerts.",
+            "batter": "Kyle Tucker",
+            "pitcher": "Bradgley Rodriguez",
             "game_pk": 823933
         },
         {
@@ -145,18 +193,6 @@
         {
             "date": "2026-07-01",
             "date_formatted": "July 1, 2026",
-            "challenger": "Kyle Tucker",
-            "role": "batting",
-            "team": "dodgers",
-            "outcome": "overturned",
-            "result_desc": "Kyle Tucker walks.",
-            "batter": "Kyle Tucker",
-            "pitcher": "Luis Medina",
-            "game_pk": 824985
-        },
-        {
-            "date": "2026-07-01",
-            "date_formatted": "July 1, 2026",
             "challenger": "Jonah Heim",
             "role": "catching",
             "team": "opponents",
@@ -164,6 +200,18 @@
             "result_desc": "Tommy Edman strikes out swinging.",
             "batter": "Tommy Edman",
             "pitcher": "Hogan Harris",
+            "game_pk": 824985
+        },
+        {
+            "date": "2026-07-01",
+            "date_formatted": "July 1, 2026",
+            "challenger": "Kyle Tucker",
+            "role": "batting",
+            "team": "dodgers",
+            "outcome": "overturned",
+            "result_desc": "Kyle Tucker walks.",
+            "batter": "Kyle Tucker",
+            "pitcher": "Luis Medina",
             "game_pk": 824985
         },
         {
@@ -205,18 +253,6 @@
         {
             "date": "2026-06-28",
             "date_formatted": "June 28, 2026",
-            "challenger": "Freddy Fermin",
-            "role": "catching",
-            "team": "opponents",
-            "outcome": "overturned",
-            "result_desc": "Andy Pages flies out to center fielder Jackson Merrill.",
-            "batter": "Andy Pages",
-            "pitcher": "Wandy Peralta",
-            "game_pk": 823281
-        },
-        {
-            "date": "2026-06-28",
-            "date_formatted": "June 28, 2026",
             "challenger": "Andy Pages",
             "role": "batting",
             "team": "dodgers",
@@ -237,42 +273,6 @@
             "batter": "Kyle Tucker",
             "pitcher": "Michael King",
             "game_pk": 823281
-        },
-        {
-            "date": "2026-06-27",
-            "date_formatted": "June 27, 2026",
-            "challenger": "Freddy Fermin",
-            "role": "catching",
-            "team": "opponents",
-            "outcome": "confirmed",
-            "result_desc": "Freddie Freeman doubles (21) on a line drive to center fielder Jackson Merrill.",
-            "batter": "Freddie Freeman",
-            "pitcher": "Randy V\u00e1squez",
-            "game_pk": 823283
-        },
-        {
-            "date": "2026-06-27",
-            "date_formatted": "June 27, 2026",
-            "challenger": "Dalton Rushing",
-            "role": "catching",
-            "team": "dodgers",
-            "outcome": "confirmed",
-            "result_desc": "Samad Taylor lines out to shortstop Mookie Betts.",
-            "batter": "Samad Taylor",
-            "pitcher": "Yoshinobu Yamamoto",
-            "game_pk": 823283
-        },
-        {
-            "date": "2026-06-26",
-            "date_formatted": "June 26, 2026",
-            "challenger": "Dalton Rushing",
-            "role": "catching",
-            "team": "dodgers",
-            "outcome": "confirmed",
-            "result_desc": "Jackson Merrill pops out to third baseman Max Muncy.",
-            "batter": "Jackson Merrill",
-            "pitcher": "Roki Sasaki",
-            "game_pk": 823285
         }
     ]
 }

@@ -1,16 +1,16 @@
 {
     "season_summary": {
-        "correct_strikes_pct": 91.33361379890619,
-        "incorrect_strikes_pct": 8.666386201093815,
-        "total_called_strikes": 2377,
-        "bad_calls_count": 206
+        "correct_strikes_pct": 91.30253849354973,
+        "incorrect_strikes_pct": 8.697461506450267,
+        "total_called_strikes": 2403,
+        "bad_calls_count": 209
     },
     "last_game_summary": {
         "date": "July 5, 2026",
-        "correct_strikes_pct": 80.0,
-        "incorrect_strikes_pct": 20.0,
-        "total_called_strikes": 5,
-        "bad_calls_count": 1,
+        "correct_strikes_pct": 87.09677419354838,
+        "incorrect_strikes_pct": 12.903225806451616,
+        "total_called_strikes": 31,
+        "bad_calls_count": 4,
         "home_plate_umpire": "Nick Mahrley"
     },
     "worst_calls_of_season": [
@@ -56,17 +56,17 @@
         }
     ],
     "pitching_season_summary": {
-        "correct_balls_pct": 95.8910227780259,
-        "incorrect_balls_pct": 4.108977221974101,
-        "total_called_balls": 4478,
-        "bad_calls_count": 184
+        "correct_balls_pct": 95.90888987173817,
+        "incorrect_balls_pct": 4.091110128261832,
+        "total_called_balls": 4522,
+        "bad_calls_count": 185
     },
     "pitching_last_game_summary": {
         "date": "July 5, 2026",
-        "correct_balls_pct": 100.0,
-        "incorrect_balls_pct": 0.0,
-        "total_called_balls": 14,
-        "bad_calls_count": 0
+        "correct_balls_pct": 98.27586206896551,
+        "incorrect_balls_pct": 1.724137931034491,
+        "total_called_balls": 58,
+        "bad_calls_count": 1
     },
     "pitching_worst_calls_of_season": [],
     "abs_challenges": {
@@ -89,9 +89,9 @@
         },
         "opponents": {
             "batting": {
-                "total": 15,
+                "total": 16,
                 "successful": 3,
-                "failed": 12
+                "failed": 13
             },
             "pitching": {
                 "total": 0,
@@ -99,12 +99,36 @@
                 "failed": 0
             },
             "catching": {
-                "total": 36,
+                "total": 37,
                 "successful": 27,
-                "failed": 9
+                "failed": 10
             }
         },
         "challenge_log": [
+            {
+                "date": "2026-07-05",
+                "date_formatted": "July 5, 2026",
+                "challenger": "Luis Campusano",
+                "role": "catching",
+                "team": "opponents",
+                "outcome": "confirmed",
+                "result_desc": "Shohei Ohtani walks.",
+                "batter": "Shohei Ohtani",
+                "pitcher": "Yuki Matsui",
+                "game_pk": 823931
+            },
+            {
+                "date": "2026-07-05",
+                "date_formatted": "July 5, 2026",
+                "challenger": "Xander Bogaerts",
+                "role": "batting",
+                "team": "opponents",
+                "outcome": "confirmed",
+                "result_desc": "Xander Bogaerts called out on strikes.",
+                "batter": "Xander Bogaerts",
+                "pitcher": "Emmet Sheehan",
+                "game_pk": 823931
+            },
             {
                 "date": "2026-07-01",
                 "date_formatted": "July 1, 2026",
@@ -320,30 +344,6 @@
                 "batter": "Dalton Rushing",
                 "pitcher": "Shane McClanahan",
                 "game_pk": 823940
-            },
-            {
-                "date": "2026-06-14",
-                "date_formatted": "June 14, 2026",
-                "challenger": "Drew Romo",
-                "role": "catching",
-                "team": "opponents",
-                "outcome": "overturned",
-                "result_desc": "Kyle Tucker called out on strikes.",
-                "batter": "Kyle Tucker",
-                "pitcher": "Erick Fedde",
-                "game_pk": 824586
-            },
-            {
-                "date": "2026-06-13",
-                "date_formatted": "June 13, 2026",
-                "challenger": "Andy Pages",
-                "role": "batting",
-                "team": "dodgers",
-                "outcome": "confirmed",
-                "result_desc": "Andy Pages called out on strikes.",
-                "batter": "Andy Pages",
-                "pitcher": "Sean Burke",
-                "game_pk": 824587
             }
         ]
     }
