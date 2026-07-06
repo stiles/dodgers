@@ -274,5 +274,191 @@
             "pitcher": "Michael King",
             "game_pk": 823281
         }
+    ],
+    "dodgers_by_player": [
+        {
+            "challenger": "Will Smith",
+            "total": 39,
+            "successful": 25,
+            "failed": 14,
+            "success_rate": 64.1
+        },
+        {
+            "challenger": "Dalton Rushing",
+            "total": 25,
+            "successful": 12,
+            "failed": 13,
+            "success_rate": 48.0
+        },
+        {
+            "challenger": "Andy Pages",
+            "total": 11,
+            "successful": 6,
+            "failed": 5,
+            "success_rate": 54.5
+        },
+        {
+            "challenger": "Teoscar Hern\u00e1ndez",
+            "total": 9,
+            "successful": 8,
+            "failed": 1,
+            "success_rate": 88.9
+        },
+        {
+            "challenger": "Mookie Betts",
+            "total": 8,
+            "successful": 6,
+            "failed": 2,
+            "success_rate": 75.0
+        },
+        {
+            "challenger": "Alex Call",
+            "total": 7,
+            "successful": 4,
+            "failed": 3,
+            "success_rate": 57.1
+        },
+        {
+            "challenger": "Kyle Tucker",
+            "total": 7,
+            "successful": 4,
+            "failed": 3,
+            "success_rate": 57.1
+        },
+        {
+            "challenger": "Shohei Ohtani",
+            "total": 7,
+            "successful": 4,
+            "failed": 3,
+            "success_rate": 57.1
+        },
+        {
+            "challenger": "Miguel Rojas",
+            "total": 6,
+            "successful": 5,
+            "failed": 1,
+            "success_rate": 83.3
+        },
+        {
+            "challenger": "Alex Freeland",
+            "total": 2,
+            "successful": 1,
+            "failed": 1,
+            "success_rate": 50.0
+        },
+        {
+            "challenger": "Max Muncy",
+            "total": 2,
+            "successful": 1,
+            "failed": 1,
+            "success_rate": 50.0
+        },
+        {
+            "challenger": "Chuckie Robinson",
+            "total": 1,
+            "successful": 1,
+            "failed": 0,
+            "success_rate": 100.0
+        },
+        {
+            "challenger": "Freddie Freeman",
+            "total": 1,
+            "successful": 1,
+            "failed": 0,
+            "success_rate": 100.0
+        },
+        {
+            "challenger": "Tyler Glasnow",
+            "total": 1,
+            "successful": 1,
+            "failed": 0,
+            "success_rate": 100.0
+        },
+        {
+            "challenger": "Edwin D\u00edaz",
+            "total": 1,
+            "successful": 0,
+            "failed": 1,
+            "success_rate": 0.0
+        },
+        {
+            "challenger": "Eliezer Alfonzo",
+            "total": 1,
+            "successful": 0,
+            "failed": 1,
+            "success_rate": 0.0
+        },
+        {
+            "challenger": "Kyle Hurt",
+            "total": 1,
+            "successful": 0,
+            "failed": 1,
+            "success_rate": 0.0
+        }
+    ],
+    "dodgers_by_inning": [
+        {
+            "inning": 1,
+            "total": 10,
+            "successful": 8,
+            "failed": 2,
+            "success_rate": 80.0
+        },
+        {
+            "inning": 2,
+            "total": 8,
+            "successful": 5,
+            "failed": 3,
+            "success_rate": 62.5
+        },
+        {
+            "inning": 3,
+            "total": 13,
+            "successful": 7,
+            "failed": 6,
+            "success_rate": 53.8
+        },
+        {
+            "inning": 4,
+            "total": 13,
+            "successful": 7,
+            "failed": 6,
+            "success_rate": 53.8
+        },
+        {
+            "inning": 5,
+            "total": 8,
+            "successful": 6,
+            "failed": 2,
+            "success_rate": 75.0
+        },
+        {
+            "inning": 6,
+            "total": 21,
+            "successful": 13,
+            "failed": 8,
+            "success_rate": 61.9
+        },
+        {
+            "inning": 7,
+            "total": 15,
+            "successful": 8,
+            "failed": 7,
+            "success_rate": 53.3
+        },
+        {
+            "inning": 8,
+            "total": 19,
+            "successful": 12,
+            "failed": 7,
+            "success_rate": 63.2
+        },
+        {
+            "inning": 9,
+            "total": 22,
+            "successful": 13,
+            "failed": 9,
+            "success_rate": 59.1
+        }
     ]
 }
