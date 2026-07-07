@@ -1,9 +1,9 @@
 {
     "dodgers": {
         "batting": {
-            "total": 73,
-            "successful": 47,
-            "failed": 26
+            "total": 75,
+            "successful": 48,
+            "failed": 27
         },
         "pitching": {
             "total": 5,
@@ -18,8 +18,8 @@
     },
     "opponents": {
         "batting": {
-            "total": 82,
-            "successful": 39,
+            "total": 83,
+            "successful": 40,
             "failed": 43
         },
         "pitching": {
@@ -28,12 +28,60 @@
             "failed": 3
         },
         "catching": {
-            "total": 106,
-            "successful": 64,
+            "total": 107,
+            "successful": 65,
             "failed": 42
         }
     },
     "challenge_log": [
+        {
+            "date": "2026-07-06",
+            "date_formatted": "July 6, 2026",
+            "challenger": "Andy Pages",
+            "role": "batting",
+            "team": "dodgers",
+            "outcome": "confirmed",
+            "result_desc": "Andy Pages flies out to center fielder Cole Carrigg.",
+            "batter": "Andy Pages",
+            "pitcher": "Zach Agnos",
+            "game_pk": 823930
+        },
+        {
+            "date": "2026-07-06",
+            "date_formatted": "July 6, 2026",
+            "challenger": "Freddie Freeman",
+            "role": "batting",
+            "team": "dodgers",
+            "outcome": "overturned",
+            "result_desc": "Freddie Freeman flies out to left fielder Jake McCarthy.",
+            "batter": "Freddie Freeman",
+            "pitcher": "Kyle Freeland",
+            "game_pk": 823930
+        },
+        {
+            "date": "2026-07-06",
+            "date_formatted": "July 6, 2026",
+            "challenger": "Kyle Karros",
+            "role": "batting",
+            "team": "opponents",
+            "outcome": "overturned",
+            "result_desc": "Kyle Karros walks.",
+            "batter": "Kyle Karros",
+            "pitcher": "Eric Lauer",
+            "game_pk": 823930
+        },
+        {
+            "date": "2026-07-06",
+            "date_formatted": "July 6, 2026",
+            "challenger": "Hunter Goodman",
+            "role": "catching",
+            "team": "opponents",
+            "outcome": "overturned",
+            "result_desc": "Mookie Betts flies out to center fielder Cole Carrigg.",
+            "batter": "Mookie Betts",
+            "pitcher": "Kyle Freeland",
+            "game_pk": 823930
+        },
         {
             "date": "2026-07-05",
             "date_formatted": "July 5, 2026",
@@ -85,13 +133,13 @@
         {
             "date": "2026-07-04",
             "date_formatted": "July 4, 2026",
-            "challenger": "Max Muncy",
+            "challenger": "Gavin Sheets",
             "role": "batting",
-            "team": "dodgers",
+            "team": "opponents",
             "outcome": "confirmed",
-            "result_desc": "Max Muncy flies out to left fielder Gavin Sheets.",
-            "batter": "Max Muncy",
-            "pitcher": "Griffin Canning",
+            "result_desc": "Gavin Sheets walks.",
+            "batter": "Gavin Sheets",
+            "pitcher": "Yoshinobu Yamamoto",
             "game_pk": 823932
         },
         {
@@ -109,25 +157,25 @@
         {
             "date": "2026-07-04",
             "date_formatted": "July 4, 2026",
-            "challenger": "Gavin Sheets",
+            "challenger": "Max Muncy",
             "role": "batting",
-            "team": "opponents",
+            "team": "dodgers",
             "outcome": "confirmed",
-            "result_desc": "Gavin Sheets walks.",
-            "batter": "Gavin Sheets",
-            "pitcher": "Yoshinobu Yamamoto",
+            "result_desc": "Max Muncy flies out to left fielder Gavin Sheets.",
+            "batter": "Max Muncy",
+            "pitcher": "Griffin Canning",
             "game_pk": 823932
         },
         {
             "date": "2026-07-03",
             "date_formatted": "July 3, 2026",
-            "challenger": "Jackson Merrill",
+            "challenger": "Kyle Tucker",
             "role": "batting",
-            "team": "opponents",
-            "outcome": "overturned",
-            "result_desc": "Jackson Merrill homers (10) on a fly ball to center field.",
-            "batter": "Jackson Merrill",
-            "pitcher": "Shohei Ohtani",
+            "team": "dodgers",
+            "outcome": "confirmed",
+            "result_desc": "Kyle Tucker flies out to shortstop Xander Bogaerts.",
+            "batter": "Kyle Tucker",
+            "pitcher": "Bradgley Rodriguez",
             "game_pk": 823933
         },
         {
@@ -145,13 +193,13 @@
         {
             "date": "2026-07-03",
             "date_formatted": "July 3, 2026",
-            "challenger": "Kyle Tucker",
+            "challenger": "Jackson Merrill",
             "role": "batting",
-            "team": "dodgers",
-            "outcome": "confirmed",
-            "result_desc": "Kyle Tucker flies out to shortstop Xander Bogaerts.",
-            "batter": "Kyle Tucker",
-            "pitcher": "Bradgley Rodriguez",
+            "team": "opponents",
+            "outcome": "overturned",
+            "result_desc": "Jackson Merrill homers (10) on a fly ball to center field.",
+            "batter": "Jackson Merrill",
+            "pitcher": "Shohei Ohtani",
             "game_pk": 823933
         },
         {
@@ -217,30 +265,6 @@
         {
             "date": "2026-06-29",
             "date_formatted": "June 29, 2026",
-            "challenger": "Alex Freeland",
-            "role": "batting",
-            "team": "dodgers",
-            "outcome": "overturned",
-            "result_desc": "Alex Freeland strikes out swinging.",
-            "batter": "Alex Freeland",
-            "pitcher": "Kade Morris",
-            "game_pk": 824986
-        },
-        {
-            "date": "2026-06-29",
-            "date_formatted": "June 29, 2026",
-            "challenger": "Kyle Tucker",
-            "role": "batting",
-            "team": "dodgers",
-            "outcome": "overturned",
-            "result_desc": "Kyle Tucker walks.",
-            "batter": "Kyle Tucker",
-            "pitcher": "Kade Morris",
-            "game_pk": 824986
-        },
-        {
-            "date": "2026-06-29",
-            "date_formatted": "June 29, 2026",
             "challenger": "Jeff McNeil",
             "role": "batting",
             "team": "opponents",
@@ -249,30 +273,6 @@
             "batter": "Jeff McNeil",
             "pitcher": "Jonathan Hern\u00e1ndez",
             "game_pk": 824986
-        },
-        {
-            "date": "2026-06-28",
-            "date_formatted": "June 28, 2026",
-            "challenger": "Andy Pages",
-            "role": "batting",
-            "team": "dodgers",
-            "outcome": "confirmed",
-            "result_desc": "Andy Pages strikes out swinging.",
-            "batter": "Andy Pages",
-            "pitcher": "Michael King",
-            "game_pk": 823281
-        },
-        {
-            "date": "2026-06-28",
-            "date_formatted": "June 28, 2026",
-            "challenger": "Michael King",
-            "role": "pitching",
-            "team": "opponents",
-            "outcome": "overturned",
-            "result_desc": "Kyle Tucker strikes out swinging.",
-            "batter": "Kyle Tucker",
-            "pitcher": "Michael King",
-            "game_pk": 823281
         }
     ],
     "dodgers_by_player": [
@@ -292,10 +292,10 @@
         },
         {
             "challenger": "Andy Pages",
-            "total": 11,
+            "total": 12,
             "successful": 6,
-            "failed": 5,
-            "success_rate": 54.5
+            "failed": 6,
+            "success_rate": 50.0
         },
         {
             "challenger": "Teoscar Hern\u00e1ndez",
@@ -340,6 +340,13 @@
             "success_rate": 83.3
         },
         {
+            "challenger": "Freddie Freeman",
+            "total": 2,
+            "successful": 2,
+            "failed": 0,
+            "success_rate": 100.0
+        },
+        {
             "challenger": "Alex Freeland",
             "total": 2,
             "successful": 1,
@@ -355,13 +362,6 @@
         },
         {
             "challenger": "Chuckie Robinson",
-            "total": 1,
-            "successful": 1,
-            "failed": 0,
-            "success_rate": 100.0
-        },
-        {
-            "challenger": "Freddie Freeman",
             "total": 1,
             "successful": 1,
             "failed": 0,
@@ -427,10 +427,10 @@
         },
         {
             "inning": 5,
-            "total": 8,
-            "successful": 6,
+            "total": 9,
+            "successful": 7,
             "failed": 2,
-            "success_rate": 75.0
+            "success_rate": 77.8
         },
         {
             "inning": 6,
@@ -441,10 +441,10 @@
         },
         {
             "inning": 7,
-            "total": 15,
+            "total": 16,
             "successful": 8,
-            "failed": 7,
-            "success_rate": 53.3
+            "failed": 8,
+            "success_rate": 50.0
         },
         {
             "inning": 8,

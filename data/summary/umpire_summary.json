@@ -1,17 +1,17 @@
 {
     "season_summary": {
-        "correct_strikes_pct": 91.30253849354973,
-        "incorrect_strikes_pct": 8.697461506450267,
-        "total_called_strikes": 2403,
-        "bad_calls_count": 209
+        "correct_strikes_pct": 91.26493613514627,
+        "incorrect_strikes_pct": 8.735063864853728,
+        "total_called_strikes": 2427,
+        "bad_calls_count": 212
     },
     "last_game_summary": {
-        "date": "July 5, 2026",
-        "correct_strikes_pct": 87.09677419354838,
-        "incorrect_strikes_pct": 12.903225806451616,
-        "total_called_strikes": 31,
-        "bad_calls_count": 4,
-        "home_plate_umpire": "Nick Mahrley"
+        "date": "July 6, 2026",
+        "correct_strikes_pct": 87.5,
+        "incorrect_strikes_pct": 12.5,
+        "total_called_strikes": 24,
+        "bad_calls_count": 3,
+        "home_plate_umpire": "Dan Iassogna"
     },
     "worst_calls_of_season": [
         {
@@ -56,16 +56,16 @@
         }
     ],
     "pitching_season_summary": {
-        "correct_balls_pct": 95.90888987173817,
-        "incorrect_balls_pct": 4.091110128261832,
-        "total_called_balls": 4522,
-        "bad_calls_count": 185
+        "correct_balls_pct": 95.9432933478735,
+        "incorrect_balls_pct": 4.056706652126493,
+        "total_called_balls": 4585,
+        "bad_calls_count": 186
     },
     "pitching_last_game_summary": {
-        "date": "July 5, 2026",
-        "correct_balls_pct": 98.27586206896551,
-        "incorrect_balls_pct": 1.724137931034491,
-        "total_called_balls": 58,
+        "date": "July 6, 2026",
+        "correct_balls_pct": 98.4126984126984,
+        "incorrect_balls_pct": 1.5873015873015959,
+        "total_called_balls": 63,
         "bad_calls_count": 1
     },
     "pitching_worst_calls_of_season": [],
@@ -82,15 +82,15 @@
                 "failed": 0
             },
             "catching": {
-                "total": 14,
+                "total": 15,
                 "successful": 11,
-                "failed": 3
+                "failed": 4
             }
         },
         "opponents": {
             "batting": {
-                "total": 16,
-                "successful": 3,
+                "total": 17,
+                "successful": 4,
                 "failed": 13
             },
             "pitching": {
@@ -99,12 +99,48 @@
                 "failed": 0
             },
             "catching": {
-                "total": 37,
-                "successful": 27,
+                "total": 38,
+                "successful": 28,
                 "failed": 10
             }
         },
         "challenge_log": [
+            {
+                "date": "2026-07-06",
+                "date_formatted": "July 6, 2026",
+                "challenger": "Hunter Goodman",
+                "role": "catching",
+                "team": "opponents",
+                "outcome": "overturned",
+                "result_desc": "Andy Pages called out on strikes.",
+                "batter": "Andy Pages",
+                "pitcher": "Antonio Senzatela",
+                "game_pk": 823930
+            },
+            {
+                "date": "2026-07-06",
+                "date_formatted": "July 6, 2026",
+                "challenger": "Hunter Goodman",
+                "role": "batting",
+                "team": "opponents",
+                "outcome": "overturned",
+                "result_desc": "Hunter Goodman walks.",
+                "batter": "Hunter Goodman",
+                "pitcher": "Alex Vesia",
+                "game_pk": 823930
+            },
+            {
+                "date": "2026-07-06",
+                "date_formatted": "July 6, 2026",
+                "challenger": "Dalton Rushing",
+                "role": "catching",
+                "team": "dodgers",
+                "outcome": "confirmed",
+                "result_desc": "Tyler Freeman walks. TJ Rumfield to 2nd.",
+                "batter": "Tyler Freeman",
+                "pitcher": "Alex Vesia",
+                "game_pk": 823930
+            },
             {
                 "date": "2026-07-05",
                 "date_formatted": "July 5, 2026",
@@ -308,42 +344,6 @@
                 "batter": "Max Muncy",
                 "pitcher": "Rico Garcia",
                 "game_pk": 823937
-            },
-            {
-                "date": "2026-06-17",
-                "date_formatted": "June 17, 2026",
-                "challenger": "Mookie Betts",
-                "role": "batting",
-                "team": "dodgers",
-                "outcome": "overturned",
-                "result_desc": "Mookie Betts walks.",
-                "batter": "Mookie Betts",
-                "pitcher": "Shane McClanahan",
-                "game_pk": 823940
-            },
-            {
-                "date": "2026-06-17",
-                "date_formatted": "June 17, 2026",
-                "challenger": "Miguel Rojas",
-                "role": "batting",
-                "team": "dodgers",
-                "outcome": "confirmed",
-                "result_desc": "Miguel Rojas called out on strikes.",
-                "batter": "Miguel Rojas",
-                "pitcher": "Shane McClanahan",
-                "game_pk": 823940
-            },
-            {
-                "date": "2026-06-17",
-                "date_formatted": "June 17, 2026",
-                "challenger": "Dalton Rushing",
-                "role": "batting",
-                "team": "dodgers",
-                "outcome": "overturned",
-                "result_desc": "Dalton Rushing walks.",
-                "batter": "Dalton Rushing",
-                "pitcher": "Shane McClanahan",
-                "game_pk": 823940
             }
         ]
     }

@@ -75,6 +75,21 @@
         "fetched":"2026-07-07"
     },
     {
+        "player":"Eric Lauer",
+        "role":"SP",
+        "position":"P",
+        "era":"3.12",
+        "whip":"1.09",
+        "k9":"4.69",
+        "bb9":"2.45",
+        "kbb":"1.91",
+        "ip":"40.1",
+        "ip_rounded":40,
+        "gs":6,
+        "gp":7,
+        "fetched":"2026-07-07"
+    },
+    {
         "player":"Tyler Glasnow",
         "role":"SP",
         "position":"P",
@@ -90,6 +105,36 @@
         "fetched":"2026-07-07"
     },
     {
+        "player":"Edgardo Henriquez",
+        "role":"RP",
+        "position":"P",
+        "era":"2.45",
+        "whip":"0.90",
+        "k9":"8.59",
+        "bb9":"3.19",
+        "kbb":"2.69",
+        "ip":"36.2",
+        "ip_rounded":36,
+        "gs":0,
+        "gp":34,
+        "fetched":"2026-07-07"
+    },
+    {
+        "player":"Tanner Scott",
+        "role":"RP",
+        "position":"P",
+        "era":"2.70",
+        "whip":"0.82",
+        "k9":"11.54",
+        "bb9":"1.23",
+        "kbb":"9.40",
+        "ip":"36.2",
+        "ip_rounded":36,
+        "gs":0,
+        "gp":39,
+        "fetched":"2026-07-07"
+    },
+    {
         "player":"Jack Dreyer",
         "role":"SP",
         "position":"P",
@@ -102,51 +147,6 @@
         "ip_rounded":36,
         "gs":1,
         "gp":35,
-        "fetched":"2026-07-07"
-    },
-    {
-        "player":"Tanner Scott",
-        "role":"RP",
-        "position":"P",
-        "era":"2.02",
-        "whip":"0.70",
-        "k9":"11.36",
-        "bb9":"0.76",
-        "kbb":"15.00",
-        "ip":"35.2",
-        "ip_rounded":35,
-        "gs":0,
-        "gp":38,
-        "fetched":"2026-07-07"
-    },
-    {
-        "player":"Will Klein",
-        "role":"SP",
-        "position":"P",
-        "era":"2.29",
-        "whip":"1.33",
-        "k9":"10.44",
-        "bb9":"3.31",
-        "kbb":"3.15",
-        "ip":"35.1",
-        "ip_rounded":35,
-        "gs":2,
-        "gp":30,
-        "fetched":"2026-07-07"
-    },
-    {
-        "player":"Edgardo Henriquez",
-        "role":"RP",
-        "position":"P",
-        "era":"2.60",
-        "whip":"0.89",
-        "k9":"9.09",
-        "bb9":"2.86",
-        "kbb":"3.18",
-        "ip":"34.2",
-        "ip_rounded":34,
-        "gs":0,
-        "gp":33,
         "fetched":"2026-07-07"
     }
 ]
