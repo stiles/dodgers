@@ -18,15 +18,15 @@
         "player":"Justin Wrobleski",
         "role":"SP",
         "position":"P",
-        "era":"2.80",
-        "whip":"1.01",
-        "k9":"6.17",
-        "bb9":"1.74",
-        "kbb":"3.56",
-        "ip":"93.1",
-        "ip_rounded":93,
-        "gs":14,
-        "gp":15,
+        "era":"2.69",
+        "whip":"1.02",
+        "k9":"6.55",
+        "bb9":"1.79",
+        "kbb":"3.65",
+        "ip":"100.1",
+        "ip_rounded":100,
+        "gs":15,
+        "gp":16,
         "fetched":"2026-07-08"
     },
     {
@@ -105,6 +105,21 @@
         "fetched":"2026-07-08"
     },
     {
+        "player":"Jack Dreyer",
+        "role":"SP",
+        "position":"P",
+        "era":"3.19",
+        "whip":"1.01",
+        "k9":"10.31",
+        "bb9":"2.45",
+        "kbb":"4.20",
+        "ip":"36.2",
+        "ip_rounded":36,
+        "gs":1,
+        "gp":36,
+        "fetched":"2026-07-08"
+    },
+    {
         "player":"Edgardo Henriquez",
         "role":"RP",
         "position":"P",
@@ -132,21 +147,6 @@
         "ip_rounded":36,
         "gs":0,
         "gp":39,
-        "fetched":"2026-07-08"
-    },
-    {
-        "player":"Jack Dreyer",
-        "role":"SP",
-        "position":"P",
-        "era":"3.25",
-        "whip":"1.03",
-        "k9":"10.50",
-        "bb9":"2.50",
-        "kbb":"4.20",
-        "ip":"36.0",
-        "ip_rounded":36,
-        "gs":1,
-        "gp":35,
         "fetched":"2026-07-08"
     }
 ]

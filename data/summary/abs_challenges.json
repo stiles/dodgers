@@ -11,15 +11,15 @@
             "failed": 3
         },
         "catching": {
-            "total": 78,
-            "successful": 45,
+            "total": 79,
+            "successful": 46,
             "failed": 33
         }
     },
     "opponents": {
         "batting": {
-            "total": 83,
-            "successful": 40,
+            "total": 84,
+            "successful": 41,
             "failed": 43
         },
         "pitching": {
@@ -28,12 +28,72 @@
             "failed": 3
         },
         "catching": {
-            "total": 107,
-            "successful": 65,
+            "total": 110,
+            "successful": 68,
             "failed": 42
         }
     },
     "challenge_log": [
+        {
+            "date": "2026-07-07",
+            "date_formatted": "July 7, 2026",
+            "challenger": "Braxton Fulford",
+            "role": "catching",
+            "team": "opponents",
+            "outcome": "overturned",
+            "result_desc": "Freddie Freeman strikes out swinging.",
+            "batter": "Freddie Freeman",
+            "pitcher": "Jordan Romano",
+            "game_pk": 823929
+        },
+        {
+            "date": "2026-07-07",
+            "date_formatted": "July 7, 2026",
+            "challenger": "Braxton Fulford",
+            "role": "catching",
+            "team": "opponents",
+            "outcome": "overturned",
+            "result_desc": "Freddie Freeman strikes out swinging.",
+            "batter": "Freddie Freeman",
+            "pitcher": "Jordan Romano",
+            "game_pk": 823929
+        },
+        {
+            "date": "2026-07-07",
+            "date_formatted": "July 7, 2026",
+            "challenger": "Braxton Fulford",
+            "role": "catching",
+            "team": "opponents",
+            "outcome": "overturned",
+            "result_desc": "Alex Freeland singles on a sharp line drive to left fielder Jake McCarthy.",
+            "batter": "Alex Freeland",
+            "pitcher": "Jordan Romano",
+            "game_pk": 823929
+        },
+        {
+            "date": "2026-07-07",
+            "date_formatted": "July 7, 2026",
+            "challenger": "Dalton Rushing",
+            "role": "catching",
+            "team": "dodgers",
+            "outcome": "overturned",
+            "result_desc": "Braxton Fulford strikes out swinging.",
+            "batter": "Braxton Fulford",
+            "pitcher": "Evan Phillips",
+            "game_pk": 823929
+        },
+        {
+            "date": "2026-07-07",
+            "date_formatted": "July 7, 2026",
+            "challenger": "Cole Carrigg",
+            "role": "batting",
+            "team": "opponents",
+            "outcome": "overturned",
+            "result_desc": "Cole Carrigg singles on a line drive to right fielder Kyle Tucker. Kyle Karros to 2nd.",
+            "batter": "Cole Carrigg",
+            "pitcher": "Will Klein",
+            "game_pk": 823929
+        },
         {
             "date": "2026-07-06",
             "date_formatted": "July 6, 2026",
@@ -85,30 +145,6 @@
         {
             "date": "2026-07-05",
             "date_formatted": "July 5, 2026",
-            "challenger": "Alex Freeland",
-            "role": "batting",
-            "team": "dodgers",
-            "outcome": "confirmed",
-            "result_desc": "Alex Freeland flies out to left fielder Jase Bowen.",
-            "batter": "Alex Freeland",
-            "pitcher": "Mason Miller",
-            "game_pk": 823931
-        },
-        {
-            "date": "2026-07-05",
-            "date_formatted": "July 5, 2026",
-            "challenger": "Teoscar Hern\u00e1ndez",
-            "role": "batting",
-            "team": "dodgers",
-            "outcome": "overturned",
-            "result_desc": "Teoscar Hern\u00e1ndez walks.",
-            "batter": "Teoscar Hern\u00e1ndez",
-            "pitcher": "Bradgley Rodriguez",
-            "game_pk": 823931
-        },
-        {
-            "date": "2026-07-05",
-            "date_formatted": "July 5, 2026",
             "challenger": "Luis Campusano",
             "role": "catching",
             "team": "opponents",
@@ -131,15 +167,39 @@
             "game_pk": 823931
         },
         {
+            "date": "2026-07-05",
+            "date_formatted": "July 5, 2026",
+            "challenger": "Alex Freeland",
+            "role": "batting",
+            "team": "dodgers",
+            "outcome": "confirmed",
+            "result_desc": "Alex Freeland flies out to left fielder Jase Bowen.",
+            "batter": "Alex Freeland",
+            "pitcher": "Mason Miller",
+            "game_pk": 823931
+        },
+        {
+            "date": "2026-07-05",
+            "date_formatted": "July 5, 2026",
+            "challenger": "Teoscar Hern\u00e1ndez",
+            "role": "batting",
+            "team": "dodgers",
+            "outcome": "overturned",
+            "result_desc": "Teoscar Hern\u00e1ndez walks.",
+            "batter": "Teoscar Hern\u00e1ndez",
+            "pitcher": "Bradgley Rodriguez",
+            "game_pk": 823931
+        },
+        {
             "date": "2026-07-04",
             "date_formatted": "July 4, 2026",
-            "challenger": "Gavin Sheets",
+            "challenger": "Max Muncy",
             "role": "batting",
-            "team": "opponents",
+            "team": "dodgers",
             "outcome": "confirmed",
-            "result_desc": "Gavin Sheets walks.",
-            "batter": "Gavin Sheets",
-            "pitcher": "Yoshinobu Yamamoto",
+            "result_desc": "Max Muncy flies out to left fielder Gavin Sheets.",
+            "batter": "Max Muncy",
+            "pitcher": "Griffin Canning",
             "game_pk": 823932
         },
         {
@@ -157,13 +217,13 @@
         {
             "date": "2026-07-04",
             "date_formatted": "July 4, 2026",
-            "challenger": "Max Muncy",
+            "challenger": "Gavin Sheets",
             "role": "batting",
-            "team": "dodgers",
+            "team": "opponents",
             "outcome": "confirmed",
-            "result_desc": "Max Muncy flies out to left fielder Gavin Sheets.",
-            "batter": "Max Muncy",
-            "pitcher": "Griffin Canning",
+            "result_desc": "Gavin Sheets walks.",
+            "batter": "Gavin Sheets",
+            "pitcher": "Yoshinobu Yamamoto",
             "game_pk": 823932
         },
         {
@@ -205,30 +265,6 @@
         {
             "date": "2026-07-02",
             "date_formatted": "July 2, 2026",
-            "challenger": "Samad Taylor",
-            "role": "batting",
-            "team": "opponents",
-            "outcome": "confirmed",
-            "result_desc": "Samad Taylor walks.",
-            "batter": "Samad Taylor",
-            "pitcher": "Paul Gervase",
-            "game_pk": 823935
-        },
-        {
-            "date": "2026-07-02",
-            "date_formatted": "July 2, 2026",
-            "challenger": "Dalton Rushing",
-            "role": "catching",
-            "team": "dodgers",
-            "outcome": "confirmed",
-            "result_desc": "Fernando Tatis Jr. walks.",
-            "batter": "Fernando Tatis Jr.",
-            "pitcher": "Roki Sasaki",
-            "game_pk": 823935
-        },
-        {
-            "date": "2026-07-02",
-            "date_formatted": "July 2, 2026",
             "challenger": "Freddy Fermin",
             "role": "catching",
             "team": "opponents",
@@ -237,42 +273,6 @@
             "batter": "Freddie Freeman",
             "pitcher": "Randy V\u00e1squez",
             "game_pk": 823935
-        },
-        {
-            "date": "2026-07-01",
-            "date_formatted": "July 1, 2026",
-            "challenger": "Jonah Heim",
-            "role": "catching",
-            "team": "opponents",
-            "outcome": "overturned",
-            "result_desc": "Tommy Edman strikes out swinging.",
-            "batter": "Tommy Edman",
-            "pitcher": "Hogan Harris",
-            "game_pk": 824985
-        },
-        {
-            "date": "2026-07-01",
-            "date_formatted": "July 1, 2026",
-            "challenger": "Kyle Tucker",
-            "role": "batting",
-            "team": "dodgers",
-            "outcome": "overturned",
-            "result_desc": "Kyle Tucker walks.",
-            "batter": "Kyle Tucker",
-            "pitcher": "Luis Medina",
-            "game_pk": 824985
-        },
-        {
-            "date": "2026-06-29",
-            "date_formatted": "June 29, 2026",
-            "challenger": "Jeff McNeil",
-            "role": "batting",
-            "team": "opponents",
-            "outcome": "confirmed",
-            "result_desc": "Jeff McNeil flies out to center fielder Andy Pages.",
-            "batter": "Jeff McNeil",
-            "pitcher": "Jonathan Hern\u00e1ndez",
-            "game_pk": 824986
         }
     ],
     "dodgers_by_player": [
@@ -285,10 +285,10 @@
         },
         {
             "challenger": "Dalton Rushing",
-            "total": 25,
-            "successful": 12,
+            "total": 26,
+            "successful": 13,
             "failed": 13,
-            "success_rate": 48.0
+            "success_rate": 50.0
         },
         {
             "challenger": "Andy Pages",
@@ -455,10 +455,10 @@
         },
         {
             "inning": 9,
-            "total": 22,
-            "successful": 13,
+            "total": 23,
+            "successful": 14,
             "failed": 9,
-            "success_rate": 59.1
+            "success_rate": 60.9
         }
     ]
 }
