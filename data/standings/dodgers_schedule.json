@@ -1,13 +1,5 @@
 [
     {
-        "date":"Jun 28",
-        "opp_name":"San Diego Padres",
-        "home_away":"away",
-        "result":"win",
-        "placement":"last",
-        "game_start":"4-2"
-    },
-    {
         "date":"Jun 29",
         "opp_name":"Athletics",
         "home_away":"away",
@@ -83,9 +75,9 @@
         "date":"Jul 8",
         "opp_name":"Colorado Rockies",
         "home_away":"home",
-        "result":"--",
-        "placement":"next",
-        "game_start":"7:10 PM"
+        "result":"win",
+        "placement":"last",
+        "game_start":"4-3"
     },
     {
         "date":"Jul 10",
@@ -158,5 +150,13 @@
         "result":"--",
         "placement":"next",
         "game_start":"3:40 PM"
+    },
+    {
+        "date":"Jul 24",
+        "opp_name":"New York Mets",
+        "home_away":"away",
+        "result":"--",
+        "placement":"next",
+        "game_start":"4:10 PM"
     }
 ]

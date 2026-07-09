@@ -1,9 +1,9 @@
 {
     "dodgers": {
         "batting": {
-            "total": 75,
+            "total": 77,
             "successful": 48,
-            "failed": 27
+            "failed": 29
         },
         "pitching": {
             "total": 5,
@@ -28,35 +28,59 @@
             "failed": 3
         },
         "catching": {
-            "total": 110,
-            "successful": 68,
-            "failed": 42
+            "total": 112,
+            "successful": 69,
+            "failed": 43
         }
     },
     "challenge_log": [
         {
-            "date": "2026-07-07",
-            "date_formatted": "July 7, 2026",
-            "challenger": "Braxton Fulford",
+            "date": "2026-07-08",
+            "date_formatted": "July 8, 2026",
+            "challenger": "Brett Sullivan",
             "role": "catching",
             "team": "opponents",
-            "outcome": "overturned",
-            "result_desc": "Freddie Freeman strikes out swinging.",
-            "batter": "Freddie Freeman",
-            "pitcher": "Jordan Romano",
-            "game_pk": 823929
+            "outcome": "confirmed",
+            "result_desc": "Mookie Betts strikes out swinging.",
+            "batter": "Mookie Betts",
+            "pitcher": "Gabriel Hughes",
+            "game_pk": 823928
         },
         {
-            "date": "2026-07-07",
-            "date_formatted": "July 7, 2026",
-            "challenger": "Braxton Fulford",
+            "date": "2026-07-08",
+            "date_formatted": "July 8, 2026",
+            "challenger": "Brett Sullivan",
             "role": "catching",
             "team": "opponents",
             "outcome": "overturned",
-            "result_desc": "Freddie Freeman strikes out swinging.",
-            "batter": "Freddie Freeman",
-            "pitcher": "Jordan Romano",
-            "game_pk": 823929
+            "result_desc": "Max Muncy strikes out swinging.",
+            "batter": "Max Muncy",
+            "pitcher": "Gabriel Hughes",
+            "game_pk": 823928
+        },
+        {
+            "date": "2026-07-08",
+            "date_formatted": "July 8, 2026",
+            "challenger": "Alex Call",
+            "role": "batting",
+            "team": "dodgers",
+            "outcome": "confirmed",
+            "result_desc": "Alex Call strikes out swinging.",
+            "batter": "Alex Call",
+            "pitcher": "Gabriel Hughes",
+            "game_pk": 823928
+        },
+        {
+            "date": "2026-07-08",
+            "date_formatted": "July 8, 2026",
+            "challenger": "Alex Call",
+            "role": "batting",
+            "team": "dodgers",
+            "outcome": "confirmed",
+            "result_desc": "Alex Call strikes out swinging.",
+            "batter": "Alex Call",
+            "pitcher": "Gabriel Hughes",
+            "game_pk": 823928
         },
         {
             "date": "2026-07-07",
@@ -92,6 +116,30 @@
             "result_desc": "Cole Carrigg singles on a line drive to right fielder Kyle Tucker. Kyle Karros to 2nd.",
             "batter": "Cole Carrigg",
             "pitcher": "Will Klein",
+            "game_pk": 823929
+        },
+        {
+            "date": "2026-07-07",
+            "date_formatted": "July 7, 2026",
+            "challenger": "Braxton Fulford",
+            "role": "catching",
+            "team": "opponents",
+            "outcome": "overturned",
+            "result_desc": "Freddie Freeman strikes out swinging.",
+            "batter": "Freddie Freeman",
+            "pitcher": "Jordan Romano",
+            "game_pk": 823929
+        },
+        {
+            "date": "2026-07-07",
+            "date_formatted": "July 7, 2026",
+            "challenger": "Braxton Fulford",
+            "role": "catching",
+            "team": "opponents",
+            "outcome": "overturned",
+            "result_desc": "Freddie Freeman strikes out swinging.",
+            "batter": "Freddie Freeman",
+            "pitcher": "Jordan Romano",
             "game_pk": 823929
         },
         {
@@ -145,30 +193,6 @@
         {
             "date": "2026-07-05",
             "date_formatted": "July 5, 2026",
-            "challenger": "Luis Campusano",
-            "role": "catching",
-            "team": "opponents",
-            "outcome": "overturned",
-            "result_desc": "Alex Call called out on strikes.",
-            "batter": "Alex Call",
-            "pitcher": "JP Sears",
-            "game_pk": 823931
-        },
-        {
-            "date": "2026-07-05",
-            "date_formatted": "July 5, 2026",
-            "challenger": "Eliezer Alfonzo",
-            "role": "catching",
-            "team": "dodgers",
-            "outcome": "confirmed",
-            "result_desc": "Xander Bogaerts challenged (pitch result), call on the field was confirmed: Xander Bogaerts called out on strikes.",
-            "batter": "Xander Bogaerts",
-            "pitcher": "Emmet Sheehan",
-            "game_pk": 823931
-        },
-        {
-            "date": "2026-07-05",
-            "date_formatted": "July 5, 2026",
             "challenger": "Alex Freeland",
             "role": "batting",
             "team": "dodgers",
@@ -191,16 +215,28 @@
             "game_pk": 823931
         },
         {
-            "date": "2026-07-04",
-            "date_formatted": "July 4, 2026",
-            "challenger": "Max Muncy",
-            "role": "batting",
+            "date": "2026-07-05",
+            "date_formatted": "July 5, 2026",
+            "challenger": "Luis Campusano",
+            "role": "catching",
+            "team": "opponents",
+            "outcome": "overturned",
+            "result_desc": "Alex Call called out on strikes.",
+            "batter": "Alex Call",
+            "pitcher": "JP Sears",
+            "game_pk": 823931
+        },
+        {
+            "date": "2026-07-05",
+            "date_formatted": "July 5, 2026",
+            "challenger": "Eliezer Alfonzo",
+            "role": "catching",
             "team": "dodgers",
             "outcome": "confirmed",
-            "result_desc": "Max Muncy flies out to left fielder Gavin Sheets.",
-            "batter": "Max Muncy",
-            "pitcher": "Griffin Canning",
-            "game_pk": 823932
+            "result_desc": "Xander Bogaerts challenged (pitch result), call on the field was confirmed: Xander Bogaerts called out on strikes.",
+            "batter": "Xander Bogaerts",
+            "pitcher": "Emmet Sheehan",
+            "game_pk": 823931
         },
         {
             "date": "2026-07-04",
@@ -227,52 +263,16 @@
             "game_pk": 823932
         },
         {
-            "date": "2026-07-03",
-            "date_formatted": "July 3, 2026",
-            "challenger": "Kyle Tucker",
+            "date": "2026-07-04",
+            "date_formatted": "July 4, 2026",
+            "challenger": "Max Muncy",
             "role": "batting",
             "team": "dodgers",
             "outcome": "confirmed",
-            "result_desc": "Kyle Tucker flies out to shortstop Xander Bogaerts.",
-            "batter": "Kyle Tucker",
-            "pitcher": "Bradgley Rodriguez",
-            "game_pk": 823933
-        },
-        {
-            "date": "2026-07-03",
-            "date_formatted": "July 3, 2026",
-            "challenger": "Rodolfo Dur\u00e1n",
-            "role": "catching",
-            "team": "opponents",
-            "outcome": "confirmed",
-            "result_desc": "Kyle Tucker reaches on a fielder's choice, fielded by second baseman Jake Cronenworth. Mookie Betts to 3rd. Max Muncy to 2nd. Fielding error by second baseman Jake Cronenworth.",
-            "batter": "Kyle Tucker",
-            "pitcher": "Adrian Morejon",
-            "game_pk": 823933
-        },
-        {
-            "date": "2026-07-03",
-            "date_formatted": "July 3, 2026",
-            "challenger": "Jackson Merrill",
-            "role": "batting",
-            "team": "opponents",
-            "outcome": "overturned",
-            "result_desc": "Jackson Merrill homers (10) on a fly ball to center field.",
-            "batter": "Jackson Merrill",
-            "pitcher": "Shohei Ohtani",
-            "game_pk": 823933
-        },
-        {
-            "date": "2026-07-02",
-            "date_formatted": "July 2, 2026",
-            "challenger": "Freddy Fermin",
-            "role": "catching",
-            "team": "opponents",
-            "outcome": "overturned",
-            "result_desc": "Freddie Freeman singles on a sharp ground ball to right fielder Fernando Tatis Jr. Shohei Ohtani to 2nd.",
-            "batter": "Freddie Freeman",
-            "pitcher": "Randy V\u00e1squez",
-            "game_pk": 823935
+            "result_desc": "Max Muncy flies out to left fielder Gavin Sheets.",
+            "batter": "Max Muncy",
+            "pitcher": "Griffin Canning",
+            "game_pk": 823932
         }
     ],
     "dodgers_by_player": [
@@ -305,18 +305,18 @@
             "success_rate": 88.9
         },
         {
+            "challenger": "Alex Call",
+            "total": 9,
+            "successful": 4,
+            "failed": 5,
+            "success_rate": 44.4
+        },
+        {
             "challenger": "Mookie Betts",
             "total": 8,
             "successful": 6,
             "failed": 2,
             "success_rate": 75.0
-        },
-        {
-            "challenger": "Alex Call",
-            "total": 7,
-            "successful": 4,
-            "failed": 3,
-            "success_rate": 57.1
         },
         {
             "challenger": "Kyle Tucker",
@@ -399,10 +399,10 @@
     "dodgers_by_inning": [
         {
             "inning": 1,
-            "total": 10,
+            "total": 12,
             "successful": 8,
-            "failed": 2,
-            "success_rate": 80.0
+            "failed": 4,
+            "success_rate": 66.7
         },
         {
             "inning": 2,
