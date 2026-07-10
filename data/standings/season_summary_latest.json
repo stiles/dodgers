@@ -26,7 +26,7 @@
     {
         "stat_label":"Games up\/back",
         "stat":"games_up_back",
-        "value":14,
+        "value":14.5,
         "category":"standings",
         "context_value":"1st",
         "context_value_label":"Division rank"
@@ -188,13 +188,13 @@
         "stat":"k_bb_ratio",
         "value":3.0,
         "category":"pitching",
-        "context_value":"5th",
+        "context_value":"4th",
         "context_value_label":"League rank"
     },
     {
         "stat_label":"Last updated",
         "stat":"update_time",
-        "value":"July 9, 2026, 5:11 PM PT",
+        "value":"July 10, 2026, 4:01 AM PT",
         "category":"summary",
         "context_value":"",
         "context_value_label":""
@@ -202,7 +202,7 @@
     {
         "stat_label":"Team summary",
         "stat":"summary",
-        "value":"<span class='highlight'>LOS ANGELES<\/span> <span class='updated'>(July 9)<\/span> \u2014 The Dodgers have compiled a <span class='highlight'>61-33<\/span> record in the 2026 regular season, a <span class='highlight'>65%<\/span> winning percentage. The last game was a <span class='highlight'>4-3<\/span> home <span class='highlight'>win<\/span> against the <span class='highlight'>Colorado Rockies<\/span>. The team next faces the <span class='highlight'>Arizona Diamondbacks<\/span> on Friday at 7:10 p.m. PDT at <span class='highlight'>UNIQLO Field at Dodger Stadium<\/span>.",
+        "value":"<span class='highlight'>LOS ANGELES<\/span> <span class='updated'>(July 10)<\/span> \u2014 The Dodgers have compiled a <span class='highlight'>61-33<\/span> record in the 2026 regular season, a <span class='highlight'>65%<\/span> winning percentage. The last game was a <span class='highlight'>4-3<\/span> home <span class='highlight'>win<\/span> against the <span class='highlight'>Colorado Rockies<\/span>. The team next faces the <span class='highlight'>Arizona Diamondbacks<\/span> on Friday at 7:10 p.m. PDT at <span class='highlight'>UNIQLO Field at Dodger Stadium<\/span>.",
         "category":"summary",
         "context_value":"",
         "context_value_label":""
