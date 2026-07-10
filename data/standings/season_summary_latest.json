@@ -148,7 +148,7 @@
         "stat":"strikeouts",
         "value":"837",
         "category":"pitching",
-        "context_value":"5th",
+        "context_value":"6th",
         "context_value_label":"League rank"
     },
     {
@@ -188,13 +188,13 @@
         "stat":"k_bb_ratio",
         "value":3.0,
         "category":"pitching",
-        "context_value":"4th",
+        "context_value":"5th",
         "context_value_label":"League rank"
     },
     {
         "stat_label":"Last updated",
         "stat":"update_time",
-        "value":"July 9, 2026, 8:21 AM PT",
+        "value":"July 9, 2026, 5:11 PM PT",
         "category":"summary",
         "context_value":"",
         "context_value_label":""
