@@ -1,17 +1,17 @@
 {
     "season_summary": {
-        "correct_strikes_pct": 91.25859975718332,
-        "incorrect_strikes_pct": 8.741400242816681,
-        "total_called_strikes": 2471,
-        "bad_calls_count": 216
+        "correct_strikes_pct": 91.20835006021679,
+        "incorrect_strikes_pct": 8.791649939783213,
+        "total_called_strikes": 2491,
+        "bad_calls_count": 219
     },
     "last_game_summary": {
-        "date": "July 8, 2026",
-        "correct_strikes_pct": 90.9090909090909,
-        "incorrect_strikes_pct": 9.090909090909093,
-        "total_called_strikes": 22,
-        "bad_calls_count": 2,
-        "home_plate_umpire": "Steven Jaschinski"
+        "date": "July 10, 2026",
+        "correct_strikes_pct": 85.0,
+        "incorrect_strikes_pct": 15.0,
+        "total_called_strikes": 20,
+        "bad_calls_count": 3,
+        "home_plate_umpire": "Austin Jones"
     },
     "worst_calls_of_season": [
         {
@@ -56,17 +56,17 @@
         }
     ],
     "pitching_season_summary": {
-        "correct_balls_pct": 95.97503228583729,
-        "incorrect_balls_pct": 4.024967714162713,
-        "total_called_balls": 4646,
-        "bad_calls_count": 187
+        "correct_balls_pct": 95.98896434634975,
+        "incorrect_balls_pct": 4.011035653650254,
+        "total_called_balls": 4712,
+        "bad_calls_count": 189
     },
     "pitching_last_game_summary": {
-        "date": "July 8, 2026",
-        "correct_balls_pct": 100.0,
-        "incorrect_balls_pct": 0.0,
-        "total_called_balls": 29,
-        "bad_calls_count": 0
+        "date": "July 10, 2026",
+        "correct_balls_pct": 96.96969696969697,
+        "incorrect_balls_pct": 3.030303030303031,
+        "total_called_balls": 66,
+        "bad_calls_count": 2
     },
     "pitching_worst_calls_of_season": [],
     "abs_challenges": {
@@ -82,9 +82,9 @@
                 "failed": 0
             },
             "catching": {
-                "total": 15,
+                "total": 16,
                 "successful": 11,
-                "failed": 4
+                "failed": 5
             }
         },
         "opponents": {
@@ -99,12 +99,36 @@
                 "failed": 0
             },
             "catching": {
-                "total": 38,
-                "successful": 28,
+                "total": 39,
+                "successful": 29,
                 "failed": 10
             }
         },
         "challenge_log": [
+            {
+                "date": "2026-07-10",
+                "date_formatted": "July 10, 2026",
+                "challenger": "Gabriel Moreno",
+                "role": "catching",
+                "team": "opponents",
+                "outcome": "overturned",
+                "result_desc": "Kyle Tucker called out on strikes.",
+                "batter": "Kyle Tucker",
+                "pitcher": "Eduardo Rodriguez",
+                "game_pk": 823927
+            },
+            {
+                "date": "2026-07-10",
+                "date_formatted": "July 10, 2026",
+                "challenger": "Dalton Rushing",
+                "role": "catching",
+                "team": "dodgers",
+                "outcome": "confirmed",
+                "result_desc": "Corbin Carroll walks.",
+                "batter": "Corbin Carroll",
+                "pitcher": "Will Klein",
+                "game_pk": 823927
+            },
             {
                 "date": "2026-07-07",
                 "date_formatted": "July 7, 2026",
@@ -320,30 +344,6 @@
                 "batter": "Kody Clemens",
                 "pitcher": "Eric Lauer",
                 "game_pk": 823692
-            },
-            {
-                "date": "2026-06-21",
-                "date_formatted": "June 21, 2026",
-                "challenger": "Mookie Betts",
-                "role": "batting",
-                "team": "dodgers",
-                "outcome": "confirmed",
-                "result_desc": "Mookie Betts called out on strikes.",
-                "batter": "Mookie Betts",
-                "pitcher": "Brandon Young",
-                "game_pk": 823934
-            },
-            {
-                "date": "2026-06-20",
-                "date_formatted": "June 20, 2026",
-                "challenger": "Samuel Basallo",
-                "role": "catching",
-                "team": "opponents",
-                "outcome": "overturned",
-                "result_desc": "Kyle Tucker called out on strikes.",
-                "batter": "Kyle Tucker",
-                "pitcher": "Trevor Rogers",
-                "game_pk": 823937
             }
         ]
     }

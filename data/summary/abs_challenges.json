@@ -28,12 +28,36 @@
             "failed": 3
         },
         "catching": {
-            "total": 112,
-            "successful": 69,
+            "total": 114,
+            "successful": 71,
             "failed": 43
         }
     },
     "challenge_log": [
+        {
+            "date": "2026-07-10",
+            "date_formatted": "July 10, 2026",
+            "challenger": "Gabriel Moreno",
+            "role": "catching",
+            "team": "opponents",
+            "outcome": "overturned",
+            "result_desc": "Freddie Freeman grounds out, second baseman Ildemaro Vargas to first baseman Tim Tawa.",
+            "batter": "Freddie Freeman",
+            "pitcher": "Eduardo Rodriguez",
+            "game_pk": 823927
+        },
+        {
+            "date": "2026-07-10",
+            "date_formatted": "July 10, 2026",
+            "challenger": "Gabriel Moreno",
+            "role": "catching",
+            "team": "opponents",
+            "outcome": "overturned",
+            "result_desc": "Mookie Betts flies out to left fielder Lourdes Gurriel Jr.",
+            "batter": "Mookie Betts",
+            "pitcher": "Eduardo Rodriguez",
+            "game_pk": 823927
+        },
         {
             "date": "2026-07-08",
             "date_formatted": "July 8, 2026",
@@ -97,18 +121,6 @@
         {
             "date": "2026-07-07",
             "date_formatted": "July 7, 2026",
-            "challenger": "Dalton Rushing",
-            "role": "catching",
-            "team": "dodgers",
-            "outcome": "overturned",
-            "result_desc": "Braxton Fulford strikes out swinging.",
-            "batter": "Braxton Fulford",
-            "pitcher": "Evan Phillips",
-            "game_pk": 823929
-        },
-        {
-            "date": "2026-07-07",
-            "date_formatted": "July 7, 2026",
             "challenger": "Cole Carrigg",
             "role": "batting",
             "team": "opponents",
@@ -116,6 +128,18 @@
             "result_desc": "Cole Carrigg singles on a line drive to right fielder Kyle Tucker. Kyle Karros to 2nd.",
             "batter": "Cole Carrigg",
             "pitcher": "Will Klein",
+            "game_pk": 823929
+        },
+        {
+            "date": "2026-07-07",
+            "date_formatted": "July 7, 2026",
+            "challenger": "Dalton Rushing",
+            "role": "catching",
+            "team": "dodgers",
+            "outcome": "overturned",
+            "result_desc": "Braxton Fulford strikes out swinging.",
+            "batter": "Braxton Fulford",
+            "pitcher": "Evan Phillips",
             "game_pk": 823929
         },
         {
@@ -241,18 +265,6 @@
         {
             "date": "2026-07-04",
             "date_formatted": "July 4, 2026",
-            "challenger": "Xander Bogaerts",
-            "role": "batting",
-            "team": "opponents",
-            "outcome": "confirmed",
-            "result_desc": "Xander Bogaerts called out on strikes.",
-            "batter": "Xander Bogaerts",
-            "pitcher": "Yoshinobu Yamamoto",
-            "game_pk": 823932
-        },
-        {
-            "date": "2026-07-04",
-            "date_formatted": "July 4, 2026",
             "challenger": "Gavin Sheets",
             "role": "batting",
             "team": "opponents",
@@ -260,18 +272,6 @@
             "result_desc": "Gavin Sheets walks.",
             "batter": "Gavin Sheets",
             "pitcher": "Yoshinobu Yamamoto",
-            "game_pk": 823932
-        },
-        {
-            "date": "2026-07-04",
-            "date_formatted": "July 4, 2026",
-            "challenger": "Max Muncy",
-            "role": "batting",
-            "team": "dodgers",
-            "outcome": "confirmed",
-            "result_desc": "Max Muncy flies out to left fielder Gavin Sheets.",
-            "batter": "Max Muncy",
-            "pitcher": "Griffin Canning",
             "game_pk": 823932
         }
     ],
