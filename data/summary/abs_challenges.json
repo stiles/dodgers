@@ -1,8 +1,8 @@
 {
     "dodgers": {
         "batting": {
-            "total": 77,
-            "successful": 48,
+            "total": 78,
+            "successful": 49,
             "failed": 29
         },
         "pitching": {
@@ -34,6 +34,18 @@
         }
     },
     "challenge_log": [
+        {
+            "date": "2026-07-11",
+            "date_formatted": "July 11, 2026",
+            "challenger": "Andy Pages",
+            "role": "batting",
+            "team": "dodgers",
+            "outcome": "overturned",
+            "result_desc": "Andy Pages singles on a sharp line drive to left fielder Max Kepler. Tommy Edman scores.",
+            "batter": "Andy Pages",
+            "pitcher": "Brandon Pfaadt",
+            "game_pk": 823926
+        },
         {
             "date": "2026-07-10",
             "date_formatted": "July 10, 2026",
@@ -109,13 +121,13 @@
         {
             "date": "2026-07-07",
             "date_formatted": "July 7, 2026",
-            "challenger": "Braxton Fulford",
+            "challenger": "Dalton Rushing",
             "role": "catching",
-            "team": "opponents",
+            "team": "dodgers",
             "outcome": "overturned",
-            "result_desc": "Alex Freeland singles on a sharp line drive to left fielder Jake McCarthy.",
-            "batter": "Alex Freeland",
-            "pitcher": "Jordan Romano",
+            "result_desc": "Braxton Fulford strikes out swinging.",
+            "batter": "Braxton Fulford",
+            "pitcher": "Evan Phillips",
             "game_pk": 823929
         },
         {
@@ -133,13 +145,13 @@
         {
             "date": "2026-07-07",
             "date_formatted": "July 7, 2026",
-            "challenger": "Dalton Rushing",
+            "challenger": "Braxton Fulford",
             "role": "catching",
-            "team": "dodgers",
+            "team": "opponents",
             "outcome": "overturned",
-            "result_desc": "Braxton Fulford strikes out swinging.",
-            "batter": "Braxton Fulford",
-            "pitcher": "Evan Phillips",
+            "result_desc": "Alex Freeland singles on a sharp line drive to left fielder Jake McCarthy.",
+            "batter": "Alex Freeland",
+            "pitcher": "Jordan Romano",
             "game_pk": 823929
         },
         {
@@ -261,18 +273,6 @@
             "batter": "Xander Bogaerts",
             "pitcher": "Emmet Sheehan",
             "game_pk": 823931
-        },
-        {
-            "date": "2026-07-04",
-            "date_formatted": "July 4, 2026",
-            "challenger": "Gavin Sheets",
-            "role": "batting",
-            "team": "opponents",
-            "outcome": "confirmed",
-            "result_desc": "Gavin Sheets walks.",
-            "batter": "Gavin Sheets",
-            "pitcher": "Yoshinobu Yamamoto",
-            "game_pk": 823932
         }
     ],
     "dodgers_by_player": [
@@ -292,10 +292,10 @@
         },
         {
             "challenger": "Andy Pages",
-            "total": 12,
-            "successful": 6,
+            "total": 13,
+            "successful": 7,
             "failed": 6,
-            "success_rate": 50.0
+            "success_rate": 53.8
         },
         {
             "challenger": "Teoscar Hern\u00e1ndez",
@@ -434,10 +434,10 @@
         },
         {
             "inning": 6,
-            "total": 21,
-            "successful": 13,
+            "total": 22,
+            "successful": 14,
             "failed": 8,
-            "success_rate": 61.9
+            "success_rate": 63.6
         },
         {
             "inning": 7,

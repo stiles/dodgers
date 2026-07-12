@@ -1,13 +1,5 @@
 [
     {
-        "date":"Jun 30",
-        "opp_name":"Athletics",
-        "home_away":"away",
-        "result":"win",
-        "placement":"last",
-        "game_start":"9-3"
-    },
-    {
         "date":"Jul 1",
         "opp_name":"Athletics",
         "home_away":"away",
@@ -83,9 +75,9 @@
         "date":"Jul 11",
         "opp_name":"Arizona Diamondbacks",
         "home_away":"home",
-        "result":"--",
-        "placement":"next",
-        "game_start":"6:10 PM"
+        "result":"loss",
+        "placement":"last",
+        "game_start":"2-9"
     },
     {
         "date":"Jul 12",
@@ -158,5 +150,13 @@
         "result":"--",
         "placement":"next",
         "game_start":"4:15 PM"
+    },
+    {
+        "date":"Jul 26",
+        "opp_name":"New York Mets",
+        "home_away":"away",
+        "result":"--",
+        "placement":"next",
+        "game_start":"10:40 AM"
     }
 ]

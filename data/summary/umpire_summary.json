@@ -1,17 +1,17 @@
 {
     "season_summary": {
-        "correct_strikes_pct": 91.20835006021679,
-        "incorrect_strikes_pct": 8.791649939783213,
-        "total_called_strikes": 2491,
-        "bad_calls_count": 219
+        "correct_strikes_pct": 91.19521912350598,
+        "incorrect_strikes_pct": 8.804780876494021,
+        "total_called_strikes": 2510,
+        "bad_calls_count": 221
     },
     "last_game_summary": {
-        "date": "July 10, 2026",
-        "correct_strikes_pct": 85.0,
-        "incorrect_strikes_pct": 15.0,
-        "total_called_strikes": 20,
-        "bad_calls_count": 3,
-        "home_plate_umpire": "Austin Jones"
+        "date": "July 11, 2026",
+        "correct_strikes_pct": 89.47368421052632,
+        "incorrect_strikes_pct": 10.526315789473685,
+        "total_called_strikes": 19,
+        "bad_calls_count": 2,
+        "home_plate_umpire": "Rob Drake"
     },
     "worst_calls_of_season": [
         {
@@ -56,17 +56,17 @@
         }
     ],
     "pitching_season_summary": {
-        "correct_balls_pct": 95.98896434634975,
-        "incorrect_balls_pct": 4.011035653650254,
-        "total_called_balls": 4712,
+        "correct_balls_pct": 96.03357817418677,
+        "incorrect_balls_pct": 3.966421825813228,
+        "total_called_balls": 4765,
         "bad_calls_count": 189
     },
     "pitching_last_game_summary": {
-        "date": "July 10, 2026",
-        "correct_balls_pct": 96.96969696969697,
-        "incorrect_balls_pct": 3.030303030303031,
-        "total_called_balls": 66,
-        "bad_calls_count": 2
+        "date": "July 11, 2026",
+        "correct_balls_pct": 100.0,
+        "incorrect_balls_pct": 0.0,
+        "total_called_balls": 53,
+        "bad_calls_count": 0
     },
     "pitching_worst_calls_of_season": [],
     "abs_challenges": {
@@ -89,9 +89,9 @@
         },
         "opponents": {
             "batting": {
-                "total": 18,
+                "total": 19,
                 "successful": 4,
-                "failed": 14
+                "failed": 15
             },
             "pitching": {
                 "total": 0,
@@ -105,6 +105,18 @@
             }
         },
         "challenge_log": [
+            {
+                "date": "2026-07-11",
+                "date_formatted": "July 11, 2026",
+                "challenger": "Ketel Marte",
+                "role": "batting",
+                "team": "opponents",
+                "outcome": "confirmed",
+                "result_desc": "Ketel Marte called out on strikes.",
+                "batter": "Ketel Marte",
+                "pitcher": "Landon Knack",
+                "game_pk": 823926
+            },
             {
                 "date": "2026-07-10",
                 "date_formatted": "July 10, 2026",
@@ -331,18 +343,6 @@
                 "result_desc": "Freddie Freeman called out on strikes.",
                 "batter": "Freddie Freeman",
                 "pitcher": "Taylor Rogers",
-                "game_pk": 823692
-            },
-            {
-                "date": "2026-06-22",
-                "date_formatted": "June 22, 2026",
-                "challenger": "Kody Clemens",
-                "role": "batting",
-                "team": "opponents",
-                "outcome": "overturned",
-                "result_desc": "Kody Clemens walks.",
-                "batter": "Kody Clemens",
-                "pitcher": "Eric Lauer",
                 "game_pk": 823692
             }
         ]
