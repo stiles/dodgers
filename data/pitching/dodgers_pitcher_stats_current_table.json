@@ -45,6 +45,21 @@
         "fetched":"2026-07-12"
     },
     {
+        "player":"Emmet Sheehan",
+        "role":"SP",
+        "position":"P",
+        "era":"4.70",
+        "whip":"1.24",
+        "k9":"10.17",
+        "bb9":"2.84",
+        "kbb":"3.58",
+        "ip":"82.1",
+        "ip_rounded":82,
+        "gs":17,
+        "gp":17,
+        "fetched":"2026-07-12"
+    },
+    {
         "player":"Roki Sasaki",
         "role":"SP",
         "position":"P",
@@ -55,21 +70,6 @@
         "kbb":"2.42",
         "ip":"81.0",
         "ip_rounded":81,
-        "gs":16,
-        "gp":16,
-        "fetched":"2026-07-12"
-    },
-    {
-        "player":"Emmet Sheehan",
-        "role":"SP",
-        "position":"P",
-        "era":"4.91",
-        "whip":"1.27",
-        "k9":"10.05",
-        "bb9":"2.92",
-        "kbb":"3.44",
-        "ip":"77.0",
-        "ip_rounded":77,
         "gs":16,
         "gp":16,
         "fetched":"2026-07-12"
@@ -105,6 +105,21 @@
         "fetched":"2026-07-12"
     },
     {
+        "player":"Edgardo Henriquez",
+        "role":"RP",
+        "position":"P",
+        "era":"2.52",
+        "whip":"0.94",
+        "k9":"8.47",
+        "bb9":"3.43",
+        "kbb":"2.47",
+        "ip":"39.1",
+        "ip_rounded":39,
+        "gs":0,
+        "gp":37,
+        "fetched":"2026-07-12"
+    },
+    {
         "player":"Jack Dreyer",
         "role":"SP",
         "position":"P",
@@ -120,33 +135,18 @@
         "fetched":"2026-07-12"
     },
     {
-        "player":"Edgardo Henriquez",
-        "role":"RP",
-        "position":"P",
-        "era":"2.33",
-        "whip":"0.91",
-        "k9":"8.61",
-        "bb9":"3.26",
-        "kbb":"2.64",
-        "ip":"38.2",
-        "ip_rounded":38,
-        "gs":0,
-        "gp":36,
-        "fetched":"2026-07-12"
-    },
-    {
         "player":"Tanner Scott",
         "role":"RP",
         "position":"P",
-        "era":"2.63",
-        "whip":"0.80",
-        "k9":"11.71",
-        "bb9":"1.19",
-        "kbb":"9.80",
-        "ip":"37.2",
-        "ip_rounded":37,
+        "era":"2.56",
+        "whip":"0.78",
+        "k9":"11.64",
+        "bb9":"1.16",
+        "kbb":"10.00",
+        "ip":"38.2",
+        "ip_rounded":38,
         "gs":0,
-        "gp":40,
+        "gp":41,
         "fetched":"2026-07-12"
     }
 ]

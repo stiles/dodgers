@@ -4,13 +4,13 @@
         "stat":"wins",
         "value":61,
         "category":"standings",
-        "context_value":57,
+        "context_value":58,
         "context_value_label":"This point last season"
     },
     {
         "stat_label":"Losses",
         "stat":"losses",
-        "value":35,
+        "value":36,
         "category":"standings",
         "context_value":39,
         "context_value_label":"This point last season"
@@ -18,15 +18,15 @@
     {
         "stat_label":"Win percentage",
         "stat":"win_pct",
-        "value":"64%",
+        "value":"63%",
         "category":"standings",
-        "context_value":"59%",
+        "context_value":"60%",
         "context_value_label":"This point last season"
     },
     {
         "stat_label":"Games up\/back",
         "stat":"games_up_back",
-        "value":12.5,
+        "value":11.5,
         "category":"standings",
         "context_value":"1st",
         "context_value_label":"Division rank"
@@ -42,7 +42,7 @@
     {
         "stat_label":"Errors",
         "stat":"errors",
-        "value":33,
+        "value":35,
         "category":"standings",
         "context_value":"1st",
         "context_value_label":"League rank"
@@ -50,31 +50,31 @@
     {
         "stat_label":"Runs",
         "stat":"runs",
-        "value":503,
+        "value":506,
         "category":"standings",
-        "context_value":"2nd",
+        "context_value":"3rd",
         "context_value_label":"League rank"
     },
     {
         "stat_label":"Runs against",
         "stat":"runs_against",
-        "value":352,
+        "value":357,
         "category":"standings",
-        "context_value":447,
+        "context_value":449,
         "context_value_label":"This point last season"
     },
     {
         "stat_label":"Run differential",
         "stat":"run_differential",
-        "value":151,
+        "value":149,
         "category":"standings",
-        "context_value":66,
+        "context_value":69,
         "context_value_label":"This point last season"
     },
     {
         "stat_label":"Batting average",
         "stat":"batting_average",
-        "value":".263",
+        "value":".262",
         "category":"batting",
         "context_value":".253",
         "context_value_label":"Last decade average"
@@ -82,7 +82,7 @@
     {
         "stat_label":"Home runs",
         "stat":"home_runs",
-        "value":126,
+        "value":127,
         "category":"batting",
         "context_value":"5th",
         "context_value_label":"League rank"
@@ -98,7 +98,7 @@
     {
         "stat_label":"On-base percentage",
         "stat":"on_base_pct",
-        "value":".344",
+        "value":".343",
         "category":"batting",
         "context_value":"1st",
         "context_value_label":"League rank"
@@ -106,15 +106,15 @@
     {
         "stat_label":"Slugging percentage",
         "stat":"slugging_pct",
-        "value":".435",
+        "value":".434",
         "category":"batting",
-        "context_value":"1st",
+        "context_value":"2nd",
         "context_value_label":"League rank"
     },
     {
         "stat_label":"OPS",
         "stat":"ops",
-        "value":".779",
+        "value":".777",
         "category":"batting",
         "context_value":"1st",
         "context_value_label":"League rank"
@@ -130,7 +130,7 @@
     {
         "stat_label":"Stolen bases\/game",
         "stat":"stolen_bases_game",
-        "value":0.39,
+        "value":0.38,
         "category":"batting",
         "context_value":0.84,
         "context_value_label":"Rate all last season"
@@ -138,7 +138,7 @@
     {
         "stat_label":"Doubles",
         "stat":"doubles",
-        "value":161,
+        "value":162,
         "category":"batting",
         "context_value":"8th",
         "context_value_label":"League rank"
@@ -146,15 +146,15 @@
     {
         "stat_label":"Strikeouts",
         "stat":"strikeouts",
-        "value":"857",
+        "value":"866",
         "category":"pitching",
-        "context_value":"5th",
+        "context_value":"6th",
         "context_value_label":"League rank"
     },
     {
         "stat_label":"Walks",
         "stat":"walks",
-        "value":290,
+        "value":293,
         "category":"pitching",
         "context_value":"22nd",
         "context_value_label":"League rank"
@@ -162,7 +162,7 @@
     {
         "stat_label":"ERA",
         "stat":"era",
-        "value":"3.56",
+        "value":"3.55",
         "category":"pitching",
         "context_value":"3rd",
         "context_value_label":"League rank"
@@ -178,7 +178,7 @@
     {
         "stat_label":"Batting average against",
         "stat":"avg_against",
-        "value":".217",
+        "value":".216",
         "category":"pitching",
         "context_value":"1st",
         "context_value_label":"League rank"
@@ -194,7 +194,7 @@
     {
         "stat_label":"Last updated",
         "stat":"update_time",
-        "value":"July 12, 2026, 9:04 AM PT",
+        "value":"July 12, 2026, 5:01 PM PT",
         "category":"summary",
         "context_value":"",
         "context_value_label":""
@@ -202,7 +202,7 @@
     {
         "stat_label":"Team summary",
         "stat":"summary",
-        "value":"<span class='highlight'>LOS ANGELES<\/span> <span class='updated'>(July 12)<\/span> \u2014 The Dodgers have compiled a <span class='highlight'>61-35<\/span> record in the 2026 regular season, a <span class='highlight'>64%<\/span> winning percentage. The last game was a <span class='highlight'>2-9<\/span> home <span class='highlight'>loss<\/span> against the <span class='highlight'>Arizona Diamondbacks<\/span>. The team next faces the <span class='highlight'>Arizona Diamondbacks<\/span> on Sunday at 1:10 p.m. PDT at <span class='highlight'>UNIQLO Field at Dodger Stadium<\/span>.",
+        "value":"<span class='highlight'>LOS ANGELES<\/span> <span class='updated'>(July 12)<\/span> \u2014 The Dodgers have compiled a <span class='highlight'>61-36<\/span> record in the 2026 regular season, a <span class='highlight'>63%<\/span> winning percentage. The last game was a <span class='highlight'>3-5<\/span> home <span class='highlight'>loss<\/span> against the <span class='highlight'>Arizona Diamondbacks<\/span>. The team next faces the <span class='highlight'>New York Yankees<\/span> on Friday at 4:05 p.m. PDT at <span class='highlight'>Yankee Stadium<\/span>.",
         "category":"summary",
         "context_value":"",
         "context_value_label":""

@@ -18,8 +18,8 @@
     },
     "opponents": {
         "batting": {
-            "total": 84,
-            "successful": 41,
+            "total": 86,
+            "successful": 43,
             "failed": 43
         },
         "pitching": {
@@ -28,12 +28,48 @@
             "failed": 3
         },
         "catching": {
-            "total": 114,
-            "successful": 71,
+            "total": 115,
+            "successful": 72,
             "failed": 43
         }
     },
     "challenge_log": [
+        {
+            "date": "2026-07-12",
+            "date_formatted": "July 12, 2026",
+            "challenger": "Nolan Arenado",
+            "role": "batting",
+            "team": "opponents",
+            "outcome": "overturned",
+            "result_desc": "Nolan Arenado flies out to center fielder Andy Pages.",
+            "batter": "Nolan Arenado",
+            "pitcher": "Evan Phillips",
+            "game_pk": 823925
+        },
+        {
+            "date": "2026-07-12",
+            "date_formatted": "July 12, 2026",
+            "challenger": "Geraldo Perdomo",
+            "role": "batting",
+            "team": "opponents",
+            "outcome": "overturned",
+            "result_desc": "Geraldo Perdomo walks.",
+            "batter": "Geraldo Perdomo",
+            "pitcher": "Emmet Sheehan",
+            "game_pk": 823925
+        },
+        {
+            "date": "2026-07-12",
+            "date_formatted": "July 12, 2026",
+            "challenger": "Gabriel Moreno",
+            "role": "catching",
+            "team": "opponents",
+            "outcome": "overturned",
+            "result_desc": "Andy Pages strikes out swinging.",
+            "batter": "Andy Pages",
+            "pitcher": "Ryan Thompson",
+            "game_pk": 823925
+        },
         {
             "date": "2026-07-11",
             "date_formatted": "July 11, 2026",
@@ -76,18 +112,6 @@
             "challenger": "Brett Sullivan",
             "role": "catching",
             "team": "opponents",
-            "outcome": "confirmed",
-            "result_desc": "Mookie Betts strikes out swinging.",
-            "batter": "Mookie Betts",
-            "pitcher": "Gabriel Hughes",
-            "game_pk": 823928
-        },
-        {
-            "date": "2026-07-08",
-            "date_formatted": "July 8, 2026",
-            "challenger": "Brett Sullivan",
-            "role": "catching",
-            "team": "opponents",
             "outcome": "overturned",
             "result_desc": "Max Muncy strikes out swinging.",
             "batter": "Max Muncy",
@@ -119,6 +143,54 @@
             "game_pk": 823928
         },
         {
+            "date": "2026-07-08",
+            "date_formatted": "July 8, 2026",
+            "challenger": "Brett Sullivan",
+            "role": "catching",
+            "team": "opponents",
+            "outcome": "confirmed",
+            "result_desc": "Mookie Betts strikes out swinging.",
+            "batter": "Mookie Betts",
+            "pitcher": "Gabriel Hughes",
+            "game_pk": 823928
+        },
+        {
+            "date": "2026-07-07",
+            "date_formatted": "July 7, 2026",
+            "challenger": "Braxton Fulford",
+            "role": "catching",
+            "team": "opponents",
+            "outcome": "overturned",
+            "result_desc": "Freddie Freeman strikes out swinging.",
+            "batter": "Freddie Freeman",
+            "pitcher": "Jordan Romano",
+            "game_pk": 823929
+        },
+        {
+            "date": "2026-07-07",
+            "date_formatted": "July 7, 2026",
+            "challenger": "Braxton Fulford",
+            "role": "catching",
+            "team": "opponents",
+            "outcome": "overturned",
+            "result_desc": "Freddie Freeman strikes out swinging.",
+            "batter": "Freddie Freeman",
+            "pitcher": "Jordan Romano",
+            "game_pk": 823929
+        },
+        {
+            "date": "2026-07-07",
+            "date_formatted": "July 7, 2026",
+            "challenger": "Braxton Fulford",
+            "role": "catching",
+            "team": "opponents",
+            "outcome": "overturned",
+            "result_desc": "Alex Freeland singles on a sharp line drive to left fielder Jake McCarthy.",
+            "batter": "Alex Freeland",
+            "pitcher": "Jordan Romano",
+            "game_pk": 823929
+        },
+        {
             "date": "2026-07-07",
             "date_formatted": "July 7, 2026",
             "challenger": "Dalton Rushing",
@@ -140,42 +212,6 @@
             "result_desc": "Cole Carrigg singles on a line drive to right fielder Kyle Tucker. Kyle Karros to 2nd.",
             "batter": "Cole Carrigg",
             "pitcher": "Will Klein",
-            "game_pk": 823929
-        },
-        {
-            "date": "2026-07-07",
-            "date_formatted": "July 7, 2026",
-            "challenger": "Braxton Fulford",
-            "role": "catching",
-            "team": "opponents",
-            "outcome": "overturned",
-            "result_desc": "Alex Freeland singles on a sharp line drive to left fielder Jake McCarthy.",
-            "batter": "Alex Freeland",
-            "pitcher": "Jordan Romano",
-            "game_pk": 823929
-        },
-        {
-            "date": "2026-07-07",
-            "date_formatted": "July 7, 2026",
-            "challenger": "Braxton Fulford",
-            "role": "catching",
-            "team": "opponents",
-            "outcome": "overturned",
-            "result_desc": "Freddie Freeman strikes out swinging.",
-            "batter": "Freddie Freeman",
-            "pitcher": "Jordan Romano",
-            "game_pk": 823929
-        },
-        {
-            "date": "2026-07-07",
-            "date_formatted": "July 7, 2026",
-            "challenger": "Braxton Fulford",
-            "role": "catching",
-            "team": "opponents",
-            "outcome": "overturned",
-            "result_desc": "Freddie Freeman strikes out swinging.",
-            "batter": "Freddie Freeman",
-            "pitcher": "Jordan Romano",
             "game_pk": 823929
         },
         {
@@ -229,30 +265,6 @@
         {
             "date": "2026-07-05",
             "date_formatted": "July 5, 2026",
-            "challenger": "Alex Freeland",
-            "role": "batting",
-            "team": "dodgers",
-            "outcome": "confirmed",
-            "result_desc": "Alex Freeland flies out to left fielder Jase Bowen.",
-            "batter": "Alex Freeland",
-            "pitcher": "Mason Miller",
-            "game_pk": 823931
-        },
-        {
-            "date": "2026-07-05",
-            "date_formatted": "July 5, 2026",
-            "challenger": "Teoscar Hern\u00e1ndez",
-            "role": "batting",
-            "team": "dodgers",
-            "outcome": "overturned",
-            "result_desc": "Teoscar Hern\u00e1ndez walks.",
-            "batter": "Teoscar Hern\u00e1ndez",
-            "pitcher": "Bradgley Rodriguez",
-            "game_pk": 823931
-        },
-        {
-            "date": "2026-07-05",
-            "date_formatted": "July 5, 2026",
             "challenger": "Luis Campusano",
             "role": "catching",
             "team": "opponents",
@@ -260,18 +272,6 @@
             "result_desc": "Alex Call called out on strikes.",
             "batter": "Alex Call",
             "pitcher": "JP Sears",
-            "game_pk": 823931
-        },
-        {
-            "date": "2026-07-05",
-            "date_formatted": "July 5, 2026",
-            "challenger": "Eliezer Alfonzo",
-            "role": "catching",
-            "team": "dodgers",
-            "outcome": "confirmed",
-            "result_desc": "Xander Bogaerts challenged (pitch result), call on the field was confirmed: Xander Bogaerts called out on strikes.",
-            "batter": "Xander Bogaerts",
-            "pitcher": "Emmet Sheehan",
             "game_pk": 823931
         }
     ],
