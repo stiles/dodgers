@@ -1,17 +1,17 @@
 {
     "season_summary": {
-        "correct_strikes_pct": 91.17181314330958,
-        "incorrect_strikes_pct": 8.828186856690422,
-        "total_called_strikes": 2526,
-        "bad_calls_count": 223
+        "correct_strikes_pct": 91.16022099447514,
+        "incorrect_strikes_pct": 8.83977900552486,
+        "total_called_strikes": 2534,
+        "bad_calls_count": 224
     },
     "last_game_summary": {
-        "date": "July 12, 2026",
+        "date": "July 17, 2026",
         "correct_strikes_pct": 87.5,
         "incorrect_strikes_pct": 12.5,
-        "total_called_strikes": 16,
-        "bad_calls_count": 2,
-        "home_plate_umpire": "Stu Scheurwater"
+        "total_called_strikes": 8,
+        "bad_calls_count": 1,
+        "home_plate_umpire": "Junior Valentine"
     },
     "worst_calls_of_season": [
         {
@@ -56,17 +56,17 @@
         }
     ],
     "pitching_season_summary": {
-        "correct_balls_pct": 96.03652210002075,
-        "incorrect_balls_pct": 3.963477899979253,
-        "total_called_balls": 4819,
+        "correct_balls_pct": 96.0463672117574,
+        "incorrect_balls_pct": 3.953632788242601,
+        "total_called_balls": 4831,
         "bad_calls_count": 191
     },
     "pitching_last_game_summary": {
-        "date": "July 12, 2026",
-        "correct_balls_pct": 96.29629629629629,
-        "incorrect_balls_pct": 3.7037037037037095,
-        "total_called_balls": 54,
-        "bad_calls_count": 2
+        "date": "July 17, 2026",
+        "correct_balls_pct": 100.0,
+        "incorrect_balls_pct": 0.0,
+        "total_called_balls": 12,
+        "bad_calls_count": 0
     },
     "pitching_worst_calls_of_season": [],
     "abs_challenges": {

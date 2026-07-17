@@ -90,7 +90,7 @@
     {
         "stat_label":"Home runs\/game",
         "stat":"home_runs_game",
-        "value":1.31,
+        "value":1.3,
         "category":"batting",
         "context_value":1.42,
         "context_value_label":"Last decade average"
@@ -106,7 +106,7 @@
     {
         "stat_label":"Slugging percentage",
         "stat":"slugging_pct",
-        "value":".434",
+        "value":".433",
         "category":"batting",
         "context_value":"2nd",
         "context_value_label":"League rank"
@@ -114,7 +114,7 @@
     {
         "stat_label":"OPS",
         "stat":"ops",
-        "value":".777",
+        "value":".776",
         "category":"batting",
         "context_value":"1st",
         "context_value_label":"League rank"
@@ -146,7 +146,7 @@
     {
         "stat_label":"Strikeouts",
         "stat":"strikeouts",
-        "value":"866",
+        "value":"868",
         "category":"pitching",
         "context_value":"6th",
         "context_value_label":"League rank"
@@ -194,7 +194,7 @@
     {
         "stat_label":"Last updated",
         "stat":"update_time",
-        "value":"July 17, 2026, 9:20 AM PT",
+        "value":"July 17, 2026, 4:58 PM PT",
         "category":"summary",
         "context_value":"",
         "context_value_label":""
@@ -202,7 +202,7 @@
     {
         "stat_label":"Team summary",
         "stat":"summary",
-        "value":"<span class='highlight'>LOS ANGELES<\/span> <span class='updated'>(July 17)<\/span> \u2014 The Dodgers have compiled a <span class='highlight'>61-36<\/span> record in the 2026 regular season, a <span class='highlight'>63%<\/span> winning percentage. The last game was a <span class='highlight'>3-5<\/span> home <span class='highlight'>loss<\/span> against the <span class='highlight'>Arizona Diamondbacks<\/span>. The team next faces the <span class='highlight'>New York Yankees<\/span> on Friday at 4:05 p.m. PDT at <span class='highlight'>Yankee Stadium<\/span>.",
+        "value":"<span class='highlight'>LOS ANGELES<\/span> <span class='updated'>(July 17)<\/span> \u2014 The Dodgers have compiled a <span class='highlight'>61-36<\/span> record in the 2026 regular season, a <span class='highlight'>63%<\/span> winning percentage. The last game was a <span class='highlight'>3-5<\/span> home <span class='highlight'>loss<\/span> against the <span class='highlight'>Arizona Diamondbacks<\/span>. The team next faces the <span class='highlight'>New York Yankees<\/span> on Saturday at 5:08 p.m. PDT at <span class='highlight'>Yankee Stadium<\/span>.",
         "category":"summary",
         "context_value":"",
         "context_value_label":""
