@@ -1,8 +1,8 @@
 {
     "dodgers": {
         "batting": {
-            "total": 78,
-            "successful": 49,
+            "total": 79,
+            "successful": 50,
             "failed": 29
         },
         "pitching": {
@@ -18,9 +18,9 @@
     },
     "opponents": {
         "batting": {
-            "total": 86,
-            "successful": 43,
-            "failed": 43
+            "total": 88,
+            "successful": 44,
+            "failed": 44
         },
         "pitching": {
             "total": 5,
@@ -34,6 +34,42 @@
         }
     },
     "challenge_log": [
+        {
+            "date": "2026-07-17",
+            "date_formatted": "July 17, 2026",
+            "challenger": "Trent Grisham",
+            "role": "batting",
+            "team": "opponents",
+            "outcome": "confirmed",
+            "result_desc": "Trent Grisham grounds out, first baseman Freddie Freeman to pitcher Roki Sasaki.",
+            "batter": "Trent Grisham",
+            "pitcher": "Roki Sasaki",
+            "game_pk": 823524
+        },
+        {
+            "date": "2026-07-17",
+            "date_formatted": "July 17, 2026",
+            "challenger": "Trent Grisham",
+            "role": "batting",
+            "team": "opponents",
+            "outcome": "overturned",
+            "result_desc": "Trent Grisham walks.",
+            "batter": "Trent Grisham",
+            "pitcher": "Roki Sasaki",
+            "game_pk": 823524
+        },
+        {
+            "date": "2026-07-17",
+            "date_formatted": "July 17, 2026",
+            "challenger": "Andy Pages",
+            "role": "batting",
+            "team": "dodgers",
+            "outcome": "overturned",
+            "result_desc": "Andy Pages singles on a ground ball to left fielder Cody Bellinger.",
+            "batter": "Andy Pages",
+            "pitcher": "Gerrit Cole",
+            "game_pk": 823524
+        },
         {
             "date": "2026-07-12",
             "date_formatted": "July 12, 2026",
@@ -109,18 +145,6 @@
         {
             "date": "2026-07-08",
             "date_formatted": "July 8, 2026",
-            "challenger": "Brett Sullivan",
-            "role": "catching",
-            "team": "opponents",
-            "outcome": "overturned",
-            "result_desc": "Max Muncy strikes out swinging.",
-            "batter": "Max Muncy",
-            "pitcher": "Gabriel Hughes",
-            "game_pk": 823928
-        },
-        {
-            "date": "2026-07-08",
-            "date_formatted": "July 8, 2026",
             "challenger": "Alex Call",
             "role": "batting",
             "team": "dodgers",
@@ -151,6 +175,18 @@
             "outcome": "confirmed",
             "result_desc": "Mookie Betts strikes out swinging.",
             "batter": "Mookie Betts",
+            "pitcher": "Gabriel Hughes",
+            "game_pk": 823928
+        },
+        {
+            "date": "2026-07-08",
+            "date_formatted": "July 8, 2026",
+            "challenger": "Brett Sullivan",
+            "role": "catching",
+            "team": "opponents",
+            "outcome": "overturned",
+            "result_desc": "Max Muncy strikes out swinging.",
+            "batter": "Max Muncy",
             "pitcher": "Gabriel Hughes",
             "game_pk": 823928
         },
@@ -217,18 +253,6 @@
         {
             "date": "2026-07-06",
             "date_formatted": "July 6, 2026",
-            "challenger": "Andy Pages",
-            "role": "batting",
-            "team": "dodgers",
-            "outcome": "confirmed",
-            "result_desc": "Andy Pages flies out to center fielder Cole Carrigg.",
-            "batter": "Andy Pages",
-            "pitcher": "Zach Agnos",
-            "game_pk": 823930
-        },
-        {
-            "date": "2026-07-06",
-            "date_formatted": "July 6, 2026",
             "challenger": "Freddie Freeman",
             "role": "batting",
             "team": "dodgers",
@@ -249,30 +273,6 @@
             "batter": "Kyle Karros",
             "pitcher": "Eric Lauer",
             "game_pk": 823930
-        },
-        {
-            "date": "2026-07-06",
-            "date_formatted": "July 6, 2026",
-            "challenger": "Hunter Goodman",
-            "role": "catching",
-            "team": "opponents",
-            "outcome": "overturned",
-            "result_desc": "Mookie Betts flies out to center fielder Cole Carrigg.",
-            "batter": "Mookie Betts",
-            "pitcher": "Kyle Freeland",
-            "game_pk": 823930
-        },
-        {
-            "date": "2026-07-05",
-            "date_formatted": "July 5, 2026",
-            "challenger": "Luis Campusano",
-            "role": "catching",
-            "team": "opponents",
-            "outcome": "overturned",
-            "result_desc": "Alex Call called out on strikes.",
-            "batter": "Alex Call",
-            "pitcher": "JP Sears",
-            "game_pk": 823931
         }
     ],
     "dodgers_by_player": [
@@ -292,10 +292,10 @@
         },
         {
             "challenger": "Andy Pages",
-            "total": 13,
-            "successful": 7,
+            "total": 14,
+            "successful": 8,
             "failed": 6,
-            "success_rate": 53.8
+            "success_rate": 57.1
         },
         {
             "challenger": "Teoscar Hern\u00e1ndez",
@@ -413,10 +413,10 @@
         },
         {
             "inning": 3,
-            "total": 13,
-            "successful": 7,
+            "total": 14,
+            "successful": 8,
             "failed": 6,
-            "success_rate": 53.8
+            "success_rate": 57.1
         },
         {
             "inning": 4,

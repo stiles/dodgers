@@ -1,16 +1,16 @@
 {
     "season_summary": {
-        "correct_strikes_pct": 91.16022099447514,
-        "incorrect_strikes_pct": 8.83977900552486,
-        "total_called_strikes": 2534,
-        "bad_calls_count": 224
+        "correct_strikes_pct": 91.1015288122305,
+        "incorrect_strikes_pct": 8.898471187769502,
+        "total_called_strikes": 2551,
+        "bad_calls_count": 227
     },
     "last_game_summary": {
         "date": "July 17, 2026",
-        "correct_strikes_pct": 87.5,
-        "incorrect_strikes_pct": 12.5,
-        "total_called_strikes": 8,
-        "bad_calls_count": 1,
+        "correct_strikes_pct": 84.0,
+        "incorrect_strikes_pct": 16.0,
+        "total_called_strikes": 25,
+        "bad_calls_count": 4,
         "home_plate_umpire": "Junior Valentine"
     },
     "worst_calls_of_season": [
@@ -56,17 +56,17 @@
         }
     ],
     "pitching_season_summary": {
-        "correct_balls_pct": 96.0463672117574,
-        "incorrect_balls_pct": 3.953632788242601,
-        "total_called_balls": 4831,
-        "bad_calls_count": 191
+        "correct_balls_pct": 96.0156089546108,
+        "incorrect_balls_pct": 3.984391045389202,
+        "total_called_balls": 4869,
+        "bad_calls_count": 194
     },
     "pitching_last_game_summary": {
         "date": "July 17, 2026",
-        "correct_balls_pct": 100.0,
-        "incorrect_balls_pct": 0.0,
-        "total_called_balls": 12,
-        "bad_calls_count": 0
+        "correct_balls_pct": 94.0,
+        "incorrect_balls_pct": 6.0,
+        "total_called_balls": 50,
+        "bad_calls_count": 3
     },
     "pitching_worst_calls_of_season": [],
     "abs_challenges": {
@@ -99,12 +99,24 @@
                 "failed": 0
             },
             "catching": {
-                "total": 39,
+                "total": 40,
                 "successful": 29,
-                "failed": 10
+                "failed": 11
             }
         },
         "challenge_log": [
+            {
+                "date": "2026-07-17",
+                "date_formatted": "July 17, 2026",
+                "challenger": "Ali S\u00e1nchez",
+                "role": "catching",
+                "team": "opponents",
+                "outcome": "confirmed",
+                "result_desc": "Max Muncy walks.",
+                "batter": "Max Muncy",
+                "pitcher": "Paul Blackburn",
+                "game_pk": 823524
+            },
             {
                 "date": "2026-07-11",
                 "date_formatted": "July 11, 2026",
@@ -332,18 +344,6 @@
                 "batter": "Mookie Betts",
                 "pitcher": "Kendry Rojas",
                 "game_pk": 823690
-            },
-            {
-                "date": "2026-06-22",
-                "date_formatted": "June 22, 2026",
-                "challenger": "Victor Caratini",
-                "role": "catching",
-                "team": "opponents",
-                "outcome": "overturned",
-                "result_desc": "Freddie Freeman called out on strikes.",
-                "batter": "Freddie Freeman",
-                "pitcher": "Taylor Rogers",
-                "game_pk": 823692
             }
         ]
     }
