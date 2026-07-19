@@ -99,6 +99,9 @@ def fetch_nl_west_standings(season: int) -> pd.DataFrame:
                 for game in date_entry.get('games', []):
                     if game.get('status', {}).get('abstractGameState') != 'Final':
                         continue
+                    # Postponed/cancelled games report abstractGameState 'Final' but have no result
+                    if game.get('status', {}).get('detailedState', '') in ('Postponed', 'Cancelled'):
+                        continue
                     
                     game_date = pd.to_datetime(game.get('gameDate')).strftime('%Y-%m-%d')
                     teams = game.get('teams', {})

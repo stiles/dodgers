@@ -135,8 +135,9 @@ def get_dodgers_games(start_date, end_date):
         game_pks = []
         for date_obj in data.get("dates", []):
             for game in date_obj.get("games", []):
-                # Only include completed games
-                if game["status"]["abstractGameState"] == "Final":
+                # Only include completed games; postponed/cancelled games also report 'Final'
+                if (game["status"]["abstractGameState"] == "Final"
+                        and game["status"].get("detailedState", "") not in ("Postponed", "Cancelled")):
                     game_pks.append(game["gamePk"])
         
         return game_pks

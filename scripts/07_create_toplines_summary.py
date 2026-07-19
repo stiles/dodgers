@@ -532,12 +532,14 @@ def get_live_last_game_summary():
             logging.info(f"Checking date: {day.get('date', 'Unknown')}")
             for game in reversed(day.get('games', [])):
                 game_status = game['status']['abstractGameState']
+                detailed_state = game['status'].get('detailedState', '')
                 game_teams = game.get('teams', {})
                 away_team = game_teams.get('away', {}).get('team', {}).get('abbreviation', 'Unknown')
                 home_team = game_teams.get('home', {}).get('team', {}).get('abbreviation', 'Unknown')
-                logging.info(f"Game: {away_team} @ {home_team}, Status: {game_status}")
+                logging.info(f"Game: {away_team} @ {home_team}, Status: {game_status} ({detailed_state})")
                 
-                if game_status == 'Final':
+                # Postponed/cancelled games report abstractGameState 'Final' but have no result
+                if game_status == 'Final' and detailed_state not in ('Postponed', 'Cancelled'):
                     teams = game['teams']
                     
                     # Check if LAD is either away or home team
@@ -590,7 +592,9 @@ def get_live_last_game_result():
         data = response.json()
         for day in reversed(data.get('dates', [])):
             for game in reversed(day.get('games', [])):
-                if game['status']['abstractGameState'] == 'Final':
+                # Postponed/cancelled games report abstractGameState 'Final' but have no result
+                if (game['status']['abstractGameState'] == 'Final'
+                        and game['status'].get('detailedState', '') not in ('Postponed', 'Cancelled')):
                     teams = game['teams']
                     # Determine result for LAD
                     if teams.get('away', {}).get('team', {}).get('abbreviation') == 'LAD':
@@ -611,7 +615,8 @@ def get_next_game_info():
     today = date.today()
     ten_days_ahead = today + timedelta(days=10)
     
-    url = f"https://statsapi.mlb.com/api/v1/schedule?sportId=1&teamId=119&startDate={today.strftime('%Y-%m-%d')}&endDate={ten_days_ahead.strftime('%Y-%m-%d')}&hydrate=team,venue"
+    # venue(timezone) is required to get the venue's timeZone; plain 'venue' omits it
+    url = f"https://statsapi.mlb.com/api/v1/schedule?sportId=1&teamId=119&startDate={today.strftime('%Y-%m-%d')}&endDate={ten_days_ahead.strftime('%Y-%m-%d')}&hydrate=team,venue(timezone)"
     
     try:
         response = requests.get(url, headers=headers)
