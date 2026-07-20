@@ -11,15 +11,15 @@
             "failed": 3
         },
         "catching": {
-            "total": 79,
-            "successful": 46,
+            "total": 81,
+            "successful": 48,
             "failed": 33
         }
     },
     "opponents": {
         "batting": {
-            "total": 89,
-            "successful": 44,
+            "total": 90,
+            "successful": 45,
             "failed": 45
         },
         "pitching": {
@@ -28,8 +28,8 @@
             "failed": 3
         },
         "catching": {
-            "total": 116,
-            "successful": 72,
+            "total": 120,
+            "successful": 76,
             "failed": 44
         }
     },
@@ -37,14 +37,26 @@
         {
             "date": "2026-07-19",
             "date_formatted": "July 19, 2026",
-            "challenger": "Dalton Rushing",
-            "role": "batting",
-            "team": "dodgers",
+            "challenger": "Austin Wells",
+            "role": "catching",
+            "team": "opponents",
             "outcome": "overturned",
-            "result_desc": "Dalton Rushing walks. Alex Call to 2nd.",
-            "batter": "Dalton Rushing",
-            "pitcher": "Camilo Doval",
-            "game_pk": 823523
+            "result_desc": "Max Muncy walks.",
+            "batter": "Max Muncy",
+            "pitcher": "Fernando Cruz",
+            "game_pk": 823521
+        },
+        {
+            "date": "2026-07-19",
+            "date_formatted": "July 19, 2026",
+            "challenger": "Austin Wells",
+            "role": "catching",
+            "team": "opponents",
+            "outcome": "overturned",
+            "result_desc": "Andy Pages flies out to left fielder Cody Bellinger.",
+            "batter": "Andy Pages",
+            "pitcher": "Paul Blackburn",
+            "game_pk": 823521
         },
         {
             "date": "2026-07-19",
@@ -61,6 +73,30 @@
         {
             "date": "2026-07-19",
             "date_formatted": "July 19, 2026",
+            "challenger": "Dalton Rushing",
+            "role": "batting",
+            "team": "dodgers",
+            "outcome": "overturned",
+            "result_desc": "Dalton Rushing walks. Alex Call to 2nd.",
+            "batter": "Dalton Rushing",
+            "pitcher": "Camilo Doval",
+            "game_pk": 823523
+        },
+        {
+            "date": "2026-07-19",
+            "date_formatted": "July 19, 2026",
+            "challenger": "Jos\u00e9 Caballero",
+            "role": "batting",
+            "team": "opponents",
+            "outcome": "overturned",
+            "result_desc": "Jos\u00e9 Caballero walks.",
+            "batter": "Jos\u00e9 Caballero",
+            "pitcher": "Kyle Hurt",
+            "game_pk": 823521
+        },
+        {
+            "date": "2026-07-19",
+            "date_formatted": "July 19, 2026",
             "challenger": "Jasson Dom\u00ednguez",
             "role": "batting",
             "team": "opponents",
@@ -69,6 +105,54 @@
             "batter": "Jasson Dom\u00ednguez",
             "pitcher": "Yoshinobu Yamamoto",
             "game_pk": 823523
+        },
+        {
+            "date": "2026-07-19",
+            "date_formatted": "July 19, 2026",
+            "challenger": "Eliezer Alfonzo",
+            "role": "catching",
+            "team": "dodgers",
+            "outcome": "overturned",
+            "result_desc": "Jos\u00e9 Caballero reaches on a fielder's choice out, third baseman Max Muncy to catcher Eliezer Alfonzo. Anthony Volpe out at home. Austin Wells to 3rd.",
+            "batter": "Jos\u00e9 Caballero",
+            "pitcher": "Edgardo Henriquez",
+            "game_pk": 823521
+        },
+        {
+            "date": "2026-07-19",
+            "date_formatted": "July 19, 2026",
+            "challenger": "Austin Wells",
+            "role": "catching",
+            "team": "opponents",
+            "outcome": "overturned",
+            "result_desc": "Shohei Ohtani grounds out, first baseman Paul Goldschmidt to pitcher Brent Headrick.",
+            "batter": "Shohei Ohtani",
+            "pitcher": "Brent Headrick",
+            "game_pk": 823521
+        },
+        {
+            "date": "2026-07-19",
+            "date_formatted": "July 19, 2026",
+            "challenger": "Austin Wells",
+            "role": "catching",
+            "team": "opponents",
+            "outcome": "overturned",
+            "result_desc": "Kyle Tucker strikes out swinging.",
+            "batter": "Kyle Tucker",
+            "pitcher": "Brent Headrick",
+            "game_pk": 823521
+        },
+        {
+            "date": "2026-07-19",
+            "date_formatted": "July 19, 2026",
+            "challenger": "Eliezer Alfonzo",
+            "role": "catching",
+            "team": "dodgers",
+            "outcome": "overturned",
+            "result_desc": "Ben Rice strikes out swinging.",
+            "batter": "Ben Rice",
+            "pitcher": "Alex Vesia",
+            "game_pk": 823521
         },
         {
             "date": "2026-07-17",
@@ -161,8 +245,8 @@
             "role": "catching",
             "team": "opponents",
             "outcome": "overturned",
-            "result_desc": "Mookie Betts flies out to left fielder Lourdes Gurriel Jr.",
-            "batter": "Mookie Betts",
+            "result_desc": "Freddie Freeman grounds out, second baseman Ildemaro Vargas to first baseman Tim Tawa.",
+            "batter": "Freddie Freeman",
             "pitcher": "Eduardo Rodriguez",
             "game_pk": 823927
         },
@@ -173,22 +257,10 @@
             "role": "catching",
             "team": "opponents",
             "outcome": "overturned",
-            "result_desc": "Freddie Freeman grounds out, second baseman Ildemaro Vargas to first baseman Tim Tawa.",
-            "batter": "Freddie Freeman",
+            "result_desc": "Mookie Betts flies out to left fielder Lourdes Gurriel Jr.",
+            "batter": "Mookie Betts",
             "pitcher": "Eduardo Rodriguez",
             "game_pk": 823927
-        },
-        {
-            "date": "2026-07-08",
-            "date_formatted": "July 8, 2026",
-            "challenger": "Brett Sullivan",
-            "role": "catching",
-            "team": "opponents",
-            "outcome": "confirmed",
-            "result_desc": "Mookie Betts strikes out swinging.",
-            "batter": "Mookie Betts",
-            "pitcher": "Gabriel Hughes",
-            "game_pk": 823928
         },
         {
             "date": "2026-07-08",
@@ -201,78 +273,6 @@
             "batter": "Max Muncy",
             "pitcher": "Gabriel Hughes",
             "game_pk": 823928
-        },
-        {
-            "date": "2026-07-08",
-            "date_formatted": "July 8, 2026",
-            "challenger": "Alex Call",
-            "role": "batting",
-            "team": "dodgers",
-            "outcome": "confirmed",
-            "result_desc": "Alex Call strikes out swinging.",
-            "batter": "Alex Call",
-            "pitcher": "Gabriel Hughes",
-            "game_pk": 823928
-        },
-        {
-            "date": "2026-07-08",
-            "date_formatted": "July 8, 2026",
-            "challenger": "Alex Call",
-            "role": "batting",
-            "team": "dodgers",
-            "outcome": "confirmed",
-            "result_desc": "Alex Call strikes out swinging.",
-            "batter": "Alex Call",
-            "pitcher": "Gabriel Hughes",
-            "game_pk": 823928
-        },
-        {
-            "date": "2026-07-07",
-            "date_formatted": "July 7, 2026",
-            "challenger": "Braxton Fulford",
-            "role": "catching",
-            "team": "opponents",
-            "outcome": "overturned",
-            "result_desc": "Freddie Freeman strikes out swinging.",
-            "batter": "Freddie Freeman",
-            "pitcher": "Jordan Romano",
-            "game_pk": 823929
-        },
-        {
-            "date": "2026-07-07",
-            "date_formatted": "July 7, 2026",
-            "challenger": "Braxton Fulford",
-            "role": "catching",
-            "team": "opponents",
-            "outcome": "overturned",
-            "result_desc": "Freddie Freeman strikes out swinging.",
-            "batter": "Freddie Freeman",
-            "pitcher": "Jordan Romano",
-            "game_pk": 823929
-        },
-        {
-            "date": "2026-07-07",
-            "date_formatted": "July 7, 2026",
-            "challenger": "Braxton Fulford",
-            "role": "catching",
-            "team": "opponents",
-            "outcome": "overturned",
-            "result_desc": "Alex Freeland singles on a sharp line drive to left fielder Jake McCarthy.",
-            "batter": "Alex Freeland",
-            "pitcher": "Jordan Romano",
-            "game_pk": 823929
-        },
-        {
-            "date": "2026-07-07",
-            "date_formatted": "July 7, 2026",
-            "challenger": "Dalton Rushing",
-            "role": "catching",
-            "team": "dodgers",
-            "outcome": "overturned",
-            "result_desc": "Braxton Fulford strikes out swinging.",
-            "batter": "Braxton Fulford",
-            "pitcher": "Evan Phillips",
-            "game_pk": 823929
         }
     ],
     "dodgers_by_player": [
@@ -340,6 +340,13 @@
             "success_rate": 83.3
         },
         {
+            "challenger": "Eliezer Alfonzo",
+            "total": 3,
+            "successful": 2,
+            "failed": 1,
+            "success_rate": 66.7
+        },
+        {
             "challenger": "Freddie Freeman",
             "total": 2,
             "successful": 2,
@@ -382,13 +389,6 @@
             "success_rate": 0.0
         },
         {
-            "challenger": "Eliezer Alfonzo",
-            "total": 1,
-            "successful": 0,
-            "failed": 1,
-            "success_rate": 0.0
-        },
-        {
             "challenger": "Kyle Hurt",
             "total": 1,
             "successful": 0,
@@ -420,10 +420,10 @@
         },
         {
             "inning": 4,
-            "total": 13,
-            "successful": 7,
+            "total": 14,
+            "successful": 8,
             "failed": 6,
-            "success_rate": 53.8
+            "success_rate": 57.1
         },
         {
             "inning": 5,
@@ -441,10 +441,10 @@
         },
         {
             "inning": 7,
-            "total": 16,
-            "successful": 8,
+            "total": 17,
+            "successful": 9,
             "failed": 8,
-            "success_rate": 50.0
+            "success_rate": 52.9
         },
         {
             "inning": 8,

@@ -75,6 +75,21 @@
         "fetched":"2026-07-20"
     },
     {
+        "player":"Jack Dreyer",
+        "role":"SP",
+        "position":"P",
+        "era":"2.90",
+        "whip":"1.02",
+        "k9":"10.26",
+        "bb9":"2.23",
+        "kbb":"4.60",
+        "ip":"40.1",
+        "ip_rounded":40,
+        "gs":1,
+        "gp":40,
+        "fetched":"2026-07-20"
+    },
+    {
         "player":"Eric Lauer",
         "role":"SP",
         "position":"P",
@@ -90,18 +105,18 @@
         "fetched":"2026-07-20"
     },
     {
-        "player":"Jack Dreyer",
-        "role":"SP",
+        "player":"Edgardo Henriquez",
+        "role":"RP",
         "position":"P",
-        "era":"2.93",
-        "whip":"0.95",
-        "k9":"10.35",
-        "bb9":"2.25",
-        "kbb":"4.60",
+        "era":"2.25",
+        "whip":"0.98",
+        "k9":"8.55",
+        "bb9":"3.83",
+        "kbb":"2.24",
         "ip":"40.0",
         "ip_rounded":40,
-        "gs":1,
-        "gp":39,
+        "gs":0,
+        "gp":38,
         "fetched":"2026-07-20"
     },
     {
@@ -132,21 +147,6 @@
         "ip_rounded":39,
         "gs":0,
         "gp":42,
-        "fetched":"2026-07-20"
-    },
-    {
-        "player":"Edgardo Henriquez",
-        "role":"RP",
-        "position":"P",
-        "era":"2.29",
-        "whip":"0.94",
-        "k9":"8.47",
-        "bb9":"3.43",
-        "kbb":"2.47",
-        "ip":"39.1",
-        "ip_rounded":39,
-        "gs":0,
-        "gp":37,
         "fetched":"2026-07-20"
     }
 ]
