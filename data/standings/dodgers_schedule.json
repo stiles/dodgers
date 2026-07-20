@@ -1,13 +1,5 @@
 [
     {
-        "date":"Jul 3",
-        "opp_name":"San Diego Padres",
-        "home_away":"home",
-        "result":"win",
-        "placement":"last",
-        "game_start":"4-3"
-    },
-    {
         "date":"Jul 4",
         "opp_name":"San Diego Padres",
         "home_away":"home",
@@ -80,6 +72,14 @@
         "game_start":"2-1"
     },
     {
+        "date":"Jul 19",
+        "opp_name":"New York Yankees",
+        "home_away":"away",
+        "result":"win",
+        "placement":"last",
+        "game_start":"8-2"
+    },
+    {
         "date":"Jul 18",
         "opp_name":"New York Yankees",
         "home_away":"away",
@@ -91,17 +91,9 @@
         "date":"Jul 19",
         "opp_name":"New York Yankees",
         "home_away":"away",
-        "result":"--",
+        "result":"in progress",
         "placement":"next",
-        "game_start":"Warmup"
-    },
-    {
-        "date":"Jul 19",
-        "opp_name":"New York Yankees",
-        "home_away":"away",
-        "result":"--",
-        "placement":"next",
-        "game_start":"4:20 PM"
+        "game_start":"Live"
     },
     {
         "date":"Jul 20",
@@ -153,6 +145,14 @@
     },
     {
         "date":"Jul 28",
+        "opp_name":"Seattle Mariners",
+        "home_away":"home",
+        "result":"--",
+        "placement":"next",
+        "game_start":"7:10 PM"
+    },
+    {
+        "date":"Jul 29",
         "opp_name":"Seattle Mariners",
         "home_away":"home",
         "result":"--",

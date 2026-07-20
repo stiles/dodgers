@@ -1,8 +1,8 @@
 {
     "dodgers": {
         "batting": {
-            "total": 79,
-            "successful": 50,
+            "total": 80,
+            "successful": 51,
             "failed": 29
         },
         "pitching": {
@@ -18,9 +18,9 @@
     },
     "opponents": {
         "batting": {
-            "total": 88,
+            "total": 89,
             "successful": 44,
-            "failed": 44
+            "failed": 45
         },
         "pitching": {
             "total": 5,
@@ -28,12 +28,48 @@
             "failed": 3
         },
         "catching": {
-            "total": 115,
+            "total": 116,
             "successful": 72,
-            "failed": 43
+            "failed": 44
         }
     },
     "challenge_log": [
+        {
+            "date": "2026-07-19",
+            "date_formatted": "July 19, 2026",
+            "challenger": "Dalton Rushing",
+            "role": "batting",
+            "team": "dodgers",
+            "outcome": "overturned",
+            "result_desc": "Dalton Rushing walks. Alex Call to 2nd.",
+            "batter": "Dalton Rushing",
+            "pitcher": "Camilo Doval",
+            "game_pk": 823523
+        },
+        {
+            "date": "2026-07-19",
+            "date_formatted": "July 19, 2026",
+            "challenger": "Ali S\u00e1nchez",
+            "role": "catching",
+            "team": "opponents",
+            "outcome": "confirmed",
+            "result_desc": "Kyle Tucker singles on a line drive to right fielder Max Schuemann. Max Muncy to 3rd.",
+            "batter": "Kyle Tucker",
+            "pitcher": "Jake Bird",
+            "game_pk": 823523
+        },
+        {
+            "date": "2026-07-19",
+            "date_formatted": "July 19, 2026",
+            "challenger": "Jasson Dom\u00ednguez",
+            "role": "batting",
+            "team": "opponents",
+            "outcome": "confirmed",
+            "result_desc": "Jasson Dom\u00ednguez grounds out, first baseman Freddie Freeman to pitcher Yoshinobu Yamamoto.",
+            "batter": "Jasson Dom\u00ednguez",
+            "pitcher": "Yoshinobu Yamamoto",
+            "game_pk": 823523
+        },
         {
             "date": "2026-07-17",
             "date_formatted": "July 17, 2026",
@@ -125,8 +161,8 @@
             "role": "catching",
             "team": "opponents",
             "outcome": "overturned",
-            "result_desc": "Freddie Freeman grounds out, second baseman Ildemaro Vargas to first baseman Tim Tawa.",
-            "batter": "Freddie Freeman",
+            "result_desc": "Mookie Betts flies out to left fielder Lourdes Gurriel Jr.",
+            "batter": "Mookie Betts",
             "pitcher": "Eduardo Rodriguez",
             "game_pk": 823927
         },
@@ -137,34 +173,10 @@
             "role": "catching",
             "team": "opponents",
             "outcome": "overturned",
-            "result_desc": "Mookie Betts flies out to left fielder Lourdes Gurriel Jr.",
-            "batter": "Mookie Betts",
+            "result_desc": "Freddie Freeman grounds out, second baseman Ildemaro Vargas to first baseman Tim Tawa.",
+            "batter": "Freddie Freeman",
             "pitcher": "Eduardo Rodriguez",
             "game_pk": 823927
-        },
-        {
-            "date": "2026-07-08",
-            "date_formatted": "July 8, 2026",
-            "challenger": "Alex Call",
-            "role": "batting",
-            "team": "dodgers",
-            "outcome": "confirmed",
-            "result_desc": "Alex Call strikes out swinging.",
-            "batter": "Alex Call",
-            "pitcher": "Gabriel Hughes",
-            "game_pk": 823928
-        },
-        {
-            "date": "2026-07-08",
-            "date_formatted": "July 8, 2026",
-            "challenger": "Alex Call",
-            "role": "batting",
-            "team": "dodgers",
-            "outcome": "confirmed",
-            "result_desc": "Alex Call strikes out swinging.",
-            "batter": "Alex Call",
-            "pitcher": "Gabriel Hughes",
-            "game_pk": 823928
         },
         {
             "date": "2026-07-08",
@@ -187,6 +199,30 @@
             "outcome": "overturned",
             "result_desc": "Max Muncy strikes out swinging.",
             "batter": "Max Muncy",
+            "pitcher": "Gabriel Hughes",
+            "game_pk": 823928
+        },
+        {
+            "date": "2026-07-08",
+            "date_formatted": "July 8, 2026",
+            "challenger": "Alex Call",
+            "role": "batting",
+            "team": "dodgers",
+            "outcome": "confirmed",
+            "result_desc": "Alex Call strikes out swinging.",
+            "batter": "Alex Call",
+            "pitcher": "Gabriel Hughes",
+            "game_pk": 823928
+        },
+        {
+            "date": "2026-07-08",
+            "date_formatted": "July 8, 2026",
+            "challenger": "Alex Call",
+            "role": "batting",
+            "team": "dodgers",
+            "outcome": "confirmed",
+            "result_desc": "Alex Call strikes out swinging.",
+            "batter": "Alex Call",
             "pitcher": "Gabriel Hughes",
             "game_pk": 823928
         },
@@ -237,42 +273,6 @@
             "batter": "Braxton Fulford",
             "pitcher": "Evan Phillips",
             "game_pk": 823929
-        },
-        {
-            "date": "2026-07-07",
-            "date_formatted": "July 7, 2026",
-            "challenger": "Cole Carrigg",
-            "role": "batting",
-            "team": "opponents",
-            "outcome": "overturned",
-            "result_desc": "Cole Carrigg singles on a line drive to right fielder Kyle Tucker. Kyle Karros to 2nd.",
-            "batter": "Cole Carrigg",
-            "pitcher": "Will Klein",
-            "game_pk": 823929
-        },
-        {
-            "date": "2026-07-06",
-            "date_formatted": "July 6, 2026",
-            "challenger": "Freddie Freeman",
-            "role": "batting",
-            "team": "dodgers",
-            "outcome": "overturned",
-            "result_desc": "Freddie Freeman flies out to left fielder Jake McCarthy.",
-            "batter": "Freddie Freeman",
-            "pitcher": "Kyle Freeland",
-            "game_pk": 823930
-        },
-        {
-            "date": "2026-07-06",
-            "date_formatted": "July 6, 2026",
-            "challenger": "Kyle Karros",
-            "role": "batting",
-            "team": "opponents",
-            "outcome": "overturned",
-            "result_desc": "Kyle Karros walks.",
-            "batter": "Kyle Karros",
-            "pitcher": "Eric Lauer",
-            "game_pk": 823930
         }
     ],
     "dodgers_by_player": [
@@ -285,10 +285,10 @@
         },
         {
             "challenger": "Dalton Rushing",
-            "total": 26,
-            "successful": 13,
+            "total": 27,
+            "successful": 14,
             "failed": 13,
-            "success_rate": 50.0
+            "success_rate": 51.9
         },
         {
             "challenger": "Andy Pages",
@@ -455,10 +455,10 @@
         },
         {
             "inning": 9,
-            "total": 23,
-            "successful": 14,
+            "total": 24,
+            "successful": 15,
             "failed": 9,
-            "success_rate": 60.9
+            "success_rate": 62.5
         }
     ]
 }

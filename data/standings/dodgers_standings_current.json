@@ -2252,5 +2252,28 @@
     "time":"00:00:00",
     "day_night":"N",
     "game_day":"Friday"
+  },
+  {
+    "gm":99,
+    "gtm":99,
+    "game_date":"2026-07-19",
+    "year":2026,
+    "home_away":"away",
+    "opp":"New York Yankees",
+    "r":8,
+    "ra":2,
+    "run_diff":6,
+    "result":"W",
+    "wins":63,
+    "losses":36,
+    "record":"63-36",
+    "win_pct":0.636,
+    "gb":-12.0,
+    "rank":1,
+    "attendance":0,
+    "time_minutes":0,
+    "time":"00:00:00",
+    "day_night":"N",
+    "game_day":"Sunday"
   }
 ]

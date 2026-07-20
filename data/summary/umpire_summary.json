@@ -1,17 +1,17 @@
 {
     "season_summary": {
-        "correct_strikes_pct": 91.1015288122305,
-        "incorrect_strikes_pct": 8.898471187769502,
-        "total_called_strikes": 2551,
-        "bad_calls_count": 227
+        "correct_strikes_pct": 91.02861562258315,
+        "incorrect_strikes_pct": 8.971384377416854,
+        "total_called_strikes": 2586,
+        "bad_calls_count": 232
     },
     "last_game_summary": {
-        "date": "July 17, 2026",
-        "correct_strikes_pct": 84.0,
-        "incorrect_strikes_pct": 16.0,
-        "total_called_strikes": 25,
-        "bad_calls_count": 4,
-        "home_plate_umpire": "Junior Valentine"
+        "date": "July 19, 2026",
+        "correct_strikes_pct": 85.71428571428571,
+        "incorrect_strikes_pct": 14.285714285714292,
+        "total_called_strikes": 35,
+        "bad_calls_count": 5,
+        "home_plate_umpire": "Rob Drake"
     },
     "worst_calls_of_season": [
         {
@@ -56,25 +56,25 @@
         }
     ],
     "pitching_season_summary": {
-        "correct_balls_pct": 96.0156089546108,
-        "incorrect_balls_pct": 3.984391045389202,
-        "total_called_balls": 4869,
-        "bad_calls_count": 194
+        "correct_balls_pct": 96.03093832688785,
+        "incorrect_balls_pct": 3.969061673112151,
+        "total_called_balls": 4913,
+        "bad_calls_count": 195
     },
     "pitching_last_game_summary": {
-        "date": "July 17, 2026",
-        "correct_balls_pct": 94.0,
-        "incorrect_balls_pct": 6.0,
-        "total_called_balls": 50,
-        "bad_calls_count": 3
+        "date": "July 19, 2026",
+        "correct_balls_pct": 97.72727272727273,
+        "incorrect_balls_pct": 2.2727272727272663,
+        "total_called_balls": 44,
+        "bad_calls_count": 1
     },
     "pitching_worst_calls_of_season": [],
     "abs_challenges": {
         "dodgers": {
             "batting": {
-                "total": 34,
+                "total": 35,
                 "successful": 10,
-                "failed": 24
+                "failed": 25
             },
             "pitching": {
                 "total": 0,
@@ -82,8 +82,8 @@
                 "failed": 0
             },
             "catching": {
-                "total": 16,
-                "successful": 11,
+                "total": 17,
+                "successful": 12,
                 "failed": 5
             }
         },
@@ -99,12 +99,48 @@
                 "failed": 0
             },
             "catching": {
-                "total": 40,
-                "successful": 29,
+                "total": 41,
+                "successful": 30,
                 "failed": 11
             }
         },
         "challenge_log": [
+            {
+                "date": "2026-07-19",
+                "date_formatted": "July 19, 2026",
+                "challenger": "Ali S\u00e1nchez",
+                "role": "catching",
+                "team": "opponents",
+                "outcome": "overturned",
+                "result_desc": "Mookie Betts called out on strikes.",
+                "batter": "Mookie Betts",
+                "pitcher": "Cam Schlittler",
+                "game_pk": 823523
+            },
+            {
+                "date": "2026-07-19",
+                "date_formatted": "July 19, 2026",
+                "challenger": "Andy Pages",
+                "role": "batting",
+                "team": "dodgers",
+                "outcome": "confirmed",
+                "result_desc": "Andy Pages called out on strikes.",
+                "batter": "Andy Pages",
+                "pitcher": "Ryan Yarbrough",
+                "game_pk": 823521
+            },
+            {
+                "date": "2026-07-19",
+                "date_formatted": "July 19, 2026",
+                "challenger": "Dalton Rushing",
+                "role": "catching",
+                "team": "dodgers",
+                "outcome": "overturned",
+                "result_desc": "Cody Bellinger called out on strikes.",
+                "batter": "Cody Bellinger",
+                "pitcher": "Yoshinobu Yamamoto",
+                "game_pk": 823523
+            },
             {
                 "date": "2026-07-17",
                 "date_formatted": "July 17, 2026",
@@ -308,42 +344,6 @@
                 "batter": "Fernando Tatis Jr.",
                 "pitcher": "Roki Sasaki",
                 "game_pk": 823285
-            },
-            {
-                "date": "2026-06-24",
-                "date_formatted": "June 24, 2026",
-                "challenger": "Victor Caratini",
-                "role": "catching",
-                "team": "opponents",
-                "outcome": "overturned",
-                "result_desc": "Shohei Ohtani called out on strikes.",
-                "batter": "Shohei Ohtani",
-                "pitcher": "Anthony Banda",
-                "game_pk": 823691
-            },
-            {
-                "date": "2026-06-24",
-                "date_formatted": "June 24, 2026",
-                "challenger": "Byron Buxton",
-                "role": "batting",
-                "team": "opponents",
-                "outcome": "confirmed",
-                "result_desc": "Byron Buxton called out on strikes.",
-                "batter": "Byron Buxton",
-                "pitcher": "Shohei Ohtani",
-                "game_pk": 823691
-            },
-            {
-                "date": "2026-06-23",
-                "date_formatted": "June 23, 2026",
-                "challenger": "Mookie Betts",
-                "role": "batting",
-                "team": "dodgers",
-                "outcome": "confirmed",
-                "result_desc": "Mookie Betts called out on strikes.",
-                "batter": "Mookie Betts",
-                "pitcher": "Kendry Rojas",
-                "game_pk": 823690
             }
         ]
     }

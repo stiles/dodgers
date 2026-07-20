@@ -2,7 +2,7 @@
     {
         "stat_label":"Wins",
         "stat":"wins",
-        "value":62,
+        "value":63,
         "category":"standings",
         "context_value":58,
         "context_value_label":"This point last season"
@@ -12,13 +12,13 @@
         "stat":"losses",
         "value":36,
         "category":"standings",
-        "context_value":40,
+        "context_value":41,
         "context_value_label":"This point last season"
     },
     {
         "stat_label":"Win percentage",
         "stat":"win_pct",
-        "value":"63%",
+        "value":"64%",
         "category":"standings",
         "context_value":"59%",
         "context_value_label":"This point last season"
@@ -50,7 +50,7 @@
     {
         "stat_label":"Runs",
         "stat":"runs",
-        "value":508,
+        "value":516,
         "category":"standings",
         "context_value":"3rd",
         "context_value_label":"League rank"
@@ -58,17 +58,17 @@
     {
         "stat_label":"Runs against",
         "stat":"runs_against",
-        "value":358,
+        "value":360,
         "category":"standings",
-        "context_value":451,
+        "context_value":459,
         "context_value_label":"This point last season"
     },
     {
         "stat_label":"Run differential",
         "stat":"run_differential",
-        "value":150,
+        "value":156,
         "category":"standings",
-        "context_value":67,
+        "context_value":66,
         "context_value_label":"This point last season"
     },
     {
@@ -84,13 +84,13 @@
         "stat":"home_runs",
         "value":128,
         "category":"batting",
-        "context_value":"5th",
+        "context_value":"8th",
         "context_value_label":"League rank"
     },
     {
         "stat_label":"Home runs\/game",
         "stat":"home_runs_game",
-        "value":1.31,
+        "value":1.28,
         "category":"batting",
         "context_value":1.42,
         "context_value_label":"Last decade average"
@@ -98,7 +98,7 @@
     {
         "stat_label":"On-base percentage",
         "stat":"on_base_pct",
-        "value":".342",
+        "value":".343",
         "category":"batting",
         "context_value":"1st",
         "context_value_label":"League rank"
@@ -106,7 +106,7 @@
     {
         "stat_label":"Slugging percentage",
         "stat":"slugging_pct",
-        "value":".432",
+        "value":".431",
         "category":"batting",
         "context_value":"2nd",
         "context_value_label":"League rank"
@@ -124,13 +124,13 @@
         "stat":"stolen_bases",
         "value":37,
         "category":"batting",
-        "context_value":"27th",
+        "context_value":"28th",
         "context_value_label":"League rank"
     },
     {
         "stat_label":"Stolen bases\/game",
         "stat":"stolen_bases_game",
-        "value":0.38,
+        "value":0.37,
         "category":"batting",
         "context_value":0.84,
         "context_value_label":"Rate all last season"
@@ -138,15 +138,15 @@
     {
         "stat_label":"Doubles",
         "stat":"doubles",
-        "value":163,
+        "value":167,
         "category":"batting",
-        "context_value":"9th",
+        "context_value":"8th",
         "context_value_label":"League rank"
     },
     {
         "stat_label":"Strikeouts",
         "stat":"strikeouts",
-        "value":"874",
+        "value":"882",
         "category":"pitching",
         "context_value":"6th",
         "context_value_label":"League rank"
@@ -154,7 +154,7 @@
     {
         "stat_label":"Walks",
         "stat":"walks",
-        "value":296,
+        "value":297,
         "category":"pitching",
         "context_value":"22nd",
         "context_value_label":"League rank"
@@ -162,7 +162,7 @@
     {
         "stat_label":"ERA",
         "stat":"era",
-        "value":"3.52",
+        "value":"3.50",
         "category":"pitching",
         "context_value":"3rd",
         "context_value_label":"League rank"
@@ -170,7 +170,7 @@
     {
         "stat_label":"WHIP",
         "stat":"whip",
-        "value":"1.14",
+        "value":"1.13",
         "category":"pitching",
         "context_value":"1st",
         "context_value_label":"League rank"
@@ -178,7 +178,7 @@
     {
         "stat_label":"Batting average against",
         "stat":"avg_against",
-        "value":".216",
+        "value":".215",
         "category":"pitching",
         "context_value":"1st",
         "context_value_label":"League rank"
@@ -186,7 +186,7 @@
     {
         "stat_label":"K\/BB ratio",
         "stat":"k_bb_ratio",
-        "value":2.95,
+        "value":2.97,
         "category":"pitching",
         "context_value":"5th",
         "context_value_label":"League rank"
@@ -194,7 +194,7 @@
     {
         "stat_label":"Last updated",
         "stat":"update_time",
-        "value":"July 19, 2026, 9:15 AM PT",
+        "value":"July 19, 2026, 5:05 PM PT",
         "category":"summary",
         "context_value":"",
         "context_value_label":""
@@ -202,7 +202,7 @@
     {
         "stat_label":"Team summary",
         "stat":"summary",
-        "value":"<span class='highlight'>LOS ANGELES<\/span> <span class='updated'>(July 19)<\/span> \u2014 The Dodgers have compiled a <span class='highlight'>62-36<\/span> record in the 2026 regular season, a <span class='highlight'>63%<\/span> winning percentage. The last game was a <span class='highlight'>2-1<\/span> away <span class='highlight'>win<\/span> against the <span class='highlight'>New York Yankees<\/span>. The team next faces the <span class='highlight'>New York Yankees<\/span> on Sunday at 7:20 p.m. EDT at <span class='highlight'>Yankee Stadium<\/span>.",
+        "value":"<span class='highlight'>LOS ANGELES<\/span> <span class='updated'>(July 19)<\/span> \u2014 The Dodgers have compiled a <span class='highlight'>63-36<\/span> record in the 2026 regular season, a <span class='highlight'>64%<\/span> winning percentage. The last game was a <span class='highlight'>8-2<\/span> away <span class='highlight'>win<\/span> against the <span class='highlight'>New York Yankees<\/span>. The team next faces the <span class='highlight'>Philadelphia Phillies<\/span> on Monday at 7:10 p.m. EDT at <span class='highlight'>Citizens Bank Park<\/span>.",
         "category":"summary",
         "context_value":"",
         "context_value_label":""
