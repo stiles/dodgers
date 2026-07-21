@@ -2298,5 +2298,28 @@
     "time":"00:00:00",
     "day_night":"N",
     "game_day":"Sunday"
+  },
+  {
+    "gm":101,
+    "gtm":101,
+    "game_date":"2026-07-20",
+    "year":2026,
+    "home_away":"away",
+    "opp":"Philadelphia Phillies",
+    "r":7,
+    "ra":10,
+    "run_diff":-3,
+    "result":"L",
+    "wins":63,
+    "losses":38,
+    "record":"63-38",
+    "win_pct":0.624,
+    "gb":-11.0,
+    "rank":1,
+    "attendance":0,
+    "time_minutes":0,
+    "time":"00:00:00",
+    "day_night":"N",
+    "game_day":"Monday"
   }
 ]

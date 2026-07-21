@@ -1,15 +1,15 @@
 {
     "season_summary": {
-        "correct_strikes_pct": 90.99653712966526,
-        "incorrect_strikes_pct": 9.003462870334744,
-        "total_called_strikes": 2599,
+        "correct_strikes_pct": 91.06529209621993,
+        "incorrect_strikes_pct": 8.934707903780065,
+        "total_called_strikes": 2619,
         "bad_calls_count": 234
     },
     "last_game_summary": {
         "date": "July 20, 2026",
-        "correct_strikes_pct": 50.0,
-        "incorrect_strikes_pct": 50.0,
-        "total_called_strikes": 4,
+        "correct_strikes_pct": 91.66666666666666,
+        "incorrect_strikes_pct": 8.333333333333343,
+        "total_called_strikes": 24,
         "bad_calls_count": 2,
         "home_plate_umpire": "Laz Diaz"
     },
@@ -56,17 +56,17 @@
         }
     ],
     "pitching_season_summary": {
-        "correct_balls_pct": 96.02902640596655,
-        "incorrect_balls_pct": 3.9709735940334525,
-        "total_called_balls": 4961,
-        "bad_calls_count": 197
+        "correct_balls_pct": 96.01122469432752,
+        "incorrect_balls_pct": 3.988775305672476,
+        "total_called_balls": 4989,
+        "bad_calls_count": 199
     },
     "pitching_last_game_summary": {
         "date": "July 20, 2026",
-        "correct_balls_pct": 100.0,
-        "incorrect_balls_pct": 0.0,
-        "total_called_balls": 12,
-        "bad_calls_count": 0
+        "correct_balls_pct": 95.0,
+        "incorrect_balls_pct": 5.0,
+        "total_called_balls": 40,
+        "bad_calls_count": 2
     },
     "pitching_worst_calls_of_season": [],
     "abs_challenges": {
@@ -89,9 +89,9 @@
         },
         "opponents": {
             "batting": {
-                "total": 19,
+                "total": 20,
                 "successful": 4,
-                "failed": 15
+                "failed": 16
             },
             "pitching": {
                 "total": 0,
@@ -99,12 +99,36 @@
                 "failed": 0
             },
             "catching": {
-                "total": 41,
-                "successful": 30,
+                "total": 42,
+                "successful": 31,
                 "failed": 11
             }
         },
         "challenge_log": [
+            {
+                "date": "2026-07-20",
+                "date_formatted": "July 20, 2026",
+                "challenger": "J.T. Realmuto",
+                "role": "catching",
+                "team": "opponents",
+                "outcome": "overturned",
+                "result_desc": "Dalton Rushing called out on strikes.",
+                "batter": "Dalton Rushing",
+                "pitcher": "Cristopher S\u00e1nchez",
+                "game_pk": 823436
+            },
+            {
+                "date": "2026-07-20",
+                "date_formatted": "July 20, 2026",
+                "challenger": "Kyle Schwarber",
+                "role": "batting",
+                "team": "opponents",
+                "outcome": "confirmed",
+                "result_desc": "Kyle Schwarber called out on strikes.",
+                "batter": "Kyle Schwarber",
+                "pitcher": "Alex Vesia",
+                "game_pk": 823436
+            },
             {
                 "date": "2026-07-19",
                 "date_formatted": "July 19, 2026",
@@ -320,30 +344,6 @@
                 "batter": "Shohei Ohtani",
                 "pitcher": "Gage Jump",
                 "game_pk": 824986
-            },
-            {
-                "date": "2026-06-28",
-                "date_formatted": "June 28, 2026",
-                "challenger": "Kyle Tucker",
-                "role": "batting",
-                "team": "dodgers",
-                "outcome": "confirmed",
-                "result_desc": "Kyle Tucker called out on strikes.",
-                "batter": "Kyle Tucker",
-                "pitcher": "Wandy Peralta",
-                "game_pk": 823281
-            },
-            {
-                "date": "2026-06-26",
-                "date_formatted": "June 26, 2026",
-                "challenger": "Dalton Rushing",
-                "role": "catching",
-                "team": "dodgers",
-                "outcome": "overturned",
-                "result_desc": "Fernando Tatis Jr. called out on strikes.",
-                "batter": "Fernando Tatis Jr.",
-                "pitcher": "Roki Sasaki",
-                "game_pk": 823285
             }
         ]
     }

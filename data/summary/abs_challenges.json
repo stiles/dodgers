@@ -1,8 +1,8 @@
 {
     "dodgers": {
         "batting": {
-            "total": 80,
-            "successful": 51,
+            "total": 81,
+            "successful": 52,
             "failed": 29
         },
         "pitching": {
@@ -11,8 +11,8 @@
             "failed": 3
         },
         "catching": {
-            "total": 81,
-            "successful": 48,
+            "total": 82,
+            "successful": 49,
             "failed": 33
         }
     },
@@ -28,46 +28,70 @@
             "failed": 3
         },
         "catching": {
-            "total": 120,
-            "successful": 76,
+            "total": 121,
+            "successful": 77,
             "failed": 44
         }
     },
     "challenge_log": [
         {
-            "date": "2026-07-19",
-            "date_formatted": "July 19, 2026",
-            "challenger": "Austin Wells",
+            "date": "2026-07-20",
+            "date_formatted": "July 20, 2026",
+            "challenger": "J.T. Realmuto",
             "role": "catching",
             "team": "opponents",
             "outcome": "overturned",
-            "result_desc": "Max Muncy walks.",
-            "batter": "Max Muncy",
-            "pitcher": "Fernando Cruz",
-            "game_pk": 823521
+            "result_desc": "Teoscar Hern\u00e1ndez grounds out sharply, shortstop Trea Turner to first baseman Bryce Harper.",
+            "batter": "Teoscar Hern\u00e1ndez",
+            "pitcher": "Jhoan Duran",
+            "game_pk": 823436
         },
         {
-            "date": "2026-07-19",
-            "date_formatted": "July 19, 2026",
-            "challenger": "Austin Wells",
-            "role": "catching",
-            "team": "opponents",
+            "date": "2026-07-20",
+            "date_formatted": "July 20, 2026",
+            "challenger": "Andy Pages",
+            "role": "batting",
+            "team": "dodgers",
             "outcome": "overturned",
-            "result_desc": "Andy Pages flies out to left fielder Cody Bellinger.",
+            "result_desc": "Andy Pages walks.",
             "batter": "Andy Pages",
-            "pitcher": "Paul Blackburn",
+            "pitcher": "Chase Shugart",
+            "game_pk": 823436
+        },
+        {
+            "date": "2026-07-20",
+            "date_formatted": "July 20, 2026",
+            "challenger": "Dalton Rushing",
+            "role": "catching",
+            "team": "dodgers",
+            "outcome": "overturned",
+            "result_desc": "Gabriel Rincones Jr. flies out to right fielder Alex Call.",
+            "batter": "Gabriel Rincones Jr.",
+            "pitcher": "Emmet Sheehan",
+            "game_pk": 823436
+        },
+        {
+            "date": "2026-07-19",
+            "date_formatted": "July 19, 2026",
+            "challenger": "Eliezer Alfonzo",
+            "role": "catching",
+            "team": "dodgers",
+            "outcome": "overturned",
+            "result_desc": "Jos\u00e9 Caballero reaches on a fielder's choice out, third baseman Max Muncy to catcher Eliezer Alfonzo. Anthony Volpe out at home. Austin Wells to 3rd.",
+            "batter": "Jos\u00e9 Caballero",
+            "pitcher": "Edgardo Henriquez",
             "game_pk": 823521
         },
         {
             "date": "2026-07-19",
             "date_formatted": "July 19, 2026",
-            "challenger": "Ali S\u00e1nchez",
-            "role": "catching",
+            "challenger": "Jasson Dom\u00ednguez",
+            "role": "batting",
             "team": "opponents",
             "outcome": "confirmed",
-            "result_desc": "Kyle Tucker singles on a line drive to right fielder Max Schuemann. Max Muncy to 3rd.",
-            "batter": "Kyle Tucker",
-            "pitcher": "Jake Bird",
+            "result_desc": "Jasson Dom\u00ednguez grounds out, first baseman Freddie Freeman to pitcher Yoshinobu Yamamoto.",
+            "batter": "Jasson Dom\u00ednguez",
+            "pitcher": "Yoshinobu Yamamoto",
             "game_pk": 823523
         },
         {
@@ -97,26 +121,26 @@
         {
             "date": "2026-07-19",
             "date_formatted": "July 19, 2026",
-            "challenger": "Jasson Dom\u00ednguez",
-            "role": "batting",
+            "challenger": "Austin Wells",
+            "role": "catching",
             "team": "opponents",
-            "outcome": "confirmed",
-            "result_desc": "Jasson Dom\u00ednguez grounds out, first baseman Freddie Freeman to pitcher Yoshinobu Yamamoto.",
-            "batter": "Jasson Dom\u00ednguez",
-            "pitcher": "Yoshinobu Yamamoto",
-            "game_pk": 823523
+            "outcome": "overturned",
+            "result_desc": "Andy Pages flies out to left fielder Cody Bellinger.",
+            "batter": "Andy Pages",
+            "pitcher": "Paul Blackburn",
+            "game_pk": 823521
         },
         {
             "date": "2026-07-19",
             "date_formatted": "July 19, 2026",
-            "challenger": "Eliezer Alfonzo",
+            "challenger": "Ali S\u00e1nchez",
             "role": "catching",
-            "team": "dodgers",
-            "outcome": "overturned",
-            "result_desc": "Jos\u00e9 Caballero reaches on a fielder's choice out, third baseman Max Muncy to catcher Eliezer Alfonzo. Anthony Volpe out at home. Austin Wells to 3rd.",
-            "batter": "Jos\u00e9 Caballero",
-            "pitcher": "Edgardo Henriquez",
-            "game_pk": 823521
+            "team": "opponents",
+            "outcome": "confirmed",
+            "result_desc": "Kyle Tucker singles on a line drive to right fielder Max Schuemann. Max Muncy to 3rd.",
+            "batter": "Kyle Tucker",
+            "pitcher": "Jake Bird",
+            "game_pk": 823523
         },
         {
             "date": "2026-07-19",
@@ -152,6 +176,18 @@
             "result_desc": "Ben Rice strikes out swinging.",
             "batter": "Ben Rice",
             "pitcher": "Alex Vesia",
+            "game_pk": 823521
+        },
+        {
+            "date": "2026-07-19",
+            "date_formatted": "July 19, 2026",
+            "challenger": "Austin Wells",
+            "role": "catching",
+            "team": "opponents",
+            "outcome": "overturned",
+            "result_desc": "Max Muncy walks.",
+            "batter": "Max Muncy",
+            "pitcher": "Fernando Cruz",
             "game_pk": 823521
         },
         {
@@ -237,42 +273,6 @@
             "batter": "Andy Pages",
             "pitcher": "Brandon Pfaadt",
             "game_pk": 823926
-        },
-        {
-            "date": "2026-07-10",
-            "date_formatted": "July 10, 2026",
-            "challenger": "Gabriel Moreno",
-            "role": "catching",
-            "team": "opponents",
-            "outcome": "overturned",
-            "result_desc": "Freddie Freeman grounds out, second baseman Ildemaro Vargas to first baseman Tim Tawa.",
-            "batter": "Freddie Freeman",
-            "pitcher": "Eduardo Rodriguez",
-            "game_pk": 823927
-        },
-        {
-            "date": "2026-07-10",
-            "date_formatted": "July 10, 2026",
-            "challenger": "Gabriel Moreno",
-            "role": "catching",
-            "team": "opponents",
-            "outcome": "overturned",
-            "result_desc": "Mookie Betts flies out to left fielder Lourdes Gurriel Jr.",
-            "batter": "Mookie Betts",
-            "pitcher": "Eduardo Rodriguez",
-            "game_pk": 823927
-        },
-        {
-            "date": "2026-07-08",
-            "date_formatted": "July 8, 2026",
-            "challenger": "Brett Sullivan",
-            "role": "catching",
-            "team": "opponents",
-            "outcome": "overturned",
-            "result_desc": "Max Muncy strikes out swinging.",
-            "batter": "Max Muncy",
-            "pitcher": "Gabriel Hughes",
-            "game_pk": 823928
         }
     ],
     "dodgers_by_player": [
@@ -285,17 +285,17 @@
         },
         {
             "challenger": "Dalton Rushing",
-            "total": 27,
-            "successful": 14,
+            "total": 28,
+            "successful": 15,
             "failed": 13,
-            "success_rate": 51.9
+            "success_rate": 53.6
         },
         {
             "challenger": "Andy Pages",
-            "total": 14,
-            "successful": 8,
+            "total": 15,
+            "successful": 9,
             "failed": 6,
-            "success_rate": 57.1
+            "success_rate": 60.0
         },
         {
             "challenger": "Teoscar Hern\u00e1ndez",
@@ -420,10 +420,10 @@
         },
         {
             "inning": 4,
-            "total": 14,
-            "successful": 8,
+            "total": 15,
+            "successful": 9,
             "failed": 6,
-            "success_rate": 57.1
+            "success_rate": 60.0
         },
         {
             "inning": 5,
@@ -455,10 +455,10 @@
         },
         {
             "inning": 9,
-            "total": 24,
-            "successful": 15,
+            "total": 25,
+            "successful": 16,
             "failed": 9,
-            "success_rate": 62.5
+            "success_rate": 64.0
         }
     ]
 }
