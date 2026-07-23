@@ -1,16 +1,16 @@
 {
     "season_summary": {
-        "correct_strikes_pct": 91.0464676992822,
-        "incorrect_strikes_pct": 8.953532300717796,
-        "total_called_strikes": 2647,
-        "bad_calls_count": 237
+        "correct_strikes_pct": 91.04926664159458,
+        "incorrect_strikes_pct": 8.950733358405415,
+        "total_called_strikes": 2659,
+        "bad_calls_count": 238
     },
     "last_game_summary": {
         "date": "July 22, 2026",
-        "correct_strikes_pct": 84.61538461538461,
-        "incorrect_strikes_pct": 15.384615384615387,
-        "total_called_strikes": 13,
-        "bad_calls_count": 2,
+        "correct_strikes_pct": 88.0,
+        "incorrect_strikes_pct": 12.0,
+        "total_called_strikes": 25,
+        "bad_calls_count": 3,
         "home_plate_umpire": "Brian O'Nora"
     },
     "worst_calls_of_season": [
@@ -56,25 +56,25 @@
         }
     ],
     "pitching_season_summary": {
-        "correct_balls_pct": 96.01822503961965,
-        "incorrect_balls_pct": 3.981774960380349,
-        "total_called_balls": 5048,
+        "correct_balls_pct": 96.04096907622612,
+        "incorrect_balls_pct": 3.9590309237738808,
+        "total_called_balls": 5077,
         "bad_calls_count": 201
     },
     "pitching_last_game_summary": {
         "date": "July 22, 2026",
-        "correct_balls_pct": 92.0,
-        "incorrect_balls_pct": 8.0,
-        "total_called_balls": 25,
+        "correct_balls_pct": 96.29629629629629,
+        "incorrect_balls_pct": 3.7037037037037095,
+        "total_called_balls": 54,
         "bad_calls_count": 2
     },
     "pitching_worst_calls_of_season": [],
     "abs_challenges": {
         "dodgers": {
             "batting": {
-                "total": 35,
+                "total": 36,
                 "successful": 10,
-                "failed": 25
+                "failed": 26
             },
             "pitching": {
                 "total": 0,
@@ -99,12 +99,36 @@
                 "failed": 0
             },
             "catching": {
-                "total": 42,
-                "successful": 31,
+                "total": 43,
+                "successful": 32,
                 "failed": 11
             }
         },
         "challenge_log": [
+            {
+                "date": "2026-07-22",
+                "date_formatted": "July 22, 2026",
+                "challenger": "Rafael March\u00e1n",
+                "role": "catching",
+                "team": "opponents",
+                "outcome": "overturned",
+                "result_desc": "Kyle Tucker called out on strikes.",
+                "batter": "Kyle Tucker",
+                "pitcher": "Seth Johnson",
+                "game_pk": 823438
+            },
+            {
+                "date": "2026-07-22",
+                "date_formatted": "July 22, 2026",
+                "challenger": "Dalton Rushing",
+                "role": "batting",
+                "team": "dodgers",
+                "outcome": "confirmed",
+                "result_desc": "Dalton Rushing called out on strikes.",
+                "batter": "Dalton Rushing",
+                "pitcher": "Orion Kerkering",
+                "game_pk": 823438
+            },
             {
                 "date": "2026-07-20",
                 "date_formatted": "July 20, 2026",
@@ -320,30 +344,6 @@
                 "batter": "Dalton Rushing",
                 "pitcher": "Jeffrey Springs",
                 "game_pk": 824984
-            },
-            {
-                "date": "2026-06-30",
-                "date_formatted": "June 30, 2026",
-                "challenger": "Carlos Cortes",
-                "role": "batting",
-                "team": "opponents",
-                "outcome": "confirmed",
-                "result_desc": "Carlos Cortes called out on strikes.",
-                "batter": "Carlos Cortes",
-                "pitcher": "Wyatt Mills",
-                "game_pk": 824984
-            },
-            {
-                "date": "2026-06-29",
-                "date_formatted": "June 29, 2026",
-                "challenger": "Shea Langeliers",
-                "role": "catching",
-                "team": "opponents",
-                "outcome": "overturned",
-                "result_desc": "Shohei Ohtani called out on strikes.",
-                "batter": "Shohei Ohtani",
-                "pitcher": "Gage Jump",
-                "game_pk": 824986
             }
         ]
     }

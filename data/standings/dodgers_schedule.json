@@ -1,13 +1,5 @@
 [
     {
-        "date":"Jul 7",
-        "opp_name":"Colorado Rockies",
-        "home_away":"home",
-        "result":"loss",
-        "placement":"last",
-        "game_start":"3-4"
-    },
-    {
         "date":"Jul 8",
         "opp_name":"Colorado Rockies",
         "home_away":"home",
@@ -80,20 +72,20 @@
         "game_start":"2-1"
     },
     {
+        "date":"Jul 22",
+        "opp_name":"Philadelphia Phillies",
+        "home_away":"away",
+        "result":"win",
+        "placement":"last",
+        "game_start":"9-5"
+    },
+    {
         "date":"Jul 18",
         "opp_name":"New York Yankees",
         "home_away":"away",
         "result":"--",
         "placement":"next",
         "game_start":"Postponed"
-    },
-    {
-        "date":"Jul 22",
-        "opp_name":"Philadelphia Phillies",
-        "home_away":"away",
-        "result":"in progress",
-        "placement":"next",
-        "game_start":"Live"
     },
     {
         "date":"Jul 24",
@@ -158,5 +150,13 @@
         "result":"--",
         "placement":"next",
         "game_start":"6:10 PM"
+    },
+    {
+        "date":"Aug 2",
+        "opp_name":"Boston Red Sox",
+        "home_away":"home",
+        "result":"--",
+        "placement":"next",
+        "game_start":"4:20 PM"
     }
 ]

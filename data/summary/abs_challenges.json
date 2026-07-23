@@ -1,9 +1,9 @@
 {
     "dodgers": {
         "batting": {
-            "total": 83,
-            "successful": 53,
-            "failed": 30
+            "total": 85,
+            "successful": 54,
+            "failed": 31
         },
         "pitching": {
             "total": 5,
@@ -34,6 +34,30 @@
         }
     },
     "challenge_log": [
+        {
+            "date": "2026-07-22",
+            "date_formatted": "July 22, 2026",
+            "challenger": "Freddie Freeman",
+            "role": "batting",
+            "team": "dodgers",
+            "outcome": "confirmed",
+            "result_desc": "Freddie Freeman walks.",
+            "batter": "Freddie Freeman",
+            "pitcher": "Tim Mayza",
+            "game_pk": 823438
+        },
+        {
+            "date": "2026-07-22",
+            "date_formatted": "July 22, 2026",
+            "challenger": "Andy Pages",
+            "role": "batting",
+            "team": "dodgers",
+            "outcome": "overturned",
+            "result_desc": "Andy Pages strikes out swinging.",
+            "batter": "Andy Pages",
+            "pitcher": "Aaron Nola",
+            "game_pk": 823438
+        },
         {
             "date": "2026-07-21",
             "date_formatted": "July 21, 2026",
@@ -169,6 +193,18 @@
         {
             "date": "2026-07-19",
             "date_formatted": "July 19, 2026",
+            "challenger": "Austin Wells",
+            "role": "catching",
+            "team": "opponents",
+            "outcome": "overturned",
+            "result_desc": "Kyle Tucker strikes out swinging.",
+            "batter": "Kyle Tucker",
+            "pitcher": "Brent Headrick",
+            "game_pk": 823521
+        },
+        {
+            "date": "2026-07-19",
+            "date_formatted": "July 19, 2026",
             "challenger": "Eliezer Alfonzo",
             "role": "catching",
             "team": "dodgers",
@@ -187,18 +223,6 @@
             "outcome": "overturned",
             "result_desc": "Shohei Ohtani grounds out, first baseman Paul Goldschmidt to pitcher Brent Headrick.",
             "batter": "Shohei Ohtani",
-            "pitcher": "Brent Headrick",
-            "game_pk": 823521
-        },
-        {
-            "date": "2026-07-19",
-            "date_formatted": "July 19, 2026",
-            "challenger": "Austin Wells",
-            "role": "catching",
-            "team": "opponents",
-            "outcome": "overturned",
-            "result_desc": "Kyle Tucker strikes out swinging.",
-            "batter": "Kyle Tucker",
             "pitcher": "Brent Headrick",
             "game_pk": 823521
         },
@@ -249,30 +273,6 @@
             "batter": "Trent Grisham",
             "pitcher": "Roki Sasaki",
             "game_pk": 823524
-        },
-        {
-            "date": "2026-07-17",
-            "date_formatted": "July 17, 2026",
-            "challenger": "Andy Pages",
-            "role": "batting",
-            "team": "dodgers",
-            "outcome": "overturned",
-            "result_desc": "Andy Pages singles on a ground ball to left fielder Cody Bellinger.",
-            "batter": "Andy Pages",
-            "pitcher": "Gerrit Cole",
-            "game_pk": 823524
-        },
-        {
-            "date": "2026-07-12",
-            "date_formatted": "July 12, 2026",
-            "challenger": "Gabriel Moreno",
-            "role": "catching",
-            "team": "opponents",
-            "outcome": "overturned",
-            "result_desc": "Andy Pages strikes out swinging.",
-            "batter": "Andy Pages",
-            "pitcher": "Ryan Thompson",
-            "game_pk": 823925
         }
     ],
     "dodgers_by_player": [
@@ -292,10 +292,10 @@
         },
         {
             "challenger": "Andy Pages",
-            "total": 16,
-            "successful": 9,
+            "total": 17,
+            "successful": 10,
             "failed": 7,
-            "success_rate": 56.2
+            "success_rate": 58.8
         },
         {
             "challenger": "Teoscar Hern\u00e1ndez",
@@ -348,10 +348,10 @@
         },
         {
             "challenger": "Freddie Freeman",
-            "total": 2,
+            "total": 3,
             "successful": 2,
-            "failed": 0,
-            "success_rate": 100.0
+            "failed": 1,
+            "success_rate": 66.7
         },
         {
             "challenger": "Alex Freeland",
@@ -399,10 +399,10 @@
     "dodgers_by_inning": [
         {
             "inning": 1,
-            "total": 12,
-            "successful": 8,
+            "total": 13,
+            "successful": 9,
             "failed": 4,
-            "success_rate": 66.7
+            "success_rate": 69.2
         },
         {
             "inning": 2,
@@ -448,10 +448,10 @@
         },
         {
             "inning": 8,
-            "total": 19,
+            "total": 20,
             "successful": 12,
-            "failed": 7,
-            "success_rate": 63.2
+            "failed": 8,
+            "success_rate": 60.0
         },
         {
             "inning": 9,
