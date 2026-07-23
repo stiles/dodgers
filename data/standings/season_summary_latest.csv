@@ -2,27 +2,27 @@ stat_label,stat,value,category,context_value,context_value_label
 Wins,wins,64,standings,59,This point last season
 Losses,losses,38,standings,43,This point last season
 Win percentage,win_pct,63%,standings,58%,This point last season
-Games up/back,games_up_back,11.5,standings,1st,Division rank
+Games up/back,games_up_back,11,standings,1st,Division rank
 Fielding percentage,fielding_pct,.990,standings,2nd,League rank
-Errors,errors,37,standings,2nd,League rank
+Errors,errors,37,standings,1st,League rank
 Runs,runs,526,standings,3rd,League rank
 Runs against,runs_against,373,standings,477,This point last season
 Run differential,run_differential,153,standings,65,This point last season
 Batting average,batting_average,.260,batting,.253,Last decade average
-Home runs,home_runs,132,batting,5th,League rank
+Home runs,home_runs,133,batting,6th,League rank
 Home runs/game,home_runs_game,1.29,batting,1.42,Last decade average
-On-base percentage,on_base_pct,.341,batting,2nd,League rank
+On-base percentage,on_base_pct,.341,batting,1st,League rank
 Slugging percentage,slugging_pct,.430,batting,2nd,League rank
-OPS,ops,.771,batting,1st,League rank
+OPS,ops,.771,batting,2nd,League rank
 Stolen bases,stolen_bases,37,batting,28th,League rank
 Stolen bases/game,stolen_bases_game,0.36,batting,0.84,Rate all last season
-Doubles,doubles,169,batting,9th,League rank
-Strikeouts,strikeouts,910,pitching,6th,League rank
-Walks,walks,304,pitching,23rd,League rank
-ERA,era,3.53,pitching,3rd,League rank
+Doubles,doubles,171,batting,8th,League rank
+Strikeouts,strikeouts,914,pitching,6th,League rank
+Walks,walks,305,pitching,24th,League rank
+ERA,era,3.54,pitching,3rd,League rank
 WHIP,whip,1.14,pitching,1st,League rank
-Batting average against,avg_against,.217,pitching,1st,League rank
-K/BB ratio,k_bb_ratio,2.99,pitching,4th,League rank
-Last updated,update_time,"July 22, 2026, 9:26 AM PT",summary,,
-Team summary,summary,"<span class='highlight'>LOS ANGELES</span> <span class='updated'>(July 22)</span> — The Dodgers have compiled a <span class='highlight'>64-38</span> record in the 2026 regular season, a <span class='highlight'>63%</span> winning percentage. The last game was a <span class='highlight'>2-1</span> away <span class='highlight'>win</span> against the <span class='highlight'>Philadelphia Phillies</span>. The team next faces the <span class='highlight'>Philadelphia Phillies</span> on Wednesday at 6:40 p.m. EDT at <span class='highlight'>Citizens Bank Park</span>.",summary,,
+Batting average against,avg_against,.216,pitching,1st,League rank
+K/BB ratio,k_bb_ratio,3.0,pitching,4th,League rank
+Last updated,update_time,"July 22, 2026, 5:06 PM PT",summary,,
+Team summary,summary,"<span class='highlight'>LOS ANGELES</span> <span class='updated'>(July 22)</span> — The Dodgers have compiled a <span class='highlight'>64-38</span> record in the 2026 regular season, a <span class='highlight'>63%</span> winning percentage. The last game was a <span class='highlight'>2-1</span> away <span class='highlight'>win</span> against the <span class='highlight'>Philadelphia Phillies</span>. The team next faces the <span class='highlight'>New York Mets</span> on Friday at 7:10 p.m. EDT at <span class='highlight'>Citi Field</span>.",summary,,
 Last game result,last_game_result,win,summary,,

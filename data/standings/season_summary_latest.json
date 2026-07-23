@@ -26,7 +26,7 @@
     {
         "stat_label":"Games up\/back",
         "stat":"games_up_back",
-        "value":11.5,
+        "value":11,
         "category":"standings",
         "context_value":"1st",
         "context_value_label":"Division rank"
@@ -44,7 +44,7 @@
         "stat":"errors",
         "value":37,
         "category":"standings",
-        "context_value":"2nd",
+        "context_value":"1st",
         "context_value_label":"League rank"
     },
     {
@@ -82,9 +82,9 @@
     {
         "stat_label":"Home runs",
         "stat":"home_runs",
-        "value":132,
+        "value":133,
         "category":"batting",
-        "context_value":"5th",
+        "context_value":"6th",
         "context_value_label":"League rank"
     },
     {
@@ -100,7 +100,7 @@
         "stat":"on_base_pct",
         "value":".341",
         "category":"batting",
-        "context_value":"2nd",
+        "context_value":"1st",
         "context_value_label":"League rank"
     },
     {
@@ -116,7 +116,7 @@
         "stat":"ops",
         "value":".771",
         "category":"batting",
-        "context_value":"1st",
+        "context_value":"2nd",
         "context_value_label":"League rank"
     },
     {
@@ -138,15 +138,15 @@
     {
         "stat_label":"Doubles",
         "stat":"doubles",
-        "value":169,
+        "value":171,
         "category":"batting",
-        "context_value":"9th",
+        "context_value":"8th",
         "context_value_label":"League rank"
     },
     {
         "stat_label":"Strikeouts",
         "stat":"strikeouts",
-        "value":"910",
+        "value":"914",
         "category":"pitching",
         "context_value":"6th",
         "context_value_label":"League rank"
@@ -154,15 +154,15 @@
     {
         "stat_label":"Walks",
         "stat":"walks",
-        "value":304,
+        "value":305,
         "category":"pitching",
-        "context_value":"23rd",
+        "context_value":"24th",
         "context_value_label":"League rank"
     },
     {
         "stat_label":"ERA",
         "stat":"era",
-        "value":"3.53",
+        "value":"3.54",
         "category":"pitching",
         "context_value":"3rd",
         "context_value_label":"League rank"
@@ -178,7 +178,7 @@
     {
         "stat_label":"Batting average against",
         "stat":"avg_against",
-        "value":".217",
+        "value":".216",
         "category":"pitching",
         "context_value":"1st",
         "context_value_label":"League rank"
@@ -186,7 +186,7 @@
     {
         "stat_label":"K\/BB ratio",
         "stat":"k_bb_ratio",
-        "value":2.99,
+        "value":3.0,
         "category":"pitching",
         "context_value":"4th",
         "context_value_label":"League rank"
@@ -194,7 +194,7 @@
     {
         "stat_label":"Last updated",
         "stat":"update_time",
-        "value":"July 22, 2026, 9:26 AM PT",
+        "value":"July 22, 2026, 5:06 PM PT",
         "category":"summary",
         "context_value":"",
         "context_value_label":""
@@ -202,7 +202,7 @@
     {
         "stat_label":"Team summary",
         "stat":"summary",
-        "value":"<span class='highlight'>LOS ANGELES<\/span> <span class='updated'>(July 22)<\/span> \u2014 The Dodgers have compiled a <span class='highlight'>64-38<\/span> record in the 2026 regular season, a <span class='highlight'>63%<\/span> winning percentage. The last game was a <span class='highlight'>2-1<\/span> away <span class='highlight'>win<\/span> against the <span class='highlight'>Philadelphia Phillies<\/span>. The team next faces the <span class='highlight'>Philadelphia Phillies<\/span> on Wednesday at 6:40 p.m. EDT at <span class='highlight'>Citizens Bank Park<\/span>.",
+        "value":"<span class='highlight'>LOS ANGELES<\/span> <span class='updated'>(July 22)<\/span> \u2014 The Dodgers have compiled a <span class='highlight'>64-38<\/span> record in the 2026 regular season, a <span class='highlight'>63%<\/span> winning percentage. The last game was a <span class='highlight'>2-1<\/span> away <span class='highlight'>win<\/span> against the <span class='highlight'>Philadelphia Phillies<\/span>. The team next faces the <span class='highlight'>New York Mets<\/span> on Friday at 7:10 p.m. EDT at <span class='highlight'>Citi Field<\/span>.",
         "category":"summary",
         "context_value":"",
         "context_value_label":""
