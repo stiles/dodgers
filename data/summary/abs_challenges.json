@@ -1,8 +1,8 @@
 {
     "dodgers": {
         "batting": {
-            "total": 85,
-            "successful": 54,
+            "total": 86,
+            "successful": 55,
             "failed": 31
         },
         "pitching": {
@@ -18,8 +18,8 @@
     },
     "opponents": {
         "batting": {
-            "total": 91,
-            "successful": 46,
+            "total": 93,
+            "successful": 48,
             "failed": 45
         },
         "pitching": {
@@ -28,12 +28,60 @@
             "failed": 3
         },
         "catching": {
-            "total": 121,
-            "successful": 77,
+            "total": 122,
+            "successful": 78,
             "failed": 44
         }
     },
     "challenge_log": [
+        {
+            "date": "2026-07-24",
+            "date_formatted": "July 24, 2026",
+            "challenger": "A.J. Ewing",
+            "role": "batting",
+            "team": "opponents",
+            "outcome": "overturned",
+            "result_desc": "A.J. Ewing flies out to left fielder Teoscar Hern\u00e1ndez.",
+            "batter": "A.J. Ewing",
+            "pitcher": "Evan Phillips",
+            "game_pk": 823601
+        },
+        {
+            "date": "2026-07-24",
+            "date_formatted": "July 24, 2026",
+            "challenger": "Francisco Alvarez",
+            "role": "catching",
+            "team": "opponents",
+            "outcome": "overturned",
+            "result_desc": "Freddie Freeman singles on a ground ball to left fielder A.J. Ewing.",
+            "batter": "Freddie Freeman",
+            "pitcher": "Sean Manaea",
+            "game_pk": 823601
+        },
+        {
+            "date": "2026-07-24",
+            "date_formatted": "July 24, 2026",
+            "challenger": "Juan Soto",
+            "role": "batting",
+            "team": "opponents",
+            "outcome": "overturned",
+            "result_desc": "Juan Soto walks.",
+            "batter": "Juan Soto",
+            "pitcher": "Roki Sasaki",
+            "game_pk": 823601
+        },
+        {
+            "date": "2026-07-24",
+            "date_formatted": "July 24, 2026",
+            "challenger": "Shohei Ohtani",
+            "role": "batting",
+            "team": "dodgers",
+            "outcome": "overturned",
+            "result_desc": "Shohei Ohtani singles on a ground ball to right fielder Carson Benge.",
+            "batter": "Shohei Ohtani",
+            "pitcher": "Sean Manaea",
+            "game_pk": 823601
+        },
         {
             "date": "2026-07-22",
             "date_formatted": "July 22, 2026",
@@ -97,13 +145,13 @@
         {
             "date": "2026-07-20",
             "date_formatted": "July 20, 2026",
-            "challenger": "J.T. Realmuto",
+            "challenger": "Dalton Rushing",
             "role": "catching",
-            "team": "opponents",
+            "team": "dodgers",
             "outcome": "overturned",
-            "result_desc": "Teoscar Hern\u00e1ndez grounds out sharply, shortstop Trea Turner to first baseman Bryce Harper.",
-            "batter": "Teoscar Hern\u00e1ndez",
-            "pitcher": "Jhoan Duran",
+            "result_desc": "Gabriel Rincones Jr. flies out to right fielder Alex Call.",
+            "batter": "Gabriel Rincones Jr.",
+            "pitcher": "Emmet Sheehan",
             "game_pk": 823436
         },
         {
@@ -121,13 +169,13 @@
         {
             "date": "2026-07-20",
             "date_formatted": "July 20, 2026",
-            "challenger": "Dalton Rushing",
+            "challenger": "J.T. Realmuto",
             "role": "catching",
-            "team": "dodgers",
+            "team": "opponents",
             "outcome": "overturned",
-            "result_desc": "Gabriel Rincones Jr. flies out to right fielder Alex Call.",
-            "batter": "Gabriel Rincones Jr.",
-            "pitcher": "Emmet Sheehan",
+            "result_desc": "Teoscar Hern\u00e1ndez grounds out sharply, shortstop Trea Turner to first baseman Bryce Harper.",
+            "batter": "Teoscar Hern\u00e1ndez",
+            "pitcher": "Jhoan Duran",
             "game_pk": 823436
         },
         {
@@ -137,57 +185,21 @@
             "role": "catching",
             "team": "opponents",
             "outcome": "overturned",
-            "result_desc": "Andy Pages flies out to left fielder Cody Bellinger.",
-            "batter": "Andy Pages",
-            "pitcher": "Paul Blackburn",
+            "result_desc": "Max Muncy walks.",
+            "batter": "Max Muncy",
+            "pitcher": "Fernando Cruz",
             "game_pk": 823521
         },
         {
             "date": "2026-07-19",
             "date_formatted": "July 19, 2026",
-            "challenger": "Jasson Dom\u00ednguez",
-            "role": "batting",
-            "team": "opponents",
-            "outcome": "confirmed",
-            "result_desc": "Jasson Dom\u00ednguez grounds out, first baseman Freddie Freeman to pitcher Yoshinobu Yamamoto.",
-            "batter": "Jasson Dom\u00ednguez",
-            "pitcher": "Yoshinobu Yamamoto",
-            "game_pk": 823523
-        },
-        {
-            "date": "2026-07-19",
-            "date_formatted": "July 19, 2026",
-            "challenger": "Ali S\u00e1nchez",
+            "challenger": "Eliezer Alfonzo",
             "role": "catching",
-            "team": "opponents",
-            "outcome": "confirmed",
-            "result_desc": "Kyle Tucker singles on a line drive to right fielder Max Schuemann. Max Muncy to 3rd.",
-            "batter": "Kyle Tucker",
-            "pitcher": "Jake Bird",
-            "game_pk": 823523
-        },
-        {
-            "date": "2026-07-19",
-            "date_formatted": "July 19, 2026",
-            "challenger": "Dalton Rushing",
-            "role": "batting",
             "team": "dodgers",
             "outcome": "overturned",
-            "result_desc": "Dalton Rushing walks. Alex Call to 2nd.",
-            "batter": "Dalton Rushing",
-            "pitcher": "Camilo Doval",
-            "game_pk": 823523
-        },
-        {
-            "date": "2026-07-19",
-            "date_formatted": "July 19, 2026",
-            "challenger": "Jos\u00e9 Caballero",
-            "role": "batting",
-            "team": "opponents",
-            "outcome": "overturned",
-            "result_desc": "Jos\u00e9 Caballero walks.",
-            "batter": "Jos\u00e9 Caballero",
-            "pitcher": "Kyle Hurt",
+            "result_desc": "Ben Rice strikes out swinging.",
+            "batter": "Ben Rice",
+            "pitcher": "Alex Vesia",
             "game_pk": 823521
         },
         {
@@ -199,6 +211,18 @@
             "outcome": "overturned",
             "result_desc": "Kyle Tucker strikes out swinging.",
             "batter": "Kyle Tucker",
+            "pitcher": "Brent Headrick",
+            "game_pk": 823521
+        },
+        {
+            "date": "2026-07-19",
+            "date_formatted": "July 19, 2026",
+            "challenger": "Austin Wells",
+            "role": "catching",
+            "team": "opponents",
+            "outcome": "overturned",
+            "result_desc": "Shohei Ohtani grounds out, first baseman Paul Goldschmidt to pitcher Brent Headrick.",
+            "batter": "Shohei Ohtani",
             "pitcher": "Brent Headrick",
             "game_pk": 823521
         },
@@ -221,58 +245,34 @@
             "role": "catching",
             "team": "opponents",
             "outcome": "overturned",
-            "result_desc": "Shohei Ohtani grounds out, first baseman Paul Goldschmidt to pitcher Brent Headrick.",
-            "batter": "Shohei Ohtani",
-            "pitcher": "Brent Headrick",
+            "result_desc": "Andy Pages flies out to left fielder Cody Bellinger.",
+            "batter": "Andy Pages",
+            "pitcher": "Paul Blackburn",
             "game_pk": 823521
         },
         {
             "date": "2026-07-19",
             "date_formatted": "July 19, 2026",
-            "challenger": "Eliezer Alfonzo",
-            "role": "catching",
+            "challenger": "Jos\u00e9 Caballero",
+            "role": "batting",
+            "team": "opponents",
+            "outcome": "overturned",
+            "result_desc": "Jos\u00e9 Caballero walks.",
+            "batter": "Jos\u00e9 Caballero",
+            "pitcher": "Kyle Hurt",
+            "game_pk": 823521
+        },
+        {
+            "date": "2026-07-19",
+            "date_formatted": "July 19, 2026",
+            "challenger": "Dalton Rushing",
+            "role": "batting",
             "team": "dodgers",
             "outcome": "overturned",
-            "result_desc": "Ben Rice strikes out swinging.",
-            "batter": "Ben Rice",
-            "pitcher": "Alex Vesia",
-            "game_pk": 823521
-        },
-        {
-            "date": "2026-07-19",
-            "date_formatted": "July 19, 2026",
-            "challenger": "Austin Wells",
-            "role": "catching",
-            "team": "opponents",
-            "outcome": "overturned",
-            "result_desc": "Max Muncy walks.",
-            "batter": "Max Muncy",
-            "pitcher": "Fernando Cruz",
-            "game_pk": 823521
-        },
-        {
-            "date": "2026-07-17",
-            "date_formatted": "July 17, 2026",
-            "challenger": "Trent Grisham",
-            "role": "batting",
-            "team": "opponents",
-            "outcome": "confirmed",
-            "result_desc": "Trent Grisham grounds out, first baseman Freddie Freeman to pitcher Roki Sasaki.",
-            "batter": "Trent Grisham",
-            "pitcher": "Roki Sasaki",
-            "game_pk": 823524
-        },
-        {
-            "date": "2026-07-17",
-            "date_formatted": "July 17, 2026",
-            "challenger": "Trent Grisham",
-            "role": "batting",
-            "team": "opponents",
-            "outcome": "overturned",
-            "result_desc": "Trent Grisham walks.",
-            "batter": "Trent Grisham",
-            "pitcher": "Roki Sasaki",
-            "game_pk": 823524
+            "result_desc": "Dalton Rushing walks. Alex Call to 2nd.",
+            "batter": "Dalton Rushing",
+            "pitcher": "Camilo Doval",
+            "game_pk": 823523
         }
     ],
     "dodgers_by_player": [
@@ -327,10 +327,10 @@
         },
         {
             "challenger": "Shohei Ohtani",
-            "total": 7,
-            "successful": 4,
+            "total": 8,
+            "successful": 5,
             "failed": 3,
-            "success_rate": 57.1
+            "success_rate": 62.5
         },
         {
             "challenger": "Miguel Rojas",
@@ -399,10 +399,10 @@
     "dodgers_by_inning": [
         {
             "inning": 1,
-            "total": 13,
-            "successful": 9,
+            "total": 14,
+            "successful": 10,
             "failed": 4,
-            "success_rate": 69.2
+            "success_rate": 71.4
         },
         {
             "inning": 2,

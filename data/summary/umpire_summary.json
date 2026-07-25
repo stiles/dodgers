@@ -1,15 +1,15 @@
 {
     "season_summary": {
-        "correct_strikes_pct": 91.08947959565705,
-        "incorrect_strikes_pct": 8.910520404342947,
-        "total_called_strikes": 2671,
+        "correct_strikes_pct": 91.11608809257186,
+        "incorrect_strikes_pct": 8.883911907428143,
+        "total_called_strikes": 2679,
         "bad_calls_count": 238
     },
     "last_game_summary": {
         "date": "July 24, 2026",
         "correct_strikes_pct": 100.0,
         "incorrect_strikes_pct": 0.0,
-        "total_called_strikes": 12,
+        "total_called_strikes": 20,
         "bad_calls_count": 0,
         "home_plate_umpire": "Mike Estabrook"
     },
@@ -56,24 +56,24 @@
         }
     ],
     "pitching_season_summary": {
-        "correct_balls_pct": 96.05263157894737,
-        "incorrect_balls_pct": 3.94736842105263,
-        "total_called_balls": 5092,
+        "correct_balls_pct": 96.07498535442296,
+        "incorrect_balls_pct": 3.9250146455770363,
+        "total_called_balls": 5121,
         "bad_calls_count": 201
     },
     "pitching_last_game_summary": {
         "date": "July 24, 2026",
         "correct_balls_pct": 100.0,
         "incorrect_balls_pct": 0.0,
-        "total_called_balls": 15,
+        "total_called_balls": 44,
         "bad_calls_count": 0
     },
     "pitching_worst_calls_of_season": [],
     "abs_challenges": {
         "dodgers": {
             "batting": {
-                "total": 36,
-                "successful": 10,
+                "total": 37,
+                "successful": 11,
                 "failed": 26
             },
             "pitching": {
@@ -105,6 +105,18 @@
             }
         },
         "challenge_log": [
+            {
+                "date": "2026-07-24",
+                "date_formatted": "July 24, 2026",
+                "challenger": "Andy Pages",
+                "role": "batting",
+                "team": "dodgers",
+                "outcome": "overturned",
+                "result_desc": "Andy Pages walks.",
+                "batter": "Andy Pages",
+                "pitcher": "Brooks Raley",
+                "game_pk": 823601
+            },
             {
                 "date": "2026-07-22",
                 "date_formatted": "July 22, 2026",
@@ -330,18 +342,6 @@
                 "outcome": "overturned",
                 "result_desc": "Freddie Freeman walks. Andy Pages to 2nd.",
                 "batter": "Freddie Freeman",
-                "pitcher": "Jeffrey Springs",
-                "game_pk": 824984
-            },
-            {
-                "date": "2026-06-30",
-                "date_formatted": "June 30, 2026",
-                "challenger": "Shea Langeliers",
-                "role": "catching",
-                "team": "opponents",
-                "outcome": "overturned",
-                "result_desc": "Dalton Rushing called out on strikes.",
-                "batter": "Dalton Rushing",
                 "pitcher": "Jeffrey Springs",
                 "game_pk": 824984
             }
