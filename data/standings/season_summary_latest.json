@@ -26,7 +26,7 @@
     {
         "stat_label":"Games up\/back",
         "stat":"games_up_back",
-        "value":11,
+        "value":11.5,
         "category":"standings",
         "context_value":"1st",
         "context_value_label":"Division rank"
@@ -36,7 +36,7 @@
         "stat":"fielding_pct",
         "value":".990",
         "category":"standings",
-        "context_value":"2nd",
+        "context_value":"1st",
         "context_value_label":"League rank"
     },
     {
@@ -82,7 +82,7 @@
     {
         "stat_label":"Home runs",
         "stat":"home_runs",
-        "value":135,
+        "value":136,
         "category":"batting",
         "context_value":"5th",
         "context_value_label":"League rank"
@@ -146,15 +146,15 @@
     {
         "stat_label":"Strikeouts",
         "stat":"strikeouts",
-        "value":"930",
+        "value":"932",
         "category":"pitching",
-        "context_value":"6th",
+        "context_value":"7th",
         "context_value_label":"League rank"
     },
     {
         "stat_label":"Walks",
         "stat":"walks",
-        "value":309,
+        "value":310,
         "category":"pitching",
         "context_value":"23rd",
         "context_value_label":"League rank"
@@ -188,13 +188,13 @@
         "stat":"k_bb_ratio",
         "value":3.01,
         "category":"pitching",
-        "context_value":"4th",
+        "context_value":"5th",
         "context_value_label":"League rank"
     },
     {
         "stat_label":"Last updated",
         "stat":"update_time",
-        "value":"July 25, 2026, 9:09 AM PT",
+        "value":"July 25, 2026, 5:06 PM PT",
         "category":"summary",
         "context_value":"",
         "context_value_label":""
@@ -202,7 +202,7 @@
     {
         "stat_label":"Team summary",
         "stat":"summary",
-        "value":"<span class='highlight'>LOS ANGELES<\/span> <span class='updated'>(July 25)<\/span> \u2014 The Dodgers have compiled a <span class='highlight'>66-38<\/span> record in the 2026 regular season, a <span class='highlight'>64%<\/span> winning percentage. The last game was a <span class='highlight'>4-2<\/span> away <span class='highlight'>win<\/span> against the <span class='highlight'>New York Mets<\/span>. The team next faces the <span class='highlight'>New York Mets<\/span> on Saturday at 7:15 p.m. EDT at <span class='highlight'>Citi Field<\/span>.",
+        "value":"<span class='highlight'>LOS ANGELES<\/span> <span class='updated'>(July 25)<\/span> \u2014 The Dodgers have compiled a <span class='highlight'>66-38<\/span> record in the 2026 regular season, a <span class='highlight'>64%<\/span> winning percentage. The last game was a <span class='highlight'>4-2<\/span> away <span class='highlight'>win<\/span> against the <span class='highlight'>New York Mets<\/span>. The team next faces the <span class='highlight'>New York Mets<\/span> on Sunday at 1:40 p.m. EDT at <span class='highlight'>Citi Field<\/span>.",
         "category":"summary",
         "context_value":"",
         "context_value_label":""
