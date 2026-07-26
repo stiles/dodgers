@@ -1,16 +1,16 @@
 {
     "season_summary": {
-        "correct_strikes_pct": 91.07142857142857,
-        "incorrect_strikes_pct": 8.92857142857143,
-        "total_called_strikes": 2688,
-        "bad_calls_count": 240
+        "correct_strikes_pct": 91.04367135455217,
+        "incorrect_strikes_pct": 8.956328645447826,
+        "total_called_strikes": 2702,
+        "bad_calls_count": 242
     },
     "last_game_summary": {
         "date": "July 25, 2026",
-        "correct_strikes_pct": 77.77777777777779,
-        "incorrect_strikes_pct": 22.222222222222214,
-        "total_called_strikes": 9,
-        "bad_calls_count": 2,
+        "correct_strikes_pct": 82.6086956521739,
+        "incorrect_strikes_pct": 17.391304347826093,
+        "total_called_strikes": 23,
+        "bad_calls_count": 4,
         "home_plate_umpire": "Lance Barrett"
     },
     "worst_calls_of_season": [
@@ -56,25 +56,25 @@
         }
     ],
     "pitching_season_summary": {
-        "correct_balls_pct": 96.0856864654333,
-        "incorrect_balls_pct": 3.914313534566702,
-        "total_called_balls": 5135,
+        "correct_balls_pct": 96.11444036342547,
+        "incorrect_balls_pct": 3.885559636574527,
+        "total_called_balls": 5173,
         "bad_calls_count": 201
     },
     "pitching_last_game_summary": {
         "date": "July 25, 2026",
         "correct_balls_pct": 100.0,
         "incorrect_balls_pct": 0.0,
-        "total_called_balls": 14,
+        "total_called_balls": 52,
         "bad_calls_count": 0
     },
     "pitching_worst_calls_of_season": [],
     "abs_challenges": {
         "dodgers": {
             "batting": {
-                "total": 37,
+                "total": 38,
                 "successful": 11,
-                "failed": 26
+                "failed": 27
             },
             "pitching": {
                 "total": 0,
@@ -82,16 +82,16 @@
                 "failed": 0
             },
             "catching": {
-                "total": 17,
-                "successful": 12,
+                "total": 18,
+                "successful": 13,
                 "failed": 5
             }
         },
         "opponents": {
             "batting": {
-                "total": 20,
+                "total": 21,
                 "successful": 4,
-                "failed": 16
+                "failed": 17
             },
             "pitching": {
                 "total": 0,
@@ -105,6 +105,42 @@
             }
         },
         "challenge_log": [
+            {
+                "date": "2026-07-25",
+                "date_formatted": "July 25, 2026",
+                "challenger": "Shohei Ohtani",
+                "role": "batting",
+                "team": "dodgers",
+                "outcome": "confirmed",
+                "result_desc": "Shohei Ohtani called out on strikes.",
+                "batter": "Shohei Ohtani",
+                "pitcher": "Nolan McLean",
+                "game_pk": 823600
+            },
+            {
+                "date": "2026-07-25",
+                "date_formatted": "July 25, 2026",
+                "challenger": "Dalton Rushing",
+                "role": "catching",
+                "team": "dodgers",
+                "outcome": "overturned",
+                "result_desc": "Brett Baty called out on strikes.",
+                "batter": "Brett Baty",
+                "pitcher": "Yoshinobu Yamamoto",
+                "game_pk": 823600
+            },
+            {
+                "date": "2026-07-25",
+                "date_formatted": "July 25, 2026",
+                "challenger": "Jorge Polanco",
+                "role": "batting",
+                "team": "opponents",
+                "outcome": "confirmed",
+                "result_desc": "Jorge Polanco called out on strikes.",
+                "batter": "Jorge Polanco",
+                "pitcher": "Edgardo Henriquez",
+                "game_pk": 823600
+            },
             {
                 "date": "2026-07-24",
                 "date_formatted": "July 24, 2026",
@@ -308,42 +344,6 @@
                 "batter": "Shohei Ohtani",
                 "pitcher": "Yuki Matsui",
                 "game_pk": 823931
-            },
-            {
-                "date": "2026-07-05",
-                "date_formatted": "July 5, 2026",
-                "challenger": "Xander Bogaerts",
-                "role": "batting",
-                "team": "opponents",
-                "outcome": "confirmed",
-                "result_desc": "Xander Bogaerts called out on strikes.",
-                "batter": "Xander Bogaerts",
-                "pitcher": "Emmet Sheehan",
-                "game_pk": 823931
-            },
-            {
-                "date": "2026-07-01",
-                "date_formatted": "July 1, 2026",
-                "challenger": "Jonah Heim",
-                "role": "catching",
-                "team": "opponents",
-                "outcome": "confirmed",
-                "result_desc": "Freddie Freeman walks.",
-                "batter": "Freddie Freeman",
-                "pitcher": "J.T. Ginn",
-                "game_pk": 824985
-            },
-            {
-                "date": "2026-06-30",
-                "date_formatted": "June 30, 2026",
-                "challenger": "Freddie Freeman",
-                "role": "batting",
-                "team": "dodgers",
-                "outcome": "overturned",
-                "result_desc": "Freddie Freeman walks. Andy Pages to 2nd.",
-                "batter": "Freddie Freeman",
-                "pitcher": "Jeffrey Springs",
-                "game_pk": 824984
             }
         ]
     }
