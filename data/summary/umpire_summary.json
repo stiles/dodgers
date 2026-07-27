@@ -1,17 +1,17 @@
 {
     "season_summary": {
-        "correct_strikes_pct": 91.04367135455217,
-        "incorrect_strikes_pct": 8.956328645447826,
-        "total_called_strikes": 2702,
-        "bad_calls_count": 242
+        "correct_strikes_pct": 90.975788701394,
+        "incorrect_strikes_pct": 9.024211298606005,
+        "total_called_strikes": 2726,
+        "bad_calls_count": 246
     },
     "last_game_summary": {
-        "date": "July 25, 2026",
-        "correct_strikes_pct": 82.6086956521739,
-        "incorrect_strikes_pct": 17.391304347826093,
-        "total_called_strikes": 23,
+        "date": "July 26, 2026",
+        "correct_strikes_pct": 83.33333333333334,
+        "incorrect_strikes_pct": 16.666666666666657,
+        "total_called_strikes": 24,
         "bad_calls_count": 4,
-        "home_plate_umpire": "Lance Barrett"
+        "home_plate_umpire": "Malachi Moore"
     },
     "worst_calls_of_season": [
         {
@@ -56,25 +56,25 @@
         }
     ],
     "pitching_season_summary": {
-        "correct_balls_pct": 96.11444036342547,
-        "incorrect_balls_pct": 3.885559636574527,
-        "total_called_balls": 5173,
-        "bad_calls_count": 201
+        "correct_balls_pct": 96.12299465240642,
+        "incorrect_balls_pct": 3.877005347593581,
+        "total_called_balls": 5236,
+        "bad_calls_count": 203
     },
     "pitching_last_game_summary": {
-        "date": "July 25, 2026",
-        "correct_balls_pct": 100.0,
-        "incorrect_balls_pct": 0.0,
-        "total_called_balls": 52,
-        "bad_calls_count": 0
+        "date": "July 26, 2026",
+        "correct_balls_pct": 96.82539682539682,
+        "incorrect_balls_pct": 3.1746031746031775,
+        "total_called_balls": 63,
+        "bad_calls_count": 2
     },
     "pitching_worst_calls_of_season": [],
     "abs_challenges": {
         "dodgers": {
             "batting": {
-                "total": 38,
+                "total": 39,
                 "successful": 11,
-                "failed": 27
+                "failed": 28
             },
             "pitching": {
                 "total": 0,
@@ -105,6 +105,18 @@
             }
         },
         "challenge_log": [
+            {
+                "date": "2026-07-26",
+                "date_formatted": "July 26, 2026",
+                "challenger": "Teoscar Hern\u00e1ndez",
+                "role": "batting",
+                "team": "dodgers",
+                "outcome": "confirmed",
+                "result_desc": "Teoscar Hern\u00e1ndez called out on strikes.",
+                "batter": "Teoscar Hern\u00e1ndez",
+                "pitcher": "Cionel P\u00e9rez",
+                "game_pk": 823599
+            },
             {
                 "date": "2026-07-25",
                 "date_formatted": "July 25, 2026",
@@ -332,18 +344,6 @@
                 "batter": "Tyler Freeman",
                 "pitcher": "Alex Vesia",
                 "game_pk": 823930
-            },
-            {
-                "date": "2026-07-05",
-                "date_formatted": "July 5, 2026",
-                "challenger": "Luis Campusano",
-                "role": "catching",
-                "team": "opponents",
-                "outcome": "confirmed",
-                "result_desc": "Shohei Ohtani walks.",
-                "batter": "Shohei Ohtani",
-                "pitcher": "Yuki Matsui",
-                "game_pk": 823931
             }
         ]
     }

@@ -1,9 +1,9 @@
 {
     "dodgers": {
         "batting": {
-            "total": 86,
+            "total": 87,
             "successful": 55,
-            "failed": 31
+            "failed": 32
         },
         "pitching": {
             "total": 5,
@@ -18,9 +18,9 @@
     },
     "opponents": {
         "batting": {
-            "total": 94,
+            "total": 95,
             "successful": 48,
-            "failed": 46
+            "failed": 47
         },
         "pitching": {
             "total": 5,
@@ -34,6 +34,30 @@
         }
     },
     "challenge_log": [
+        {
+            "date": "2026-07-26",
+            "date_formatted": "July 26, 2026",
+            "challenger": "Andy Pages",
+            "role": "batting",
+            "team": "dodgers",
+            "outcome": "confirmed",
+            "result_desc": "Andy Pages flies out to left fielder Tyrone Taylor.",
+            "batter": "Andy Pages",
+            "pitcher": "Freddy Peralta",
+            "game_pk": 823599
+        },
+        {
+            "date": "2026-07-26",
+            "date_formatted": "July 26, 2026",
+            "challenger": "Jared Young",
+            "role": "batting",
+            "team": "opponents",
+            "outcome": "confirmed",
+            "result_desc": "Jared Young pops out softly to third baseman Max Muncy.",
+            "batter": "Jared Young",
+            "pitcher": "Emmet Sheehan",
+            "game_pk": 823599
+        },
         {
             "date": "2026-07-25",
             "date_formatted": "July 25, 2026",
@@ -121,18 +145,6 @@
         {
             "date": "2026-07-21",
             "date_formatted": "July 21, 2026",
-            "challenger": "Trea Turner",
-            "role": "batting",
-            "team": "opponents",
-            "outcome": "overturned",
-            "result_desc": "Trea Turner strikes out swinging.",
-            "batter": "Trea Turner",
-            "pitcher": "Justin Wrobleski",
-            "game_pk": 823437
-        },
-        {
-            "date": "2026-07-21",
-            "date_formatted": "July 21, 2026",
             "challenger": "Kyle Tucker",
             "role": "batting",
             "team": "dodgers",
@@ -140,6 +152,18 @@
             "result_desc": "Kyle Tucker grounds out, first baseman Bryce Harper to pitcher Zack Wheeler.",
             "batter": "Kyle Tucker",
             "pitcher": "Zack Wheeler",
+            "game_pk": 823437
+        },
+        {
+            "date": "2026-07-21",
+            "date_formatted": "July 21, 2026",
+            "challenger": "Trea Turner",
+            "role": "batting",
+            "team": "opponents",
+            "outcome": "overturned",
+            "result_desc": "Trea Turner strikes out swinging.",
+            "batter": "Trea Turner",
+            "pitcher": "Justin Wrobleski",
             "game_pk": 823437
         },
         {
@@ -205,13 +229,13 @@
         {
             "date": "2026-07-19",
             "date_formatted": "July 19, 2026",
-            "challenger": "Ali S\u00e1nchez",
-            "role": "catching",
+            "challenger": "Jasson Dom\u00ednguez",
+            "role": "batting",
             "team": "opponents",
             "outcome": "confirmed",
-            "result_desc": "Kyle Tucker singles on a line drive to right fielder Max Schuemann. Max Muncy to 3rd.",
-            "batter": "Kyle Tucker",
-            "pitcher": "Jake Bird",
+            "result_desc": "Jasson Dom\u00ednguez grounds out, first baseman Freddie Freeman to pitcher Yoshinobu Yamamoto.",
+            "batter": "Jasson Dom\u00ednguez",
+            "pitcher": "Yoshinobu Yamamoto",
             "game_pk": 823523
         },
         {
@@ -249,30 +273,6 @@
             "batter": "Andy Pages",
             "pitcher": "Paul Blackburn",
             "game_pk": 823521
-        },
-        {
-            "date": "2026-07-19",
-            "date_formatted": "July 19, 2026",
-            "challenger": "Jasson Dom\u00ednguez",
-            "role": "batting",
-            "team": "opponents",
-            "outcome": "confirmed",
-            "result_desc": "Jasson Dom\u00ednguez grounds out, first baseman Freddie Freeman to pitcher Yoshinobu Yamamoto.",
-            "batter": "Jasson Dom\u00ednguez",
-            "pitcher": "Yoshinobu Yamamoto",
-            "game_pk": 823523
-        },
-        {
-            "date": "2026-07-19",
-            "date_formatted": "July 19, 2026",
-            "challenger": "Austin Wells",
-            "role": "catching",
-            "team": "opponents",
-            "outcome": "overturned",
-            "result_desc": "Shohei Ohtani grounds out, first baseman Paul Goldschmidt to pitcher Brent Headrick.",
-            "batter": "Shohei Ohtani",
-            "pitcher": "Brent Headrick",
-            "game_pk": 823521
         }
     ],
     "dodgers_by_player": [
@@ -292,10 +292,10 @@
         },
         {
             "challenger": "Andy Pages",
-            "total": 17,
+            "total": 18,
             "successful": 10,
-            "failed": 7,
-            "success_rate": 58.8
+            "failed": 8,
+            "success_rate": 55.6
         },
         {
             "challenger": "Teoscar Hern\u00e1ndez",
@@ -420,10 +420,10 @@
         },
         {
             "inning": 4,
-            "total": 15,
+            "total": 16,
             "successful": 9,
-            "failed": 6,
-            "success_rate": 60.0
+            "failed": 7,
+            "success_rate": 56.2
         },
         {
             "inning": 5,
