@@ -84,7 +84,7 @@
         "stat":"home_runs",
         "value":136,
         "category":"batting",
-        "context_value":"6th",
+        "context_value":"7th",
         "context_value_label":"League rank"
     },
     {
@@ -156,7 +156,7 @@
         "stat":"walks",
         "value":322,
         "category":"pitching",
-        "context_value":"21st",
+        "context_value":"22nd",
         "context_value_label":"League rank"
     },
     {
@@ -188,13 +188,13 @@
         "stat":"k_bb_ratio",
         "value":2.95,
         "category":"pitching",
-        "context_value":"7th",
+        "context_value":"8th",
         "context_value_label":"League rank"
     },
     {
         "stat_label":"Last updated",
         "stat":"update_time",
-        "value":"July 27, 2026, 10:04 AM PT",
+        "value":"July 27, 2026, 5:09 PM PT",
         "category":"summary",
         "context_value":"",
         "context_value_label":""
