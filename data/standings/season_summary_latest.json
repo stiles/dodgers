@@ -4,13 +4,13 @@
         "stat":"wins",
         "value":67,
         "category":"standings",
-        "context_value":61,
+        "context_value":62,
         "context_value_label":"This point last season"
     },
     {
         "stat_label":"Losses",
         "stat":"losses",
-        "value":39,
+        "value":40,
         "category":"standings",
         "context_value":45,
         "context_value_label":"This point last season"
@@ -20,13 +20,13 @@
         "stat":"win_pct",
         "value":"63%",
         "category":"standings",
-        "context_value":"57%",
+        "context_value":"58%",
         "context_value_label":"This point last season"
     },
     {
         "stat_label":"Games up\/back",
         "stat":"games_up_back",
-        "value":12.5,
+        "value":11.5,
         "category":"standings",
         "context_value":"1st",
         "context_value_label":"Division rank"
@@ -50,7 +50,7 @@
     {
         "stat_label":"Runs",
         "stat":"runs",
-        "value":546,
+        "value":552,
         "category":"standings",
         "context_value":"4th",
         "context_value_label":"League rank"
@@ -58,23 +58,23 @@
     {
         "stat_label":"Runs against",
         "stat":"runs_against",
-        "value":391,
+        "value":398,
         "category":"standings",
-        "context_value":490,
+        "context_value":492,
         "context_value_label":"This point last season"
     },
     {
         "stat_label":"Run differential",
         "stat":"run_differential",
-        "value":155,
+        "value":154,
         "category":"standings",
-        "context_value":66,
+        "context_value":69,
         "context_value_label":"This point last season"
     },
     {
         "stat_label":"Batting average",
         "stat":"batting_average",
-        "value":".260",
+        "value":".261",
         "category":"batting",
         "context_value":".253",
         "context_value_label":"Last decade average"
@@ -82,15 +82,15 @@
     {
         "stat_label":"Home runs",
         "stat":"home_runs",
-        "value":136,
+        "value":138,
         "category":"batting",
-        "context_value":"7th",
+        "context_value":"6th",
         "context_value_label":"League rank"
     },
     {
         "stat_label":"Home runs\/game",
         "stat":"home_runs_game",
-        "value":1.28,
+        "value":1.29,
         "category":"batting",
         "context_value":1.42,
         "context_value_label":"Last decade average"
@@ -98,7 +98,7 @@
     {
         "stat_label":"On-base percentage",
         "stat":"on_base_pct",
-        "value":".340",
+        "value":".341",
         "category":"batting",
         "context_value":"1st",
         "context_value_label":"League rank"
@@ -106,7 +106,7 @@
     {
         "stat_label":"Slugging percentage",
         "stat":"slugging_pct",
-        "value":".431",
+        "value":".432",
         "category":"batting",
         "context_value":"2nd",
         "context_value_label":"League rank"
@@ -114,7 +114,7 @@
     {
         "stat_label":"OPS",
         "stat":"ops",
-        "value":".771",
+        "value":".773",
         "category":"batting",
         "context_value":"2nd",
         "context_value_label":"League rank"
@@ -122,9 +122,9 @@
     {
         "stat_label":"Stolen bases",
         "stat":"stolen_bases",
-        "value":42,
+        "value":43,
         "category":"batting",
-        "context_value":"28th",
+        "context_value":"27th",
         "context_value_label":"League rank"
     },
     {
@@ -138,7 +138,7 @@
     {
         "stat_label":"Doubles",
         "stat":"doubles",
-        "value":179,
+        "value":182,
         "category":"batting",
         "context_value":"8th",
         "context_value_label":"League rank"
@@ -146,7 +146,7 @@
     {
         "stat_label":"Strikeouts",
         "stat":"strikeouts",
-        "value":"950",
+        "value":"961",
         "category":"pitching",
         "context_value":"7th",
         "context_value_label":"League rank"
@@ -156,15 +156,15 @@
         "stat":"walks",
         "value":322,
         "category":"pitching",
-        "context_value":"22nd",
+        "context_value":"23rd",
         "context_value_label":"League rank"
     },
     {
         "stat_label":"ERA",
         "stat":"era",
-        "value":"3.58",
+        "value":"3.61",
         "category":"pitching",
-        "context_value":"4th",
+        "context_value":"5th",
         "context_value_label":"League rank"
     },
     {
@@ -178,7 +178,7 @@
     {
         "stat_label":"Batting average against",
         "stat":"avg_against",
-        "value":".215",
+        "value":".216",
         "category":"pitching",
         "context_value":"1st",
         "context_value_label":"League rank"
@@ -186,15 +186,15 @@
     {
         "stat_label":"K\/BB ratio",
         "stat":"k_bb_ratio",
-        "value":2.95,
+        "value":2.98,
         "category":"pitching",
-        "context_value":"8th",
+        "context_value":"6th",
         "context_value_label":"League rank"
     },
     {
         "stat_label":"Last updated",
         "stat":"update_time",
-        "value":"July 28, 2026, 5:04 PM PT",
+        "value":"July 29, 2026, 3:45 AM PT",
         "category":"summary",
         "context_value":"",
         "context_value_label":""
@@ -202,7 +202,7 @@
     {
         "stat_label":"Team summary",
         "stat":"summary",
-        "value":"<span class='highlight'>LOS ANGELES<\/span> <span class='updated'>(July 28)<\/span> \u2014 The Dodgers have compiled a <span class='highlight'>67-39<\/span> record in the 2026 regular season, a <span class='highlight'>63%<\/span> winning percentage. The last game was a <span class='highlight'>3-8<\/span> away <span class='highlight'>loss<\/span> against the <span class='highlight'>New York Mets<\/span>. The team next faces the <span class='highlight'>Seattle Mariners<\/span> on Wednesday at 7:10 p.m. PDT at <span class='highlight'>UNIQLO Field at Dodger Stadium<\/span>.",
+        "value":"<span class='highlight'>LOS ANGELES<\/span> <span class='updated'>(July 29)<\/span> \u2014 The Dodgers have compiled a <span class='highlight'>67-40<\/span> record in the 2026 regular season, a <span class='highlight'>63%<\/span> winning percentage. The last game was a <span class='highlight'>6-7<\/span> home <span class='highlight'>loss<\/span> against the <span class='highlight'>Seattle Mariners<\/span>. The team next faces the <span class='highlight'>Seattle Mariners<\/span> on Wednesday at 7:10 p.m. PDT at <span class='highlight'>UNIQLO Field at Dodger Stadium<\/span>.",
         "category":"summary",
         "context_value":"",
         "context_value_label":""

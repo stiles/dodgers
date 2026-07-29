@@ -18,15 +18,15 @@
         "player":"Justin Wrobleski",
         "role":"SP",
         "position":"P",
-        "era":"2.62",
-        "whip":"1.01",
-        "k9":"6.75",
-        "bb9":"1.77",
-        "kbb":"3.81",
-        "ip":"106.2",
-        "ip_rounded":106,
-        "gs":16,
-        "gp":17,
+        "era":"2.88",
+        "whip":"1.02",
+        "k9":"6.95",
+        "bb9":"1.68",
+        "kbb":"4.14",
+        "ip":"112.2",
+        "ip_rounded":112,
+        "gs":17,
+        "gp":18,
         "fetched":"2026-07-29"
     },
     {
@@ -90,6 +90,21 @@
         "fetched":"2026-07-29"
     },
     {
+        "player":"Jack Dreyer",
+        "role":"SP",
+        "position":"P",
+        "era":"3.16",
+        "whip":"1.03",
+        "k9":"10.34",
+        "bb9":"2.53",
+        "kbb":"4.08",
+        "ip":"42.2",
+        "ip_rounded":42,
+        "gs":1,
+        "gp":43,
+        "fetched":"2026-07-29"
+    },
+    {
         "player":"Tanner Scott",
         "role":"RP",
         "position":"P",
@@ -102,21 +117,6 @@
         "ip_rounded":42,
         "gs":0,
         "gp":45,
-        "fetched":"2026-07-29"
-    },
-    {
-        "player":"Jack Dreyer",
-        "role":"SP",
-        "position":"P",
-        "era":"3.24",
-        "whip":"1.03",
-        "k9":"10.15",
-        "bb9":"2.59",
-        "kbb":"3.92",
-        "ip":"41.2",
-        "ip_rounded":41,
-        "gs":1,
-        "gp":42,
         "fetched":"2026-07-29"
     },
     {

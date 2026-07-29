@@ -1,17 +1,17 @@
 {
     "season_summary": {
-        "correct_strikes_pct": 90.975788701394,
-        "incorrect_strikes_pct": 9.024211298606005,
-        "total_called_strikes": 2726,
-        "bad_calls_count": 246
+        "correct_strikes_pct": 90.88256746900073,
+        "incorrect_strikes_pct": 9.117432530999267,
+        "total_called_strikes": 2742,
+        "bad_calls_count": 250
     },
     "last_game_summary": {
-        "date": "July 26, 2026",
-        "correct_strikes_pct": 83.33333333333334,
-        "incorrect_strikes_pct": 16.666666666666657,
-        "total_called_strikes": 24,
+        "date": "July 28, 2026",
+        "correct_strikes_pct": 75.0,
+        "incorrect_strikes_pct": 25.0,
+        "total_called_strikes": 16,
         "bad_calls_count": 4,
-        "home_plate_umpire": "Malachi Moore"
+        "home_plate_umpire": "Vic Carapazza"
     },
     "worst_calls_of_season": [
         {
@@ -56,16 +56,16 @@
         }
     ],
     "pitching_season_summary": {
-        "correct_balls_pct": 96.12299465240642,
-        "incorrect_balls_pct": 3.877005347593581,
-        "total_called_balls": 5236,
-        "bad_calls_count": 203
+        "correct_balls_pct": 96.12109744560075,
+        "incorrect_balls_pct": 3.8789025543992466,
+        "total_called_balls": 5285,
+        "bad_calls_count": 205
     },
     "pitching_last_game_summary": {
-        "date": "July 26, 2026",
-        "correct_balls_pct": 96.82539682539682,
-        "incorrect_balls_pct": 3.1746031746031775,
-        "total_called_balls": 63,
+        "date": "July 28, 2026",
+        "correct_balls_pct": 95.91836734693877,
+        "incorrect_balls_pct": 4.081632653061234,
+        "total_called_balls": 49,
         "bad_calls_count": 2
     },
     "pitching_worst_calls_of_season": [],
@@ -89,9 +89,9 @@
         },
         "opponents": {
             "batting": {
-                "total": 21,
+                "total": 22,
                 "successful": 4,
-                "failed": 17
+                "failed": 18
             },
             "pitching": {
                 "total": 0,
@@ -105,6 +105,18 @@
             }
         },
         "challenge_log": [
+            {
+                "date": "2026-07-28",
+                "date_formatted": "July 28, 2026",
+                "challenger": "Cal Raleigh",
+                "role": "batting",
+                "team": "opponents",
+                "outcome": "confirmed",
+                "result_desc": "Cal Raleigh called out on strikes.",
+                "batter": "Cal Raleigh",
+                "pitcher": "Alex Vesia",
+                "game_pk": 823923
+            },
             {
                 "date": "2026-07-26",
                 "date_formatted": "July 26, 2026",
@@ -330,18 +342,6 @@
                 "outcome": "overturned",
                 "result_desc": "Hunter Goodman walks.",
                 "batter": "Hunter Goodman",
-                "pitcher": "Alex Vesia",
-                "game_pk": 823930
-            },
-            {
-                "date": "2026-07-06",
-                "date_formatted": "July 6, 2026",
-                "challenger": "Dalton Rushing",
-                "role": "catching",
-                "team": "dodgers",
-                "outcome": "confirmed",
-                "result_desc": "Tyler Freeman walks. TJ Rumfield to 2nd.",
-                "batter": "Tyler Freeman",
                 "pitcher": "Alex Vesia",
                 "game_pk": 823930
             }

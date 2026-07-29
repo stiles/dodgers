@@ -11,15 +11,15 @@
             "failed": 3
         },
         "catching": {
-            "total": 82,
+            "total": 83,
             "successful": 49,
-            "failed": 33
+            "failed": 34
         }
     },
     "opponents": {
         "batting": {
-            "total": 95,
-            "successful": 48,
+            "total": 96,
+            "successful": 49,
             "failed": 47
         },
         "pitching": {
@@ -34,6 +34,30 @@
         }
     },
     "challenge_log": [
+        {
+            "date": "2026-07-28",
+            "date_formatted": "July 28, 2026",
+            "challenger": "Josh Naylor",
+            "role": "batting",
+            "team": "opponents",
+            "outcome": "overturned",
+            "result_desc": "Josh Naylor singles on a line drive to right fielder Kyle Tucker.",
+            "batter": "Josh Naylor",
+            "pitcher": "Justin Wrobleski",
+            "game_pk": 823923
+        },
+        {
+            "date": "2026-07-28",
+            "date_formatted": "July 28, 2026",
+            "challenger": "Dalton Rushing",
+            "role": "catching",
+            "team": "dodgers",
+            "outcome": "confirmed",
+            "result_desc": "J.P. Crawford strikes out swinging.",
+            "batter": "J.P. Crawford",
+            "pitcher": "Justin Wrobleski",
+            "game_pk": 823923
+        },
         {
             "date": "2026-07-26",
             "date_formatted": "July 26, 2026",
@@ -145,6 +169,18 @@
         {
             "date": "2026-07-21",
             "date_formatted": "July 21, 2026",
+            "challenger": "Andy Pages",
+            "role": "batting",
+            "team": "dodgers",
+            "outcome": "confirmed",
+            "result_desc": "Andy Pages strikes out swinging.",
+            "batter": "Andy Pages",
+            "pitcher": "Jonathan Bowlan",
+            "game_pk": 823437
+        },
+        {
+            "date": "2026-07-21",
+            "date_formatted": "July 21, 2026",
             "challenger": "Kyle Tucker",
             "role": "batting",
             "team": "dodgers",
@@ -164,18 +200,6 @@
             "result_desc": "Trea Turner strikes out swinging.",
             "batter": "Trea Turner",
             "pitcher": "Justin Wrobleski",
-            "game_pk": 823437
-        },
-        {
-            "date": "2026-07-21",
-            "date_formatted": "July 21, 2026",
-            "challenger": "Andy Pages",
-            "role": "batting",
-            "team": "dodgers",
-            "outcome": "confirmed",
-            "result_desc": "Andy Pages strikes out swinging.",
-            "batter": "Andy Pages",
-            "pitcher": "Jonathan Bowlan",
             "game_pk": 823437
         },
         {
@@ -241,38 +265,14 @@
         {
             "date": "2026-07-19",
             "date_formatted": "July 19, 2026",
-            "challenger": "Dalton Rushing",
-            "role": "batting",
-            "team": "dodgers",
-            "outcome": "overturned",
-            "result_desc": "Dalton Rushing walks. Alex Call to 2nd.",
-            "batter": "Dalton Rushing",
-            "pitcher": "Camilo Doval",
-            "game_pk": 823523
-        },
-        {
-            "date": "2026-07-19",
-            "date_formatted": "July 19, 2026",
-            "challenger": "Jos\u00e9 Caballero",
-            "role": "batting",
-            "team": "opponents",
-            "outcome": "overturned",
-            "result_desc": "Jos\u00e9 Caballero walks.",
-            "batter": "Jos\u00e9 Caballero",
-            "pitcher": "Kyle Hurt",
-            "game_pk": 823521
-        },
-        {
-            "date": "2026-07-19",
-            "date_formatted": "July 19, 2026",
-            "challenger": "Austin Wells",
+            "challenger": "Ali S\u00e1nchez",
             "role": "catching",
             "team": "opponents",
-            "outcome": "overturned",
-            "result_desc": "Andy Pages flies out to left fielder Cody Bellinger.",
-            "batter": "Andy Pages",
-            "pitcher": "Paul Blackburn",
-            "game_pk": 823521
+            "outcome": "confirmed",
+            "result_desc": "Kyle Tucker singles on a line drive to right fielder Max Schuemann. Max Muncy to 3rd.",
+            "batter": "Kyle Tucker",
+            "pitcher": "Jake Bird",
+            "game_pk": 823523
         }
     ],
     "dodgers_by_player": [
@@ -285,10 +285,10 @@
         },
         {
             "challenger": "Dalton Rushing",
-            "total": 28,
+            "total": 29,
             "successful": 15,
-            "failed": 13,
-            "success_rate": 53.6
+            "failed": 14,
+            "success_rate": 51.7
         },
         {
             "challenger": "Andy Pages",
@@ -413,10 +413,10 @@
         },
         {
             "inning": 3,
-            "total": 14,
+            "total": 15,
             "successful": 8,
-            "failed": 6,
-            "success_rate": 57.1
+            "failed": 7,
+            "success_rate": 53.3
         },
         {
             "inning": 4,
