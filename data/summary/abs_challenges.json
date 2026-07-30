@@ -11,9 +11,9 @@
             "failed": 3
         },
         "catching": {
-            "total": 83,
+            "total": 84,
             "successful": 49,
-            "failed": 34
+            "failed": 35
         }
     },
     "opponents": {
@@ -34,6 +34,18 @@
         }
     },
     "challenge_log": [
+        {
+            "date": "2026-07-29",
+            "date_formatted": "July 29, 2026",
+            "challenger": "Dalton Rushing",
+            "role": "catching",
+            "team": "dodgers",
+            "outcome": "confirmed",
+            "result_desc": "Luke Raley lines out to first baseman Freddie Freeman.",
+            "batter": "Luke Raley",
+            "pitcher": "Edwin D\u00edaz",
+            "game_pk": 823924
+        },
         {
             "date": "2026-07-28",
             "date_formatted": "July 28, 2026",
@@ -145,18 +157,6 @@
         {
             "date": "2026-07-22",
             "date_formatted": "July 22, 2026",
-            "challenger": "Freddie Freeman",
-            "role": "batting",
-            "team": "dodgers",
-            "outcome": "confirmed",
-            "result_desc": "Freddie Freeman walks.",
-            "batter": "Freddie Freeman",
-            "pitcher": "Tim Mayza",
-            "game_pk": 823438
-        },
-        {
-            "date": "2026-07-22",
-            "date_formatted": "July 22, 2026",
             "challenger": "Andy Pages",
             "role": "batting",
             "team": "dodgers",
@@ -164,6 +164,18 @@
             "result_desc": "Andy Pages strikes out swinging.",
             "batter": "Andy Pages",
             "pitcher": "Aaron Nola",
+            "game_pk": 823438
+        },
+        {
+            "date": "2026-07-22",
+            "date_formatted": "July 22, 2026",
+            "challenger": "Freddie Freeman",
+            "role": "batting",
+            "team": "dodgers",
+            "outcome": "confirmed",
+            "result_desc": "Freddie Freeman walks.",
+            "batter": "Freddie Freeman",
+            "pitcher": "Tim Mayza",
             "game_pk": 823438
         },
         {
@@ -261,18 +273,6 @@
             "batter": "Jasson Dom\u00ednguez",
             "pitcher": "Yoshinobu Yamamoto",
             "game_pk": 823523
-        },
-        {
-            "date": "2026-07-19",
-            "date_formatted": "July 19, 2026",
-            "challenger": "Ali S\u00e1nchez",
-            "role": "catching",
-            "team": "opponents",
-            "outcome": "confirmed",
-            "result_desc": "Kyle Tucker singles on a line drive to right fielder Max Schuemann. Max Muncy to 3rd.",
-            "batter": "Kyle Tucker",
-            "pitcher": "Jake Bird",
-            "game_pk": 823523
         }
     ],
     "dodgers_by_player": [
@@ -285,10 +285,10 @@
         },
         {
             "challenger": "Dalton Rushing",
-            "total": 29,
+            "total": 30,
             "successful": 15,
-            "failed": 14,
-            "success_rate": 51.7
+            "failed": 15,
+            "success_rate": 50.0
         },
         {
             "challenger": "Andy Pages",
@@ -455,10 +455,10 @@
         },
         {
             "inning": 9,
-            "total": 26,
+            "total": 27,
             "successful": 16,
-            "failed": 10,
-            "success_rate": 61.5
+            "failed": 11,
+            "success_rate": 59.3
         }
     ]
 }

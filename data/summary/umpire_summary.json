@@ -1,17 +1,17 @@
 {
     "season_summary": {
-        "correct_strikes_pct": 90.88256746900073,
-        "incorrect_strikes_pct": 9.117432530999267,
-        "total_called_strikes": 2742,
-        "bad_calls_count": 250
+        "correct_strikes_pct": 90.88607594936708,
+        "incorrect_strikes_pct": 9.113924050632917,
+        "total_called_strikes": 2765,
+        "bad_calls_count": 252
     },
     "last_game_summary": {
-        "date": "July 28, 2026",
-        "correct_strikes_pct": 75.0,
-        "incorrect_strikes_pct": 25.0,
-        "total_called_strikes": 16,
-        "bad_calls_count": 4,
-        "home_plate_umpire": "Vic Carapazza"
+        "date": "July 29, 2026",
+        "correct_strikes_pct": 91.30434782608695,
+        "incorrect_strikes_pct": 8.695652173913047,
+        "total_called_strikes": 23,
+        "bad_calls_count": 2,
+        "home_plate_umpire": "Edwin Moscoso"
     },
     "worst_calls_of_season": [
         {
@@ -56,17 +56,17 @@
         }
     ],
     "pitching_season_summary": {
-        "correct_balls_pct": 96.12109744560075,
-        "incorrect_balls_pct": 3.8789025543992466,
-        "total_called_balls": 5285,
-        "bad_calls_count": 205
+        "correct_balls_pct": 96.13435916682305,
+        "incorrect_balls_pct": 3.865640833176954,
+        "total_called_balls": 5329,
+        "bad_calls_count": 206
     },
     "pitching_last_game_summary": {
-        "date": "July 28, 2026",
-        "correct_balls_pct": 95.91836734693877,
-        "incorrect_balls_pct": 4.081632653061234,
-        "total_called_balls": 49,
-        "bad_calls_count": 2
+        "date": "July 29, 2026",
+        "correct_balls_pct": 97.72727272727273,
+        "incorrect_balls_pct": 2.2727272727272663,
+        "total_called_balls": 44,
+        "bad_calls_count": 1
     },
     "pitching_worst_calls_of_season": [],
     "abs_challenges": {
@@ -89,9 +89,9 @@
         },
         "opponents": {
             "batting": {
-                "total": 22,
-                "successful": 4,
-                "failed": 18
+                "total": 24,
+                "successful": 5,
+                "failed": 19
             },
             "pitching": {
                 "total": 0,
@@ -105,6 +105,30 @@
             }
         },
         "challenge_log": [
+            {
+                "date": "2026-07-29",
+                "date_formatted": "July 29, 2026",
+                "challenger": "Randy Arozarena",
+                "role": "batting",
+                "team": "opponents",
+                "outcome": "confirmed",
+                "result_desc": "Randy Arozarena called out on strikes.",
+                "batter": "Randy Arozarena",
+                "pitcher": "Eric Lauer",
+                "game_pk": 823924
+            },
+            {
+                "date": "2026-07-29",
+                "date_formatted": "July 29, 2026",
+                "challenger": "Cal Raleigh",
+                "role": "batting",
+                "team": "opponents",
+                "outcome": "overturned",
+                "result_desc": "Cal Raleigh walks.",
+                "batter": "Cal Raleigh",
+                "pitcher": "Alex Vesia",
+                "game_pk": 823924
+            },
             {
                 "date": "2026-07-28",
                 "date_formatted": "July 28, 2026",
@@ -320,30 +344,6 @@
                 "batter": "Kyle Karros",
                 "pitcher": "Justin Wrobleski",
                 "game_pk": 823929
-            },
-            {
-                "date": "2026-07-06",
-                "date_formatted": "July 6, 2026",
-                "challenger": "Hunter Goodman",
-                "role": "catching",
-                "team": "opponents",
-                "outcome": "overturned",
-                "result_desc": "Andy Pages called out on strikes.",
-                "batter": "Andy Pages",
-                "pitcher": "Antonio Senzatela",
-                "game_pk": 823930
-            },
-            {
-                "date": "2026-07-06",
-                "date_formatted": "July 6, 2026",
-                "challenger": "Hunter Goodman",
-                "role": "batting",
-                "team": "opponents",
-                "outcome": "overturned",
-                "result_desc": "Hunter Goodman walks.",
-                "batter": "Hunter Goodman",
-                "pitcher": "Alex Vesia",
-                "game_pk": 823930
             }
         ]
     }
