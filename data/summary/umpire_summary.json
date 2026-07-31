@@ -1,17 +1,17 @@
 {
     "season_summary": {
-        "correct_strikes_pct": 90.88607594936708,
-        "incorrect_strikes_pct": 9.113924050632917,
-        "total_called_strikes": 2765,
-        "bad_calls_count": 252
+        "correct_strikes_pct": 90.85365853658537,
+        "incorrect_strikes_pct": 9.146341463414629,
+        "total_called_strikes": 2788,
+        "bad_calls_count": 255
     },
     "last_game_summary": {
-        "date": "July 29, 2026",
-        "correct_strikes_pct": 91.30434782608695,
-        "incorrect_strikes_pct": 8.695652173913047,
+        "date": "July 30, 2026",
+        "correct_strikes_pct": 86.95652173913044,
+        "incorrect_strikes_pct": 13.043478260869563,
         "total_called_strikes": 23,
-        "bad_calls_count": 2,
-        "home_plate_umpire": "Edwin Moscoso"
+        "bad_calls_count": 3,
+        "home_plate_umpire": "Nic Lentz"
     },
     "worst_calls_of_season": [
         {
@@ -56,24 +56,24 @@
         }
     ],
     "pitching_season_summary": {
-        "correct_balls_pct": 96.13435916682305,
-        "incorrect_balls_pct": 3.865640833176954,
-        "total_called_balls": 5329,
-        "bad_calls_count": 206
+        "correct_balls_pct": 96.14812058057312,
+        "incorrect_balls_pct": 3.8518794194268793,
+        "total_called_balls": 5374,
+        "bad_calls_count": 207
     },
     "pitching_last_game_summary": {
-        "date": "July 29, 2026",
-        "correct_balls_pct": 97.72727272727273,
-        "incorrect_balls_pct": 2.2727272727272663,
-        "total_called_balls": 44,
+        "date": "July 30, 2026",
+        "correct_balls_pct": 97.77777777777777,
+        "incorrect_balls_pct": 2.2222222222222285,
+        "total_called_balls": 45,
         "bad_calls_count": 1
     },
     "pitching_worst_calls_of_season": [],
     "abs_challenges": {
         "dodgers": {
             "batting": {
-                "total": 39,
-                "successful": 11,
+                "total": 40,
+                "successful": 12,
                 "failed": 28
             },
             "pitching": {
@@ -82,8 +82,8 @@
                 "failed": 0
             },
             "catching": {
-                "total": 18,
-                "successful": 13,
+                "total": 19,
+                "successful": 14,
                 "failed": 5
             }
         },
@@ -105,6 +105,30 @@
             }
         },
         "challenge_log": [
+            {
+                "date": "2026-07-30",
+                "date_formatted": "July 30, 2026",
+                "challenger": "Tommy Edman",
+                "role": "batting",
+                "team": "dodgers",
+                "outcome": "overturned",
+                "result_desc": "Tommy Edman walks.",
+                "batter": "Tommy Edman",
+                "pitcher": "Bryan Woo",
+                "game_pk": 823921
+            },
+            {
+                "date": "2026-07-30",
+                "date_formatted": "July 30, 2026",
+                "challenger": "Dalton Rushing",
+                "role": "catching",
+                "team": "dodgers",
+                "outcome": "overturned",
+                "result_desc": "Dominic Canzone called out on strikes.",
+                "batter": "Dominic Canzone",
+                "pitcher": "Roki Sasaki",
+                "game_pk": 823921
+            },
             {
                 "date": "2026-07-29",
                 "date_formatted": "July 29, 2026",
@@ -320,30 +344,6 @@
                 "batter": "Kyle Tucker",
                 "pitcher": "Eduardo Rodriguez",
                 "game_pk": 823927
-            },
-            {
-                "date": "2026-07-10",
-                "date_formatted": "July 10, 2026",
-                "challenger": "Dalton Rushing",
-                "role": "catching",
-                "team": "dodgers",
-                "outcome": "confirmed",
-                "result_desc": "Corbin Carroll walks.",
-                "batter": "Corbin Carroll",
-                "pitcher": "Will Klein",
-                "game_pk": 823927
-            },
-            {
-                "date": "2026-07-07",
-                "date_formatted": "July 7, 2026",
-                "challenger": "Kyle Karros",
-                "role": "batting",
-                "team": "opponents",
-                "outcome": "confirmed",
-                "result_desc": "Kyle Karros called out on strikes.",
-                "batter": "Kyle Karros",
-                "pitcher": "Justin Wrobleski",
-                "game_pk": 823929
             }
         ]
     }
