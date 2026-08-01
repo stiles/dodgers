@@ -2505,5 +2505,28 @@
     "time":"00:00:00",
     "day_night":"N",
     "game_day":"Thursday"
+  },
+  {
+    "gm":110,
+    "gtm":110,
+    "game_date":"2026-07-31",
+    "year":2026,
+    "home_away":"home",
+    "opp":"Boston Red Sox",
+    "r":4,
+    "ra":9,
+    "run_diff":-5,
+    "result":"L",
+    "wins":69,
+    "losses":41,
+    "record":"69-41",
+    "win_pct":0.627,
+    "gb":-11.0,
+    "rank":1,
+    "attendance":0,
+    "time_minutes":0,
+    "time":"00:00:00",
+    "day_night":"N",
+    "game_day":"Friday"
   }
 ]

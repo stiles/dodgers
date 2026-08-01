@@ -1,9 +1,9 @@
 {
     "dodgers": {
         "batting": {
-            "total": 88,
-            "successful": 56,
-            "failed": 32
+            "total": 90,
+            "successful": 57,
+            "failed": 33
         },
         "pitching": {
             "total": 5,
@@ -34,6 +34,30 @@
         }
     },
     "challenge_log": [
+        {
+            "date": "2026-07-31",
+            "date_formatted": "July 31, 2026",
+            "challenger": "Max Muncy",
+            "role": "batting",
+            "team": "dodgers",
+            "outcome": "overturned",
+            "result_desc": "Max Muncy grounds out, first baseman Nick Sogard to pitcher Brayan Bello.",
+            "batter": "Max Muncy",
+            "pitcher": "Brayan Bello",
+            "game_pk": 823922
+        },
+        {
+            "date": "2026-07-31",
+            "date_formatted": "July 31, 2026",
+            "challenger": "Mookie Betts",
+            "role": "batting",
+            "team": "dodgers",
+            "outcome": "confirmed",
+            "result_desc": "Mookie Betts called out on strikes.",
+            "batter": "Mookie Betts",
+            "pitcher": "Ranger Suarez",
+            "game_pk": 823922
+        },
         {
             "date": "2026-07-30",
             "date_formatted": "July 30, 2026",
@@ -157,24 +181,24 @@
         {
             "date": "2026-07-24",
             "date_formatted": "July 24, 2026",
+            "challenger": "A.J. Ewing",
+            "role": "batting",
+            "team": "opponents",
+            "outcome": "overturned",
+            "result_desc": "A.J. Ewing flies out to left fielder Teoscar Hern\u00e1ndez.",
+            "batter": "A.J. Ewing",
+            "pitcher": "Evan Phillips",
+            "game_pk": 823601
+        },
+        {
+            "date": "2026-07-24",
+            "date_formatted": "July 24, 2026",
             "challenger": "Francisco Alvarez",
             "role": "catching",
             "team": "opponents",
             "outcome": "overturned",
             "result_desc": "Freddie Freeman singles on a ground ball to left fielder A.J. Ewing.",
             "batter": "Freddie Freeman",
-            "pitcher": "Sean Manaea",
-            "game_pk": 823601
-        },
-        {
-            "date": "2026-07-24",
-            "date_formatted": "July 24, 2026",
-            "challenger": "Shohei Ohtani",
-            "role": "batting",
-            "team": "dodgers",
-            "outcome": "overturned",
-            "result_desc": "Shohei Ohtani singles on a ground ball to right fielder Carson Benge.",
-            "batter": "Shohei Ohtani",
             "pitcher": "Sean Manaea",
             "game_pk": 823601
         },
@@ -193,13 +217,13 @@
         {
             "date": "2026-07-24",
             "date_formatted": "July 24, 2026",
-            "challenger": "A.J. Ewing",
+            "challenger": "Shohei Ohtani",
             "role": "batting",
-            "team": "opponents",
+            "team": "dodgers",
             "outcome": "overturned",
-            "result_desc": "A.J. Ewing flies out to left fielder Teoscar Hern\u00e1ndez.",
-            "batter": "A.J. Ewing",
-            "pitcher": "Evan Phillips",
+            "result_desc": "Shohei Ohtani singles on a ground ball to right fielder Carson Benge.",
+            "batter": "Shohei Ohtani",
+            "pitcher": "Sean Manaea",
             "game_pk": 823601
         },
         {
@@ -249,30 +273,6 @@
             "batter": "Kyle Tucker",
             "pitcher": "Zack Wheeler",
             "game_pk": 823437
-        },
-        {
-            "date": "2026-07-21",
-            "date_formatted": "July 21, 2026",
-            "challenger": "Trea Turner",
-            "role": "batting",
-            "team": "opponents",
-            "outcome": "overturned",
-            "result_desc": "Trea Turner strikes out swinging.",
-            "batter": "Trea Turner",
-            "pitcher": "Justin Wrobleski",
-            "game_pk": 823437
-        },
-        {
-            "date": "2026-07-20",
-            "date_formatted": "July 20, 2026",
-            "challenger": "J.T. Realmuto",
-            "role": "catching",
-            "team": "opponents",
-            "outcome": "overturned",
-            "result_desc": "Teoscar Hern\u00e1ndez grounds out sharply, shortstop Trea Turner to first baseman Bryce Harper.",
-            "batter": "Teoscar Hern\u00e1ndez",
-            "pitcher": "Jhoan Duran",
-            "game_pk": 823436
         }
     ],
     "dodgers_by_player": [
@@ -298,18 +298,18 @@
             "success_rate": 55.6
         },
         {
+            "challenger": "Mookie Betts",
+            "total": 10,
+            "successful": 7,
+            "failed": 3,
+            "success_rate": 70.0
+        },
+        {
             "challenger": "Teoscar Hern\u00e1ndez",
             "total": 9,
             "successful": 8,
             "failed": 1,
             "success_rate": 88.9
-        },
-        {
-            "challenger": "Mookie Betts",
-            "total": 9,
-            "successful": 7,
-            "failed": 2,
-            "success_rate": 77.8
         },
         {
             "challenger": "Alex Call",
@@ -354,14 +354,14 @@
             "success_rate": 66.7
         },
         {
-            "challenger": "Alex Freeland",
-            "total": 2,
-            "successful": 1,
+            "challenger": "Max Muncy",
+            "total": 3,
+            "successful": 2,
             "failed": 1,
-            "success_rate": 50.0
+            "success_rate": 66.7
         },
         {
-            "challenger": "Max Muncy",
+            "challenger": "Alex Freeland",
             "total": 2,
             "successful": 1,
             "failed": 1,
@@ -406,10 +406,10 @@
         },
         {
             "inning": 2,
-            "total": 9,
+            "total": 10,
             "successful": 6,
-            "failed": 3,
-            "success_rate": 66.7
+            "failed": 4,
+            "success_rate": 60.0
         },
         {
             "inning": 3,
@@ -448,10 +448,10 @@
         },
         {
             "inning": 8,
-            "total": 20,
-            "successful": 12,
+            "total": 21,
+            "successful": 13,
             "failed": 8,
-            "success_rate": 60.0
+            "success_rate": 61.9
         },
         {
             "inning": 9,

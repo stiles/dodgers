@@ -1,17 +1,17 @@
 {
     "season_summary": {
-        "correct_strikes_pct": 90.85365853658537,
-        "incorrect_strikes_pct": 9.146341463414629,
-        "total_called_strikes": 2788,
-        "bad_calls_count": 255
+        "correct_strikes_pct": 90.85734614016364,
+        "incorrect_strikes_pct": 9.142653859836358,
+        "total_called_strikes": 2811,
+        "bad_calls_count": 257
     },
     "last_game_summary": {
-        "date": "July 30, 2026",
-        "correct_strikes_pct": 86.95652173913044,
-        "incorrect_strikes_pct": 13.043478260869563,
+        "date": "July 31, 2026",
+        "correct_strikes_pct": 91.30434782608695,
+        "incorrect_strikes_pct": 8.695652173913047,
         "total_called_strikes": 23,
-        "bad_calls_count": 3,
-        "home_plate_umpire": "Nic Lentz"
+        "bad_calls_count": 2,
+        "home_plate_umpire": "Gabe Morales"
     },
     "worst_calls_of_season": [
         {
@@ -56,17 +56,17 @@
         }
     ],
     "pitching_season_summary": {
-        "correct_balls_pct": 96.14812058057312,
-        "incorrect_balls_pct": 3.8518794194268793,
-        "total_called_balls": 5374,
+        "correct_balls_pct": 96.1878453038674,
+        "incorrect_balls_pct": 3.8121546961325947,
+        "total_called_balls": 5430,
         "bad_calls_count": 207
     },
     "pitching_last_game_summary": {
-        "date": "July 30, 2026",
-        "correct_balls_pct": 97.77777777777777,
-        "incorrect_balls_pct": 2.2222222222222285,
-        "total_called_balls": 45,
-        "bad_calls_count": 1
+        "date": "July 31, 2026",
+        "correct_balls_pct": 100.0,
+        "incorrect_balls_pct": 0.0,
+        "total_called_balls": 56,
+        "bad_calls_count": 0
     },
     "pitching_worst_calls_of_season": [],
     "abs_challenges": {
