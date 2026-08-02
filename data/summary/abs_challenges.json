@@ -18,8 +18,8 @@
     },
     "opponents": {
         "batting": {
-            "total": 97,
-            "successful": 49,
+            "total": 99,
+            "successful": 51,
             "failed": 48
         },
         "pitching": {
@@ -28,12 +28,48 @@
             "failed": 3
         },
         "catching": {
-            "total": 124,
+            "total": 125,
             "successful": 79,
-            "failed": 45
+            "failed": 46
         }
     },
     "challenge_log": [
+        {
+            "date": "2026-08-01",
+            "date_formatted": "August 1, 2026",
+            "challenger": "Anthony Seigler",
+            "role": "batting",
+            "team": "opponents",
+            "outcome": "overturned",
+            "result_desc": "Anthony Seigler lines out to left fielder Enrique Hern\u00e1ndez.",
+            "batter": "Anthony Seigler",
+            "pitcher": "Yoshinobu Yamamoto",
+            "game_pk": 823920
+        },
+        {
+            "date": "2026-08-01",
+            "date_formatted": "August 1, 2026",
+            "challenger": "Connor Wong",
+            "role": "catching",
+            "team": "opponents",
+            "outcome": "confirmed",
+            "result_desc": "Max Muncy called out on strikes.",
+            "batter": "Max Muncy",
+            "pitcher": "Payton Tolle",
+            "game_pk": 823920
+        },
+        {
+            "date": "2026-08-01",
+            "date_formatted": "August 1, 2026",
+            "challenger": "Connor Wong",
+            "role": "batting",
+            "team": "opponents",
+            "outcome": "overturned",
+            "result_desc": "Connor Wong flies out sharply to center fielder Andy Pages.",
+            "batter": "Connor Wong",
+            "pitcher": "Yoshinobu Yamamoto",
+            "game_pk": 823920
+        },
         {
             "date": "2026-07-31",
             "date_formatted": "July 31, 2026",
@@ -121,24 +157,24 @@
         {
             "date": "2026-07-28",
             "date_formatted": "July 28, 2026",
-            "challenger": "Josh Naylor",
-            "role": "batting",
-            "team": "opponents",
-            "outcome": "overturned",
-            "result_desc": "Josh Naylor singles on a line drive to right fielder Kyle Tucker.",
-            "batter": "Josh Naylor",
-            "pitcher": "Justin Wrobleski",
-            "game_pk": 823923
-        },
-        {
-            "date": "2026-07-28",
-            "date_formatted": "July 28, 2026",
             "challenger": "Dalton Rushing",
             "role": "catching",
             "team": "dodgers",
             "outcome": "confirmed",
             "result_desc": "J.P. Crawford strikes out swinging.",
             "batter": "J.P. Crawford",
+            "pitcher": "Justin Wrobleski",
+            "game_pk": 823923
+        },
+        {
+            "date": "2026-07-28",
+            "date_formatted": "July 28, 2026",
+            "challenger": "Josh Naylor",
+            "role": "batting",
+            "team": "opponents",
+            "outcome": "overturned",
+            "result_desc": "Josh Naylor singles on a line drive to right fielder Kyle Tucker.",
+            "batter": "Josh Naylor",
             "pitcher": "Justin Wrobleski",
             "game_pk": 823923
         },
@@ -237,42 +273,6 @@
             "batter": "Freddie Freeman",
             "pitcher": "Tim Mayza",
             "game_pk": 823438
-        },
-        {
-            "date": "2026-07-22",
-            "date_formatted": "July 22, 2026",
-            "challenger": "Andy Pages",
-            "role": "batting",
-            "team": "dodgers",
-            "outcome": "overturned",
-            "result_desc": "Andy Pages strikes out swinging.",
-            "batter": "Andy Pages",
-            "pitcher": "Aaron Nola",
-            "game_pk": 823438
-        },
-        {
-            "date": "2026-07-21",
-            "date_formatted": "July 21, 2026",
-            "challenger": "Andy Pages",
-            "role": "batting",
-            "team": "dodgers",
-            "outcome": "confirmed",
-            "result_desc": "Andy Pages strikes out swinging.",
-            "batter": "Andy Pages",
-            "pitcher": "Jonathan Bowlan",
-            "game_pk": 823437
-        },
-        {
-            "date": "2026-07-21",
-            "date_formatted": "July 21, 2026",
-            "challenger": "Kyle Tucker",
-            "role": "batting",
-            "team": "dodgers",
-            "outcome": "overturned",
-            "result_desc": "Kyle Tucker grounds out, first baseman Bryce Harper to pitcher Zack Wheeler.",
-            "batter": "Kyle Tucker",
-            "pitcher": "Zack Wheeler",
-            "game_pk": 823437
         }
     ],
     "dodgers_by_player": [

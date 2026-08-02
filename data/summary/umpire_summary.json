@@ -1,17 +1,17 @@
 {
     "season_summary": {
-        "correct_strikes_pct": 90.85734614016364,
-        "incorrect_strikes_pct": 9.142653859836358,
-        "total_called_strikes": 2811,
-        "bad_calls_count": 257
+        "correct_strikes_pct": 90.88016967126194,
+        "incorrect_strikes_pct": 9.119830328738061,
+        "total_called_strikes": 2829,
+        "bad_calls_count": 258
     },
     "last_game_summary": {
-        "date": "July 31, 2026",
-        "correct_strikes_pct": 91.30434782608695,
-        "incorrect_strikes_pct": 8.695652173913047,
-        "total_called_strikes": 23,
-        "bad_calls_count": 2,
-        "home_plate_umpire": "Gabe Morales"
+        "date": "August 1, 2026",
+        "correct_strikes_pct": 94.44444444444444,
+        "incorrect_strikes_pct": 5.555555555555557,
+        "total_called_strikes": 18,
+        "bad_calls_count": 1,
+        "home_plate_umpire": "Doug Eddings"
     },
     "worst_calls_of_season": [
         {
@@ -56,17 +56,17 @@
         }
     ],
     "pitching_season_summary": {
-        "correct_balls_pct": 96.1878453038674,
-        "incorrect_balls_pct": 3.8121546961325947,
-        "total_called_balls": 5430,
-        "bad_calls_count": 207
+        "correct_balls_pct": 96.19326500732065,
+        "incorrect_balls_pct": 3.8067349926793526,
+        "total_called_balls": 5464,
+        "bad_calls_count": 208
     },
     "pitching_last_game_summary": {
-        "date": "July 31, 2026",
-        "correct_balls_pct": 100.0,
-        "incorrect_balls_pct": 0.0,
-        "total_called_balls": 56,
-        "bad_calls_count": 0
+        "date": "August 1, 2026",
+        "correct_balls_pct": 97.05882352941177,
+        "incorrect_balls_pct": 2.941176470588232,
+        "total_called_balls": 34,
+        "bad_calls_count": 1
     },
     "pitching_worst_calls_of_season": [],
     "abs_challenges": {
@@ -99,12 +99,24 @@
                 "failed": 0
             },
             "catching": {
-                "total": 43,
-                "successful": 32,
+                "total": 44,
+                "successful": 33,
                 "failed": 11
             }
         },
         "challenge_log": [
+            {
+                "date": "2026-08-01",
+                "date_formatted": "August 1, 2026",
+                "challenger": "Connor Wong",
+                "role": "catching",
+                "team": "opponents",
+                "outcome": "overturned",
+                "result_desc": "Max Muncy called out on strikes.",
+                "batter": "Max Muncy",
+                "pitcher": "Aroldis Chapman",
+                "game_pk": 823920
+            },
             {
                 "date": "2026-07-30",
                 "date_formatted": "July 30, 2026",
@@ -332,18 +344,6 @@
                 "batter": "Ketel Marte",
                 "pitcher": "Landon Knack",
                 "game_pk": 823926
-            },
-            {
-                "date": "2026-07-10",
-                "date_formatted": "July 10, 2026",
-                "challenger": "Gabriel Moreno",
-                "role": "catching",
-                "team": "opponents",
-                "outcome": "overturned",
-                "result_desc": "Kyle Tucker called out on strikes.",
-                "batter": "Kyle Tucker",
-                "pitcher": "Eduardo Rodriguez",
-                "game_pk": 823927
             }
         ]
     }

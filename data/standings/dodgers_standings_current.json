@@ -2528,5 +2528,28 @@
     "time":"00:00:00",
     "day_night":"N",
     "game_day":"Friday"
+  },
+  {
+    "gm":111,
+    "gtm":111,
+    "game_date":"2026-08-01",
+    "year":2026,
+    "home_away":"home",
+    "opp":"Boston Red Sox",
+    "r":2,
+    "ra":3,
+    "run_diff":-1,
+    "result":"L",
+    "wins":69,
+    "losses":42,
+    "record":"69-42",
+    "win_pct":0.622,
+    "gb":-10.0,
+    "rank":1,
+    "attendance":0,
+    "time_minutes":0,
+    "time":"00:00:00",
+    "day_night":"N",
+    "game_day":"Saturday"
   }
 ]
