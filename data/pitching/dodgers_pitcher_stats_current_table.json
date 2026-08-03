@@ -48,13 +48,13 @@
         "player":"Emmet Sheehan",
         "role":"SP",
         "position":"P",
-        "era":"5.04",
-        "whip":"1.27",
-        "k9":"10.27",
-        "bb9":"2.85",
+        "era":"5.29",
+        "whip":"1.29",
+        "k9":"10.20",
+        "bb9":"2.83",
         "kbb":"3.60",
-        "ip":"94.2",
-        "ip_rounded":94,
+        "ip":"95.1",
+        "ip_rounded":95,
         "gs":20,
         "gp":20,
         "fetched":"2026-08-03"
@@ -90,6 +90,21 @@
         "fetched":"2026-08-03"
     },
     {
+        "player":"Jack Dreyer",
+        "role":"SP",
+        "position":"P",
+        "era":"2.98",
+        "whip":"0.99",
+        "k9":"10.32",
+        "bb9":"2.58",
+        "kbb":"4.00",
+        "ip":"45.1",
+        "ip_rounded":45,
+        "gs":1,
+        "gp":45,
+        "fetched":"2026-08-03"
+    },
+    {
         "player":"Tanner Scott",
         "role":"RP",
         "position":"P",
@@ -102,21 +117,6 @@
         "ip_rounded":44,
         "gs":0,
         "gp":47,
-        "fetched":"2026-08-03"
-    },
-    {
-        "player":"Jack Dreyer",
-        "role":"SP",
-        "position":"P",
-        "era":"3.07",
-        "whip":"1.00",
-        "k9":"10.23",
-        "bb9":"2.45",
-        "kbb":"4.17",
-        "ip":"44.0",
-        "ip_rounded":44,
-        "gs":1,
-        "gp":44,
         "fetched":"2026-08-03"
     },
     {

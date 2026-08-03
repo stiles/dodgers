@@ -1,16 +1,16 @@
 {
     "season_summary": {
-        "correct_strikes_pct": 90.85128929706818,
-        "incorrect_strikes_pct": 9.148710702931822,
-        "total_called_strikes": 2831,
-        "bad_calls_count": 259
+        "correct_strikes_pct": 90.73033707865169,
+        "incorrect_strikes_pct": 9.269662921348313,
+        "total_called_strikes": 2848,
+        "bad_calls_count": 264
     },
     "last_game_summary": {
         "date": "August 2, 2026",
-        "correct_strikes_pct": 50.0,
-        "incorrect_strikes_pct": 50.0,
-        "total_called_strikes": 2,
-        "bad_calls_count": 1,
+        "correct_strikes_pct": 68.42105263157895,
+        "incorrect_strikes_pct": 31.578947368421055,
+        "total_called_strikes": 19,
+        "bad_calls_count": 6,
         "home_plate_umpire": "Mike Muchlinski"
     },
     "worst_calls_of_season": [
@@ -56,17 +56,17 @@
         }
     ],
     "pitching_season_summary": {
-        "correct_balls_pct": 96.18613138686132,
-        "incorrect_balls_pct": 3.8138686131386805,
-        "total_called_balls": 5480,
-        "bad_calls_count": 209
+        "correct_balls_pct": 96.20184481823114,
+        "incorrect_balls_pct": 3.7981551817688626,
+        "total_called_balls": 5529,
+        "bad_calls_count": 210
     },
     "pitching_last_game_summary": {
         "date": "August 2, 2026",
-        "correct_balls_pct": 93.75,
-        "incorrect_balls_pct": 6.25,
-        "total_called_balls": 16,
-        "bad_calls_count": 1
+        "correct_balls_pct": 96.92307692307692,
+        "incorrect_balls_pct": 3.07692307692308,
+        "total_called_balls": 65,
+        "bad_calls_count": 2
     },
     "pitching_worst_calls_of_season": [],
     "abs_challenges": {
@@ -89,9 +89,9 @@
         },
         "opponents": {
             "batting": {
-                "total": 24,
+                "total": 25,
                 "successful": 5,
-                "failed": 19
+                "failed": 20
             },
             "pitching": {
                 "total": 0,
@@ -99,12 +99,36 @@
                 "failed": 0
             },
             "catching": {
-                "total": 44,
-                "successful": 33,
+                "total": 45,
+                "successful": 34,
                 "failed": 11
             }
         },
         "challenge_log": [
+            {
+                "date": "2026-08-02",
+                "date_formatted": "August 2, 2026",
+                "challenger": "Carlos Narv\u00e1ez",
+                "role": "catching",
+                "team": "opponents",
+                "outcome": "overturned",
+                "result_desc": "Kyle Tucker called out on strikes.",
+                "batter": "Kyle Tucker",
+                "pitcher": "Jake Bennett",
+                "game_pk": 823919
+            },
+            {
+                "date": "2026-08-02",
+                "date_formatted": "August 2, 2026",
+                "challenger": "Ceddanne Rafaela",
+                "role": "batting",
+                "team": "opponents",
+                "outcome": "confirmed",
+                "result_desc": "Ceddanne Rafaela called out on strikes.",
+                "batter": "Ceddanne Rafaela",
+                "pitcher": "Kyle Hurt",
+                "game_pk": 823919
+            },
             {
                 "date": "2026-08-01",
                 "date_formatted": "August 1, 2026",
@@ -320,30 +344,6 @@
                 "batter": "Cody Bellinger",
                 "pitcher": "Yoshinobu Yamamoto",
                 "game_pk": 823523
-            },
-            {
-                "date": "2026-07-17",
-                "date_formatted": "July 17, 2026",
-                "challenger": "Ali S\u00e1nchez",
-                "role": "catching",
-                "team": "opponents",
-                "outcome": "confirmed",
-                "result_desc": "Max Muncy walks.",
-                "batter": "Max Muncy",
-                "pitcher": "Paul Blackburn",
-                "game_pk": 823524
-            },
-            {
-                "date": "2026-07-11",
-                "date_formatted": "July 11, 2026",
-                "challenger": "Ketel Marte",
-                "role": "batting",
-                "team": "opponents",
-                "outcome": "confirmed",
-                "result_desc": "Ketel Marte called out on strikes.",
-                "batter": "Ketel Marte",
-                "pitcher": "Landon Knack",
-                "game_pk": 823926
             }
         ]
     }

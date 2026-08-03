@@ -1,8 +1,8 @@
 {
     "dodgers": {
         "batting": {
-            "total": 90,
-            "successful": 57,
+            "total": 91,
+            "successful": 58,
             "failed": 33
         },
         "pitching": {
@@ -11,15 +11,15 @@
             "failed": 3
         },
         "catching": {
-            "total": 84,
+            "total": 85,
             "successful": 49,
-            "failed": 35
+            "failed": 36
         }
     },
     "opponents": {
         "batting": {
-            "total": 99,
-            "successful": 51,
+            "total": 100,
+            "successful": 52,
             "failed": 48
         },
         "pitching": {
@@ -34,6 +34,42 @@
         }
     },
     "challenge_log": [
+        {
+            "date": "2026-08-02",
+            "date_formatted": "August 2, 2026",
+            "challenger": "Caleb Durbin",
+            "role": "batting",
+            "team": "opponents",
+            "outcome": "overturned",
+            "result_desc": "Caleb Durbin walks. Masataka Yoshida to 2nd.",
+            "batter": "Caleb Durbin",
+            "pitcher": "Wyatt Mills",
+            "game_pk": 823919
+        },
+        {
+            "date": "2026-08-02",
+            "date_formatted": "August 2, 2026",
+            "challenger": "Eliezer Alfonzo",
+            "role": "catching",
+            "team": "dodgers",
+            "outcome": "confirmed",
+            "result_desc": "Wilyer Abreu walks.",
+            "batter": "Wilyer Abreu",
+            "pitcher": "Kyle Hurt",
+            "game_pk": 823919
+        },
+        {
+            "date": "2026-08-02",
+            "date_formatted": "August 2, 2026",
+            "challenger": "Kyle Tucker",
+            "role": "batting",
+            "team": "dodgers",
+            "outcome": "overturned",
+            "result_desc": "Kyle Tucker singles on a line drive to center fielder Ceddanne Rafaela.",
+            "batter": "Kyle Tucker",
+            "pitcher": "Jake Bennett",
+            "game_pk": 823919
+        },
         {
             "date": "2026-08-01",
             "date_formatted": "August 1, 2026",
@@ -97,6 +133,18 @@
         {
             "date": "2026-07-30",
             "date_formatted": "July 30, 2026",
+            "challenger": "Cal Raleigh",
+            "role": "catching",
+            "team": "opponents",
+            "outcome": "confirmed",
+            "result_desc": "Kyle Tucker flies out to left fielder Randy Arozarena.",
+            "batter": "Kyle Tucker",
+            "pitcher": "Bryan Woo",
+            "game_pk": 823921
+        },
+        {
+            "date": "2026-07-30",
+            "date_formatted": "July 30, 2026",
             "challenger": "Josh Naylor",
             "role": "batting",
             "team": "opponents",
@@ -131,18 +179,6 @@
             "game_pk": 823921
         },
         {
-            "date": "2026-07-30",
-            "date_formatted": "July 30, 2026",
-            "challenger": "Cal Raleigh",
-            "role": "catching",
-            "team": "opponents",
-            "outcome": "confirmed",
-            "result_desc": "Kyle Tucker flies out to left fielder Randy Arozarena.",
-            "batter": "Kyle Tucker",
-            "pitcher": "Bryan Woo",
-            "game_pk": 823921
-        },
-        {
             "date": "2026-07-29",
             "date_formatted": "July 29, 2026",
             "challenger": "Dalton Rushing",
@@ -157,24 +193,24 @@
         {
             "date": "2026-07-28",
             "date_formatted": "July 28, 2026",
-            "challenger": "Dalton Rushing",
-            "role": "catching",
-            "team": "dodgers",
-            "outcome": "confirmed",
-            "result_desc": "J.P. Crawford strikes out swinging.",
-            "batter": "J.P. Crawford",
-            "pitcher": "Justin Wrobleski",
-            "game_pk": 823923
-        },
-        {
-            "date": "2026-07-28",
-            "date_formatted": "July 28, 2026",
             "challenger": "Josh Naylor",
             "role": "batting",
             "team": "opponents",
             "outcome": "overturned",
             "result_desc": "Josh Naylor singles on a line drive to right fielder Kyle Tucker.",
             "batter": "Josh Naylor",
+            "pitcher": "Justin Wrobleski",
+            "game_pk": 823923
+        },
+        {
+            "date": "2026-07-28",
+            "date_formatted": "July 28, 2026",
+            "challenger": "Dalton Rushing",
+            "role": "catching",
+            "team": "dodgers",
+            "outcome": "confirmed",
+            "result_desc": "J.P. Crawford strikes out swinging.",
+            "batter": "J.P. Crawford",
             "pitcher": "Justin Wrobleski",
             "game_pk": 823923
         },
@@ -237,42 +273,6 @@
             "batter": "Freddie Freeman",
             "pitcher": "Sean Manaea",
             "game_pk": 823601
-        },
-        {
-            "date": "2026-07-24",
-            "date_formatted": "July 24, 2026",
-            "challenger": "Juan Soto",
-            "role": "batting",
-            "team": "opponents",
-            "outcome": "overturned",
-            "result_desc": "Juan Soto walks.",
-            "batter": "Juan Soto",
-            "pitcher": "Roki Sasaki",
-            "game_pk": 823601
-        },
-        {
-            "date": "2026-07-24",
-            "date_formatted": "July 24, 2026",
-            "challenger": "Shohei Ohtani",
-            "role": "batting",
-            "team": "dodgers",
-            "outcome": "overturned",
-            "result_desc": "Shohei Ohtani singles on a ground ball to right fielder Carson Benge.",
-            "batter": "Shohei Ohtani",
-            "pitcher": "Sean Manaea",
-            "game_pk": 823601
-        },
-        {
-            "date": "2026-07-22",
-            "date_formatted": "July 22, 2026",
-            "challenger": "Freddie Freeman",
-            "role": "batting",
-            "team": "dodgers",
-            "outcome": "confirmed",
-            "result_desc": "Freddie Freeman walks.",
-            "batter": "Freddie Freeman",
-            "pitcher": "Tim Mayza",
-            "game_pk": 823438
         }
     ],
     "dodgers_by_player": [
@@ -312,18 +312,18 @@
             "success_rate": 88.9
         },
         {
+            "challenger": "Kyle Tucker",
+            "total": 9,
+            "successful": 6,
+            "failed": 3,
+            "success_rate": 66.7
+        },
+        {
             "challenger": "Alex Call",
             "total": 9,
             "successful": 4,
             "failed": 5,
             "success_rate": 44.4
-        },
-        {
-            "challenger": "Kyle Tucker",
-            "total": 8,
-            "successful": 5,
-            "failed": 3,
-            "success_rate": 62.5
         },
         {
             "challenger": "Shohei Ohtani",
@@ -341,10 +341,10 @@
         },
         {
             "challenger": "Eliezer Alfonzo",
-            "total": 3,
+            "total": 4,
             "successful": 2,
-            "failed": 1,
-            "success_rate": 66.7
+            "failed": 2,
+            "success_rate": 50.0
         },
         {
             "challenger": "Freddie Freeman",
@@ -406,10 +406,10 @@
         },
         {
             "inning": 2,
-            "total": 10,
-            "successful": 6,
+            "total": 11,
+            "successful": 7,
             "failed": 4,
-            "success_rate": 60.0
+            "success_rate": 63.6
         },
         {
             "inning": 3,
@@ -441,10 +441,10 @@
         },
         {
             "inning": 7,
-            "total": 17,
+            "total": 18,
             "successful": 9,
-            "failed": 8,
-            "success_rate": 52.9
+            "failed": 9,
+            "success_rate": 50.0
         },
         {
             "inning": 8,
