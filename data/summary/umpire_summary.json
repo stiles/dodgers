@@ -1,16 +1,16 @@
 {
     "season_summary": {
-        "correct_strikes_pct": 90.74009119607155,
-        "incorrect_strikes_pct": 9.259908803928454,
-        "total_called_strikes": 2851,
-        "bad_calls_count": 264
+        "correct_strikes_pct": 90.72200906871294,
+        "incorrect_strikes_pct": 9.277990931287064,
+        "total_called_strikes": 2867,
+        "bad_calls_count": 266
     },
     "last_game_summary": {
         "date": "August 3, 2026",
-        "correct_strikes_pct": 100.0,
-        "incorrect_strikes_pct": 0.0,
-        "total_called_strikes": 3,
-        "bad_calls_count": 0,
+        "correct_strikes_pct": 89.47368421052632,
+        "incorrect_strikes_pct": 10.526315789473685,
+        "total_called_strikes": 19,
+        "bad_calls_count": 2,
         "home_plate_umpire": "Chris Segal"
     },
     "worst_calls_of_season": [
@@ -56,17 +56,17 @@
         }
     ],
     "pitching_season_summary": {
-        "correct_balls_pct": 96.20321822455253,
-        "incorrect_balls_pct": 3.796781775447471,
-        "total_called_balls": 5531,
-        "bad_calls_count": 210
+        "correct_balls_pct": 96.18416338230024,
+        "incorrect_balls_pct": 3.815836617699759,
+        "total_called_balls": 5582,
+        "bad_calls_count": 213
     },
     "pitching_last_game_summary": {
         "date": "August 3, 2026",
-        "correct_balls_pct": 100.0,
-        "incorrect_balls_pct": 0.0,
-        "total_called_balls": 2,
-        "bad_calls_count": 0
+        "correct_balls_pct": 94.33962264150944,
+        "incorrect_balls_pct": 5.660377358490564,
+        "total_called_balls": 53,
+        "bad_calls_count": 3
     },
     "pitching_worst_calls_of_season": [],
     "abs_challenges": {
@@ -89,8 +89,8 @@
         },
         "opponents": {
             "batting": {
-                "total": 25,
-                "successful": 5,
+                "total": 27,
+                "successful": 7,
                 "failed": 20
             },
             "pitching": {
@@ -105,6 +105,30 @@
             }
         },
         "challenge_log": [
+            {
+                "date": "2026-08-03",
+                "date_formatted": "August 3, 2026",
+                "challenger": "Nico Hoerner",
+                "role": "batting",
+                "team": "opponents",
+                "outcome": "overturned",
+                "result_desc": "Nico Hoerner walks.",
+                "batter": "Nico Hoerner",
+                "pitcher": "Justin Wrobleski",
+                "game_pk": 824647
+            },
+            {
+                "date": "2026-08-03",
+                "date_formatted": "August 3, 2026",
+                "challenger": "Carson Kelly",
+                "role": "batting",
+                "team": "opponents",
+                "outcome": "overturned",
+                "result_desc": "Carson Kelly walks. Ian Happ scores. Pete Crow-Armstrong to 3rd. Seiya Suzuki to 2nd.",
+                "batter": "Carson Kelly",
+                "pitcher": "Tanner Scott",
+                "game_pk": 824647
+            },
             {
                 "date": "2026-08-02",
                 "date_formatted": "August 2, 2026",
@@ -319,30 +343,6 @@
                 "result_desc": "Mookie Betts called out on strikes.",
                 "batter": "Mookie Betts",
                 "pitcher": "Cam Schlittler",
-                "game_pk": 823523
-            },
-            {
-                "date": "2026-07-19",
-                "date_formatted": "July 19, 2026",
-                "challenger": "Andy Pages",
-                "role": "batting",
-                "team": "dodgers",
-                "outcome": "confirmed",
-                "result_desc": "Andy Pages called out on strikes.",
-                "batter": "Andy Pages",
-                "pitcher": "Ryan Yarbrough",
-                "game_pk": 823521
-            },
-            {
-                "date": "2026-07-19",
-                "date_formatted": "July 19, 2026",
-                "challenger": "Dalton Rushing",
-                "role": "catching",
-                "team": "dodgers",
-                "outcome": "overturned",
-                "result_desc": "Cody Bellinger called out on strikes.",
-                "batter": "Cody Bellinger",
-                "pitcher": "Yoshinobu Yamamoto",
                 "game_pk": 823523
             }
         ]

@@ -1,8 +1,8 @@
 {
     "dodgers": {
         "batting": {
-            "total": 91,
-            "successful": 58,
+            "total": 92,
+            "successful": 59,
             "failed": 33
         },
         "pitching": {
@@ -28,12 +28,48 @@
             "failed": 3
         },
         "catching": {
-            "total": 125,
-            "successful": 79,
-            "failed": 46
+            "total": 127,
+            "successful": 80,
+            "failed": 47
         }
     },
     "challenge_log": [
+        {
+            "date": "2026-08-03",
+            "date_formatted": "August 3, 2026",
+            "challenger": "Carson Kelly",
+            "role": "catching",
+            "team": "opponents",
+            "outcome": "confirmed",
+            "result_desc": "Mookie Betts flies out to center fielder Pete Crow-Armstrong.",
+            "batter": "Mookie Betts",
+            "pitcher": "Trent Thornton",
+            "game_pk": 824647
+        },
+        {
+            "date": "2026-08-03",
+            "date_formatted": "August 3, 2026",
+            "challenger": "Carson Kelly",
+            "role": "catching",
+            "team": "opponents",
+            "outcome": "overturned",
+            "result_desc": "Enrique Hern\u00e1ndez strikes out swinging.",
+            "batter": "Enrique Hern\u00e1ndez",
+            "pitcher": "Matthew Boyd",
+            "game_pk": 824647
+        },
+        {
+            "date": "2026-08-03",
+            "date_formatted": "August 3, 2026",
+            "challenger": "Teoscar Hern\u00e1ndez",
+            "role": "batting",
+            "team": "dodgers",
+            "outcome": "overturned",
+            "result_desc": "Teoscar Hern\u00e1ndez homers (11) on a fly ball to left center field.",
+            "batter": "Teoscar Hern\u00e1ndez",
+            "pitcher": "Matthew Boyd",
+            "game_pk": 824647
+        },
         {
             "date": "2026-08-02",
             "date_formatted": "August 2, 2026",
@@ -133,18 +169,6 @@
         {
             "date": "2026-07-30",
             "date_formatted": "July 30, 2026",
-            "challenger": "Cal Raleigh",
-            "role": "catching",
-            "team": "opponents",
-            "outcome": "confirmed",
-            "result_desc": "Kyle Tucker flies out to left fielder Randy Arozarena.",
-            "batter": "Kyle Tucker",
-            "pitcher": "Bryan Woo",
-            "game_pk": 823921
-        },
-        {
-            "date": "2026-07-30",
-            "date_formatted": "July 30, 2026",
             "challenger": "Josh Naylor",
             "role": "batting",
             "team": "opponents",
@@ -176,6 +200,18 @@
             "result_desc": "Mookie Betts called out on strikes.",
             "batter": "Mookie Betts",
             "pitcher": "Alex Hoppe",
+            "game_pk": 823921
+        },
+        {
+            "date": "2026-07-30",
+            "date_formatted": "July 30, 2026",
+            "challenger": "Cal Raleigh",
+            "role": "catching",
+            "team": "opponents",
+            "outcome": "confirmed",
+            "result_desc": "Kyle Tucker flies out to left fielder Randy Arozarena.",
+            "batter": "Kyle Tucker",
+            "pitcher": "Bryan Woo",
             "game_pk": 823921
         },
         {
@@ -237,42 +273,6 @@
             "batter": "Jared Young",
             "pitcher": "Emmet Sheehan",
             "game_pk": 823599
-        },
-        {
-            "date": "2026-07-25",
-            "date_formatted": "July 25, 2026",
-            "challenger": "A.J. Ewing",
-            "role": "batting",
-            "team": "opponents",
-            "outcome": "confirmed",
-            "result_desc": "A.J. Ewing strikes out swinging.",
-            "batter": "A.J. Ewing",
-            "pitcher": "Yoshinobu Yamamoto",
-            "game_pk": 823600
-        },
-        {
-            "date": "2026-07-24",
-            "date_formatted": "July 24, 2026",
-            "challenger": "A.J. Ewing",
-            "role": "batting",
-            "team": "opponents",
-            "outcome": "overturned",
-            "result_desc": "A.J. Ewing flies out to left fielder Teoscar Hern\u00e1ndez.",
-            "batter": "A.J. Ewing",
-            "pitcher": "Evan Phillips",
-            "game_pk": 823601
-        },
-        {
-            "date": "2026-07-24",
-            "date_formatted": "July 24, 2026",
-            "challenger": "Francisco Alvarez",
-            "role": "catching",
-            "team": "opponents",
-            "outcome": "overturned",
-            "result_desc": "Freddie Freeman singles on a ground ball to left fielder A.J. Ewing.",
-            "batter": "Freddie Freeman",
-            "pitcher": "Sean Manaea",
-            "game_pk": 823601
         }
     ],
     "dodgers_by_player": [
@@ -298,18 +298,18 @@
             "success_rate": 55.6
         },
         {
+            "challenger": "Teoscar Hern\u00e1ndez",
+            "total": 10,
+            "successful": 9,
+            "failed": 1,
+            "success_rate": 90.0
+        },
+        {
             "challenger": "Mookie Betts",
             "total": 10,
             "successful": 7,
             "failed": 3,
             "success_rate": 70.0
-        },
-        {
-            "challenger": "Teoscar Hern\u00e1ndez",
-            "total": 9,
-            "successful": 8,
-            "failed": 1,
-            "success_rate": 88.9
         },
         {
             "challenger": "Kyle Tucker",
@@ -434,10 +434,10 @@
         },
         {
             "inning": 6,
-            "total": 23,
-            "successful": 15,
+            "total": 24,
+            "successful": 16,
             "failed": 8,
-            "success_rate": 65.2
+            "success_rate": 66.7
         },
         {
             "inning": 7,
