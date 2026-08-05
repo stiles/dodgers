@@ -28,12 +28,36 @@
             "failed": 3
         },
         "catching": {
-            "total": 127,
-            "successful": 80,
+            "total": 129,
+            "successful": 82,
             "failed": 47
         }
     },
     "challenge_log": [
+        {
+            "date": "2026-08-04",
+            "date_formatted": "August 4, 2026",
+            "challenger": "Miguel Amaya",
+            "role": "catching",
+            "team": "opponents",
+            "outcome": "overturned",
+            "result_desc": "Mookie Betts grounds out, shortstop Dansby Swanson to first baseman Michael Busch.",
+            "batter": "Mookie Betts",
+            "pitcher": "Ryan Rolison",
+            "game_pk": 824645
+        },
+        {
+            "date": "2026-08-04",
+            "date_formatted": "August 4, 2026",
+            "challenger": "Miguel Amaya",
+            "role": "catching",
+            "team": "opponents",
+            "outcome": "overturned",
+            "result_desc": "Max Muncy strikes out swinging.",
+            "batter": "Max Muncy",
+            "pitcher": "Ryan Rolison",
+            "game_pk": 824645
+        },
         {
             "date": "2026-08-03",
             "date_formatted": "August 3, 2026",
@@ -145,18 +169,6 @@
         {
             "date": "2026-07-31",
             "date_formatted": "July 31, 2026",
-            "challenger": "Max Muncy",
-            "role": "batting",
-            "team": "dodgers",
-            "outcome": "overturned",
-            "result_desc": "Max Muncy grounds out, first baseman Nick Sogard to pitcher Brayan Bello.",
-            "batter": "Max Muncy",
-            "pitcher": "Brayan Bello",
-            "game_pk": 823922
-        },
-        {
-            "date": "2026-07-31",
-            "date_formatted": "July 31, 2026",
             "challenger": "Mookie Betts",
             "role": "batting",
             "team": "dodgers",
@@ -164,6 +176,18 @@
             "result_desc": "Mookie Betts called out on strikes.",
             "batter": "Mookie Betts",
             "pitcher": "Ranger Suarez",
+            "game_pk": 823922
+        },
+        {
+            "date": "2026-07-31",
+            "date_formatted": "July 31, 2026",
+            "challenger": "Max Muncy",
+            "role": "batting",
+            "team": "dodgers",
+            "outcome": "overturned",
+            "result_desc": "Max Muncy grounds out, first baseman Nick Sogard to pitcher Brayan Bello.",
+            "batter": "Max Muncy",
+            "pitcher": "Brayan Bello",
             "game_pk": 823922
         },
         {
@@ -249,30 +273,6 @@
             "batter": "J.P. Crawford",
             "pitcher": "Justin Wrobleski",
             "game_pk": 823923
-        },
-        {
-            "date": "2026-07-26",
-            "date_formatted": "July 26, 2026",
-            "challenger": "Andy Pages",
-            "role": "batting",
-            "team": "dodgers",
-            "outcome": "confirmed",
-            "result_desc": "Andy Pages flies out to left fielder Tyrone Taylor.",
-            "batter": "Andy Pages",
-            "pitcher": "Freddy Peralta",
-            "game_pk": 823599
-        },
-        {
-            "date": "2026-07-26",
-            "date_formatted": "July 26, 2026",
-            "challenger": "Jared Young",
-            "role": "batting",
-            "team": "opponents",
-            "outcome": "confirmed",
-            "result_desc": "Jared Young pops out softly to third baseman Max Muncy.",
-            "batter": "Jared Young",
-            "pitcher": "Emmet Sheehan",
-            "game_pk": 823599
         }
     ],
     "dodgers_by_player": [
