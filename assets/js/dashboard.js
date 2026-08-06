@@ -4997,3 +4997,218 @@ async function initPlayoffJourney() {
   }
 }
 
+
+// Prediction markets (Kalshi implied probability)
+
+document.addEventListener('DOMContentLoaded', function () {
+  const DODGER_BLUE = '#005A9C';
+  const DODGER_RED = '#ef3e42';
+  const COMPETITOR_GRAYS = ['#8a9196', '#b3b8bb'];
+  const parseDate = d3.timeParse('%Y-%m-%d');
+
+  // AP-style date, e.g. "Aug. 6"
+  const AP_MONTHS = ['Jan.', 'Feb.', 'March', 'April', 'May', 'June', 'July', 'Aug.', 'Sept.', 'Oct.', 'Nov.', 'Dec.'];
+  function formatApDate(date) {
+    return `${AP_MONTHS[date.getMonth()]} ${date.getDate()}`;
+  }
+
+  // Convert a [{date, price}] series into [{date: Date, value: percent}]
+  function toPoints(series) {
+    return (series || [])
+      .map((d) => ({ date: parseDate(d.date), value: d.price * 100 }))
+      .filter((d) => d.date && !isNaN(d.value));
+  }
+
+  // Shared white-halo label so text stays readable over the grid and lines
+  function addEndLabel(svg, x, y, text, colorClass, dy, anchor, fill) {
+    const label = svg
+      .append('text')
+      .attr('x', x)
+      .attr('y', y + (dy || 0))
+      .attr('class', colorClass)
+      .attr('text-anchor', anchor || 'start')
+      .style('stroke', '#fff')
+      .style('stroke-width', '4px')
+      .style('stroke-linejoin', 'round')
+      .style('paint-order', 'stroke')
+      .text(text);
+    if (fill) label.style('fill', fill);
+    label.clone(true).style('stroke', 'none');
+  }
+
+  async function renderWorldSeriesChart() {
+    const container = d3.select('#kalshi-ws-chart');
+    if (container.empty() || !container.node()) return;
+
+    let data;
+    try {
+      data = await d3.json(await getDatasetUrl('kalshi_world_series'));
+    } catch (error) {
+      console.error('Failed to load Kalshi World Series data:', error);
+      return;
+    }
+
+    const points = toPoints(data.series);
+    if (points.length === 0) return;
+
+    const isMobile = window.innerWidth <= 767;
+    const margin = { top: 16, right: isMobile ? 40 : 42, bottom: 34, left: isMobile ? 40 : 42 };
+    const containerWidth = container.node().getBoundingClientRect().width;
+    const totalHeight = Math.round(containerWidth * (isMobile ? 0.7 : 0.62));
+    const width = containerWidth - margin.left - margin.right;
+    const height = totalHeight - margin.top - margin.bottom;
+
+    container.selectAll('*').remove();
+    const svg = container
+      .append('svg')
+      .attr('viewBox', `0 0 ${containerWidth} ${totalHeight}`)
+      .append('g')
+      .attr('transform', `translate(${margin.left}, ${margin.top})`);
+
+    const xScale = d3.scaleTime().domain(d3.extent(points, (d) => d.date)).range([0, width]);
+    const yMax = Math.min(100, Math.ceil((d3.max(points, (d) => d.value) + 5) / 10) * 10);
+    const yScale = d3.scaleLinear().domain([0, yMax]).range([height, 0]);
+
+    svg
+      .append('g')
+      .attr('transform', `translate(0, ${height})`)
+      .call(d3.axisBottom(xScale).ticks(isMobile ? 4 : 6).tickFormat(d3.timeFormat('%b')));
+    svg
+      .append('g')
+      .call(d3.axisLeft(yScale).ticks(5).tickFormat((d) => `${d}%`));
+
+    const area = d3
+      .area()
+      .x((d) => xScale(d.date))
+      .y0(height)
+      .y1((d) => yScale(d.value))
+      .curve(d3.curveMonotoneX);
+
+    const line = d3
+      .line()
+      .x((d) => xScale(d.date))
+      .y((d) => yScale(d.value))
+      .curve(d3.curveMonotoneX);
+
+    svg.append('path').datum(points).attr('fill', DODGER_BLUE).attr('opacity', 0.12).attr('d', area);
+    svg
+      .append('path')
+      .datum(points)
+      .attr('fill', 'none')
+      .attr('stroke', DODGER_BLUE)
+      .attr('stroke-width', 2.5)
+      .attr('d', line);
+
+    const last = points[points.length - 1];
+    svg
+      .append('circle')
+      .attr('cx', xScale(last.date))
+      .attr('cy', yScale(last.value))
+      .attr('r', 4)
+      .style('fill', DODGER_BLUE)
+      .style('stroke', '#fff')
+      .style('stroke-width', 2);
+    addEndLabel(svg, xScale(last.date) + 7, yScale(last.value), `${Math.round(last.value)}%`, 'anno-dodgers', 4);
+  }
+
+  async function renderNlMvpChart() {
+    const container = d3.select('#kalshi-mvp-chart');
+    if (container.empty() || !container.node()) return;
+
+    let data;
+    try {
+      data = await d3.json(await getDatasetUrl('kalshi_nl_mvp'));
+    } catch (error) {
+      console.error('Failed to load Kalshi NL MVP data:', error);
+      return;
+    }
+
+    const candidates = (data.candidates || [])
+      .map((c) => ({ ...c, points: toPoints(c.series) }))
+      .filter((c) => c.points.length > 0);
+    if (candidates.length === 0) return;
+
+    // Chatter: "Top contenders as of <latest data date>"
+    const latestDate = d3.max(candidates, (c) => c.points[c.points.length - 1].date);
+    const asOf = document.getElementById('kalshi-mvp-asof');
+    if (asOf && latestDate) asOf.textContent = `Top contenders as of ${formatApDate(latestDate)}.`;
+
+    // Color: Dodgers in blue, top competitor in red, others gray
+    let competitorIndex = 0;
+    candidates.forEach((c) => {
+      if (c.is_dodger) c.color = DODGER_BLUE;
+      else if (competitorIndex++ === 0) c.color = DODGER_RED;
+      else c.color = COMPETITOR_GRAYS[(competitorIndex - 2) % COMPETITOR_GRAYS.length];
+    });
+
+    const isMobile = window.innerWidth <= 767;
+    const margin = { top: 16, right: 16, bottom: 34, left: isMobile ? 40 : 42 };
+    const containerWidth = container.node().getBoundingClientRect().width;
+    const totalHeight = Math.round(containerWidth * (isMobile ? 0.7 : 0.62));
+    const width = containerWidth - margin.left - margin.right;
+    const height = totalHeight - margin.top - margin.bottom;
+
+    container.selectAll('*').remove();
+    const svg = container
+      .append('svg')
+      .attr('viewBox', `0 0 ${containerWidth} ${totalHeight}`)
+      .append('g')
+      .attr('transform', `translate(${margin.left}, ${margin.top})`);
+
+    const allPoints = candidates.flatMap((c) => c.points);
+    const xScale = d3.scaleTime().domain(d3.extent(allPoints, (d) => d.date)).range([0, width]);
+    const yMax = Math.min(100, Math.ceil((d3.max(allPoints, (d) => d.value) + 5) / 10) * 10);
+    const yScale = d3.scaleLinear().domain([0, yMax]).range([height, 0]);
+
+    svg
+      .append('g')
+      .attr('transform', `translate(0, ${height})`)
+      .call(d3.axisBottom(xScale).ticks(isMobile ? 4 : 6).tickFormat(d3.timeFormat('%b')));
+    svg
+      .append('g')
+      .call(d3.axisLeft(yScale).ticks(5).tickFormat((d) => `${d}%`));
+
+    const line = d3
+      .line()
+      .x((d) => xScale(d.date))
+      .y((d) => yScale(d.value))
+      .curve(d3.curveMonotoneX);
+
+    candidates.forEach((c) => {
+      svg
+        .append('path')
+        .datum(c.points)
+        .attr('fill', 'none')
+        .attr('stroke', c.color)
+        .attr('stroke-width', c.is_dodger ? 2.5 : 1.75)
+        .attr('d', line);
+
+      const last = c.points[c.points.length - 1];
+      svg
+        .append('circle')
+        .attr('cx', xScale(last.date))
+        .attr('cy', yScale(last.value))
+        .attr('r', 3.5)
+        .style('fill', c.color)
+        .style('stroke', '#fff')
+        .style('stroke-width', 1.5);
+
+      // Float the player's name near the end of their line, anchored left so
+      // long names like "Crow-Armstrong" extend into the plot and never clip
+      addEndLabel(
+        svg,
+        xScale(last.date) - 6,
+        yScale(last.value),
+        `${c.player} ${Math.round(last.value)}%`,
+        'anno-dodgers',
+        -9,
+        'end',
+        c.color
+      );
+    });
+  }
+
+  renderWorldSeriesChart();
+  renderNlMvpChart();
+});
+
