@@ -2,10 +2,10 @@ stat_label,stat,value,category,context_value,context_value_label
 Wins,wins,69,standings,66,This point last season
 Losses,losses,46,standings,49,This point last season
 Win percentage,win_pct,60%,standings,57%,This point last season
-Games up/back,games_up_back,8.5,standings,1st,Division rank
+Games up/back,games_up_back,8,standings,1st,Division rank
 Fielding percentage,fielding_pct,.989,standings,3rd,League rank
 Errors,errors,44,standings,1st,League rank
-Runs,runs,584,standings,3rd,League rank
+Runs,runs,584,standings,4th,League rank
 Runs against,runs_against,444,standings,519,This point last season
 Run differential,run_differential,140,standings,74,This point last season
 Batting average,batting_average,.262,batting,.253,Last decade average
@@ -17,12 +17,12 @@ OPS,ops,.771,batting,1st,League rank
 Stolen bases,stolen_bases,44,batting,28th,League rank
 Stolen bases/game,stolen_bases_game,0.38,batting,0.84,Rate all last season
 Doubles,doubles,189,batting,9th,League rank
-Strikeouts,strikeouts,"1,025",pitching,6th,League rank
+Strikeouts,strikeouts,"1,025",pitching,7th,League rank
 Walks,walks,350,pitching,22nd,League rank
-ERA,era,3.74,pitching,7th,League rank
+ERA,era,3.74,pitching,8th,League rank
 WHIP,whip,1.16,pitching,3rd,League rank
-Batting average against,avg_against,.219,pitching,1st,League rank
+Batting average against,avg_against,.219,pitching,2nd,League rank
 K/BB ratio,k_bb_ratio,2.93,pitching,6th,League rank
-Last updated,update_time,"August 5, 2026, 5:08 PM PT",summary,,
-Team summary,summary,"<span class='highlight'>LOS ANGELES</span> <span class='updated'>(August 5)</span> — The Dodgers have compiled a <span class='highlight'>69-46</span> record in the 2026 regular season, a <span class='highlight'>60%</span> winning percentage. The last game was a <span class='highlight'>6-7</span> away <span class='highlight'>loss</span> against the <span class='highlight'>Chicago Cubs</span>. The team next faces the <span class='highlight'>Arizona Diamondbacks</span> on Friday at 6:40 p.m. MST at <span class='highlight'>Chase Field</span>.",summary,,
+Last updated,update_time,"August 6, 2026, 3:47 AM PT",summary,,
+Team summary,summary,"<span class='highlight'>LOS ANGELES</span> <span class='updated'>(August 6)</span> — The Dodgers have compiled a <span class='highlight'>69-46</span> record in the 2026 regular season, a <span class='highlight'>60%</span> winning percentage. The last game was a <span class='highlight'>6-7</span> away <span class='highlight'>loss</span> against the <span class='highlight'>Chicago Cubs</span>. The team next faces the <span class='highlight'>Arizona Diamondbacks</span> on Friday at 6:40 p.m. MST at <span class='highlight'>Chase Field</span>.",summary,,
 Last game result,last_game_result,loss,summary,,
