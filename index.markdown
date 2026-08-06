@@ -458,7 +458,7 @@ twitter:
     <div id="kalshi-ws-chart" class="small-chart"></div>
   </div>
   <div class="small-chart-container">
-    <h3 class="visual-subhead">Odds to win the National League <span class="win">MVP</span></h3>
+    <h3 class="visual-subhead">Odds to win the NL <span class="win">MVP</span></h3>
     <p class="chart-chatter" id="kalshi-mvp-asof">Top contenders</p>
     <div id="kalshi-mvp-chart" class="small-chart"></div>
   </div>
