@@ -3443,6 +3443,10 @@ label {
   padding: 0 20px;
 }
 
+/* Prediction markets: kept visually light (no tint or box) since these are
+   betting odds, not official stats. Player names float on the charts as
+   annotations, so no legend styles are needed. */
+
 /* Playoff Journey */
 .playoff-journey {
   display: grid;

@@ -248,6 +248,26 @@ def build_manifest():
             "description": "Projected final wins (simulation)",
             "cadence": "regular_season_daily",
             "source": "derived"
+        },
+        {
+            "id": "kalshi_world_series",
+            "version": "v1",
+            "url": "https://stilesdata.com/dodgers/data/markets/dodgers_kalshi_world_series.json",
+            "content_type": "application/json",
+            "last_updated": get_pacific_time(),
+            "description": "Kalshi implied probability the Dodgers win the World Series",
+            "cadence": "daily",
+            "source": "kalshi"
+        },
+        {
+            "id": "kalshi_nl_mvp",
+            "version": "v1",
+            "url": "https://stilesdata.com/dodgers/data/markets/dodgers_kalshi_nl_mvp.json",
+            "content_type": "application/json",
+            "last_updated": get_pacific_time(),
+            "description": "Kalshi implied probability for leading NL MVP contenders",
+            "cadence": "daily",
+            "source": "kalshi"
         }
     ]
     

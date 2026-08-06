@@ -34,6 +34,8 @@ PHASE_CONFIG = {
             "scripts/18_generate_projection.py",
             # News for homepage ticker (no-op for tweet; JSON saved by default)
             "scripts/24_fetch_news.py",
+            # Prediction markets (Kalshi odds)
+            "scripts/31_fetch_kalshi_markets.py",
             # Summary aggregates
             "scripts/07_create_toplines_summary.py",
         ],
@@ -50,6 +52,8 @@ PHASE_CONFIG = {
             "scripts/26_post_transactions.py",
             # News for homepage ticker
             "scripts/24_fetch_news.py",
+            # Prediction markets (Kalshi odds)
+            "scripts/31_fetch_kalshi_markets.py",
             # Optionally refresh final regular season snapshots (low frequency)
             "scripts/00_fetch_league_standings.py",
             "scripts/07_create_toplines_summary.py",
@@ -63,6 +67,8 @@ PHASE_CONFIG = {
             "scripts/19_fetch_roster.py",
             "scripts/26_post_transactions.py",
             "scripts/24_fetch_news.py",
+            # Prediction markets (Kalshi odds; WS futures trade in offseason)
+            "scripts/31_fetch_kalshi_markets.py",
             # Occasional historical data refresh
             "scripts/08_fetch_process_season_outcomes.py",
             "scripts/10_fetch_process_historic_batting_gamelogs.py",
