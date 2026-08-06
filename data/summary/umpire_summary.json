@@ -1,17 +1,17 @@
 {
     "season_summary": {
-        "correct_strikes_pct": 90.72664359861592,
-        "incorrect_strikes_pct": 9.273356401384078,
-        "total_called_strikes": 2890,
-        "bad_calls_count": 268
+        "correct_strikes_pct": 90.65613191343182,
+        "incorrect_strikes_pct": 9.343868086568179,
+        "total_called_strikes": 2911,
+        "bad_calls_count": 272
     },
     "last_game_summary": {
-        "date": "August 4, 2026",
-        "correct_strikes_pct": 91.30434782608695,
-        "incorrect_strikes_pct": 8.695652173913047,
-        "total_called_strikes": 23,
-        "bad_calls_count": 2,
-        "home_plate_umpire": "Laz Diaz"
+        "date": "August 5, 2026",
+        "correct_strikes_pct": 80.95238095238095,
+        "incorrect_strikes_pct": 19.04761904761905,
+        "total_called_strikes": 21,
+        "bad_calls_count": 4,
+        "home_plate_umpire": "Erich Bacchus"
     },
     "worst_calls_of_season": [
         {
@@ -56,25 +56,25 @@
         }
     ],
     "pitching_season_summary": {
-        "correct_balls_pct": 96.21669626998224,
-        "incorrect_balls_pct": 3.7833037300177637,
-        "total_called_balls": 5630,
-        "bad_calls_count": 213
+        "correct_balls_pct": 96.20944992947814,
+        "incorrect_balls_pct": 3.79055007052186,
+        "total_called_balls": 5672,
+        "bad_calls_count": 215
     },
     "pitching_last_game_summary": {
-        "date": "August 4, 2026",
-        "correct_balls_pct": 100.0,
-        "incorrect_balls_pct": 0.0,
-        "total_called_balls": 48,
-        "bad_calls_count": 0
+        "date": "August 5, 2026",
+        "correct_balls_pct": 95.23809523809523,
+        "incorrect_balls_pct": 4.761904761904773,
+        "total_called_balls": 42,
+        "bad_calls_count": 2
     },
     "pitching_worst_calls_of_season": [],
     "abs_challenges": {
         "dodgers": {
             "batting": {
-                "total": 40,
+                "total": 41,
                 "successful": 12,
-                "failed": 28
+                "failed": 29
             },
             "pitching": {
                 "total": 0,
@@ -82,8 +82,8 @@
                 "failed": 0
             },
             "catching": {
-                "total": 19,
-                "successful": 14,
+                "total": 20,
+                "successful": 15,
                 "failed": 5
             }
         },
@@ -105,6 +105,30 @@
             }
         },
         "challenge_log": [
+            {
+                "date": "2026-08-05",
+                "date_formatted": "August 5, 2026",
+                "challenger": "Tommy Edman",
+                "role": "batting",
+                "team": "dodgers",
+                "outcome": "confirmed",
+                "result_desc": "Tommy Edman called out on strikes.",
+                "batter": "Tommy Edman",
+                "pitcher": "Shota Imanaga",
+                "game_pk": 824646
+            },
+            {
+                "date": "2026-08-05",
+                "date_formatted": "August 5, 2026",
+                "challenger": "Hunter Feduccia",
+                "role": "catching",
+                "team": "dodgers",
+                "outcome": "overturned",
+                "result_desc": "Dansby Swanson called out on strikes.",
+                "batter": "Dansby Swanson",
+                "pitcher": "Edgardo Henriquez",
+                "game_pk": 824646
+            },
             {
                 "date": "2026-08-03",
                 "date_formatted": "August 3, 2026",
@@ -320,30 +344,6 @@
                 "batter": "Dalton Rushing",
                 "pitcher": "Cristopher S\u00e1nchez",
                 "game_pk": 823436
-            },
-            {
-                "date": "2026-07-20",
-                "date_formatted": "July 20, 2026",
-                "challenger": "Kyle Schwarber",
-                "role": "batting",
-                "team": "opponents",
-                "outcome": "confirmed",
-                "result_desc": "Kyle Schwarber called out on strikes.",
-                "batter": "Kyle Schwarber",
-                "pitcher": "Alex Vesia",
-                "game_pk": 823436
-            },
-            {
-                "date": "2026-07-19",
-                "date_formatted": "July 19, 2026",
-                "challenger": "Ali S\u00e1nchez",
-                "role": "catching",
-                "team": "opponents",
-                "outcome": "overturned",
-                "result_desc": "Mookie Betts called out on strikes.",
-                "batter": "Mookie Betts",
-                "pitcher": "Cam Schlittler",
-                "game_pk": 823523
             }
         ]
     }

@@ -1,8 +1,8 @@
 {
     "dodgers": {
         "batting": {
-            "total": 92,
-            "successful": 59,
+            "total": 93,
+            "successful": 60,
             "failed": 33
         },
         "pitching": {
@@ -34,6 +34,18 @@
         }
     },
     "challenge_log": [
+        {
+            "date": "2026-08-05",
+            "date_formatted": "August 5, 2026",
+            "challenger": "Tommy Edman",
+            "role": "batting",
+            "team": "dodgers",
+            "outcome": "overturned",
+            "result_desc": "Tommy Edman grounds out, first baseman Michael Busch to pitcher Jacob Webb.",
+            "batter": "Tommy Edman",
+            "pitcher": "Jacob Webb",
+            "game_pk": 824646
+        },
         {
             "date": "2026-08-04",
             "date_formatted": "August 4, 2026",
@@ -261,18 +273,6 @@
             "batter": "Josh Naylor",
             "pitcher": "Justin Wrobleski",
             "game_pk": 823923
-        },
-        {
-            "date": "2026-07-28",
-            "date_formatted": "July 28, 2026",
-            "challenger": "Dalton Rushing",
-            "role": "catching",
-            "team": "dodgers",
-            "outcome": "confirmed",
-            "result_desc": "J.P. Crawford strikes out swinging.",
-            "batter": "J.P. Crawford",
-            "pitcher": "Justin Wrobleski",
-            "game_pk": 823923
         }
     ],
     "dodgers_by_player": [
@@ -375,6 +375,13 @@
             "success_rate": 100.0
         },
         {
+            "challenger": "Tommy Edman",
+            "total": 1,
+            "successful": 1,
+            "failed": 0,
+            "success_rate": 100.0
+        },
+        {
             "challenger": "Tyler Glasnow",
             "total": 1,
             "successful": 1,
@@ -455,10 +462,10 @@
         },
         {
             "inning": 9,
-            "total": 27,
-            "successful": 16,
+            "total": 28,
+            "successful": 17,
             "failed": 11,
-            "success_rate": 59.3
+            "success_rate": 60.7
         }
     ]
 }
