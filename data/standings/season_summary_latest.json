@@ -26,7 +26,7 @@
     {
         "stat_label":"Games up\/back",
         "stat":"games_up_back",
-        "value":8,
+        "value":8.5,
         "category":"standings",
         "context_value":"1st",
         "context_value_label":"Division rank"
@@ -140,7 +140,7 @@
         "stat":"doubles",
         "value":189,
         "category":"batting",
-        "context_value":"9th",
+        "context_value":"10th",
         "context_value_label":"League rank"
     },
     {
@@ -194,7 +194,7 @@
     {
         "stat_label":"Last updated",
         "stat":"update_time",
-        "value":"August 6, 2026, 6:47 PM PT",
+        "value":"August 7, 2026, 2:05 AM PT",
         "category":"summary",
         "context_value":"",
         "context_value_label":""
@@ -202,7 +202,7 @@
     {
         "stat_label":"Team summary",
         "stat":"summary",
-        "value":"<span class='highlight'>LOS ANGELES<\/span> <span class='updated'>(August 6)<\/span> \u2014 The Dodgers have compiled a <span class='highlight'>69-46<\/span> record in the 2026 regular season, a <span class='highlight'>60%<\/span> winning percentage. The last game was a <span class='highlight'>6-7<\/span> away <span class='highlight'>loss<\/span> against the <span class='highlight'>Chicago Cubs<\/span>. The team next faces the <span class='highlight'>Arizona Diamondbacks<\/span> on Friday at 6:40 p.m. MST at <span class='highlight'>Chase Field<\/span>.",
+        "value":"<span class='highlight'>LOS ANGELES<\/span> <span class='updated'>(August 7)<\/span> \u2014 The Dodgers have compiled a <span class='highlight'>69-46<\/span> record in the 2026 regular season, a <span class='highlight'>60%<\/span> winning percentage. The last game was a <span class='highlight'>6-7<\/span> away <span class='highlight'>loss<\/span> against the <span class='highlight'>Chicago Cubs<\/span>. The team next faces the <span class='highlight'>Arizona Diamondbacks<\/span> on Friday at 6:40 p.m. MST at <span class='highlight'>Chase Field<\/span>.",
         "category":"summary",
         "context_value":"",
         "context_value_label":""
