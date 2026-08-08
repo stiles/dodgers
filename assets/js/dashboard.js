@@ -5192,19 +5192,37 @@ document.addEventListener('DOMContentLoaded', function () {
         .style('fill', c.color)
         .style('stroke', '#fff')
         .style('stroke-width', 1.5);
+    });
 
-      // Float the player's name near the end of their line, anchored left so
-      // long names like "Crow-Armstrong" extend into the plot and never clip
-      addEndLabel(
-        svg,
-        xScale(last.date) - 6,
-        yScale(last.value),
-        `${c.player} ${Math.round(last.value)}%`,
-        'anno-dodgers',
-        -9,
-        'end',
-        c.color
-      );
+    // Float each player's name near the end of their line, anchored left so
+    // long names like "Crow-Armstrong" extend into the plot and never clip.
+    // When odds converge (e.g. near 50/50) the end points land close
+    // together, so nudge overlapping labels apart vertically -- pushed just
+    // far enough to clear each other and recentered on their shared midpoint
+    // so neither one drifts away from its point more than necessary.
+    const labelGap = 14;
+    const labels = candidates
+      .map((c) => {
+        const last = c.points[c.points.length - 1];
+        const y = yScale(last.value);
+        return {
+          origY: y,
+          y,
+          x: xScale(last.date) - 6,
+          text: `${c.player} ${Math.round(last.value)}%`,
+          color: c.color,
+        };
+      })
+      .sort((a, b) => a.y - b.y);
+
+    for (let i = 1; i < labels.length; i++) {
+      labels[i].y = Math.max(labels[i].y, labels[i - 1].y + labelGap);
+    }
+    const drift = d3.mean(labels, (l) => l.y - l.origY);
+    labels.forEach((l) => (l.y -= drift));
+
+    labels.forEach((l) => {
+      addEndLabel(svg, l.x, l.y, l.text, 'anno-dodgers', -9, 'end', l.color);
     });
   }
 
