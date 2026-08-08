@@ -11,9 +11,9 @@
             "failed": 3
         },
         "catching": {
-            "total": 85,
-            "successful": 49,
-            "failed": 36
+            "total": 87,
+            "successful": 50,
+            "failed": 37
         }
     },
     "opponents": {
@@ -28,12 +28,72 @@
             "failed": 3
         },
         "catching": {
-            "total": 129,
-            "successful": 82,
-            "failed": 47
+            "total": 132,
+            "successful": 84,
+            "failed": 48
         }
     },
     "challenge_log": [
+        {
+            "date": "2026-08-07",
+            "date_formatted": "August 7, 2026",
+            "challenger": "Gabriel Moreno",
+            "role": "catching",
+            "team": "opponents",
+            "outcome": "confirmed",
+            "result_desc": "Shohei Ohtani grounds into a double play, second baseman Ketel Marte to shortstop Geraldo Perdomo to first baseman Tim Tawa. Miguel Rojas out at 2nd. Shohei Ohtani out at 1st.",
+            "batter": "Shohei Ohtani",
+            "pitcher": "Brandyn Garcia",
+            "game_pk": 825051
+        },
+        {
+            "date": "2026-08-07",
+            "date_formatted": "August 7, 2026",
+            "challenger": "Gabriel Moreno",
+            "role": "catching",
+            "team": "opponents",
+            "outcome": "overturned",
+            "result_desc": "Miguel Rojas singles on a line drive to center fielder Ryan Waldschmidt. Kyle Tucker to 3rd. Tommy Edman to 2nd.",
+            "batter": "Miguel Rojas",
+            "pitcher": "Brandyn Garcia",
+            "game_pk": 825051
+        },
+        {
+            "date": "2026-08-07",
+            "date_formatted": "August 7, 2026",
+            "challenger": "Gabriel Moreno",
+            "role": "catching",
+            "team": "opponents",
+            "outcome": "overturned",
+            "result_desc": "Mookie Betts singles on a ground ball to left fielder Max Kepler.",
+            "batter": "Mookie Betts",
+            "pitcher": "Taylor Clarke",
+            "game_pk": 825051
+        },
+        {
+            "date": "2026-08-07",
+            "date_formatted": "August 7, 2026",
+            "challenger": "Hunter Feduccia",
+            "role": "catching",
+            "team": "dodgers",
+            "outcome": "confirmed",
+            "result_desc": "Ryan Waldschmidt strikes out swinging.",
+            "batter": "Ryan Waldschmidt",
+            "pitcher": "Roki Sasaki",
+            "game_pk": 825051
+        },
+        {
+            "date": "2026-08-07",
+            "date_formatted": "August 7, 2026",
+            "challenger": "Hunter Feduccia",
+            "role": "catching",
+            "team": "dodgers",
+            "outcome": "overturned",
+            "result_desc": "Corbin Carroll grounds out to first baseman Freddie Freeman.",
+            "batter": "Corbin Carroll",
+            "pitcher": "Roki Sasaki",
+            "game_pk": 825051
+        },
         {
             "date": "2026-08-05",
             "date_formatted": "August 5, 2026",
@@ -109,18 +169,6 @@
         {
             "date": "2026-08-02",
             "date_formatted": "August 2, 2026",
-            "challenger": "Caleb Durbin",
-            "role": "batting",
-            "team": "opponents",
-            "outcome": "overturned",
-            "result_desc": "Caleb Durbin walks. Masataka Yoshida to 2nd.",
-            "batter": "Caleb Durbin",
-            "pitcher": "Wyatt Mills",
-            "game_pk": 823919
-        },
-        {
-            "date": "2026-08-02",
-            "date_formatted": "August 2, 2026",
             "challenger": "Eliezer Alfonzo",
             "role": "catching",
             "team": "dodgers",
@@ -140,6 +188,18 @@
             "result_desc": "Kyle Tucker singles on a line drive to center fielder Ceddanne Rafaela.",
             "batter": "Kyle Tucker",
             "pitcher": "Jake Bennett",
+            "game_pk": 823919
+        },
+        {
+            "date": "2026-08-02",
+            "date_formatted": "August 2, 2026",
+            "challenger": "Caleb Durbin",
+            "role": "batting",
+            "team": "opponents",
+            "outcome": "overturned",
+            "result_desc": "Caleb Durbin walks. Masataka Yoshida to 2nd.",
+            "batter": "Caleb Durbin",
+            "pitcher": "Wyatt Mills",
             "game_pk": 823919
         },
         {
@@ -181,18 +241,6 @@
         {
             "date": "2026-07-31",
             "date_formatted": "July 31, 2026",
-            "challenger": "Mookie Betts",
-            "role": "batting",
-            "team": "dodgers",
-            "outcome": "confirmed",
-            "result_desc": "Mookie Betts called out on strikes.",
-            "batter": "Mookie Betts",
-            "pitcher": "Ranger Suarez",
-            "game_pk": 823922
-        },
-        {
-            "date": "2026-07-31",
-            "date_formatted": "July 31, 2026",
             "challenger": "Max Muncy",
             "role": "batting",
             "team": "dodgers",
@@ -200,6 +248,18 @@
             "result_desc": "Max Muncy grounds out, first baseman Nick Sogard to pitcher Brayan Bello.",
             "batter": "Max Muncy",
             "pitcher": "Brayan Bello",
+            "game_pk": 823922
+        },
+        {
+            "date": "2026-07-31",
+            "date_formatted": "July 31, 2026",
+            "challenger": "Mookie Betts",
+            "role": "batting",
+            "team": "dodgers",
+            "outcome": "confirmed",
+            "result_desc": "Mookie Betts called out on strikes.",
+            "batter": "Mookie Betts",
+            "pitcher": "Ranger Suarez",
             "game_pk": 823922
         },
         {
@@ -213,66 +273,6 @@
             "batter": "Josh Naylor",
             "pitcher": "Tanner Scott",
             "game_pk": 823921
-        },
-        {
-            "date": "2026-07-30",
-            "date_formatted": "July 30, 2026",
-            "challenger": "Cal Raleigh",
-            "role": "catching",
-            "team": "opponents",
-            "outcome": "overturned",
-            "result_desc": "Andy Pages grounds out, shortstop Colt Emerson to first baseman Josh Naylor.",
-            "batter": "Andy Pages",
-            "pitcher": "Alex Hoppe",
-            "game_pk": 823921
-        },
-        {
-            "date": "2026-07-30",
-            "date_formatted": "July 30, 2026",
-            "challenger": "Mookie Betts",
-            "role": "batting",
-            "team": "dodgers",
-            "outcome": "overturned",
-            "result_desc": "Mookie Betts called out on strikes.",
-            "batter": "Mookie Betts",
-            "pitcher": "Alex Hoppe",
-            "game_pk": 823921
-        },
-        {
-            "date": "2026-07-30",
-            "date_formatted": "July 30, 2026",
-            "challenger": "Cal Raleigh",
-            "role": "catching",
-            "team": "opponents",
-            "outcome": "confirmed",
-            "result_desc": "Kyle Tucker flies out to left fielder Randy Arozarena.",
-            "batter": "Kyle Tucker",
-            "pitcher": "Bryan Woo",
-            "game_pk": 823921
-        },
-        {
-            "date": "2026-07-29",
-            "date_formatted": "July 29, 2026",
-            "challenger": "Dalton Rushing",
-            "role": "catching",
-            "team": "dodgers",
-            "outcome": "confirmed",
-            "result_desc": "Luke Raley lines out to first baseman Freddie Freeman.",
-            "batter": "Luke Raley",
-            "pitcher": "Edwin D\u00edaz",
-            "game_pk": 823924
-        },
-        {
-            "date": "2026-07-28",
-            "date_formatted": "July 28, 2026",
-            "challenger": "Josh Naylor",
-            "role": "batting",
-            "team": "opponents",
-            "outcome": "overturned",
-            "result_desc": "Josh Naylor singles on a line drive to right fielder Kyle Tucker.",
-            "batter": "Josh Naylor",
-            "pitcher": "Justin Wrobleski",
-            "game_pk": 823923
         }
     ],
     "dodgers_by_player": [
@@ -368,6 +368,13 @@
             "success_rate": 50.0
         },
         {
+            "challenger": "Hunter Feduccia",
+            "total": 2,
+            "successful": 1,
+            "failed": 1,
+            "success_rate": 50.0
+        },
+        {
             "challenger": "Chuckie Robinson",
             "total": 1,
             "successful": 1,
@@ -406,10 +413,10 @@
     "dodgers_by_inning": [
         {
             "inning": 1,
-            "total": 14,
-            "successful": 10,
+            "total": 15,
+            "successful": 11,
             "failed": 4,
-            "success_rate": 71.4
+            "success_rate": 73.3
         },
         {
             "inning": 2,
@@ -434,10 +441,10 @@
         },
         {
             "inning": 5,
-            "total": 9,
+            "total": 10,
             "successful": 7,
-            "failed": 2,
-            "success_rate": 77.8
+            "failed": 3,
+            "success_rate": 70.0
         },
         {
             "inning": 6,

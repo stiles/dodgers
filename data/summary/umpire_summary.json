@@ -1,17 +1,17 @@
 {
     "season_summary": {
-        "correct_strikes_pct": 90.65613191343182,
-        "incorrect_strikes_pct": 9.343868086568179,
-        "total_called_strikes": 2911,
-        "bad_calls_count": 272
+        "correct_strikes_pct": 90.61753667690208,
+        "incorrect_strikes_pct": 9.382463323097923,
+        "total_called_strikes": 2931,
+        "bad_calls_count": 275
     },
     "last_game_summary": {
-        "date": "August 5, 2026",
-        "correct_strikes_pct": 80.95238095238095,
-        "incorrect_strikes_pct": 19.04761904761905,
-        "total_called_strikes": 21,
-        "bad_calls_count": 4,
-        "home_plate_umpire": "Erich Bacchus"
+        "date": "August 7, 2026",
+        "correct_strikes_pct": 85.0,
+        "incorrect_strikes_pct": 15.0,
+        "total_called_strikes": 20,
+        "bad_calls_count": 3,
+        "home_plate_umpire": "Bruce Dreckman"
     },
     "worst_calls_of_season": [
         {
@@ -56,25 +56,25 @@
         }
     ],
     "pitching_season_summary": {
-        "correct_balls_pct": 96.20944992947814,
-        "incorrect_balls_pct": 3.79055007052186,
-        "total_called_balls": 5672,
-        "bad_calls_count": 215
+        "correct_balls_pct": 96.22113365990202,
+        "incorrect_balls_pct": 3.778866340097977,
+        "total_called_balls": 5716,
+        "bad_calls_count": 216
     },
     "pitching_last_game_summary": {
-        "date": "August 5, 2026",
-        "correct_balls_pct": 95.23809523809523,
-        "incorrect_balls_pct": 4.761904761904773,
-        "total_called_balls": 42,
-        "bad_calls_count": 2
+        "date": "August 7, 2026",
+        "correct_balls_pct": 97.72727272727273,
+        "incorrect_balls_pct": 2.2727272727272663,
+        "total_called_balls": 44,
+        "bad_calls_count": 1
     },
     "pitching_worst_calls_of_season": [],
     "abs_challenges": {
         "dodgers": {
             "batting": {
-                "total": 41,
+                "total": 42,
                 "successful": 12,
-                "failed": 29
+                "failed": 30
             },
             "pitching": {
                 "total": 0,
@@ -105,6 +105,18 @@
             }
         },
         "challenge_log": [
+            {
+                "date": "2026-08-07",
+                "date_formatted": "August 7, 2026",
+                "challenger": "Tommy Edman",
+                "role": "batting",
+                "team": "dodgers",
+                "outcome": "confirmed",
+                "result_desc": "Tommy Edman called out on strikes.",
+                "batter": "Tommy Edman",
+                "pitcher": "Kevin Ginkel",
+                "game_pk": 825051
+            },
             {
                 "date": "2026-08-05",
                 "date_formatted": "August 5, 2026",
@@ -332,18 +344,6 @@
                 "batter": "Dalton Rushing",
                 "pitcher": "Orion Kerkering",
                 "game_pk": 823438
-            },
-            {
-                "date": "2026-07-20",
-                "date_formatted": "July 20, 2026",
-                "challenger": "J.T. Realmuto",
-                "role": "catching",
-                "team": "opponents",
-                "outcome": "overturned",
-                "result_desc": "Dalton Rushing called out on strikes.",
-                "batter": "Dalton Rushing",
-                "pitcher": "Cristopher S\u00e1nchez",
-                "game_pk": 823436
             }
         ]
     }
