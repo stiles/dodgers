@@ -1,17 +1,17 @@
 {
     "season_summary": {
-        "correct_strikes_pct": 90.65040650406505,
-        "incorrect_strikes_pct": 9.349593495934954,
-        "total_called_strikes": 2952,
-        "bad_calls_count": 276
+        "correct_strikes_pct": 90.59656218402426,
+        "incorrect_strikes_pct": 9.403437815975735,
+        "total_called_strikes": 2967,
+        "bad_calls_count": 279
     },
     "last_game_summary": {
-        "date": "August 8, 2026",
-        "correct_strikes_pct": 95.23809523809523,
-        "incorrect_strikes_pct": 4.761904761904773,
-        "total_called_strikes": 21,
-        "bad_calls_count": 1,
-        "home_plate_umpire": "Nate Tomlinson"
+        "date": "August 9, 2026",
+        "correct_strikes_pct": 80.0,
+        "incorrect_strikes_pct": 20.0,
+        "total_called_strikes": 15,
+        "bad_calls_count": 3,
+        "home_plate_umpire": "Carlos Torres"
     },
     "worst_calls_of_season": [
         {
@@ -56,25 +56,25 @@
         }
     ],
     "pitching_season_summary": {
-        "correct_balls_pct": 96.21826972888967,
-        "incorrect_balls_pct": 3.7817302711103338,
-        "total_called_balls": 5791,
-        "bad_calls_count": 219
+        "correct_balls_pct": 96.21315969842358,
+        "incorrect_balls_pct": 3.7868403015764187,
+        "total_called_balls": 5836,
+        "bad_calls_count": 221
     },
     "pitching_last_game_summary": {
-        "date": "August 8, 2026",
-        "correct_balls_pct": 96.0,
-        "incorrect_balls_pct": 4.0,
-        "total_called_balls": 75,
-        "bad_calls_count": 3
+        "date": "August 9, 2026",
+        "correct_balls_pct": 95.55555555555556,
+        "incorrect_balls_pct": 4.444444444444443,
+        "total_called_balls": 45,
+        "bad_calls_count": 2
     },
     "pitching_worst_calls_of_season": [],
     "abs_challenges": {
         "dodgers": {
             "batting": {
-                "total": 42,
+                "total": 43,
                 "successful": 12,
-                "failed": 30
+                "failed": 31
             },
             "pitching": {
                 "total": 0,
@@ -105,6 +105,18 @@
             }
         },
         "challenge_log": [
+            {
+                "date": "2026-08-09",
+                "date_formatted": "August 9, 2026",
+                "challenger": "Shohei Ohtani",
+                "role": "batting",
+                "team": "dodgers",
+                "outcome": "confirmed",
+                "result_desc": "Shohei Ohtani called out on strikes.",
+                "batter": "Shohei Ohtani",
+                "pitcher": "Eduardo Rodriguez",
+                "game_pk": 825050
+            },
             {
                 "date": "2026-08-07",
                 "date_formatted": "August 7, 2026",
@@ -331,18 +343,6 @@
                 "result_desc": "Kyle Tucker called out on strikes.",
                 "batter": "Kyle Tucker",
                 "pitcher": "Seth Johnson",
-                "game_pk": 823438
-            },
-            {
-                "date": "2026-07-22",
-                "date_formatted": "July 22, 2026",
-                "challenger": "Dalton Rushing",
-                "role": "batting",
-                "team": "dodgers",
-                "outcome": "confirmed",
-                "result_desc": "Dalton Rushing called out on strikes.",
-                "batter": "Dalton Rushing",
-                "pitcher": "Orion Kerkering",
                 "game_pk": 823438
             }
         ]
