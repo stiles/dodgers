@@ -1,8 +1,8 @@
 {
     "dodgers": {
         "batting": {
-            "total": 93,
-            "successful": 60,
+            "total": 95,
+            "successful": 62,
             "failed": 33
         },
         "pitching": {
@@ -11,16 +11,16 @@
             "failed": 3
         },
         "catching": {
-            "total": 87,
-            "successful": 50,
-            "failed": 37
+            "total": 89,
+            "successful": 51,
+            "failed": 38
         }
     },
     "opponents": {
         "batting": {
-            "total": 100,
+            "total": 101,
             "successful": 52,
-            "failed": 48
+            "failed": 49
         },
         "pitching": {
             "total": 5,
@@ -34,6 +34,66 @@
         }
     },
     "challenge_log": [
+        {
+            "date": "2026-08-08",
+            "date_formatted": "August 8, 2026",
+            "challenger": "Teoscar Hern\u00e1ndez",
+            "role": "batting",
+            "team": "dodgers",
+            "outcome": "overturned",
+            "result_desc": "Teoscar Hern\u00e1ndez flies out to right fielder Corbin Carroll.",
+            "batter": "Teoscar Hern\u00e1ndez",
+            "pitcher": "Gerardo Carrillo",
+            "game_pk": 825049
+        },
+        {
+            "date": "2026-08-08",
+            "date_formatted": "August 8, 2026",
+            "challenger": "Hunter Feduccia",
+            "role": "catching",
+            "team": "dodgers",
+            "outcome": "confirmed",
+            "result_desc": "Gabriel Moreno lines out sharply to third baseman Max Muncy.",
+            "batter": "Gabriel Moreno",
+            "pitcher": "Edwin D\u00edaz",
+            "game_pk": 825049
+        },
+        {
+            "date": "2026-08-08",
+            "date_formatted": "August 8, 2026",
+            "challenger": "Hunter Feduccia",
+            "role": "catching",
+            "team": "dodgers",
+            "outcome": "overturned",
+            "result_desc": "James McCann walks.",
+            "batter": "James McCann",
+            "pitcher": "Alex Vesia",
+            "game_pk": 825049
+        },
+        {
+            "date": "2026-08-08",
+            "date_formatted": "August 8, 2026",
+            "challenger": "Hunter Feduccia",
+            "role": "batting",
+            "team": "dodgers",
+            "outcome": "overturned",
+            "result_desc": "Hunter Feduccia lines out sharply to center fielder Ryan Waldschmidt.",
+            "batter": "Hunter Feduccia",
+            "pitcher": "Brandon Pfaadt",
+            "game_pk": 825049
+        },
+        {
+            "date": "2026-08-08",
+            "date_formatted": "August 8, 2026",
+            "challenger": "Geraldo Perdomo",
+            "role": "batting",
+            "team": "opponents",
+            "outcome": "confirmed",
+            "result_desc": "Geraldo Perdomo called out on strikes.",
+            "batter": "Geraldo Perdomo",
+            "pitcher": "Yoshinobu Yamamoto",
+            "game_pk": 825049
+        },
         {
             "date": "2026-08-07",
             "date_formatted": "August 7, 2026",
@@ -169,6 +229,18 @@
         {
             "date": "2026-08-02",
             "date_formatted": "August 2, 2026",
+            "challenger": "Caleb Durbin",
+            "role": "batting",
+            "team": "opponents",
+            "outcome": "overturned",
+            "result_desc": "Caleb Durbin walks. Masataka Yoshida to 2nd.",
+            "batter": "Caleb Durbin",
+            "pitcher": "Wyatt Mills",
+            "game_pk": 823919
+        },
+        {
+            "date": "2026-08-02",
+            "date_formatted": "August 2, 2026",
             "challenger": "Eliezer Alfonzo",
             "role": "catching",
             "team": "dodgers",
@@ -191,18 +263,6 @@
             "game_pk": 823919
         },
         {
-            "date": "2026-08-02",
-            "date_formatted": "August 2, 2026",
-            "challenger": "Caleb Durbin",
-            "role": "batting",
-            "team": "opponents",
-            "outcome": "overturned",
-            "result_desc": "Caleb Durbin walks. Masataka Yoshida to 2nd.",
-            "batter": "Caleb Durbin",
-            "pitcher": "Wyatt Mills",
-            "game_pk": 823919
-        },
-        {
             "date": "2026-08-01",
             "date_formatted": "August 1, 2026",
             "challenger": "Anthony Seigler",
@@ -213,66 +273,6 @@
             "batter": "Anthony Seigler",
             "pitcher": "Yoshinobu Yamamoto",
             "game_pk": 823920
-        },
-        {
-            "date": "2026-08-01",
-            "date_formatted": "August 1, 2026",
-            "challenger": "Connor Wong",
-            "role": "catching",
-            "team": "opponents",
-            "outcome": "confirmed",
-            "result_desc": "Max Muncy called out on strikes.",
-            "batter": "Max Muncy",
-            "pitcher": "Payton Tolle",
-            "game_pk": 823920
-        },
-        {
-            "date": "2026-08-01",
-            "date_formatted": "August 1, 2026",
-            "challenger": "Connor Wong",
-            "role": "batting",
-            "team": "opponents",
-            "outcome": "overturned",
-            "result_desc": "Connor Wong flies out sharply to center fielder Andy Pages.",
-            "batter": "Connor Wong",
-            "pitcher": "Yoshinobu Yamamoto",
-            "game_pk": 823920
-        },
-        {
-            "date": "2026-07-31",
-            "date_formatted": "July 31, 2026",
-            "challenger": "Max Muncy",
-            "role": "batting",
-            "team": "dodgers",
-            "outcome": "overturned",
-            "result_desc": "Max Muncy grounds out, first baseman Nick Sogard to pitcher Brayan Bello.",
-            "batter": "Max Muncy",
-            "pitcher": "Brayan Bello",
-            "game_pk": 823922
-        },
-        {
-            "date": "2026-07-31",
-            "date_formatted": "July 31, 2026",
-            "challenger": "Mookie Betts",
-            "role": "batting",
-            "team": "dodgers",
-            "outcome": "confirmed",
-            "result_desc": "Mookie Betts called out on strikes.",
-            "batter": "Mookie Betts",
-            "pitcher": "Ranger Suarez",
-            "game_pk": 823922
-        },
-        {
-            "date": "2026-07-30",
-            "date_formatted": "July 30, 2026",
-            "challenger": "Josh Naylor",
-            "role": "batting",
-            "team": "opponents",
-            "outcome": "confirmed",
-            "result_desc": "Josh Naylor singles on a fly ball to right fielder Kyle Tucker.",
-            "batter": "Josh Naylor",
-            "pitcher": "Tanner Scott",
-            "game_pk": 823921
         }
     ],
     "dodgers_by_player": [
@@ -299,10 +299,10 @@
         },
         {
             "challenger": "Teoscar Hern\u00e1ndez",
-            "total": 10,
-            "successful": 9,
+            "total": 11,
+            "successful": 10,
             "failed": 1,
-            "success_rate": 90.0
+            "success_rate": 90.9
         },
         {
             "challenger": "Mookie Betts",
@@ -340,6 +340,13 @@
             "success_rate": 83.3
         },
         {
+            "challenger": "Hunter Feduccia",
+            "total": 5,
+            "successful": 3,
+            "failed": 2,
+            "success_rate": 60.0
+        },
+        {
             "challenger": "Eliezer Alfonzo",
             "total": 4,
             "successful": 2,
@@ -362,13 +369,6 @@
         },
         {
             "challenger": "Alex Freeland",
-            "total": 2,
-            "successful": 1,
-            "failed": 1,
-            "success_rate": 50.0
-        },
-        {
-            "challenger": "Hunter Feduccia",
             "total": 2,
             "successful": 1,
             "failed": 1,
@@ -448,17 +448,17 @@
         },
         {
             "inning": 6,
-            "total": 24,
-            "successful": 16,
+            "total": 25,
+            "successful": 17,
             "failed": 8,
-            "success_rate": 66.7
+            "success_rate": 68.0
         },
         {
             "inning": 7,
-            "total": 18,
-            "successful": 9,
+            "total": 19,
+            "successful": 10,
             "failed": 9,
-            "success_rate": 50.0
+            "success_rate": 52.6
         },
         {
             "inning": 8,
@@ -469,10 +469,17 @@
         },
         {
             "inning": 9,
-            "total": 28,
+            "total": 29,
             "successful": 17,
-            "failed": 11,
-            "success_rate": 60.7
+            "failed": 12,
+            "success_rate": 58.6
+        },
+        {
+            "inning": 10,
+            "total": 1,
+            "successful": 1,
+            "failed": 0,
+            "success_rate": 100.0
         }
     ]
 }
