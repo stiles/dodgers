@@ -1,13 +1,5 @@
 [
     {
-        "date":"Jul 30",
-        "opp_name":"Seattle Mariners",
-        "home_away":"home",
-        "result":"win",
-        "placement":"last",
-        "game_start":"6-2"
-    },
-    {
         "date":"Jul 31",
         "opp_name":"Boston Red Sox",
         "home_away":"home",
@@ -80,20 +72,20 @@
         "game_start":"2-4"
     },
     {
+        "date":"Aug 10",
+        "opp_name":"Kansas City Royals",
+        "home_away":"home",
+        "result":"win",
+        "placement":"last",
+        "game_start":"6-5"
+    },
+    {
         "date":"Jul 18",
         "opp_name":"New York Yankees",
         "home_away":"away",
         "result":"--",
         "placement":"next",
         "game_start":"Postponed"
-    },
-    {
-        "date":"Aug 10",
-        "opp_name":"Kansas City Royals",
-        "home_away":"home",
-        "result":"--",
-        "placement":"next",
-        "game_start":"7:10 PM"
     },
     {
         "date":"Aug 11",
@@ -153,6 +145,14 @@
     },
     {
         "date":"Aug 18",
+        "opp_name":"Colorado Rockies",
+        "home_away":"away",
+        "result":"--",
+        "placement":"next",
+        "game_start":"5:40 PM"
+    },
+    {
+        "date":"Aug 19",
         "opp_name":"Colorado Rockies",
         "home_away":"away",
         "result":"--",

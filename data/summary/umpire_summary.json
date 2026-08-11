@@ -1,17 +1,17 @@
 {
     "season_summary": {
-        "correct_strikes_pct": 90.59656218402426,
-        "incorrect_strikes_pct": 9.403437815975735,
-        "total_called_strikes": 2967,
-        "bad_calls_count": 279
+        "correct_strikes_pct": 90.589417280643,
+        "incorrect_strikes_pct": 9.410582719356995,
+        "total_called_strikes": 2986,
+        "bad_calls_count": 281
     },
     "last_game_summary": {
-        "date": "August 9, 2026",
-        "correct_strikes_pct": 80.0,
-        "incorrect_strikes_pct": 20.0,
-        "total_called_strikes": 15,
-        "bad_calls_count": 3,
-        "home_plate_umpire": "Carlos Torres"
+        "date": "August 10, 2026",
+        "correct_strikes_pct": 89.47368421052632,
+        "incorrect_strikes_pct": 10.526315789473685,
+        "total_called_strikes": 19,
+        "bad_calls_count": 2,
+        "home_plate_umpire": "John Bacon"
     },
     "worst_calls_of_season": [
         {
@@ -56,17 +56,17 @@
         }
     ],
     "pitching_season_summary": {
-        "correct_balls_pct": 96.21315969842358,
-        "incorrect_balls_pct": 3.7868403015764187,
-        "total_called_balls": 5836,
-        "bad_calls_count": 221
+        "correct_balls_pct": 96.18853156372299,
+        "incorrect_balls_pct": 3.8114684362770106,
+        "total_called_balls": 5877,
+        "bad_calls_count": 224
     },
     "pitching_last_game_summary": {
-        "date": "August 9, 2026",
-        "correct_balls_pct": 95.55555555555556,
-        "incorrect_balls_pct": 4.444444444444443,
-        "total_called_balls": 45,
-        "bad_calls_count": 2
+        "date": "August 10, 2026",
+        "correct_balls_pct": 92.6829268292683,
+        "incorrect_balls_pct": 7.317073170731703,
+        "total_called_balls": 41,
+        "bad_calls_count": 3
     },
     "pitching_worst_calls_of_season": [],
     "abs_challenges": {
@@ -89,8 +89,8 @@
         },
         "opponents": {
             "batting": {
-                "total": 27,
-                "successful": 7,
+                "total": 28,
+                "successful": 8,
                 "failed": 20
             },
             "pitching": {
@@ -105,6 +105,18 @@
             }
         },
         "challenge_log": [
+            {
+                "date": "2026-08-10",
+                "date_formatted": "August 10, 2026",
+                "challenger": "Bobby Witt Jr.",
+                "role": "batting",
+                "team": "opponents",
+                "outcome": "overturned",
+                "result_desc": "Bobby Witt Jr. walks. Nick Loftin to 2nd.",
+                "batter": "Bobby Witt Jr.",
+                "pitcher": "Tarik Skubal",
+                "game_pk": 823918
+            },
             {
                 "date": "2026-08-09",
                 "date_formatted": "August 9, 2026",
@@ -332,18 +344,6 @@
                 "batter": "Andy Pages",
                 "pitcher": "Brooks Raley",
                 "game_pk": 823601
-            },
-            {
-                "date": "2026-07-22",
-                "date_formatted": "July 22, 2026",
-                "challenger": "Rafael March\u00e1n",
-                "role": "catching",
-                "team": "opponents",
-                "outcome": "overturned",
-                "result_desc": "Kyle Tucker called out on strikes.",
-                "batter": "Kyle Tucker",
-                "pitcher": "Seth Johnson",
-                "game_pk": 823438
             }
         ]
     }

@@ -1,9 +1,9 @@
 {
     "dodgers": {
         "batting": {
-            "total": 95,
+            "total": 97,
             "successful": 62,
-            "failed": 33
+            "failed": 35
         },
         "pitching": {
             "total": 5,
@@ -28,12 +28,48 @@
             "failed": 3
         },
         "catching": {
-            "total": 132,
+            "total": 133,
             "successful": 84,
-            "failed": 48
+            "failed": 49
         }
     },
     "challenge_log": [
+        {
+            "date": "2026-08-10",
+            "date_formatted": "August 10, 2026",
+            "challenger": "Salvador Perez",
+            "role": "catching",
+            "team": "opponents",
+            "outcome": "confirmed",
+            "result_desc": "Kyle Tucker flies out to shortstop Bobby Witt Jr.",
+            "batter": "Kyle Tucker",
+            "pitcher": "Jose Cuas",
+            "game_pk": 823918
+        },
+        {
+            "date": "2026-08-10",
+            "date_formatted": "August 10, 2026",
+            "challenger": "Miguel Rojas",
+            "role": "batting",
+            "team": "dodgers",
+            "outcome": "confirmed",
+            "result_desc": "Miguel Rojas grounds out sharply, shortstop Bobby Witt Jr. to first baseman Jac Caglianone.",
+            "batter": "Miguel Rojas",
+            "pitcher": "Noah Cameron",
+            "game_pk": 823918
+        },
+        {
+            "date": "2026-08-10",
+            "date_formatted": "August 10, 2026",
+            "challenger": "Andy Pages",
+            "role": "batting",
+            "team": "dodgers",
+            "outcome": "confirmed",
+            "result_desc": "Andy Pages grounds out, third baseman Nick Loftin to first baseman Jac Caglianone.",
+            "batter": "Andy Pages",
+            "pitcher": "Noah Cameron",
+            "game_pk": 823918
+        },
         {
             "date": "2026-08-08",
             "date_formatted": "August 8, 2026",
@@ -100,30 +136,6 @@
             "challenger": "Gabriel Moreno",
             "role": "catching",
             "team": "opponents",
-            "outcome": "confirmed",
-            "result_desc": "Shohei Ohtani grounds into a double play, second baseman Ketel Marte to shortstop Geraldo Perdomo to first baseman Tim Tawa. Miguel Rojas out at 2nd. Shohei Ohtani out at 1st.",
-            "batter": "Shohei Ohtani",
-            "pitcher": "Brandyn Garcia",
-            "game_pk": 825051
-        },
-        {
-            "date": "2026-08-07",
-            "date_formatted": "August 7, 2026",
-            "challenger": "Gabriel Moreno",
-            "role": "catching",
-            "team": "opponents",
-            "outcome": "overturned",
-            "result_desc": "Miguel Rojas singles on a line drive to center fielder Ryan Waldschmidt. Kyle Tucker to 3rd. Tommy Edman to 2nd.",
-            "batter": "Miguel Rojas",
-            "pitcher": "Brandyn Garcia",
-            "game_pk": 825051
-        },
-        {
-            "date": "2026-08-07",
-            "date_formatted": "August 7, 2026",
-            "challenger": "Gabriel Moreno",
-            "role": "catching",
-            "team": "opponents",
             "outcome": "overturned",
             "result_desc": "Mookie Betts singles on a ground ball to left fielder Max Kepler.",
             "batter": "Mookie Betts",
@@ -152,6 +164,30 @@
             "result_desc": "Corbin Carroll grounds out to first baseman Freddie Freeman.",
             "batter": "Corbin Carroll",
             "pitcher": "Roki Sasaki",
+            "game_pk": 825051
+        },
+        {
+            "date": "2026-08-07",
+            "date_formatted": "August 7, 2026",
+            "challenger": "Gabriel Moreno",
+            "role": "catching",
+            "team": "opponents",
+            "outcome": "overturned",
+            "result_desc": "Miguel Rojas singles on a line drive to center fielder Ryan Waldschmidt. Kyle Tucker to 3rd. Tommy Edman to 2nd.",
+            "batter": "Miguel Rojas",
+            "pitcher": "Brandyn Garcia",
+            "game_pk": 825051
+        },
+        {
+            "date": "2026-08-07",
+            "date_formatted": "August 7, 2026",
+            "challenger": "Gabriel Moreno",
+            "role": "catching",
+            "team": "opponents",
+            "outcome": "confirmed",
+            "result_desc": "Shohei Ohtani grounds into a double play, second baseman Ketel Marte to shortstop Geraldo Perdomo to first baseman Tim Tawa. Miguel Rojas out at 2nd. Shohei Ohtani out at 1st.",
+            "batter": "Shohei Ohtani",
+            "pitcher": "Brandyn Garcia",
             "game_pk": 825051
         },
         {
@@ -237,42 +273,6 @@
             "batter": "Caleb Durbin",
             "pitcher": "Wyatt Mills",
             "game_pk": 823919
-        },
-        {
-            "date": "2026-08-02",
-            "date_formatted": "August 2, 2026",
-            "challenger": "Eliezer Alfonzo",
-            "role": "catching",
-            "team": "dodgers",
-            "outcome": "confirmed",
-            "result_desc": "Wilyer Abreu walks.",
-            "batter": "Wilyer Abreu",
-            "pitcher": "Kyle Hurt",
-            "game_pk": 823919
-        },
-        {
-            "date": "2026-08-02",
-            "date_formatted": "August 2, 2026",
-            "challenger": "Kyle Tucker",
-            "role": "batting",
-            "team": "dodgers",
-            "outcome": "overturned",
-            "result_desc": "Kyle Tucker singles on a line drive to center fielder Ceddanne Rafaela.",
-            "batter": "Kyle Tucker",
-            "pitcher": "Jake Bennett",
-            "game_pk": 823919
-        },
-        {
-            "date": "2026-08-01",
-            "date_formatted": "August 1, 2026",
-            "challenger": "Anthony Seigler",
-            "role": "batting",
-            "team": "opponents",
-            "outcome": "overturned",
-            "result_desc": "Anthony Seigler lines out to left fielder Enrique Hern\u00e1ndez.",
-            "batter": "Anthony Seigler",
-            "pitcher": "Yoshinobu Yamamoto",
-            "game_pk": 823920
         }
     ],
     "dodgers_by_player": [
@@ -292,10 +292,10 @@
         },
         {
             "challenger": "Andy Pages",
-            "total": 18,
+            "total": 19,
             "successful": 10,
-            "failed": 8,
-            "success_rate": 55.6
+            "failed": 9,
+            "success_rate": 52.6
         },
         {
             "challenger": "Teoscar Hern\u00e1ndez",
@@ -334,10 +334,10 @@
         },
         {
             "challenger": "Miguel Rojas",
-            "total": 6,
+            "total": 7,
             "successful": 5,
-            "failed": 1,
-            "success_rate": 83.3
+            "failed": 2,
+            "success_rate": 71.4
         },
         {
             "challenger": "Hunter Feduccia",
@@ -427,17 +427,17 @@
         },
         {
             "inning": 3,
-            "total": 15,
+            "total": 16,
             "successful": 8,
-            "failed": 7,
-            "success_rate": 53.3
+            "failed": 8,
+            "success_rate": 50.0
         },
         {
             "inning": 4,
-            "total": 16,
+            "total": 17,
             "successful": 9,
-            "failed": 7,
-            "success_rate": 56.2
+            "failed": 8,
+            "success_rate": 52.9
         },
         {
             "inning": 5,
