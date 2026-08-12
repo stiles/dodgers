@@ -1,9 +1,9 @@
 {
     "dodgers": {
         "batting": {
-            "total": 97,
+            "total": 98,
             "successful": 62,
-            "failed": 35
+            "failed": 36
         },
         "pitching": {
             "total": 5,
@@ -11,16 +11,16 @@
             "failed": 3
         },
         "catching": {
-            "total": 89,
-            "successful": 51,
-            "failed": 38
+            "total": 91,
+            "successful": 52,
+            "failed": 39
         }
     },
     "opponents": {
         "batting": {
-            "total": 101,
-            "successful": 52,
-            "failed": 49
+            "total": 104,
+            "successful": 54,
+            "failed": 50
         },
         "pitching": {
             "total": 5,
@@ -34,6 +34,78 @@
         }
     },
     "challenge_log": [
+        {
+            "date": "2026-08-11",
+            "date_formatted": "August 11, 2026",
+            "challenger": "Hunter Feduccia",
+            "role": "catching",
+            "team": "dodgers",
+            "outcome": "overturned",
+            "result_desc": "Salvador Perez grounds out, second baseman Tommy Edman to first baseman Freddie Freeman.",
+            "batter": "Salvador Perez",
+            "pitcher": "Seth Halvorsen",
+            "game_pk": 823917
+        },
+        {
+            "date": "2026-08-11",
+            "date_formatted": "August 11, 2026",
+            "challenger": "Michael Massey",
+            "role": "batting",
+            "team": "opponents",
+            "outcome": "overturned",
+            "result_desc": "Michael Massey strikes out swinging.",
+            "batter": "Michael Massey",
+            "pitcher": "Jack Dreyer",
+            "game_pk": 823917
+        },
+        {
+            "date": "2026-08-11",
+            "date_formatted": "August 11, 2026",
+            "challenger": "Tommy Edman",
+            "role": "batting",
+            "team": "dodgers",
+            "outcome": "confirmed",
+            "result_desc": "Tommy Edman flies out to center fielder Kyle Isbel. Mookie Betts to 3rd.",
+            "batter": "Tommy Edman",
+            "pitcher": "Michael Wacha",
+            "game_pk": 823917
+        },
+        {
+            "date": "2026-08-11",
+            "date_formatted": "August 11, 2026",
+            "challenger": "Ben Rortvedt",
+            "role": "catching",
+            "team": "dodgers",
+            "outcome": "confirmed",
+            "result_desc": "Tyler Tolbert walks.",
+            "batter": "Tyler Tolbert",
+            "pitcher": "Alex Vesia",
+            "game_pk": 823917
+        },
+        {
+            "date": "2026-08-11",
+            "date_formatted": "August 11, 2026",
+            "challenger": "Carter Jensen",
+            "role": "batting",
+            "team": "opponents",
+            "outcome": "confirmed",
+            "result_desc": "Carter Jensen flies out to center fielder Andy Pages.",
+            "batter": "Carter Jensen",
+            "pitcher": "Alex Vesia",
+            "game_pk": 823917
+        },
+        {
+            "date": "2026-08-11",
+            "date_formatted": "August 11, 2026",
+            "challenger": "Nick Loftin",
+            "role": "batting",
+            "team": "opponents",
+            "outcome": "overturned",
+            "result_desc": "Nick Loftin strikes out swinging.",
+            "batter": "Nick Loftin",
+            "pitcher": "Blake Snell",
+            "game_pk": 823917
+        },
         {
             "date": "2026-08-10",
             "date_formatted": "August 10, 2026",
@@ -73,30 +145,6 @@
         {
             "date": "2026-08-08",
             "date_formatted": "August 8, 2026",
-            "challenger": "Teoscar Hern\u00e1ndez",
-            "role": "batting",
-            "team": "dodgers",
-            "outcome": "overturned",
-            "result_desc": "Teoscar Hern\u00e1ndez flies out to right fielder Corbin Carroll.",
-            "batter": "Teoscar Hern\u00e1ndez",
-            "pitcher": "Gerardo Carrillo",
-            "game_pk": 825049
-        },
-        {
-            "date": "2026-08-08",
-            "date_formatted": "August 8, 2026",
-            "challenger": "Hunter Feduccia",
-            "role": "catching",
-            "team": "dodgers",
-            "outcome": "confirmed",
-            "result_desc": "Gabriel Moreno lines out sharply to third baseman Max Muncy.",
-            "batter": "Gabriel Moreno",
-            "pitcher": "Edwin D\u00edaz",
-            "game_pk": 825049
-        },
-        {
-            "date": "2026-08-08",
-            "date_formatted": "August 8, 2026",
             "challenger": "Hunter Feduccia",
             "role": "catching",
             "team": "dodgers",
@@ -104,6 +152,18 @@
             "result_desc": "James McCann walks.",
             "batter": "James McCann",
             "pitcher": "Alex Vesia",
+            "game_pk": 825049
+        },
+        {
+            "date": "2026-08-08",
+            "date_formatted": "August 8, 2026",
+            "challenger": "Geraldo Perdomo",
+            "role": "batting",
+            "team": "opponents",
+            "outcome": "confirmed",
+            "result_desc": "Geraldo Perdomo called out on strikes.",
+            "batter": "Geraldo Perdomo",
+            "pitcher": "Yoshinobu Yamamoto",
             "game_pk": 825049
         },
         {
@@ -121,14 +181,50 @@
         {
             "date": "2026-08-08",
             "date_formatted": "August 8, 2026",
-            "challenger": "Geraldo Perdomo",
+            "challenger": "Hunter Feduccia",
+            "role": "catching",
+            "team": "dodgers",
+            "outcome": "confirmed",
+            "result_desc": "Gabriel Moreno lines out sharply to third baseman Max Muncy.",
+            "batter": "Gabriel Moreno",
+            "pitcher": "Edwin D\u00edaz",
+            "game_pk": 825049
+        },
+        {
+            "date": "2026-08-08",
+            "date_formatted": "August 8, 2026",
+            "challenger": "Teoscar Hern\u00e1ndez",
             "role": "batting",
+            "team": "dodgers",
+            "outcome": "overturned",
+            "result_desc": "Teoscar Hern\u00e1ndez flies out to right fielder Corbin Carroll.",
+            "batter": "Teoscar Hern\u00e1ndez",
+            "pitcher": "Gerardo Carrillo",
+            "game_pk": 825049
+        },
+        {
+            "date": "2026-08-07",
+            "date_formatted": "August 7, 2026",
+            "challenger": "Gabriel Moreno",
+            "role": "catching",
             "team": "opponents",
             "outcome": "confirmed",
-            "result_desc": "Geraldo Perdomo called out on strikes.",
-            "batter": "Geraldo Perdomo",
-            "pitcher": "Yoshinobu Yamamoto",
-            "game_pk": 825049
+            "result_desc": "Shohei Ohtani grounds into a double play, second baseman Ketel Marte to shortstop Geraldo Perdomo to first baseman Tim Tawa. Miguel Rojas out at 2nd. Shohei Ohtani out at 1st.",
+            "batter": "Shohei Ohtani",
+            "pitcher": "Brandyn Garcia",
+            "game_pk": 825051
+        },
+        {
+            "date": "2026-08-07",
+            "date_formatted": "August 7, 2026",
+            "challenger": "Gabriel Moreno",
+            "role": "catching",
+            "team": "opponents",
+            "outcome": "overturned",
+            "result_desc": "Miguel Rojas singles on a line drive to center fielder Ryan Waldschmidt. Kyle Tucker to 3rd. Tommy Edman to 2nd.",
+            "batter": "Miguel Rojas",
+            "pitcher": "Brandyn Garcia",
+            "game_pk": 825051
         },
         {
             "date": "2026-08-07",
@@ -167,30 +263,6 @@
             "game_pk": 825051
         },
         {
-            "date": "2026-08-07",
-            "date_formatted": "August 7, 2026",
-            "challenger": "Gabriel Moreno",
-            "role": "catching",
-            "team": "opponents",
-            "outcome": "overturned",
-            "result_desc": "Miguel Rojas singles on a line drive to center fielder Ryan Waldschmidt. Kyle Tucker to 3rd. Tommy Edman to 2nd.",
-            "batter": "Miguel Rojas",
-            "pitcher": "Brandyn Garcia",
-            "game_pk": 825051
-        },
-        {
-            "date": "2026-08-07",
-            "date_formatted": "August 7, 2026",
-            "challenger": "Gabriel Moreno",
-            "role": "catching",
-            "team": "opponents",
-            "outcome": "confirmed",
-            "result_desc": "Shohei Ohtani grounds into a double play, second baseman Ketel Marte to shortstop Geraldo Perdomo to first baseman Tim Tawa. Miguel Rojas out at 2nd. Shohei Ohtani out at 1st.",
-            "batter": "Shohei Ohtani",
-            "pitcher": "Brandyn Garcia",
-            "game_pk": 825051
-        },
-        {
             "date": "2026-08-05",
             "date_formatted": "August 5, 2026",
             "challenger": "Tommy Edman",
@@ -201,78 +273,6 @@
             "batter": "Tommy Edman",
             "pitcher": "Jacob Webb",
             "game_pk": 824646
-        },
-        {
-            "date": "2026-08-04",
-            "date_formatted": "August 4, 2026",
-            "challenger": "Miguel Amaya",
-            "role": "catching",
-            "team": "opponents",
-            "outcome": "overturned",
-            "result_desc": "Mookie Betts grounds out, shortstop Dansby Swanson to first baseman Michael Busch.",
-            "batter": "Mookie Betts",
-            "pitcher": "Ryan Rolison",
-            "game_pk": 824645
-        },
-        {
-            "date": "2026-08-04",
-            "date_formatted": "August 4, 2026",
-            "challenger": "Miguel Amaya",
-            "role": "catching",
-            "team": "opponents",
-            "outcome": "overturned",
-            "result_desc": "Max Muncy strikes out swinging.",
-            "batter": "Max Muncy",
-            "pitcher": "Ryan Rolison",
-            "game_pk": 824645
-        },
-        {
-            "date": "2026-08-03",
-            "date_formatted": "August 3, 2026",
-            "challenger": "Carson Kelly",
-            "role": "catching",
-            "team": "opponents",
-            "outcome": "confirmed",
-            "result_desc": "Mookie Betts flies out to center fielder Pete Crow-Armstrong.",
-            "batter": "Mookie Betts",
-            "pitcher": "Trent Thornton",
-            "game_pk": 824647
-        },
-        {
-            "date": "2026-08-03",
-            "date_formatted": "August 3, 2026",
-            "challenger": "Carson Kelly",
-            "role": "catching",
-            "team": "opponents",
-            "outcome": "overturned",
-            "result_desc": "Enrique Hern\u00e1ndez strikes out swinging.",
-            "batter": "Enrique Hern\u00e1ndez",
-            "pitcher": "Matthew Boyd",
-            "game_pk": 824647
-        },
-        {
-            "date": "2026-08-03",
-            "date_formatted": "August 3, 2026",
-            "challenger": "Teoscar Hern\u00e1ndez",
-            "role": "batting",
-            "team": "dodgers",
-            "outcome": "overturned",
-            "result_desc": "Teoscar Hern\u00e1ndez homers (11) on a fly ball to left center field.",
-            "batter": "Teoscar Hern\u00e1ndez",
-            "pitcher": "Matthew Boyd",
-            "game_pk": 824647
-        },
-        {
-            "date": "2026-08-02",
-            "date_formatted": "August 2, 2026",
-            "challenger": "Caleb Durbin",
-            "role": "batting",
-            "team": "opponents",
-            "outcome": "overturned",
-            "result_desc": "Caleb Durbin walks. Masataka Yoshida to 2nd.",
-            "batter": "Caleb Durbin",
-            "pitcher": "Wyatt Mills",
-            "game_pk": 823919
         }
     ],
     "dodgers_by_player": [
@@ -341,10 +341,10 @@
         },
         {
             "challenger": "Hunter Feduccia",
-            "total": 5,
-            "successful": 3,
+            "total": 6,
+            "successful": 4,
             "failed": 2,
-            "success_rate": 60.0
+            "success_rate": 66.7
         },
         {
             "challenger": "Eliezer Alfonzo",
@@ -375,14 +375,14 @@
             "success_rate": 50.0
         },
         {
-            "challenger": "Chuckie Robinson",
-            "total": 1,
+            "challenger": "Tommy Edman",
+            "total": 2,
             "successful": 1,
-            "failed": 0,
-            "success_rate": 100.0
+            "failed": 1,
+            "success_rate": 50.0
         },
         {
-            "challenger": "Tommy Edman",
+            "challenger": "Chuckie Robinson",
             "total": 1,
             "successful": 1,
             "failed": 0,
@@ -394,6 +394,13 @@
             "successful": 1,
             "failed": 0,
             "success_rate": 100.0
+        },
+        {
+            "challenger": "Ben Rortvedt",
+            "total": 1,
+            "successful": 0,
+            "failed": 1,
+            "success_rate": 0.0
         },
         {
             "challenger": "Edwin D\u00edaz",
@@ -455,10 +462,10 @@
         },
         {
             "inning": 7,
-            "total": 19,
+            "total": 21,
             "successful": 10,
-            "failed": 9,
-            "success_rate": 52.6
+            "failed": 11,
+            "success_rate": 47.6
         },
         {
             "inning": 8,
@@ -476,8 +483,8 @@
         },
         {
             "inning": 10,
-            "total": 1,
-            "successful": 1,
+            "total": 2,
+            "successful": 2,
             "failed": 0,
             "success_rate": 100.0
         }

@@ -1,17 +1,17 @@
 {
     "season_summary": {
-        "correct_strikes_pct": 90.589417280643,
-        "incorrect_strikes_pct": 9.410582719356995,
-        "total_called_strikes": 2986,
-        "bad_calls_count": 281
+        "correct_strikes_pct": 90.61564059900167,
+        "incorrect_strikes_pct": 9.384359400998335,
+        "total_called_strikes": 3005,
+        "bad_calls_count": 282
     },
     "last_game_summary": {
-        "date": "August 10, 2026",
-        "correct_strikes_pct": 89.47368421052632,
-        "incorrect_strikes_pct": 10.526315789473685,
+        "date": "August 11, 2026",
+        "correct_strikes_pct": 94.73684210526315,
+        "incorrect_strikes_pct": 5.26315789473685,
         "total_called_strikes": 19,
-        "bad_calls_count": 2,
-        "home_plate_umpire": "John Bacon"
+        "bad_calls_count": 1,
+        "home_plate_umpire": "Brian Walsh"
     },
     "worst_calls_of_season": [
         {
@@ -56,17 +56,17 @@
         }
     ],
     "pitching_season_summary": {
-        "correct_balls_pct": 96.18853156372299,
-        "incorrect_balls_pct": 3.8114684362770106,
-        "total_called_balls": 5877,
-        "bad_calls_count": 224
+        "correct_balls_pct": 96.20637329286798,
+        "incorrect_balls_pct": 3.79362670713202,
+        "total_called_balls": 5931,
+        "bad_calls_count": 225
     },
     "pitching_last_game_summary": {
-        "date": "August 10, 2026",
-        "correct_balls_pct": 92.6829268292683,
-        "incorrect_balls_pct": 7.317073170731703,
-        "total_called_balls": 41,
-        "bad_calls_count": 3
+        "date": "August 11, 2026",
+        "correct_balls_pct": 98.14814814814815,
+        "incorrect_balls_pct": 1.8518518518518476,
+        "total_called_balls": 54,
+        "bad_calls_count": 1
     },
     "pitching_worst_calls_of_season": [],
     "abs_challenges": {
@@ -82,8 +82,8 @@
                 "failed": 0
             },
             "catching": {
-                "total": 20,
-                "successful": 15,
+                "total": 21,
+                "successful": 16,
                 "failed": 5
             }
         },
@@ -105,6 +105,18 @@
             }
         },
         "challenge_log": [
+            {
+                "date": "2026-08-11",
+                "date_formatted": "August 11, 2026",
+                "challenger": "Ben Rortvedt",
+                "role": "catching",
+                "team": "dodgers",
+                "outcome": "overturned",
+                "result_desc": "Nick Loftin called out on strikes.",
+                "batter": "Nick Loftin",
+                "pitcher": "Blake Snell",
+                "game_pk": 823917
+            },
             {
                 "date": "2026-08-10",
                 "date_formatted": "August 10, 2026",
@@ -332,18 +344,6 @@
                 "batter": "Jorge Polanco",
                 "pitcher": "Edgardo Henriquez",
                 "game_pk": 823600
-            },
-            {
-                "date": "2026-07-24",
-                "date_formatted": "July 24, 2026",
-                "challenger": "Andy Pages",
-                "role": "batting",
-                "team": "dodgers",
-                "outcome": "overturned",
-                "result_desc": "Andy Pages walks.",
-                "batter": "Andy Pages",
-                "pitcher": "Brooks Raley",
-                "game_pk": 823601
             }
         ]
     }
