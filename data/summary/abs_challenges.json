@@ -11,9 +11,9 @@
             "failed": 3
         },
         "catching": {
-            "total": 91,
+            "total": 92,
             "successful": 52,
-            "failed": 39
+            "failed": 40
         }
     },
     "opponents": {
@@ -28,12 +28,36 @@
             "failed": 3
         },
         "catching": {
-            "total": 133,
-            "successful": 84,
+            "total": 134,
+            "successful": 85,
             "failed": 49
         }
     },
     "challenge_log": [
+        {
+            "date": "2026-08-12",
+            "date_formatted": "August 12, 2026",
+            "challenger": "Hunter Feduccia",
+            "role": "catching",
+            "team": "dodgers",
+            "outcome": "confirmed",
+            "result_desc": "Isaac Collins walks.",
+            "batter": "Isaac Collins",
+            "pitcher": "Eric Lauer",
+            "game_pk": 823916
+        },
+        {
+            "date": "2026-08-12",
+            "date_formatted": "August 12, 2026",
+            "challenger": "Salvador Perez",
+            "role": "catching",
+            "team": "opponents",
+            "outcome": "overturned",
+            "result_desc": "Shohei Ohtani lines out sharply to first baseman Jac Caglianone.",
+            "batter": "Shohei Ohtani",
+            "pitcher": "Mason Black",
+            "game_pk": 823916
+        },
         {
             "date": "2026-08-11",
             "date_formatted": "August 11, 2026",
@@ -181,18 +205,6 @@
         {
             "date": "2026-08-08",
             "date_formatted": "August 8, 2026",
-            "challenger": "Hunter Feduccia",
-            "role": "catching",
-            "team": "dodgers",
-            "outcome": "confirmed",
-            "result_desc": "Gabriel Moreno lines out sharply to third baseman Max Muncy.",
-            "batter": "Gabriel Moreno",
-            "pitcher": "Edwin D\u00edaz",
-            "game_pk": 825049
-        },
-        {
-            "date": "2026-08-08",
-            "date_formatted": "August 8, 2026",
             "challenger": "Teoscar Hern\u00e1ndez",
             "role": "batting",
             "team": "dodgers",
@@ -200,6 +212,18 @@
             "result_desc": "Teoscar Hern\u00e1ndez flies out to right fielder Corbin Carroll.",
             "batter": "Teoscar Hern\u00e1ndez",
             "pitcher": "Gerardo Carrillo",
+            "game_pk": 825049
+        },
+        {
+            "date": "2026-08-08",
+            "date_formatted": "August 8, 2026",
+            "challenger": "Hunter Feduccia",
+            "role": "catching",
+            "team": "dodgers",
+            "outcome": "confirmed",
+            "result_desc": "Gabriel Moreno lines out sharply to third baseman Max Muncy.",
+            "batter": "Gabriel Moreno",
+            "pitcher": "Edwin D\u00edaz",
             "game_pk": 825049
         },
         {
@@ -249,30 +273,6 @@
             "batter": "Ryan Waldschmidt",
             "pitcher": "Roki Sasaki",
             "game_pk": 825051
-        },
-        {
-            "date": "2026-08-07",
-            "date_formatted": "August 7, 2026",
-            "challenger": "Hunter Feduccia",
-            "role": "catching",
-            "team": "dodgers",
-            "outcome": "overturned",
-            "result_desc": "Corbin Carroll grounds out to first baseman Freddie Freeman.",
-            "batter": "Corbin Carroll",
-            "pitcher": "Roki Sasaki",
-            "game_pk": 825051
-        },
-        {
-            "date": "2026-08-05",
-            "date_formatted": "August 5, 2026",
-            "challenger": "Tommy Edman",
-            "role": "batting",
-            "team": "dodgers",
-            "outcome": "overturned",
-            "result_desc": "Tommy Edman grounds out, first baseman Michael Busch to pitcher Jacob Webb.",
-            "batter": "Tommy Edman",
-            "pitcher": "Jacob Webb",
-            "game_pk": 824646
         }
     ],
     "dodgers_by_player": [
@@ -341,10 +341,10 @@
         },
         {
             "challenger": "Hunter Feduccia",
-            "total": 6,
+            "total": 7,
             "successful": 4,
-            "failed": 2,
-            "success_rate": 66.7
+            "failed": 3,
+            "success_rate": 57.1
         },
         {
             "challenger": "Eliezer Alfonzo",
@@ -455,10 +455,10 @@
         },
         {
             "inning": 6,
-            "total": 25,
+            "total": 26,
             "successful": 17,
-            "failed": 8,
-            "success_rate": 68.0
+            "failed": 9,
+            "success_rate": 65.4
         },
         {
             "inning": 7,
