@@ -1,13 +1,13 @@
 stat_label,stat,value,category,context_value,context_value_label
-Wins,wins,73,standings,68,This point last season
+Wins,wins,73,standings,69,This point last season
 Losses,losses,49,standings,53,This point last season
-Win percentage,win_pct,60%,standings,56%,This point last season
+Win percentage,win_pct,60%,standings,57%,This point last season
 Games up/back,games_up_back,8,standings,1st,Division rank
 Fielding percentage,fielding_pct,.989,standings,4th,League rank
 Errors,errors,48,standings,3rd,League rank
 Runs,runs,610,standings,4th,League rank
-Runs against,runs_against,469,standings,546,This point last season
-Run differential,run_differential,141,standings,80,This point last season
+Runs against,runs_against,469,standings,548,This point last season
+Run differential,run_differential,141,standings,81,This point last season
 Batting average,batting_average,.260,batting,.253,Last decade average
 Home runs,home_runs,156,batting,7th,League rank
 Home runs/game,home_runs_game,1.28,batting,1.42,Last decade average
@@ -23,6 +23,6 @@ ERA,era,3.71,pitching,7th,League rank
 WHIP,whip,1.17,pitching,3rd,League rank
 Batting average against,avg_against,.218,pitching,1st,League rank
 K/BB ratio,k_bb_ratio,2.85,pitching,7th,League rank
-Last updated,update_time,"August 14, 2026, 2:14 AM PT",summary,,
+Last updated,update_time,"August 14, 2026, 6:16 AM PT",summary,,
 Team summary,summary,"<span class='highlight'>LOS ANGELES</span> <span class='updated'>(August 14)</span> — The Dodgers have compiled a <span class='highlight'>73-49</span> record in the 2026 regular season, a <span class='highlight'>60%</span> winning percentage. The last game was a <span class='highlight'>4-5</span> home <span class='highlight'>loss</span> against the <span class='highlight'>Milwaukee Brewers</span>. The team next faces the <span class='highlight'>Milwaukee Brewers</span> on Friday at 7:10 p.m. PDT at <span class='highlight'>UNIQLO Field at Dodger Stadium</span>.",summary,,
 Last game result,last_game_result,loss,summary,,
