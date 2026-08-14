@@ -1,9 +1,9 @@
 {
     "dodgers": {
         "batting": {
-            "total": 98,
+            "total": 99,
             "successful": 62,
-            "failed": 36
+            "failed": 37
         },
         "pitching": {
             "total": 5,
@@ -11,15 +11,15 @@
             "failed": 3
         },
         "catching": {
-            "total": 92,
-            "successful": 52,
+            "total": 93,
+            "successful": 53,
             "failed": 40
         }
     },
     "opponents": {
         "batting": {
-            "total": 104,
-            "successful": 54,
+            "total": 105,
+            "successful": 55,
             "failed": 50
         },
         "pitching": {
@@ -28,12 +28,60 @@
             "failed": 3
         },
         "catching": {
-            "total": 134,
+            "total": 135,
             "successful": 85,
-            "failed": 49
+            "failed": 50
         }
     },
     "challenge_log": [
+        {
+            "date": "2026-08-13",
+            "date_formatted": "August 13, 2026",
+            "challenger": "Kyle Tucker",
+            "role": "batting",
+            "team": "dodgers",
+            "outcome": "confirmed",
+            "result_desc": "Kyle Tucker flies out to right fielder Luis Lara.",
+            "batter": "Kyle Tucker",
+            "pitcher": "Trevor Megill",
+            "game_pk": 823915
+        },
+        {
+            "date": "2026-08-13",
+            "date_formatted": "August 13, 2026",
+            "challenger": "Ben Rortvedt",
+            "role": "catching",
+            "team": "dodgers",
+            "outcome": "overturned",
+            "result_desc": "Gary S\u00e1nchez challenged (pitch result), call on the field was confirmed: Gary S\u00e1nchez called out on strikes.",
+            "batter": "Gary S\u00e1nchez",
+            "pitcher": "Edwin D\u00edaz",
+            "game_pk": 823915
+        },
+        {
+            "date": "2026-08-13",
+            "date_formatted": "August 13, 2026",
+            "challenger": "Jake Bauers",
+            "role": "batting",
+            "team": "opponents",
+            "outcome": "overturned",
+            "result_desc": "Jake Bauers walks.",
+            "batter": "Jake Bauers",
+            "pitcher": "Edgardo Henriquez",
+            "game_pk": 823915
+        },
+        {
+            "date": "2026-08-13",
+            "date_formatted": "August 13, 2026",
+            "challenger": "William Contreras",
+            "role": "catching",
+            "team": "opponents",
+            "outcome": "confirmed",
+            "result_desc": "Tommy Edman walks.",
+            "batter": "Tommy Edman",
+            "pitcher": "Shane Drohan",
+            "game_pk": 823915
+        },
         {
             "date": "2026-08-12",
             "date_formatted": "August 12, 2026",
@@ -133,18 +181,6 @@
         {
             "date": "2026-08-10",
             "date_formatted": "August 10, 2026",
-            "challenger": "Salvador Perez",
-            "role": "catching",
-            "team": "opponents",
-            "outcome": "confirmed",
-            "result_desc": "Kyle Tucker flies out to shortstop Bobby Witt Jr.",
-            "batter": "Kyle Tucker",
-            "pitcher": "Jose Cuas",
-            "game_pk": 823918
-        },
-        {
-            "date": "2026-08-10",
-            "date_formatted": "August 10, 2026",
             "challenger": "Miguel Rojas",
             "role": "batting",
             "team": "dodgers",
@@ -167,40 +203,16 @@
             "game_pk": 823918
         },
         {
-            "date": "2026-08-08",
-            "date_formatted": "August 8, 2026",
-            "challenger": "Hunter Feduccia",
+            "date": "2026-08-10",
+            "date_formatted": "August 10, 2026",
+            "challenger": "Salvador Perez",
             "role": "catching",
-            "team": "dodgers",
-            "outcome": "overturned",
-            "result_desc": "James McCann walks.",
-            "batter": "James McCann",
-            "pitcher": "Alex Vesia",
-            "game_pk": 825049
-        },
-        {
-            "date": "2026-08-08",
-            "date_formatted": "August 8, 2026",
-            "challenger": "Geraldo Perdomo",
-            "role": "batting",
             "team": "opponents",
             "outcome": "confirmed",
-            "result_desc": "Geraldo Perdomo called out on strikes.",
-            "batter": "Geraldo Perdomo",
-            "pitcher": "Yoshinobu Yamamoto",
-            "game_pk": 825049
-        },
-        {
-            "date": "2026-08-08",
-            "date_formatted": "August 8, 2026",
-            "challenger": "Hunter Feduccia",
-            "role": "batting",
-            "team": "dodgers",
-            "outcome": "overturned",
-            "result_desc": "Hunter Feduccia lines out sharply to center fielder Ryan Waldschmidt.",
-            "batter": "Hunter Feduccia",
-            "pitcher": "Brandon Pfaadt",
-            "game_pk": 825049
+            "result_desc": "Kyle Tucker flies out to shortstop Bobby Witt Jr.",
+            "batter": "Kyle Tucker",
+            "pitcher": "Jose Cuas",
+            "game_pk": 823918
         },
         {
             "date": "2026-08-08",
@@ -227,52 +239,40 @@
             "game_pk": 825049
         },
         {
-            "date": "2026-08-07",
-            "date_formatted": "August 7, 2026",
-            "challenger": "Gabriel Moreno",
-            "role": "catching",
-            "team": "opponents",
-            "outcome": "confirmed",
-            "result_desc": "Shohei Ohtani grounds into a double play, second baseman Ketel Marte to shortstop Geraldo Perdomo to first baseman Tim Tawa. Miguel Rojas out at 2nd. Shohei Ohtani out at 1st.",
-            "batter": "Shohei Ohtani",
-            "pitcher": "Brandyn Garcia",
-            "game_pk": 825051
-        },
-        {
-            "date": "2026-08-07",
-            "date_formatted": "August 7, 2026",
-            "challenger": "Gabriel Moreno",
-            "role": "catching",
-            "team": "opponents",
-            "outcome": "overturned",
-            "result_desc": "Miguel Rojas singles on a line drive to center fielder Ryan Waldschmidt. Kyle Tucker to 3rd. Tommy Edman to 2nd.",
-            "batter": "Miguel Rojas",
-            "pitcher": "Brandyn Garcia",
-            "game_pk": 825051
-        },
-        {
-            "date": "2026-08-07",
-            "date_formatted": "August 7, 2026",
-            "challenger": "Gabriel Moreno",
-            "role": "catching",
-            "team": "opponents",
-            "outcome": "overturned",
-            "result_desc": "Mookie Betts singles on a ground ball to left fielder Max Kepler.",
-            "batter": "Mookie Betts",
-            "pitcher": "Taylor Clarke",
-            "game_pk": 825051
-        },
-        {
-            "date": "2026-08-07",
-            "date_formatted": "August 7, 2026",
+            "date": "2026-08-08",
+            "date_formatted": "August 8, 2026",
             "challenger": "Hunter Feduccia",
             "role": "catching",
             "team": "dodgers",
+            "outcome": "overturned",
+            "result_desc": "James McCann walks.",
+            "batter": "James McCann",
+            "pitcher": "Alex Vesia",
+            "game_pk": 825049
+        },
+        {
+            "date": "2026-08-08",
+            "date_formatted": "August 8, 2026",
+            "challenger": "Hunter Feduccia",
+            "role": "batting",
+            "team": "dodgers",
+            "outcome": "overturned",
+            "result_desc": "Hunter Feduccia lines out sharply to center fielder Ryan Waldschmidt.",
+            "batter": "Hunter Feduccia",
+            "pitcher": "Brandon Pfaadt",
+            "game_pk": 825049
+        },
+        {
+            "date": "2026-08-08",
+            "date_formatted": "August 8, 2026",
+            "challenger": "Geraldo Perdomo",
+            "role": "batting",
+            "team": "opponents",
             "outcome": "confirmed",
-            "result_desc": "Ryan Waldschmidt strikes out swinging.",
-            "batter": "Ryan Waldschmidt",
-            "pitcher": "Roki Sasaki",
-            "game_pk": 825051
+            "result_desc": "Geraldo Perdomo called out on strikes.",
+            "batter": "Geraldo Perdomo",
+            "pitcher": "Yoshinobu Yamamoto",
+            "game_pk": 825049
         }
     ],
     "dodgers_by_player": [
@@ -313,10 +313,10 @@
         },
         {
             "challenger": "Kyle Tucker",
-            "total": 9,
+            "total": 10,
             "successful": 6,
-            "failed": 3,
-            "success_rate": 66.7
+            "failed": 4,
+            "success_rate": 60.0
         },
         {
             "challenger": "Alex Call",
@@ -375,6 +375,13 @@
             "success_rate": 50.0
         },
         {
+            "challenger": "Ben Rortvedt",
+            "total": 2,
+            "successful": 1,
+            "failed": 1,
+            "success_rate": 50.0
+        },
+        {
             "challenger": "Tommy Edman",
             "total": 2,
             "successful": 1,
@@ -394,13 +401,6 @@
             "successful": 1,
             "failed": 0,
             "success_rate": 100.0
-        },
-        {
-            "challenger": "Ben Rortvedt",
-            "total": 1,
-            "successful": 0,
-            "failed": 1,
-            "success_rate": 0.0
         },
         {
             "challenger": "Edwin D\u00edaz",
@@ -476,10 +476,10 @@
         },
         {
             "inning": 9,
-            "total": 29,
-            "successful": 17,
-            "failed": 12,
-            "success_rate": 58.6
+            "total": 31,
+            "successful": 18,
+            "failed": 13,
+            "success_rate": 58.1
         },
         {
             "inning": 10,

@@ -1,17 +1,17 @@
 {
     "season_summary": {
-        "correct_strikes_pct": 90.65080938222663,
-        "incorrect_strikes_pct": 9.349190617773374,
-        "total_called_strikes": 3027,
-        "bad_calls_count": 283
+        "correct_strikes_pct": 90.66491975106453,
+        "incorrect_strikes_pct": 9.33508024893547,
+        "total_called_strikes": 3053,
+        "bad_calls_count": 285
     },
     "last_game_summary": {
-        "date": "August 12, 2026",
-        "correct_strikes_pct": 95.45454545454545,
-        "incorrect_strikes_pct": 4.545454545454547,
-        "total_called_strikes": 22,
-        "bad_calls_count": 1,
-        "home_plate_umpire": "Bill Miller"
+        "date": "August 13, 2026",
+        "correct_strikes_pct": 92.3076923076923,
+        "incorrect_strikes_pct": 7.692307692307693,
+        "total_called_strikes": 26,
+        "bad_calls_count": 2,
+        "home_plate_umpire": "Gabe Morales"
     },
     "worst_calls_of_season": [
         {
@@ -56,25 +56,25 @@
         }
     ],
     "pitching_season_summary": {
-        "correct_balls_pct": 96.15577469496908,
-        "incorrect_balls_pct": 3.8442253050309176,
-        "total_called_balls": 5983,
-        "bad_calls_count": 230
+        "correct_balls_pct": 96.13670133729569,
+        "incorrect_balls_pct": 3.8632986627043095,
+        "total_called_balls": 6057,
+        "bad_calls_count": 234
     },
     "pitching_last_game_summary": {
-        "date": "August 12, 2026",
-        "correct_balls_pct": 90.38461538461539,
-        "incorrect_balls_pct": 9.615384615384613,
-        "total_called_balls": 52,
-        "bad_calls_count": 5
+        "date": "August 13, 2026",
+        "correct_balls_pct": 94.5945945945946,
+        "incorrect_balls_pct": 5.4054054054054035,
+        "total_called_balls": 74,
+        "bad_calls_count": 4
     },
     "pitching_worst_calls_of_season": [],
     "abs_challenges": {
         "dodgers": {
             "batting": {
-                "total": 44,
-                "successful": 12,
-                "failed": 32
+                "total": 46,
+                "successful": 13,
+                "failed": 33
             },
             "pitching": {
                 "total": 0,
@@ -89,9 +89,9 @@
         },
         "opponents": {
             "batting": {
-                "total": 29,
-                "successful": 8,
-                "failed": 21
+                "total": 31,
+                "successful": 9,
+                "failed": 22
             },
             "pitching": {
                 "total": 0,
@@ -105,6 +105,54 @@
             }
         },
         "challenge_log": [
+            {
+                "date": "2026-08-13",
+                "date_formatted": "August 13, 2026",
+                "challenger": "Freddie Freeman",
+                "role": "batting",
+                "team": "dodgers",
+                "outcome": "overturned",
+                "result_desc": "Freddie Freeman walks.",
+                "batter": "Freddie Freeman",
+                "pitcher": "Shane Drohan",
+                "game_pk": 823915
+            },
+            {
+                "date": "2026-08-13",
+                "date_formatted": "August 13, 2026",
+                "challenger": "Max Muncy",
+                "role": "batting",
+                "team": "dodgers",
+                "outcome": "confirmed",
+                "result_desc": "Max Muncy called out on strikes.",
+                "batter": "Max Muncy",
+                "pitcher": "Trevor Megill",
+                "game_pk": 823915
+            },
+            {
+                "date": "2026-08-13",
+                "date_formatted": "August 13, 2026",
+                "challenger": "Gary S\u00e1nchez",
+                "role": "batting",
+                "team": "opponents",
+                "outcome": "overturned",
+                "result_desc": "Gary S\u00e1nchez walks.",
+                "batter": "Gary S\u00e1nchez",
+                "pitcher": "Roki Sasaki",
+                "game_pk": 823915
+            },
+            {
+                "date": "2026-08-13",
+                "date_formatted": "August 13, 2026",
+                "challenger": "Gary S\u00e1nchez",
+                "role": "batting",
+                "team": "opponents",
+                "outcome": "confirmed",
+                "result_desc": "Gary S\u00e1nchez called out on strikes.",
+                "batter": "Gary S\u00e1nchez",
+                "pitcher": "Edwin D\u00edaz",
+                "game_pk": 823915
+            },
             {
                 "date": "2026-08-12",
                 "date_formatted": "August 12, 2026",
@@ -296,54 +344,6 @@
                 "batter": "Randy Arozarena",
                 "pitcher": "Eric Lauer",
                 "game_pk": 823924
-            },
-            {
-                "date": "2026-07-29",
-                "date_formatted": "July 29, 2026",
-                "challenger": "Cal Raleigh",
-                "role": "batting",
-                "team": "opponents",
-                "outcome": "overturned",
-                "result_desc": "Cal Raleigh walks.",
-                "batter": "Cal Raleigh",
-                "pitcher": "Alex Vesia",
-                "game_pk": 823924
-            },
-            {
-                "date": "2026-07-28",
-                "date_formatted": "July 28, 2026",
-                "challenger": "Cal Raleigh",
-                "role": "batting",
-                "team": "opponents",
-                "outcome": "confirmed",
-                "result_desc": "Cal Raleigh called out on strikes.",
-                "batter": "Cal Raleigh",
-                "pitcher": "Alex Vesia",
-                "game_pk": 823923
-            },
-            {
-                "date": "2026-07-26",
-                "date_formatted": "July 26, 2026",
-                "challenger": "Teoscar Hern\u00e1ndez",
-                "role": "batting",
-                "team": "dodgers",
-                "outcome": "confirmed",
-                "result_desc": "Teoscar Hern\u00e1ndez called out on strikes.",
-                "batter": "Teoscar Hern\u00e1ndez",
-                "pitcher": "Cionel P\u00e9rez",
-                "game_pk": 823599
-            },
-            {
-                "date": "2026-07-25",
-                "date_formatted": "July 25, 2026",
-                "challenger": "Shohei Ohtani",
-                "role": "batting",
-                "team": "dodgers",
-                "outcome": "confirmed",
-                "result_desc": "Shohei Ohtani called out on strikes.",
-                "batter": "Shohei Ohtani",
-                "pitcher": "Nolan McLean",
-                "game_pk": 823600
             }
         ]
     }
