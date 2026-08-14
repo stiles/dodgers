@@ -1,23 +1,5 @@
 [
   {
-    "player_id":"656212",
-    "thumb_url":"https:\/\/img.mlbstatic.com\/mlb-photos\/image\/upload\/d_people:generic:headshot:silo:current.png\/r_max\/q_auto:best\/v1\/people\/656212\/headshot\/silo\/current",
-    "name":"Charlie Barnes",
-    "player_url":"\/player\/656212",
-    "jersey":"57",
-    "position_group":"Pitchers",
-    "bat_throw":"L\/L",
-    "height":"6' 2\"",
-    "weight":"190",
-    "dob":"10\/01\/1995",
-    "status":"MINORS",
-    "is_minors":true,
-    "is_il":false,
-    "is_active_roster":false,
-    "is_40_man":true,
-    "slug":"charlie-barnes"
-  },
-  {
     "player_id":"663460",
     "thumb_url":"https:\/\/img.mlbstatic.com\/mlb-photos\/image\/upload\/d_people:generic:headshot:silo:current.png\/r_max\/q_auto:best\/v1\/people\/663460\/headshot\/silo\/current",
     "name":"Kris Bubic",
@@ -198,6 +180,24 @@
     "slug":"edgardo-henriquez"
   },
   {
+    "player_id":"642546",
+    "thumb_url":"https:\/\/img.mlbstatic.com\/mlb-photos\/image\/upload\/d_people:generic:headshot:silo:current.png\/r_max\/q_auto:best\/v1\/people\/642546\/headshot\/silo\/current",
+    "name":"Jonathan Hernández",
+    "player_url":"\/player\/642546",
+    "jersey":"26",
+    "position_group":"Pitchers",
+    "bat_throw":"R\/R",
+    "height":"6' 3\"",
+    "weight":"190",
+    "dob":"07\/06\/1996",
+    "status":"ACTIVE",
+    "is_minors":false,
+    "is_il":false,
+    "is_active_roster":true,
+    "is_40_man":true,
+    "slug":"jonathan-hernandez"
+  },
+  {
     "player_id":"669165",
     "thumb_url":"https:\/\/img.mlbstatic.com\/mlb-photos\/image\/upload\/d_people:generic:headshot:silo:current.png\/r_max\/q_auto:best\/v1\/people\/669165\/headshot\/silo\/current",
     "name":"Kyle Hurt",
@@ -244,10 +244,10 @@
     "height":"6' 2\"",
     "weight":"220",
     "dob":"07\/15\/1997",
-    "status":"ACTIVE",
-    "is_minors":false,
+    "status":"MINORS",
+    "is_minors":true,
     "is_il":false,
-    "is_active_roster":true,
+    "is_active_roster":false,
     "is_40_man":true,
     "slug":"landon-knack"
   },
