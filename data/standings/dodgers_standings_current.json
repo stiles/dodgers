@@ -2804,5 +2804,28 @@
     "time":"00:00:00",
     "day_night":"N",
     "game_day":"Thursday"
+  },
+  {
+    "gm":123,
+    "gtm":123,
+    "game_date":"2026-08-14",
+    "year":2026,
+    "home_away":"home",
+    "opp":"Milwaukee Brewers",
+    "r":3,
+    "ra":1,
+    "run_diff":2,
+    "result":"W",
+    "wins":74,
+    "losses":49,
+    "record":"74-49",
+    "win_pct":0.602,
+    "gb":-8.0,
+    "rank":1,
+    "attendance":0,
+    "time_minutes":0,
+    "time":"00:00:00",
+    "day_night":"N",
+    "game_day":"Friday"
   }
 ]

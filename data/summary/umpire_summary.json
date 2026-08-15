@@ -1,17 +1,17 @@
 {
     "season_summary": {
-        "correct_strikes_pct": 90.66491975106453,
-        "incorrect_strikes_pct": 9.33508024893547,
-        "total_called_strikes": 3053,
-        "bad_calls_count": 285
+        "correct_strikes_pct": 90.62194724845327,
+        "incorrect_strikes_pct": 9.378052751546733,
+        "total_called_strikes": 3071,
+        "bad_calls_count": 288
     },
     "last_game_summary": {
-        "date": "August 13, 2026",
-        "correct_strikes_pct": 92.3076923076923,
-        "incorrect_strikes_pct": 7.692307692307693,
-        "total_called_strikes": 26,
-        "bad_calls_count": 2,
-        "home_plate_umpire": "Gabe Morales"
+        "date": "August 14, 2026",
+        "correct_strikes_pct": 83.33333333333334,
+        "incorrect_strikes_pct": 16.666666666666657,
+        "total_called_strikes": 18,
+        "bad_calls_count": 3,
+        "home_plate_umpire": "Mike Muchlinski"
     },
     "worst_calls_of_season": [
         {
@@ -56,17 +56,17 @@
         }
     ],
     "pitching_season_summary": {
-        "correct_balls_pct": 96.13670133729569,
-        "incorrect_balls_pct": 3.8632986627043095,
-        "total_called_balls": 6057,
-        "bad_calls_count": 234
+        "correct_balls_pct": 96.1532165657227,
+        "incorrect_balls_pct": 3.846783434277299,
+        "total_called_balls": 6109,
+        "bad_calls_count": 235
     },
     "pitching_last_game_summary": {
-        "date": "August 13, 2026",
-        "correct_balls_pct": 94.5945945945946,
-        "incorrect_balls_pct": 5.4054054054054035,
-        "total_called_balls": 74,
-        "bad_calls_count": 4
+        "date": "August 14, 2026",
+        "correct_balls_pct": 98.07692307692307,
+        "incorrect_balls_pct": 1.923076923076934,
+        "total_called_balls": 52,
+        "bad_calls_count": 1
     },
     "pitching_worst_calls_of_season": [],
     "abs_challenges": {
@@ -82,8 +82,8 @@
                 "failed": 0
             },
             "catching": {
-                "total": 21,
-                "successful": 16,
+                "total": 22,
+                "successful": 17,
                 "failed": 5
             }
         },
@@ -105,6 +105,18 @@
             }
         },
         "challenge_log": [
+            {
+                "date": "2026-08-14",
+                "date_formatted": "August 14, 2026",
+                "challenger": "Hunter Feduccia",
+                "role": "catching",
+                "team": "dodgers",
+                "outcome": "overturned",
+                "result_desc": "Garrett Mitchell called out on strikes.",
+                "batter": "Garrett Mitchell",
+                "pitcher": "Yoshinobu Yamamoto",
+                "game_pk": 823913
+            },
             {
                 "date": "2026-08-13",
                 "date_formatted": "August 13, 2026",
@@ -332,18 +344,6 @@
                 "batter": "Dominic Canzone",
                 "pitcher": "Roki Sasaki",
                 "game_pk": 823921
-            },
-            {
-                "date": "2026-07-29",
-                "date_formatted": "July 29, 2026",
-                "challenger": "Randy Arozarena",
-                "role": "batting",
-                "team": "opponents",
-                "outcome": "confirmed",
-                "result_desc": "Randy Arozarena called out on strikes.",
-                "batter": "Randy Arozarena",
-                "pitcher": "Eric Lauer",
-                "game_pk": 823924
             }
         ]
     }

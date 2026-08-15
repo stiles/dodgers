@@ -11,8 +11,8 @@
             "failed": 3
         },
         "catching": {
-            "total": 93,
-            "successful": 53,
+            "total": 94,
+            "successful": 54,
             "failed": 40
         }
     },
@@ -28,12 +28,36 @@
             "failed": 3
         },
         "catching": {
-            "total": 135,
+            "total": 136,
             "successful": 85,
-            "failed": 50
+            "failed": 51
         }
     },
     "challenge_log": [
+        {
+            "date": "2026-08-14",
+            "date_formatted": "August 14, 2026",
+            "challenger": "William Contreras",
+            "role": "catching",
+            "team": "opponents",
+            "outcome": "confirmed",
+            "result_desc": "Hunter Feduccia lines out to third baseman Andrew Vaughn.",
+            "batter": "Hunter Feduccia",
+            "pitcher": "Robert Gasser",
+            "game_pk": 823913
+        },
+        {
+            "date": "2026-08-14",
+            "date_formatted": "August 14, 2026",
+            "challenger": "Hunter Feduccia",
+            "role": "catching",
+            "team": "dodgers",
+            "outcome": "overturned",
+            "result_desc": "Jackson Chourio called out on strikes.",
+            "batter": "Jackson Chourio",
+            "pitcher": "Yoshinobu Yamamoto",
+            "game_pk": 823913
+        },
         {
             "date": "2026-08-13",
             "date_formatted": "August 13, 2026",
@@ -109,30 +133,6 @@
         {
             "date": "2026-08-11",
             "date_formatted": "August 11, 2026",
-            "challenger": "Hunter Feduccia",
-            "role": "catching",
-            "team": "dodgers",
-            "outcome": "overturned",
-            "result_desc": "Salvador Perez grounds out, second baseman Tommy Edman to first baseman Freddie Freeman.",
-            "batter": "Salvador Perez",
-            "pitcher": "Seth Halvorsen",
-            "game_pk": 823917
-        },
-        {
-            "date": "2026-08-11",
-            "date_formatted": "August 11, 2026",
-            "challenger": "Michael Massey",
-            "role": "batting",
-            "team": "opponents",
-            "outcome": "overturned",
-            "result_desc": "Michael Massey strikes out swinging.",
-            "batter": "Michael Massey",
-            "pitcher": "Jack Dreyer",
-            "game_pk": 823917
-        },
-        {
-            "date": "2026-08-11",
-            "date_formatted": "August 11, 2026",
             "challenger": "Tommy Edman",
             "role": "batting",
             "team": "dodgers",
@@ -145,13 +145,13 @@
         {
             "date": "2026-08-11",
             "date_formatted": "August 11, 2026",
-            "challenger": "Ben Rortvedt",
-            "role": "catching",
-            "team": "dodgers",
-            "outcome": "confirmed",
-            "result_desc": "Tyler Tolbert walks.",
-            "batter": "Tyler Tolbert",
-            "pitcher": "Alex Vesia",
+            "challenger": "Nick Loftin",
+            "role": "batting",
+            "team": "opponents",
+            "outcome": "overturned",
+            "result_desc": "Nick Loftin strikes out swinging.",
+            "batter": "Nick Loftin",
+            "pitcher": "Blake Snell",
             "game_pk": 823917
         },
         {
@@ -169,14 +169,50 @@
         {
             "date": "2026-08-11",
             "date_formatted": "August 11, 2026",
-            "challenger": "Nick Loftin",
+            "challenger": "Ben Rortvedt",
+            "role": "catching",
+            "team": "dodgers",
+            "outcome": "confirmed",
+            "result_desc": "Tyler Tolbert walks.",
+            "batter": "Tyler Tolbert",
+            "pitcher": "Alex Vesia",
+            "game_pk": 823917
+        },
+        {
+            "date": "2026-08-11",
+            "date_formatted": "August 11, 2026",
+            "challenger": "Michael Massey",
             "role": "batting",
             "team": "opponents",
             "outcome": "overturned",
-            "result_desc": "Nick Loftin strikes out swinging.",
-            "batter": "Nick Loftin",
-            "pitcher": "Blake Snell",
+            "result_desc": "Michael Massey strikes out swinging.",
+            "batter": "Michael Massey",
+            "pitcher": "Jack Dreyer",
             "game_pk": 823917
+        },
+        {
+            "date": "2026-08-11",
+            "date_formatted": "August 11, 2026",
+            "challenger": "Hunter Feduccia",
+            "role": "catching",
+            "team": "dodgers",
+            "outcome": "overturned",
+            "result_desc": "Salvador Perez grounds out, second baseman Tommy Edman to first baseman Freddie Freeman.",
+            "batter": "Salvador Perez",
+            "pitcher": "Seth Halvorsen",
+            "game_pk": 823917
+        },
+        {
+            "date": "2026-08-10",
+            "date_formatted": "August 10, 2026",
+            "challenger": "Salvador Perez",
+            "role": "catching",
+            "team": "opponents",
+            "outcome": "confirmed",
+            "result_desc": "Kyle Tucker flies out to shortstop Bobby Witt Jr.",
+            "batter": "Kyle Tucker",
+            "pitcher": "Jose Cuas",
+            "game_pk": 823918
         },
         {
             "date": "2026-08-10",
@@ -200,18 +236,6 @@
             "result_desc": "Andy Pages grounds out, third baseman Nick Loftin to first baseman Jac Caglianone.",
             "batter": "Andy Pages",
             "pitcher": "Noah Cameron",
-            "game_pk": 823918
-        },
-        {
-            "date": "2026-08-10",
-            "date_formatted": "August 10, 2026",
-            "challenger": "Salvador Perez",
-            "role": "catching",
-            "team": "opponents",
-            "outcome": "confirmed",
-            "result_desc": "Kyle Tucker flies out to shortstop Bobby Witt Jr.",
-            "batter": "Kyle Tucker",
-            "pitcher": "Jose Cuas",
             "game_pk": 823918
         },
         {
@@ -248,30 +272,6 @@
             "result_desc": "James McCann walks.",
             "batter": "James McCann",
             "pitcher": "Alex Vesia",
-            "game_pk": 825049
-        },
-        {
-            "date": "2026-08-08",
-            "date_formatted": "August 8, 2026",
-            "challenger": "Hunter Feduccia",
-            "role": "batting",
-            "team": "dodgers",
-            "outcome": "overturned",
-            "result_desc": "Hunter Feduccia lines out sharply to center fielder Ryan Waldschmidt.",
-            "batter": "Hunter Feduccia",
-            "pitcher": "Brandon Pfaadt",
-            "game_pk": 825049
-        },
-        {
-            "date": "2026-08-08",
-            "date_formatted": "August 8, 2026",
-            "challenger": "Geraldo Perdomo",
-            "role": "batting",
-            "team": "opponents",
-            "outcome": "confirmed",
-            "result_desc": "Geraldo Perdomo called out on strikes.",
-            "batter": "Geraldo Perdomo",
-            "pitcher": "Yoshinobu Yamamoto",
             "game_pk": 825049
         }
     ],
@@ -326,6 +326,13 @@
             "success_rate": 44.4
         },
         {
+            "challenger": "Hunter Feduccia",
+            "total": 8,
+            "successful": 5,
+            "failed": 3,
+            "success_rate": 62.5
+        },
+        {
             "challenger": "Shohei Ohtani",
             "total": 8,
             "successful": 5,
@@ -338,13 +345,6 @@
             "successful": 5,
             "failed": 2,
             "success_rate": 71.4
-        },
-        {
-            "challenger": "Hunter Feduccia",
-            "total": 7,
-            "successful": 4,
-            "failed": 3,
-            "success_rate": 57.1
         },
         {
             "challenger": "Eliezer Alfonzo",
@@ -420,10 +420,10 @@
     "dodgers_by_inning": [
         {
             "inning": 1,
-            "total": 15,
-            "successful": 11,
+            "total": 16,
+            "successful": 12,
             "failed": 4,
-            "success_rate": 73.3
+            "success_rate": 75.0
         },
         {
             "inning": 2,
