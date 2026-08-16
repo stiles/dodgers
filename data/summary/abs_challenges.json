@@ -11,8 +11,8 @@
             "failed": 3
         },
         "catching": {
-            "total": 94,
-            "successful": 54,
+            "total": 95,
+            "successful": 55,
             "failed": 40
         }
     },
@@ -28,12 +28,48 @@
             "failed": 3
         },
         "catching": {
-            "total": 136,
+            "total": 138,
             "successful": 85,
-            "failed": 51
+            "failed": 53
         }
     },
     "challenge_log": [
+        {
+            "date": "2026-08-16",
+            "date_formatted": "August 16, 2026",
+            "challenger": "Gary S\u00e1nchez",
+            "role": "catching",
+            "team": "opponents",
+            "outcome": "confirmed",
+            "result_desc": "Andy Pages walks.",
+            "batter": "Andy Pages",
+            "pitcher": "Logan Henderson",
+            "game_pk": 823912
+        },
+        {
+            "date": "2026-08-16",
+            "date_formatted": "August 16, 2026",
+            "challenger": "Gary S\u00e1nchez",
+            "role": "catching",
+            "team": "opponents",
+            "outcome": "confirmed",
+            "result_desc": "Max Muncy homers (24) on a fly ball to right field.",
+            "batter": "Max Muncy",
+            "pitcher": "Logan Henderson",
+            "game_pk": 823912
+        },
+        {
+            "date": "2026-08-16",
+            "date_formatted": "August 16, 2026",
+            "challenger": "Ben Rortvedt",
+            "role": "catching",
+            "team": "dodgers",
+            "outcome": "overturned",
+            "result_desc": "Andrew Vaughn grounds into a double play, shortstop Mookie Betts to second baseman Tommy Edman to first baseman Freddie Freeman. Jake Bauers out at 2nd. Andrew Vaughn out at 1st.",
+            "batter": "Andrew Vaughn",
+            "pitcher": "Tarik Skubal",
+            "game_pk": 823912
+        },
         {
             "date": "2026-08-15",
             "date_formatted": "August 15, 2026",
@@ -97,18 +133,6 @@
         {
             "date": "2026-08-13",
             "date_formatted": "August 13, 2026",
-            "challenger": "Kyle Tucker",
-            "role": "batting",
-            "team": "dodgers",
-            "outcome": "confirmed",
-            "result_desc": "Kyle Tucker flies out to right fielder Luis Lara.",
-            "batter": "Kyle Tucker",
-            "pitcher": "Trevor Megill",
-            "game_pk": 823915
-        },
-        {
-            "date": "2026-08-13",
-            "date_formatted": "August 13, 2026",
             "challenger": "Ben Rortvedt",
             "role": "catching",
             "team": "dodgers",
@@ -143,6 +167,18 @@
             "game_pk": 823915
         },
         {
+            "date": "2026-08-13",
+            "date_formatted": "August 13, 2026",
+            "challenger": "Kyle Tucker",
+            "role": "batting",
+            "team": "dodgers",
+            "outcome": "confirmed",
+            "result_desc": "Kyle Tucker flies out to right fielder Luis Lara.",
+            "batter": "Kyle Tucker",
+            "pitcher": "Trevor Megill",
+            "game_pk": 823915
+        },
+        {
             "date": "2026-08-12",
             "date_formatted": "August 12, 2026",
             "challenger": "Hunter Feduccia",
@@ -169,49 +205,13 @@
         {
             "date": "2026-08-11",
             "date_formatted": "August 11, 2026",
-            "challenger": "Ben Rortvedt",
+            "challenger": "Hunter Feduccia",
             "role": "catching",
             "team": "dodgers",
-            "outcome": "confirmed",
-            "result_desc": "Tyler Tolbert walks.",
-            "batter": "Tyler Tolbert",
-            "pitcher": "Alex Vesia",
-            "game_pk": 823917
-        },
-        {
-            "date": "2026-08-11",
-            "date_formatted": "August 11, 2026",
-            "challenger": "Nick Loftin",
-            "role": "batting",
-            "team": "opponents",
             "outcome": "overturned",
-            "result_desc": "Nick Loftin strikes out swinging.",
-            "batter": "Nick Loftin",
-            "pitcher": "Blake Snell",
-            "game_pk": 823917
-        },
-        {
-            "date": "2026-08-11",
-            "date_formatted": "August 11, 2026",
-            "challenger": "Carter Jensen",
-            "role": "batting",
-            "team": "opponents",
-            "outcome": "confirmed",
-            "result_desc": "Carter Jensen flies out to center fielder Andy Pages.",
-            "batter": "Carter Jensen",
-            "pitcher": "Alex Vesia",
-            "game_pk": 823917
-        },
-        {
-            "date": "2026-08-11",
-            "date_formatted": "August 11, 2026",
-            "challenger": "Tommy Edman",
-            "role": "batting",
-            "team": "dodgers",
-            "outcome": "confirmed",
-            "result_desc": "Tommy Edman flies out to center fielder Kyle Isbel. Mookie Betts to 3rd.",
-            "batter": "Tommy Edman",
-            "pitcher": "Michael Wacha",
+            "result_desc": "Salvador Perez grounds out, second baseman Tommy Edman to first baseman Freddie Freeman.",
+            "batter": "Salvador Perez",
+            "pitcher": "Seth Halvorsen",
             "game_pk": 823917
         },
         {
@@ -229,50 +229,50 @@
         {
             "date": "2026-08-11",
             "date_formatted": "August 11, 2026",
-            "challenger": "Hunter Feduccia",
-            "role": "catching",
+            "challenger": "Tommy Edman",
+            "role": "batting",
             "team": "dodgers",
-            "outcome": "overturned",
-            "result_desc": "Salvador Perez grounds out, second baseman Tommy Edman to first baseman Freddie Freeman.",
-            "batter": "Salvador Perez",
-            "pitcher": "Seth Halvorsen",
+            "outcome": "confirmed",
+            "result_desc": "Tommy Edman flies out to center fielder Kyle Isbel. Mookie Betts to 3rd.",
+            "batter": "Tommy Edman",
+            "pitcher": "Michael Wacha",
             "game_pk": 823917
         },
         {
-            "date": "2026-08-10",
-            "date_formatted": "August 10, 2026",
-            "challenger": "Salvador Perez",
+            "date": "2026-08-11",
+            "date_formatted": "August 11, 2026",
+            "challenger": "Ben Rortvedt",
             "role": "catching",
+            "team": "dodgers",
+            "outcome": "confirmed",
+            "result_desc": "Tyler Tolbert walks.",
+            "batter": "Tyler Tolbert",
+            "pitcher": "Alex Vesia",
+            "game_pk": 823917
+        },
+        {
+            "date": "2026-08-11",
+            "date_formatted": "August 11, 2026",
+            "challenger": "Carter Jensen",
+            "role": "batting",
             "team": "opponents",
             "outcome": "confirmed",
-            "result_desc": "Kyle Tucker flies out to shortstop Bobby Witt Jr.",
-            "batter": "Kyle Tucker",
-            "pitcher": "Jose Cuas",
-            "game_pk": 823918
+            "result_desc": "Carter Jensen flies out to center fielder Andy Pages.",
+            "batter": "Carter Jensen",
+            "pitcher": "Alex Vesia",
+            "game_pk": 823917
         },
         {
-            "date": "2026-08-10",
-            "date_formatted": "August 10, 2026",
-            "challenger": "Miguel Rojas",
+            "date": "2026-08-11",
+            "date_formatted": "August 11, 2026",
+            "challenger": "Nick Loftin",
             "role": "batting",
-            "team": "dodgers",
-            "outcome": "confirmed",
-            "result_desc": "Miguel Rojas grounds out sharply, shortstop Bobby Witt Jr. to first baseman Jac Caglianone.",
-            "batter": "Miguel Rojas",
-            "pitcher": "Noah Cameron",
-            "game_pk": 823918
-        },
-        {
-            "date": "2026-08-10",
-            "date_formatted": "August 10, 2026",
-            "challenger": "Andy Pages",
-            "role": "batting",
-            "team": "dodgers",
-            "outcome": "confirmed",
-            "result_desc": "Andy Pages grounds out, third baseman Nick Loftin to first baseman Jac Caglianone.",
-            "batter": "Andy Pages",
-            "pitcher": "Noah Cameron",
-            "game_pk": 823918
+            "team": "opponents",
+            "outcome": "overturned",
+            "result_desc": "Nick Loftin strikes out swinging.",
+            "batter": "Nick Loftin",
+            "pitcher": "Blake Snell",
+            "game_pk": 823917
         }
     ],
     "dodgers_by_player": [
@@ -354,6 +354,13 @@
             "success_rate": 50.0
         },
         {
+            "challenger": "Ben Rortvedt",
+            "total": 3,
+            "successful": 2,
+            "failed": 1,
+            "success_rate": 66.7
+        },
+        {
             "challenger": "Freddie Freeman",
             "total": 3,
             "successful": 2,
@@ -369,13 +376,6 @@
         },
         {
             "challenger": "Alex Freeland",
-            "total": 2,
-            "successful": 1,
-            "failed": 1,
-            "success_rate": 50.0
-        },
-        {
-            "challenger": "Ben Rortvedt",
             "total": 2,
             "successful": 1,
             "failed": 1,
@@ -434,10 +434,10 @@
         },
         {
             "inning": 3,
-            "total": 17,
-            "successful": 9,
+            "total": 18,
+            "successful": 10,
             "failed": 8,
-            "success_rate": 52.9
+            "success_rate": 55.6
         },
         {
             "inning": 4,
