@@ -1,13 +1,5 @@
 [
     {
-        "date":"Aug 4",
-        "opp_name":"Chicago Cubs",
-        "home_away":"away",
-        "result":"loss",
-        "placement":"last",
-        "game_start":"1-5"
-    },
-    {
         "date":"Aug 5",
         "opp_name":"Chicago Cubs",
         "home_away":"away",
@@ -80,20 +72,20 @@
         "game_start":"3-1"
     },
     {
+        "date":"Aug 15",
+        "opp_name":"Milwaukee Brewers",
+        "home_away":"home",
+        "result":"loss",
+        "placement":"last",
+        "game_start":"1-4"
+    },
+    {
         "date":"Jul 18",
         "opp_name":"New York Yankees",
         "home_away":"away",
         "result":"--",
         "placement":"next",
         "game_start":"Postponed"
-    },
-    {
-        "date":"Aug 15",
-        "opp_name":"Milwaukee Brewers",
-        "home_away":"home",
-        "result":"in progress",
-        "placement":"next",
-        "game_start":"Live"
     },
     {
         "date":"Aug 16",
@@ -153,6 +145,14 @@
     },
     {
         "date":"Aug 25",
+        "opp_name":"Atlanta Braves",
+        "home_away":"away",
+        "result":"--",
+        "placement":"next",
+        "game_start":"4:15 PM"
+    },
+    {
+        "date":"Aug 26",
         "opp_name":"Atlanta Braves",
         "home_away":"away",
         "result":"--",

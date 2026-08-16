@@ -1,8 +1,8 @@
 {
     "dodgers": {
         "batting": {
-            "total": 99,
-            "successful": 62,
+            "total": 100,
+            "successful": 63,
             "failed": 37
         },
         "pitching": {
@@ -18,9 +18,9 @@
     },
     "opponents": {
         "batting": {
-            "total": 105,
-            "successful": 55,
-            "failed": 50
+            "total": 107,
+            "successful": 56,
+            "failed": 51
         },
         "pitching": {
             "total": 5,
@@ -34,6 +34,42 @@
         }
     },
     "challenge_log": [
+        {
+            "date": "2026-08-15",
+            "date_formatted": "August 15, 2026",
+            "challenger": "Luis Lara",
+            "role": "batting",
+            "team": "opponents",
+            "outcome": "overturned",
+            "result_desc": "Luis Lara singles on a line drive to left fielder Teoscar Hern\u00e1ndez.",
+            "batter": "Luis Lara",
+            "pitcher": "Jonathan Hern\u00e1ndez",
+            "game_pk": 823914
+        },
+        {
+            "date": "2026-08-15",
+            "date_formatted": "August 15, 2026",
+            "challenger": "Gary S\u00e1nchez",
+            "role": "batting",
+            "team": "opponents",
+            "outcome": "confirmed",
+            "result_desc": "Gary S\u00e1nchez hit by pitch.",
+            "batter": "Gary S\u00e1nchez",
+            "pitcher": "Justin Wrobleski",
+            "game_pk": 823914
+        },
+        {
+            "date": "2026-08-15",
+            "date_formatted": "August 15, 2026",
+            "challenger": "Teoscar Hern\u00e1ndez",
+            "role": "batting",
+            "team": "dodgers",
+            "outcome": "overturned",
+            "result_desc": "Teoscar Hern\u00e1ndez strikes out swinging.",
+            "batter": "Teoscar Hern\u00e1ndez",
+            "pitcher": "Jacob Misiorowski",
+            "game_pk": 823914
+        },
         {
             "date": "2026-08-14",
             "date_formatted": "August 14, 2026",
@@ -133,13 +169,13 @@
         {
             "date": "2026-08-11",
             "date_formatted": "August 11, 2026",
-            "challenger": "Tommy Edman",
-            "role": "batting",
+            "challenger": "Ben Rortvedt",
+            "role": "catching",
             "team": "dodgers",
             "outcome": "confirmed",
-            "result_desc": "Tommy Edman flies out to center fielder Kyle Isbel. Mookie Betts to 3rd.",
-            "batter": "Tommy Edman",
-            "pitcher": "Michael Wacha",
+            "result_desc": "Tyler Tolbert walks.",
+            "batter": "Tyler Tolbert",
+            "pitcher": "Alex Vesia",
             "game_pk": 823917
         },
         {
@@ -169,13 +205,13 @@
         {
             "date": "2026-08-11",
             "date_formatted": "August 11, 2026",
-            "challenger": "Ben Rortvedt",
-            "role": "catching",
+            "challenger": "Tommy Edman",
+            "role": "batting",
             "team": "dodgers",
             "outcome": "confirmed",
-            "result_desc": "Tyler Tolbert walks.",
-            "batter": "Tyler Tolbert",
-            "pitcher": "Alex Vesia",
+            "result_desc": "Tommy Edman flies out to center fielder Kyle Isbel. Mookie Betts to 3rd.",
+            "batter": "Tommy Edman",
+            "pitcher": "Michael Wacha",
             "game_pk": 823917
         },
         {
@@ -237,42 +273,6 @@
             "batter": "Andy Pages",
             "pitcher": "Noah Cameron",
             "game_pk": 823918
-        },
-        {
-            "date": "2026-08-08",
-            "date_formatted": "August 8, 2026",
-            "challenger": "Teoscar Hern\u00e1ndez",
-            "role": "batting",
-            "team": "dodgers",
-            "outcome": "overturned",
-            "result_desc": "Teoscar Hern\u00e1ndez flies out to right fielder Corbin Carroll.",
-            "batter": "Teoscar Hern\u00e1ndez",
-            "pitcher": "Gerardo Carrillo",
-            "game_pk": 825049
-        },
-        {
-            "date": "2026-08-08",
-            "date_formatted": "August 8, 2026",
-            "challenger": "Hunter Feduccia",
-            "role": "catching",
-            "team": "dodgers",
-            "outcome": "confirmed",
-            "result_desc": "Gabriel Moreno lines out sharply to third baseman Max Muncy.",
-            "batter": "Gabriel Moreno",
-            "pitcher": "Edwin D\u00edaz",
-            "game_pk": 825049
-        },
-        {
-            "date": "2026-08-08",
-            "date_formatted": "August 8, 2026",
-            "challenger": "Hunter Feduccia",
-            "role": "catching",
-            "team": "dodgers",
-            "outcome": "overturned",
-            "result_desc": "James McCann walks.",
-            "batter": "James McCann",
-            "pitcher": "Alex Vesia",
-            "game_pk": 825049
         }
     ],
     "dodgers_by_player": [
@@ -299,10 +299,10 @@
         },
         {
             "challenger": "Teoscar Hern\u00e1ndez",
-            "total": 11,
-            "successful": 10,
+            "total": 12,
+            "successful": 11,
             "failed": 1,
-            "success_rate": 90.9
+            "success_rate": 91.7
         },
         {
             "challenger": "Mookie Betts",
@@ -434,10 +434,10 @@
         },
         {
             "inning": 3,
-            "total": 16,
-            "successful": 8,
+            "total": 17,
+            "successful": 9,
             "failed": 8,
-            "success_rate": 50.0
+            "success_rate": 52.9
         },
         {
             "inning": 4,

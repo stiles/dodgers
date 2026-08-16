@@ -1,16 +1,16 @@
 {
     "season_summary": {
-        "correct_strikes_pct": 90.62194724845327,
-        "incorrect_strikes_pct": 9.378052751546733,
-        "total_called_strikes": 3071,
-        "bad_calls_count": 288
+        "correct_strikes_pct": 90.56847545219638,
+        "incorrect_strikes_pct": 9.431524547803619,
+        "total_called_strikes": 3096,
+        "bad_calls_count": 292
     },
     "last_game_summary": {
         "date": "August 15, 2026",
-        "correct_strikes_pct": 0,
-        "incorrect_strikes_pct": 100,
-        "total_called_strikes": 0,
-        "bad_calls_count": 0,
+        "correct_strikes_pct": 84.0,
+        "incorrect_strikes_pct": 16.0,
+        "total_called_strikes": 25,
+        "bad_calls_count": 4,
         "home_plate_umpire": "Doug Eddings"
     },
     "worst_calls_of_season": [
@@ -56,16 +56,16 @@
         }
     ],
     "pitching_season_summary": {
-        "correct_balls_pct": 96.1412688031393,
-        "incorrect_balls_pct": 3.8587311968607025,
-        "total_called_balls": 6116,
+        "correct_balls_pct": 96.16509587260319,
+        "incorrect_balls_pct": 3.834904127396811,
+        "total_called_balls": 6154,
         "bad_calls_count": 236
     },
     "pitching_last_game_summary": {
         "date": "August 15, 2026",
-        "correct_balls_pct": 85.71428571428571,
-        "incorrect_balls_pct": 14.285714285714292,
-        "total_called_balls": 7,
+        "correct_balls_pct": 97.77777777777777,
+        "incorrect_balls_pct": 2.2222222222222285,
+        "total_called_balls": 45,
         "bad_calls_count": 1
     },
     "pitching_worst_calls_of_season": [],
@@ -82,8 +82,8 @@
                 "failed": 0
             },
             "catching": {
-                "total": 22,
-                "successful": 17,
+                "total": 23,
+                "successful": 18,
                 "failed": 5
             }
         },
@@ -105,6 +105,18 @@
             }
         },
         "challenge_log": [
+            {
+                "date": "2026-08-15",
+                "date_formatted": "August 15, 2026",
+                "challenger": "Hunter Feduccia",
+                "role": "catching",
+                "team": "dodgers",
+                "outcome": "overturned",
+                "result_desc": "Joey Ortiz called out on strikes.",
+                "batter": "Joey Ortiz",
+                "pitcher": "Justin Wrobleski",
+                "game_pk": 823914
+            },
             {
                 "date": "2026-08-14",
                 "date_formatted": "August 14, 2026",
@@ -331,18 +343,6 @@
                 "result_desc": "Tommy Edman walks.",
                 "batter": "Tommy Edman",
                 "pitcher": "Bryan Woo",
-                "game_pk": 823921
-            },
-            {
-                "date": "2026-07-30",
-                "date_formatted": "July 30, 2026",
-                "challenger": "Dalton Rushing",
-                "role": "catching",
-                "team": "dodgers",
-                "outcome": "overturned",
-                "result_desc": "Dominic Canzone called out on strikes.",
-                "batter": "Dominic Canzone",
-                "pitcher": "Roki Sasaki",
                 "game_pk": 823921
             }
         ]
