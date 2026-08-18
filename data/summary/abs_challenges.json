@@ -18,9 +18,9 @@
     },
     "opponents": {
         "batting": {
-            "total": 107,
+            "total": 108,
             "successful": 56,
-            "failed": 51
+            "failed": 52
         },
         "pitching": {
             "total": 5,
@@ -28,12 +28,36 @@
             "failed": 3
         },
         "catching": {
-            "total": 138,
-            "successful": 85,
+            "total": 139,
+            "successful": 86,
             "failed": 53
         }
     },
     "challenge_log": [
+        {
+            "date": "2026-08-17",
+            "date_formatted": "August 17, 2026",
+            "challenger": "Brett Sullivan",
+            "role": "catching",
+            "team": "opponents",
+            "outcome": "overturned",
+            "result_desc": "Tommy Edman flies out to left fielder Zac Veen.",
+            "batter": "Tommy Edman",
+            "pitcher": "TJ Shook",
+            "game_pk": 824320
+        },
+        {
+            "date": "2026-08-17",
+            "date_formatted": "August 17, 2026",
+            "challenger": "Jordan Beck",
+            "role": "batting",
+            "team": "opponents",
+            "outcome": "confirmed",
+            "result_desc": "Jordan Beck flies out to left fielder Teoscar Hern\u00e1ndez.",
+            "batter": "Jordan Beck",
+            "pitcher": "Blake Snell",
+            "game_pk": 824320
+        },
         {
             "date": "2026-08-16",
             "date_formatted": "August 16, 2026",
@@ -248,30 +272,6 @@
             "result_desc": "Tyler Tolbert walks.",
             "batter": "Tyler Tolbert",
             "pitcher": "Alex Vesia",
-            "game_pk": 823917
-        },
-        {
-            "date": "2026-08-11",
-            "date_formatted": "August 11, 2026",
-            "challenger": "Carter Jensen",
-            "role": "batting",
-            "team": "opponents",
-            "outcome": "confirmed",
-            "result_desc": "Carter Jensen flies out to center fielder Andy Pages.",
-            "batter": "Carter Jensen",
-            "pitcher": "Alex Vesia",
-            "game_pk": 823917
-        },
-        {
-            "date": "2026-08-11",
-            "date_formatted": "August 11, 2026",
-            "challenger": "Nick Loftin",
-            "role": "batting",
-            "team": "opponents",
-            "outcome": "overturned",
-            "result_desc": "Nick Loftin strikes out swinging.",
-            "batter": "Nick Loftin",
-            "pitcher": "Blake Snell",
             "game_pk": 823917
         }
     ],

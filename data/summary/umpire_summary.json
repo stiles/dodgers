@@ -1,17 +1,17 @@
 {
     "season_summary": {
-        "correct_strikes_pct": 90.62600321027287,
-        "incorrect_strikes_pct": 9.37399678972713,
-        "total_called_strikes": 3115,
-        "bad_calls_count": 292
+        "correct_strikes_pct": 90.57924888605984,
+        "incorrect_strikes_pct": 9.420751113940156,
+        "total_called_strikes": 3142,
+        "bad_calls_count": 296
     },
     "last_game_summary": {
-        "date": "August 16, 2026",
-        "correct_strikes_pct": 100.0,
-        "incorrect_strikes_pct": 0.0,
-        "total_called_strikes": 19,
-        "bad_calls_count": 0,
-        "home_plate_umpire": "Emil Jimenez"
+        "date": "August 17, 2026",
+        "correct_strikes_pct": 85.18518518518519,
+        "incorrect_strikes_pct": 14.81481481481481,
+        "total_called_strikes": 27,
+        "bad_calls_count": 4,
+        "home_plate_umpire": "Mark Ripperger"
     },
     "worst_calls_of_season": [
         {
@@ -35,6 +35,16 @@
             "video_link": "https://baseballsavant.mlb.com/sporty-videos?playId=2fea65ae-c036-33b2-bd33-87048cffc04f"
         },
         {
+            "distance_inches": 4.5875769215,
+            "batter": "Enrique Hern\u00e1ndez",
+            "pitcher": "Troy Johnston",
+            "pitch_type": "Slider",
+            "velocity_mph": 69.2,
+            "date": "2026-08-17",
+            "date_formatted": "August 17, 2026",
+            "video_link": "https://baseballsavant.mlb.com/sporty-videos?playId=785d29bd-7c79-3537-8458-47b89b82e3ff"
+        },
+        {
             "distance_inches": 4.3578575427,
             "batter": "Santiago Espinal",
             "pitcher": "Bryan King",
@@ -43,30 +53,20 @@
             "date": "2026-05-05",
             "date_formatted": "May 5, 2026",
             "video_link": "https://baseballsavant.mlb.com/sporty-videos?playId=383d8667-b191-3bac-95e2-2468f77e7813"
-        },
-        {
-            "distance_inches": 4.0185215262,
-            "batter": "Kyle Tucker",
-            "pitcher": "Walker Buehler",
-            "pitch_type": "4-Seam Fastball",
-            "velocity_mph": 93.6,
-            "date": "2026-06-26",
-            "date_formatted": "June 26, 2026",
-            "video_link": "https://baseballsavant.mlb.com/sporty-videos?playId=44dcbbd0-aa82-3b34-930d-b44c71bfe65c"
         }
     ],
     "pitching_season_summary": {
-        "correct_balls_pct": 96.17926809608254,
-        "incorrect_balls_pct": 3.820731903917462,
-        "total_called_balls": 6203,
+        "correct_balls_pct": 96.20131431319122,
+        "incorrect_balls_pct": 3.7986856868087813,
+        "total_called_balls": 6239,
         "bad_calls_count": 237
     },
     "pitching_last_game_summary": {
-        "date": "August 16, 2026",
-        "correct_balls_pct": 97.95918367346938,
-        "incorrect_balls_pct": 2.040816326530617,
-        "total_called_balls": 49,
-        "bad_calls_count": 1
+        "date": "August 17, 2026",
+        "correct_balls_pct": 100.0,
+        "incorrect_balls_pct": 0.0,
+        "total_called_balls": 36,
+        "bad_calls_count": 0
     },
     "pitching_worst_calls_of_season": [],
     "abs_challenges": {
@@ -89,9 +89,9 @@
         },
         "opponents": {
             "batting": {
-                "total": 31,
+                "total": 32,
                 "successful": 9,
-                "failed": 22
+                "failed": 23
             },
             "pitching": {
                 "total": 0,
@@ -105,6 +105,18 @@
             }
         },
         "challenge_log": [
+            {
+                "date": "2026-08-17",
+                "date_formatted": "August 17, 2026",
+                "challenger": "Zac Veen",
+                "role": "batting",
+                "team": "opponents",
+                "outcome": "confirmed",
+                "result_desc": "Zac Veen called out on strikes.",
+                "batter": "Zac Veen",
+                "pitcher": "Evan Phillips",
+                "game_pk": 824320
+            },
             {
                 "date": "2026-08-15",
                 "date_formatted": "August 15, 2026",
@@ -332,18 +344,6 @@
                 "batter": "Max Muncy",
                 "pitcher": "Aroldis Chapman",
                 "game_pk": 823920
-            },
-            {
-                "date": "2026-07-30",
-                "date_formatted": "July 30, 2026",
-                "challenger": "Tommy Edman",
-                "role": "batting",
-                "team": "dodgers",
-                "outcome": "overturned",
-                "result_desc": "Tommy Edman walks.",
-                "batter": "Tommy Edman",
-                "pitcher": "Bryan Woo",
-                "game_pk": 823921
             }
         ]
     }
