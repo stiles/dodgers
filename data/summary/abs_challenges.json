@@ -18,9 +18,9 @@
     },
     "opponents": {
         "batting": {
-            "total": 108,
+            "total": 109,
             "successful": 56,
-            "failed": 52
+            "failed": 53
         },
         "pitching": {
             "total": 5,
@@ -34,6 +34,18 @@
         }
     },
     "challenge_log": [
+        {
+            "date": "2026-08-18",
+            "date_formatted": "August 18, 2026",
+            "challenger": "TJ Rumfield",
+            "role": "batting",
+            "team": "opponents",
+            "outcome": "confirmed",
+            "result_desc": "TJ Rumfield called out on strikes.",
+            "batter": "TJ Rumfield",
+            "pitcher": "Eric Lauer",
+            "game_pk": 824319
+        },
         {
             "date": "2026-08-17",
             "date_formatted": "August 17, 2026",
@@ -169,18 +181,6 @@
         {
             "date": "2026-08-13",
             "date_formatted": "August 13, 2026",
-            "challenger": "Jake Bauers",
-            "role": "batting",
-            "team": "opponents",
-            "outcome": "overturned",
-            "result_desc": "Jake Bauers walks.",
-            "batter": "Jake Bauers",
-            "pitcher": "Edgardo Henriquez",
-            "game_pk": 823915
-        },
-        {
-            "date": "2026-08-13",
-            "date_formatted": "August 13, 2026",
             "challenger": "William Contreras",
             "role": "catching",
             "team": "opponents",
@@ -188,6 +188,18 @@
             "result_desc": "Tommy Edman walks.",
             "batter": "Tommy Edman",
             "pitcher": "Shane Drohan",
+            "game_pk": 823915
+        },
+        {
+            "date": "2026-08-13",
+            "date_formatted": "August 13, 2026",
+            "challenger": "Jake Bauers",
+            "role": "batting",
+            "team": "opponents",
+            "outcome": "overturned",
+            "result_desc": "Jake Bauers walks.",
+            "batter": "Jake Bauers",
+            "pitcher": "Edgardo Henriquez",
             "game_pk": 823915
         },
         {
@@ -260,18 +272,6 @@
             "result_desc": "Tommy Edman flies out to center fielder Kyle Isbel. Mookie Betts to 3rd.",
             "batter": "Tommy Edman",
             "pitcher": "Michael Wacha",
-            "game_pk": 823917
-        },
-        {
-            "date": "2026-08-11",
-            "date_formatted": "August 11, 2026",
-            "challenger": "Ben Rortvedt",
-            "role": "catching",
-            "team": "dodgers",
-            "outcome": "confirmed",
-            "result_desc": "Tyler Tolbert walks.",
-            "batter": "Tyler Tolbert",
-            "pitcher": "Alex Vesia",
             "game_pk": 823917
         }
     ],

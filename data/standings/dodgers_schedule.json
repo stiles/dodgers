@@ -1,13 +1,5 @@
 [
     {
-        "date":"Aug 8",
-        "opp_name":"Arizona Diamondbacks",
-        "home_away":"away",
-        "result":"win",
-        "placement":"last",
-        "game_start":"2-1"
-    },
-    {
         "date":"Aug 9",
         "opp_name":"Arizona Diamondbacks",
         "home_away":"away",
@@ -80,20 +72,20 @@
         "game_start":"11-5"
     },
     {
+        "date":"Aug 18",
+        "opp_name":"Colorado Rockies",
+        "home_away":"away",
+        "result":"win",
+        "placement":"last",
+        "game_start":"7-6"
+    },
+    {
         "date":"Jul 18",
         "opp_name":"New York Yankees",
         "home_away":"away",
         "result":"--",
         "placement":"next",
         "game_start":"Postponed"
-    },
-    {
-        "date":"Aug 18",
-        "opp_name":"Colorado Rockies",
-        "home_away":"away",
-        "result":"--",
-        "placement":"next",
-        "game_start":"5:40 PM"
     },
     {
         "date":"Aug 19",
@@ -158,5 +150,13 @@
         "result":"--",
         "placement":"next",
         "game_start":"3:40 PM"
+    },
+    {
+        "date":"Aug 29",
+        "opp_name":"Detroit Tigers",
+        "home_away":"away",
+        "result":"--",
+        "placement":"next",
+        "game_start":"10:10 AM"
     }
 ]
