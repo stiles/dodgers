@@ -1,17 +1,17 @@
 {
     "season_summary": {
-        "correct_strikes_pct": 90.64475347661188,
-        "incorrect_strikes_pct": 9.355246523388118,
-        "total_called_strikes": 3164,
-        "bad_calls_count": 296
+        "correct_strikes_pct": 90.67503924646782,
+        "incorrect_strikes_pct": 9.324960753532181,
+        "total_called_strikes": 3185,
+        "bad_calls_count": 297
     },
     "last_game_summary": {
-        "date": "August 18, 2026",
-        "correct_strikes_pct": 100.0,
-        "incorrect_strikes_pct": 0.0,
-        "total_called_strikes": 22,
-        "bad_calls_count": 0,
-        "home_plate_umpire": "Adam Hamari"
+        "date": "August 19, 2026",
+        "correct_strikes_pct": 95.23809523809523,
+        "incorrect_strikes_pct": 4.761904761904773,
+        "total_called_strikes": 21,
+        "bad_calls_count": 1,
+        "home_plate_umpire": "Dan Merzel"
     },
     "worst_calls_of_season": [
         {
@@ -56,17 +56,17 @@
         }
     ],
     "pitching_season_summary": {
-        "correct_balls_pct": 96.19487342779813,
-        "incorrect_balls_pct": 3.8051265722018712,
-        "total_called_balls": 6281,
+        "correct_balls_pct": 96.22253832780149,
+        "incorrect_balls_pct": 3.7774616721985126,
+        "total_called_balls": 6327,
         "bad_calls_count": 239
     },
     "pitching_last_game_summary": {
-        "date": "August 18, 2026",
-        "correct_balls_pct": 95.23809523809523,
-        "incorrect_balls_pct": 4.761904761904773,
-        "total_called_balls": 42,
-        "bad_calls_count": 2
+        "date": "August 19, 2026",
+        "correct_balls_pct": 100.0,
+        "incorrect_balls_pct": 0.0,
+        "total_called_balls": 46,
+        "bad_calls_count": 0
     },
     "pitching_worst_calls_of_season": [],
     "abs_challenges": {
