@@ -52,7 +52,7 @@
         "stat":"runs",
         "value":640,
         "category":"standings",
-        "context_value":"4th",
+        "context_value":"5th",
         "context_value_label":"League rank"
     },
     {
@@ -156,7 +156,7 @@
         "stat":"walks",
         "value":401,
         "category":"pitching",
-        "context_value":"20th",
+        "context_value":"21st",
         "context_value_label":"League rank"
     },
     {
@@ -172,7 +172,7 @@
         "stat":"whip",
         "value":"1.17",
         "category":"pitching",
-        "context_value":"3rd",
+        "context_value":"2nd",
         "context_value_label":"League rank"
     },
     {
@@ -194,7 +194,7 @@
     {
         "stat_label":"Last updated",
         "stat":"update_time",
-        "value":"August 20, 2026, 8:42 AM PT",
+        "value":"August 20, 2026, 4:31 PM PT",
         "category":"summary",
         "context_value":"",
         "context_value_label":""
