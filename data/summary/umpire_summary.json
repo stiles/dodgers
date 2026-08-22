@@ -1,17 +1,17 @@
 {
     "season_summary": {
-        "correct_strikes_pct": 90.67503924646782,
-        "incorrect_strikes_pct": 9.324960753532181,
-        "total_called_strikes": 3185,
-        "bad_calls_count": 297
+        "correct_strikes_pct": 90.65217391304347,
+        "incorrect_strikes_pct": 9.34782608695653,
+        "total_called_strikes": 3220,
+        "bad_calls_count": 301
     },
     "last_game_summary": {
-        "date": "August 19, 2026",
-        "correct_strikes_pct": 95.23809523809523,
-        "incorrect_strikes_pct": 4.761904761904773,
-        "total_called_strikes": 21,
-        "bad_calls_count": 1,
-        "home_plate_umpire": "Dan Merzel"
+        "date": "August 21, 2026",
+        "correct_strikes_pct": 88.57142857142857,
+        "incorrect_strikes_pct": 11.42857142857143,
+        "total_called_strikes": 35,
+        "bad_calls_count": 4,
+        "home_plate_umpire": "Malachi Moore"
     },
     "worst_calls_of_season": [
         {
@@ -56,17 +56,17 @@
         }
     ],
     "pitching_season_summary": {
-        "correct_balls_pct": 96.22253832780149,
-        "incorrect_balls_pct": 3.7774616721985126,
-        "total_called_balls": 6327,
-        "bad_calls_count": 239
+        "correct_balls_pct": 96.20927318295739,
+        "incorrect_balls_pct": 3.7907268170426107,
+        "total_called_balls": 6384,
+        "bad_calls_count": 242
     },
     "pitching_last_game_summary": {
-        "date": "August 19, 2026",
-        "correct_balls_pct": 100.0,
-        "incorrect_balls_pct": 0.0,
-        "total_called_balls": 46,
-        "bad_calls_count": 0
+        "date": "August 21, 2026",
+        "correct_balls_pct": 94.73684210526315,
+        "incorrect_balls_pct": 5.26315789473685,
+        "total_called_balls": 57,
+        "bad_calls_count": 3
     },
     "pitching_worst_calls_of_season": [],
     "abs_challenges": {
@@ -82,8 +82,8 @@
                 "failed": 0
             },
             "catching": {
-                "total": 23,
-                "successful": 18,
+                "total": 25,
+                "successful": 20,
                 "failed": 5
             }
         },
@@ -99,12 +99,48 @@
                 "failed": 0
             },
             "catching": {
-                "total": 45,
-                "successful": 34,
+                "total": 46,
+                "successful": 35,
                 "failed": 11
             }
         },
         "challenge_log": [
+            {
+                "date": "2026-08-21",
+                "date_formatted": "August 21, 2026",
+                "challenger": "Rafael Flores Jr.",
+                "role": "catching",
+                "team": "opponents",
+                "outcome": "overturned",
+                "result_desc": "Max Muncy called out on strikes.",
+                "batter": "Max Muncy",
+                "pitcher": "Yohan Ram\u00edrez",
+                "game_pk": 823911
+            },
+            {
+                "date": "2026-08-21",
+                "date_formatted": "August 21, 2026",
+                "challenger": "Hunter Feduccia",
+                "role": "catching",
+                "team": "dodgers",
+                "outcome": "overturned",
+                "result_desc": "Bryan Reynolds called out on strikes.",
+                "batter": "Bryan Reynolds",
+                "pitcher": "Yoshinobu Yamamoto",
+                "game_pk": 823911
+            },
+            {
+                "date": "2026-08-21",
+                "date_formatted": "August 21, 2026",
+                "challenger": "Hunter Feduccia",
+                "role": "catching",
+                "team": "dodgers",
+                "outcome": "overturned",
+                "result_desc": "Spencer Horwitz called out on strikes.",
+                "batter": "Spencer Horwitz",
+                "pitcher": "Yoshinobu Yamamoto",
+                "game_pk": 823911
+            },
             {
                 "date": "2026-08-17",
                 "date_formatted": "August 17, 2026",
@@ -308,42 +344,6 @@
                 "batter": "Carson Kelly",
                 "pitcher": "Tanner Scott",
                 "game_pk": 824647
-            },
-            {
-                "date": "2026-08-02",
-                "date_formatted": "August 2, 2026",
-                "challenger": "Carlos Narv\u00e1ez",
-                "role": "catching",
-                "team": "opponents",
-                "outcome": "overturned",
-                "result_desc": "Kyle Tucker called out on strikes.",
-                "batter": "Kyle Tucker",
-                "pitcher": "Jake Bennett",
-                "game_pk": 823919
-            },
-            {
-                "date": "2026-08-02",
-                "date_formatted": "August 2, 2026",
-                "challenger": "Ceddanne Rafaela",
-                "role": "batting",
-                "team": "opponents",
-                "outcome": "confirmed",
-                "result_desc": "Ceddanne Rafaela called out on strikes.",
-                "batter": "Ceddanne Rafaela",
-                "pitcher": "Kyle Hurt",
-                "game_pk": 823919
-            },
-            {
-                "date": "2026-08-01",
-                "date_formatted": "August 1, 2026",
-                "challenger": "Connor Wong",
-                "role": "catching",
-                "team": "opponents",
-                "outcome": "overturned",
-                "result_desc": "Max Muncy called out on strikes.",
-                "batter": "Max Muncy",
-                "pitcher": "Aroldis Chapman",
-                "game_pk": 823920
             }
         ]
     }
