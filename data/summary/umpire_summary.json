@@ -6,12 +6,12 @@
         "bad_calls_count": 301
     },
     "last_game_summary": {
-        "date": "August 21, 2026",
-        "correct_strikes_pct": 88.57142857142857,
-        "incorrect_strikes_pct": 11.42857142857143,
-        "total_called_strikes": 35,
-        "bad_calls_count": 4,
-        "home_plate_umpire": "Malachi Moore"
+        "date": "August 22, 2026",
+        "correct_strikes_pct": 0,
+        "incorrect_strikes_pct": 100,
+        "total_called_strikes": 0,
+        "bad_calls_count": 0,
+        "home_plate_umpire": "Alfonso M\u00e1rquez"
     },
     "worst_calls_of_season": [
         {
@@ -56,17 +56,17 @@
         }
     ],
     "pitching_season_summary": {
-        "correct_balls_pct": 96.20927318295739,
-        "incorrect_balls_pct": 3.7907268170426107,
-        "total_called_balls": 6384,
+        "correct_balls_pct": 96.21223978713414,
+        "incorrect_balls_pct": 3.7877602128658623,
+        "total_called_balls": 6389,
         "bad_calls_count": 242
     },
     "pitching_last_game_summary": {
-        "date": "August 21, 2026",
-        "correct_balls_pct": 94.73684210526315,
-        "incorrect_balls_pct": 5.26315789473685,
-        "total_called_balls": 57,
-        "bad_calls_count": 3
+        "date": "August 22, 2026",
+        "correct_balls_pct": 100.0,
+        "incorrect_balls_pct": 0.0,
+        "total_called_balls": 5,
+        "bad_calls_count": 0
     },
     "pitching_worst_calls_of_season": [],
     "abs_challenges": {
