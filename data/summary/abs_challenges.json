@@ -1,19 +1,19 @@
 {
     "dodgers": {
         "batting": {
-            "total": 104,
-            "successful": 65,
+            "total": 105,
+            "successful": 66,
             "failed": 39
         },
         "pitching": {
-            "total": 5,
+            "total": 6,
             "successful": 2,
-            "failed": 3
+            "failed": 4
         },
         "catching": {
-            "total": 97,
+            "total": 98,
             "successful": 56,
-            "failed": 41
+            "failed": 42
         }
     },
     "opponents": {
@@ -28,12 +28,60 @@
             "failed": 3
         },
         "catching": {
-            "total": 143,
+            "total": 144,
             "successful": 88,
-            "failed": 55
+            "failed": 56
         }
     },
     "challenge_log": [
+        {
+            "date": "2026-08-22",
+            "date_formatted": "August 22, 2026",
+            "challenger": "Henry Davis",
+            "role": "catching",
+            "team": "opponents",
+            "outcome": "confirmed",
+            "result_desc": "Kyle Tucker grounds into a double play, first baseman Rafael Flores Jr. to shortstop Jared Triolo to first baseman Rafael Flores Jr. Max Muncy out at 2nd. Kyle Tucker out at 1st.",
+            "batter": "Kyle Tucker",
+            "pitcher": "Kirby Yates",
+            "game_pk": 823910
+        },
+        {
+            "date": "2026-08-22",
+            "date_formatted": "August 22, 2026",
+            "challenger": "Ben Rortvedt",
+            "role": "catching",
+            "team": "dodgers",
+            "outcome": "confirmed",
+            "result_desc": "Oneil Cruz strikes out swinging.",
+            "batter": "Oneil Cruz",
+            "pitcher": "Tarik Skubal",
+            "game_pk": 823910
+        },
+        {
+            "date": "2026-08-22",
+            "date_formatted": "August 22, 2026",
+            "challenger": "Tarik Skubal",
+            "role": "pitching",
+            "team": "dodgers",
+            "outcome": "confirmed",
+            "result_desc": "Jared Triolo singles on a line drive to center fielder Alek Thomas. Nick Yorke to 2nd.",
+            "batter": "Jared Triolo",
+            "pitcher": "Tarik Skubal",
+            "game_pk": 823910
+        },
+        {
+            "date": "2026-08-22",
+            "date_formatted": "August 22, 2026",
+            "challenger": "Mookie Betts",
+            "role": "batting",
+            "team": "dodgers",
+            "outcome": "overturned",
+            "result_desc": "Mookie Betts grounds out, second baseman Nick Gonzales to first baseman Rafael Flores Jr.",
+            "batter": "Mookie Betts",
+            "pitcher": "Jared Jones",
+            "game_pk": 823910
+        },
         {
             "date": "2026-08-21",
             "date_formatted": "August 21, 2026",
@@ -133,18 +181,6 @@
         {
             "date": "2026-08-19",
             "date_formatted": "August 19, 2026",
-            "challenger": "Adael Amador",
-            "role": "batting",
-            "team": "opponents",
-            "outcome": "confirmed",
-            "result_desc": "Adael Amador doubles (1) on a line drive to left fielder Teoscar Hern\u00e1ndez. TJ Rumfield scores. Connor Norby scores.",
-            "batter": "Adael Amador",
-            "pitcher": "Roki Sasaki",
-            "game_pk": 824318
-        },
-        {
-            "date": "2026-08-19",
-            "date_formatted": "August 19, 2026",
             "challenger": "Brett Sullivan",
             "role": "catching",
             "team": "opponents",
@@ -164,6 +200,18 @@
             "result_desc": "Andy Pages lines out to center fielder Cole Carrigg.",
             "batter": "Andy Pages",
             "pitcher": "Kyle Freeland",
+            "game_pk": 824318
+        },
+        {
+            "date": "2026-08-19",
+            "date_formatted": "August 19, 2026",
+            "challenger": "Adael Amador",
+            "role": "batting",
+            "team": "opponents",
+            "outcome": "confirmed",
+            "result_desc": "Adael Amador doubles (1) on a line drive to left fielder Teoscar Hern\u00e1ndez. TJ Rumfield scores. Connor Norby scores.",
+            "batter": "Adael Amador",
+            "pitcher": "Roki Sasaki",
             "game_pk": 824318
         },
         {
@@ -225,54 +273,6 @@
             "batter": "Jordan Beck",
             "pitcher": "Blake Snell",
             "game_pk": 824320
-        },
-        {
-            "date": "2026-08-16",
-            "date_formatted": "August 16, 2026",
-            "challenger": "Gary S\u00e1nchez",
-            "role": "catching",
-            "team": "opponents",
-            "outcome": "confirmed",
-            "result_desc": "Andy Pages walks.",
-            "batter": "Andy Pages",
-            "pitcher": "Logan Henderson",
-            "game_pk": 823912
-        },
-        {
-            "date": "2026-08-16",
-            "date_formatted": "August 16, 2026",
-            "challenger": "Gary S\u00e1nchez",
-            "role": "catching",
-            "team": "opponents",
-            "outcome": "confirmed",
-            "result_desc": "Max Muncy homers (24) on a fly ball to right field.",
-            "batter": "Max Muncy",
-            "pitcher": "Logan Henderson",
-            "game_pk": 823912
-        },
-        {
-            "date": "2026-08-16",
-            "date_formatted": "August 16, 2026",
-            "challenger": "Ben Rortvedt",
-            "role": "catching",
-            "team": "dodgers",
-            "outcome": "overturned",
-            "result_desc": "Andrew Vaughn grounds into a double play, shortstop Mookie Betts to second baseman Tommy Edman to first baseman Freddie Freeman. Jake Bauers out at 2nd. Andrew Vaughn out at 1st.",
-            "batter": "Andrew Vaughn",
-            "pitcher": "Tarik Skubal",
-            "game_pk": 823912
-        },
-        {
-            "date": "2026-08-15",
-            "date_formatted": "August 15, 2026",
-            "challenger": "Luis Lara",
-            "role": "batting",
-            "team": "opponents",
-            "outcome": "overturned",
-            "result_desc": "Luis Lara singles on a line drive to left fielder Teoscar Hern\u00e1ndez.",
-            "batter": "Luis Lara",
-            "pitcher": "Jonathan Hern\u00e1ndez",
-            "game_pk": 823914
         }
     ],
     "dodgers_by_player": [
@@ -306,10 +306,10 @@
         },
         {
             "challenger": "Mookie Betts",
-            "total": 10,
-            "successful": 7,
+            "total": 11,
+            "successful": 8,
             "failed": 3,
-            "success_rate": 70.0
+            "success_rate": 72.7
         },
         {
             "challenger": "Hunter Feduccia",
@@ -347,18 +347,18 @@
             "success_rate": 71.4
         },
         {
-            "challenger": "Eliezer Alfonzo",
+            "challenger": "Ben Rortvedt",
             "total": 4,
             "successful": 2,
             "failed": 2,
             "success_rate": 50.0
         },
         {
-            "challenger": "Ben Rortvedt",
-            "total": 3,
+            "challenger": "Eliezer Alfonzo",
+            "total": 4,
             "successful": 2,
-            "failed": 1,
-            "success_rate": 66.7
+            "failed": 2,
+            "success_rate": 50.0
         },
         {
             "challenger": "Freddie Freeman",
@@ -415,22 +415,29 @@
             "successful": 0,
             "failed": 1,
             "success_rate": 0.0
+        },
+        {
+            "challenger": "Tarik Skubal",
+            "total": 1,
+            "successful": 0,
+            "failed": 1,
+            "success_rate": 0.0
         }
     ],
     "dodgers_by_inning": [
         {
             "inning": 1,
-            "total": 16,
-            "successful": 12,
+            "total": 17,
+            "successful": 13,
             "failed": 4,
-            "success_rate": 75.0
+            "success_rate": 76.5
         },
         {
             "inning": 2,
-            "total": 11,
+            "total": 12,
             "successful": 7,
-            "failed": 4,
-            "success_rate": 63.6
+            "failed": 5,
+            "success_rate": 58.3
         },
         {
             "inning": 3,
@@ -455,10 +462,10 @@
         },
         {
             "inning": 6,
-            "total": 27,
+            "total": 28,
             "successful": 17,
-            "failed": 10,
-            "success_rate": 63.0
+            "failed": 11,
+            "success_rate": 60.7
         },
         {
             "inning": 7,

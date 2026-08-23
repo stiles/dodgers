@@ -1,13 +1,5 @@
 [
     {
-        "date":"Aug 11",
-        "opp_name":"Kansas City Royals",
-        "home_away":"home",
-        "result":"win",
-        "placement":"last",
-        "game_start":"5-4"
-    },
-    {
         "date":"Aug 12",
         "opp_name":"Kansas City Royals",
         "home_away":"home",
@@ -80,20 +72,20 @@
         "game_start":"5-4"
     },
     {
+        "date":"Aug 22",
+        "opp_name":"Pittsburgh Pirates",
+        "home_away":"home",
+        "result":"win",
+        "placement":"last",
+        "game_start":"4-3"
+    },
+    {
         "date":"Jul 18",
         "opp_name":"New York Yankees",
         "home_away":"away",
         "result":"--",
         "placement":"next",
         "game_start":"Postponed"
-    },
-    {
-        "date":"Aug 22",
-        "opp_name":"Pittsburgh Pirates",
-        "home_away":"home",
-        "result":"in progress",
-        "placement":"next",
-        "game_start":"Live"
     },
     {
         "date":"Aug 23",
@@ -153,6 +145,14 @@
     },
     {
         "date":"Sep 1",
+        "opp_name":"St. Louis Cardinals",
+        "home_away":"home",
+        "result":"--",
+        "placement":"next",
+        "game_start":"7:10 PM"
+    },
+    {
+        "date":"Sep 2",
         "opp_name":"St. Louis Cardinals",
         "home_away":"home",
         "result":"--",

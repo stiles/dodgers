@@ -1,16 +1,16 @@
 {
     "season_summary": {
-        "correct_strikes_pct": 90.65217391304347,
-        "incorrect_strikes_pct": 9.34782608695653,
-        "total_called_strikes": 3220,
-        "bad_calls_count": 301
+        "correct_strikes_pct": 90.6288532675709,
+        "incorrect_strikes_pct": 9.371146732429096,
+        "total_called_strikes": 3244,
+        "bad_calls_count": 304
     },
     "last_game_summary": {
         "date": "August 22, 2026",
-        "correct_strikes_pct": 0,
-        "incorrect_strikes_pct": 100,
-        "total_called_strikes": 0,
-        "bad_calls_count": 0,
+        "correct_strikes_pct": 87.5,
+        "incorrect_strikes_pct": 12.5,
+        "total_called_strikes": 24,
+        "bad_calls_count": 3,
         "home_plate_umpire": "Alfonso M\u00e1rquez"
     },
     "worst_calls_of_season": [
@@ -56,17 +56,17 @@
         }
     ],
     "pitching_season_summary": {
-        "correct_balls_pct": 96.21223978713414,
-        "incorrect_balls_pct": 3.7877602128658623,
-        "total_called_balls": 6389,
-        "bad_calls_count": 242
+        "correct_balls_pct": 96.20292561469032,
+        "incorrect_balls_pct": 3.797074385309685,
+        "total_called_balls": 6426,
+        "bad_calls_count": 244
     },
     "pitching_last_game_summary": {
         "date": "August 22, 2026",
-        "correct_balls_pct": 100.0,
-        "incorrect_balls_pct": 0.0,
-        "total_called_balls": 5,
-        "bad_calls_count": 0
+        "correct_balls_pct": 95.23809523809523,
+        "incorrect_balls_pct": 4.761904761904773,
+        "total_called_balls": 42,
+        "bad_calls_count": 2
     },
     "pitching_worst_calls_of_season": [],
     "abs_challenges": {
@@ -99,12 +99,24 @@
                 "failed": 0
             },
             "catching": {
-                "total": 46,
-                "successful": 35,
+                "total": 47,
+                "successful": 36,
                 "failed": 11
             }
         },
         "challenge_log": [
+            {
+                "date": "2026-08-22",
+                "date_formatted": "August 22, 2026",
+                "challenger": "Henry Davis",
+                "role": "catching",
+                "team": "opponents",
+                "outcome": "overturned",
+                "result_desc": "Mookie Betts called out on strikes.",
+                "batter": "Mookie Betts",
+                "pitcher": "Camilo Doval",
+                "game_pk": 823910
+            },
             {
                 "date": "2026-08-21",
                 "date_formatted": "August 21, 2026",
@@ -331,18 +343,6 @@
                 "result_desc": "Nico Hoerner walks.",
                 "batter": "Nico Hoerner",
                 "pitcher": "Justin Wrobleski",
-                "game_pk": 824647
-            },
-            {
-                "date": "2026-08-03",
-                "date_formatted": "August 3, 2026",
-                "challenger": "Carson Kelly",
-                "role": "batting",
-                "team": "opponents",
-                "outcome": "overturned",
-                "result_desc": "Carson Kelly walks. Ian Happ scores. Pete Crow-Armstrong to 3rd. Seiya Suzuki to 2nd.",
-                "batter": "Carson Kelly",
-                "pitcher": "Tanner Scott",
                 "game_pk": 824647
             }
         ]
