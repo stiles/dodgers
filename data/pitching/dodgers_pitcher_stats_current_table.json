@@ -105,6 +105,21 @@
         "fetched":"2026-08-23"
     },
     {
+        "player":"Edgardo Henriquez",
+        "role":"SP",
+        "position":"P",
+        "era":"2.91",
+        "whip":"1.01",
+        "k9":"9.91",
+        "bb9":"3.93",
+        "kbb":"2.52",
+        "ip":"52.2",
+        "ip_rounded":52,
+        "gs":1,
+        "gp":52,
+        "fetched":"2026-08-23"
+    },
+    {
         "player":"Tanner Scott",
         "role":"RP",
         "position":"P",
@@ -120,33 +135,18 @@
         "fetched":"2026-08-23"
     },
     {
-        "player":"Edgardo Henriquez",
-        "role":"SP",
-        "position":"P",
-        "era":"2.96",
-        "whip":"1.03",
-        "k9":"9.75",
-        "bb9":"4.01",
-        "kbb":"2.43",
-        "ip":"51.2",
-        "ip_rounded":51,
-        "gs":1,
-        "gp":51,
-        "fetched":"2026-08-23"
-    },
-    {
         "player":"Alex Vesia",
         "role":"RP",
         "position":"P",
-        "era":"3.25",
+        "era":"3.18",
         "whip":"1.24",
-        "k9":"11.77",
-        "bb9":"6.09",
-        "kbb":"1.93",
-        "ip":"44.1",
-        "ip_rounded":44,
+        "k9":"11.71",
+        "bb9":"6.15",
+        "kbb":"1.90",
+        "ip":"45.1",
+        "ip_rounded":45,
         "gs":0,
-        "gp":57,
+        "gp":58,
         "fetched":"2026-08-23"
     }
 ]
