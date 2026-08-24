@@ -5142,7 +5142,8 @@ document.addEventListener('DOMContentLoaded', function () {
     });
 
     const isMobile = window.innerWidth <= 767;
-    const margin = { top: 16, right: 16, bottom: 34, left: isMobile ? 40 : 42 };
+    // Right margin leaves room for the value-only labels past the line ends
+    const margin = { top: 16, right: isMobile ? 34 : 40, bottom: 34, left: isMobile ? 40 : 42 };
     const containerWidth = container.node().getBoundingClientRect().width;
     const totalHeight = Math.round(containerWidth * (isMobile ? 0.7 : 0.62));
     const width = containerWidth - margin.left - margin.right;
@@ -5194,35 +5195,81 @@ document.addEventListener('DOMContentLoaded', function () {
         .style('stroke-width', 1.5);
     });
 
-    // Float each player's name near the end of their line, anchored left so
-    // long names like "Crow-Armstrong" extend into the plot and never clip.
-    // When odds converge (e.g. near 50/50) the end points land close
-    // together, so nudge overlapping labels apart vertically -- pushed just
-    // far enough to clear each other and recentered on their shared midpoint
-    // so neither one drifts away from its point more than necessary.
-    const labelGap = 14;
-    const labels = candidates
-      .map((c) => {
-        const last = c.points[c.points.length - 1];
-        const y = yScale(last.value);
-        return {
-          origY: y,
-          y,
-          x: xScale(last.date) - 6,
-          text: `${c.player} ${Math.round(last.value)}%`,
-          color: c.color,
-        };
-      })
-      .sort((a, b) => a.y - b.y);
+    // Value-only labels sit past the line ends in the right margin, so
+    // converging odds can't collide with the player names.
+    candidates.forEach((c) => {
+      const last = c.points[c.points.length - 1];
+      addEndLabel(svg, xScale(last.date) + 7, yScale(last.value), `${Math.round(last.value)}%`, 'anno-dodgers', 4, 'start', c.color);
+    });
 
-    for (let i = 1; i < labels.length; i++) {
-      labels[i].y = Math.max(labels[i].y, labels[i - 1].y + labelGap);
+    // Player names anchor over the historical stretch of each line, which
+    // never changes once recorded, so labels stay put as new data arrives.
+    // Scan candidate positions along the line and keep the one whose label
+    // box has the most vertical clearance from the other lines.
+    const bisectDate = d3.bisector((d) => d.date).left;
+    function valueAt(points, date) {
+      const i = Math.min(Math.max(bisectDate(points, date), 1), points.length - 1);
+      const a = points[i - 1];
+      const b = points[i];
+      const t = b.date - a.date > 0 ? (date - a.date) / (b.date - a.date) : 0;
+      return a.value + t * (b.value - a.value);
     }
-    const drift = d3.mean(labels, (l) => l.y - l.origY);
-    labels.forEach((l) => (l.y -= drift));
 
-    labels.forEach((l) => {
-      addEndLabel(svg, l.x, l.y, l.text, 'anno-dodgers', -9, 'end', l.color);
+    // Measure real rendered label widths so the clearance test covers the
+    // full text box (character-count estimates fall apart on narrow charts)
+    function measureLabelWidth(text) {
+      const probe = svg.append('text').attr('class', 'anno-dodgers').style('opacity', 0).text(text);
+      const w = probe.node().getComputedTextLength();
+      probe.remove();
+      return w;
+    }
+
+    const [x0, x1] = xScale.domain();
+    const placedLabels = [];
+    candidates.forEach((c) => {
+      const halfSpan = measureLabelWidth(c.player) / 2 + 4;
+      let best = null;
+      for (let f = 0.15; f <= 0.88; f += 0.015) {
+        const anchorDate = new Date(x0.getTime() + f * (x1 - x0));
+        const anchorX = xScale(anchorDate);
+        if (anchorX - halfSpan < 0 || anchorX + halfSpan > width) continue;
+        for (const side of [-1, 1]) {
+          const labelY = yScale(valueAt(c.points, anchorDate)) + (side === -1 ? -14 : 22);
+          if (labelY < 12 || labelY > height - 6) continue;
+
+          // Min distance from the label box to the candidate's own line and
+          // to the other lines, sampled across the label's width
+          let clearOwn = Infinity;
+          let clearOthers = Infinity;
+          for (let sx = anchorX - halfSpan; sx <= anchorX + halfSpan; sx += 5) {
+            const sampleDate = xScale.invert(sx);
+            for (const o of candidates) {
+              const dist = Math.abs(labelY - 5 - yScale(valueAt(o.points, sampleDate)));
+              if (o === c) clearOwn = Math.min(clearOwn, dist);
+              else clearOthers = Math.min(clearOthers, dist);
+            }
+          }
+          if (clearOwn < 9) continue; // text would touch its own line
+          // Reject spots overlapping an already-placed label
+          const collides = placedLabels.some(
+            (p) => Math.abs(p.x - anchorX) < halfSpan + p.halfSpan && Math.abs(p.y - labelY) < 18
+          );
+          if (collides) continue;
+
+          // Caps keep labels from drifting to empty corners; prefer mid-chart
+          // and reward breathing room from the label's own line
+          const score =
+            Math.min(clearOthers, 36) + Math.min(clearOwn, 20) * 0.6 - Math.abs(f - 0.5) * 12;
+          if (!best || score > best.score) best = { x: anchorX, y: labelY, score, halfSpan };
+        }
+      }
+      // Fallback when the scan finds no clear spot: above the line mid-chart
+      if (!best) {
+        const midDate = new Date(x0.getTime() + 0.5 * (x1 - x0));
+        best = { x: xScale(midDate), y: Math.max(12, yScale(valueAt(c.points, midDate)) - 14), halfSpan };
+      }
+      placedLabels.push(best);
+      addEndLabel(svg, best.x, best.y, c.player, 'anno-dodgers', 0, 'middle', c.color);
     });
   }
 
