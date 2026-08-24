@@ -987,6 +987,12 @@ hr.style-eight:after {
     font-size: 15px;
     margin-bottom: 15px;
   }
+
+  // Scoped so Bootstrap's later-loaded default link blue doesn't win
+  a {
+    color: c.$dodger-blue;
+    font-weight: 500;
+  }
 }
 
 .anno-selected-year {
