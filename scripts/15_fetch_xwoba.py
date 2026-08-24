@@ -39,7 +39,7 @@ s3_key_parquet = "dodgers/data/batting/dodgers_xwoba_current.parquet"
 ALLOWED_BATTERS = [
     "Shohei Ohtani",
     "Mookie Betts",
-    "Will Smith",
+    # "Will Smith",
     "Freddie Freeman",
     "Andy Pages",
     "Teo Hernandez",
@@ -49,8 +49,8 @@ ALLOWED_BATTERS = [
     # "Hyeseong Kim",  # not enough plate appearances
     "Kyle Tucker",
     # "Alex Call", # not enough plate appearances
-    "Alex Freeland",  
-    "Dalton Rushing",
+    # "Alex Freeland",  
+    # "Dalton Rushing",
 ]
 
 # Known corrections to help match allowlist typos or alternate spellings
