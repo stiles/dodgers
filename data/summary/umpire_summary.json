@@ -1,17 +1,17 @@
 {
     "season_summary": {
-        "correct_strikes_pct": 90.68056407112202,
-        "incorrect_strikes_pct": 9.31943592887798,
-        "total_called_strikes": 3262,
+        "correct_strikes_pct": 90.68342016549188,
+        "incorrect_strikes_pct": 9.316579834508119,
+        "total_called_strikes": 3263,
         "bad_calls_count": 304
     },
     "last_game_summary": {
-        "date": "August 23, 2026",
+        "date": "August 25, 2026",
         "correct_strikes_pct": 100.0,
         "incorrect_strikes_pct": 0.0,
-        "total_called_strikes": 18,
+        "total_called_strikes": 1,
         "bad_calls_count": 0,
-        "home_plate_umpire": "Mike Estabrook"
+        "home_plate_umpire": "Edwin Jimenez"
     },
     "worst_calls_of_season": [
         {
@@ -56,17 +56,17 @@
         }
     ],
     "pitching_season_summary": {
-        "correct_balls_pct": 96.18119975262832,
-        "incorrect_balls_pct": 3.8188002473716836,
-        "total_called_balls": 6468,
+        "correct_balls_pct": 96.18473895582329,
+        "incorrect_balls_pct": 3.815261044176708,
+        "total_called_balls": 6474,
         "bad_calls_count": 247
     },
     "pitching_last_game_summary": {
-        "date": "August 23, 2026",
-        "correct_balls_pct": 92.85714285714286,
-        "incorrect_balls_pct": 7.142857142857139,
-        "total_called_balls": 42,
-        "bad_calls_count": 3
+        "date": "August 25, 2026",
+        "correct_balls_pct": 100.0,
+        "incorrect_balls_pct": 0.0,
+        "total_called_balls": 6,
+        "bad_calls_count": 0
     },
     "pitching_worst_calls_of_season": [],
     "abs_challenges": {
