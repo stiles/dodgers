@@ -118,10 +118,10 @@
     "height":"6' 8\"",
     "weight":"225",
     "dob":"08\/23\/1993",
-    "status":"IL-60",
+    "status":"ACTIVE",
     "is_minors":false,
-    "is_il":true,
-    "is_active_roster":false,
+    "is_il":false,
+    "is_active_roster":true,
     "is_40_man":true,
     "slug":"tyler-glasnow"
   },
