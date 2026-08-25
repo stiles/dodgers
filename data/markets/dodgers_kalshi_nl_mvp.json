@@ -2,7 +2,7 @@
   "title": "NL MVP odds",
   "event_ticker": "KXMLBNLMVP-26",
   "source": "kalshi",
-  "last_updated": "2026-08-25T05:57:12.677646-07:00",
+  "last_updated": "2026-08-25T08:49:12.280799-07:00",
   "candidates": [
     {
       "ticker": "KXMLBNLMVP-26-PCRO",
@@ -10,11 +10,11 @@
       "team": "Chicago C",
       "is_dodger": false,
       "current": {
-        "price": 0.64,
-        "yes_bid": 0.63,
-        "yes_ask": 0.64,
-        "previous_day": 0.68,
-        "previous_week": 0.48
+        "price": 0.66,
+        "yes_bid": 0.66,
+        "yes_ask": 0.67,
+        "previous_day": 0.66,
+        "previous_week": 0.5
       },
       "series": [
         {
@@ -745,10 +745,10 @@
       "team": "Los Angeles D",
       "is_dodger": true,
       "current": {
-        "price": 0.34,
-        "yes_bid": 0.34,
-        "yes_ask": 0.35,
-        "previous_day": 0.32,
+        "price": 0.35,
+        "yes_bid": 0.33,
+        "yes_ask": 0.34,
+        "previous_day": 0.34,
         "previous_week": 0.51
       },
       "series": [
