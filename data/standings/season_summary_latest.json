@@ -26,7 +26,7 @@
     {
         "stat_label":"Games up\/back",
         "stat":"games_up_back",
-        "value":9,
+        "value":9.5,
         "category":"standings",
         "context_value":"1st",
         "context_value_label":"Division rank"
@@ -52,7 +52,7 @@
         "stat":"runs",
         "value":653,
         "category":"standings",
-        "context_value":"3rd",
+        "context_value":"4th",
         "context_value_label":"League rank"
     },
     {
@@ -140,7 +140,7 @@
         "stat":"doubles",
         "value":213,
         "category":"batting",
-        "context_value":"9th",
+        "context_value":"10th",
         "context_value_label":"League rank"
     },
     {
@@ -194,7 +194,7 @@
     {
         "stat_label":"Last updated",
         "stat":"update_time",
-        "value":"August 24, 2026, 4:30 PM PT",
+        "value":"August 25, 2026, 1:49 AM PT",
         "category":"summary",
         "context_value":"",
         "context_value_label":""
@@ -202,7 +202,7 @@
     {
         "stat_label":"Team summary",
         "stat":"summary",
-        "value":"<span class='highlight'>LOS ANGELES<\/span> <span class='updated'>(August 24)<\/span> \u2014 The Dodgers have compiled a <span class='highlight'>80-51<\/span> record in the 2026 regular season, a <span class='highlight'>61%<\/span> winning percentage. The last game was a <span class='highlight'>4-0<\/span> home <span class='highlight'>win<\/span> against the <span class='highlight'>Pittsburgh Pirates<\/span>. The team next faces the <span class='highlight'>Atlanta Braves<\/span> on Tuesday at 7:15 p.m. EDT at <span class='highlight'>Truist Park<\/span>.",
+        "value":"<span class='highlight'>LOS ANGELES<\/span> <span class='updated'>(August 25)<\/span> \u2014 The Dodgers have compiled a <span class='highlight'>80-51<\/span> record in the 2026 regular season, a <span class='highlight'>61%<\/span> winning percentage. The last game was a <span class='highlight'>4-0<\/span> home <span class='highlight'>win<\/span> against the <span class='highlight'>Pittsburgh Pirates<\/span>. The team next faces the <span class='highlight'>Atlanta Braves<\/span> on Tuesday at 7:15 p.m. EDT at <span class='highlight'>Truist Park<\/span>.",
         "category":"summary",
         "context_value":"",
         "context_value_label":""
