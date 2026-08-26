@@ -4,13 +4,13 @@
         "stat":"wins",
         "value":80,
         "category":"standings",
-        "context_value":74,
+        "context_value":75,
         "context_value_label":"This point last season"
     },
     {
         "stat_label":"Losses",
         "stat":"losses",
-        "value":51,
+        "value":52,
         "category":"standings",
         "context_value":57,
         "context_value_label":"This point last season"
@@ -20,7 +20,7 @@
         "stat":"win_pct",
         "value":"61%",
         "category":"standings",
-        "context_value":"56%",
+        "context_value":"57%",
         "context_value_label":"This point last season"
     },
     {
@@ -50,7 +50,7 @@
     {
         "stat_label":"Runs",
         "stat":"runs",
-        "value":653,
+        "value":656,
         "category":"standings",
         "context_value":"4th",
         "context_value_label":"League rank"
@@ -58,7 +58,7 @@
     {
         "stat_label":"Runs against",
         "stat":"runs_against",
-        "value":502,
+        "value":506,
         "category":"standings",
         "context_value":582,
         "context_value_label":"This point last season"
@@ -66,9 +66,9 @@
     {
         "stat_label":"Run differential",
         "stat":"run_differential",
-        "value":151,
+        "value":150,
         "category":"standings",
-        "context_value":94,
+        "context_value":101,
         "context_value_label":"This point last season"
     },
     {
@@ -122,7 +122,7 @@
     {
         "stat_label":"Stolen bases",
         "stat":"stolen_bases",
-        "value":52,
+        "value":53,
         "category":"batting",
         "context_value":"28th",
         "context_value_label":"League rank"
@@ -146,7 +146,7 @@
     {
         "stat_label":"Strikeouts",
         "stat":"strikeouts",
-        "value":"1,193",
+        "value":"1,201",
         "category":"pitching",
         "context_value":"5th",
         "context_value_label":"League rank"
@@ -154,7 +154,7 @@
     {
         "stat_label":"Walks",
         "stat":"walks",
-        "value":408,
+        "value":409,
         "category":"pitching",
         "context_value":"21st",
         "context_value_label":"League rank"
@@ -178,7 +178,7 @@
     {
         "stat_label":"Batting average against",
         "stat":"avg_against",
-        "value":".217",
+        "value":".218",
         "category":"pitching",
         "context_value":"1st",
         "context_value_label":"League rank"
@@ -186,7 +186,7 @@
     {
         "stat_label":"K\/BB ratio",
         "stat":"k_bb_ratio",
-        "value":2.92,
+        "value":2.94,
         "category":"pitching",
         "context_value":"7th",
         "context_value_label":"League rank"
@@ -194,7 +194,7 @@
     {
         "stat_label":"Last updated",
         "stat":"update_time",
-        "value":"August 25, 2026, 4:31 PM PT",
+        "value":"August 26, 2026, 1:54 AM PT",
         "category":"summary",
         "context_value":"",
         "context_value_label":""
@@ -202,7 +202,7 @@
     {
         "stat_label":"Team summary",
         "stat":"summary",
-        "value":"<span class='highlight'>LOS ANGELES<\/span> <span class='updated'>(August 25)<\/span> \u2014 The Dodgers have compiled a <span class='highlight'>80-51<\/span> record in the 2026 regular season, a <span class='highlight'>61%<\/span> winning percentage. The last game was a <span class='highlight'>4-0<\/span> home <span class='highlight'>win<\/span> against the <span class='highlight'>Pittsburgh Pirates<\/span>. The team next faces the <span class='highlight'>Atlanta Braves<\/span> on Wednesday at 7:15 p.m. EDT at <span class='highlight'>Truist Park<\/span>.",
+        "value":"<span class='highlight'>LOS ANGELES<\/span> <span class='updated'>(August 26)<\/span> \u2014 The Dodgers have compiled a <span class='highlight'>80-52<\/span> record in the 2026 regular season, a <span class='highlight'>61%<\/span> winning percentage. The last game was a <span class='highlight'>3-4<\/span> away <span class='highlight'>loss<\/span> against the <span class='highlight'>Atlanta Braves<\/span>. The team next faces the <span class='highlight'>Atlanta Braves<\/span> on Wednesday at 7:15 p.m. EDT at <span class='highlight'>Truist Park<\/span>.",
         "category":"summary",
         "context_value":"",
         "context_value_label":""
@@ -210,7 +210,7 @@
     {
         "stat_label":"Last game result",
         "stat":"last_game_result",
-        "value":"win",
+        "value":"loss",
         "category":"summary",
         "context_value":"",
         "context_value_label":""

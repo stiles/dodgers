@@ -1,16 +1,16 @@
 {
     "season_summary": {
-        "correct_strikes_pct": 90.68342016549188,
-        "incorrect_strikes_pct": 9.316579834508119,
-        "total_called_strikes": 3263,
-        "bad_calls_count": 304
+        "correct_strikes_pct": 90.69059933069668,
+        "incorrect_strikes_pct": 9.309400669303315,
+        "total_called_strikes": 3287,
+        "bad_calls_count": 306
     },
     "last_game_summary": {
         "date": "August 25, 2026",
-        "correct_strikes_pct": 100.0,
-        "incorrect_strikes_pct": 0.0,
-        "total_called_strikes": 1,
-        "bad_calls_count": 0,
+        "correct_strikes_pct": 92.0,
+        "incorrect_strikes_pct": 8.0,
+        "total_called_strikes": 25,
+        "bad_calls_count": 2,
         "home_plate_umpire": "Edwin Jimenez"
     },
     "worst_calls_of_season": [
@@ -56,17 +56,17 @@
         }
     ],
     "pitching_season_summary": {
-        "correct_balls_pct": 96.18473895582329,
-        "incorrect_balls_pct": 3.815261044176708,
-        "total_called_balls": 6474,
-        "bad_calls_count": 247
+        "correct_balls_pct": 96.1792235691269,
+        "incorrect_balls_pct": 3.820776430873096,
+        "total_called_balls": 6517,
+        "bad_calls_count": 249
     },
     "pitching_last_game_summary": {
         "date": "August 25, 2026",
-        "correct_balls_pct": 100.0,
-        "incorrect_balls_pct": 0.0,
-        "total_called_balls": 6,
-        "bad_calls_count": 0
+        "correct_balls_pct": 95.91836734693877,
+        "incorrect_balls_pct": 4.081632653061234,
+        "total_called_balls": 49,
+        "bad_calls_count": 2
     },
     "pitching_worst_calls_of_season": [],
     "abs_challenges": {
@@ -82,8 +82,8 @@
                 "failed": 0
             },
             "catching": {
-                "total": 25,
-                "successful": 20,
+                "total": 26,
+                "successful": 21,
                 "failed": 5
             }
         },
@@ -99,12 +99,36 @@
                 "failed": 0
             },
             "catching": {
-                "total": 47,
-                "successful": 36,
+                "total": 48,
+                "successful": 37,
                 "failed": 11
             }
         },
         "challenge_log": [
+            {
+                "date": "2026-08-25",
+                "date_formatted": "August 25, 2026",
+                "challenger": "Sean Murphy",
+                "role": "catching",
+                "team": "opponents",
+                "outcome": "overturned",
+                "result_desc": "Shohei Ohtani called out on strikes.",
+                "batter": "Shohei Ohtani",
+                "pitcher": "Bryce Elder",
+                "game_pk": 824881
+            },
+            {
+                "date": "2026-08-25",
+                "date_formatted": "August 25, 2026",
+                "challenger": "Hunter Feduccia",
+                "role": "catching",
+                "team": "dodgers",
+                "outcome": "overturned",
+                "result_desc": "Mike Yastrzemski called out on strikes.",
+                "batter": "Mike Yastrzemski",
+                "pitcher": "Tyler Glasnow",
+                "game_pk": 824881
+            },
             {
                 "date": "2026-08-23",
                 "date_formatted": "August 23, 2026",
@@ -320,30 +344,6 @@
                 "batter": "Shohei Ohtani",
                 "pitcher": "Eduardo Rodriguez",
                 "game_pk": 825050
-            },
-            {
-                "date": "2026-08-07",
-                "date_formatted": "August 7, 2026",
-                "challenger": "Tommy Edman",
-                "role": "batting",
-                "team": "dodgers",
-                "outcome": "confirmed",
-                "result_desc": "Tommy Edman called out on strikes.",
-                "batter": "Tommy Edman",
-                "pitcher": "Kevin Ginkel",
-                "game_pk": 825051
-            },
-            {
-                "date": "2026-08-05",
-                "date_formatted": "August 5, 2026",
-                "challenger": "Tommy Edman",
-                "role": "batting",
-                "team": "dodgers",
-                "outcome": "confirmed",
-                "result_desc": "Tommy Edman called out on strikes.",
-                "batter": "Tommy Edman",
-                "pitcher": "Shota Imanaga",
-                "game_pk": 824646
             }
         ]
     }
