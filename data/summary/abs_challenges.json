@@ -11,16 +11,16 @@
             "failed": 4
         },
         "catching": {
-            "total": 100,
+            "total": 101,
             "successful": 56,
-            "failed": 44
+            "failed": 45
         }
     },
     "opponents": {
         "batting": {
-            "total": 112,
-            "successful": 56,
-            "failed": 56
+            "total": 114,
+            "successful": 57,
+            "failed": 57
         },
         "pitching": {
             "total": 5,
@@ -28,12 +28,60 @@
             "failed": 3
         },
         "catching": {
-            "total": 148,
-            "successful": 91,
+            "total": 149,
+            "successful": 92,
             "failed": 57
         }
     },
     "challenge_log": [
+        {
+            "date": "2026-08-26",
+            "date_formatted": "August 26, 2026",
+            "challenger": "Ronald Acu\u00f1a Jr.",
+            "role": "batting",
+            "team": "opponents",
+            "outcome": "overturned",
+            "result_desc": "Ronald Acu\u00f1a Jr. grounds out softly to first baseman Freddie Freeman.",
+            "batter": "Ronald Acu\u00f1a Jr.",
+            "pitcher": "Brock Stewart",
+            "game_pk": 824878
+        },
+        {
+            "date": "2026-08-26",
+            "date_formatted": "August 26, 2026",
+            "challenger": "Hunter Feduccia",
+            "role": "catching",
+            "team": "dodgers",
+            "outcome": "confirmed",
+            "result_desc": "Drake Baldwin doubles (13) on a sharp line drive to right fielder Kyle Tucker. Brewer Hicklen to 3rd.",
+            "batter": "Drake Baldwin",
+            "pitcher": "Brock Stewart",
+            "game_pk": 824878
+        },
+        {
+            "date": "2026-08-26",
+            "date_formatted": "August 26, 2026",
+            "challenger": "Sean Murphy",
+            "role": "catching",
+            "team": "opponents",
+            "outcome": "overturned",
+            "result_desc": "Tommy Edman challenged (pitch result), call on the field was confirmed: Tommy Edman called out on strikes.",
+            "batter": "Tommy Edman",
+            "pitcher": "AJ Smith-Shawver",
+            "game_pk": 824878
+        },
+        {
+            "date": "2026-08-26",
+            "date_formatted": "August 26, 2026",
+            "challenger": "Ronald Acu\u00f1a Jr.",
+            "role": "batting",
+            "team": "opponents",
+            "outcome": "confirmed",
+            "result_desc": "Ronald Acu\u00f1a Jr. strikes out on a foul tip.",
+            "batter": "Ronald Acu\u00f1a Jr.",
+            "pitcher": "Edgardo Henriquez",
+            "game_pk": 824878
+        },
         {
             "date": "2026-08-25",
             "date_formatted": "August 25, 2026",
@@ -121,18 +169,6 @@
         {
             "date": "2026-08-22",
             "date_formatted": "August 22, 2026",
-            "challenger": "Henry Davis",
-            "role": "catching",
-            "team": "opponents",
-            "outcome": "confirmed",
-            "result_desc": "Kyle Tucker grounds into a double play, first baseman Rafael Flores Jr. to shortstop Jared Triolo to first baseman Rafael Flores Jr. Max Muncy out at 2nd. Kyle Tucker out at 1st.",
-            "batter": "Kyle Tucker",
-            "pitcher": "Kirby Yates",
-            "game_pk": 823910
-        },
-        {
-            "date": "2026-08-22",
-            "date_formatted": "August 22, 2026",
             "challenger": "Ben Rortvedt",
             "role": "catching",
             "team": "dodgers",
@@ -167,51 +203,39 @@
             "game_pk": 823910
         },
         {
-            "date": "2026-08-21",
-            "date_formatted": "August 21, 2026",
-            "challenger": "Hunter Feduccia",
+            "date": "2026-08-22",
+            "date_formatted": "August 22, 2026",
+            "challenger": "Henry Davis",
             "role": "catching",
-            "team": "dodgers",
-            "outcome": "confirmed",
-            "result_desc": "Jacob Gonzalez pops out to third baseman Max Muncy.",
-            "batter": "Jacob Gonzalez",
-            "pitcher": "Yoshinobu Yamamoto",
-            "game_pk": 823911
-        },
-        {
-            "date": "2026-08-21",
-            "date_formatted": "August 21, 2026",
-            "challenger": "Spencer Horwitz",
-            "role": "batting",
             "team": "opponents",
             "outcome": "confirmed",
-            "result_desc": "Spencer Horwitz grounds out, shortstop Mookie Betts to first baseman Freddie Freeman.",
-            "batter": "Spencer Horwitz",
-            "pitcher": "Yoshinobu Yamamoto",
-            "game_pk": 823911
+            "result_desc": "Kyle Tucker grounds into a double play, first baseman Rafael Flores Jr. to shortstop Jared Triolo to first baseman Rafael Flores Jr. Max Muncy out at 2nd. Kyle Tucker out at 1st.",
+            "batter": "Kyle Tucker",
+            "pitcher": "Kirby Yates",
+            "game_pk": 823910
         },
         {
             "date": "2026-08-21",
             "date_formatted": "August 21, 2026",
-            "challenger": "Hunter Feduccia",
+            "challenger": "Henry Davis",
             "role": "catching",
-            "team": "dodgers",
-            "outcome": "overturned",
-            "result_desc": "Nick Gonzales singles on a sharp line drive to center fielder Andy Pages. Brandon Lowe scores.",
-            "batter": "Nick Gonzales",
-            "pitcher": "Yoshinobu Yamamoto",
+            "team": "opponents",
+            "outcome": "confirmed",
+            "result_desc": "Kyle Tucker grounds into a force out, second baseman Brandon Lowe to shortstop Jacob Gonzalez. Enrique Hern\u00e1ndez to 3rd. Mookie Betts out at 2nd. Kyle Tucker to 1st.",
+            "batter": "Kyle Tucker",
+            "pitcher": "Gregory Soto",
             "game_pk": 823911
         },
         {
             "date": "2026-08-21",
             "date_formatted": "August 21, 2026",
-            "challenger": "Tommy Edman",
-            "role": "batting",
-            "team": "dodgers",
-            "outcome": "overturned",
-            "result_desc": "Tommy Edman called out on strikes.",
-            "batter": "Tommy Edman",
-            "pitcher": "Bubba Chandler",
+            "challenger": "Henry Davis",
+            "role": "catching",
+            "team": "opponents",
+            "outcome": "confirmed",
+            "result_desc": "Hunter Feduccia strikes out swinging.",
+            "batter": "Hunter Feduccia",
+            "pitcher": "Luke Weaver",
             "game_pk": 823911
         },
         {
@@ -241,38 +265,14 @@
         {
             "date": "2026-08-21",
             "date_formatted": "August 21, 2026",
-            "challenger": "Henry Davis",
+            "challenger": "Hunter Feduccia",
             "role": "catching",
-            "team": "opponents",
-            "outcome": "confirmed",
-            "result_desc": "Hunter Feduccia strikes out swinging.",
-            "batter": "Hunter Feduccia",
-            "pitcher": "Luke Weaver",
-            "game_pk": 823911
-        },
-        {
-            "date": "2026-08-21",
-            "date_formatted": "August 21, 2026",
-            "challenger": "Henry Davis",
-            "role": "catching",
-            "team": "opponents",
-            "outcome": "confirmed",
-            "result_desc": "Kyle Tucker grounds into a force out, second baseman Brandon Lowe to shortstop Jacob Gonzalez. Enrique Hern\u00e1ndez to 3rd. Mookie Betts out at 2nd. Kyle Tucker to 1st.",
-            "batter": "Kyle Tucker",
-            "pitcher": "Gregory Soto",
-            "game_pk": 823911
-        },
-        {
-            "date": "2026-08-19",
-            "date_formatted": "August 19, 2026",
-            "challenger": "Shohei Ohtani",
-            "role": "batting",
             "team": "dodgers",
             "outcome": "confirmed",
-            "result_desc": "Shohei Ohtani strikes out swinging.",
-            "batter": "Shohei Ohtani",
-            "pitcher": "Nick Frasso",
-            "game_pk": 824318
+            "result_desc": "Jacob Gonzalez pops out to third baseman Max Muncy.",
+            "batter": "Jacob Gonzalez",
+            "pitcher": "Yoshinobu Yamamoto",
+            "game_pk": 823911
         }
     ],
     "dodgers_by_player": [
@@ -306,10 +306,10 @@
         },
         {
             "challenger": "Hunter Feduccia",
-            "total": 12,
+            "total": 13,
             "successful": 6,
-            "failed": 6,
-            "success_rate": 50.0
+            "failed": 7,
+            "success_rate": 46.2
         },
         {
             "challenger": "Mookie Betts",
@@ -476,10 +476,10 @@
         },
         {
             "inning": 8,
-            "total": 22,
+            "total": 23,
             "successful": 13,
-            "failed": 9,
-            "success_rate": 59.1
+            "failed": 10,
+            "success_rate": 56.5
         },
         {
             "inning": 9,

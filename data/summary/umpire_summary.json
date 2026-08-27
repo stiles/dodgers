@@ -1,17 +1,17 @@
 {
     "season_summary": {
-        "correct_strikes_pct": 90.69059933069668,
-        "incorrect_strikes_pct": 9.309400669303315,
-        "total_called_strikes": 3287,
-        "bad_calls_count": 306
+        "correct_strikes_pct": 90.68642273964318,
+        "incorrect_strikes_pct": 9.313577260356823,
+        "total_called_strikes": 3307,
+        "bad_calls_count": 308
     },
     "last_game_summary": {
-        "date": "August 25, 2026",
-        "correct_strikes_pct": 92.0,
-        "incorrect_strikes_pct": 8.0,
-        "total_called_strikes": 25,
+        "date": "August 26, 2026",
+        "correct_strikes_pct": 90.0,
+        "incorrect_strikes_pct": 10.0,
+        "total_called_strikes": 20,
         "bad_calls_count": 2,
-        "home_plate_umpire": "Edwin Jimenez"
+        "home_plate_umpire": "Erich Bacchus"
     },
     "worst_calls_of_season": [
         {
@@ -56,25 +56,25 @@
         }
     ],
     "pitching_season_summary": {
-        "correct_balls_pct": 96.1792235691269,
-        "incorrect_balls_pct": 3.820776430873096,
-        "total_called_balls": 6517,
-        "bad_calls_count": 249
+        "correct_balls_pct": 96.19945272119185,
+        "incorrect_balls_pct": 3.8005472788081534,
+        "total_called_balls": 6578,
+        "bad_calls_count": 250
     },
     "pitching_last_game_summary": {
-        "date": "August 25, 2026",
-        "correct_balls_pct": 95.91836734693877,
-        "incorrect_balls_pct": 4.081632653061234,
-        "total_called_balls": 49,
-        "bad_calls_count": 2
+        "date": "August 26, 2026",
+        "correct_balls_pct": 98.36065573770492,
+        "incorrect_balls_pct": 1.639344262295083,
+        "total_called_balls": 61,
+        "bad_calls_count": 1
     },
     "pitching_worst_calls_of_season": [],
     "abs_challenges": {
         "dodgers": {
             "batting": {
-                "total": 47,
+                "total": 48,
                 "successful": 13,
-                "failed": 34
+                "failed": 35
             },
             "pitching": {
                 "total": 0,
@@ -105,6 +105,18 @@
             }
         },
         "challenge_log": [
+            {
+                "date": "2026-08-26",
+                "date_formatted": "August 26, 2026",
+                "challenger": "Tommy Edman",
+                "role": "batting",
+                "team": "dodgers",
+                "outcome": "confirmed",
+                "result_desc": "Tommy Edman called out on strikes.",
+                "batter": "Tommy Edman",
+                "pitcher": "AJ Smith-Shawver",
+                "game_pk": 824878
+            },
             {
                 "date": "2026-08-25",
                 "date_formatted": "August 25, 2026",
@@ -332,18 +344,6 @@
                 "batter": "Bobby Witt Jr.",
                 "pitcher": "Tarik Skubal",
                 "game_pk": 823918
-            },
-            {
-                "date": "2026-08-09",
-                "date_formatted": "August 9, 2026",
-                "challenger": "Shohei Ohtani",
-                "role": "batting",
-                "team": "dodgers",
-                "outcome": "confirmed",
-                "result_desc": "Shohei Ohtani called out on strikes.",
-                "batter": "Shohei Ohtani",
-                "pitcher": "Eduardo Rodriguez",
-                "game_pk": 825050
             }
         ]
     }

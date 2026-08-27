@@ -12,7 +12,7 @@
         "ip_rounded":151,
         "gs":23,
         "gp":23,
-        "fetched":"2026-08-26"
+        "fetched":"2026-08-27"
     },
     {
         "player":"Justin Wrobleski",
@@ -27,22 +27,22 @@
         "ip_rounded":126,
         "gs":20,
         "gp":21,
-        "fetched":"2026-08-26"
+        "fetched":"2026-08-27"
     },
     {
         "player":"Roki Sasaki",
         "role":"SP",
         "position":"P",
-        "era":"4.42",
-        "whip":"1.30",
-        "k9":"8.84",
-        "bb9":"3.57",
-        "kbb":"2.48",
-        "ip":"116.0",
-        "ip_rounded":116,
-        "gs":22,
-        "gp":22,
-        "fetched":"2026-08-26"
+        "era":"4.60",
+        "whip":"1.33",
+        "k9":"8.82",
+        "bb9":"3.62",
+        "kbb":"2.44",
+        "ip":"119.1",
+        "ip_rounded":119,
+        "gs":23,
+        "gp":23,
+        "fetched":"2026-08-27"
     },
     {
         "player":"Emmet Sheehan",
@@ -57,7 +57,7 @@
         "ip_rounded":95,
         "gs":20,
         "gp":20,
-        "fetched":"2026-08-26"
+        "fetched":"2026-08-27"
     },
     {
         "player":"Shohei Ohtani",
@@ -72,22 +72,37 @@
         "ip_rounded":85,
         "gs":14,
         "gp":14,
-        "fetched":"2026-08-26"
+        "fetched":"2026-08-27"
     },
     {
         "player":"Eric Lauer",
         "role":"SP",
         "position":"P",
-        "era":"3.76",
-        "whip":"1.12",
-        "k9":"5.78",
-        "bb9":"2.15",
-        "kbb":"2.69",
-        "ip":"67.0",
-        "ip_rounded":67,
+        "era":"3.78",
+        "whip":"1.14",
+        "k9":"5.74",
+        "bb9":"2.35",
+        "kbb":"2.44",
+        "ip":"69.0",
+        "ip_rounded":69,
         "gs":11,
-        "gp":12,
-        "fetched":"2026-08-26"
+        "gp":13,
+        "fetched":"2026-08-27"
+    },
+    {
+        "player":"Tanner Scott",
+        "role":"RP",
+        "position":"P",
+        "era":"2.50",
+        "whip":"0.96",
+        "k9":"10.83",
+        "bb9":"2.00",
+        "kbb":"5.42",
+        "ip":"54.0",
+        "ip_rounded":54,
+        "gs":0,
+        "gp":58,
+        "fetched":"2026-08-27"
     },
     {
         "player":"Jack Dreyer",
@@ -102,37 +117,22 @@
         "ip_rounded":53,
         "gs":1,
         "gp":56,
-        "fetched":"2026-08-26"
-    },
-    {
-        "player":"Tanner Scott",
-        "role":"RP",
-        "position":"P",
-        "era":"2.36",
-        "whip":"0.92",
-        "k9":"10.80",
-        "bb9":"1.86",
-        "kbb":"5.82",
-        "ip":"53.1",
-        "ip_rounded":53,
-        "gs":0,
-        "gp":57,
-        "fetched":"2026-08-26"
+        "fetched":"2026-08-27"
     },
     {
         "player":"Edgardo Henriquez",
         "role":"SP",
         "position":"P",
-        "era":"2.91",
+        "era":"2.87",
         "whip":"1.01",
-        "k9":"9.91",
-        "bb9":"3.93",
-        "kbb":"2.52",
-        "ip":"52.2",
-        "ip_rounded":52,
+        "k9":"9.96",
+        "bb9":"3.88",
+        "kbb":"2.57",
+        "ip":"53.1",
+        "ip_rounded":53,
         "gs":1,
-        "gp":52,
-        "fetched":"2026-08-26"
+        "gp":53,
+        "fetched":"2026-08-27"
     },
     {
         "player":"Alex Vesia",
@@ -147,6 +147,6 @@
         "ip_rounded":46,
         "gs":0,
         "gp":59,
-        "fetched":"2026-08-26"
+        "fetched":"2026-08-27"
     }
 ]
