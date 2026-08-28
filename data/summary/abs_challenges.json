@@ -1,9 +1,9 @@
 {
     "dodgers": {
         "batting": {
-            "total": 106,
+            "total": 107,
             "successful": 66,
-            "failed": 40
+            "failed": 41
         },
         "pitching": {
             "total": 6,
@@ -34,6 +34,18 @@
         }
     },
     "challenge_log": [
+        {
+            "date": "2026-08-27",
+            "date_formatted": "August 27, 2026",
+            "challenger": "Miguel Rojas",
+            "role": "batting",
+            "team": "dodgers",
+            "outcome": "confirmed",
+            "result_desc": "Braves challenged (play at 1st), call on the field was upheld: Dodgers challenged (force play), call on the field was upheld: Miguel Rojas grounds into a force out, third baseman Austin Riley to second baseman Ozzie Albies. Alek Thomas out at 2nd. Miguel Rojas to 1st.",
+            "batter": "Miguel Rojas",
+            "pitcher": "Chris Sale",
+            "game_pk": 824879
+        },
         {
             "date": "2026-08-26",
             "date_formatted": "August 26, 2026",
@@ -169,18 +181,6 @@
         {
             "date": "2026-08-22",
             "date_formatted": "August 22, 2026",
-            "challenger": "Ben Rortvedt",
-            "role": "catching",
-            "team": "dodgers",
-            "outcome": "confirmed",
-            "result_desc": "Oneil Cruz strikes out swinging.",
-            "batter": "Oneil Cruz",
-            "pitcher": "Tarik Skubal",
-            "game_pk": 823910
-        },
-        {
-            "date": "2026-08-22",
-            "date_formatted": "August 22, 2026",
             "challenger": "Tarik Skubal",
             "role": "pitching",
             "team": "dodgers",
@@ -212,6 +212,18 @@
             "result_desc": "Kyle Tucker grounds into a double play, first baseman Rafael Flores Jr. to shortstop Jared Triolo to first baseman Rafael Flores Jr. Max Muncy out at 2nd. Kyle Tucker out at 1st.",
             "batter": "Kyle Tucker",
             "pitcher": "Kirby Yates",
+            "game_pk": 823910
+        },
+        {
+            "date": "2026-08-22",
+            "date_formatted": "August 22, 2026",
+            "challenger": "Ben Rortvedt",
+            "role": "catching",
+            "team": "dodgers",
+            "outcome": "confirmed",
+            "result_desc": "Oneil Cruz strikes out swinging.",
+            "batter": "Oneil Cruz",
+            "pitcher": "Tarik Skubal",
             "game_pk": 823910
         },
         {
@@ -260,18 +272,6 @@
             "result_desc": "Shohei Ohtani walks.",
             "batter": "Shohei Ohtani",
             "pitcher": "Lake Bachar",
-            "game_pk": 823911
-        },
-        {
-            "date": "2026-08-21",
-            "date_formatted": "August 21, 2026",
-            "challenger": "Hunter Feduccia",
-            "role": "catching",
-            "team": "dodgers",
-            "outcome": "confirmed",
-            "result_desc": "Jacob Gonzalez pops out to third baseman Max Muncy.",
-            "batter": "Jacob Gonzalez",
-            "pitcher": "Yoshinobu Yamamoto",
             "game_pk": 823911
         }
     ],
@@ -341,10 +341,10 @@
         },
         {
             "challenger": "Miguel Rojas",
-            "total": 7,
+            "total": 8,
             "successful": 5,
-            "failed": 2,
-            "success_rate": 71.4
+            "failed": 3,
+            "success_rate": 62.5
         },
         {
             "challenger": "Ben Rortvedt",
@@ -483,10 +483,10 @@
         },
         {
             "inning": 9,
-            "total": 31,
+            "total": 32,
             "successful": 18,
-            "failed": 13,
-            "success_rate": 58.1
+            "failed": 14,
+            "success_rate": 56.2
         },
         {
             "inning": 10,
