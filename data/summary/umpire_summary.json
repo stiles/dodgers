@@ -1,17 +1,17 @@
 {
     "season_summary": {
-        "correct_strikes_pct": 90.73577599046769,
-        "incorrect_strikes_pct": 9.264224009532313,
-        "total_called_strikes": 3357,
-        "bad_calls_count": 311
+        "correct_strikes_pct": 90.73634204275535,
+        "incorrect_strikes_pct": 9.263657957244646,
+        "total_called_strikes": 3368,
+        "bad_calls_count": 312
     },
     "last_game_summary": {
-        "date": "August 28, 2026",
-        "correct_strikes_pct": 96.29629629629629,
-        "incorrect_strikes_pct": 3.7037037037037095,
-        "total_called_strikes": 27,
+        "date": "August 29, 2026",
+        "correct_strikes_pct": 90.9090909090909,
+        "incorrect_strikes_pct": 9.090909090909093,
+        "total_called_strikes": 11,
         "bad_calls_count": 1,
-        "home_plate_umpire": "Nestor Ceja"
+        "home_plate_umpire": "Chris Guccione"
     },
     "worst_calls_of_season": [
         {
@@ -56,17 +56,17 @@
         }
     ],
     "pitching_season_summary": {
-        "correct_balls_pct": 96.16944569625959,
-        "incorrect_balls_pct": 3.8305543037404135,
-        "total_called_balls": 6657,
+        "correct_balls_pct": 96.18491921005386,
+        "incorrect_balls_pct": 3.815080789946137,
+        "total_called_balls": 6684,
         "bad_calls_count": 255
     },
     "pitching_last_game_summary": {
-        "date": "August 28, 2026",
-        "correct_balls_pct": 94.87179487179486,
-        "incorrect_balls_pct": 5.128205128205138,
-        "total_called_balls": 39,
-        "bad_calls_count": 2
+        "date": "August 29, 2026",
+        "correct_balls_pct": 100.0,
+        "incorrect_balls_pct": 0.0,
+        "total_called_balls": 27,
+        "bad_calls_count": 0
     },
     "pitching_worst_calls_of_season": [],
     "abs_challenges": {
@@ -89,9 +89,9 @@
         },
         "opponents": {
             "batting": {
-                "total": 34,
+                "total": 35,
                 "successful": 9,
-                "failed": 25
+                "failed": 26
             },
             "pitching": {
                 "total": 0,
@@ -105,6 +105,18 @@
             }
         },
         "challenge_log": [
+            {
+                "date": "2026-08-29",
+                "date_formatted": "August 29, 2026",
+                "challenger": "Spencer Torkelson",
+                "role": "batting",
+                "team": "opponents",
+                "outcome": "confirmed",
+                "result_desc": "Spencer Torkelson called out on strikes.",
+                "batter": "Spencer Torkelson",
+                "pitcher": "Blake Snell",
+                "game_pk": 824230
+            },
             {
                 "date": "2026-08-28",
                 "date_formatted": "August 28, 2026",
@@ -332,18 +344,6 @@
                 "batter": "Isaac Collins",
                 "pitcher": "Landon Knack",
                 "game_pk": 823916
-            },
-            {
-                "date": "2026-08-11",
-                "date_formatted": "August 11, 2026",
-                "challenger": "Ben Rortvedt",
-                "role": "catching",
-                "team": "dodgers",
-                "outcome": "overturned",
-                "result_desc": "Nick Loftin called out on strikes.",
-                "batter": "Nick Loftin",
-                "pitcher": "Blake Snell",
-                "game_pk": 823917
             }
         ]
     }
