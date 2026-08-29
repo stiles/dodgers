@@ -28,12 +28,24 @@
             "failed": 3
         },
         "catching": {
-            "total": 149,
+            "total": 150,
             "successful": 92,
-            "failed": 57
+            "failed": 58
         }
     },
     "challenge_log": [
+        {
+            "date": "2026-08-28",
+            "date_formatted": "August 28, 2026",
+            "challenger": "Dillon Dingler",
+            "role": "catching",
+            "team": "opponents",
+            "outcome": "confirmed",
+            "result_desc": "Freddie Freeman strikes out swinging.",
+            "batter": "Freddie Freeman",
+            "pitcher": "Drew Anderson",
+            "game_pk": 824231
+        },
         {
             "date": "2026-08-27",
             "date_formatted": "August 27, 2026",
@@ -181,30 +193,6 @@
         {
             "date": "2026-08-22",
             "date_formatted": "August 22, 2026",
-            "challenger": "Tarik Skubal",
-            "role": "pitching",
-            "team": "dodgers",
-            "outcome": "confirmed",
-            "result_desc": "Jared Triolo singles on a line drive to center fielder Alek Thomas. Nick Yorke to 2nd.",
-            "batter": "Jared Triolo",
-            "pitcher": "Tarik Skubal",
-            "game_pk": 823910
-        },
-        {
-            "date": "2026-08-22",
-            "date_formatted": "August 22, 2026",
-            "challenger": "Mookie Betts",
-            "role": "batting",
-            "team": "dodgers",
-            "outcome": "overturned",
-            "result_desc": "Mookie Betts grounds out, second baseman Nick Gonzales to first baseman Rafael Flores Jr.",
-            "batter": "Mookie Betts",
-            "pitcher": "Jared Jones",
-            "game_pk": 823910
-        },
-        {
-            "date": "2026-08-22",
-            "date_formatted": "August 22, 2026",
             "challenger": "Henry Davis",
             "role": "catching",
             "team": "opponents",
@@ -224,6 +212,30 @@
             "result_desc": "Oneil Cruz strikes out swinging.",
             "batter": "Oneil Cruz",
             "pitcher": "Tarik Skubal",
+            "game_pk": 823910
+        },
+        {
+            "date": "2026-08-22",
+            "date_formatted": "August 22, 2026",
+            "challenger": "Tarik Skubal",
+            "role": "pitching",
+            "team": "dodgers",
+            "outcome": "confirmed",
+            "result_desc": "Jared Triolo singles on a line drive to center fielder Alek Thomas. Nick Yorke to 2nd.",
+            "batter": "Jared Triolo",
+            "pitcher": "Tarik Skubal",
+            "game_pk": 823910
+        },
+        {
+            "date": "2026-08-22",
+            "date_formatted": "August 22, 2026",
+            "challenger": "Mookie Betts",
+            "role": "batting",
+            "team": "dodgers",
+            "outcome": "overturned",
+            "result_desc": "Mookie Betts grounds out, second baseman Nick Gonzales to first baseman Rafael Flores Jr.",
+            "batter": "Mookie Betts",
+            "pitcher": "Jared Jones",
             "game_pk": 823910
         },
         {
@@ -260,18 +272,6 @@
             "result_desc": "Teoscar Hern\u00e1ndez strikes out swinging.",
             "batter": "Teoscar Hern\u00e1ndez",
             "pitcher": "Luke Weaver",
-            "game_pk": 823911
-        },
-        {
-            "date": "2026-08-21",
-            "date_formatted": "August 21, 2026",
-            "challenger": "Shohei Ohtani",
-            "role": "batting",
-            "team": "dodgers",
-            "outcome": "overturned",
-            "result_desc": "Shohei Ohtani walks.",
-            "batter": "Shohei Ohtani",
-            "pitcher": "Lake Bachar",
             "game_pk": 823911
         }
     ],

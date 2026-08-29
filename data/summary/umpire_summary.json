@@ -1,17 +1,17 @@
 {
     "season_summary": {
-        "correct_strikes_pct": 90.69069069069069,
-        "incorrect_strikes_pct": 9.309309309309313,
-        "total_called_strikes": 3330,
-        "bad_calls_count": 310
+        "correct_strikes_pct": 90.73577599046769,
+        "incorrect_strikes_pct": 9.264224009532313,
+        "total_called_strikes": 3357,
+        "bad_calls_count": 311
     },
     "last_game_summary": {
-        "date": "August 27, 2026",
-        "correct_strikes_pct": 91.30434782608695,
-        "incorrect_strikes_pct": 8.695652173913047,
-        "total_called_strikes": 23,
-        "bad_calls_count": 2,
-        "home_plate_umpire": "Chris Segal"
+        "date": "August 28, 2026",
+        "correct_strikes_pct": 96.29629629629629,
+        "incorrect_strikes_pct": 3.7037037037037095,
+        "total_called_strikes": 27,
+        "bad_calls_count": 1,
+        "home_plate_umpire": "Nestor Ceja"
     },
     "worst_calls_of_season": [
         {
@@ -56,17 +56,17 @@
         }
     ],
     "pitching_season_summary": {
-        "correct_balls_pct": 96.1770927772741,
-        "incorrect_balls_pct": 3.8229072227259024,
-        "total_called_balls": 6618,
-        "bad_calls_count": 253
+        "correct_balls_pct": 96.16944569625959,
+        "incorrect_balls_pct": 3.8305543037404135,
+        "total_called_balls": 6657,
+        "bad_calls_count": 255
     },
     "pitching_last_game_summary": {
-        "date": "August 27, 2026",
-        "correct_balls_pct": 92.5,
-        "incorrect_balls_pct": 7.5,
-        "total_called_balls": 40,
-        "bad_calls_count": 3
+        "date": "August 28, 2026",
+        "correct_balls_pct": 94.87179487179486,
+        "incorrect_balls_pct": 5.128205128205138,
+        "total_called_balls": 39,
+        "bad_calls_count": 2
     },
     "pitching_worst_calls_of_season": [],
     "abs_challenges": {
@@ -89,9 +89,9 @@
         },
         "opponents": {
             "batting": {
-                "total": 33,
+                "total": 34,
                 "successful": 9,
-                "failed": 24
+                "failed": 25
             },
             "pitching": {
                 "total": 0,
@@ -105,6 +105,18 @@
             }
         },
         "challenge_log": [
+            {
+                "date": "2026-08-28",
+                "date_formatted": "August 28, 2026",
+                "challenger": "Spencer Torkelson",
+                "role": "batting",
+                "team": "opponents",
+                "outcome": "confirmed",
+                "result_desc": "Spencer Torkelson called out on strikes.",
+                "batter": "Spencer Torkelson",
+                "pitcher": "Tarik Skubal",
+                "game_pk": 824231
+            },
             {
                 "date": "2026-08-26",
                 "date_formatted": "August 26, 2026",
@@ -332,18 +344,6 @@
                 "batter": "Nick Loftin",
                 "pitcher": "Blake Snell",
                 "game_pk": 823917
-            },
-            {
-                "date": "2026-08-10",
-                "date_formatted": "August 10, 2026",
-                "challenger": "Bobby Witt Jr.",
-                "role": "batting",
-                "team": "opponents",
-                "outcome": "overturned",
-                "result_desc": "Bobby Witt Jr. walks. Nick Loftin to 2nd.",
-                "batter": "Bobby Witt Jr.",
-                "pitcher": "Tarik Skubal",
-                "game_pk": 823918
             }
         ]
     }

@@ -2,7 +2,7 @@
     {
         "stat_label":"Wins",
         "stat":"wins",
-        "value":80,
+        "value":81,
         "category":"standings",
         "context_value":77,
         "context_value_label":"This point last season"
@@ -12,7 +12,7 @@
         "stat":"losses",
         "value":54,
         "category":"standings",
-        "context_value":57,
+        "context_value":58,
         "context_value_label":"This point last season"
     },
     {
@@ -26,7 +26,7 @@
     {
         "stat_label":"Games up\/back",
         "stat":"games_up_back",
-        "value":8,
+        "value":9,
         "category":"standings",
         "context_value":"1st",
         "context_value_label":"Division rank"
@@ -50,7 +50,7 @@
     {
         "stat_label":"Runs",
         "stat":"runs",
-        "value":661,
+        "value":663,
         "category":"standings",
         "context_value":"4th",
         "context_value_label":"League rank"
@@ -58,17 +58,17 @@
     {
         "stat_label":"Runs against",
         "stat":"runs_against",
-        "value":513,
+        "value":514,
         "category":"standings",
-        "context_value":586,
+        "context_value":589,
         "context_value_label":"This point last season"
     },
     {
         "stat_label":"Run differential",
         "stat":"run_differential",
-        "value":148,
+        "value":149,
         "category":"standings",
-        "context_value":108,
+        "context_value":105,
         "context_value_label":"This point last season"
     },
     {
@@ -90,7 +90,7 @@
     {
         "stat_label":"Home runs\/game",
         "stat":"home_runs_game",
-        "value":1.25,
+        "value":1.24,
         "category":"batting",
         "context_value":1.42,
         "context_value_label":"Last decade average"
@@ -98,7 +98,7 @@
     {
         "stat_label":"On-base percentage",
         "stat":"on_base_pct",
-        "value":".335",
+        "value":".336",
         "category":"batting",
         "context_value":"3rd",
         "context_value_label":"League rank"
@@ -106,9 +106,9 @@
     {
         "stat_label":"Slugging percentage",
         "stat":"slugging_pct",
-        "value":".424",
+        "value":".423",
         "category":"batting",
-        "context_value":"2nd",
+        "context_value":"3rd",
         "context_value_label":"League rank"
     },
     {
@@ -116,13 +116,13 @@
         "stat":"ops",
         "value":".759",
         "category":"batting",
-        "context_value":"1st",
+        "context_value":"2nd",
         "context_value_label":"League rank"
     },
     {
         "stat_label":"Stolen bases",
         "stat":"stolen_bases",
-        "value":54,
+        "value":55,
         "category":"batting",
         "context_value":"28th",
         "context_value_label":"League rank"
@@ -130,7 +130,7 @@
     {
         "stat_label":"Stolen bases\/game",
         "stat":"stolen_bases_game",
-        "value":0.4,
+        "value":0.41,
         "category":"batting",
         "context_value":0.84,
         "context_value_label":"Rate all last season"
@@ -140,13 +140,13 @@
         "stat":"doubles",
         "value":217,
         "category":"batting",
-        "context_value":"10th",
+        "context_value":"11th",
         "context_value_label":"League rank"
     },
     {
         "stat_label":"Strikeouts",
         "stat":"strikeouts",
-        "value":"1,219",
+        "value":"1,231",
         "category":"pitching",
         "context_value":"5th",
         "context_value_label":"League rank"
@@ -154,7 +154,7 @@
     {
         "stat_label":"Walks",
         "stat":"walks",
-        "value":416,
+        "value":418,
         "category":"pitching",
         "context_value":"21st",
         "context_value_label":"League rank"
@@ -162,7 +162,7 @@
     {
         "stat_label":"ERA",
         "stat":"era",
-        "value":"3.67",
+        "value":"3.65",
         "category":"pitching",
         "context_value":"6th",
         "context_value_label":"League rank"
@@ -172,13 +172,13 @@
         "stat":"whip",
         "value":"1.16",
         "category":"pitching",
-        "context_value":"2nd",
+        "context_value":"3rd",
         "context_value_label":"League rank"
     },
     {
         "stat_label":"Batting average against",
         "stat":"avg_against",
-        "value":".219",
+        "value":".218",
         "category":"pitching",
         "context_value":"1st",
         "context_value_label":"League rank"
@@ -186,15 +186,15 @@
     {
         "stat_label":"K\/BB ratio",
         "stat":"k_bb_ratio",
-        "value":2.93,
+        "value":2.94,
         "category":"pitching",
-        "context_value":"7th",
+        "context_value":"6th",
         "context_value_label":"League rank"
     },
     {
         "stat_label":"Last updated",
         "stat":"update_time",
-        "value":"August 28, 2026, 1:03 PM PT",
+        "value":"August 28, 2026, 9:07 PM PT",
         "category":"summary",
         "context_value":"",
         "context_value_label":""
@@ -202,7 +202,7 @@
     {
         "stat_label":"Team summary",
         "stat":"summary",
-        "value":"<span class='highlight'>LOS ANGELES<\/span> <span class='updated'>(August 28)<\/span> \u2014 The Dodgers have compiled a <span class='highlight'>80-54<\/span> record in the 2026 regular season, a <span class='highlight'>60%<\/span> winning percentage. The last game was a <span class='highlight'>0-1<\/span> away <span class='highlight'>loss<\/span> against the <span class='highlight'>Atlanta Braves<\/span>. The team next faces the <span class='highlight'>Detroit Tigers<\/span> on Friday at 6:40 p.m. EDT at <span class='highlight'>Comerica Park<\/span>.",
+        "value":"<span class='highlight'>LOS ANGELES<\/span> <span class='updated'>(August 28)<\/span> \u2014 The Dodgers have compiled a <span class='highlight'>81-54<\/span> record in the 2026 regular season, a <span class='highlight'>60%<\/span> winning percentage. The last game was a <span class='highlight'>2-1<\/span> away <span class='highlight'>win<\/span> against the <span class='highlight'>Detroit Tigers<\/span>. The team next faces the <span class='highlight'>Detroit Tigers<\/span> on Saturday at 1:10 p.m. EDT at <span class='highlight'>Comerica Park<\/span>.",
         "category":"summary",
         "context_value":"",
         "context_value_label":""
@@ -210,7 +210,7 @@
     {
         "stat_label":"Last game result",
         "stat":"last_game_result",
-        "value":"loss",
+        "value":"win",
         "category":"summary",
         "context_value":"",
         "context_value_label":""
