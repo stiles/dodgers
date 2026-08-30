@@ -12,7 +12,7 @@
         "ip_rounded":158,
         "gs":24,
         "gp":24,
-        "fetched":"2026-08-29"
+        "fetched":"2026-08-30"
     },
     {
         "player":"Justin Wrobleski",
@@ -27,7 +27,7 @@
         "ip_rounded":126,
         "gs":20,
         "gp":21,
-        "fetched":"2026-08-29"
+        "fetched":"2026-08-30"
     },
     {
         "player":"Roki Sasaki",
@@ -42,7 +42,7 @@
         "ip_rounded":119,
         "gs":23,
         "gp":23,
-        "fetched":"2026-08-29"
+        "fetched":"2026-08-30"
     },
     {
         "player":"Emmet Sheehan",
@@ -57,7 +57,7 @@
         "ip_rounded":95,
         "gs":20,
         "gp":20,
-        "fetched":"2026-08-29"
+        "fetched":"2026-08-30"
     },
     {
         "player":"Shohei Ohtani",
@@ -72,7 +72,7 @@
         "ip_rounded":85,
         "gs":14,
         "gp":14,
-        "fetched":"2026-08-29"
+        "fetched":"2026-08-30"
     },
     {
         "player":"Eric Lauer",
@@ -87,7 +87,22 @@
         "ip_rounded":69,
         "gs":11,
         "gp":13,
-        "fetched":"2026-08-29"
+        "fetched":"2026-08-30"
+    },
+    {
+        "player":"Edgardo Henriquez",
+        "role":"SP",
+        "position":"P",
+        "era":"2.77",
+        "whip":"0.98",
+        "k9":"10.25",
+        "bb9":"3.74",
+        "kbb":"2.74",
+        "ip":"55.1",
+        "ip_rounded":55,
+        "gs":1,
+        "gp":55,
+        "fetched":"2026-08-30"
     },
     {
         "player":"Tanner Scott",
@@ -102,51 +117,36 @@
         "ip_rounded":55,
         "gs":0,
         "gp":59,
-        "fetched":"2026-08-29"
-    },
-    {
-        "player":"Edgardo Henriquez",
-        "role":"SP",
-        "position":"P",
-        "era":"2.82",
-        "whip":"0.99",
-        "k9":"10.27",
-        "bb9":"3.81",
-        "kbb":"2.70",
-        "ip":"54.1",
-        "ip_rounded":54,
-        "gs":1,
-        "gp":54,
-        "fetched":"2026-08-29"
+        "fetched":"2026-08-30"
     },
     {
         "player":"Jack Dreyer",
         "role":"SP",
         "position":"P",
-        "era":"2.83",
-        "whip":"1.02",
-        "k9":"11.00",
-        "bb9":"3.00",
-        "kbb":"3.67",
-        "ip":"54.0",
+        "era":"2.98",
+        "whip":"1.09",
+        "k9":"10.93",
+        "bb9":"3.31",
+        "kbb":"3.30",
+        "ip":"54.1",
         "ip_rounded":54,
         "gs":1,
-        "gp":57,
-        "fetched":"2026-08-29"
+        "gp":58,
+        "fetched":"2026-08-30"
     },
     {
         "player":"Alex Vesia",
         "role":"RP",
         "position":"P",
-        "era":"3.09",
+        "era":"3.02",
         "whip":"1.20",
-        "k9":"11.38",
-        "bb9":"5.98",
+        "k9":"11.14",
+        "bb9":"5.85",
         "kbb":"1.90",
-        "ip":"46.2",
-        "ip_rounded":46,
+        "ip":"47.2",
+        "ip_rounded":47,
         "gs":0,
-        "gp":60,
-        "fetched":"2026-08-29"
+        "gp":61,
+        "fetched":"2026-08-30"
     }
 ]

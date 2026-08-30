@@ -11,15 +11,15 @@
             "failed": 4
         },
         "catching": {
-            "total": 101,
-            "successful": 56,
-            "failed": 45
+            "total": 103,
+            "successful": 57,
+            "failed": 46
         }
     },
     "opponents": {
         "batting": {
-            "total": 114,
-            "successful": 57,
+            "total": 115,
+            "successful": 58,
             "failed": 57
         },
         "pitching": {
@@ -34,6 +34,42 @@
         }
     },
     "challenge_log": [
+        {
+            "date": "2026-08-29",
+            "date_formatted": "August 29, 2026",
+            "challenger": "Ben Rortvedt",
+            "role": "catching",
+            "team": "dodgers",
+            "outcome": "confirmed",
+            "result_desc": "Kevin McGonigle singles on a fly ball to center fielder Enrique Hern\u00e1ndez. Javier B\u00e1ez scores. Gleyber Torres to 3rd. Hao-Yu Lee to 2nd.",
+            "batter": "Kevin McGonigle",
+            "pitcher": "Jack Dreyer",
+            "game_pk": 824230
+        },
+        {
+            "date": "2026-08-29",
+            "date_formatted": "August 29, 2026",
+            "challenger": "Hunter Feduccia",
+            "role": "catching",
+            "team": "dodgers",
+            "outcome": "overturned",
+            "result_desc": "Dillon Dingler strikes out swinging.",
+            "batter": "Dillon Dingler",
+            "pitcher": "Blake Snell",
+            "game_pk": 824230
+        },
+        {
+            "date": "2026-08-29",
+            "date_formatted": "August 29, 2026",
+            "challenger": "Javier B\u00e1ez",
+            "role": "batting",
+            "team": "opponents",
+            "outcome": "overturned",
+            "result_desc": "Javier B\u00e1ez walks.",
+            "batter": "Javier B\u00e1ez",
+            "pitcher": "Blake Snell",
+            "game_pk": 824230
+        },
         {
             "date": "2026-08-28",
             "date_formatted": "August 28, 2026",
@@ -109,42 +145,6 @@
         {
             "date": "2026-08-25",
             "date_formatted": "August 25, 2026",
-            "challenger": "Sean Murphy",
-            "role": "catching",
-            "team": "opponents",
-            "outcome": "overturned",
-            "result_desc": "Freddie Freeman strikes out swinging.",
-            "batter": "Freddie Freeman",
-            "pitcher": "Raisel Iglesias",
-            "game_pk": 824881
-        },
-        {
-            "date": "2026-08-25",
-            "date_formatted": "August 25, 2026",
-            "challenger": "Sean Murphy",
-            "role": "catching",
-            "team": "opponents",
-            "outcome": "confirmed",
-            "result_desc": "Freddie Freeman strikes out swinging.",
-            "batter": "Freddie Freeman",
-            "pitcher": "Raisel Iglesias",
-            "game_pk": 824881
-        },
-        {
-            "date": "2026-08-25",
-            "date_formatted": "August 25, 2026",
-            "challenger": "Shohei Ohtani",
-            "role": "batting",
-            "team": "dodgers",
-            "outcome": "confirmed",
-            "result_desc": "Shohei Ohtani grounds out, first baseman Matt Olson to pitcher Dylan Lee.",
-            "batter": "Shohei Ohtani",
-            "pitcher": "Dylan Lee",
-            "game_pk": 824881
-        },
-        {
-            "date": "2026-08-25",
-            "date_formatted": "August 25, 2026",
             "challenger": "Hunter Feduccia",
             "role": "catching",
             "team": "dodgers",
@@ -164,6 +164,42 @@
             "result_desc": "Tommy Edman singles on a line drive to center fielder Michael Harris II.",
             "batter": "Tommy Edman",
             "pitcher": "Bryce Elder",
+            "game_pk": 824881
+        },
+        {
+            "date": "2026-08-25",
+            "date_formatted": "August 25, 2026",
+            "challenger": "Shohei Ohtani",
+            "role": "batting",
+            "team": "dodgers",
+            "outcome": "confirmed",
+            "result_desc": "Shohei Ohtani grounds out, first baseman Matt Olson to pitcher Dylan Lee.",
+            "batter": "Shohei Ohtani",
+            "pitcher": "Dylan Lee",
+            "game_pk": 824881
+        },
+        {
+            "date": "2026-08-25",
+            "date_formatted": "August 25, 2026",
+            "challenger": "Sean Murphy",
+            "role": "catching",
+            "team": "opponents",
+            "outcome": "confirmed",
+            "result_desc": "Freddie Freeman strikes out swinging.",
+            "batter": "Freddie Freeman",
+            "pitcher": "Raisel Iglesias",
+            "game_pk": 824881
+        },
+        {
+            "date": "2026-08-25",
+            "date_formatted": "August 25, 2026",
+            "challenger": "Sean Murphy",
+            "role": "catching",
+            "team": "opponents",
+            "outcome": "overturned",
+            "result_desc": "Freddie Freeman strikes out swinging.",
+            "batter": "Freddie Freeman",
+            "pitcher": "Raisel Iglesias",
             "game_pk": 824881
         },
         {
@@ -237,42 +273,6 @@
             "batter": "Mookie Betts",
             "pitcher": "Jared Jones",
             "game_pk": 823910
-        },
-        {
-            "date": "2026-08-21",
-            "date_formatted": "August 21, 2026",
-            "challenger": "Henry Davis",
-            "role": "catching",
-            "team": "opponents",
-            "outcome": "confirmed",
-            "result_desc": "Kyle Tucker grounds into a force out, second baseman Brandon Lowe to shortstop Jacob Gonzalez. Enrique Hern\u00e1ndez to 3rd. Mookie Betts out at 2nd. Kyle Tucker to 1st.",
-            "batter": "Kyle Tucker",
-            "pitcher": "Gregory Soto",
-            "game_pk": 823911
-        },
-        {
-            "date": "2026-08-21",
-            "date_formatted": "August 21, 2026",
-            "challenger": "Henry Davis",
-            "role": "catching",
-            "team": "opponents",
-            "outcome": "confirmed",
-            "result_desc": "Hunter Feduccia strikes out swinging.",
-            "batter": "Hunter Feduccia",
-            "pitcher": "Luke Weaver",
-            "game_pk": 823911
-        },
-        {
-            "date": "2026-08-21",
-            "date_formatted": "August 21, 2026",
-            "challenger": "Teoscar Hern\u00e1ndez",
-            "role": "batting",
-            "team": "dodgers",
-            "outcome": "confirmed",
-            "result_desc": "Teoscar Hern\u00e1ndez strikes out swinging.",
-            "batter": "Teoscar Hern\u00e1ndez",
-            "pitcher": "Luke Weaver",
-            "game_pk": 823911
         }
     ],
     "dodgers_by_player": [
@@ -298,18 +298,18 @@
             "success_rate": 52.6
         },
         {
+            "challenger": "Hunter Feduccia",
+            "total": 14,
+            "successful": 7,
+            "failed": 7,
+            "success_rate": 50.0
+        },
+        {
             "challenger": "Teoscar Hern\u00e1ndez",
             "total": 13,
             "successful": 11,
             "failed": 2,
             "success_rate": 84.6
-        },
-        {
-            "challenger": "Hunter Feduccia",
-            "total": 13,
-            "successful": 6,
-            "failed": 7,
-            "success_rate": 46.2
         },
         {
             "challenger": "Mookie Betts",
@@ -348,10 +348,10 @@
         },
         {
             "challenger": "Ben Rortvedt",
-            "total": 4,
+            "total": 5,
             "successful": 2,
-            "failed": 2,
-            "success_rate": 50.0
+            "failed": 3,
+            "success_rate": 40.0
         },
         {
             "challenger": "Eliezer Alfonzo",
@@ -441,10 +441,10 @@
         },
         {
             "inning": 3,
-            "total": 21,
-            "successful": 12,
+            "total": 22,
+            "successful": 13,
             "failed": 9,
-            "success_rate": 57.1
+            "success_rate": 59.1
         },
         {
             "inning": 4,
@@ -483,10 +483,10 @@
         },
         {
             "inning": 9,
-            "total": 32,
+            "total": 33,
             "successful": 18,
-            "failed": 14,
-            "success_rate": 56.2
+            "failed": 15,
+            "success_rate": 54.5
         },
         {
             "inning": 10,

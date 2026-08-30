@@ -10,9 +10,9 @@
     {
         "stat_label":"Losses",
         "stat":"losses",
-        "value":54,
+        "value":55,
         "category":"standings",
-        "context_value":58,
+        "context_value":59,
         "context_value_label":"This point last season"
     },
     {
@@ -26,7 +26,7 @@
     {
         "stat_label":"Games up\/back",
         "stat":"games_up_back",
-        "value":9,
+        "value":8.5,
         "category":"standings",
         "context_value":"1st",
         "context_value_label":"Division rank"
@@ -50,7 +50,7 @@
     {
         "stat_label":"Runs",
         "stat":"runs",
-        "value":663,
+        "value":664,
         "category":"standings",
         "context_value":"4th",
         "context_value_label":"League rank"
@@ -58,17 +58,17 @@
     {
         "stat_label":"Runs against",
         "stat":"runs_against",
-        "value":514,
+        "value":516,
         "category":"standings",
-        "context_value":589,
+        "context_value":595,
         "context_value_label":"This point last season"
     },
     {
         "stat_label":"Run differential",
         "stat":"run_differential",
-        "value":149,
+        "value":148,
         "category":"standings",
-        "context_value":105,
+        "context_value":100,
         "context_value_label":"This point last season"
     },
     {
@@ -130,7 +130,7 @@
     {
         "stat_label":"Stolen bases\/game",
         "stat":"stolen_bases_game",
-        "value":0.41,
+        "value":0.4,
         "category":"batting",
         "context_value":0.84,
         "context_value_label":"Rate all last season"
@@ -138,15 +138,15 @@
     {
         "stat_label":"Doubles",
         "stat":"doubles",
-        "value":217,
+        "value":219,
         "category":"batting",
-        "context_value":"11th",
+        "context_value":"10th",
         "context_value_label":"League rank"
     },
     {
         "stat_label":"Strikeouts",
         "stat":"strikeouts",
-        "value":"1,237",
+        "value":"1,242",
         "category":"pitching",
         "context_value":"5th",
         "context_value_label":"League rank"
@@ -154,7 +154,7 @@
     {
         "stat_label":"Walks",
         "stat":"walks",
-        "value":420,
+        "value":423,
         "category":"pitching",
         "context_value":"21st",
         "context_value_label":"League rank"
@@ -162,7 +162,7 @@
     {
         "stat_label":"ERA",
         "stat":"era",
-        "value":"3.65",
+        "value":"3.64",
         "category":"pitching",
         "context_value":"6th",
         "context_value_label":"League rank"
@@ -186,7 +186,7 @@
     {
         "stat_label":"K\/BB ratio",
         "stat":"k_bb_ratio",
-        "value":2.95,
+        "value":2.94,
         "category":"pitching",
         "context_value":"6th",
         "context_value_label":"League rank"
@@ -194,7 +194,7 @@
     {
         "stat_label":"Last updated",
         "stat":"update_time",
-        "value":"August 29, 2026, 11:19 AM PT",
+        "value":"August 29, 2026, 6:15 PM PT",
         "category":"summary",
         "context_value":"",
         "context_value_label":""
@@ -202,7 +202,7 @@
     {
         "stat_label":"Team summary",
         "stat":"summary",
-        "value":"<span class='highlight'>LOS ANGELES<\/span> <span class='updated'>(August 29)<\/span> \u2014 The Dodgers have compiled a <span class='highlight'>81-54<\/span> record in the 2026 regular season, a <span class='highlight'>60%<\/span> winning percentage. The last game was a <span class='highlight'>2-1<\/span> away <span class='highlight'>win<\/span> against the <span class='highlight'>Detroit Tigers<\/span>. The team next faces the <span class='highlight'>Detroit Tigers<\/span> on Sunday at 1:40 p.m. EDT at <span class='highlight'>Comerica Park<\/span>.",
+        "value":"<span class='highlight'>LOS ANGELES<\/span> <span class='updated'>(August 29)<\/span> \u2014 The Dodgers have compiled a <span class='highlight'>81-55<\/span> record in the 2026 regular season, a <span class='highlight'>60%<\/span> winning percentage. The last game was a <span class='highlight'>1-2<\/span> away <span class='highlight'>loss<\/span> against the <span class='highlight'>Detroit Tigers<\/span>. The team next faces the <span class='highlight'>Detroit Tigers<\/span> on Sunday at 1:40 p.m. EDT at <span class='highlight'>Comerica Park<\/span>.",
         "category":"summary",
         "context_value":"",
         "context_value_label":""
@@ -210,7 +210,7 @@
     {
         "stat_label":"Last game result",
         "stat":"last_game_result",
-        "value":"win",
+        "value":"loss",
         "category":"summary",
         "context_value":"",
         "context_value_label":""
