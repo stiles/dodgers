@@ -2,7 +2,7 @@
   "title": "NL MVP odds",
   "event_ticker": "KXMLBNLMVP-26",
   "source": "kalshi",
-  "last_updated": "2026-08-30T18:16:22.335442-07:00",
+  "last_updated": "2026-08-31T09:03:48.155079-07:00",
   "candidates": [
     {
       "ticker": "KXMLBNLMVP-26-PCRO",
@@ -11,10 +11,10 @@
       "is_dodger": false,
       "current": {
         "price": 0.89,
-        "yes_bid": 0.85,
+        "yes_bid": 0.88,
         "yes_ask": 0.89,
         "previous_day": 0.86,
-        "previous_week": 0.68
+        "previous_week": 0.66
       },
       "series": [
         {
@@ -756,6 +756,10 @@
         {
           "date": "2026-08-30",
           "price": 0.86
+        },
+        {
+          "date": "2026-08-31",
+          "price": 0.88
         }
       ]
     },
@@ -765,11 +769,11 @@
       "team": "Los Angeles D",
       "is_dodger": true,
       "current": {
-        "price": 0.13,
-        "yes_bid": 0.09,
-        "yes_ask": 0.13,
-        "previous_day": 0.15,
-        "previous_week": 0.33
+        "price": 0.12,
+        "yes_bid": 0.1,
+        "yes_ask": 0.12,
+        "previous_day": 0.14,
+        "previous_week": 0.34
       },
       "series": [
         {
@@ -1575,6 +1579,10 @@
         {
           "date": "2026-08-30",
           "price": 0.12
+        },
+        {
+          "date": "2026-08-31",
+          "price": 0.11
         }
       ]
     }
