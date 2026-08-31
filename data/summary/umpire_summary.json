@@ -1,17 +1,17 @@
 {
     "season_summary": {
-        "correct_strikes_pct": 90.74238391008578,
-        "incorrect_strikes_pct": 9.257616089914222,
-        "total_called_strikes": 3381,
-        "bad_calls_count": 313
+        "correct_strikes_pct": 90.71953010279002,
+        "incorrect_strikes_pct": 9.280469897209983,
+        "total_called_strikes": 3405,
+        "bad_calls_count": 316
     },
     "last_game_summary": {
-        "date": "August 29, 2026",
-        "correct_strikes_pct": 91.66666666666666,
-        "incorrect_strikes_pct": 8.333333333333343,
+        "date": "August 30, 2026",
+        "correct_strikes_pct": 87.5,
+        "incorrect_strikes_pct": 12.5,
         "total_called_strikes": 24,
-        "bad_calls_count": 2,
-        "home_plate_umpire": "Chris Guccione"
+        "bad_calls_count": 3,
+        "home_plate_umpire": "Scott Barry"
     },
     "worst_calls_of_season": [
         {
@@ -56,17 +56,17 @@
         }
     ],
     "pitching_season_summary": {
-        "correct_balls_pct": 96.18491921005386,
-        "incorrect_balls_pct": 3.815080789946137,
-        "total_called_balls": 6684,
-        "bad_calls_count": 255
+        "correct_balls_pct": 96.17787031528852,
+        "incorrect_balls_pct": 3.8221296847114843,
+        "total_called_balls": 6724,
+        "bad_calls_count": 257
     },
     "pitching_last_game_summary": {
-        "date": "August 29, 2026",
-        "correct_balls_pct": 100.0,
-        "incorrect_balls_pct": 0.0,
-        "total_called_balls": 27,
-        "bad_calls_count": 0
+        "date": "August 30, 2026",
+        "correct_balls_pct": 95.0,
+        "incorrect_balls_pct": 5.0,
+        "total_called_balls": 40,
+        "bad_calls_count": 2
     },
     "pitching_worst_calls_of_season": [],
     "abs_challenges": {
