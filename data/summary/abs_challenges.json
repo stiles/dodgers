@@ -1,8 +1,8 @@
 {
     "dodgers": {
         "batting": {
-            "total": 107,
-            "successful": 66,
+            "total": 108,
+            "successful": 67,
             "failed": 41
         },
         "pitching": {
@@ -11,9 +11,9 @@
             "failed": 4
         },
         "catching": {
-            "total": 105,
+            "total": 106,
             "successful": 59,
-            "failed": 46
+            "failed": 47
         }
     },
     "opponents": {
@@ -28,12 +28,48 @@
             "failed": 3
         },
         "catching": {
-            "total": 151,
+            "total": 152,
             "successful": 93,
-            "failed": 58
+            "failed": 59
         }
     },
     "challenge_log": [
+        {
+            "date": "2026-09-01",
+            "date_formatted": "September 1, 2026",
+            "challenger": "Leo Bernal",
+            "role": "catching",
+            "team": "opponents",
+            "outcome": "confirmed",
+            "result_desc": "Teoscar Hern\u00e1ndez lines out sharply to third baseman Ram\u00f3n Ur\u00edas.",
+            "batter": "Teoscar Hern\u00e1ndez",
+            "pitcher": "Luis Gastelum",
+            "game_pk": 823908
+        },
+        {
+            "date": "2026-09-01",
+            "date_formatted": "September 1, 2026",
+            "challenger": "Will Smith",
+            "role": "catching",
+            "team": "dodgers",
+            "outcome": "confirmed",
+            "result_desc": "Iv\u00e1n Herrera strikes out swinging.",
+            "batter": "Iv\u00e1n Herrera",
+            "pitcher": "Kyle Hurt",
+            "game_pk": 823908
+        },
+        {
+            "date": "2026-09-01",
+            "date_formatted": "September 1, 2026",
+            "challenger": "Shohei Ohtani",
+            "role": "batting",
+            "team": "dodgers",
+            "outcome": "overturned",
+            "result_desc": "Shohei Ohtani singles on a line drive to center fielder Nathan Church. Alex Freeland to 2nd.",
+            "batter": "Shohei Ohtani",
+            "pitcher": "Michael McGreevy",
+            "game_pk": 823908
+        },
         {
             "date": "2026-08-30",
             "date_formatted": "August 30, 2026",
@@ -109,6 +145,18 @@
         {
             "date": "2026-08-29",
             "date_formatted": "August 29, 2026",
+            "challenger": "Javier B\u00e1ez",
+            "role": "batting",
+            "team": "opponents",
+            "outcome": "overturned",
+            "result_desc": "Javier B\u00e1ez walks.",
+            "batter": "Javier B\u00e1ez",
+            "pitcher": "Blake Snell",
+            "game_pk": 824230
+        },
+        {
+            "date": "2026-08-29",
+            "date_formatted": "August 29, 2026",
             "challenger": "Ben Rortvedt",
             "role": "catching",
             "team": "dodgers",
@@ -127,18 +175,6 @@
             "outcome": "overturned",
             "result_desc": "Dillon Dingler strikes out swinging.",
             "batter": "Dillon Dingler",
-            "pitcher": "Blake Snell",
-            "game_pk": 824230
-        },
-        {
-            "date": "2026-08-29",
-            "date_formatted": "August 29, 2026",
-            "challenger": "Javier B\u00e1ez",
-            "role": "batting",
-            "team": "opponents",
-            "outcome": "overturned",
-            "result_desc": "Javier B\u00e1ez walks.",
-            "batter": "Javier B\u00e1ez",
             "pitcher": "Blake Snell",
             "game_pk": 824230
         },
@@ -165,6 +201,18 @@
             "batter": "Miguel Rojas",
             "pitcher": "Chris Sale",
             "game_pk": 824879
+        },
+        {
+            "date": "2026-08-26",
+            "date_formatted": "August 26, 2026",
+            "challenger": "Ronald Acu\u00f1a Jr.",
+            "role": "batting",
+            "team": "opponents",
+            "outcome": "overturned",
+            "result_desc": "Ronald Acu\u00f1a Jr. grounds out softly to first baseman Freddie Freeman.",
+            "batter": "Ronald Acu\u00f1a Jr.",
+            "pitcher": "Brock Stewart",
+            "game_pk": 824878
         },
         {
             "date": "2026-08-26",
@@ -203,18 +251,6 @@
             "game_pk": 824878
         },
         {
-            "date": "2026-08-26",
-            "date_formatted": "August 26, 2026",
-            "challenger": "Ronald Acu\u00f1a Jr.",
-            "role": "batting",
-            "team": "opponents",
-            "outcome": "overturned",
-            "result_desc": "Ronald Acu\u00f1a Jr. grounds out softly to first baseman Freddie Freeman.",
-            "batter": "Ronald Acu\u00f1a Jr.",
-            "pitcher": "Brock Stewart",
-            "game_pk": 824878
-        },
-        {
             "date": "2026-08-25",
             "date_formatted": "August 25, 2026",
             "challenger": "Sean Murphy",
@@ -236,52 +272,16 @@
             "result_desc": "Freddie Freeman strikes out swinging.",
             "batter": "Freddie Freeman",
             "pitcher": "Raisel Iglesias",
-            "game_pk": 824881
-        },
-        {
-            "date": "2026-08-25",
-            "date_formatted": "August 25, 2026",
-            "challenger": "Shohei Ohtani",
-            "role": "batting",
-            "team": "dodgers",
-            "outcome": "confirmed",
-            "result_desc": "Shohei Ohtani grounds out, first baseman Matt Olson to pitcher Dylan Lee.",
-            "batter": "Shohei Ohtani",
-            "pitcher": "Dylan Lee",
-            "game_pk": 824881
-        },
-        {
-            "date": "2026-08-25",
-            "date_formatted": "August 25, 2026",
-            "challenger": "Hunter Feduccia",
-            "role": "catching",
-            "team": "dodgers",
-            "outcome": "confirmed",
-            "result_desc": "Drake Baldwin grounds out to first baseman Freddie Freeman.",
-            "batter": "Drake Baldwin",
-            "pitcher": "Tyler Glasnow",
-            "game_pk": 824881
-        },
-        {
-            "date": "2026-08-25",
-            "date_formatted": "August 25, 2026",
-            "challenger": "Sean Murphy",
-            "role": "catching",
-            "team": "opponents",
-            "outcome": "overturned",
-            "result_desc": "Tommy Edman singles on a line drive to center fielder Michael Harris II.",
-            "batter": "Tommy Edman",
-            "pitcher": "Bryce Elder",
             "game_pk": 824881
         }
     ],
     "dodgers_by_player": [
         {
             "challenger": "Will Smith",
-            "total": 39,
+            "total": 40,
             "successful": 25,
-            "failed": 14,
-            "success_rate": 64.1
+            "failed": 15,
+            "success_rate": 62.5
         },
         {
             "challenger": "Dalton Rushing",
@@ -312,18 +312,18 @@
             "success_rate": 84.6
         },
         {
+            "challenger": "Shohei Ohtani",
+            "total": 12,
+            "successful": 7,
+            "failed": 5,
+            "success_rate": 58.3
+        },
+        {
             "challenger": "Mookie Betts",
             "total": 11,
             "successful": 8,
             "failed": 3,
             "success_rate": 72.7
-        },
-        {
-            "challenger": "Shohei Ohtani",
-            "total": 11,
-            "successful": 6,
-            "failed": 5,
-            "success_rate": 54.5
         },
         {
             "challenger": "Kyle Tucker",
@@ -455,17 +455,17 @@
         },
         {
             "inning": 5,
-            "total": 11,
-            "successful": 7,
+            "total": 12,
+            "successful": 8,
             "failed": 4,
-            "success_rate": 63.6
+            "success_rate": 66.7
         },
         {
             "inning": 6,
-            "total": 29,
+            "total": 30,
             "successful": 18,
-            "failed": 11,
-            "success_rate": 62.1
+            "failed": 12,
+            "success_rate": 60.0
         },
         {
             "inning": 7,

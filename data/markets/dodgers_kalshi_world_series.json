@@ -2,15 +2,15 @@
   "title": "Dodgers to win the 2026 World Series",
   "ticker": "KXMLB-26-LAD",
   "source": "kalshi",
-  "last_updated": "2026-09-01T17:58:45.205438-07:00",
+  "last_updated": "2026-09-02T05:43:44.285381-07:00",
   "current": {
-    "price": 0.306,
-    "yes_bid": 0.307,
-    "yes_ask": 0.313,
-    "previous_day": 0.304,
-    "previous_week": 0.33,
-    "volume": 9667323.62,
-    "open_interest": 4911901.34
+    "price": 0.308,
+    "yes_bid": 0.303,
+    "yes_ask": 0.308,
+    "previous_day": 0.305,
+    "previous_week": 0.335,
+    "volume": 9781467.36,
+    "open_interest": 4908717.06
   },
   "series": [
     {
@@ -988,6 +988,10 @@
     {
       "date": "2026-09-01",
       "price": 0.301
+    },
+    {
+      "date": "2026-09-02",
+      "price": 0.316
     }
   ]
 }
