@@ -1,9 +1,9 @@
 {
     "dodgers": {
         "batting": {
-            "total": 108,
+            "total": 109,
             "successful": 67,
-            "failed": 41
+            "failed": 42
         },
         "pitching": {
             "total": 7,
@@ -18,9 +18,9 @@
     },
     "opponents": {
         "batting": {
-            "total": 117,
+            "total": 118,
             "successful": 59,
-            "failed": 58
+            "failed": 59
         },
         "pitching": {
             "total": 5,
@@ -34,6 +34,30 @@
         }
     },
     "challenge_log": [
+        {
+            "date": "2026-09-03",
+            "date_formatted": "September 3, 2026",
+            "challenger": "Teoscar Hern\u00e1ndez",
+            "role": "batting",
+            "team": "dodgers",
+            "outcome": "confirmed",
+            "result_desc": "Teoscar Hern\u00e1ndez doubles (16) on a sharp line drive to center fielder Nathan Church. Tommy Edman scores. Mookie Betts scores.",
+            "batter": "Teoscar Hern\u00e1ndez",
+            "pitcher": "Riley O'Brien",
+            "game_pk": 823907
+        },
+        {
+            "date": "2026-09-03",
+            "date_formatted": "September 3, 2026",
+            "challenger": "Iv\u00e1n Herrera",
+            "role": "batting",
+            "team": "opponents",
+            "outcome": "confirmed",
+            "result_desc": "Iv\u00e1n Herrera grounds out, second baseman Tommy Edman to first baseman Freddie Freeman.",
+            "batter": "Iv\u00e1n Herrera",
+            "pitcher": "Evan Phillips",
+            "game_pk": 823907
+        },
         {
             "date": "2026-09-01",
             "date_formatted": "September 1, 2026",
@@ -145,6 +169,18 @@
         {
             "date": "2026-08-29",
             "date_formatted": "August 29, 2026",
+            "challenger": "Hunter Feduccia",
+            "role": "catching",
+            "team": "dodgers",
+            "outcome": "overturned",
+            "result_desc": "Dillon Dingler strikes out swinging.",
+            "batter": "Dillon Dingler",
+            "pitcher": "Blake Snell",
+            "game_pk": 824230
+        },
+        {
+            "date": "2026-08-29",
+            "date_formatted": "August 29, 2026",
             "challenger": "Javier B\u00e1ez",
             "role": "batting",
             "team": "opponents",
@@ -164,18 +200,6 @@
             "result_desc": "Kevin McGonigle singles on a fly ball to center fielder Enrique Hern\u00e1ndez. Javier B\u00e1ez scores. Gleyber Torres to 3rd. Hao-Yu Lee to 2nd.",
             "batter": "Kevin McGonigle",
             "pitcher": "Jack Dreyer",
-            "game_pk": 824230
-        },
-        {
-            "date": "2026-08-29",
-            "date_formatted": "August 29, 2026",
-            "challenger": "Hunter Feduccia",
-            "role": "catching",
-            "team": "dodgers",
-            "outcome": "overturned",
-            "result_desc": "Dillon Dingler strikes out swinging.",
-            "batter": "Dillon Dingler",
-            "pitcher": "Blake Snell",
             "game_pk": 824230
         },
         {
@@ -249,30 +273,6 @@
             "batter": "Ronald Acu\u00f1a Jr.",
             "pitcher": "Edgardo Henriquez",
             "game_pk": 824878
-        },
-        {
-            "date": "2026-08-25",
-            "date_formatted": "August 25, 2026",
-            "challenger": "Sean Murphy",
-            "role": "catching",
-            "team": "opponents",
-            "outcome": "overturned",
-            "result_desc": "Freddie Freeman strikes out swinging.",
-            "batter": "Freddie Freeman",
-            "pitcher": "Raisel Iglesias",
-            "game_pk": 824881
-        },
-        {
-            "date": "2026-08-25",
-            "date_formatted": "August 25, 2026",
-            "challenger": "Sean Murphy",
-            "role": "catching",
-            "team": "opponents",
-            "outcome": "confirmed",
-            "result_desc": "Freddie Freeman strikes out swinging.",
-            "batter": "Freddie Freeman",
-            "pitcher": "Raisel Iglesias",
-            "game_pk": 824881
         }
     ],
     "dodgers_by_player": [
@@ -298,18 +298,18 @@
             "success_rate": 52.6
         },
         {
+            "challenger": "Teoscar Hern\u00e1ndez",
+            "total": 14,
+            "successful": 11,
+            "failed": 3,
+            "success_rate": 78.6
+        },
+        {
             "challenger": "Hunter Feduccia",
             "total": 14,
             "successful": 7,
             "failed": 7,
             "success_rate": 50.0
-        },
-        {
-            "challenger": "Teoscar Hern\u00e1ndez",
-            "total": 13,
-            "successful": 11,
-            "failed": 2,
-            "success_rate": 84.6
         },
         {
             "challenger": "Shohei Ohtani",
@@ -483,10 +483,10 @@
         },
         {
             "inning": 9,
-            "total": 33,
+            "total": 34,
             "successful": 18,
-            "failed": 15,
-            "success_rate": 54.5
+            "failed": 16,
+            "success_rate": 52.9
         },
         {
             "inning": 10,

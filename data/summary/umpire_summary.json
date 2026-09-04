@@ -1,17 +1,17 @@
 {
     "season_summary": {
-        "correct_strikes_pct": 90.74341914955163,
-        "incorrect_strikes_pct": 9.256580850448373,
-        "total_called_strikes": 3457,
-        "bad_calls_count": 320
+        "correct_strikes_pct": 90.76834862385321,
+        "incorrect_strikes_pct": 9.231651376146786,
+        "total_called_strikes": 3488,
+        "bad_calls_count": 322
     },
     "last_game_summary": {
-        "date": "September 2, 2026",
-        "correct_strikes_pct": 88.0,
-        "incorrect_strikes_pct": 12.0,
-        "total_called_strikes": 25,
-        "bad_calls_count": 3,
-        "home_plate_umpire": "Alan Porter"
+        "date": "September 3, 2026",
+        "correct_strikes_pct": 93.54838709677419,
+        "incorrect_strikes_pct": 6.451612903225808,
+        "total_called_strikes": 31,
+        "bad_calls_count": 2,
+        "home_plate_umpire": "Jim Wolf"
     },
     "worst_calls_of_season": [
         {
@@ -56,25 +56,25 @@
         }
     ],
     "pitching_season_summary": {
-        "correct_balls_pct": 96.17302052785924,
-        "incorrect_balls_pct": 3.8269794721407635,
-        "total_called_balls": 6820,
+        "correct_balls_pct": 96.1986600640839,
+        "incorrect_balls_pct": 3.801339935916104,
+        "total_called_balls": 6866,
         "bad_calls_count": 261
     },
     "pitching_last_game_summary": {
-        "date": "September 2, 2026",
-        "correct_balls_pct": 93.02325581395348,
-        "incorrect_balls_pct": 6.976744186046517,
-        "total_called_balls": 43,
-        "bad_calls_count": 3
+        "date": "September 3, 2026",
+        "correct_balls_pct": 100.0,
+        "incorrect_balls_pct": 0.0,
+        "total_called_balls": 46,
+        "bad_calls_count": 0
     },
     "pitching_worst_calls_of_season": [],
     "abs_challenges": {
         "dodgers": {
             "batting": {
-                "total": 48,
+                "total": 49,
                 "successful": 13,
-                "failed": 35
+                "failed": 36
             },
             "pitching": {
                 "total": 0,
@@ -82,8 +82,8 @@
                 "failed": 0
             },
             "catching": {
-                "total": 26,
-                "successful": 21,
+                "total": 27,
+                "successful": 22,
                 "failed": 5
             }
         },
@@ -99,12 +99,48 @@
                 "failed": 0
             },
             "catching": {
-                "total": 48,
+                "total": 49,
                 "successful": 37,
-                "failed": 11
+                "failed": 12
             }
         },
         "challenge_log": [
+            {
+                "date": "2026-09-03",
+                "date_formatted": "September 3, 2026",
+                "challenger": "Pedro Pag\u00e9s",
+                "role": "catching",
+                "team": "opponents",
+                "outcome": "confirmed",
+                "result_desc": "Will Smith walks. Tommy Edman to 3rd. Teoscar Hern\u00e1ndez to 2nd.",
+                "batter": "Will Smith",
+                "pitcher": "Quinn Mathews",
+                "game_pk": 823907
+            },
+            {
+                "date": "2026-09-03",
+                "date_formatted": "September 3, 2026",
+                "challenger": "Dalton Rushing",
+                "role": "batting",
+                "team": "dodgers",
+                "outcome": "confirmed",
+                "result_desc": "Dalton Rushing called out on strikes.",
+                "batter": "Dalton Rushing",
+                "pitcher": "Cade Winquest",
+                "game_pk": 823907
+            },
+            {
+                "date": "2026-09-03",
+                "date_formatted": "September 3, 2026",
+                "challenger": "Will Smith",
+                "role": "catching",
+                "team": "dodgers",
+                "outcome": "overturned",
+                "result_desc": "Jordan Walker called out on strikes.",
+                "batter": "Jordan Walker",
+                "pitcher": "Tarik Skubal",
+                "game_pk": 823907
+            },
             {
                 "date": "2026-08-29",
                 "date_formatted": "August 29, 2026",
@@ -308,42 +344,6 @@
                 "batter": "Gary S\u00e1nchez",
                 "pitcher": "Roki Sasaki",
                 "game_pk": 823915
-            },
-            {
-                "date": "2026-08-13",
-                "date_formatted": "August 13, 2026",
-                "challenger": "Gary S\u00e1nchez",
-                "role": "batting",
-                "team": "opponents",
-                "outcome": "confirmed",
-                "result_desc": "Gary S\u00e1nchez called out on strikes.",
-                "batter": "Gary S\u00e1nchez",
-                "pitcher": "Edwin D\u00edaz",
-                "game_pk": 823915
-            },
-            {
-                "date": "2026-08-12",
-                "date_formatted": "August 12, 2026",
-                "challenger": "Andy Pages",
-                "role": "batting",
-                "team": "dodgers",
-                "outcome": "confirmed",
-                "result_desc": "Andy Pages called out on strikes.",
-                "batter": "Andy Pages",
-                "pitcher": "Daniel Lynch IV",
-                "game_pk": 823916
-            },
-            {
-                "date": "2026-08-12",
-                "date_formatted": "August 12, 2026",
-                "challenger": "Isaac Collins",
-                "role": "batting",
-                "team": "opponents",
-                "outcome": "confirmed",
-                "result_desc": "Isaac Collins called out on strikes.",
-                "batter": "Isaac Collins",
-                "pitcher": "Landon Knack",
-                "game_pk": 823916
             }
         ]
     }
