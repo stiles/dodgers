@@ -1,13 +1,5 @@
 [
     {
-        "date":"Aug 23",
-        "opp_name":"Pittsburgh Pirates",
-        "home_away":"home",
-        "result":"win",
-        "placement":"last",
-        "game_start":"4-0"
-    },
-    {
         "date":"Aug 25",
         "opp_name":"Atlanta Braves",
         "home_away":"away",
@@ -80,20 +72,20 @@
         "game_start":"3-2"
     },
     {
+        "date":"Sep 4",
+        "opp_name":"Washington Nationals",
+        "home_away":"home",
+        "result":"win",
+        "placement":"last",
+        "game_start":"5-3"
+    },
+    {
         "date":"Jul 18",
         "opp_name":"New York Yankees",
         "home_away":"away",
         "result":"--",
         "placement":"next",
         "game_start":"Postponed"
-    },
-    {
-        "date":"Sep 4",
-        "opp_name":"Washington Nationals",
-        "home_away":"home",
-        "result":"--",
-        "placement":"next",
-        "game_start":"7:10 PM"
     },
     {
         "date":"Sep 5",
@@ -158,5 +150,13 @@
         "result":"--",
         "placement":"next",
         "game_start":"10:40 AM"
+    },
+    {
+        "date":"Sep 14",
+        "opp_name":"Cincinnati Reds",
+        "home_away":"away",
+        "result":"--",
+        "placement":"next",
+        "game_start":"3:40 PM"
     }
 ]
