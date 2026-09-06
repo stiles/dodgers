@@ -11,40 +11,88 @@
             "failed": 4
         },
         "catching": {
-            "total": 107,
+            "total": 108,
             "successful": 59,
-            "failed": 48
+            "failed": 49
         }
     },
     "opponents": {
         "batting": {
-            "total": 119,
-            "successful": 59,
+            "total": 121,
+            "successful": 61,
             "failed": 60
         },
         "pitching": {
-            "total": 5,
-            "successful": 2,
+            "total": 6,
+            "successful": 3,
             "failed": 3
         },
         "catching": {
-            "total": 154,
-            "successful": 95,
+            "total": 155,
+            "successful": 96,
             "failed": 59
         }
     },
     "challenge_log": [
         {
-            "date": "2026-09-04",
-            "date_formatted": "September 4, 2026",
+            "date": "2026-09-05",
+            "date_formatted": "September 5, 2026",
+            "challenger": "Will Smith",
+            "role": "catching",
+            "team": "dodgers",
+            "outcome": "confirmed",
+            "result_desc": "CJ Abrams strikes out swinging.",
+            "batter": "CJ Abrams",
+            "pitcher": "Tanner Scott",
+            "game_pk": 823904
+        },
+        {
+            "date": "2026-09-05",
+            "date_formatted": "September 5, 2026",
             "challenger": "James Wood",
             "role": "batting",
             "team": "opponents",
-            "outcome": "confirmed",
-            "result_desc": "James Wood doubles (28) on a sharp line drive to right fielder Kyle Tucker. Jos\u00e9 Tena scores.",
+            "outcome": "overturned",
+            "result_desc": "James Wood challenged (pitch result), call on the field was confirmed: James Wood called out on strikes.",
             "batter": "James Wood",
-            "pitcher": "Jack Dreyer",
-            "game_pk": 823905
+            "pitcher": "Tyler Glasnow",
+            "game_pk": 823904
+        },
+        {
+            "date": "2026-09-05",
+            "date_formatted": "September 5, 2026",
+            "challenger": "Jorbit Vivas",
+            "role": "batting",
+            "team": "opponents",
+            "outcome": "overturned",
+            "result_desc": "Jorbit Vivas grounds out sharply, shortstop Mookie Betts to first baseman Freddie Freeman. Brady House to 2nd.",
+            "batter": "Jorbit Vivas",
+            "pitcher": "Tyler Glasnow",
+            "game_pk": 823904
+        },
+        {
+            "date": "2026-09-05",
+            "date_formatted": "September 5, 2026",
+            "challenger": "Keibert Ruiz",
+            "role": "catching",
+            "team": "opponents",
+            "outcome": "overturned",
+            "result_desc": "Kyle Tucker grounds into a force out, first baseman Abimelec Ortiz to shortstop CJ Abrams. Freddie Freeman to 3rd. Mookie Betts out at 2nd. Kyle Tucker to 1st.",
+            "batter": "Kyle Tucker",
+            "pitcher": "Cade Cavalli",
+            "game_pk": 823904
+        },
+        {
+            "date": "2026-09-05",
+            "date_formatted": "September 5, 2026",
+            "challenger": "Cade Cavalli",
+            "role": "pitching",
+            "team": "opponents",
+            "outcome": "overturned",
+            "result_desc": "Mookie Betts singles on a ground ball to center fielder Dylan Crews. Freddie Freeman to 2nd.",
+            "batter": "Mookie Betts",
+            "pitcher": "Cade Cavalli",
+            "game_pk": 823904
         },
         {
             "date": "2026-09-04",
@@ -56,6 +104,18 @@
             "result_desc": "Teoscar Hern\u00e1ndez grounds out, third baseman Brady House to first baseman Abimelec Ortiz.",
             "batter": "Teoscar Hern\u00e1ndez",
             "pitcher": "Luis Perales",
+            "game_pk": 823905
+        },
+        {
+            "date": "2026-09-04",
+            "date_formatted": "September 4, 2026",
+            "challenger": "Harry Ford",
+            "role": "catching",
+            "team": "opponents",
+            "outcome": "overturned",
+            "result_desc": "Tommy Edman strikes out swinging.",
+            "batter": "Tommy Edman",
+            "pitcher": "Jackson Kent",
             "game_pk": 823905
         },
         {
@@ -73,13 +133,13 @@
         {
             "date": "2026-09-04",
             "date_formatted": "September 4, 2026",
-            "challenger": "Harry Ford",
-            "role": "catching",
+            "challenger": "James Wood",
+            "role": "batting",
             "team": "opponents",
-            "outcome": "overturned",
-            "result_desc": "Tommy Edman strikes out swinging.",
-            "batter": "Tommy Edman",
-            "pitcher": "Jackson Kent",
+            "outcome": "confirmed",
+            "result_desc": "James Wood doubles (28) on a sharp line drive to right fielder Kyle Tucker. Jos\u00e9 Tena scores.",
+            "batter": "James Wood",
+            "pitcher": "Jack Dreyer",
             "game_pk": 823905
         },
         {
@@ -145,30 +205,6 @@
         {
             "date": "2026-08-30",
             "date_formatted": "August 30, 2026",
-            "challenger": "Kevin McGonigle",
-            "role": "batting",
-            "team": "opponents",
-            "outcome": "confirmed",
-            "result_desc": "Kevin McGonigle lines out to left fielder Teoscar Hern\u00e1ndez.",
-            "batter": "Kevin McGonigle",
-            "pitcher": "Tyler Glasnow",
-            "game_pk": 824232
-        },
-        {
-            "date": "2026-08-30",
-            "date_formatted": "August 30, 2026",
-            "challenger": "Colt Keith",
-            "role": "batting",
-            "team": "opponents",
-            "outcome": "overturned",
-            "result_desc": "Colt Keith strikes out swinging.",
-            "batter": "Colt Keith",
-            "pitcher": "Tyler Glasnow",
-            "game_pk": 824232
-        },
-        {
-            "date": "2026-08-30",
-            "date_formatted": "August 30, 2026",
             "challenger": "Ben Rortvedt",
             "role": "catching",
             "team": "dodgers",
@@ -193,12 +229,12 @@
         {
             "date": "2026-08-30",
             "date_formatted": "August 30, 2026",
-            "challenger": "Tyler Glasnow",
-            "role": "pitching",
-            "team": "dodgers",
+            "challenger": "Colt Keith",
+            "role": "batting",
+            "team": "opponents",
             "outcome": "overturned",
-            "result_desc": "Dillon Dingler lines out sharply to center fielder Enrique Hern\u00e1ndez.",
-            "batter": "Dillon Dingler",
+            "result_desc": "Colt Keith strikes out swinging.",
+            "batter": "Colt Keith",
             "pitcher": "Tyler Glasnow",
             "game_pk": 824232
         },
@@ -215,73 +251,37 @@
             "game_pk": 824232
         },
         {
-            "date": "2026-08-29",
-            "date_formatted": "August 29, 2026",
-            "challenger": "Ben Rortvedt",
-            "role": "catching",
-            "team": "dodgers",
+            "date": "2026-08-30",
+            "date_formatted": "August 30, 2026",
+            "challenger": "Kevin McGonigle",
+            "role": "batting",
+            "team": "opponents",
             "outcome": "confirmed",
-            "result_desc": "Kevin McGonigle singles on a fly ball to center fielder Enrique Hern\u00e1ndez. Javier B\u00e1ez scores. Gleyber Torres to 3rd. Hao-Yu Lee to 2nd.",
+            "result_desc": "Kevin McGonigle lines out to left fielder Teoscar Hern\u00e1ndez.",
             "batter": "Kevin McGonigle",
-            "pitcher": "Jack Dreyer",
-            "game_pk": 824230
+            "pitcher": "Tyler Glasnow",
+            "game_pk": 824232
         },
         {
-            "date": "2026-08-29",
-            "date_formatted": "August 29, 2026",
-            "challenger": "Hunter Feduccia",
-            "role": "catching",
+            "date": "2026-08-30",
+            "date_formatted": "August 30, 2026",
+            "challenger": "Tyler Glasnow",
+            "role": "pitching",
             "team": "dodgers",
             "outcome": "overturned",
-            "result_desc": "Dillon Dingler strikes out swinging.",
+            "result_desc": "Dillon Dingler lines out sharply to center fielder Enrique Hern\u00e1ndez.",
             "batter": "Dillon Dingler",
-            "pitcher": "Blake Snell",
-            "game_pk": 824230
-        },
-        {
-            "date": "2026-08-29",
-            "date_formatted": "August 29, 2026",
-            "challenger": "Javier B\u00e1ez",
-            "role": "batting",
-            "team": "opponents",
-            "outcome": "overturned",
-            "result_desc": "Javier B\u00e1ez walks.",
-            "batter": "Javier B\u00e1ez",
-            "pitcher": "Blake Snell",
-            "game_pk": 824230
-        },
-        {
-            "date": "2026-08-28",
-            "date_formatted": "August 28, 2026",
-            "challenger": "Dillon Dingler",
-            "role": "catching",
-            "team": "opponents",
-            "outcome": "confirmed",
-            "result_desc": "Freddie Freeman strikes out swinging.",
-            "batter": "Freddie Freeman",
-            "pitcher": "Drew Anderson",
-            "game_pk": 824231
-        },
-        {
-            "date": "2026-08-27",
-            "date_formatted": "August 27, 2026",
-            "challenger": "Miguel Rojas",
-            "role": "batting",
-            "team": "dodgers",
-            "outcome": "confirmed",
-            "result_desc": "Braves challenged (play at 1st), call on the field was upheld: Dodgers challenged (force play), call on the field was upheld: Miguel Rojas grounds into a force out, third baseman Austin Riley to second baseman Ozzie Albies. Alek Thomas out at 2nd. Miguel Rojas to 1st.",
-            "batter": "Miguel Rojas",
-            "pitcher": "Chris Sale",
-            "game_pk": 824879
+            "pitcher": "Tyler Glasnow",
+            "game_pk": 824232
         }
     ],
     "dodgers_by_player": [
         {
             "challenger": "Will Smith",
-            "total": 41,
+            "total": 42,
             "successful": 25,
-            "failed": 16,
-            "success_rate": 61.0
+            "failed": 17,
+            "success_rate": 59.5
         },
         {
             "challenger": "Dalton Rushing",
@@ -483,10 +483,10 @@
         },
         {
             "inning": 9,
-            "total": 34,
+            "total": 35,
             "successful": 18,
-            "failed": 16,
-            "success_rate": 52.9
+            "failed": 17,
+            "success_rate": 51.4
         },
         {
             "inning": 10,

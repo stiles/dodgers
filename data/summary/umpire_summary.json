@@ -1,17 +1,17 @@
 {
     "season_summary": {
-        "correct_strikes_pct": 90.78984887368121,
-        "incorrect_strikes_pct": 9.210151126318792,
-        "total_called_strikes": 3507,
-        "bad_calls_count": 323
+        "correct_strikes_pct": 90.79616036137776,
+        "incorrect_strikes_pct": 9.203839638622242,
+        "total_called_strikes": 3542,
+        "bad_calls_count": 326
     },
     "last_game_summary": {
-        "date": "September 4, 2026",
-        "correct_strikes_pct": 94.73684210526315,
-        "incorrect_strikes_pct": 5.26315789473685,
-        "total_called_strikes": 19,
-        "bad_calls_count": 1,
-        "home_plate_umpire": "Junior Valentine"
+        "date": "September 5, 2026",
+        "correct_strikes_pct": 91.42857142857143,
+        "incorrect_strikes_pct": 8.57142857142857,
+        "total_called_strikes": 35,
+        "bad_calls_count": 3,
+        "home_plate_umpire": "Rob Drake"
     },
     "worst_calls_of_season": [
         {
@@ -56,17 +56,17 @@
         }
     ],
     "pitching_season_summary": {
-        "correct_balls_pct": 96.15106352192157,
-        "incorrect_balls_pct": 3.8489364780784285,
-        "total_called_balls": 6911,
+        "correct_balls_pct": 96.17541337167506,
+        "incorrect_balls_pct": 3.824586628324937,
+        "total_called_balls": 6955,
         "bad_calls_count": 266
     },
     "pitching_last_game_summary": {
-        "date": "September 4, 2026",
-        "correct_balls_pct": 88.88888888888889,
-        "incorrect_balls_pct": 11.111111111111114,
-        "total_called_balls": 45,
-        "bad_calls_count": 5
+        "date": "September 5, 2026",
+        "correct_balls_pct": 100.0,
+        "incorrect_balls_pct": 0.0,
+        "total_called_balls": 44,
+        "bad_calls_count": 0
     },
     "pitching_worst_calls_of_season": [],
     "abs_challenges": {
@@ -89,9 +89,9 @@
         },
         "opponents": {
             "batting": {
-                "total": 35,
+                "total": 36,
                 "successful": 9,
-                "failed": 26
+                "failed": 27
             },
             "pitching": {
                 "total": 0,
@@ -99,12 +99,36 @@
                 "failed": 0
             },
             "catching": {
-                "total": 49,
-                "successful": 37,
+                "total": 50,
+                "successful": 38,
                 "failed": 12
             }
         },
         "challenge_log": [
+            {
+                "date": "2026-09-05",
+                "date_formatted": "September 5, 2026",
+                "challenger": "Keibert Ruiz",
+                "role": "catching",
+                "team": "opponents",
+                "outcome": "overturned",
+                "result_desc": "Will Smith called out on strikes.",
+                "batter": "Will Smith",
+                "pitcher": "Jack Sinclair",
+                "game_pk": 823904
+            },
+            {
+                "date": "2026-09-05",
+                "date_formatted": "September 5, 2026",
+                "challenger": "James Wood",
+                "role": "batting",
+                "team": "opponents",
+                "outcome": "confirmed",
+                "result_desc": "James Wood called out on strikes.",
+                "batter": "James Wood",
+                "pitcher": "Tyler Glasnow",
+                "game_pk": 823904
+            },
             {
                 "date": "2026-09-04",
                 "date_formatted": "September 4, 2026",
@@ -320,30 +344,6 @@
                 "batter": "Garrett Mitchell",
                 "pitcher": "Yoshinobu Yamamoto",
                 "game_pk": 823913
-            },
-            {
-                "date": "2026-08-13",
-                "date_formatted": "August 13, 2026",
-                "challenger": "Freddie Freeman",
-                "role": "batting",
-                "team": "dodgers",
-                "outcome": "overturned",
-                "result_desc": "Freddie Freeman walks.",
-                "batter": "Freddie Freeman",
-                "pitcher": "Shane Drohan",
-                "game_pk": 823915
-            },
-            {
-                "date": "2026-08-13",
-                "date_formatted": "August 13, 2026",
-                "challenger": "Max Muncy",
-                "role": "batting",
-                "team": "dodgers",
-                "outcome": "confirmed",
-                "result_desc": "Max Muncy called out on strikes.",
-                "batter": "Max Muncy",
-                "pitcher": "Trevor Megill",
-                "game_pk": 823915
             }
         ]
     }
