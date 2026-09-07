@@ -1,8 +1,8 @@
 {
     "dodgers": {
         "batting": {
-            "total": 109,
-            "successful": 67,
+            "total": 110,
+            "successful": 68,
             "failed": 42
         },
         "pitching": {
@@ -18,8 +18,8 @@
     },
     "opponents": {
         "batting": {
-            "total": 121,
-            "successful": 61,
+            "total": 122,
+            "successful": 62,
             "failed": 60
         },
         "pitching": {
@@ -34,6 +34,30 @@
         }
     },
     "challenge_log": [
+        {
+            "date": "2026-09-06",
+            "date_formatted": "September 6, 2026",
+            "challenger": "Hunter Feduccia",
+            "role": "batting",
+            "team": "dodgers",
+            "outcome": "overturned",
+            "result_desc": "Hunter Feduccia walks. Max Muncy to 2nd.",
+            "batter": "Hunter Feduccia",
+            "pitcher": "Brad Lord",
+            "game_pk": 823903
+        },
+        {
+            "date": "2026-09-06",
+            "date_formatted": "September 6, 2026",
+            "challenger": "Jacob Young",
+            "role": "batting",
+            "team": "opponents",
+            "outcome": "overturned",
+            "result_desc": "Jacob Young singles on a sharp line drive to center fielder Tommy Edman. Harry Ford scores.",
+            "batter": "Jacob Young",
+            "pitcher": "Justin Wrobleski",
+            "game_pk": 823903
+        },
         {
             "date": "2026-09-05",
             "date_formatted": "September 5, 2026",
@@ -97,13 +121,13 @@
         {
             "date": "2026-09-04",
             "date_formatted": "September 4, 2026",
-            "challenger": "Harry Ford",
-            "role": "catching",
+            "challenger": "James Wood",
+            "role": "batting",
             "team": "opponents",
-            "outcome": "overturned",
-            "result_desc": "Teoscar Hern\u00e1ndez grounds out, third baseman Brady House to first baseman Abimelec Ortiz.",
-            "batter": "Teoscar Hern\u00e1ndez",
-            "pitcher": "Luis Perales",
+            "outcome": "confirmed",
+            "result_desc": "James Wood doubles (28) on a sharp line drive to right fielder Kyle Tucker. Jos\u00e9 Tena scores.",
+            "batter": "James Wood",
+            "pitcher": "Jack Dreyer",
             "game_pk": 823905
         },
         {
@@ -113,9 +137,9 @@
             "role": "catching",
             "team": "opponents",
             "outcome": "overturned",
-            "result_desc": "Tommy Edman strikes out swinging.",
-            "batter": "Tommy Edman",
-            "pitcher": "Jackson Kent",
+            "result_desc": "Teoscar Hern\u00e1ndez grounds out, third baseman Brady House to first baseman Abimelec Ortiz.",
+            "batter": "Teoscar Hern\u00e1ndez",
+            "pitcher": "Luis Perales",
             "game_pk": 823905
         },
         {
@@ -133,13 +157,13 @@
         {
             "date": "2026-09-04",
             "date_formatted": "September 4, 2026",
-            "challenger": "James Wood",
-            "role": "batting",
+            "challenger": "Harry Ford",
+            "role": "catching",
             "team": "opponents",
-            "outcome": "confirmed",
-            "result_desc": "James Wood doubles (28) on a sharp line drive to right fielder Kyle Tucker. Jos\u00e9 Tena scores.",
-            "batter": "James Wood",
-            "pitcher": "Jack Dreyer",
+            "outcome": "overturned",
+            "result_desc": "Tommy Edman strikes out swinging.",
+            "batter": "Tommy Edman",
+            "pitcher": "Jackson Kent",
             "game_pk": 823905
         },
         {
@@ -169,18 +193,6 @@
         {
             "date": "2026-09-01",
             "date_formatted": "September 1, 2026",
-            "challenger": "Leo Bernal",
-            "role": "catching",
-            "team": "opponents",
-            "outcome": "confirmed",
-            "result_desc": "Teoscar Hern\u00e1ndez lines out sharply to third baseman Ram\u00f3n Ur\u00edas.",
-            "batter": "Teoscar Hern\u00e1ndez",
-            "pitcher": "Luis Gastelum",
-            "game_pk": 823908
-        },
-        {
-            "date": "2026-09-01",
-            "date_formatted": "September 1, 2026",
             "challenger": "Will Smith",
             "role": "catching",
             "team": "dodgers",
@@ -203,40 +215,16 @@
             "game_pk": 823908
         },
         {
-            "date": "2026-08-30",
-            "date_formatted": "August 30, 2026",
-            "challenger": "Ben Rortvedt",
-            "role": "catching",
-            "team": "dodgers",
-            "outcome": "overturned",
-            "result_desc": "Javier B\u00e1ez grounds out, second baseman Tommy Edman to first baseman Freddie Freeman.",
-            "batter": "Javier B\u00e1ez",
-            "pitcher": "Tyler Glasnow",
-            "game_pk": 824232
-        },
-        {
-            "date": "2026-08-30",
-            "date_formatted": "August 30, 2026",
-            "challenger": "Dillon Dingler",
+            "date": "2026-09-01",
+            "date_formatted": "September 1, 2026",
+            "challenger": "Leo Bernal",
             "role": "catching",
             "team": "opponents",
-            "outcome": "overturned",
-            "result_desc": "Tommy Edman grounds out, shortstop Javier B\u00e1ez to first baseman Colt Keith.",
-            "batter": "Tommy Edman",
-            "pitcher": "Framber Valdez",
-            "game_pk": 824232
-        },
-        {
-            "date": "2026-08-30",
-            "date_formatted": "August 30, 2026",
-            "challenger": "Colt Keith",
-            "role": "batting",
-            "team": "opponents",
-            "outcome": "overturned",
-            "result_desc": "Colt Keith strikes out swinging.",
-            "batter": "Colt Keith",
-            "pitcher": "Tyler Glasnow",
-            "game_pk": 824232
+            "outcome": "confirmed",
+            "result_desc": "Teoscar Hern\u00e1ndez lines out sharply to third baseman Ram\u00f3n Ur\u00edas.",
+            "batter": "Teoscar Hern\u00e1ndez",
+            "pitcher": "Luis Gastelum",
+            "game_pk": 823908
         },
         {
             "date": "2026-08-30",
@@ -248,6 +236,18 @@
             "result_desc": "Max Clark strikes out swinging.",
             "batter": "Max Clark",
             "pitcher": "Kyle Hurt",
+            "game_pk": 824232
+        },
+        {
+            "date": "2026-08-30",
+            "date_formatted": "August 30, 2026",
+            "challenger": "Tyler Glasnow",
+            "role": "pitching",
+            "team": "dodgers",
+            "outcome": "overturned",
+            "result_desc": "Dillon Dingler lines out sharply to center fielder Enrique Hern\u00e1ndez.",
+            "batter": "Dillon Dingler",
+            "pitcher": "Tyler Glasnow",
             "game_pk": 824232
         },
         {
@@ -265,12 +265,12 @@
         {
             "date": "2026-08-30",
             "date_formatted": "August 30, 2026",
-            "challenger": "Tyler Glasnow",
-            "role": "pitching",
+            "challenger": "Ben Rortvedt",
+            "role": "catching",
             "team": "dodgers",
             "outcome": "overturned",
-            "result_desc": "Dillon Dingler lines out sharply to center fielder Enrique Hern\u00e1ndez.",
-            "batter": "Dillon Dingler",
+            "result_desc": "Javier B\u00e1ez grounds out, second baseman Tommy Edman to first baseman Freddie Freeman.",
+            "batter": "Javier B\u00e1ez",
             "pitcher": "Tyler Glasnow",
             "game_pk": 824232
         }
@@ -298,18 +298,18 @@
             "success_rate": 52.6
         },
         {
+            "challenger": "Hunter Feduccia",
+            "total": 15,
+            "successful": 8,
+            "failed": 7,
+            "success_rate": 53.3
+        },
+        {
             "challenger": "Teoscar Hern\u00e1ndez",
             "total": 14,
             "successful": 11,
             "failed": 3,
             "success_rate": 78.6
-        },
-        {
-            "challenger": "Hunter Feduccia",
-            "total": 14,
-            "successful": 7,
-            "failed": 7,
-            "success_rate": 50.0
         },
         {
             "challenger": "Shohei Ohtani",
@@ -462,10 +462,10 @@
         },
         {
             "inning": 6,
-            "total": 30,
-            "successful": 18,
+            "total": 31,
+            "successful": 19,
             "failed": 12,
-            "success_rate": 60.0
+            "success_rate": 61.3
         },
         {
             "inning": 7,

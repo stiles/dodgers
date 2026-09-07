@@ -1,17 +1,17 @@
 {
     "season_summary": {
-        "correct_strikes_pct": 90.79616036137776,
-        "incorrect_strikes_pct": 9.203839638622242,
-        "total_called_strikes": 3542,
-        "bad_calls_count": 326
+        "correct_strikes_pct": 90.85058757694459,
+        "incorrect_strikes_pct": 9.14941242305541,
+        "total_called_strikes": 3574,
+        "bad_calls_count": 327
     },
     "last_game_summary": {
-        "date": "September 5, 2026",
-        "correct_strikes_pct": 91.42857142857143,
-        "incorrect_strikes_pct": 8.57142857142857,
-        "total_called_strikes": 35,
-        "bad_calls_count": 3,
-        "home_plate_umpire": "Rob Drake"
+        "date": "September 6, 2026",
+        "correct_strikes_pct": 96.875,
+        "incorrect_strikes_pct": 3.125,
+        "total_called_strikes": 32,
+        "bad_calls_count": 1,
+        "home_plate_umpire": "Stu Scheurwater"
     },
     "worst_calls_of_season": [
         {
@@ -56,17 +56,17 @@
         }
     ],
     "pitching_season_summary": {
-        "correct_balls_pct": 96.17541337167506,
-        "incorrect_balls_pct": 3.824586628324937,
-        "total_called_balls": 6955,
-        "bad_calls_count": 266
+        "correct_balls_pct": 96.18070400456035,
+        "incorrect_balls_pct": 3.8192959954396457,
+        "total_called_balls": 7017,
+        "bad_calls_count": 268
     },
     "pitching_last_game_summary": {
-        "date": "September 5, 2026",
-        "correct_balls_pct": 100.0,
-        "incorrect_balls_pct": 0.0,
-        "total_called_balls": 44,
-        "bad_calls_count": 0
+        "date": "September 6, 2026",
+        "correct_balls_pct": 96.7741935483871,
+        "incorrect_balls_pct": 3.225806451612897,
+        "total_called_balls": 62,
+        "bad_calls_count": 2
     },
     "pitching_worst_calls_of_season": [],
     "abs_challenges": {
@@ -82,16 +82,16 @@
                 "failed": 0
             },
             "catching": {
-                "total": 28,
-                "successful": 23,
+                "total": 29,
+                "successful": 24,
                 "failed": 5
             }
         },
         "opponents": {
             "batting": {
-                "total": 36,
+                "total": 37,
                 "successful": 9,
-                "failed": 27
+                "failed": 28
             },
             "pitching": {
                 "total": 0,
@@ -99,12 +99,48 @@
                 "failed": 0
             },
             "catching": {
-                "total": 50,
+                "total": 51,
                 "successful": 38,
-                "failed": 12
+                "failed": 13
             }
         },
         "challenge_log": [
+            {
+                "date": "2026-09-06",
+                "date_formatted": "September 6, 2026",
+                "challenger": "Harry Ford",
+                "role": "catching",
+                "team": "opponents",
+                "outcome": "confirmed",
+                "result_desc": "Tommy Edman walks. Alex Call to 2nd.",
+                "batter": "Tommy Edman",
+                "pitcher": "Will Dion",
+                "game_pk": 823903
+            },
+            {
+                "date": "2026-09-06",
+                "date_formatted": "September 6, 2026",
+                "challenger": "Will Smith",
+                "role": "catching",
+                "team": "dodgers",
+                "outcome": "overturned",
+                "result_desc": "Nasim Nu\u00f1ez called out on strikes.",
+                "batter": "Nasim Nu\u00f1ez",
+                "pitcher": "Bobby Miller",
+                "game_pk": 823903
+            },
+            {
+                "date": "2026-09-06",
+                "date_formatted": "September 6, 2026",
+                "challenger": "Dylan Crews",
+                "role": "batting",
+                "team": "opponents",
+                "outcome": "confirmed",
+                "result_desc": "Dylan Crews called out on strikes.",
+                "batter": "Dylan Crews",
+                "pitcher": "Edgardo Henriquez",
+                "game_pk": 823903
+            },
             {
                 "date": "2026-09-05",
                 "date_formatted": "September 5, 2026",
@@ -308,42 +344,6 @@
                 "batter": "Spencer Horwitz",
                 "pitcher": "Yoshinobu Yamamoto",
                 "game_pk": 823911
-            },
-            {
-                "date": "2026-08-17",
-                "date_formatted": "August 17, 2026",
-                "challenger": "Zac Veen",
-                "role": "batting",
-                "team": "opponents",
-                "outcome": "confirmed",
-                "result_desc": "Zac Veen called out on strikes.",
-                "batter": "Zac Veen",
-                "pitcher": "Evan Phillips",
-                "game_pk": 824320
-            },
-            {
-                "date": "2026-08-15",
-                "date_formatted": "August 15, 2026",
-                "challenger": "Hunter Feduccia",
-                "role": "catching",
-                "team": "dodgers",
-                "outcome": "overturned",
-                "result_desc": "Joey Ortiz called out on strikes.",
-                "batter": "Joey Ortiz",
-                "pitcher": "Justin Wrobleski",
-                "game_pk": 823914
-            },
-            {
-                "date": "2026-08-14",
-                "date_formatted": "August 14, 2026",
-                "challenger": "Hunter Feduccia",
-                "role": "catching",
-                "team": "dodgers",
-                "outcome": "overturned",
-                "result_desc": "Garrett Mitchell called out on strikes.",
-                "batter": "Garrett Mitchell",
-                "pitcher": "Yoshinobu Yamamoto",
-                "game_pk": 823913
             }
         ]
     }
