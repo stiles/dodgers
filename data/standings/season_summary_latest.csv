@@ -2,7 +2,7 @@ stat_label,stat,value,category,context_value,context_value_label
 Wins,wins,85,standings,78,This point last season
 Losses,losses,57,standings,64,This point last season
 Win percentage,win_pct,60%,standings,55%,This point last season
-Games up/back,games_up_back,10.5,standings,1st,Division rank
+Games up/back,games_up_back,10,standings,1st,Division rank
 Fielding percentage,fielding_pct,.989,standings,3rd,League rank
 Errors,errors,55,standings,3rd,League rank
 Runs,runs,698,standings,4th,League rank
@@ -18,11 +18,11 @@ Stolen bases,stolen_bases,59,batting,28th,League rank
 Stolen bases/game,stolen_bases_game,0.42,batting,0.84,Rate all last season
 Doubles,doubles,232,batting,10th,League rank
 Strikeouts,strikeouts,"1,302",pitching,5th,League rank
-Walks,walks,436,pitching,22nd,League rank
+Walks,walks,436,pitching,24th,League rank
 ERA,era,3.70,pitching,6th,League rank
 WHIP,whip,1.17,pitching,2nd,League rank
 Batting average against,avg_against,.220,pitching,1st,League rank
-K/BB ratio,k_bb_ratio,2.99,pitching,5th,League rank
-Last updated,update_time,"September 6, 2026, 10:39 AM PT",summary,,
-Team summary,summary,"<span class='highlight'>LOS ANGELES</span> <span class='updated'>(September 6)</span> — The Dodgers have compiled a <span class='highlight'>85-57</span> record in the 2026 regular season, a <span class='highlight'>60%</span> winning percentage. The last game was a <span class='highlight'>6-5</span> home <span class='highlight'>win</span> against the <span class='highlight'>Washington Nationals</span>. The team next faces the <span class='highlight'>Washington Nationals</span> on Sunday at 7:10 p.m. PDT at <span class='highlight'>UNIQLO Field at Dodger Stadium</span>.",summary,,
+K/BB ratio,k_bb_ratio,2.99,pitching,4th,League rank
+Last updated,update_time,"September 6, 2026, 5:50 PM PT",summary,,
+Team summary,summary,"<span class='highlight'>LOS ANGELES</span> <span class='updated'>(September 6)</span> — The Dodgers have compiled a <span class='highlight'>85-57</span> record in the 2026 regular season, a <span class='highlight'>60%</span> winning percentage. The last game was a <span class='highlight'>6-5</span> home <span class='highlight'>win</span> against the <span class='highlight'>Washington Nationals</span>. The team next faces the <span class='highlight'>Cincinnati Reds</span> on Monday at 6:10 p.m. PDT at <span class='highlight'>UNIQLO Field at Dodger Stadium</span>.",summary,,
 Last game result,last_game_result,win,summary,,
