@@ -1,17 +1,17 @@
 {
     "season_summary": {
-        "correct_strikes_pct": 90.85058757694459,
-        "incorrect_strikes_pct": 9.14941242305541,
-        "total_called_strikes": 3574,
-        "bad_calls_count": 327
+        "correct_strikes_pct": 90.82568807339449,
+        "incorrect_strikes_pct": 9.174311926605512,
+        "total_called_strikes": 3597,
+        "bad_calls_count": 330
     },
     "last_game_summary": {
-        "date": "September 6, 2026",
-        "correct_strikes_pct": 96.875,
-        "incorrect_strikes_pct": 3.125,
-        "total_called_strikes": 32,
-        "bad_calls_count": 1,
-        "home_plate_umpire": "Stu Scheurwater"
+        "date": "September 7, 2026",
+        "correct_strikes_pct": 86.95652173913044,
+        "incorrect_strikes_pct": 13.043478260869563,
+        "total_called_strikes": 23,
+        "bad_calls_count": 3,
+        "home_plate_umpire": "Cory Blaser"
     },
     "worst_calls_of_season": [
         {
@@ -56,17 +56,17 @@
         }
     ],
     "pitching_season_summary": {
-        "correct_balls_pct": 96.18070400456035,
-        "incorrect_balls_pct": 3.8192959954396457,
-        "total_called_balls": 7017,
+        "correct_balls_pct": 96.20019849709344,
+        "incorrect_balls_pct": 3.7998015029065613,
+        "total_called_balls": 7053,
         "bad_calls_count": 268
     },
     "pitching_last_game_summary": {
-        "date": "September 6, 2026",
-        "correct_balls_pct": 96.7741935483871,
-        "incorrect_balls_pct": 3.225806451612897,
-        "total_called_balls": 62,
-        "bad_calls_count": 2
+        "date": "September 7, 2026",
+        "correct_balls_pct": 100.0,
+        "incorrect_balls_pct": 0.0,
+        "total_called_balls": 36,
+        "bad_calls_count": 0
     },
     "pitching_worst_calls_of_season": [],
     "abs_challenges": {
@@ -89,8 +89,8 @@
         },
         "opponents": {
             "batting": {
-                "total": 37,
-                "successful": 9,
+                "total": 38,
+                "successful": 10,
                 "failed": 28
             },
             "pitching": {
@@ -105,6 +105,18 @@
             }
         },
         "challenge_log": [
+            {
+                "date": "2026-09-07",
+                "date_formatted": "September 7, 2026",
+                "challenger": "Sal Stewart",
+                "role": "batting",
+                "team": "opponents",
+                "outcome": "overturned",
+                "result_desc": "Sal Stewart walks. H\u00e9ctor Rodr\u00edguez to 2nd.",
+                "batter": "Sal Stewart",
+                "pitcher": "Emmet Sheehan",
+                "game_pk": 823902
+            },
             {
                 "date": "2026-09-06",
                 "date_formatted": "September 6, 2026",
@@ -330,18 +342,6 @@
                 "outcome": "overturned",
                 "result_desc": "Bryan Reynolds called out on strikes.",
                 "batter": "Bryan Reynolds",
-                "pitcher": "Yoshinobu Yamamoto",
-                "game_pk": 823911
-            },
-            {
-                "date": "2026-08-21",
-                "date_formatted": "August 21, 2026",
-                "challenger": "Hunter Feduccia",
-                "role": "catching",
-                "team": "dodgers",
-                "outcome": "overturned",
-                "result_desc": "Spencer Horwitz called out on strikes.",
-                "batter": "Spencer Horwitz",
                 "pitcher": "Yoshinobu Yamamoto",
                 "game_pk": 823911
             }

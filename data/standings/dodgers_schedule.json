@@ -1,13 +1,5 @@
 [
     {
-        "date":"Aug 27",
-        "opp_name":"Atlanta Braves",
-        "home_away":"away",
-        "result":"loss",
-        "placement":"last",
-        "game_start":"0-1"
-    },
-    {
         "date":"Aug 28",
         "opp_name":"Detroit Tigers",
         "home_away":"away",
@@ -80,20 +72,20 @@
         "game_start":"7-5"
     },
     {
+        "date":"Sep 7",
+        "opp_name":"Cincinnati Reds",
+        "home_away":"home",
+        "result":"win",
+        "placement":"last",
+        "game_start":"6-3"
+    },
+    {
         "date":"Jul 18",
         "opp_name":"New York Yankees",
         "home_away":"away",
         "result":"--",
         "placement":"next",
         "game_start":"Postponed"
-    },
-    {
-        "date":"Sep 7",
-        "opp_name":"Cincinnati Reds",
-        "home_away":"home",
-        "result":"--",
-        "placement":"next",
-        "game_start":"Warmup"
     },
     {
         "date":"Sep 8",
@@ -158,5 +150,13 @@
         "result":"--",
         "placement":"next",
         "game_start":"3:40 PM"
+    },
+    {
+        "date":"Sep 17",
+        "opp_name":"Cincinnati Reds",
+        "home_away":"away",
+        "result":"--",
+        "placement":"next",
+        "game_start":"9:40 AM"
     }
 ]

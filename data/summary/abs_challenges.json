@@ -1,8 +1,8 @@
 {
     "dodgers": {
         "batting": {
-            "total": 110,
-            "successful": 68,
+            "total": 111,
+            "successful": 69,
             "failed": 42
         },
         "pitching": {
@@ -11,9 +11,9 @@
             "failed": 4
         },
         "catching": {
-            "total": 108,
-            "successful": 59,
-            "failed": 49
+            "total": 110,
+            "successful": 60,
+            "failed": 50
         }
     },
     "opponents": {
@@ -28,12 +28,60 @@
             "failed": 3
         },
         "catching": {
-            "total": 155,
-            "successful": 96,
+            "total": 156,
+            "successful": 97,
             "failed": 59
         }
     },
     "challenge_log": [
+        {
+            "date": "2026-09-07",
+            "date_formatted": "September 7, 2026",
+            "challenger": "Hunter Feduccia",
+            "role": "catching",
+            "team": "dodgers",
+            "outcome": "confirmed",
+            "result_desc": "Tyler Stephenson flies out to left fielder Teoscar Hern\u00e1ndez.",
+            "batter": "Tyler Stephenson",
+            "pitcher": "Jack Dreyer",
+            "game_pk": 823902
+        },
+        {
+            "date": "2026-09-07",
+            "date_formatted": "September 7, 2026",
+            "challenger": "Hunter Feduccia",
+            "role": "batting",
+            "team": "dodgers",
+            "outcome": "overturned",
+            "result_desc": "Hunter Feduccia strikes out swinging.",
+            "batter": "Hunter Feduccia",
+            "pitcher": "Brandon Williamson",
+            "game_pk": 823902
+        },
+        {
+            "date": "2026-09-07",
+            "date_formatted": "September 7, 2026",
+            "challenger": "Tyler Stephenson",
+            "role": "catching",
+            "team": "opponents",
+            "outcome": "overturned",
+            "result_desc": "Freddie Freeman grounds out to first baseman Sal Stewart.",
+            "batter": "Freddie Freeman",
+            "pitcher": "Brandon Williamson",
+            "game_pk": 823902
+        },
+        {
+            "date": "2026-09-07",
+            "date_formatted": "September 7, 2026",
+            "challenger": "Hunter Feduccia",
+            "role": "catching",
+            "team": "dodgers",
+            "outcome": "overturned",
+            "result_desc": "Sal Stewart lines out to center fielder Alex Call.",
+            "batter": "Sal Stewart",
+            "pitcher": "Emmet Sheehan",
+            "game_pk": 823902
+        },
         {
             "date": "2026-09-06",
             "date_formatted": "September 6, 2026",
@@ -169,6 +217,18 @@
         {
             "date": "2026-09-03",
             "date_formatted": "September 3, 2026",
+            "challenger": "Iv\u00e1n Herrera",
+            "role": "batting",
+            "team": "opponents",
+            "outcome": "confirmed",
+            "result_desc": "Iv\u00e1n Herrera grounds out, second baseman Tommy Edman to first baseman Freddie Freeman.",
+            "batter": "Iv\u00e1n Herrera",
+            "pitcher": "Evan Phillips",
+            "game_pk": 823907
+        },
+        {
+            "date": "2026-09-03",
+            "date_formatted": "September 3, 2026",
             "challenger": "Teoscar Hern\u00e1ndez",
             "role": "batting",
             "team": "dodgers",
@@ -179,16 +239,16 @@
             "game_pk": 823907
         },
         {
-            "date": "2026-09-03",
-            "date_formatted": "September 3, 2026",
-            "challenger": "Iv\u00e1n Herrera",
-            "role": "batting",
+            "date": "2026-09-01",
+            "date_formatted": "September 1, 2026",
+            "challenger": "Leo Bernal",
+            "role": "catching",
             "team": "opponents",
             "outcome": "confirmed",
-            "result_desc": "Iv\u00e1n Herrera grounds out, second baseman Tommy Edman to first baseman Freddie Freeman.",
-            "batter": "Iv\u00e1n Herrera",
-            "pitcher": "Evan Phillips",
-            "game_pk": 823907
+            "result_desc": "Teoscar Hern\u00e1ndez lines out sharply to third baseman Ram\u00f3n Ur\u00edas.",
+            "batter": "Teoscar Hern\u00e1ndez",
+            "pitcher": "Luis Gastelum",
+            "game_pk": 823908
         },
         {
             "date": "2026-09-01",
@@ -213,66 +273,6 @@
             "batter": "Shohei Ohtani",
             "pitcher": "Michael McGreevy",
             "game_pk": 823908
-        },
-        {
-            "date": "2026-09-01",
-            "date_formatted": "September 1, 2026",
-            "challenger": "Leo Bernal",
-            "role": "catching",
-            "team": "opponents",
-            "outcome": "confirmed",
-            "result_desc": "Teoscar Hern\u00e1ndez lines out sharply to third baseman Ram\u00f3n Ur\u00edas.",
-            "batter": "Teoscar Hern\u00e1ndez",
-            "pitcher": "Luis Gastelum",
-            "game_pk": 823908
-        },
-        {
-            "date": "2026-08-30",
-            "date_formatted": "August 30, 2026",
-            "challenger": "Ben Rortvedt",
-            "role": "catching",
-            "team": "dodgers",
-            "outcome": "overturned",
-            "result_desc": "Max Clark strikes out swinging.",
-            "batter": "Max Clark",
-            "pitcher": "Kyle Hurt",
-            "game_pk": 824232
-        },
-        {
-            "date": "2026-08-30",
-            "date_formatted": "August 30, 2026",
-            "challenger": "Tyler Glasnow",
-            "role": "pitching",
-            "team": "dodgers",
-            "outcome": "overturned",
-            "result_desc": "Dillon Dingler lines out sharply to center fielder Enrique Hern\u00e1ndez.",
-            "batter": "Dillon Dingler",
-            "pitcher": "Tyler Glasnow",
-            "game_pk": 824232
-        },
-        {
-            "date": "2026-08-30",
-            "date_formatted": "August 30, 2026",
-            "challenger": "Kevin McGonigle",
-            "role": "batting",
-            "team": "opponents",
-            "outcome": "confirmed",
-            "result_desc": "Kevin McGonigle lines out to left fielder Teoscar Hern\u00e1ndez.",
-            "batter": "Kevin McGonigle",
-            "pitcher": "Tyler Glasnow",
-            "game_pk": 824232
-        },
-        {
-            "date": "2026-08-30",
-            "date_formatted": "August 30, 2026",
-            "challenger": "Ben Rortvedt",
-            "role": "catching",
-            "team": "dodgers",
-            "outcome": "overturned",
-            "result_desc": "Javier B\u00e1ez grounds out, second baseman Tommy Edman to first baseman Freddie Freeman.",
-            "batter": "Javier B\u00e1ez",
-            "pitcher": "Tyler Glasnow",
-            "game_pk": 824232
         }
     ],
     "dodgers_by_player": [
@@ -299,10 +299,10 @@
         },
         {
             "challenger": "Hunter Feduccia",
-            "total": 15,
-            "successful": 8,
-            "failed": 7,
-            "success_rate": 53.3
+            "total": 18,
+            "successful": 10,
+            "failed": 8,
+            "success_rate": 55.6
         },
         {
             "challenger": "Teoscar Hern\u00e1ndez",
@@ -448,10 +448,10 @@
         },
         {
             "inning": 4,
-            "total": 17,
-            "successful": 9,
+            "total": 18,
+            "successful": 10,
             "failed": 8,
-            "success_rate": 52.9
+            "success_rate": 55.6
         },
         {
             "inning": 5,
@@ -462,10 +462,10 @@
         },
         {
             "inning": 6,
-            "total": 31,
-            "successful": 19,
+            "total": 32,
+            "successful": 20,
             "failed": 12,
-            "success_rate": 61.3
+            "success_rate": 62.5
         },
         {
             "inning": 7,
@@ -476,10 +476,10 @@
         },
         {
             "inning": 8,
-            "total": 24,
+            "total": 25,
             "successful": 14,
-            "failed": 10,
-            "success_rate": 58.3
+            "failed": 11,
+            "success_rate": 56.0
         },
         {
             "inning": 9,
