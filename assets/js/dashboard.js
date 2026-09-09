@@ -621,6 +621,8 @@ document.addEventListener('DOMContentLoaded', function() {
         }
       ];
     
+      const endLabelCutoffGame = 130;
+
       async function fetchData() {
         try {
           const response = await d3.json(
@@ -753,7 +755,10 @@ document.addEventListener('DOMContentLoaded', function() {
             .style('stroke', 'none');
     
         const lastDataCurrentYear = data.get(currentYear)?.slice(-1)[0];
-        if (lastDataCurrentYear) {
+        const shouldShowEndLabel =
+          lastDataCurrentYear && lastDataCurrentYear.gtm <= endLabelCutoffGame;
+
+        if (shouldShowEndLabel) {
           svg
             .append('text')
             .attr('x', xScale(lastDataCurrentYear.gtm + 1))
@@ -814,6 +819,8 @@ document.addEventListener('DOMContentLoaded', function() {
       pastAnnotationY: 1200
     }
   ];
+
+  const endLabelCutoffGame = 130;
 
   async function fetchData() {
     try {
@@ -946,7 +953,10 @@ document.addEventListener('DOMContentLoaded', function() {
       .style('stroke', 'none');
 
     const lastDataCurrentYear = data.get(currentYear)?.slice(-1)[0];
-    if (lastDataCurrentYear) {
+    const shouldShowEndLabel =
+      lastDataCurrentYear && lastDataCurrentYear.gtm <= endLabelCutoffGame;
+
+    if (shouldShowEndLabel) {
       svg
         .append('text')
         .attr('x', xScale(lastDataCurrentYear.gtm + 1))
@@ -5276,4 +5286,3 @@ document.addEventListener('DOMContentLoaded', function () {
   renderWorldSeriesChart();
   renderNlMvpChart();
 });
-

@@ -1,13 +1,5 @@
 [
     {
-        "date":"Aug 28",
-        "opp_name":"Detroit Tigers",
-        "home_away":"away",
-        "result":"win",
-        "placement":"last",
-        "game_start":"2-1"
-    },
-    {
         "date":"Aug 29",
         "opp_name":"Detroit Tigers",
         "home_away":"away",
@@ -78,6 +70,14 @@
         "result":"win",
         "placement":"last",
         "game_start":"6-3"
+    },
+    {
+        "date":"Sep 8",
+        "opp_name":"Cincinnati Reds",
+        "home_away":"home",
+        "result":"win",
+        "placement":"last",
+        "game_start":"3-2"
     },
     {
         "date":"Sep 9",
