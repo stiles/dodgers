@@ -153,9 +153,19 @@ def parse_game(game: dict) -> dict:
 
 def build_schedule_tables(df: pd.DataFrame) -> pd.DataFrame:
     """Build last 10 and next 10 game tables"""
-    # Split into completed and upcoming
+    # Split into completed and genuinely upcoming games. MLB retains postponed
+    # games at their original date, so treating every non-final game as upcoming
+    # leaves old rainouts permanently stuck in the Next 10 table.
     completed = df[df['is_final'] == True].copy()
-    upcoming = df[df['is_final'] == False].copy()
+    actionable_states = ['Scheduled', 'Pre-Game', 'In Progress', 'Delayed']
+    game_dates = pd.to_datetime(df['date_full'], errors='coerce').dt.date
+    today_pacific = datetime.now(pytz.timezone('US/Pacific')).date()
+    upcoming_mask = (
+        (df['is_final'] == False)
+        & df['status'].isin(actionable_states)
+        & (game_dates >= today_pacific)
+    )
+    upcoming = df[upcoming_mask].copy()
     
     # Last 10 games
     last_ten = completed.tail(10).copy()
