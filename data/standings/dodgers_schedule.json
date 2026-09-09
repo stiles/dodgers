@@ -80,14 +80,6 @@
         "game_start":"6-3"
     },
     {
-        "date":"Sep 8",
-        "opp_name":"Cincinnati Reds",
-        "home_away":"home",
-        "result":"in progress",
-        "placement":"next",
-        "game_start":"Live"
-    },
-    {
         "date":"Sep 9",
         "opp_name":"Cincinnati Reds",
         "home_away":"home",
@@ -158,5 +150,13 @@
         "result":"--",
         "placement":"next",
         "game_start":"7:15 PM"
+    },
+    {
+        "date":"Sep 19",
+        "opp_name":"San Francisco Giants",
+        "home_away":"home",
+        "result":"--",
+        "placement":"next",
+        "game_start":"6:10 PM"
     }
 ]
