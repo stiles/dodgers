@@ -1366,6 +1366,115 @@ label {
   }
 }
 
+// Compact view of current NL postseason qualifiers and teams chasing a Wild Card.
+.playoff-race-tables {
+  margin-bottom: 28px;
+
+  .table-wrapper {
+    align-self: flex-start;
+  }
+
+  .playoff-race-table {
+    display: table;
+    width: 100%;
+    table-layout: fixed;
+
+    th:nth-child(1),
+    td:nth-child(1) {
+      width: 12%;
+      text-align: center;
+    }
+
+    th:nth-child(2),
+    td:nth-child(2) {
+      width: 40%;
+    }
+
+    th:nth-child(3),
+    td:nth-child(3) {
+      width: 20%;
+      white-space: nowrap;
+    }
+
+    th:nth-child(4),
+    td:nth-child(4) {
+      width: 28%;
+      white-space: nowrap;
+    }
+
+    tr.dodgers-row {
+      background-color: rgba(0, 90, 156, 0.1);
+
+      td {
+        color: c.$dodger-blue;
+        font-weight: 700;
+      }
+    }
+  }
+
+  .wildcard-race-table tr.first-team-out td {
+    border-top: 2px dashed c.$dodger-red;
+  }
+}
+
+// Give the three division seeds equal visual weight beside the deeper WC field.
+@media (min-width: 901px) {
+  .playoff-race-tables .division-leaders-table tbody td {
+    padding-top: 17px;
+    padding-bottom: 17px;
+  }
+}
+
+.playoff-status {
+  display: inline-block;
+  padding: 2px 7px;
+  border-radius: 999px;
+  background: #eceff1;
+  color: #40464b;
+  font-size: 0.85em;
+  font-weight: 700;
+  line-height: 1.4;
+}
+
+.playoff-status--bye {
+  background: rgba(0, 90, 156, 0.12);
+  color: c.$dodger-blue;
+}
+
+.playoff-cutline-note {
+  margin: 0;
+  color: #666;
+  font-family: 'Roboto';
+  font-size: 11px;
+  white-space: nowrap;
+
+  span {
+    display: inline-block;
+    width: 24px;
+    margin-right: 5px;
+    border-top: 2px dashed c.$dodger-red;
+    vertical-align: middle;
+  }
+}
+
+.playoff-race-table-heading {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 12px;
+
+  .stat-card-label {
+    margin-right: auto;
+  }
+}
+
+@media (max-width: 900px) {
+  .playoff-race-tables .table-wrapper {
+    flex: 1 1 100%;
+    max-width: 100%;
+  }
+}
+
 // Highlight for Dodgers row in attendance table
 #nl-table tr.dodgers-row,
 #al-table tr.dodgers-row {

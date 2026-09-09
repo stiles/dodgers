@@ -152,6 +152,75 @@ twitter:
 {% assign nl_west = nl_teams | where_exp: "item", "item.division_name == 'National League West'" | sort: "division_rank" %}
 {% assign nl_central = nl_teams | where_exp: "item", "item.division_name == 'National League Central'" | sort: "division_rank" %}
 {% assign nl_east = nl_teams | where_exp: "item", "item.division_name == 'National League East'" | sort: "division_rank" %}
+{% assign nl_division_leaders = nl_teams | where: "division_rank", "1" | sort: "winning_percentage" | reverse %}
+{% assign nl_wild_card_teams = nl_teams | where_exp: "item", "item.division_rank != '1'" | sort: "winning_percentage" | reverse %}
+{% comment %}Use MLB's official Wild Card order when the current data includes it; older snapshots fall back to winning percentage.{% endcomment %}
+{% if nl_wild_card_teams.first.wild_card_rank and nl_wild_card_teams.first.wild_card_rank != "-" %}
+  {% assign nl_wild_card_teams = nl_wild_card_teams | sort: "wild_card_rank" %}
+{% endif %}
+{% assign wild_card_chase_cutoff = nl_wild_card_teams[5] %}
+
+<h3 class="visual-subhead">Playoff race: <em>If the postseason started today</em></h3>
+<p class="chart-chatter playoff-race-chatter">The top two division winners receive byes to the Division Series. The third division winner and three Wild Cards play best-of-three series, with the higher seed hosting every game.</p>
+<div class="tables-container playoff-race-tables">
+  <div class="table-wrapper division-leaders-wrapper">
+    <h3 class="stat-card-label">NL division leaders</h3>
+    <table class="data-table playoff-race-table division-leaders-table">
+      <thead>
+        <tr>
+          <th>Seed</th>
+          <th>Team</th>
+          <th>Record</th>
+          <th>Position</th>
+        </tr>
+      </thead>
+      <tbody>
+        {% for team in nl_division_leaders %}
+        <tr {% if team.team_name == "Los Angeles Dodgers" %}class="dodgers-row"{% endif %}>
+          <td>{{ forloop.index }}</td>
+          <td>{{ team.team_name }}</td>
+          <td>{{ team.wins }}–{{ team.losses }}</td>
+          <td>{% if forloop.index <= 2 %}<span class="playoff-status playoff-status--bye">Bye</span>{% else %}<span class="playoff-status">WC host</span>{% endif %}</td>
+        </tr>
+        {% endfor %}
+      </tbody>
+    </table>
+  </div>
+  <div class="table-wrapper">
+    <div class="playoff-race-table-heading">
+      <h3 class="stat-card-label">NL Wild Card</h3>
+      <p class="playoff-cutline-note"><span aria-hidden="true"></span> Playoff cut line</p>
+    </div>
+    <table class="data-table playoff-race-table wildcard-race-table">
+      <thead>
+        <tr>
+          <th>WC</th>
+          <th>Team</th>
+          <th>Record</th>
+          <th>WCGB</th>
+        </tr>
+      </thead>
+      <tbody>
+        {% for team in nl_wild_card_teams %}
+        {% assign show_wild_card_team = false %}
+        {% if forloop.index <= 6 %}
+          {% assign show_wild_card_team = true %}
+        {% elsif wild_card_chase_cutoff.wild_card_games_back and wild_card_chase_cutoff.wild_card_games_back != "-" and team.wild_card_games_back == wild_card_chase_cutoff.wild_card_games_back %}
+          {% assign show_wild_card_team = true %}
+        {% endif %}
+        {% if show_wild_card_team %}
+        <tr class="{% if team.team_name == 'Los Angeles Dodgers' %}dodgers-row {% endif %}{% if forloop.index == 4 %}first-team-out{% endif %}">
+          <td>{% if forloop.index <= 3 %}{{ forloop.index }}{% else %}—{% endif %}</td>
+          <td>{{ team.team_name }}</td>
+          <td>{{ team.wins }}–{{ team.losses }}</td>
+          <td>{{ team.wild_card_games_back | default: "—" }}</td>
+        </tr>
+        {% endif %}
+        {% endfor %}
+      </tbody>
+    </table>
+  </div>
+</div>
 
 <h3 class="visual-subhead">National League by division</h3>
 <div class="tables-container standings-tables">

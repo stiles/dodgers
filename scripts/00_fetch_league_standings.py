@@ -7,6 +7,7 @@ Saves the data locally as a JSON list of dictionaries and uploads to S3.
 """
 
 import os
+import argparse
 import requests
 import boto3
 import logging
@@ -35,22 +36,23 @@ aws_secret_key = os.environ.get("AWS_SECRET_ACCESS_KEY")
 aws_region = "us-west-1"
 s3_bucket_name = "stilesdata.com"
 
-# Conditional AWS session creation based on the environment
-if is_github_actions:
-    session = boto3.Session(
-        aws_access_key_id=aws_key_id,
-        aws_secret_access_key=aws_secret_key,
-        region_name=aws_region
-    )
-    logging.info("Running in GitHub Actions environment. Using environment variables for AWS credentials.")
-else:
-    profile_name = os.environ.get("AWS_PERSONAL_PROFILE", "haekeo")
-    session = boto3.Session(profile_name=profile_name, region_name=aws_region)
-    logging.info(f"Running locally. Using AWS profile: {profile_name}")
-
-s3_resource = session.resource("s3")
-
 CURRENT_YEAR = datetime.now().year
+
+def get_s3_resource():
+    """Create an S3 resource only when publishing is requested."""
+    if is_github_actions:
+        session = boto3.Session(
+            aws_access_key_id=aws_key_id,
+            aws_secret_access_key=aws_secret_key,
+            region_name=aws_region
+        )
+        logging.info("Running in GitHub Actions environment. Using environment variables for AWS credentials.")
+    else:
+        profile_name = os.environ.get("AWS_PERSONAL_PROFILE", "haekeo")
+        session = boto3.Session(profile_name=profile_name, region_name=aws_region)
+        logging.info(f"Running locally. Using AWS profile: {profile_name}")
+
+    return session.resource("s3")
 
 def get_pacific_time_string():
     """Get current time formatted as 'Sept. 14 at 2:35 p.m. Pacific Time'"""
@@ -97,6 +99,13 @@ def format_games_back(gb_value):
         # Return original value if conversion fails (e.g., '-')
         return gb_value
 
+def format_rank(rank_value):
+    """Return numeric ranks as integers while preserving missing-value markers."""
+    try:
+        return int(rank_value)
+    except (ValueError, TypeError):
+        return rank_value if rank_value is not None else "-"
+
 def get_all_teams_standings_metrics() -> Optional[List[Dict[str, Any]]]:
     """
     Fetches MLB standings data for all teams.
@@ -131,6 +140,8 @@ def get_all_teams_standings_metrics() -> Optional[List[Dict[str, Any]]]:
                         "games_back": format_games_back(team_record.get("gamesBack", "-")),
                         "division_games_back": format_games_back(team_record.get("divisionGamesBack", "-")),
                         "league_games_back": format_games_back(team_record.get("leagueGamesBack", "-")),
+                        "wild_card_rank": format_rank(team_record.get("wildCardRank", "-")),
+                        "wild_card_games_back": format_games_back(team_record.get("wildCardGamesBack", "-")),
                         "streak_type": team_record.get("streak", {}).get("streakType"),
                         "streak_number": team_record.get("streak", {}).get("streakNumber"),
                         "magic_number": team_record.get("magicNumber"),
@@ -156,7 +167,7 @@ def get_all_teams_standings_metrics() -> Optional[List[Dict[str, Any]]]:
         logging.error(f"Failed to decode JSON for standings data: {e}")
         return None
 
-def main():
+def main(local_only=False):
     """
     Main function to fetch all teams standings metrics, save locally, and upload to S3.
     """
@@ -206,8 +217,11 @@ def main():
         logging.error(f"Failed to save all teams standings metrics locally: {e}")
         return
 
-    if os.path.exists(local_file_path):
+    if local_only:
+        logging.info("Local-only mode: skipping S3 upload.")
+    elif os.path.exists(local_file_path):
         try:
+            s3_resource = get_s3_resource()
             s3_resource.Bucket(s3_bucket_name).upload_file(local_file_path, s3_key)
             logging.info(f"Successfully uploaded {local_filename} to S3 at '{s3_key}'")
         except boto3.exceptions.S3UploadFailedError as e:
@@ -218,4 +232,11 @@ def main():
         logging.warning(f"Local file {local_file_path} not found. Skipping S3 upload.")
 
 if __name__ == "__main__":
-    main()
+    parser = argparse.ArgumentParser(description="Fetch current MLB standings.")
+    parser.add_argument(
+        "--local-only",
+        action="store_true",
+        help="write local preview data without uploading to S3",
+    )
+    args = parser.parse_args()
+    main(local_only=args.local_only)
