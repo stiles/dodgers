@@ -1,17 +1,17 @@
 {
     "season_summary": {
-        "correct_strikes_pct": 90.82568807339449,
-        "incorrect_strikes_pct": 9.174311926605512,
-        "total_called_strikes": 3597,
+        "correct_strikes_pct": 90.87893864013267,
+        "incorrect_strikes_pct": 9.121061359867326,
+        "total_called_strikes": 3618,
         "bad_calls_count": 330
     },
     "last_game_summary": {
-        "date": "September 7, 2026",
-        "correct_strikes_pct": 86.95652173913044,
-        "incorrect_strikes_pct": 13.043478260869563,
-        "total_called_strikes": 23,
-        "bad_calls_count": 3,
-        "home_plate_umpire": "Cory Blaser"
+        "date": "September 8, 2026",
+        "correct_strikes_pct": 100.0,
+        "incorrect_strikes_pct": 0.0,
+        "total_called_strikes": 21,
+        "bad_calls_count": 0,
+        "home_plate_umpire": "Andy Fletcher"
     },
     "worst_calls_of_season": [
         {
@@ -56,16 +56,16 @@
         }
     ],
     "pitching_season_summary": {
-        "correct_balls_pct": 96.20019849709344,
-        "incorrect_balls_pct": 3.7998015029065613,
-        "total_called_balls": 7053,
+        "correct_balls_pct": 96.21415454160193,
+        "incorrect_balls_pct": 3.7858454583980716,
+        "total_called_balls": 7079,
         "bad_calls_count": 268
     },
     "pitching_last_game_summary": {
-        "date": "September 7, 2026",
+        "date": "September 8, 2026",
         "correct_balls_pct": 100.0,
         "incorrect_balls_pct": 0.0,
-        "total_called_balls": 36,
+        "total_called_balls": 26,
         "bad_calls_count": 0
     },
     "pitching_worst_calls_of_season": [],
@@ -99,12 +99,24 @@
                 "failed": 0
             },
             "catching": {
-                "total": 51,
-                "successful": 38,
+                "total": 52,
+                "successful": 39,
                 "failed": 13
             }
         },
         "challenge_log": [
+            {
+                "date": "2026-09-08",
+                "date_formatted": "September 8, 2026",
+                "challenger": "Jose Trevino",
+                "role": "catching",
+                "team": "opponents",
+                "outcome": "overturned",
+                "result_desc": "Freddie Freeman called out on strikes.",
+                "batter": "Freddie Freeman",
+                "pitcher": "Nick Lodolo",
+                "game_pk": 823901
+            },
             {
                 "date": "2026-09-07",
                 "date_formatted": "September 7, 2026",
@@ -331,18 +343,6 @@
                 "result_desc": "Max Muncy called out on strikes.",
                 "batter": "Max Muncy",
                 "pitcher": "Yohan Ram\u00edrez",
-                "game_pk": 823911
-            },
-            {
-                "date": "2026-08-21",
-                "date_formatted": "August 21, 2026",
-                "challenger": "Hunter Feduccia",
-                "role": "catching",
-                "team": "dodgers",
-                "outcome": "overturned",
-                "result_desc": "Bryan Reynolds called out on strikes.",
-                "batter": "Bryan Reynolds",
-                "pitcher": "Yoshinobu Yamamoto",
                 "game_pk": 823911
             }
         ]
