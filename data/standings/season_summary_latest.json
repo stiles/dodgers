@@ -42,7 +42,7 @@
     {
         "stat_label":"Errors",
         "stat":"errors",
-        "value":57,
+        "value":58,
         "category":"standings",
         "context_value":"3rd",
         "context_value_label":"League rank"
@@ -148,7 +148,7 @@
         "stat":"strikeouts",
         "value":"1,348",
         "category":"pitching",
-        "context_value":"4th",
+        "context_value":"5th",
         "context_value_label":"League rank"
     },
     {
@@ -194,7 +194,7 @@
     {
         "stat_label":"Last updated",
         "stat":"update_time",
-        "value":"September 10, 2026, 11:16 AM PT",
+        "value":"September 10, 2026, 5:57 PM PT",
         "category":"summary",
         "context_value":"",
         "context_value_label":""
