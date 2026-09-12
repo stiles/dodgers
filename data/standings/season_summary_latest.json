@@ -2,7 +2,7 @@
     {
         "stat_label":"Wins",
         "stat":"wins",
-        "value":89,
+        "value":90,
         "category":"standings",
         "context_value":82,
         "context_value_label":"This point last season"
@@ -12,7 +12,7 @@
         "stat":"losses",
         "value":57,
         "category":"standings",
-        "context_value":64,
+        "context_value":65,
         "context_value_label":"This point last season"
     },
     {
@@ -26,7 +26,7 @@
     {
         "stat_label":"Games up\/back",
         "stat":"games_up_back",
-        "value":11,
+        "value":11.5,
         "category":"standings",
         "context_value":"1st",
         "context_value_label":"Division rank"
@@ -50,7 +50,7 @@
     {
         "stat_label":"Runs",
         "stat":"runs",
-        "value":728,
+        "value":734,
         "category":"standings",
         "context_value":"4th",
         "context_value_label":"League rank"
@@ -58,17 +58,17 @@
     {
         "stat_label":"Runs against",
         "stat":"runs_against",
-        "value":559,
+        "value":561,
         "category":"standings",
-        "context_value":627,
+        "context_value":632,
         "context_value_label":"This point last season"
     },
     {
         "stat_label":"Run differential",
         "stat":"run_differential",
-        "value":169,
+        "value":173,
         "category":"standings",
-        "context_value":111,
+        "context_value":107,
         "context_value_label":"This point last season"
     },
     {
@@ -82,7 +82,7 @@
     {
         "stat_label":"Home runs",
         "stat":"home_runs",
-        "value":180,
+        "value":181,
         "category":"batting",
         "context_value":"9th",
         "context_value_label":"League rank"
@@ -90,7 +90,7 @@
     {
         "stat_label":"Home runs\/game",
         "stat":"home_runs_game",
-        "value":1.22,
+        "value":1.23,
         "category":"batting",
         "context_value":1.42,
         "context_value_label":"Last decade average"
@@ -130,7 +130,7 @@
     {
         "stat_label":"Stolen bases\/game",
         "stat":"stolen_bases_game",
-        "value":0.42,
+        "value":0.41,
         "category":"batting",
         "context_value":0.84,
         "context_value_label":"Rate all last season"
@@ -146,15 +146,15 @@
     {
         "stat_label":"Strikeouts",
         "stat":"strikeouts",
-        "value":"1,356",
+        "value":"1,359",
         "category":"pitching",
-        "context_value":"5th",
+        "context_value":"4th",
         "context_value_label":"League rank"
     },
     {
         "stat_label":"Walks",
         "stat":"walks",
-        "value":449,
+        "value":450,
         "category":"pitching",
         "context_value":"23rd",
         "context_value_label":"League rank"
@@ -172,7 +172,7 @@
         "stat":"whip",
         "value":"1.16",
         "category":"pitching",
-        "context_value":"3rd",
+        "context_value":"2nd",
         "context_value_label":"League rank"
     },
     {
@@ -194,7 +194,7 @@
     {
         "stat_label":"Last updated",
         "stat":"update_time",
-        "value":"September 11, 2026, 6:02 PM PT",
+        "value":"September 11, 2026, 8:08 PM PT",
         "category":"summary",
         "context_value":"",
         "context_value_label":""
@@ -202,7 +202,7 @@
     {
         "stat_label":"Team summary",
         "stat":"summary",
-        "value":"<span class='highlight'>LOS ANGELES<\/span> <span class='updated'>(September 11)<\/span> \u2014 The Dodgers have compiled a <span class='highlight'>89-57<\/span> record in the 2026 regular season, a <span class='highlight'>61%<\/span> winning percentage. The last game was a <span class='highlight'>14-1<\/span> home <span class='highlight'>win<\/span> against the <span class='highlight'>Cincinnati Reds<\/span>. The team next faces the <span class='highlight'>Miami Marlins<\/span> on Saturday at 4:10 p.m. EDT at <span class='highlight'>loanDepot park<\/span>.",
+        "value":"<span class='highlight'>LOS ANGELES<\/span> <span class='updated'>(September 11)<\/span> \u2014 The Dodgers have compiled a <span class='highlight'>90-57<\/span> record in the 2026 regular season, a <span class='highlight'>61%<\/span> winning percentage. The last game was a <span class='highlight'>6-2<\/span> away <span class='highlight'>win<\/span> against the <span class='highlight'>Miami Marlins<\/span>. The team next faces the <span class='highlight'>Miami Marlins<\/span> on Saturday at 4:10 p.m. EDT at <span class='highlight'>loanDepot park<\/span>.",
         "category":"summary",
         "context_value":"",
         "context_value_label":""

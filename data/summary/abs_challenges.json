@@ -11,15 +11,15 @@
             "failed": 4
         },
         "catching": {
-            "total": 110,
+            "total": 111,
             "successful": 60,
-            "failed": 50
+            "failed": 51
         }
     },
     "opponents": {
         "batting": {
-            "total": 122,
-            "successful": 62,
+            "total": 123,
+            "successful": 63,
             "failed": 60
         },
         "pitching": {
@@ -28,12 +28,60 @@
             "failed": 3
         },
         "catching": {
-            "total": 158,
-            "successful": 98,
-            "failed": 60
+            "total": 160,
+            "successful": 99,
+            "failed": 61
         }
     },
     "challenge_log": [
+        {
+            "date": "2026-09-11",
+            "date_formatted": "September 11, 2026",
+            "challenger": "Will Smith",
+            "role": "catching",
+            "team": "dodgers",
+            "outcome": "confirmed",
+            "result_desc": "Heriberto Hern\u00e1ndez flies out to center fielder Tommy Edman.",
+            "batter": "Heriberto Hern\u00e1ndez",
+            "pitcher": "Edgardo Henriquez",
+            "game_pk": 823817
+        },
+        {
+            "date": "2026-09-11",
+            "date_formatted": "September 11, 2026",
+            "challenger": "Otto Lopez",
+            "role": "batting",
+            "team": "opponents",
+            "outcome": "overturned",
+            "result_desc": "Otto Lopez grounds out, third baseman Max Muncy to first baseman Enrique Hern\u00e1ndez.",
+            "batter": "Otto Lopez",
+            "pitcher": "Blake Snell",
+            "game_pk": 823817
+        },
+        {
+            "date": "2026-09-11",
+            "date_formatted": "September 11, 2026",
+            "challenger": "Agust\u00edn Ram\u00edrez",
+            "role": "catching",
+            "team": "opponents",
+            "outcome": "confirmed",
+            "result_desc": "Mookie Betts flies out to center fielder Jakob Marsee.",
+            "batter": "Mookie Betts",
+            "pitcher": "Ryan Gusto",
+            "game_pk": 823817
+        },
+        {
+            "date": "2026-09-11",
+            "date_formatted": "September 11, 2026",
+            "challenger": "Agust\u00edn Ram\u00edrez",
+            "role": "catching",
+            "team": "opponents",
+            "outcome": "overturned",
+            "result_desc": "Josue De Paula walks.",
+            "batter": "Josue De Paula",
+            "pitcher": "Ryan Gusto",
+            "game_pk": 823817
+        },
         {
             "date": "2026-09-09",
             "date_formatted": "September 9, 2026",
@@ -45,18 +93,6 @@
             "batter": "Tommy Edman",
             "pitcher": "Julian Garcia",
             "game_pk": 823900
-        },
-        {
-            "date": "2026-09-08",
-            "date_formatted": "September 8, 2026",
-            "challenger": "Alex Freeland",
-            "role": "batting",
-            "team": "dodgers",
-            "outcome": "overturned",
-            "result_desc": "Alex Freeland grounds into a force out, fielded by shortstop Elly De La Cruz. Teoscar Hern\u00e1ndez out at 2nd.",
-            "batter": "Alex Freeland",
-            "pitcher": "Julian Garcia",
-            "game_pk": 823901
         },
         {
             "date": "2026-09-08",
@@ -92,6 +128,18 @@
             "result_desc": "Max Muncy singles on a sharp line drive to center fielder Dane Myers. Teoscar Hern\u00e1ndez to 2nd.",
             "batter": "Max Muncy",
             "pitcher": "Nick Lodolo",
+            "game_pk": 823901
+        },
+        {
+            "date": "2026-09-08",
+            "date_formatted": "September 8, 2026",
+            "challenger": "Alex Freeland",
+            "role": "batting",
+            "team": "dodgers",
+            "outcome": "overturned",
+            "result_desc": "Alex Freeland grounds into a force out, fielded by shortstop Elly De La Cruz. Teoscar Hern\u00e1ndez out at 2nd.",
+            "batter": "Alex Freeland",
+            "pitcher": "Julian Garcia",
             "game_pk": 823901
         },
         {
@@ -169,13 +217,13 @@
         {
             "date": "2026-09-05",
             "date_formatted": "September 5, 2026",
-            "challenger": "Keibert Ruiz",
-            "role": "catching",
+            "challenger": "Jorbit Vivas",
+            "role": "batting",
             "team": "opponents",
             "outcome": "overturned",
-            "result_desc": "Kyle Tucker grounds into a force out, first baseman Abimelec Ortiz to shortstop CJ Abrams. Freddie Freeman to 3rd. Mookie Betts out at 2nd. Kyle Tucker to 1st.",
-            "batter": "Kyle Tucker",
-            "pitcher": "Cade Cavalli",
+            "result_desc": "Jorbit Vivas grounds out sharply, shortstop Mookie Betts to first baseman Freddie Freeman. Brady House to 2nd.",
+            "batter": "Jorbit Vivas",
+            "pitcher": "Tyler Glasnow",
             "game_pk": 823904
         },
         {
@@ -193,25 +241,13 @@
         {
             "date": "2026-09-05",
             "date_formatted": "September 5, 2026",
-            "challenger": "Jorbit Vivas",
-            "role": "batting",
+            "challenger": "Keibert Ruiz",
+            "role": "catching",
             "team": "opponents",
             "outcome": "overturned",
-            "result_desc": "Jorbit Vivas grounds out sharply, shortstop Mookie Betts to first baseman Freddie Freeman. Brady House to 2nd.",
-            "batter": "Jorbit Vivas",
-            "pitcher": "Tyler Glasnow",
-            "game_pk": 823904
-        },
-        {
-            "date": "2026-09-05",
-            "date_formatted": "September 5, 2026",
-            "challenger": "James Wood",
-            "role": "batting",
-            "team": "opponents",
-            "outcome": "overturned",
-            "result_desc": "James Wood challenged (pitch result), call on the field was confirmed: James Wood called out on strikes.",
-            "batter": "James Wood",
-            "pitcher": "Tyler Glasnow",
+            "result_desc": "Kyle Tucker grounds into a force out, first baseman Abimelec Ortiz to shortstop CJ Abrams. Freddie Freeman to 3rd. Mookie Betts out at 2nd. Kyle Tucker to 1st.",
+            "batter": "Kyle Tucker",
+            "pitcher": "Cade Cavalli",
             "game_pk": 823904
         },
         {
@@ -227,61 +263,25 @@
             "game_pk": 823904
         },
         {
-            "date": "2026-09-04",
-            "date_formatted": "September 4, 2026",
+            "date": "2026-09-05",
+            "date_formatted": "September 5, 2026",
             "challenger": "James Wood",
             "role": "batting",
             "team": "opponents",
-            "outcome": "confirmed",
-            "result_desc": "James Wood doubles (28) on a sharp line drive to right fielder Kyle Tucker. Jos\u00e9 Tena scores.",
+            "outcome": "overturned",
+            "result_desc": "James Wood challenged (pitch result), call on the field was confirmed: James Wood called out on strikes.",
             "batter": "James Wood",
-            "pitcher": "Jack Dreyer",
-            "game_pk": 823905
-        },
-        {
-            "date": "2026-09-04",
-            "date_formatted": "September 4, 2026",
-            "challenger": "Harry Ford",
-            "role": "catching",
-            "team": "opponents",
-            "outcome": "overturned",
-            "result_desc": "Teoscar Hern\u00e1ndez grounds out, third baseman Brady House to first baseman Abimelec Ortiz.",
-            "batter": "Teoscar Hern\u00e1ndez",
-            "pitcher": "Luis Perales",
-            "game_pk": 823905
-        },
-        {
-            "date": "2026-09-04",
-            "date_formatted": "September 4, 2026",
-            "challenger": "Will Smith",
-            "role": "catching",
-            "team": "dodgers",
-            "outcome": "confirmed",
-            "result_desc": "Brady House flies out to right fielder Kyle Tucker.",
-            "batter": "Brady House",
-            "pitcher": "Blake Snell",
-            "game_pk": 823905
-        },
-        {
-            "date": "2026-09-04",
-            "date_formatted": "September 4, 2026",
-            "challenger": "Harry Ford",
-            "role": "catching",
-            "team": "opponents",
-            "outcome": "overturned",
-            "result_desc": "Tommy Edman strikes out swinging.",
-            "batter": "Tommy Edman",
-            "pitcher": "Jackson Kent",
-            "game_pk": 823905
+            "pitcher": "Tyler Glasnow",
+            "game_pk": 823904
         }
     ],
     "dodgers_by_player": [
         {
             "challenger": "Will Smith",
-            "total": 42,
+            "total": 43,
             "successful": 25,
-            "failed": 17,
-            "success_rate": 59.5
+            "failed": 18,
+            "success_rate": 58.1
         },
         {
             "challenger": "Dalton Rushing",
@@ -483,10 +483,10 @@
         },
         {
             "inning": 9,
-            "total": 35,
+            "total": 36,
             "successful": 18,
-            "failed": 17,
-            "success_rate": 51.4
+            "failed": 18,
+            "success_rate": 50.0
         },
         {
             "inning": 10,
