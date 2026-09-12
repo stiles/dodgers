@@ -1,17 +1,17 @@
 {
     "season_summary": {
-        "correct_strikes_pct": 90.75239398084815,
-        "incorrect_strikes_pct": 9.247606019151846,
-        "total_called_strikes": 3655,
+        "correct_strikes_pct": 90.80021774632553,
+        "incorrect_strikes_pct": 9.19978225367447,
+        "total_called_strikes": 3674,
         "bad_calls_count": 338
     },
     "last_game_summary": {
-        "date": "September 9, 2026",
-        "correct_strikes_pct": 78.37837837837837,
-        "incorrect_strikes_pct": 21.621621621621628,
-        "total_called_strikes": 37,
-        "bad_calls_count": 8,
-        "home_plate_umpire": "Louie Krupa"
+        "date": "September 11, 2026",
+        "correct_strikes_pct": 100.0,
+        "incorrect_strikes_pct": 0.0,
+        "total_called_strikes": 19,
+        "bad_calls_count": 0,
+        "home_plate_umpire": "Adam Beck"
     },
     "worst_calls_of_season": [
         {
@@ -56,16 +56,16 @@
         }
     ],
     "pitching_season_summary": {
-        "correct_balls_pct": 96.22906993105389,
-        "incorrect_balls_pct": 3.7709300689461145,
-        "total_called_balls": 7107,
+        "correct_balls_pct": 96.24754970596472,
+        "incorrect_balls_pct": 3.7524502940352846,
+        "total_called_balls": 7142,
         "bad_calls_count": 268
     },
     "pitching_last_game_summary": {
-        "date": "September 9, 2026",
+        "date": "September 11, 2026",
         "correct_balls_pct": 100.0,
         "incorrect_balls_pct": 0.0,
-        "total_called_balls": 28,
+        "total_called_balls": 35,
         "bad_calls_count": 0
     },
     "pitching_worst_calls_of_season": [],
@@ -82,8 +82,8 @@
                 "failed": 0
             },
             "catching": {
-                "total": 30,
-                "successful": 25,
+                "total": 31,
+                "successful": 26,
                 "failed": 5
             }
         },
@@ -105,6 +105,18 @@
             }
         },
         "challenge_log": [
+            {
+                "date": "2026-09-11",
+                "date_formatted": "September 11, 2026",
+                "challenger": "Will Smith",
+                "role": "catching",
+                "team": "dodgers",
+                "outcome": "overturned",
+                "result_desc": "Agust\u00edn Ram\u00edrez called out on strikes.",
+                "batter": "Agust\u00edn Ram\u00edrez",
+                "pitcher": "Blake Snell",
+                "game_pk": 823817
+            },
             {
                 "date": "2026-09-09",
                 "date_formatted": "September 9, 2026",
@@ -331,18 +343,6 @@
                 "result_desc": "Teoscar Hern\u00e1ndez called out on strikes.",
                 "batter": "Teoscar Hern\u00e1ndez",
                 "pitcher": "Carmen Mlodzinski",
-                "game_pk": 823909
-            },
-            {
-                "date": "2026-08-23",
-                "date_formatted": "August 23, 2026",
-                "challenger": "Esmerlyn Valdez",
-                "role": "batting",
-                "team": "opponents",
-                "outcome": "confirmed",
-                "result_desc": "Esmerlyn Valdez called out on strikes.",
-                "batter": "Esmerlyn Valdez",
-                "pitcher": "Brock Stewart",
                 "game_pk": 823909
             }
         ]

@@ -90,7 +90,7 @@
     {
         "stat_label":"Home runs\/game",
         "stat":"home_runs_game",
-        "value":1.23,
+        "value":1.22,
         "category":"batting",
         "context_value":1.42,
         "context_value_label":"Last decade average"
@@ -146,7 +146,7 @@
     {
         "stat_label":"Strikeouts",
         "stat":"strikeouts",
-        "value":"1,348",
+        "value":"1,356",
         "category":"pitching",
         "context_value":"5th",
         "context_value_label":"League rank"
@@ -154,7 +154,7 @@
     {
         "stat_label":"Walks",
         "stat":"walks",
-        "value":447,
+        "value":449,
         "category":"pitching",
         "context_value":"23rd",
         "context_value_label":"League rank"
@@ -162,7 +162,7 @@
     {
         "stat_label":"ERA",
         "stat":"era",
-        "value":"3.67",
+        "value":"3.65",
         "category":"pitching",
         "context_value":"6th",
         "context_value_label":"League rank"
@@ -172,7 +172,7 @@
         "stat":"whip",
         "value":"1.16",
         "category":"pitching",
-        "context_value":"2nd",
+        "context_value":"3rd",
         "context_value_label":"League rank"
     },
     {
@@ -194,7 +194,7 @@
     {
         "stat_label":"Last updated",
         "stat":"update_time",
-        "value":"September 11, 2026, 11:21 AM PT",
+        "value":"September 11, 2026, 6:02 PM PT",
         "category":"summary",
         "context_value":"",
         "context_value_label":""
@@ -202,7 +202,7 @@
     {
         "stat_label":"Team summary",
         "stat":"summary",
-        "value":"<span class='highlight'>LOS ANGELES<\/span> <span class='updated'>(September 11)<\/span> \u2014 The Dodgers have compiled a <span class='highlight'>89-57<\/span> record in the 2026 regular season, a <span class='highlight'>61%<\/span> winning percentage. The last game was a <span class='highlight'>14-1<\/span> home <span class='highlight'>win<\/span> against the <span class='highlight'>Cincinnati Reds<\/span>. The team next faces the <span class='highlight'>Miami Marlins<\/span> on Friday at 7:10 p.m. EDT at <span class='highlight'>loanDepot park<\/span>.",
+        "value":"<span class='highlight'>LOS ANGELES<\/span> <span class='updated'>(September 11)<\/span> \u2014 The Dodgers have compiled a <span class='highlight'>89-57<\/span> record in the 2026 regular season, a <span class='highlight'>61%<\/span> winning percentage. The last game was a <span class='highlight'>14-1<\/span> home <span class='highlight'>win<\/span> against the <span class='highlight'>Cincinnati Reds<\/span>. The team next faces the <span class='highlight'>Miami Marlins<\/span> on Saturday at 4:10 p.m. EDT at <span class='highlight'>loanDepot park<\/span>.",
         "category":"summary",
         "context_value":"",
         "context_value_label":""
