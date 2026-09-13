@@ -6,13 +6,13 @@
             "failed": 43
         },
         "pitching": {
-            "total": 7,
+            "total": 8,
             "successful": 3,
-            "failed": 4
+            "failed": 5
         },
         "catching": {
-            "total": 111,
-            "successful": 60,
+            "total": 112,
+            "successful": 61,
             "failed": 51
         }
     },
@@ -28,12 +28,48 @@
             "failed": 3
         },
         "catching": {
-            "total": 160,
+            "total": 161,
             "successful": 99,
-            "failed": 61
+            "failed": 62
         }
     },
     "challenge_log": [
+        {
+            "date": "2026-09-12",
+            "date_formatted": "September 12, 2026",
+            "challenger": "Joe Mack",
+            "role": "catching",
+            "team": "opponents",
+            "outcome": "confirmed",
+            "result_desc": "Alex Freeland singles on a ground ball to right fielder Esteury Ruiz.",
+            "batter": "Alex Freeland",
+            "pitcher": "Calvin Faucher",
+            "game_pk": 823819
+        },
+        {
+            "date": "2026-09-12",
+            "date_formatted": "September 12, 2026",
+            "challenger": "Hunter Feduccia",
+            "role": "catching",
+            "team": "dodgers",
+            "outcome": "overturned",
+            "result_desc": "Javier Sanoja reaches on a fielder's choice. Griffin Conine scores. Otto Lopez to 3rd. Jakob Marsee to 2nd. Throwing error by shortstop Mookie Betts.",
+            "batter": "Javier Sanoja",
+            "pitcher": "Jack Dreyer",
+            "game_pk": 823819
+        },
+        {
+            "date": "2026-09-12",
+            "date_formatted": "September 12, 2026",
+            "challenger": "Tyler Glasnow",
+            "role": "pitching",
+            "team": "dodgers",
+            "outcome": "confirmed",
+            "result_desc": "Owen Caissie walks.",
+            "batter": "Owen Caissie",
+            "pitcher": "Tyler Glasnow",
+            "game_pk": 823819
+        },
         {
             "date": "2026-09-11",
             "date_formatted": "September 11, 2026",
@@ -97,6 +133,18 @@
         {
             "date": "2026-09-08",
             "date_formatted": "September 8, 2026",
+            "challenger": "Alex Freeland",
+            "role": "batting",
+            "team": "dodgers",
+            "outcome": "overturned",
+            "result_desc": "Alex Freeland grounds into a force out, fielded by shortstop Elly De La Cruz. Teoscar Hern\u00e1ndez out at 2nd.",
+            "batter": "Alex Freeland",
+            "pitcher": "Julian Garcia",
+            "game_pk": 823901
+        },
+        {
+            "date": "2026-09-08",
+            "date_formatted": "September 8, 2026",
             "challenger": "Mookie Betts",
             "role": "batting",
             "team": "dodgers",
@@ -131,30 +179,6 @@
             "game_pk": 823901
         },
         {
-            "date": "2026-09-08",
-            "date_formatted": "September 8, 2026",
-            "challenger": "Alex Freeland",
-            "role": "batting",
-            "team": "dodgers",
-            "outcome": "overturned",
-            "result_desc": "Alex Freeland grounds into a force out, fielded by shortstop Elly De La Cruz. Teoscar Hern\u00e1ndez out at 2nd.",
-            "batter": "Alex Freeland",
-            "pitcher": "Julian Garcia",
-            "game_pk": 823901
-        },
-        {
-            "date": "2026-09-07",
-            "date_formatted": "September 7, 2026",
-            "challenger": "Hunter Feduccia",
-            "role": "catching",
-            "team": "dodgers",
-            "outcome": "confirmed",
-            "result_desc": "Tyler Stephenson flies out to left fielder Teoscar Hern\u00e1ndez.",
-            "batter": "Tyler Stephenson",
-            "pitcher": "Jack Dreyer",
-            "game_pk": 823902
-        },
-        {
             "date": "2026-09-07",
             "date_formatted": "September 7, 2026",
             "challenger": "Hunter Feduccia",
@@ -164,6 +188,18 @@
             "result_desc": "Hunter Feduccia strikes out swinging.",
             "batter": "Hunter Feduccia",
             "pitcher": "Brandon Williamson",
+            "game_pk": 823902
+        },
+        {
+            "date": "2026-09-07",
+            "date_formatted": "September 7, 2026",
+            "challenger": "Hunter Feduccia",
+            "role": "catching",
+            "team": "dodgers",
+            "outcome": "overturned",
+            "result_desc": "Sal Stewart lines out to center fielder Alex Call.",
+            "batter": "Sal Stewart",
+            "pitcher": "Emmet Sheehan",
             "game_pk": 823902
         },
         {
@@ -184,10 +220,10 @@
             "challenger": "Hunter Feduccia",
             "role": "catching",
             "team": "dodgers",
-            "outcome": "overturned",
-            "result_desc": "Sal Stewart lines out to center fielder Alex Call.",
-            "batter": "Sal Stewart",
-            "pitcher": "Emmet Sheehan",
+            "outcome": "confirmed",
+            "result_desc": "Tyler Stephenson flies out to left fielder Teoscar Hern\u00e1ndez.",
+            "batter": "Tyler Stephenson",
+            "pitcher": "Jack Dreyer",
             "game_pk": 823902
         },
         {
@@ -213,42 +249,6 @@
             "batter": "Jacob Young",
             "pitcher": "Justin Wrobleski",
             "game_pk": 823903
-        },
-        {
-            "date": "2026-09-05",
-            "date_formatted": "September 5, 2026",
-            "challenger": "Jorbit Vivas",
-            "role": "batting",
-            "team": "opponents",
-            "outcome": "overturned",
-            "result_desc": "Jorbit Vivas grounds out sharply, shortstop Mookie Betts to first baseman Freddie Freeman. Brady House to 2nd.",
-            "batter": "Jorbit Vivas",
-            "pitcher": "Tyler Glasnow",
-            "game_pk": 823904
-        },
-        {
-            "date": "2026-09-05",
-            "date_formatted": "September 5, 2026",
-            "challenger": "Cade Cavalli",
-            "role": "pitching",
-            "team": "opponents",
-            "outcome": "overturned",
-            "result_desc": "Mookie Betts singles on a ground ball to center fielder Dylan Crews. Freddie Freeman to 2nd.",
-            "batter": "Mookie Betts",
-            "pitcher": "Cade Cavalli",
-            "game_pk": 823904
-        },
-        {
-            "date": "2026-09-05",
-            "date_formatted": "September 5, 2026",
-            "challenger": "Keibert Ruiz",
-            "role": "catching",
-            "team": "opponents",
-            "outcome": "overturned",
-            "result_desc": "Kyle Tucker grounds into a force out, first baseman Abimelec Ortiz to shortstop CJ Abrams. Freddie Freeman to 3rd. Mookie Betts out at 2nd. Kyle Tucker to 1st.",
-            "batter": "Kyle Tucker",
-            "pitcher": "Cade Cavalli",
-            "game_pk": 823904
         },
         {
             "date": "2026-09-05",
@@ -291,18 +291,18 @@
             "success_rate": 50.0
         },
         {
+            "challenger": "Hunter Feduccia",
+            "total": 19,
+            "successful": 11,
+            "failed": 8,
+            "success_rate": 57.9
+        },
+        {
             "challenger": "Andy Pages",
             "total": 19,
             "successful": 10,
             "failed": 9,
             "success_rate": 52.6
-        },
-        {
-            "challenger": "Hunter Feduccia",
-            "total": 18,
-            "successful": 10,
-            "failed": 8,
-            "success_rate": 55.6
         },
         {
             "challenger": "Teoscar Hern\u00e1ndez",
@@ -390,10 +390,10 @@
         },
         {
             "challenger": "Tyler Glasnow",
-            "total": 2,
+            "total": 3,
             "successful": 2,
-            "failed": 0,
-            "success_rate": 100.0
+            "failed": 1,
+            "success_rate": 66.7
         },
         {
             "challenger": "Chuckie Robinson",
@@ -434,10 +434,10 @@
         },
         {
             "inning": 2,
-            "total": 12,
+            "total": 13,
             "successful": 7,
-            "failed": 5,
-            "success_rate": 58.3
+            "failed": 6,
+            "success_rate": 53.8
         },
         {
             "inning": 3,
@@ -455,10 +455,10 @@
         },
         {
             "inning": 5,
-            "total": 15,
-            "successful": 10,
+            "total": 16,
+            "successful": 11,
             "failed": 5,
-            "success_rate": 66.7
+            "success_rate": 68.8
         },
         {
             "inning": 6,

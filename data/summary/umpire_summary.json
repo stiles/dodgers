@@ -1,17 +1,17 @@
 {
     "season_summary": {
-        "correct_strikes_pct": 90.80021774632553,
-        "incorrect_strikes_pct": 9.19978225367447,
-        "total_called_strikes": 3674,
-        "bad_calls_count": 338
+        "correct_strikes_pct": 90.79622132253711,
+        "incorrect_strikes_pct": 9.203778677462893,
+        "total_called_strikes": 3705,
+        "bad_calls_count": 341
     },
     "last_game_summary": {
-        "date": "September 11, 2026",
-        "correct_strikes_pct": 100.0,
-        "incorrect_strikes_pct": 0.0,
-        "total_called_strikes": 19,
-        "bad_calls_count": 0,
-        "home_plate_umpire": "Adam Beck"
+        "date": "September 12, 2026",
+        "correct_strikes_pct": 90.32258064516128,
+        "incorrect_strikes_pct": 9.677419354838719,
+        "total_called_strikes": 31,
+        "bad_calls_count": 3,
+        "home_plate_umpire": "Dan Iassogna"
     },
     "worst_calls_of_season": [
         {
@@ -56,16 +56,16 @@
         }
     ],
     "pitching_season_summary": {
-        "correct_balls_pct": 96.24754970596472,
-        "incorrect_balls_pct": 3.7524502940352846,
-        "total_called_balls": 7142,
+        "correct_balls_pct": 96.27260083449235,
+        "incorrect_balls_pct": 3.7273991655076486,
+        "total_called_balls": 7190,
         "bad_calls_count": 268
     },
     "pitching_last_game_summary": {
-        "date": "September 11, 2026",
+        "date": "September 12, 2026",
         "correct_balls_pct": 100.0,
         "incorrect_balls_pct": 0.0,
-        "total_called_balls": 35,
+        "total_called_balls": 48,
         "bad_calls_count": 0
     },
     "pitching_worst_calls_of_season": [],
