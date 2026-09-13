@@ -90,7 +90,7 @@
     {
         "stat_label":"Home runs\/game",
         "stat":"home_runs_game",
-        "value":1.24,
+        "value":1.23,
         "category":"batting",
         "context_value":1.42,
         "context_value_label":"Last decade average"
@@ -146,7 +146,7 @@
     {
         "stat_label":"Strikeouts",
         "stat":"strikeouts",
-        "value":"1,368",
+        "value":"1,370",
         "category":"pitching",
         "context_value":"4th",
         "context_value_label":"League rank"
@@ -170,7 +170,7 @@
     {
         "stat_label":"WHIP",
         "stat":"whip",
-        "value":"1.17",
+        "value":"1.16",
         "category":"pitching",
         "context_value":"2nd",
         "context_value_label":"League rank"
@@ -194,7 +194,7 @@
     {
         "stat_label":"Last updated",
         "stat":"update_time",
-        "value":"September 13, 2026, 6:17 AM PT",
+        "value":"September 13, 2026, 11:04 AM PT",
         "category":"summary",
         "context_value":"",
         "context_value_label":""
@@ -202,7 +202,7 @@
     {
         "stat_label":"Team summary",
         "stat":"summary",
-        "value":"<span class='highlight'>LOS ANGELES<\/span> <span class='updated'>(September 13)<\/span> \u2014 The Dodgers have compiled a <span class='highlight'>90-58<\/span> record in the 2026 regular season, a <span class='highlight'>61%<\/span> winning percentage. The last game was a <span class='highlight'>3-4<\/span> away <span class='highlight'>loss<\/span> against the <span class='highlight'>Miami Marlins<\/span>. The team next faces the <span class='highlight'>Miami Marlins<\/span> on Sunday at 1:40 p.m. EDT at <span class='highlight'>loanDepot park<\/span>.",
+        "value":"<span class='highlight'>LOS ANGELES<\/span> <span class='updated'>(September 13)<\/span> \u2014 The Dodgers have compiled a <span class='highlight'>90-58<\/span> record in the 2026 regular season, a <span class='highlight'>61%<\/span> winning percentage. The last game was a <span class='highlight'>3-4<\/span> away <span class='highlight'>loss<\/span> against the <span class='highlight'>Miami Marlins<\/span>. The team next faces the <span class='highlight'>Cincinnati Reds<\/span> on Monday at 6:40 p.m. EDT at <span class='highlight'>Great American Ball Park<\/span>.",
         "category":"summary",
         "context_value":"",
         "context_value_label":""
