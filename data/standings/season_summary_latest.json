@@ -4,13 +4,13 @@
         "stat":"wins",
         "value":90,
         "category":"standings",
-        "context_value":83,
+        "context_value":84,
         "context_value_label":"This point last season"
     },
     {
         "stat_label":"Losses",
         "stat":"losses",
-        "value":58,
+        "value":59,
         "category":"standings",
         "context_value":65,
         "context_value_label":"This point last season"
@@ -18,7 +18,7 @@
     {
         "stat_label":"Win percentage",
         "stat":"win_pct",
-        "value":"61%",
+        "value":"60%",
         "category":"standings",
         "context_value":"56%",
         "context_value_label":"This point last season"
@@ -26,7 +26,7 @@
     {
         "stat_label":"Games up\/back",
         "stat":"games_up_back",
-        "value":10,
+        "value":9.5,
         "category":"standings",
         "context_value":"1st",
         "context_value_label":"Division rank"
@@ -50,7 +50,7 @@
     {
         "stat_label":"Runs",
         "stat":"runs",
-        "value":737,
+        "value":741,
         "category":"standings",
         "context_value":"4th",
         "context_value_label":"League rank"
@@ -58,17 +58,17 @@
     {
         "stat_label":"Runs against",
         "stat":"runs_against",
-        "value":565,
+        "value":571,
         "category":"standings",
-        "context_value":639,
+        "context_value":641,
         "context_value_label":"This point last season"
     },
     {
         "stat_label":"Run differential",
         "stat":"run_differential",
-        "value":172,
+        "value":170,
         "category":"standings",
-        "context_value":113,
+        "context_value":121,
         "context_value_label":"This point last season"
     },
     {
@@ -82,7 +82,7 @@
     {
         "stat_label":"Home runs",
         "stat":"home_runs",
-        "value":183,
+        "value":184,
         "category":"batting",
         "context_value":"9th",
         "context_value_label":"League rank"
@@ -98,7 +98,7 @@
     {
         "stat_label":"On-base percentage",
         "stat":"on_base_pct",
-        "value":".336",
+        "value":".337",
         "category":"batting",
         "context_value":"3rd",
         "context_value_label":"League rank"
@@ -106,7 +106,7 @@
     {
         "stat_label":"Slugging percentage",
         "stat":"slugging_pct",
-        "value":".421",
+        "value":".422",
         "category":"batting",
         "context_value":"3rd",
         "context_value_label":"League rank"
@@ -114,7 +114,7 @@
     {
         "stat_label":"OPS",
         "stat":"ops",
-        "value":".757",
+        "value":".759",
         "category":"batting",
         "context_value":"2nd",
         "context_value_label":"League rank"
@@ -122,7 +122,7 @@
     {
         "stat_label":"Stolen bases",
         "stat":"stolen_bases",
-        "value":63,
+        "value":64,
         "category":"batting",
         "context_value":"28th",
         "context_value_label":"League rank"
@@ -138,7 +138,7 @@
     {
         "stat_label":"Doubles",
         "stat":"doubles",
-        "value":241,
+        "value":244,
         "category":"batting",
         "context_value":"9th",
         "context_value_label":"League rank"
@@ -146,7 +146,7 @@
     {
         "stat_label":"Strikeouts",
         "stat":"strikeouts",
-        "value":"1,370",
+        "value":"1,376",
         "category":"pitching",
         "context_value":"4th",
         "context_value_label":"League rank"
@@ -154,7 +154,7 @@
     {
         "stat_label":"Walks",
         "stat":"walks",
-        "value":455,
+        "value":457,
         "category":"pitching",
         "context_value":"23rd",
         "context_value_label":"League rank"
@@ -162,23 +162,23 @@
     {
         "stat_label":"ERA",
         "stat":"era",
-        "value":"3.66",
+        "value":"3.68",
         "category":"pitching",
-        "context_value":"5th",
+        "context_value":"6th",
         "context_value_label":"League rank"
     },
     {
         "stat_label":"WHIP",
         "stat":"whip",
-        "value":"1.16",
+        "value":"1.17",
         "category":"pitching",
-        "context_value":"2nd",
+        "context_value":"3rd",
         "context_value_label":"League rank"
     },
     {
         "stat_label":"Batting average against",
         "stat":"avg_against",
-        "value":".220",
+        "value":".221",
         "category":"pitching",
         "context_value":"1st",
         "context_value_label":"League rank"
@@ -194,7 +194,7 @@
     {
         "stat_label":"Last updated",
         "stat":"update_time",
-        "value":"September 13, 2026, 11:04 AM PT",
+        "value":"September 13, 2026, 5:56 PM PT",
         "category":"summary",
         "context_value":"",
         "context_value_label":""
@@ -202,7 +202,7 @@
     {
         "stat_label":"Team summary",
         "stat":"summary",
-        "value":"<span class='highlight'>LOS ANGELES<\/span> <span class='updated'>(September 13)<\/span> \u2014 The Dodgers have compiled a <span class='highlight'>90-58<\/span> record in the 2026 regular season, a <span class='highlight'>61%<\/span> winning percentage. The last game was a <span class='highlight'>3-4<\/span> away <span class='highlight'>loss<\/span> against the <span class='highlight'>Miami Marlins<\/span>. The team next faces the <span class='highlight'>Cincinnati Reds<\/span> on Monday at 6:40 p.m. EDT at <span class='highlight'>Great American Ball Park<\/span>.",
+        "value":"<span class='highlight'>LOS ANGELES<\/span> <span class='updated'>(September 13)<\/span> \u2014 The Dodgers have compiled a <span class='highlight'>90-59<\/span> record in the 2026 regular season, a <span class='highlight'>60%<\/span> winning percentage. The last game was a <span class='highlight'>4-6<\/span> away <span class='highlight'>loss<\/span> against the <span class='highlight'>Miami Marlins<\/span>. The team next faces the <span class='highlight'>Cincinnati Reds<\/span> on Monday at 6:40 p.m. EDT at <span class='highlight'>Great American Ball Park<\/span>.",
         "category":"summary",
         "context_value":"",
         "context_value_label":""

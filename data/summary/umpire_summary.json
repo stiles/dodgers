@@ -1,16 +1,16 @@
 {
     "season_summary": {
-        "correct_strikes_pct": 90.80366774541531,
-        "incorrect_strikes_pct": 9.19633225458469,
-        "total_called_strikes": 3708,
-        "bad_calls_count": 341
+        "correct_strikes_pct": 90.83355668721522,
+        "incorrect_strikes_pct": 9.166443312784779,
+        "total_called_strikes": 3731,
+        "bad_calls_count": 342
     },
     "last_game_summary": {
         "date": "September 13, 2026",
-        "correct_strikes_pct": 100.0,
-        "incorrect_strikes_pct": 0.0,
-        "total_called_strikes": 3,
-        "bad_calls_count": 0,
+        "correct_strikes_pct": 96.15384615384616,
+        "incorrect_strikes_pct": 3.8461538461538396,
+        "total_called_strikes": 26,
+        "bad_calls_count": 1,
         "home_plate_umpire": "Brock Ballou"
     },
     "worst_calls_of_season": [
@@ -56,25 +56,25 @@
         }
     ],
     "pitching_season_summary": {
-        "correct_balls_pct": 96.2741554288892,
-        "incorrect_balls_pct": 3.725844571110798,
-        "total_called_balls": 7193,
+        "correct_balls_pct": 96.29527232513132,
+        "incorrect_balls_pct": 3.7047276748686784,
+        "total_called_balls": 7234,
         "bad_calls_count": 268
     },
     "pitching_last_game_summary": {
         "date": "September 13, 2026",
         "correct_balls_pct": 100.0,
         "incorrect_balls_pct": 0.0,
-        "total_called_balls": 3,
+        "total_called_balls": 44,
         "bad_calls_count": 0
     },
     "pitching_worst_calls_of_season": [],
     "abs_challenges": {
         "dodgers": {
             "batting": {
-                "total": 49,
+                "total": 50,
                 "successful": 13,
-                "failed": 36
+                "failed": 37
             },
             "pitching": {
                 "total": 0,
@@ -99,12 +99,36 @@
                 "failed": 0
             },
             "catching": {
-                "total": 53,
-                "successful": 40,
+                "total": 54,
+                "successful": 41,
                 "failed": 13
             }
         },
         "challenge_log": [
+            {
+                "date": "2026-09-13",
+                "date_formatted": "September 13, 2026",
+                "challenger": "Joe Mack",
+                "role": "catching",
+                "team": "opponents",
+                "outcome": "overturned",
+                "result_desc": "Max Muncy called out on strikes.",
+                "batter": "Max Muncy",
+                "pitcher": "Eury P\u00e9rez",
+                "game_pk": 823815
+            },
+            {
+                "date": "2026-09-13",
+                "date_formatted": "September 13, 2026",
+                "challenger": "Kyle Tucker",
+                "role": "batting",
+                "team": "dodgers",
+                "outcome": "confirmed",
+                "result_desc": "Kyle Tucker called out on strikes.",
+                "batter": "Kyle Tucker",
+                "pitcher": "Dax Fulton",
+                "game_pk": 823815
+            },
             {
                 "date": "2026-09-11",
                 "date_formatted": "September 11, 2026",
@@ -320,30 +344,6 @@
                 "batter": "Shohei Ohtani",
                 "pitcher": "Bryce Elder",
                 "game_pk": 824881
-            },
-            {
-                "date": "2026-08-25",
-                "date_formatted": "August 25, 2026",
-                "challenger": "Hunter Feduccia",
-                "role": "catching",
-                "team": "dodgers",
-                "outcome": "overturned",
-                "result_desc": "Mike Yastrzemski called out on strikes.",
-                "batter": "Mike Yastrzemski",
-                "pitcher": "Tyler Glasnow",
-                "game_pk": 824881
-            },
-            {
-                "date": "2026-08-23",
-                "date_formatted": "August 23, 2026",
-                "challenger": "Teoscar Hern\u00e1ndez",
-                "role": "batting",
-                "team": "dodgers",
-                "outcome": "confirmed",
-                "result_desc": "Teoscar Hern\u00e1ndez called out on strikes.",
-                "batter": "Teoscar Hern\u00e1ndez",
-                "pitcher": "Carmen Mlodzinski",
-                "game_pk": 823909
             }
         ]
     }

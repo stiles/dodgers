@@ -1,13 +1,5 @@
 [
     {
-        "date":"Sep 2",
-        "opp_name":"St. Louis Cardinals",
-        "home_away":"home",
-        "result":"loss",
-        "placement":"last",
-        "game_start":"6-8"
-    },
-    {
         "date":"Sep 3",
         "opp_name":"St. Louis Cardinals",
         "home_away":"home",
@@ -83,9 +75,9 @@
         "date":"Sep 13",
         "opp_name":"Miami Marlins",
         "home_away":"away",
-        "result":"in progress",
-        "placement":"next",
-        "game_start":"Live"
+        "result":"loss",
+        "placement":"last",
+        "game_start":"4-6"
     },
     {
         "date":"Sep 14",
@@ -153,6 +145,14 @@
     },
     {
         "date":"Sep 23",
+        "opp_name":"San Diego Padres",
+        "home_away":"home",
+        "result":"--",
+        "placement":"next",
+        "game_start":"7:10 PM"
+    },
+    {
+        "date":"Sep 24",
         "opp_name":"San Diego Padres",
         "home_away":"home",
         "result":"--",
