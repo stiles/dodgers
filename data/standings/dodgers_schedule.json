@@ -1,13 +1,5 @@
 [
     {
-        "date":"Sep 3",
-        "opp_name":"St. Louis Cardinals",
-        "home_away":"home",
-        "result":"win",
-        "placement":"last",
-        "game_start":"3-2"
-    },
-    {
         "date":"Sep 4",
         "opp_name":"Washington Nationals",
         "home_away":"home",
@@ -83,9 +75,9 @@
         "date":"Sep 14",
         "opp_name":"Cincinnati Reds",
         "home_away":"away",
-        "result":"--",
-        "placement":"next",
-        "game_start":"3:40 PM"
+        "result":"win",
+        "placement":"last",
+        "game_start":"4-1"
     },
     {
         "date":"Sep 15",
@@ -158,5 +150,13 @@
         "result":"--",
         "placement":"next",
         "game_start":"7:10 PM"
+    },
+    {
+        "date":"Sep 25",
+        "opp_name":"San Francisco Giants",
+        "home_away":"away",
+        "result":"--",
+        "placement":"next",
+        "game_start":"7:15 PM"
     }
 ]

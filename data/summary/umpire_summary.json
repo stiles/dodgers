@@ -1,17 +1,17 @@
 {
     "season_summary": {
-        "correct_strikes_pct": 90.83355668721522,
-        "incorrect_strikes_pct": 9.166443312784779,
-        "total_called_strikes": 3731,
-        "bad_calls_count": 342
+        "correct_strikes_pct": 90.85820895522389,
+        "incorrect_strikes_pct": 9.141791044776113,
+        "total_called_strikes": 3752,
+        "bad_calls_count": 343
     },
     "last_game_summary": {
-        "date": "September 13, 2026",
-        "correct_strikes_pct": 96.15384615384616,
-        "incorrect_strikes_pct": 3.8461538461538396,
-        "total_called_strikes": 26,
+        "date": "September 14, 2026",
+        "correct_strikes_pct": 95.23809523809523,
+        "incorrect_strikes_pct": 4.761904761904773,
+        "total_called_strikes": 21,
         "bad_calls_count": 1,
-        "home_plate_umpire": "Brock Ballou"
+        "home_plate_umpire": "Tom Hanahan"
     },
     "worst_calls_of_season": [
         {
@@ -56,16 +56,16 @@
         }
     ],
     "pitching_season_summary": {
-        "correct_balls_pct": 96.29527232513132,
-        "incorrect_balls_pct": 3.7047276748686784,
-        "total_called_balls": 7234,
+        "correct_balls_pct": 96.31412460459359,
+        "incorrect_balls_pct": 3.6858753954064127,
+        "total_called_balls": 7271,
         "bad_calls_count": 268
     },
     "pitching_last_game_summary": {
-        "date": "September 13, 2026",
+        "date": "September 14, 2026",
         "correct_balls_pct": 100.0,
         "incorrect_balls_pct": 0.0,
-        "total_called_balls": 44,
+        "total_called_balls": 37,
         "bad_calls_count": 0
     },
     "pitching_worst_calls_of_season": [],
@@ -89,9 +89,9 @@
         },
         "opponents": {
             "batting": {
-                "total": 38,
+                "total": 39,
                 "successful": 10,
-                "failed": 28
+                "failed": 29
             },
             "pitching": {
                 "total": 0,
@@ -105,6 +105,18 @@
             }
         },
         "challenge_log": [
+            {
+                "date": "2026-09-14",
+                "date_formatted": "September 14, 2026",
+                "challenger": "JJ Bleday",
+                "role": "batting",
+                "team": "opponents",
+                "outcome": "confirmed",
+                "result_desc": "JJ Bleday called out on strikes.",
+                "batter": "JJ Bleday",
+                "pitcher": "Tarik Skubal",
+                "game_pk": 824465
+            },
             {
                 "date": "2026-09-13",
                 "date_formatted": "September 13, 2026",
@@ -332,18 +344,6 @@
                 "batter": "Tommy Edman",
                 "pitcher": "AJ Smith-Shawver",
                 "game_pk": 824878
-            },
-            {
-                "date": "2026-08-25",
-                "date_formatted": "August 25, 2026",
-                "challenger": "Sean Murphy",
-                "role": "catching",
-                "team": "opponents",
-                "outcome": "overturned",
-                "result_desc": "Shohei Ohtani called out on strikes.",
-                "batter": "Shohei Ohtani",
-                "pitcher": "Bryce Elder",
-                "game_pk": 824881
             }
         ]
     }

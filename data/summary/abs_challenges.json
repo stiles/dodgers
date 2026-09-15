@@ -1,8 +1,8 @@
 {
     "dodgers": {
         "batting": {
-            "total": 115,
-            "successful": 72,
+            "total": 116,
+            "successful": 73,
             "failed": 43
         },
         "pitching": {
@@ -28,12 +28,36 @@
             "failed": 3
         },
         "catching": {
-            "total": 164,
+            "total": 165,
             "successful": 102,
-            "failed": 62
+            "failed": 63
         }
     },
     "challenge_log": [
+        {
+            "date": "2026-09-14",
+            "date_formatted": "September 14, 2026",
+            "challenger": "Alex Freeland",
+            "role": "batting",
+            "team": "dodgers",
+            "outcome": "overturned",
+            "result_desc": "Alex Freeland walks.",
+            "batter": "Alex Freeland",
+            "pitcher": "Tony Santillan",
+            "game_pk": 824465
+        },
+        {
+            "date": "2026-09-14",
+            "date_formatted": "September 14, 2026",
+            "challenger": "Tyler Stephenson",
+            "role": "catching",
+            "team": "opponents",
+            "outcome": "confirmed",
+            "result_desc": "Josue De Paula walks.",
+            "batter": "Josue De Paula",
+            "pitcher": "Nick Lodolo",
+            "game_pk": 824465
+        },
         {
             "date": "2026-09-13",
             "date_formatted": "September 13, 2026",
@@ -145,6 +169,18 @@
         {
             "date": "2026-09-11",
             "date_formatted": "September 11, 2026",
+            "challenger": "Agust\u00edn Ram\u00edrez",
+            "role": "catching",
+            "team": "opponents",
+            "outcome": "overturned",
+            "result_desc": "Josue De Paula walks.",
+            "batter": "Josue De Paula",
+            "pitcher": "Ryan Gusto",
+            "game_pk": 823817
+        },
+        {
+            "date": "2026-09-11",
+            "date_formatted": "September 11, 2026",
             "challenger": "Will Smith",
             "role": "catching",
             "team": "dodgers",
@@ -179,18 +215,6 @@
             "game_pk": 823817
         },
         {
-            "date": "2026-09-11",
-            "date_formatted": "September 11, 2026",
-            "challenger": "Agust\u00edn Ram\u00edrez",
-            "role": "catching",
-            "team": "opponents",
-            "outcome": "overturned",
-            "result_desc": "Josue De Paula walks.",
-            "batter": "Josue De Paula",
-            "pitcher": "Ryan Gusto",
-            "game_pk": 823817
-        },
-        {
             "date": "2026-09-09",
             "date_formatted": "September 9, 2026",
             "challenger": "Will Banfield",
@@ -217,24 +241,24 @@
         {
             "date": "2026-09-08",
             "date_formatted": "September 8, 2026",
-            "challenger": "Jose Trevino",
-            "role": "catching",
-            "team": "opponents",
-            "outcome": "confirmed",
-            "result_desc": "Max Muncy singles on a sharp line drive to center fielder Dane Myers. Teoscar Hern\u00e1ndez to 2nd.",
-            "batter": "Max Muncy",
-            "pitcher": "Nick Lodolo",
-            "game_pk": 823901
-        },
-        {
-            "date": "2026-09-08",
-            "date_formatted": "September 8, 2026",
             "challenger": "Teoscar Hern\u00e1ndez",
             "role": "batting",
             "team": "dodgers",
             "outcome": "confirmed",
             "result_desc": "Teoscar Hern\u00e1ndez triples (2) on a line drive to left fielder JJ Bleday. Teoscar Hern\u00e1ndez out at home on the throw, left fielder JJ Bleday to shortstop Elly De La Cruz to catcher Jose Trevino.",
             "batter": "Teoscar Hern\u00e1ndez",
+            "pitcher": "Nick Lodolo",
+            "game_pk": 823901
+        },
+        {
+            "date": "2026-09-08",
+            "date_formatted": "September 8, 2026",
+            "challenger": "Jose Trevino",
+            "role": "catching",
+            "team": "opponents",
+            "outcome": "confirmed",
+            "result_desc": "Max Muncy singles on a sharp line drive to center fielder Dane Myers. Teoscar Hern\u00e1ndez to 2nd.",
+            "batter": "Max Muncy",
             "pitcher": "Nick Lodolo",
             "game_pk": 823901
         },
@@ -249,30 +273,6 @@
             "batter": "Alex Freeland",
             "pitcher": "Julian Garcia",
             "game_pk": 823901
-        },
-        {
-            "date": "2026-09-07",
-            "date_formatted": "September 7, 2026",
-            "challenger": "Hunter Feduccia",
-            "role": "catching",
-            "team": "dodgers",
-            "outcome": "confirmed",
-            "result_desc": "Tyler Stephenson flies out to left fielder Teoscar Hern\u00e1ndez.",
-            "batter": "Tyler Stephenson",
-            "pitcher": "Jack Dreyer",
-            "game_pk": 823902
-        },
-        {
-            "date": "2026-09-07",
-            "date_formatted": "September 7, 2026",
-            "challenger": "Hunter Feduccia",
-            "role": "batting",
-            "team": "dodgers",
-            "outcome": "overturned",
-            "result_desc": "Hunter Feduccia strikes out swinging.",
-            "batter": "Hunter Feduccia",
-            "pitcher": "Brandon Williamson",
-            "game_pk": 823902
         }
     ],
     "dodgers_by_player": [
@@ -354,6 +354,13 @@
             "success_rate": 57.1
         },
         {
+            "challenger": "Alex Freeland",
+            "total": 4,
+            "successful": 3,
+            "failed": 1,
+            "success_rate": 75.0
+        },
+        {
             "challenger": "Max Muncy",
             "total": 4,
             "successful": 3,
@@ -366,13 +373,6 @@
             "successful": 2,
             "failed": 2,
             "success_rate": 50.0
-        },
-        {
-            "challenger": "Alex Freeland",
-            "total": 3,
-            "successful": 2,
-            "failed": 1,
-            "success_rate": 66.7
         },
         {
             "challenger": "Freddie Freeman",
@@ -483,10 +483,10 @@
         },
         {
             "inning": 9,
-            "total": 36,
-            "successful": 18,
+            "total": 37,
+            "successful": 19,
             "failed": 18,
-            "success_rate": 50.0
+            "success_rate": 51.4
         },
         {
             "inning": 10,
