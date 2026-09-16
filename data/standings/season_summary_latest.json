@@ -26,7 +26,7 @@
     {
         "stat_label":"Games up\/back",
         "stat":"games_up_back",
-        "value":9.5,
+        "value":10,
         "category":"standings",
         "context_value":"1st",
         "context_value_label":"Division rank"
@@ -44,7 +44,7 @@
         "stat":"errors",
         "value":59,
         "category":"standings",
-        "context_value":"3rd",
+        "context_value":"2nd",
         "context_value_label":"League rank"
     },
     {
@@ -194,7 +194,7 @@
     {
         "stat_label":"Last updated",
         "stat":"update_time",
-        "value":"September 15, 2026, 6:46 PM PT",
+        "value":"September 16, 2026, 6:21 AM PT",
         "category":"summary",
         "context_value":"",
         "context_value_label":""
@@ -202,7 +202,7 @@
     {
         "stat_label":"Team summary",
         "stat":"summary",
-        "value":"<span class='highlight'>LOS ANGELES<\/span> <span class='updated'>(September 15)<\/span> \u2014 The Dodgers have compiled a <span class='highlight'>92-59<\/span> record in the 2026 regular season, a <span class='highlight'>61%<\/span> winning percentage. The last game was a <span class='highlight'>4-0<\/span> away <span class='highlight'>win<\/span> against the <span class='highlight'>Cincinnati Reds<\/span>. The team next faces the <span class='highlight'>Cincinnati Reds<\/span> on Wednesday at 6:40 p.m. EDT at <span class='highlight'>Great American Ball Park<\/span>.",
+        "value":"<span class='highlight'>LOS ANGELES<\/span> <span class='updated'>(September 16)<\/span> \u2014 The Dodgers have compiled a <span class='highlight'>92-59<\/span> record in the 2026 regular season, a <span class='highlight'>61%<\/span> winning percentage. The last game was a <span class='highlight'>4-0<\/span> away <span class='highlight'>win<\/span> against the <span class='highlight'>Cincinnati Reds<\/span>. The team next faces the <span class='highlight'>Cincinnati Reds<\/span> on Wednesday at 6:40 p.m. EDT at <span class='highlight'>Great American Ball Park<\/span>.",
         "category":"summary",
         "context_value":"",
         "context_value_label":""
