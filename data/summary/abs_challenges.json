@@ -11,9 +11,9 @@
             "failed": 5
         },
         "catching": {
-            "total": 113,
+            "total": 114,
             "successful": 61,
-            "failed": 52
+            "failed": 53
         }
     },
     "opponents": {
@@ -28,12 +28,36 @@
             "failed": 3
         },
         "catching": {
-            "total": 165,
+            "total": 166,
             "successful": 102,
-            "failed": 63
+            "failed": 64
         }
     },
     "challenge_log": [
+        {
+            "date": "2026-09-15",
+            "date_formatted": "September 15, 2026",
+            "challenger": "Hunter Feduccia",
+            "role": "catching",
+            "team": "dodgers",
+            "outcome": "confirmed",
+            "result_desc": "Dane Myers walks.",
+            "batter": "Dane Myers",
+            "pitcher": "Tanner Scott",
+            "game_pk": 824466
+        },
+        {
+            "date": "2026-09-15",
+            "date_formatted": "September 15, 2026",
+            "challenger": "Will Banfield",
+            "role": "catching",
+            "team": "opponents",
+            "outcome": "confirmed",
+            "result_desc": "Josue De Paula flies out to left fielder JJ Bleday.",
+            "batter": "Josue De Paula",
+            "pitcher": "Rhett Lowder",
+            "game_pk": 824466
+        },
         {
             "date": "2026-09-14",
             "date_formatted": "September 14, 2026",
@@ -172,22 +196,22 @@
             "challenger": "Agust\u00edn Ram\u00edrez",
             "role": "catching",
             "team": "opponents",
-            "outcome": "overturned",
-            "result_desc": "Josue De Paula walks.",
-            "batter": "Josue De Paula",
+            "outcome": "confirmed",
+            "result_desc": "Mookie Betts flies out to center fielder Jakob Marsee.",
+            "batter": "Mookie Betts",
             "pitcher": "Ryan Gusto",
             "game_pk": 823817
         },
         {
             "date": "2026-09-11",
             "date_formatted": "September 11, 2026",
-            "challenger": "Will Smith",
+            "challenger": "Agust\u00edn Ram\u00edrez",
             "role": "catching",
-            "team": "dodgers",
-            "outcome": "confirmed",
-            "result_desc": "Heriberto Hern\u00e1ndez flies out to center fielder Tommy Edman.",
-            "batter": "Heriberto Hern\u00e1ndez",
-            "pitcher": "Edgardo Henriquez",
+            "team": "opponents",
+            "outcome": "overturned",
+            "result_desc": "Josue De Paula walks.",
+            "batter": "Josue De Paula",
+            "pitcher": "Ryan Gusto",
             "game_pk": 823817
         },
         {
@@ -205,13 +229,13 @@
         {
             "date": "2026-09-11",
             "date_formatted": "September 11, 2026",
-            "challenger": "Agust\u00edn Ram\u00edrez",
+            "challenger": "Will Smith",
             "role": "catching",
-            "team": "opponents",
+            "team": "dodgers",
             "outcome": "confirmed",
-            "result_desc": "Mookie Betts flies out to center fielder Jakob Marsee.",
-            "batter": "Mookie Betts",
-            "pitcher": "Ryan Gusto",
+            "result_desc": "Heriberto Hern\u00e1ndez flies out to center fielder Tommy Edman.",
+            "batter": "Heriberto Hern\u00e1ndez",
+            "pitcher": "Edgardo Henriquez",
             "game_pk": 823817
         },
         {
@@ -229,42 +253,6 @@
         {
             "date": "2026-09-08",
             "date_formatted": "September 8, 2026",
-            "challenger": "Mookie Betts",
-            "role": "batting",
-            "team": "dodgers",
-            "outcome": "overturned",
-            "result_desc": "Mookie Betts walks.",
-            "batter": "Mookie Betts",
-            "pitcher": "Nick Lodolo",
-            "game_pk": 823901
-        },
-        {
-            "date": "2026-09-08",
-            "date_formatted": "September 8, 2026",
-            "challenger": "Teoscar Hern\u00e1ndez",
-            "role": "batting",
-            "team": "dodgers",
-            "outcome": "confirmed",
-            "result_desc": "Teoscar Hern\u00e1ndez triples (2) on a line drive to left fielder JJ Bleday. Teoscar Hern\u00e1ndez out at home on the throw, left fielder JJ Bleday to shortstop Elly De La Cruz to catcher Jose Trevino.",
-            "batter": "Teoscar Hern\u00e1ndez",
-            "pitcher": "Nick Lodolo",
-            "game_pk": 823901
-        },
-        {
-            "date": "2026-09-08",
-            "date_formatted": "September 8, 2026",
-            "challenger": "Jose Trevino",
-            "role": "catching",
-            "team": "opponents",
-            "outcome": "confirmed",
-            "result_desc": "Max Muncy singles on a sharp line drive to center fielder Dane Myers. Teoscar Hern\u00e1ndez to 2nd.",
-            "batter": "Max Muncy",
-            "pitcher": "Nick Lodolo",
-            "game_pk": 823901
-        },
-        {
-            "date": "2026-09-08",
-            "date_formatted": "September 8, 2026",
             "challenger": "Alex Freeland",
             "role": "batting",
             "team": "dodgers",
@@ -272,6 +260,18 @@
             "result_desc": "Alex Freeland grounds into a force out, fielded by shortstop Elly De La Cruz. Teoscar Hern\u00e1ndez out at 2nd.",
             "batter": "Alex Freeland",
             "pitcher": "Julian Garcia",
+            "game_pk": 823901
+        },
+        {
+            "date": "2026-09-08",
+            "date_formatted": "September 8, 2026",
+            "challenger": "Mookie Betts",
+            "role": "batting",
+            "team": "dodgers",
+            "outcome": "overturned",
+            "result_desc": "Mookie Betts walks.",
+            "batter": "Mookie Betts",
+            "pitcher": "Nick Lodolo",
             "game_pk": 823901
         }
     ],
@@ -292,10 +292,10 @@
         },
         {
             "challenger": "Hunter Feduccia",
-            "total": 19,
+            "total": 20,
             "successful": 11,
-            "failed": 8,
-            "success_rate": 57.9
+            "failed": 9,
+            "success_rate": 55.0
         },
         {
             "challenger": "Andy Pages",
@@ -483,10 +483,10 @@
         },
         {
             "inning": 9,
-            "total": 37,
+            "total": 38,
             "successful": 19,
-            "failed": 18,
-            "success_rate": 51.4
+            "failed": 19,
+            "success_rate": 50.0
         },
         {
             "inning": 10,

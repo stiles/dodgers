@@ -1,17 +1,17 @@
 {
     "season_summary": {
-        "correct_strikes_pct": 90.85820895522389,
-        "incorrect_strikes_pct": 9.141791044776113,
-        "total_called_strikes": 3752,
-        "bad_calls_count": 343
+        "correct_strikes_pct": 90.88748019017433,
+        "incorrect_strikes_pct": 9.11251980982567,
+        "total_called_strikes": 3786,
+        "bad_calls_count": 345
     },
     "last_game_summary": {
-        "date": "September 14, 2026",
-        "correct_strikes_pct": 95.23809523809523,
-        "incorrect_strikes_pct": 4.761904761904773,
-        "total_called_strikes": 21,
-        "bad_calls_count": 1,
-        "home_plate_umpire": "Tom Hanahan"
+        "date": "September 15, 2026",
+        "correct_strikes_pct": 94.11764705882352,
+        "incorrect_strikes_pct": 5.882352941176478,
+        "total_called_strikes": 34,
+        "bad_calls_count": 2,
+        "home_plate_umpire": "Manny Gonzalez"
     },
     "worst_calls_of_season": [
         {
@@ -56,16 +56,16 @@
         }
     ],
     "pitching_season_summary": {
-        "correct_balls_pct": 96.31412460459359,
-        "incorrect_balls_pct": 3.6858753954064127,
-        "total_called_balls": 7271,
+        "correct_balls_pct": 96.33479212253829,
+        "incorrect_balls_pct": 3.665207877461711,
+        "total_called_balls": 7312,
         "bad_calls_count": 268
     },
     "pitching_last_game_summary": {
-        "date": "September 14, 2026",
+        "date": "September 15, 2026",
         "correct_balls_pct": 100.0,
         "incorrect_balls_pct": 0.0,
-        "total_called_balls": 37,
+        "total_called_balls": 41,
         "bad_calls_count": 0
     },
     "pitching_worst_calls_of_season": [],
@@ -89,9 +89,9 @@
         },
         "opponents": {
             "batting": {
-                "total": 39,
+                "total": 40,
                 "successful": 10,
-                "failed": 29
+                "failed": 30
             },
             "pitching": {
                 "total": 0,
@@ -105,6 +105,18 @@
             }
         },
         "challenge_log": [
+            {
+                "date": "2026-09-15",
+                "date_formatted": "September 15, 2026",
+                "challenger": "Sal Stewart",
+                "role": "batting",
+                "team": "opponents",
+                "outcome": "confirmed",
+                "result_desc": "Sal Stewart called out on strikes.",
+                "batter": "Sal Stewart",
+                "pitcher": "Yoshinobu Yamamoto",
+                "game_pk": 824466
+            },
             {
                 "date": "2026-09-14",
                 "date_formatted": "September 14, 2026",
@@ -332,18 +344,6 @@
                 "batter": "Spencer Torkelson",
                 "pitcher": "Tarik Skubal",
                 "game_pk": 824231
-            },
-            {
-                "date": "2026-08-26",
-                "date_formatted": "August 26, 2026",
-                "challenger": "Tommy Edman",
-                "role": "batting",
-                "team": "dodgers",
-                "outcome": "confirmed",
-                "result_desc": "Tommy Edman called out on strikes.",
-                "batter": "Tommy Edman",
-                "pitcher": "AJ Smith-Shawver",
-                "game_pk": 824878
             }
         ]
     }
