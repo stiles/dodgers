@@ -1,9 +1,9 @@
 {
     "dodgers": {
         "batting": {
-            "total": 116,
-            "successful": 73,
-            "failed": 43
+            "total": 118,
+            "successful": 74,
+            "failed": 44
         },
         "pitching": {
             "total": 8,
@@ -28,12 +28,48 @@
             "failed": 3
         },
         "catching": {
-            "total": 166,
+            "total": 167,
             "successful": 102,
-            "failed": 64
+            "failed": 65
         }
     },
     "challenge_log": [
+        {
+            "date": "2026-09-16",
+            "date_formatted": "September 16, 2026",
+            "challenger": "Teoscar Hern\u00e1ndez",
+            "role": "batting",
+            "team": "dodgers",
+            "outcome": "confirmed",
+            "result_desc": "Teoscar Hern\u00e1ndez strikes out swinging.",
+            "batter": "Teoscar Hern\u00e1ndez",
+            "pitcher": "Emilio Pag\u00e1n",
+            "game_pk": 824467
+        },
+        {
+            "date": "2026-09-16",
+            "date_formatted": "September 16, 2026",
+            "challenger": "Jose Trevino",
+            "role": "catching",
+            "team": "opponents",
+            "outcome": "confirmed",
+            "result_desc": "Kyle Tucker flies out to second baseman Matt McLain.",
+            "batter": "Kyle Tucker",
+            "pitcher": "Andrew Abbott",
+            "game_pk": 824467
+        },
+        {
+            "date": "2026-09-16",
+            "date_formatted": "September 16, 2026",
+            "challenger": "Mookie Betts",
+            "role": "batting",
+            "team": "dodgers",
+            "outcome": "overturned",
+            "result_desc": "Mookie Betts singles on a ground ball to left fielder JJ Bleday.",
+            "batter": "Mookie Betts",
+            "pitcher": "Andrew Abbott",
+            "game_pk": 824467
+        },
         {
             "date": "2026-09-15",
             "date_formatted": "September 15, 2026",
@@ -89,9 +125,33 @@
             "role": "catching",
             "team": "opponents",
             "outcome": "overturned",
-            "result_desc": "Mookie Betts hits a ground-rule double (20) on a line drive down the right-field line. Alex Freeland scores.",
-            "batter": "Mookie Betts",
-            "pitcher": "Victor Vodnik",
+            "result_desc": "Alex Freeland singles on a ground ball to right fielder Esteury Ruiz.",
+            "batter": "Alex Freeland",
+            "pitcher": "Josh Ekness",
+            "game_pk": 823815
+        },
+        {
+            "date": "2026-09-13",
+            "date_formatted": "September 13, 2026",
+            "challenger": "Max Muncy",
+            "role": "batting",
+            "team": "dodgers",
+            "outcome": "overturned",
+            "result_desc": "Joe Mack challenged (pitch result), call on the field was overturned: Max Muncy called out on strikes.",
+            "batter": "Max Muncy",
+            "pitcher": "Eury P\u00e9rez",
+            "game_pk": 823815
+        },
+        {
+            "date": "2026-09-13",
+            "date_formatted": "September 13, 2026",
+            "challenger": "Joe Mack",
+            "role": "catching",
+            "team": "opponents",
+            "outcome": "overturned",
+            "result_desc": "Will Smith strikes out swinging.",
+            "batter": "Will Smith",
+            "pitcher": "Jack Ralston",
             "game_pk": 823815
         },
         {
@@ -125,33 +185,9 @@
             "role": "catching",
             "team": "opponents",
             "outcome": "overturned",
-            "result_desc": "Alex Freeland singles on a ground ball to right fielder Esteury Ruiz.",
-            "batter": "Alex Freeland",
-            "pitcher": "Josh Ekness",
-            "game_pk": 823815
-        },
-        {
-            "date": "2026-09-13",
-            "date_formatted": "September 13, 2026",
-            "challenger": "Joe Mack",
-            "role": "catching",
-            "team": "opponents",
-            "outcome": "overturned",
-            "result_desc": "Will Smith strikes out swinging.",
-            "batter": "Will Smith",
-            "pitcher": "Jack Ralston",
-            "game_pk": 823815
-        },
-        {
-            "date": "2026-09-13",
-            "date_formatted": "September 13, 2026",
-            "challenger": "Max Muncy",
-            "role": "batting",
-            "team": "dodgers",
-            "outcome": "overturned",
-            "result_desc": "Joe Mack challenged (pitch result), call on the field was overturned: Max Muncy called out on strikes.",
-            "batter": "Max Muncy",
-            "pitcher": "Eury P\u00e9rez",
+            "result_desc": "Mookie Betts hits a ground-rule double (20) on a line drive down the right-field line. Alex Freeland scores.",
+            "batter": "Mookie Betts",
+            "pitcher": "Victor Vodnik",
             "game_pk": 823815
         },
         {
@@ -217,18 +253,6 @@
         {
             "date": "2026-09-11",
             "date_formatted": "September 11, 2026",
-            "challenger": "Otto Lopez",
-            "role": "batting",
-            "team": "opponents",
-            "outcome": "overturned",
-            "result_desc": "Otto Lopez grounds out, third baseman Max Muncy to first baseman Enrique Hern\u00e1ndez.",
-            "batter": "Otto Lopez",
-            "pitcher": "Blake Snell",
-            "game_pk": 823817
-        },
-        {
-            "date": "2026-09-11",
-            "date_formatted": "September 11, 2026",
             "challenger": "Will Smith",
             "role": "catching",
             "team": "dodgers",
@@ -239,40 +263,16 @@
             "game_pk": 823817
         },
         {
-            "date": "2026-09-09",
-            "date_formatted": "September 9, 2026",
-            "challenger": "Will Banfield",
-            "role": "catching",
+            "date": "2026-09-11",
+            "date_formatted": "September 11, 2026",
+            "challenger": "Otto Lopez",
+            "role": "batting",
             "team": "opponents",
             "outcome": "overturned",
-            "result_desc": "Tommy Edman grounds out, third baseman Ke'Bryan Hayes to first baseman Sal Stewart.",
-            "batter": "Tommy Edman",
-            "pitcher": "Julian Garcia",
-            "game_pk": 823900
-        },
-        {
-            "date": "2026-09-08",
-            "date_formatted": "September 8, 2026",
-            "challenger": "Alex Freeland",
-            "role": "batting",
-            "team": "dodgers",
-            "outcome": "overturned",
-            "result_desc": "Alex Freeland grounds into a force out, fielded by shortstop Elly De La Cruz. Teoscar Hern\u00e1ndez out at 2nd.",
-            "batter": "Alex Freeland",
-            "pitcher": "Julian Garcia",
-            "game_pk": 823901
-        },
-        {
-            "date": "2026-09-08",
-            "date_formatted": "September 8, 2026",
-            "challenger": "Mookie Betts",
-            "role": "batting",
-            "team": "dodgers",
-            "outcome": "overturned",
-            "result_desc": "Mookie Betts walks.",
-            "batter": "Mookie Betts",
-            "pitcher": "Nick Lodolo",
-            "game_pk": 823901
+            "result_desc": "Otto Lopez grounds out, third baseman Max Muncy to first baseman Enrique Hern\u00e1ndez.",
+            "batter": "Otto Lopez",
+            "pitcher": "Blake Snell",
+            "game_pk": 823817
         }
     ],
     "dodgers_by_player": [
@@ -306,17 +306,17 @@
         },
         {
             "challenger": "Teoscar Hern\u00e1ndez",
-            "total": 15,
+            "total": 16,
             "successful": 11,
-            "failed": 4,
-            "success_rate": 73.3
+            "failed": 5,
+            "success_rate": 68.8
         },
         {
             "challenger": "Mookie Betts",
-            "total": 12,
-            "successful": 9,
+            "total": 13,
+            "successful": 10,
             "failed": 3,
-            "success_rate": 75.0
+            "success_rate": 76.9
         },
         {
             "challenger": "Shohei Ohtani",
@@ -427,10 +427,10 @@
     "dodgers_by_inning": [
         {
             "inning": 1,
-            "total": 17,
-            "successful": 13,
+            "total": 18,
+            "successful": 14,
             "failed": 4,
-            "success_rate": 76.5
+            "success_rate": 77.8
         },
         {
             "inning": 2,
@@ -483,10 +483,10 @@
         },
         {
             "inning": 9,
-            "total": 38,
+            "total": 39,
             "successful": 19,
-            "failed": 19,
-            "success_rate": 50.0
+            "failed": 20,
+            "success_rate": 48.7
         },
         {
             "inning": 10,

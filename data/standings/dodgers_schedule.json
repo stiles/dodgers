@@ -1,13 +1,5 @@
 [
     {
-        "date":"Sep 5",
-        "opp_name":"Washington Nationals",
-        "home_away":"home",
-        "result":"win",
-        "placement":"last",
-        "game_start":"6-5"
-    },
-    {
         "date":"Sep 6",
         "opp_name":"Washington Nationals",
         "home_away":"home",
@@ -83,9 +75,9 @@
         "date":"Sep 16",
         "opp_name":"Cincinnati Reds",
         "home_away":"away",
-        "result":"in progress",
-        "placement":"next",
-        "game_start":"Live"
+        "result":"loss",
+        "placement":"last",
+        "game_start":"2-6"
     },
     {
         "date":"Sep 17",
@@ -158,5 +150,13 @@
         "result":"--",
         "placement":"next",
         "game_start":"1:05 PM"
+    },
+    {
+        "date":"Sep 27",
+        "opp_name":"San Francisco Giants",
+        "home_away":"away",
+        "result":"--",
+        "placement":"next",
+        "game_start":"12:05 PM"
     }
 ]

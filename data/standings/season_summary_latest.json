@@ -4,13 +4,13 @@
         "stat":"wins",
         "value":92,
         "category":"standings",
-        "context_value":84,
+        "context_value":85,
         "context_value_label":"This point last season"
     },
     {
         "stat_label":"Losses",
         "stat":"losses",
-        "value":59,
+        "value":60,
         "category":"standings",
         "context_value":67,
         "context_value_label":"This point last season"
@@ -18,7 +18,7 @@
     {
         "stat_label":"Win percentage",
         "stat":"win_pct",
-        "value":"61%",
+        "value":"60%",
         "category":"standings",
         "context_value":"56%",
         "context_value_label":"This point last season"
@@ -26,7 +26,7 @@
     {
         "stat_label":"Games up\/back",
         "stat":"games_up_back",
-        "value":10,
+        "value":9,
         "category":"standings",
         "context_value":"1st",
         "context_value_label":"Division rank"
@@ -50,7 +50,7 @@
     {
         "stat_label":"Runs",
         "stat":"runs",
-        "value":749,
+        "value":751,
         "category":"standings",
         "context_value":"4th",
         "context_value_label":"League rank"
@@ -58,7 +58,7 @@
     {
         "stat_label":"Runs against",
         "stat":"runs_against",
-        "value":572,
+        "value":578,
         "category":"standings",
         "context_value":656,
         "context_value_label":"This point last season"
@@ -66,9 +66,9 @@
     {
         "stat_label":"Run differential",
         "stat":"run_differential",
-        "value":177,
+        "value":173,
         "category":"standings",
-        "context_value":117,
+        "context_value":122,
         "context_value_label":"This point last season"
     },
     {
@@ -106,7 +106,7 @@
     {
         "stat_label":"Slugging percentage",
         "stat":"slugging_pct",
-        "value":".421",
+        "value":".420",
         "category":"batting",
         "context_value":"3rd",
         "context_value_label":"League rank"
@@ -114,7 +114,7 @@
     {
         "stat_label":"OPS",
         "stat":"ops",
-        "value":".758",
+        "value":".757",
         "category":"batting",
         "context_value":"2nd",
         "context_value_label":"League rank"
@@ -146,7 +146,7 @@
     {
         "stat_label":"Strikeouts",
         "stat":"strikeouts",
-        "value":"1,401",
+        "value":"1,403",
         "category":"pitching",
         "context_value":"4th",
         "context_value_label":"League rank"
@@ -154,7 +154,7 @@
     {
         "stat_label":"Walks",
         "stat":"walks",
-        "value":462,
+        "value":463,
         "category":"pitching",
         "context_value":"23rd",
         "context_value_label":"League rank"
@@ -172,7 +172,7 @@
         "stat":"whip",
         "value":"1.16",
         "category":"pitching",
-        "context_value":"2nd",
+        "context_value":"3rd",
         "context_value_label":"League rank"
     },
     {
@@ -194,7 +194,7 @@
     {
         "stat_label":"Last updated",
         "stat":"update_time",
-        "value":"September 16, 2026, 6:17 PM PT",
+        "value":"September 16, 2026, 10:18 PM PT",
         "category":"summary",
         "context_value":"",
         "context_value_label":""
@@ -202,7 +202,7 @@
     {
         "stat_label":"Team summary",
         "stat":"summary",
-        "value":"<span class='highlight'>LOS ANGELES<\/span> <span class='updated'>(September 16)<\/span> \u2014 The Dodgers have compiled a <span class='highlight'>92-59<\/span> record in the 2026 regular season, a <span class='highlight'>61%<\/span> winning percentage. The last game was a <span class='highlight'>4-0<\/span> away <span class='highlight'>win<\/span> against the <span class='highlight'>Cincinnati Reds<\/span>. The team next faces the <span class='highlight'>Cincinnati Reds<\/span> on Thursday at 12:40 p.m. EDT at <span class='highlight'>Great American Ball Park<\/span>.",
+        "value":"<span class='highlight'>LOS ANGELES<\/span> <span class='updated'>(September 16)<\/span> \u2014 The Dodgers have compiled a <span class='highlight'>92-60<\/span> record in the 2026 regular season, a <span class='highlight'>60%<\/span> winning percentage. The last game was a <span class='highlight'>2-6<\/span> away <span class='highlight'>loss<\/span> against the <span class='highlight'>Cincinnati Reds<\/span>. The team next faces the <span class='highlight'>Cincinnati Reds<\/span> on Thursday at 12:40 p.m. EDT at <span class='highlight'>Great American Ball Park<\/span>.",
         "category":"summary",
         "context_value":"",
         "context_value_label":""
@@ -210,7 +210,7 @@
     {
         "stat_label":"Last game result",
         "stat":"last_game_result",
-        "value":"win",
+        "value":"loss",
         "category":"summary",
         "context_value":"",
         "context_value_label":""
