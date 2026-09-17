@@ -1,30 +1,9 @@
 [
   {
     "date":"2026-09-16",
-    "transaction":"LHP Tarik Skubal changed number to 29.",
-    "players":[
-      "Tarik Skubal"
-    ]
-  },
-  {
-    "date":"2026-09-16",
     "transaction":"SS Mookie Betts changed number to 50.",
     "players":[
       "Mookie Betts"
-    ]
-  },
-  {
-    "date":"2026-09-16",
-    "transaction":"Dodgers optioned RHP Paul Gervase to Oklahoma City Comets.",
-    "players":[
-      "Paul Gervase"
-    ]
-  },
-  {
-    "date":"2026-09-16",
-    "transaction":"Dodgers activated LHP Kris Bubic from the 60-day injured list.",
-    "players":[
-      "Kris Bubic"
     ]
   },
   {
@@ -36,16 +15,30 @@
   },
   {
     "date":"2026-09-16",
+    "transaction":"Dodgers optioned RHP Paul Gervase to Oklahoma City Comets.",
+    "players":[
+      "Paul Gervase"
+    ]
+  },
+  {
+    "date":"2026-09-16",
     "transaction":"3B Enrique Hernández changed number to 8.",
     "players":[
       "Enrique Hernández"
     ]
   },
   {
-    "date":"2026-09-15",
-    "transaction":"SS Mookie Betts changed number to 21.",
+    "date":"2026-09-16",
+    "transaction":"Dodgers activated LHP Kris Bubic from the 60-day injured list.",
     "players":[
-      "Mookie Betts"
+      "Kris Bubic"
+    ]
+  },
+  {
+    "date":"2026-09-16",
+    "transaction":"LHP Tarik Skubal changed number to 29.",
+    "players":[
+      "Tarik Skubal"
     ]
   },
   {
@@ -60,6 +53,13 @@
     "transaction":"LHP Tarik Skubal changed number to 21.",
     "players":[
       "Tarik Skubal"
+    ]
+  },
+  {
+    "date":"2026-09-15",
+    "transaction":"SS Mookie Betts changed number to 21.",
+    "players":[
+      "Mookie Betts"
     ]
   },
   {
@@ -120,16 +120,16 @@
   },
   {
     "date":"2026-09-07",
-    "transaction":"Dodgers sent CF Alek Thomas outright to Oklahoma City Comets.",
+    "transaction":"Dodgers recalled RHP Emmet Sheehan from Oklahoma City Comets.",
     "players":[
-      "Alek Thomas"
+      "Emmet Sheehan"
     ]
   },
   {
     "date":"2026-09-07",
-    "transaction":"Dodgers recalled RHP Emmet Sheehan from Oklahoma City Comets.",
+    "transaction":"Dodgers sent CF Alek Thomas outright to Oklahoma City Comets.",
     "players":[
-      "Emmet Sheehan"
+      "Alek Thomas"
     ]
   },
   {
@@ -141,16 +141,16 @@
   },
   {
     "date":"2026-09-06",
-    "transaction":"Dodgers sent RHP Edwin Díaz on a rehab assignment to Oklahoma City Comets.",
+    "transaction":"Dodgers placed C Dalton Rushing on the 10-day injured list retroactive to September 5, 2026. Right elbow discomfort.",
     "players":[
-      "Edwin Díaz"
+      "Dalton Rushing"
     ]
   },
   {
     "date":"2026-09-06",
-    "transaction":"Dodgers placed C Dalton Rushing on the 10-day injured list retroactive to September 5, 2026. Right elbow discomfort.",
+    "transaction":"Dodgers sent RHP Edwin Díaz on a rehab assignment to Oklahoma City Comets.",
     "players":[
-      "Dalton Rushing"
+      "Edwin Díaz"
     ]
   },
   {
@@ -190,13 +190,6 @@
   },
   {
     "date":"2026-09-02",
-    "transaction":"Dodgers transferred RHP Will Klein from the 15-day injured list to the 60-day injured list. Right elbow discomfort.",
-    "players":[
-      "Will Klein"
-    ]
-  },
-  {
-    "date":"2026-09-02",
     "transaction":"Dodgers sent RHP Jake Cousins on a rehab assignment to Oklahoma City Comets.",
     "players":[
       "Jake Cousins"
@@ -204,9 +197,9 @@
   },
   {
     "date":"2026-09-02",
-    "transaction":"Dodgers activated RHP Blake Treinen from the 60-day injured list.",
+    "transaction":"Dodgers transferred RHP Will Klein from the 15-day injured list to the 60-day injured list. Right elbow discomfort.",
     "players":[
-      "Blake Treinen"
+      "Will Klein"
     ]
   },
   {
@@ -217,17 +210,17 @@
     ]
   },
   {
-    "date":"2026-09-01",
-    "transaction":"Dodgers sent LHP Kris Bubic on a rehab assignment to Oklahoma City Comets.",
+    "date":"2026-09-02",
+    "transaction":"Dodgers activated RHP Blake Treinen from the 60-day injured list.",
     "players":[
-      "Kris Bubic"
+      "Blake Treinen"
     ]
   },
   {
     "date":"2026-09-01",
-    "transaction":"Dodgers recalled 2B Alex Freeland from Oklahoma City Comets.",
+    "transaction":"Dodgers activated LHP Justin Wrobleski from the 15-day injured list.",
     "players":[
-      "Alex Freeland"
+      "Justin Wrobleski"
     ]
   },
   {
@@ -240,13 +233,6 @@
   },
   {
     "date":"2026-09-01",
-    "transaction":"RHP Sebastian Rodriguez roster status changed by Dodgers.",
-    "players":[
-      "Sebastian Rodriguez"
-    ]
-  },
-  {
-    "date":"2026-09-01",
     "transaction":"Dodgers optioned CF Alek Thomas to Oklahoma City Comets.",
     "players":[
       "Alek Thomas"
@@ -254,16 +240,23 @@
   },
   {
     "date":"2026-09-01",
-    "transaction":"Dodgers activated C Dalton Rushing from the 10-day injured list.",
+    "transaction":"RHP Sebastian Rodriguez roster status changed by Dodgers.",
     "players":[
-      "Dalton Rushing"
+      "Sebastian Rodriguez"
     ]
   },
   {
     "date":"2026-09-01",
-    "transaction":"Dodgers designated C Ben Rortvedt for assignment.",
+    "transaction":"Dodgers recalled 2B Alex Freeland from Oklahoma City Comets.",
     "players":[
-      "Ben Rortvedt"
+      "Alex Freeland"
+    ]
+  },
+  {
+    "date":"2026-09-01",
+    "transaction":"Dodgers sent LHP Kris Bubic on a rehab assignment to Oklahoma City Comets.",
+    "players":[
+      "Kris Bubic"
     ]
   },
   {
@@ -275,9 +268,16 @@
   },
   {
     "date":"2026-09-01",
-    "transaction":"Dodgers activated LHP Justin Wrobleski from the 15-day injured list.",
+    "transaction":"Dodgers designated C Ben Rortvedt for assignment.",
     "players":[
-      "Justin Wrobleski"
+      "Ben Rortvedt"
+    ]
+  },
+  {
+    "date":"2026-09-01",
+    "transaction":"Dodgers activated C Dalton Rushing from the 10-day injured list.",
+    "players":[
+      "Dalton Rushing"
     ]
   },
   {
@@ -303,16 +303,16 @@
   },
   {
     "date":"2026-08-25",
-    "transaction":"Dodgers activated RHP Tyler Glasnow from the 60-day injured list.",
+    "transaction":"Dodgers sent C Will Smith on a rehab assignment to Oklahoma City Comets.",
     "players":[
-      "Tyler Glasnow"
+      "Will Smith"
     ]
   },
   {
     "date":"2026-08-25",
-    "transaction":"Dodgers sent C Will Smith on a rehab assignment to Oklahoma City Comets.",
+    "transaction":"Dodgers activated RHP Tyler Glasnow from the 60-day injured list.",
     "players":[
-      "Will Smith"
+      "Tyler Glasnow"
     ]
   },
   {
@@ -324,13 +324,6 @@
   },
   {
     "date":"2026-08-22",
-    "transaction":"Dodgers placed CF Andy Pages on the 10-day injured list. Left hand fracture.",
-    "players":[
-      "Andy Pages"
-    ]
-  },
-  {
-    "date":"2026-08-22",
     "transaction":"Dodgers activated CF Alek Thomas.",
     "players":[
       "Alek Thomas"
@@ -338,16 +331,16 @@
   },
   {
     "date":"2026-08-22",
-    "transaction":"Dodgers recalled CF Alek Thomas from Oklahoma City Comets.",
+    "transaction":"Dodgers placed CF Andy Pages on the 10-day injured list. Left hand fracture.",
     "players":[
-      "Alek Thomas"
+      "Andy Pages"
     ]
   },
   {
-    "date":"2026-08-21",
-    "transaction":"Dodgers sent RHP Jonathan Hernández outright to Oklahoma City Comets.",
+    "date":"2026-08-22",
+    "transaction":"Dodgers recalled CF Alek Thomas from Oklahoma City Comets.",
     "players":[
-      "Jonathan Hernández"
+      "Alek Thomas"
     ]
   },
   {
@@ -362,6 +355,13 @@
     "transaction":"Dodgers recalled RHP Paul Gervase from Oklahoma City Comets.",
     "players":[
       "Paul Gervase"
+    ]
+  },
+  {
+    "date":"2026-08-21",
+    "transaction":"Dodgers sent RHP Jonathan Hernández outright to Oklahoma City Comets.",
+    "players":[
+      "Jonathan Hernández"
     ]
   },
   {
@@ -401,16 +401,16 @@
   },
   {
     "date":"2026-08-16",
-    "transaction":"Dodgers placed LHP Justin Wrobleski on the 15-day injured list. Left forearm inflammation.",
+    "transaction":"Dodgers signed free agent LHP Charlie Barnes to a minor league contract.",
     "players":[
-      "Justin Wrobleski"
+      "Charlie Barnes"
     ]
   },
   {
     "date":"2026-08-16",
-    "transaction":"Dodgers signed free agent LHP Charlie Barnes to a minor league contract.",
+    "transaction":"Dodgers placed LHP Justin Wrobleski on the 15-day injured list. Left forearm inflammation.",
     "players":[
-      "Charlie Barnes"
+      "Justin Wrobleski"
     ]
   },
   {
@@ -436,6 +436,13 @@
   },
   {
     "date":"2026-08-13",
+    "transaction":"Dodgers sent RHP Jonathan Hernández outright to Oklahoma City Comets.",
+    "players":[
+      "Jonathan Hernández"
+    ]
+  },
+  {
+    "date":"2026-08-13",
     "transaction":"Dodgers optioned RHP Landon Knack to Oklahoma City Comets.",
     "players":[
       "Landon Knack"
@@ -450,7 +457,7 @@
   },
   {
     "date":"2026-08-13",
-    "transaction":"Dodgers sent RHP Jonathan Hernández outright to Oklahoma City Comets.",
+    "transaction":"Dodgers signed free agent RHP Jonathan Hernández.",
     "players":[
       "Jonathan Hernández"
     ]
@@ -460,13 +467,6 @@
     "transaction":"Dodgers signed free agent C Chadwick Tromp to a minor league contract.",
     "players":[
       "Chadwick Tromp"
-    ]
-  },
-  {
-    "date":"2026-08-13",
-    "transaction":"Dodgers signed free agent RHP Jonathan Hernández.",
-    "players":[
-      "Jonathan Hernández"
     ]
   },
   {
@@ -513,16 +513,16 @@
   },
   {
     "date":"2026-08-10",
-    "transaction":"Dodgers recalled RHP Seth Halvorsen from Oklahoma City Comets.",
+    "transaction":"Dodgers selected the contract of LHP Charlie Barnes from Oklahoma City Comets.",
     "players":[
-      "Seth Halvorsen"
+      "Charlie Barnes"
     ]
   },
   {
     "date":"2026-08-10",
-    "transaction":"Dodgers selected the contract of LHP Charlie Barnes from Oklahoma City Comets.",
+    "transaction":"Dodgers recalled RHP Seth Halvorsen from Oklahoma City Comets.",
     "players":[
-      "Charlie Barnes"
+      "Seth Halvorsen"
     ]
   },
   {
@@ -569,16 +569,16 @@
   },
   {
     "date":"2026-08-04",
-    "transaction":"Dodgers activated C Hunter Feduccia.",
+    "transaction":"Dodgers designated C Chuckie Robinson for assignment.",
     "players":[
-      "Hunter Feduccia"
+      "Chuckie Robinson"
     ]
   },
   {
     "date":"2026-08-04",
-    "transaction":"Dodgers designated C Chuckie Robinson for assignment.",
+    "transaction":"Dodgers activated C Hunter Feduccia.",
     "players":[
-      "Chuckie Robinson"
+      "Hunter Feduccia"
     ]
   },
   {
@@ -597,16 +597,24 @@
   },
   {
     "date":"2026-08-04",
+    "transaction":"Dodgers selected the contract of C Ben Rortvedt from Oklahoma City Comets.",
+    "players":[
+      "Ben Rortvedt"
+    ]
+  },
+  {
+    "date":"2026-08-04",
     "transaction":"Dodgers optioned C Eliezer Alfonzo to Oklahoma City Comets.",
     "players":[
       "Eliezer Alfonzo"
     ]
   },
   {
-    "date":"2026-08-04",
-    "transaction":"Dodgers selected the contract of C Ben Rortvedt from Oklahoma City Comets.",
+    "date":"2026-08-03",
+    "transaction":"New York Mets traded C Ben Rortvedt to Dodgers for RHP Chayce McDermott.",
     "players":[
-      "Ben Rortvedt"
+      "Ben Rortvedt",
+      "Chayce McDermott"
     ]
   },
   {
@@ -614,21 +622,6 @@
     "transaction":"Dodgers sent LHP Cole Irvin outright to Oklahoma City Comets.",
     "players":[
       "Cole Irvin"
-    ]
-  },
-  {
-    "date":"2026-08-03",
-    "transaction":"Dodgers selected the contract of RHP Jonathan Hernández from Oklahoma City Comets.",
-    "players":[
-      "Jonathan Hernández"
-    ]
-  },
-  {
-    "date":"2026-08-03",
-    "transaction":"Kansas City Royals traded LHP Kris Bubic to Dodgers for RHP Carlos Duran.",
-    "players":[
-      "Kris Bubic",
-      "Carlos Duran"
     ]
   },
   {
@@ -649,6 +642,13 @@
   },
   {
     "date":"2026-08-03",
+    "transaction":"Dodgers selected the contract of RHP Jonathan Hernández from Oklahoma City Comets.",
+    "players":[
+      "Jonathan Hernández"
+    ]
+  },
+  {
+    "date":"2026-08-03",
     "transaction":"Dodgers activated LHP Tarik Skubal.",
     "players":[
       "Tarik Skubal"
@@ -656,10 +656,10 @@
   },
   {
     "date":"2026-08-03",
-    "transaction":"New York Mets traded C Ben Rortvedt to Dodgers for RHP Chayce McDermott.",
+    "transaction":"Kansas City Royals traded LHP Kris Bubic to Dodgers for RHP Carlos Duran.",
     "players":[
-      "Ben Rortvedt",
-      "Chayce McDermott"
+      "Kris Bubic",
+      "Carlos Duran"
     ]
   },
   {
@@ -671,16 +671,16 @@
   },
   {
     "date":"2026-08-03",
-    "transaction":"Dodgers placed C Dalton Rushing on the 10-day injured list. Right elbow inflammation.",
+    "transaction":"Dodgers designated RHP Wyatt Mills for assignment.",
     "players":[
-      "Dalton Rushing"
+      "Wyatt Mills"
     ]
   },
   {
     "date":"2026-08-03",
-    "transaction":"Dodgers designated RHP Wyatt Mills for assignment.",
+    "transaction":"Dodgers placed C Dalton Rushing on the 10-day injured list. Right elbow inflammation.",
     "players":[
-      "Wyatt Mills"
+      "Dalton Rushing"
     ]
   },
   {
@@ -702,9 +702,9 @@
   },
   {
     "date":"2026-08-01",
-    "transaction":"Dodgers sent LHP Charlie Barnes outright to Oklahoma City Comets.",
+    "transaction":"Dodgers recalled RHP Wyatt Mills from Oklahoma City Comets.",
     "players":[
-      "Charlie Barnes"
+      "Wyatt Mills"
     ]
   }
 ]
