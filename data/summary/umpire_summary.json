@@ -1,17 +1,17 @@
 {
     "season_summary": {
-        "correct_strikes_pct": 90.85018144116123,
-        "incorrect_strikes_pct": 9.149818558838774,
-        "total_called_strikes": 3858,
-        "bad_calls_count": 353
+        "correct_strikes_pct": 90.84343564611814,
+        "incorrect_strikes_pct": 9.156564353881862,
+        "total_called_strikes": 3877,
+        "bad_calls_count": 355
     },
     "last_game_summary": {
-        "date": "September 18, 2026",
-        "correct_strikes_pct": 96.0,
-        "incorrect_strikes_pct": 4.0,
-        "total_called_strikes": 25,
-        "bad_calls_count": 1,
-        "home_plate_umpire": "Louie Krupa"
+        "date": "September 19, 2026",
+        "correct_strikes_pct": 89.47368421052632,
+        "incorrect_strikes_pct": 10.526315789473685,
+        "total_called_strikes": 19,
+        "bad_calls_count": 2,
+        "home_plate_umpire": "John Tumpane"
     },
     "worst_calls_of_season": [
         {
@@ -56,25 +56,25 @@
         }
     ],
     "pitching_season_summary": {
-        "correct_balls_pct": 96.34801288936627,
-        "incorrect_balls_pct": 3.6519871106337263,
-        "total_called_balls": 7448,
-        "bad_calls_count": 272
+        "correct_balls_pct": 96.33088725817211,
+        "incorrect_balls_pct": 3.669112741827888,
+        "total_called_balls": 7495,
+        "bad_calls_count": 275
     },
     "pitching_last_game_summary": {
-        "date": "September 18, 2026",
-        "correct_balls_pct": 95.34883720930233,
-        "incorrect_balls_pct": 4.6511627906976685,
-        "total_called_balls": 43,
-        "bad_calls_count": 2
+        "date": "September 19, 2026",
+        "correct_balls_pct": 93.61702127659575,
+        "incorrect_balls_pct": 6.38297872340425,
+        "total_called_balls": 47,
+        "bad_calls_count": 3
     },
     "pitching_worst_calls_of_season": [],
     "abs_challenges": {
         "dodgers": {
             "batting": {
-                "total": 51,
+                "total": 52,
                 "successful": 13,
-                "failed": 38
+                "failed": 39
             },
             "pitching": {
                 "total": 0,
@@ -89,9 +89,9 @@
         },
         "opponents": {
             "batting": {
-                "total": 41,
+                "total": 42,
                 "successful": 10,
-                "failed": 31
+                "failed": 32
             },
             "pitching": {
                 "total": 0,
@@ -105,6 +105,30 @@
             }
         },
         "challenge_log": [
+            {
+                "date": "2026-09-19",
+                "date_formatted": "September 19, 2026",
+                "challenger": "Josue De Paula",
+                "role": "batting",
+                "team": "dodgers",
+                "outcome": "confirmed",
+                "result_desc": "Josue De Paula called out on strikes.",
+                "batter": "Josue De Paula",
+                "pitcher": "Yunior Marte",
+                "game_pk": 823899
+            },
+            {
+                "date": "2026-09-19",
+                "date_formatted": "September 19, 2026",
+                "challenger": "Brett Harris",
+                "role": "batting",
+                "team": "opponents",
+                "outcome": "confirmed",
+                "result_desc": "Brett Harris called out on strikes.",
+                "batter": "Brett Harris",
+                "pitcher": "Tarik Skubal",
+                "game_pk": 823899
+            },
             {
                 "date": "2026-09-16",
                 "date_formatted": "September 16, 2026",
@@ -319,30 +343,6 @@
                 "result_desc": "Will Smith walks. Tommy Edman to 3rd. Teoscar Hern\u00e1ndez to 2nd.",
                 "batter": "Will Smith",
                 "pitcher": "Quinn Mathews",
-                "game_pk": 823907
-            },
-            {
-                "date": "2026-09-03",
-                "date_formatted": "September 3, 2026",
-                "challenger": "Dalton Rushing",
-                "role": "batting",
-                "team": "dodgers",
-                "outcome": "confirmed",
-                "result_desc": "Dalton Rushing called out on strikes.",
-                "batter": "Dalton Rushing",
-                "pitcher": "Cade Winquest",
-                "game_pk": 823907
-            },
-            {
-                "date": "2026-09-03",
-                "date_formatted": "September 3, 2026",
-                "challenger": "Will Smith",
-                "role": "catching",
-                "team": "dodgers",
-                "outcome": "overturned",
-                "result_desc": "Jordan Walker called out on strikes.",
-                "batter": "Jordan Walker",
-                "pitcher": "Tarik Skubal",
                 "game_pk": 823907
             }
         ]

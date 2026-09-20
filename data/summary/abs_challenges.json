@@ -1,8 +1,8 @@
 {
     "dodgers": {
         "batting": {
-            "total": 120,
-            "successful": 76,
+            "total": 121,
+            "successful": 77,
             "failed": 44
         },
         "pitching": {
@@ -28,12 +28,36 @@
             "failed": 3
         },
         "catching": {
-            "total": 170,
-            "successful": 104,
+            "total": 171,
+            "successful": 105,
             "failed": 66
         }
     },
     "challenge_log": [
+        {
+            "date": "2026-09-19",
+            "date_formatted": "September 19, 2026",
+            "challenger": "Tommy Edman",
+            "role": "batting",
+            "team": "dodgers",
+            "outcome": "overturned",
+            "result_desc": "Tommy Edman singles on a line drive to left fielder Turner Hill. Teoscar Hern\u00e1ndez scores. Kyle Tucker scores. Josue De Paula to 3rd. Tommy Edman to 2nd. Throwing error by left fielder Turner Hill.",
+            "batter": "Tommy Edman",
+            "pitcher": "Philip Abner",
+            "game_pk": 823899
+        },
+        {
+            "date": "2026-09-19",
+            "date_formatted": "September 19, 2026",
+            "challenger": "Andrew Knizner",
+            "role": "catching",
+            "team": "opponents",
+            "outcome": "overturned",
+            "result_desc": "Freddie Freeman grounds out to first baseman Brett Harris. Mookie Betts to 3rd.",
+            "batter": "Freddie Freeman",
+            "pitcher": "Yunior Marte",
+            "game_pk": 823899
+        },
         {
             "date": "2026-09-18",
             "date_formatted": "September 18, 2026",
@@ -85,25 +109,13 @@
         {
             "date": "2026-09-17",
             "date_formatted": "September 17, 2026",
-            "challenger": "Hunter Feduccia",
+            "challenger": "Tyler Stephenson",
             "role": "catching",
-            "team": "dodgers",
+            "team": "opponents",
             "outcome": "confirmed",
-            "result_desc": "Elly De La Cruz strikes out swinging.",
-            "batter": "Elly De La Cruz",
-            "pitcher": "Landon Knack",
-            "game_pk": 824464
-        },
-        {
-            "date": "2026-09-17",
-            "date_formatted": "September 17, 2026",
-            "challenger": "Hunter Feduccia",
-            "role": "catching",
-            "team": "dodgers",
-            "outcome": "overturned",
-            "result_desc": "TJ Friedl called out on strikes.",
-            "batter": "TJ Friedl",
-            "pitcher": "Justin Wrobleski",
+            "result_desc": "Kyle Tucker doubles (22) on a line drive to center fielder Dane Myers. Miguel Rojas scores.",
+            "batter": "Kyle Tucker",
+            "pitcher": "Brady Singer",
             "game_pk": 824464
         },
         {
@@ -112,9 +124,9 @@
             "challenger": "Tyler Stephenson",
             "role": "catching",
             "team": "opponents",
-            "outcome": "confirmed",
-            "result_desc": "Kyle Tucker doubles (22) on a line drive to center fielder Dane Myers. Miguel Rojas scores.",
-            "batter": "Kyle Tucker",
+            "outcome": "overturned",
+            "result_desc": "Josue De Paula flies out to center fielder Dane Myers.",
+            "batter": "Josue De Paula",
             "pitcher": "Brady Singer",
             "game_pk": 824464
         },
@@ -133,13 +145,25 @@
         {
             "date": "2026-09-17",
             "date_formatted": "September 17, 2026",
-            "challenger": "Tyler Stephenson",
+            "challenger": "Hunter Feduccia",
             "role": "catching",
-            "team": "opponents",
+            "team": "dodgers",
             "outcome": "overturned",
-            "result_desc": "Josue De Paula flies out to center fielder Dane Myers.",
-            "batter": "Josue De Paula",
-            "pitcher": "Brady Singer",
+            "result_desc": "TJ Friedl called out on strikes.",
+            "batter": "TJ Friedl",
+            "pitcher": "Justin Wrobleski",
+            "game_pk": 824464
+        },
+        {
+            "date": "2026-09-17",
+            "date_formatted": "September 17, 2026",
+            "challenger": "Hunter Feduccia",
+            "role": "catching",
+            "team": "dodgers",
+            "outcome": "confirmed",
+            "result_desc": "Elly De La Cruz strikes out swinging.",
+            "batter": "Elly De La Cruz",
+            "pitcher": "Landon Knack",
             "game_pk": 824464
         },
         {
@@ -205,18 +229,6 @@
         {
             "date": "2026-09-14",
             "date_formatted": "September 14, 2026",
-            "challenger": "Alex Freeland",
-            "role": "batting",
-            "team": "dodgers",
-            "outcome": "overturned",
-            "result_desc": "Alex Freeland walks.",
-            "batter": "Alex Freeland",
-            "pitcher": "Tony Santillan",
-            "game_pk": 824465
-        },
-        {
-            "date": "2026-09-14",
-            "date_formatted": "September 14, 2026",
             "challenger": "Tyler Stephenson",
             "role": "catching",
             "team": "opponents",
@@ -224,6 +236,18 @@
             "result_desc": "Josue De Paula walks.",
             "batter": "Josue De Paula",
             "pitcher": "Nick Lodolo",
+            "game_pk": 824465
+        },
+        {
+            "date": "2026-09-14",
+            "date_formatted": "September 14, 2026",
+            "challenger": "Alex Freeland",
+            "role": "batting",
+            "team": "dodgers",
+            "outcome": "overturned",
+            "result_desc": "Alex Freeland walks.",
+            "batter": "Alex Freeland",
+            "pitcher": "Tony Santillan",
             "game_pk": 824465
         },
         {
@@ -248,30 +272,6 @@
             "result_desc": "Otto Lopez singles on a sharp line drive to center fielder Enrique Hern\u00e1ndez. Joe Mack scores. Esteury Ruiz scores. Heriberto Hern\u00e1ndez to 2nd.",
             "batter": "Otto Lopez",
             "pitcher": "Edgardo Henriquez",
-            "game_pk": 823815
-        },
-        {
-            "date": "2026-09-13",
-            "date_formatted": "September 13, 2026",
-            "challenger": "Will Smith",
-            "role": "catching",
-            "team": "dodgers",
-            "outcome": "confirmed",
-            "result_desc": "Heriberto Hern\u00e1ndez walks. Joe Mack to 3rd. Esteury Ruiz to 2nd.",
-            "batter": "Heriberto Hern\u00e1ndez",
-            "pitcher": "Edgardo Henriquez",
-            "game_pk": 823815
-        },
-        {
-            "date": "2026-09-13",
-            "date_formatted": "September 13, 2026",
-            "challenger": "Joe Mack",
-            "role": "catching",
-            "team": "opponents",
-            "outcome": "overturned",
-            "result_desc": "Alex Freeland singles on a ground ball to right fielder Esteury Ruiz.",
-            "batter": "Alex Freeland",
-            "pitcher": "Josh Ekness",
             "game_pk": 823815
         }
     ],
@@ -368,6 +368,13 @@
             "success_rate": 75.0
         },
         {
+            "challenger": "Tommy Edman",
+            "total": 4,
+            "successful": 3,
+            "failed": 1,
+            "success_rate": 75.0
+        },
+        {
             "challenger": "Eliezer Alfonzo",
             "total": 4,
             "successful": 2,
@@ -376,13 +383,6 @@
         },
         {
             "challenger": "Freddie Freeman",
-            "total": 3,
-            "successful": 2,
-            "failed": 1,
-            "success_rate": 66.7
-        },
-        {
-            "challenger": "Tommy Edman",
             "total": 3,
             "successful": 2,
             "failed": 1,
@@ -462,10 +462,10 @@
         },
         {
             "inning": 5,
-            "total": 16,
-            "successful": 11,
+            "total": 17,
+            "successful": 12,
             "failed": 5,
-            "success_rate": 68.8
+            "success_rate": 70.6
         },
         {
             "inning": 6,
