@@ -2,7 +2,7 @@
     {
         "stat_label":"Wins",
         "stat":"wins",
-        "value":95,
+        "value":96,
         "category":"standings",
         "context_value":88,
         "context_value_label":"This point last season"
@@ -12,15 +12,15 @@
         "stat":"losses",
         "value":60,
         "category":"standings",
-        "context_value":67,
+        "context_value":68,
         "context_value_label":"This point last season"
     },
     {
         "stat_label":"Win percentage",
         "stat":"win_pct",
-        "value":"61%",
+        "value":"62%",
         "category":"standings",
-        "context_value":"57%",
+        "context_value":"56%",
         "context_value_label":"This point last season"
     },
     {
@@ -36,13 +36,13 @@
         "stat":"fielding_pct",
         "value":".989",
         "category":"standings",
-        "context_value":"2nd",
+        "context_value":"4th",
         "context_value_label":"League rank"
     },
     {
         "stat_label":"Errors",
         "stat":"errors",
-        "value":60,
+        "value":62,
         "category":"standings",
         "context_value":"2nd",
         "context_value_label":"League rank"
@@ -50,7 +50,7 @@
     {
         "stat_label":"Runs",
         "stat":"runs",
-        "value":777,
+        "value":780,
         "category":"standings",
         "context_value":"4th",
         "context_value_label":"League rank"
@@ -58,17 +58,17 @@
     {
         "stat_label":"Runs against",
         "stat":"runs_against",
-        "value":586,
+        "value":587,
         "category":"standings",
-        "context_value":665,
+        "context_value":668,
         "context_value_label":"This point last season"
     },
     {
         "stat_label":"Run differential",
         "stat":"run_differential",
-        "value":191,
+        "value":193,
         "category":"standings",
-        "context_value":128,
+        "context_value":126,
         "context_value_label":"This point last season"
     },
     {
@@ -82,7 +82,7 @@
     {
         "stat_label":"Home runs",
         "stat":"home_runs",
-        "value":196,
+        "value":197,
         "category":"batting",
         "context_value":"8th",
         "context_value_label":"League rank"
@@ -106,15 +106,15 @@
     {
         "stat_label":"Slugging percentage",
         "stat":"slugging_pct",
-        "value":".425",
+        "value":".426",
         "category":"batting",
-        "context_value":"3rd",
+        "context_value":"2nd",
         "context_value_label":"League rank"
     },
     {
         "stat_label":"OPS",
         "stat":"ops",
-        "value":".764",
+        "value":".765",
         "category":"batting",
         "context_value":"2nd",
         "context_value_label":"League rank"
@@ -122,7 +122,7 @@
     {
         "stat_label":"Stolen bases",
         "stat":"stolen_bases",
-        "value":68,
+        "value":69,
         "category":"batting",
         "context_value":"28th",
         "context_value_label":"League rank"
@@ -138,15 +138,15 @@
     {
         "stat_label":"Doubles",
         "stat":"doubles",
-        "value":255,
+        "value":258,
         "category":"batting",
-        "context_value":"8th",
+        "context_value":"7th",
         "context_value_label":"League rank"
     },
     {
         "stat_label":"Strikeouts",
         "stat":"strikeouts",
-        "value":"1,436",
+        "value":"1,450",
         "category":"pitching",
         "context_value":"4th",
         "context_value_label":"League rank"
@@ -154,7 +154,7 @@
     {
         "stat_label":"Walks",
         "stat":"walks",
-        "value":468,
+        "value":471,
         "category":"pitching",
         "context_value":"24th",
         "context_value_label":"League rank"
@@ -162,15 +162,15 @@
     {
         "stat_label":"ERA",
         "stat":"era",
-        "value":"3.63",
+        "value":"3.62",
         "category":"pitching",
-        "context_value":"6th",
+        "context_value":"5th",
         "context_value_label":"League rank"
     },
     {
         "stat_label":"WHIP",
         "stat":"whip",
-        "value":"1.16",
+        "value":"1.15",
         "category":"pitching",
         "context_value":"2nd",
         "context_value_label":"League rank"
@@ -178,7 +178,7 @@
     {
         "stat_label":"Batting average against",
         "stat":"avg_against",
-        "value":".220",
+        "value":".219",
         "category":"pitching",
         "context_value":"1st",
         "context_value_label":"League rank"
@@ -186,7 +186,7 @@
     {
         "stat_label":"K\/BB ratio",
         "stat":"k_bb_ratio",
-        "value":3.07,
+        "value":3.08,
         "category":"pitching",
         "context_value":"4th",
         "context_value_label":"League rank"
@@ -194,7 +194,7 @@
     {
         "stat_label":"Last updated",
         "stat":"update_time",
-        "value":"September 20, 2026, 11:11 AM PT",
+        "value":"September 20, 2026, 6:01 PM PT",
         "category":"summary",
         "context_value":"",
         "context_value_label":""
@@ -202,7 +202,7 @@
     {
         "stat_label":"Team summary",
         "stat":"summary",
-        "value":"<span class='highlight'>LOS ANGELES<\/span> <span class='updated'>(September 20)<\/span> \u2014 The Dodgers have compiled a <span class='highlight'>95-60<\/span> record in the 2026 regular season, a <span class='highlight'>61%<\/span> winning percentage. The last game was a <span class='highlight'>10-4<\/span> home <span class='highlight'>win<\/span> against the <span class='highlight'>San Francisco Giants<\/span>. The team next faces the <span class='highlight'>San Francisco Giants<\/span> on Sunday at 1:10 p.m. PDT at <span class='highlight'>UNIQLO Field at Dodger Stadium<\/span>.",
+        "value":"<span class='highlight'>LOS ANGELES<\/span> <span class='updated'>(September 20)<\/span> \u2014 The Dodgers have compiled a <span class='highlight'>96-60<\/span> record in the 2026 regular season, a <span class='highlight'>62%<\/span> winning percentage. The last game was a <span class='highlight'>3-1<\/span> home <span class='highlight'>win<\/span> against the <span class='highlight'>San Francisco Giants<\/span>. The team next faces the <span class='highlight'>San Diego Padres<\/span> on Tuesday at 7:10 p.m. PDT at <span class='highlight'>UNIQLO Field at Dodger Stadium<\/span>.",
         "category":"summary",
         "context_value":"",
         "context_value_label":""

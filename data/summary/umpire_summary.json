@@ -1,17 +1,17 @@
 {
     "season_summary": {
-        "correct_strikes_pct": 90.84343564611814,
-        "incorrect_strikes_pct": 9.156564353881862,
-        "total_called_strikes": 3877,
-        "bad_calls_count": 355
+        "correct_strikes_pct": 90.86021505376344,
+        "incorrect_strikes_pct": 9.13978494623656,
+        "total_called_strikes": 3906,
+        "bad_calls_count": 357
     },
     "last_game_summary": {
-        "date": "September 19, 2026",
-        "correct_strikes_pct": 89.47368421052632,
-        "incorrect_strikes_pct": 10.526315789473685,
-        "total_called_strikes": 19,
+        "date": "September 20, 2026",
+        "correct_strikes_pct": 93.10344827586206,
+        "incorrect_strikes_pct": 6.896551724137936,
+        "total_called_strikes": 29,
         "bad_calls_count": 2,
-        "home_plate_umpire": "John Tumpane"
+        "home_plate_umpire": "Brennan Miller"
     },
     "worst_calls_of_season": [
         {
@@ -56,17 +56,17 @@
         }
     ],
     "pitching_season_summary": {
-        "correct_balls_pct": 96.33088725817211,
-        "incorrect_balls_pct": 3.669112741827888,
-        "total_called_balls": 7495,
-        "bad_calls_count": 275
+        "correct_balls_pct": 96.34437086092716,
+        "incorrect_balls_pct": 3.6556291390728433,
+        "total_called_balls": 7550,
+        "bad_calls_count": 276
     },
     "pitching_last_game_summary": {
-        "date": "September 19, 2026",
-        "correct_balls_pct": 93.61702127659575,
-        "incorrect_balls_pct": 6.38297872340425,
-        "total_called_balls": 47,
-        "bad_calls_count": 3
+        "date": "September 20, 2026",
+        "correct_balls_pct": 98.18181818181819,
+        "incorrect_balls_pct": 1.818181818181813,
+        "total_called_balls": 55,
+        "bad_calls_count": 1
     },
     "pitching_worst_calls_of_season": [],
     "abs_challenges": {
@@ -89,9 +89,9 @@
         },
         "opponents": {
             "batting": {
-                "total": 42,
+                "total": 43,
                 "successful": 10,
-                "failed": 32
+                "failed": 33
             },
             "pitching": {
                 "total": 0,
@@ -105,6 +105,18 @@
             }
         },
         "challenge_log": [
+            {
+                "date": "2026-09-20",
+                "date_formatted": "September 20, 2026",
+                "challenger": "Osleivis Basabe",
+                "role": "batting",
+                "team": "opponents",
+                "outcome": "confirmed",
+                "result_desc": "Osleivis Basabe called out on strikes.",
+                "batter": "Osleivis Basabe",
+                "pitcher": "Tanner Scott",
+                "game_pk": 823896
+            },
             {
                 "date": "2026-09-19",
                 "date_formatted": "September 19, 2026",
@@ -332,18 +344,6 @@
                 "batter": "Dylan Crews",
                 "pitcher": "Blake Snell",
                 "game_pk": 823905
-            },
-            {
-                "date": "2026-09-03",
-                "date_formatted": "September 3, 2026",
-                "challenger": "Pedro Pag\u00e9s",
-                "role": "catching",
-                "team": "opponents",
-                "outcome": "confirmed",
-                "result_desc": "Will Smith walks. Tommy Edman to 3rd. Teoscar Hern\u00e1ndez to 2nd.",
-                "batter": "Will Smith",
-                "pitcher": "Quinn Mathews",
-                "game_pk": 823907
             }
         ]
     }
