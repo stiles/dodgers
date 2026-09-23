@@ -28,12 +28,48 @@
             "failed": 3
         },
         "catching": {
-            "total": 172,
-            "successful": 106,
-            "failed": 66
+            "total": 175,
+            "successful": 107,
+            "failed": 68
         }
     },
     "challenge_log": [
+        {
+            "date": "2026-09-22",
+            "date_formatted": "September 22, 2026",
+            "challenger": "Luis Campusano",
+            "role": "catching",
+            "team": "opponents",
+            "outcome": "confirmed",
+            "result_desc": "Andy Pages walks. Josue De Paula to 2nd.",
+            "batter": "Andy Pages",
+            "pitcher": "Griffin Canning",
+            "game_pk": 823897
+        },
+        {
+            "date": "2026-09-22",
+            "date_formatted": "September 22, 2026",
+            "challenger": "Luis Campusano",
+            "role": "catching",
+            "team": "opponents",
+            "outcome": "confirmed",
+            "result_desc": "Max Muncy pops out to third baseman Manny Machado.",
+            "batter": "Max Muncy",
+            "pitcher": "Griffin Canning",
+            "game_pk": 823897
+        },
+        {
+            "date": "2026-09-22",
+            "date_formatted": "September 22, 2026",
+            "challenger": "Luis Campusano",
+            "role": "catching",
+            "team": "opponents",
+            "outcome": "overturned",
+            "result_desc": "Max Muncy pops out to third baseman Manny Machado.",
+            "batter": "Max Muncy",
+            "pitcher": "Griffin Canning",
+            "game_pk": 823897
+        },
         {
             "date": "2026-09-20",
             "date_formatted": "September 20, 2026",
@@ -148,22 +184,22 @@
             "challenger": "Hunter Feduccia",
             "role": "catching",
             "team": "dodgers",
-            "outcome": "confirmed",
-            "result_desc": "Elly De La Cruz strikes out swinging.",
-            "batter": "Elly De La Cruz",
-            "pitcher": "Landon Knack",
+            "outcome": "overturned",
+            "result_desc": "Sal Stewart strikes out swinging.",
+            "batter": "Sal Stewart",
+            "pitcher": "Justin Wrobleski",
             "game_pk": 824464
         },
         {
             "date": "2026-09-17",
             "date_formatted": "September 17, 2026",
-            "challenger": "Hunter Feduccia",
+            "challenger": "Tyler Stephenson",
             "role": "catching",
-            "team": "dodgers",
+            "team": "opponents",
             "outcome": "overturned",
-            "result_desc": "TJ Friedl called out on strikes.",
-            "batter": "TJ Friedl",
-            "pitcher": "Justin Wrobleski",
+            "result_desc": "Josue De Paula flies out to center fielder Dane Myers.",
+            "batter": "Josue De Paula",
+            "pitcher": "Brady Singer",
             "game_pk": 824464
         },
         {
@@ -185,33 +221,33 @@
             "role": "catching",
             "team": "dodgers",
             "outcome": "overturned",
-            "result_desc": "Sal Stewart strikes out swinging.",
-            "batter": "Sal Stewart",
+            "result_desc": "TJ Friedl called out on strikes.",
+            "batter": "TJ Friedl",
             "pitcher": "Justin Wrobleski",
             "game_pk": 824464
         },
         {
             "date": "2026-09-17",
             "date_formatted": "September 17, 2026",
-            "challenger": "Tyler Stephenson",
+            "challenger": "Hunter Feduccia",
             "role": "catching",
-            "team": "opponents",
-            "outcome": "overturned",
-            "result_desc": "Josue De Paula flies out to center fielder Dane Myers.",
-            "batter": "Josue De Paula",
-            "pitcher": "Brady Singer",
+            "team": "dodgers",
+            "outcome": "confirmed",
+            "result_desc": "Elly De La Cruz strikes out swinging.",
+            "batter": "Elly De La Cruz",
+            "pitcher": "Landon Knack",
             "game_pk": 824464
         },
         {
             "date": "2026-09-16",
             "date_formatted": "September 16, 2026",
-            "challenger": "Mookie Betts",
+            "challenger": "Teoscar Hern\u00e1ndez",
             "role": "batting",
             "team": "dodgers",
-            "outcome": "overturned",
-            "result_desc": "Mookie Betts singles on a ground ball to left fielder JJ Bleday.",
-            "batter": "Mookie Betts",
-            "pitcher": "Andrew Abbott",
+            "outcome": "confirmed",
+            "result_desc": "Teoscar Hern\u00e1ndez strikes out swinging.",
+            "batter": "Teoscar Hern\u00e1ndez",
+            "pitcher": "Emilio Pag\u00e1n",
             "game_pk": 824467
         },
         {
@@ -229,50 +265,14 @@
         {
             "date": "2026-09-16",
             "date_formatted": "September 16, 2026",
-            "challenger": "Teoscar Hern\u00e1ndez",
-            "role": "batting",
-            "team": "dodgers",
-            "outcome": "confirmed",
-            "result_desc": "Teoscar Hern\u00e1ndez strikes out swinging.",
-            "batter": "Teoscar Hern\u00e1ndez",
-            "pitcher": "Emilio Pag\u00e1n",
-            "game_pk": 824467
-        },
-        {
-            "date": "2026-09-15",
-            "date_formatted": "September 15, 2026",
-            "challenger": "Hunter Feduccia",
-            "role": "catching",
-            "team": "dodgers",
-            "outcome": "confirmed",
-            "result_desc": "Dane Myers walks.",
-            "batter": "Dane Myers",
-            "pitcher": "Tanner Scott",
-            "game_pk": 824466
-        },
-        {
-            "date": "2026-09-15",
-            "date_formatted": "September 15, 2026",
-            "challenger": "Will Banfield",
-            "role": "catching",
-            "team": "opponents",
-            "outcome": "confirmed",
-            "result_desc": "Josue De Paula flies out to left fielder JJ Bleday.",
-            "batter": "Josue De Paula",
-            "pitcher": "Rhett Lowder",
-            "game_pk": 824466
-        },
-        {
-            "date": "2026-09-14",
-            "date_formatted": "September 14, 2026",
-            "challenger": "Alex Freeland",
+            "challenger": "Mookie Betts",
             "role": "batting",
             "team": "dodgers",
             "outcome": "overturned",
-            "result_desc": "Alex Freeland walks.",
-            "batter": "Alex Freeland",
-            "pitcher": "Tony Santillan",
-            "game_pk": 824465
+            "result_desc": "Mookie Betts singles on a ground ball to left fielder JJ Bleday.",
+            "batter": "Mookie Betts",
+            "pitcher": "Andrew Abbott",
+            "game_pk": 824467
         }
     ],
     "dodgers_by_player": [
