@@ -1,17 +1,17 @@
 {
     "season_summary": {
-        "correct_strikes_pct": 90.83736319674217,
-        "incorrect_strikes_pct": 9.162636803257826,
-        "total_called_strikes": 3929,
-        "bad_calls_count": 360
+        "correct_strikes_pct": 90.79878665318503,
+        "incorrect_strikes_pct": 9.201213346814967,
+        "total_called_strikes": 3956,
+        "bad_calls_count": 364
     },
     "last_game_summary": {
-        "date": "September 22, 2026",
-        "correct_strikes_pct": 86.95652173913044,
-        "incorrect_strikes_pct": 13.043478260869563,
-        "total_called_strikes": 23,
-        "bad_calls_count": 3,
-        "home_plate_umpire": "Lance Barksdale"
+        "date": "September 23, 2026",
+        "correct_strikes_pct": 85.18518518518519,
+        "incorrect_strikes_pct": 14.81481481481481,
+        "total_called_strikes": 27,
+        "bad_calls_count": 4,
+        "home_plate_umpire": "Ryan Additon"
     },
     "worst_calls_of_season": [
         {
@@ -56,17 +56,17 @@
         }
     ],
     "pitching_season_summary": {
-        "correct_balls_pct": 96.35046113306983,
-        "incorrect_balls_pct": 3.649538866930172,
-        "total_called_balls": 7590,
-        "bad_calls_count": 277
+        "correct_balls_pct": 96.32786885245902,
+        "incorrect_balls_pct": 3.6721311475409806,
+        "total_called_balls": 7625,
+        "bad_calls_count": 280
     },
     "pitching_last_game_summary": {
-        "date": "September 22, 2026",
-        "correct_balls_pct": 97.5,
-        "incorrect_balls_pct": 2.5,
-        "total_called_balls": 40,
-        "bad_calls_count": 1
+        "date": "September 23, 2026",
+        "correct_balls_pct": 91.42857142857143,
+        "incorrect_balls_pct": 8.57142857142857,
+        "total_called_balls": 35,
+        "bad_calls_count": 3
     },
     "pitching_worst_calls_of_season": [],
     "abs_challenges": {
@@ -99,12 +99,24 @@
                 "failed": 0
             },
             "catching": {
-                "total": 54,
+                "total": 55,
                 "successful": 41,
-                "failed": 13
+                "failed": 14
             }
         },
         "challenge_log": [
+            {
+                "date": "2026-09-23",
+                "date_formatted": "September 23, 2026",
+                "challenger": "Freddy Fermin",
+                "role": "catching",
+                "team": "opponents",
+                "outcome": "confirmed",
+                "result_desc": "Will Smith walks.",
+                "batter": "Will Smith",
+                "pitcher": "Mason Miller",
+                "game_pk": 823894
+            },
             {
                 "date": "2026-09-20",
                 "date_formatted": "September 20, 2026",
@@ -332,18 +344,6 @@
                 "batter": "James Wood",
                 "pitcher": "Tyler Glasnow",
                 "game_pk": 823904
-            },
-            {
-                "date": "2026-09-04",
-                "date_formatted": "September 4, 2026",
-                "challenger": "Will Smith",
-                "role": "catching",
-                "team": "dodgers",
-                "outcome": "overturned",
-                "result_desc": "Dylan Crews called out on strikes.",
-                "batter": "Dylan Crews",
-                "pitcher": "Blake Snell",
-                "game_pk": 823905
             }
         ]
     }

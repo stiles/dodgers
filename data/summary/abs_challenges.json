@@ -28,12 +28,60 @@
             "failed": 3
         },
         "catching": {
-            "total": 175,
-            "successful": 107,
-            "failed": 68
+            "total": 179,
+            "successful": 110,
+            "failed": 69
         }
     },
     "challenge_log": [
+        {
+            "date": "2026-09-23",
+            "date_formatted": "September 23, 2026",
+            "challenger": "Freddy Fermin",
+            "role": "catching",
+            "team": "opponents",
+            "outcome": "confirmed",
+            "result_desc": "Freddie Freeman flies out to left fielder Dustin Harris.",
+            "batter": "Freddie Freeman",
+            "pitcher": "Bradgley Rodriguez",
+            "game_pk": 823894
+        },
+        {
+            "date": "2026-09-23",
+            "date_formatted": "September 23, 2026",
+            "challenger": "Ethan Salas",
+            "role": "catching",
+            "team": "opponents",
+            "outcome": "overturned",
+            "result_desc": "Mookie Betts grounds out, second baseman Jake Cronenworth to first baseman Ty France.",
+            "batter": "Mookie Betts",
+            "pitcher": "Bradgley Rodriguez",
+            "game_pk": 823894
+        },
+        {
+            "date": "2026-09-23",
+            "date_formatted": "September 23, 2026",
+            "challenger": "Ethan Salas",
+            "role": "catching",
+            "team": "opponents",
+            "outcome": "overturned",
+            "result_desc": "Andy Pages doubles (26) on a ground ball to left fielder Dustin Harris.",
+            "batter": "Andy Pages",
+            "pitcher": "Bradgley Rodriguez",
+            "game_pk": 823894
+        },
+        {
+            "date": "2026-09-23",
+            "date_formatted": "September 23, 2026",
+            "challenger": "Ethan Salas",
+            "role": "catching",
+            "team": "opponents",
+            "outcome": "overturned",
+            "result_desc": "Shohei Ohtani strikes out swinging.",
+            "batter": "Shohei Ohtani",
+            "pitcher": "David Morgan",
+            "game_pk": 823894
+        },
         {
             "date": "2026-09-22",
             "date_formatted": "September 22, 2026",
@@ -133,18 +181,6 @@
         {
             "date": "2026-09-18",
             "date_formatted": "September 18, 2026",
-            "challenger": "Josue De Paula",
-            "role": "batting",
-            "team": "dodgers",
-            "outcome": "overturned",
-            "result_desc": "Josue De Paula walks.",
-            "batter": "Josue De Paula",
-            "pitcher": "Philip Abner",
-            "game_pk": 823898
-        },
-        {
-            "date": "2026-09-18",
-            "date_formatted": "September 18, 2026",
             "challenger": "Will Smith",
             "role": "catching",
             "team": "dodgers",
@@ -152,6 +188,18 @@
             "result_desc": "Drew Cavanaugh strikes out swinging.",
             "batter": "Drew Cavanaugh",
             "pitcher": "Tyler Glasnow",
+            "game_pk": 823898
+        },
+        {
+            "date": "2026-09-18",
+            "date_formatted": "September 18, 2026",
+            "challenger": "Drew Cavanaugh",
+            "role": "catching",
+            "team": "opponents",
+            "outcome": "overturned",
+            "result_desc": "Will Smith walks.",
+            "batter": "Will Smith",
+            "pitcher": "Cesar Perdomo",
             "game_pk": 823898
         },
         {
@@ -169,13 +217,13 @@
         {
             "date": "2026-09-18",
             "date_formatted": "September 18, 2026",
-            "challenger": "Drew Cavanaugh",
-            "role": "catching",
-            "team": "opponents",
+            "challenger": "Josue De Paula",
+            "role": "batting",
+            "team": "dodgers",
             "outcome": "overturned",
-            "result_desc": "Will Smith walks.",
-            "batter": "Will Smith",
-            "pitcher": "Cesar Perdomo",
+            "result_desc": "Josue De Paula walks.",
+            "batter": "Josue De Paula",
+            "pitcher": "Philip Abner",
             "game_pk": 823898
         },
         {
@@ -184,22 +232,22 @@
             "challenger": "Hunter Feduccia",
             "role": "catching",
             "team": "dodgers",
-            "outcome": "overturned",
-            "result_desc": "Sal Stewart strikes out swinging.",
-            "batter": "Sal Stewart",
-            "pitcher": "Justin Wrobleski",
+            "outcome": "confirmed",
+            "result_desc": "Elly De La Cruz strikes out swinging.",
+            "batter": "Elly De La Cruz",
+            "pitcher": "Landon Knack",
             "game_pk": 824464
         },
         {
             "date": "2026-09-17",
             "date_formatted": "September 17, 2026",
-            "challenger": "Tyler Stephenson",
+            "challenger": "Hunter Feduccia",
             "role": "catching",
-            "team": "opponents",
+            "team": "dodgers",
             "outcome": "overturned",
-            "result_desc": "Josue De Paula flies out to center fielder Dane Myers.",
-            "batter": "Josue De Paula",
-            "pitcher": "Brady Singer",
+            "result_desc": "TJ Friedl called out on strikes.",
+            "batter": "TJ Friedl",
+            "pitcher": "Justin Wrobleski",
             "game_pk": 824464
         },
         {
@@ -221,58 +269,10 @@
             "role": "catching",
             "team": "dodgers",
             "outcome": "overturned",
-            "result_desc": "TJ Friedl called out on strikes.",
-            "batter": "TJ Friedl",
+            "result_desc": "Sal Stewart strikes out swinging.",
+            "batter": "Sal Stewart",
             "pitcher": "Justin Wrobleski",
             "game_pk": 824464
-        },
-        {
-            "date": "2026-09-17",
-            "date_formatted": "September 17, 2026",
-            "challenger": "Hunter Feduccia",
-            "role": "catching",
-            "team": "dodgers",
-            "outcome": "confirmed",
-            "result_desc": "Elly De La Cruz strikes out swinging.",
-            "batter": "Elly De La Cruz",
-            "pitcher": "Landon Knack",
-            "game_pk": 824464
-        },
-        {
-            "date": "2026-09-16",
-            "date_formatted": "September 16, 2026",
-            "challenger": "Teoscar Hern\u00e1ndez",
-            "role": "batting",
-            "team": "dodgers",
-            "outcome": "confirmed",
-            "result_desc": "Teoscar Hern\u00e1ndez strikes out swinging.",
-            "batter": "Teoscar Hern\u00e1ndez",
-            "pitcher": "Emilio Pag\u00e1n",
-            "game_pk": 824467
-        },
-        {
-            "date": "2026-09-16",
-            "date_formatted": "September 16, 2026",
-            "challenger": "Jose Trevino",
-            "role": "catching",
-            "team": "opponents",
-            "outcome": "confirmed",
-            "result_desc": "Kyle Tucker flies out to second baseman Matt McLain.",
-            "batter": "Kyle Tucker",
-            "pitcher": "Andrew Abbott",
-            "game_pk": 824467
-        },
-        {
-            "date": "2026-09-16",
-            "date_formatted": "September 16, 2026",
-            "challenger": "Mookie Betts",
-            "role": "batting",
-            "team": "dodgers",
-            "outcome": "overturned",
-            "result_desc": "Mookie Betts singles on a ground ball to left fielder JJ Bleday.",
-            "batter": "Mookie Betts",
-            "pitcher": "Andrew Abbott",
-            "game_pk": 824467
         }
     ],
     "dodgers_by_player": [
