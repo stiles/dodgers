@@ -1,13 +1,5 @@
 [
     {
-        "date":"Sep 13",
-        "opp_name":"Miami Marlins",
-        "home_away":"away",
-        "result":"loss",
-        "placement":"last",
-        "game_start":"4-6"
-    },
-    {
         "date":"Sep 14",
         "opp_name":"Cincinnati Reds",
         "home_away":"away",
@@ -83,9 +75,9 @@
         "date":"Sep 24",
         "opp_name":"San Diego Padres",
         "home_away":"home",
-        "result":"--",
-        "placement":"next",
-        "game_start":"7:10 PM"
+        "result":"loss",
+        "placement":"last",
+        "game_start":"2-4"
     },
     {
         "date":"Sep 25",
@@ -110,5 +102,45 @@
         "result":"--",
         "placement":"next",
         "game_start":"12:05 PM"
+    },
+    {
+        "date":"Oct 3",
+        "opp_name":"NL 3\/6 Winner",
+        "home_away":"home",
+        "result":"--",
+        "placement":"next",
+        "game_start":"3:33 AM"
+    },
+    {
+        "date":"Oct 4",
+        "opp_name":"NL 3\/6 Winner",
+        "home_away":"home",
+        "result":"--",
+        "placement":"next",
+        "game_start":"3:33 AM"
+    },
+    {
+        "date":"Oct 6",
+        "opp_name":"NL 3\/6 Winner",
+        "home_away":"away",
+        "result":"--",
+        "placement":"next",
+        "game_start":"12:33 AM"
+    },
+    {
+        "date":"Oct 7",
+        "opp_name":"NL 3\/6 Winner",
+        "home_away":"away",
+        "result":"--",
+        "placement":"next",
+        "game_start":"12:33 AM"
+    },
+    {
+        "date":"Oct 9",
+        "opp_name":"NL 3\/6 Winner",
+        "home_away":"home",
+        "result":"--",
+        "placement":"next",
+        "game_start":"3:33 AM"
     }
 ]

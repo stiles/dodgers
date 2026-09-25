@@ -11,16 +11,16 @@
             "failed": 5
         },
         "catching": {
-            "total": 119,
-            "successful": 63,
-            "failed": 56
+            "total": 121,
+            "successful": 64,
+            "failed": 57
         }
     },
     "opponents": {
         "batting": {
-            "total": 124,
+            "total": 125,
             "successful": 64,
-            "failed": 60
+            "failed": 61
         },
         "pitching": {
             "total": 6,
@@ -34,6 +34,42 @@
         }
     },
     "challenge_log": [
+        {
+            "date": "2026-09-24",
+            "date_formatted": "September 24, 2026",
+            "challenger": "Hunter Feduccia",
+            "role": "catching",
+            "team": "dodgers",
+            "outcome": "confirmed",
+            "result_desc": "Xander Bogaerts walks.",
+            "batter": "Xander Bogaerts",
+            "pitcher": "Tyler Glasnow",
+            "game_pk": 823895
+        },
+        {
+            "date": "2026-09-24",
+            "date_formatted": "September 24, 2026",
+            "challenger": "Hunter Feduccia",
+            "role": "catching",
+            "team": "dodgers",
+            "outcome": "overturned",
+            "result_desc": "Ty France pops out softly to shortstop Mookie Betts.",
+            "batter": "Ty France",
+            "pitcher": "Tyler Glasnow",
+            "game_pk": 823895
+        },
+        {
+            "date": "2026-09-24",
+            "date_formatted": "September 24, 2026",
+            "challenger": "Manny Machado",
+            "role": "batting",
+            "team": "opponents",
+            "outcome": "confirmed",
+            "result_desc": "Manny Machado strikes out swinging.",
+            "batter": "Manny Machado",
+            "pitcher": "Tyler Glasnow",
+            "game_pk": 823895
+        },
         {
             "date": "2026-09-23",
             "date_formatted": "September 23, 2026",
@@ -89,18 +125,6 @@
             "role": "catching",
             "team": "opponents",
             "outcome": "confirmed",
-            "result_desc": "Andy Pages walks. Josue De Paula to 2nd.",
-            "batter": "Andy Pages",
-            "pitcher": "Griffin Canning",
-            "game_pk": 823897
-        },
-        {
-            "date": "2026-09-22",
-            "date_formatted": "September 22, 2026",
-            "challenger": "Luis Campusano",
-            "role": "catching",
-            "team": "opponents",
-            "outcome": "confirmed",
             "result_desc": "Max Muncy pops out to third baseman Manny Machado.",
             "batter": "Max Muncy",
             "pitcher": "Griffin Canning",
@@ -115,6 +139,18 @@
             "outcome": "overturned",
             "result_desc": "Max Muncy pops out to third baseman Manny Machado.",
             "batter": "Max Muncy",
+            "pitcher": "Griffin Canning",
+            "game_pk": 823897
+        },
+        {
+            "date": "2026-09-22",
+            "date_formatted": "September 22, 2026",
+            "challenger": "Luis Campusano",
+            "role": "catching",
+            "team": "opponents",
+            "outcome": "confirmed",
+            "result_desc": "Andy Pages walks. Josue De Paula to 2nd.",
+            "batter": "Andy Pages",
             "pitcher": "Griffin Canning",
             "game_pk": 823897
         },
@@ -181,13 +217,13 @@
         {
             "date": "2026-09-18",
             "date_formatted": "September 18, 2026",
-            "challenger": "Will Smith",
-            "role": "catching",
+            "challenger": "Mookie Betts",
+            "role": "batting",
             "team": "dodgers",
-            "outcome": "confirmed",
-            "result_desc": "Drew Cavanaugh strikes out swinging.",
-            "batter": "Drew Cavanaugh",
-            "pitcher": "Tyler Glasnow",
+            "outcome": "overturned",
+            "result_desc": "Mookie Betts walks.",
+            "batter": "Mookie Betts",
+            "pitcher": "Cesar Perdomo",
             "game_pk": 823898
         },
         {
@@ -205,13 +241,13 @@
         {
             "date": "2026-09-18",
             "date_formatted": "September 18, 2026",
-            "challenger": "Mookie Betts",
-            "role": "batting",
+            "challenger": "Will Smith",
+            "role": "catching",
             "team": "dodgers",
-            "outcome": "overturned",
-            "result_desc": "Mookie Betts walks.",
-            "batter": "Mookie Betts",
-            "pitcher": "Cesar Perdomo",
+            "outcome": "confirmed",
+            "result_desc": "Drew Cavanaugh strikes out swinging.",
+            "batter": "Drew Cavanaugh",
+            "pitcher": "Tyler Glasnow",
             "game_pk": 823898
         },
         {
@@ -237,42 +273,6 @@
             "batter": "Elly De La Cruz",
             "pitcher": "Landon Knack",
             "game_pk": 824464
-        },
-        {
-            "date": "2026-09-17",
-            "date_formatted": "September 17, 2026",
-            "challenger": "Hunter Feduccia",
-            "role": "catching",
-            "team": "dodgers",
-            "outcome": "overturned",
-            "result_desc": "TJ Friedl called out on strikes.",
-            "batter": "TJ Friedl",
-            "pitcher": "Justin Wrobleski",
-            "game_pk": 824464
-        },
-        {
-            "date": "2026-09-17",
-            "date_formatted": "September 17, 2026",
-            "challenger": "Tyler Stephenson",
-            "role": "catching",
-            "team": "opponents",
-            "outcome": "confirmed",
-            "result_desc": "Kyle Tucker doubles (22) on a line drive to center fielder Dane Myers. Miguel Rojas scores.",
-            "batter": "Kyle Tucker",
-            "pitcher": "Brady Singer",
-            "game_pk": 824464
-        },
-        {
-            "date": "2026-09-17",
-            "date_formatted": "September 17, 2026",
-            "challenger": "Hunter Feduccia",
-            "role": "catching",
-            "team": "dodgers",
-            "outcome": "overturned",
-            "result_desc": "Sal Stewart strikes out swinging.",
-            "batter": "Sal Stewart",
-            "pitcher": "Justin Wrobleski",
-            "game_pk": 824464
         }
     ],
     "dodgers_by_player": [
@@ -292,10 +292,10 @@
         },
         {
             "challenger": "Hunter Feduccia",
-            "total": 23,
-            "successful": 13,
-            "failed": 10,
-            "success_rate": 56.5
+            "total": 25,
+            "successful": 14,
+            "failed": 11,
+            "success_rate": 56.0
         },
         {
             "challenger": "Andy Pages",
@@ -476,10 +476,10 @@
         },
         {
             "inning": 7,
-            "total": 25,
-            "successful": 12,
-            "failed": 13,
-            "success_rate": 48.0
+            "total": 27,
+            "successful": 13,
+            "failed": 14,
+            "success_rate": 48.1
         },
         {
             "inning": 8,

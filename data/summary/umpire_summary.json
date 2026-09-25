@@ -1,17 +1,17 @@
 {
     "season_summary": {
-        "correct_strikes_pct": 90.79878665318503,
-        "incorrect_strikes_pct": 9.201213346814967,
-        "total_called_strikes": 3956,
-        "bad_calls_count": 364
+        "correct_strikes_pct": 90.8360532262114,
+        "incorrect_strikes_pct": 9.163946773788595,
+        "total_called_strikes": 3983,
+        "bad_calls_count": 365
     },
     "last_game_summary": {
-        "date": "September 23, 2026",
-        "correct_strikes_pct": 85.18518518518519,
-        "incorrect_strikes_pct": 14.81481481481481,
+        "date": "September 24, 2026",
+        "correct_strikes_pct": 96.29629629629629,
+        "incorrect_strikes_pct": 3.7037037037037095,
         "total_called_strikes": 27,
-        "bad_calls_count": 4,
-        "home_plate_umpire": "Ryan Additon"
+        "bad_calls_count": 1,
+        "home_plate_umpire": "Will Little"
     },
     "worst_calls_of_season": [
         {
@@ -56,17 +56,17 @@
         }
     ],
     "pitching_season_summary": {
-        "correct_balls_pct": 96.32786885245902,
-        "incorrect_balls_pct": 3.6721311475409806,
-        "total_called_balls": 7625,
+        "correct_balls_pct": 96.34703196347031,
+        "incorrect_balls_pct": 3.6529680365296855,
+        "total_called_balls": 7665,
         "bad_calls_count": 280
     },
     "pitching_last_game_summary": {
-        "date": "September 23, 2026",
-        "correct_balls_pct": 91.42857142857143,
-        "incorrect_balls_pct": 8.57142857142857,
-        "total_called_balls": 35,
-        "bad_calls_count": 3
+        "date": "September 24, 2026",
+        "correct_balls_pct": 100.0,
+        "incorrect_balls_pct": 0.0,
+        "total_called_balls": 40,
+        "bad_calls_count": 0
     },
     "pitching_worst_calls_of_season": [],
     "abs_challenges": {
@@ -82,16 +82,16 @@
                 "failed": 0
             },
             "catching": {
-                "total": 31,
-                "successful": 26,
+                "total": 32,
+                "successful": 27,
                 "failed": 5
             }
         },
         "opponents": {
             "batting": {
-                "total": 43,
+                "total": 44,
                 "successful": 10,
-                "failed": 33
+                "failed": 34
             },
             "pitching": {
                 "total": 0,
@@ -105,6 +105,30 @@
             }
         },
         "challenge_log": [
+            {
+                "date": "2026-09-24",
+                "date_formatted": "September 24, 2026",
+                "challenger": "Hunter Feduccia",
+                "role": "catching",
+                "team": "dodgers",
+                "outcome": "overturned",
+                "result_desc": "Dustin Harris called out on strikes.",
+                "batter": "Dustin Harris",
+                "pitcher": "Tyler Glasnow",
+                "game_pk": 823895
+            },
+            {
+                "date": "2026-09-24",
+                "date_formatted": "September 24, 2026",
+                "challenger": "Samad Taylor",
+                "role": "batting",
+                "team": "opponents",
+                "outcome": "confirmed",
+                "result_desc": "Samad Taylor called out on strikes.",
+                "batter": "Samad Taylor",
+                "pitcher": "Justin Wrobleski",
+                "game_pk": 823895
+            },
             {
                 "date": "2026-09-23",
                 "date_formatted": "September 23, 2026",
@@ -320,30 +344,6 @@
                 "batter": "Dylan Crews",
                 "pitcher": "Edgardo Henriquez",
                 "game_pk": 823903
-            },
-            {
-                "date": "2026-09-05",
-                "date_formatted": "September 5, 2026",
-                "challenger": "Keibert Ruiz",
-                "role": "catching",
-                "team": "opponents",
-                "outcome": "overturned",
-                "result_desc": "Will Smith called out on strikes.",
-                "batter": "Will Smith",
-                "pitcher": "Jack Sinclair",
-                "game_pk": 823904
-            },
-            {
-                "date": "2026-09-05",
-                "date_formatted": "September 5, 2026",
-                "challenger": "James Wood",
-                "role": "batting",
-                "team": "opponents",
-                "outcome": "confirmed",
-                "result_desc": "James Wood called out on strikes.",
-                "batter": "James Wood",
-                "pitcher": "Tyler Glasnow",
-                "game_pk": 823904
             }
         ]
     }
