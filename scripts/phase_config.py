@@ -15,6 +15,7 @@ PHASE_CONFIG = {
             "scripts/02_update_boxscores_archive.py",
             "scripts/03_scrape_league_ranks.py",
             "scripts/04_fetch_process_standings.py",
+            "scripts/32_build_rolling_win_pct.py",
             "scripts/05_fetch_process_batting.py",
             "scripts/06_fetch_process_pitching.py",
             "scripts/09_build_wins_losses_from_boxscores.py",
@@ -56,6 +57,7 @@ PHASE_CONFIG = {
             "scripts/31_fetch_kalshi_markets.py",
             # Optionally refresh final regular season snapshots (low frequency)
             "scripts/00_fetch_league_standings.py",
+            "scripts/32_build_rolling_win_pct.py",
             "scripts/07_create_toplines_summary.py",
         ],
         "cadence": "daily"
@@ -71,6 +73,7 @@ PHASE_CONFIG = {
             "scripts/31_fetch_kalshi_markets.py",
             # Occasional historical data refresh
             "scripts/08_fetch_process_season_outcomes.py",
+            "scripts/32_build_rolling_win_pct.py",
             "scripts/10_fetch_process_historic_batting_gamelogs.py",
             "scripts/11_fetch_process_attendance.py",
             "scripts/12_fetch_process_historic_pitching_gamelogs.py",

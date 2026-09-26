@@ -131,6 +131,8 @@ def get_all_teams_standings_metrics() -> Optional[List[Dict[str, Any]]]:
                     metrics = {
                         "team_id": team_record.get("team", {}).get("id"),
                         "team_name": team_record.get("team", {}).get("name"),
+                        "clinched": team_record.get("clinched"),
+                        "clinch_indicator": team_record.get("clinchIndicator"),
                         "wins": team_record.get("wins"),
                         "losses": team_record.get("losses"),
                         "winning_percentage": team_record.get("winningPercentage"),

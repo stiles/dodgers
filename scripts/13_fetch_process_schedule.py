@@ -24,6 +24,8 @@ HEADERS = {
     'User-Agent': 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36'
 }
 
+PLACEHOLDER_OPPONENT_MARKERS = ['winner', 'tbd']
+
 
 def get_s3_resource():
     """Get S3 resource with environment-based credentials"""
@@ -111,6 +113,11 @@ def parse_game(game: dict) -> dict:
             dodgers_score = teams.get('away', {}).get('score')
             opponent_score = teams.get('home', {}).get('score')
         
+        opponent_name_lower = opponent_name.lower()
+        has_placeholder_opponent = any(
+            marker in opponent_name_lower for marker in PLACEHOLDER_OPPONENT_MARKERS
+        )
+
         # Determine result
         game_state = status.get('detailedState', '')
         result = None
@@ -124,7 +131,10 @@ def parse_game(game: dict) -> dict:
         elif game_state in ['Scheduled', 'Pre-Game']:
             # Upcoming game
             result = '--'
-            game_start = game_date_pacific.strftime('%-I:%M %p')  # Show time for upcoming games
+            if has_placeholder_opponent:
+                game_start = 'TBD'
+            else:
+                game_start = game_date_pacific.strftime('%-I:%M %p')  # Show time for upcoming games
         elif game_state in ['In Progress', 'Delayed']:
             # Game in progress
             result = 'in progress'

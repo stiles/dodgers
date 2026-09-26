@@ -122,6 +122,30 @@ twitter:
 <div id="d3-container" style="width: 100%; padding-bottom: 20px;"></div>
 <p class="note">Note: Chart shows games back/up as of each Dodgers game. Current standings may differ if other division teams have played more recently.</p>
 
+<h3 class="visual-subhead">Hot and cold stretches: <em>20-game form</em></h3>
+<p class="chart-chatter">Each slice shows the Dodgers' winning percentage over the previous 20 games. Blue runs are heaters. Red runs mark colder stretches, including the midsummer slide in 2026.</p>
+<div class="rolling-compare-controls">
+  <div id="rolling-compare-presets" class="rolling-compare-presets"></div>
+  <div class="rolling-compare-select-wrap">
+    <label for="rolling-compare-select">Compare with another season</label>
+    <select id="rolling-compare-select"></select>
+  </div>
+</div>
+<div id="rolling-compare-highlights" class="rolling-compare-highlights"></div>
+<div class="rolling-compare-legend" aria-hidden="true">
+  <div class="rolling-compare-legend-title">Win percentage, last 20 games</div>
+  <div class="rolling-compare-legend-gradient"></div>
+  <div class="rolling-compare-legend-labels">
+    <span>0%</span>
+    <span>25%</span>
+    <span>50%</span>
+    <span>75%</span>
+    <span>100%</span>
+  </div>
+</div>
+<div id="rolling-compare-chart" class="rolling-compare-chart"></div>
+<p id="rolling-compare-summary" class="note rolling-compare-summary"></p>
+
 {% assign current_year_str = site.time | date: '%Y' %}
 {% assign dynamic_filename_key = "all_teams_standings_metrics_" | append: current_year_str %}
 
@@ -178,7 +202,7 @@ twitter:
         {% for team in nl_division_leaders %}
         <tr {% if team.team_name == "Los Angeles Dodgers" %}class="dodgers-row"{% endif %}>
           <td>{{ forloop.index }}</td>
-          <td>{{ team.team_name }}</td>
+          <td>{{ team.team_name }}{% if team.clinched or team.clinch_indicator %} <span class="playoff-status playoff-status--clinched">Clinched</span>{% endif %}</td>
           <td>{{ team.wins }}–{{ team.losses }}</td>
           <td>{% if forloop.index <= 2 %}<span class="playoff-status playoff-status--bye">Bye</span>{% else %}<span class="playoff-status">WC host</span>{% endif %}</td>
         </tr>
@@ -211,7 +235,7 @@ twitter:
         {% if show_wild_card_team %}
         <tr class="{% if team.team_name == 'Los Angeles Dodgers' %}dodgers-row {% endif %}{% if forloop.index == 4 %}first-team-out{% endif %}">
           <td>{% if forloop.index <= 3 %}{{ forloop.index }}{% else %}—{% endif %}</td>
-          <td>{{ team.team_name }}</td>
+          <td>{{ team.team_name }}{% if team.clinched or team.clinch_indicator %} <span class="playoff-status playoff-status--clinched">Clinched</span>{% endif %}</td>
           <td>{{ team.wins }}–{{ team.losses }}</td>
           <td>{{ team.wild_card_games_back | default: "—" }}</td>
         </tr>

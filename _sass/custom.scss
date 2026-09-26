@@ -1328,6 +1328,161 @@ label {
   border-radius: 3px;
 }
 
+.rolling-compare-controls {
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  gap: 18px;
+  margin: 10px 0 16px;
+  flex-wrap: wrap;
+}
+
+.rolling-compare-presets {
+  display: flex;
+  gap: 8px;
+  flex-wrap: wrap;
+}
+
+.rolling-compare-btn {
+  border: 1px solid #d7dde3;
+  border-radius: 999px;
+  background: #fff;
+  color: #40464b;
+  font-family: 'Roboto';
+  font-size: 12px;
+  font-weight: 700;
+  line-height: 1;
+  padding: 9px 12px;
+  cursor: pointer;
+  transition: all 0.15s ease;
+}
+
+.rolling-compare-btn:hover {
+  border-color: c.$dodger-blue;
+  color: c.$dodger-blue;
+}
+
+.rolling-compare-btn.is-active {
+  background: c.$dodger-blue;
+  border-color: c.$dodger-blue;
+  color: #fff;
+}
+
+.rolling-compare-select-wrap {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+
+  label {
+    color: #666;
+    font-family: 'Roboto';
+    font-size: 12px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.03em;
+  }
+
+  select {
+    min-width: 220px;
+    padding: 8px 12px;
+    border: 1px solid #d7dde3;
+    border-radius: 8px;
+    background: #fff;
+    font-family: 'Roboto';
+    font-size: 14px;
+  }
+}
+
+.rolling-compare-highlights {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 12px;
+  margin-bottom: 16px;
+}
+
+.rolling-compare-highlight {
+  padding: 14px 16px;
+  border: 1px solid #e8ecf0;
+  border-radius: 12px;
+  background: linear-gradient(180deg, #ffffff 0%, #f9fbfc 100%);
+}
+
+.rolling-compare-highlight__label {
+  color: #666;
+  font-family: 'Roboto';
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.03em;
+  text-transform: uppercase;
+}
+
+.rolling-compare-highlight__value {
+  margin-top: 4px;
+  color: #222;
+  font-size: 30px;
+  font-weight: 700;
+  line-height: 1;
+}
+
+.rolling-compare-highlight__meta {
+  margin-top: 6px;
+  color: #666;
+  font-family: 'Roboto';
+  font-size: 13px;
+  line-height: 1.4;
+}
+
+.rolling-compare-legend {
+  margin-bottom: 12px;
+}
+
+.rolling-compare-legend-title {
+  margin-bottom: 6px;
+  font-size: 18px;
+  font-weight: 700;
+}
+
+.rolling-compare-legend-gradient {
+  width: min(500px, 100%);
+  height: 28px;
+  border-radius: 999px;
+  background: linear-gradient(90deg, #c94741 0%, #f0f0f0 50%, #005a9c 100%);
+}
+
+.rolling-compare-legend-labels {
+  width: min(500px, 100%);
+  display: flex;
+  justify-content: space-between;
+  color: #444;
+  font-family: 'Roboto';
+  font-size: 13px;
+  margin-top: 4px;
+}
+
+.rolling-compare-chart {
+  width: 100%;
+  margin-bottom: 10px;
+}
+
+.rolling-compare-summary {
+  margin-bottom: 28px;
+}
+
+@media (max-width: 767px) {
+  .rolling-compare-highlights {
+    grid-template-columns: 1fr;
+  }
+
+  .rolling-compare-select-wrap {
+    width: 100%;
+
+    select {
+      width: 100%;
+      min-width: 0;
+    }
+  }
+}
+
 // Styling for the three-column standings tables
 .standings-tables .table-wrapper {
   flex: 1 1 calc(33.333% - 7px); // Adjust gap (7px here is (10px * 2 inter-table gaps) / 3 tables)
@@ -1439,6 +1594,13 @@ label {
 .playoff-status--bye {
   background: rgba(0, 90, 156, 0.12);
   color: c.$dodger-blue;
+}
+
+.playoff-status--clinched {
+  margin-left: 6px;
+  background: rgba(0, 90, 156, 0.1);
+  color: c.$dodger-blue;
+  vertical-align: middle;
 }
 
 .playoff-cutline-note {

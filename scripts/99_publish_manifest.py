@@ -98,6 +98,17 @@ def build_manifest():
             "source": "mlb_statsapi"
         },
         {
+            "id": "rolling_win_pct_20",
+            "version": "v1",
+            "url": "https://stilesdata.com/dodgers/data/standings/dodgers_rolling_win_pct_20.json",
+            "content_type": "application/json",
+            "last_updated": get_pacific_time(),
+            "description": "Rolling 20-game win percentage by season for streak barcode comparisons",
+            "cadence": "regular_season_daily",
+            "source": "mlb_statsapi",
+            "source_historical": "baseball_reference_archives"
+        },
+        {
             "id": "mlb_team_attendance",
             "version": "v1",
             "url": "https://stilesdata.com/dodgers/data/standings/mlb_team_attendance.json",
