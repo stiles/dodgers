@@ -1,6 +1,6 @@
 {
-    "games_played": 159,
-    "current_wins": 97,
+    "games_played": 160,
+    "current_wins": 98,
     "current_losses": 62,
     "timeseries": [
         {
@@ -959,22 +959,22 @@
         },
         {
             "game_number": 160,
-            "mean_projected_wins": 97.6,
-            "lower_ci_wins": 97,
-            "upper_ci_wins": 98
+            "mean_projected_wins": 98.0,
+            "lower_ci_wins": 98.0,
+            "upper_ci_wins": 98.0
         },
         {
             "game_number": 161,
-            "mean_projected_wins": 98.2,
-            "lower_ci_wins": 97,
+            "mean_projected_wins": 98.6,
+            "lower_ci_wins": 98,
             "upper_ci_wins": 99
         },
         {
             "game_number": 162,
-            "mean_projected_wins": 98.8,
-            "lower_ci_wins": 97,
+            "mean_projected_wins": 99.2,
+            "lower_ci_wins": 98,
             "upper_ci_wins": 100
         }
     ],
-    "message": "Projection based on bootstrapping 159 past game outcomes for 3 remaining games."
+    "message": "Projection based on bootstrapping 160 past game outcomes for 2 remaining games."
 }

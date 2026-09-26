@@ -1,9 +1,9 @@
 {
     "dodgers": {
         "batting": {
-            "total": 122,
+            "total": 123,
             "successful": 77,
-            "failed": 45
+            "failed": 46
         },
         "pitching": {
             "total": 8,
@@ -18,8 +18,8 @@
     },
     "opponents": {
         "batting": {
-            "total": 125,
-            "successful": 64,
+            "total": 126,
+            "successful": 65,
             "failed": 61
         },
         "pitching": {
@@ -28,12 +28,48 @@
             "failed": 3
         },
         "catching": {
-            "total": 179,
-            "successful": 110,
+            "total": 180,
+            "successful": 111,
             "failed": 69
         }
     },
     "challenge_log": [
+        {
+            "date": "2026-09-25",
+            "date_formatted": "September 25, 2026",
+            "challenger": "Marcelo Mayer",
+            "role": "batting",
+            "team": "opponents",
+            "outcome": "overturned",
+            "result_desc": "Marcelo Mayer called out on strikes.",
+            "batter": "Marcelo Mayer",
+            "pitcher": "Roki Sasaki",
+            "game_pk": 823167
+        },
+        {
+            "date": "2026-09-25",
+            "date_formatted": "September 25, 2026",
+            "challenger": "Andrew Knizner",
+            "role": "catching",
+            "team": "opponents",
+            "outcome": "overturned",
+            "result_desc": "Will Smith called out on strikes.",
+            "batter": "Will Smith",
+            "pitcher": "Sam Hentges",
+            "game_pk": 823167
+        },
+        {
+            "date": "2026-09-25",
+            "date_formatted": "September 25, 2026",
+            "challenger": "Freddie Freeman",
+            "role": "batting",
+            "team": "dodgers",
+            "outcome": "confirmed",
+            "result_desc": "Freddie Freeman strikes out swinging.",
+            "batter": "Freddie Freeman",
+            "pitcher": "Yunior Marte",
+            "game_pk": 823167
+        },
         {
             "date": "2026-09-24",
             "date_formatted": "September 24, 2026",
@@ -125,6 +161,18 @@
             "role": "catching",
             "team": "opponents",
             "outcome": "confirmed",
+            "result_desc": "Andy Pages walks. Josue De Paula to 2nd.",
+            "batter": "Andy Pages",
+            "pitcher": "Griffin Canning",
+            "game_pk": 823897
+        },
+        {
+            "date": "2026-09-22",
+            "date_formatted": "September 22, 2026",
+            "challenger": "Luis Campusano",
+            "role": "catching",
+            "team": "opponents",
+            "outcome": "confirmed",
             "result_desc": "Max Muncy pops out to third baseman Manny Machado.",
             "batter": "Max Muncy",
             "pitcher": "Griffin Canning",
@@ -141,30 +189,6 @@
             "batter": "Max Muncy",
             "pitcher": "Griffin Canning",
             "game_pk": 823897
-        },
-        {
-            "date": "2026-09-22",
-            "date_formatted": "September 22, 2026",
-            "challenger": "Luis Campusano",
-            "role": "catching",
-            "team": "opponents",
-            "outcome": "confirmed",
-            "result_desc": "Andy Pages walks. Josue De Paula to 2nd.",
-            "batter": "Andy Pages",
-            "pitcher": "Griffin Canning",
-            "game_pk": 823897
-        },
-        {
-            "date": "2026-09-20",
-            "date_formatted": "September 20, 2026",
-            "challenger": "Will Smith",
-            "role": "catching",
-            "team": "dodgers",
-            "outcome": "confirmed",
-            "result_desc": "Osleivis Basabe challenged (pitch result), call on the field was confirmed: Osleivis Basabe called out on strikes.",
-            "batter": "Osleivis Basabe",
-            "pitcher": "Tanner Scott",
-            "game_pk": 823896
         },
         {
             "date": "2026-09-20",
@@ -188,6 +212,18 @@
             "result_desc": "Miguel Rojas doubles (16) on a sharp ground ball to left fielder Scott Bandura.",
             "batter": "Miguel Rojas",
             "pitcher": "Matt Wilkinson",
+            "game_pk": 823896
+        },
+        {
+            "date": "2026-09-20",
+            "date_formatted": "September 20, 2026",
+            "challenger": "Will Smith",
+            "role": "catching",
+            "team": "dodgers",
+            "outcome": "confirmed",
+            "result_desc": "Osleivis Basabe challenged (pitch result), call on the field was confirmed: Osleivis Basabe called out on strikes.",
+            "batter": "Osleivis Basabe",
+            "pitcher": "Tanner Scott",
             "game_pk": 823896
         },
         {
@@ -217,25 +253,13 @@
         {
             "date": "2026-09-18",
             "date_formatted": "September 18, 2026",
-            "challenger": "Mookie Betts",
+            "challenger": "Josue De Paula",
             "role": "batting",
             "team": "dodgers",
             "outcome": "overturned",
-            "result_desc": "Mookie Betts walks.",
-            "batter": "Mookie Betts",
-            "pitcher": "Cesar Perdomo",
-            "game_pk": 823898
-        },
-        {
-            "date": "2026-09-18",
-            "date_formatted": "September 18, 2026",
-            "challenger": "Drew Cavanaugh",
-            "role": "catching",
-            "team": "opponents",
-            "outcome": "overturned",
-            "result_desc": "Will Smith walks.",
-            "batter": "Will Smith",
-            "pitcher": "Cesar Perdomo",
+            "result_desc": "Josue De Paula walks.",
+            "batter": "Josue De Paula",
+            "pitcher": "Philip Abner",
             "game_pk": 823898
         },
         {
@@ -249,30 +273,6 @@
             "batter": "Drew Cavanaugh",
             "pitcher": "Tyler Glasnow",
             "game_pk": 823898
-        },
-        {
-            "date": "2026-09-18",
-            "date_formatted": "September 18, 2026",
-            "challenger": "Josue De Paula",
-            "role": "batting",
-            "team": "dodgers",
-            "outcome": "overturned",
-            "result_desc": "Josue De Paula walks.",
-            "batter": "Josue De Paula",
-            "pitcher": "Philip Abner",
-            "game_pk": 823898
-        },
-        {
-            "date": "2026-09-17",
-            "date_formatted": "September 17, 2026",
-            "challenger": "Hunter Feduccia",
-            "role": "catching",
-            "team": "dodgers",
-            "outcome": "confirmed",
-            "result_desc": "Elly De La Cruz strikes out swinging.",
-            "batter": "Elly De La Cruz",
-            "pitcher": "Landon Knack",
-            "game_pk": 824464
         }
     ],
     "dodgers_by_player": [
@@ -383,10 +383,10 @@
         },
         {
             "challenger": "Freddie Freeman",
-            "total": 3,
+            "total": 4,
             "successful": 2,
-            "failed": 1,
-            "success_rate": 66.7
+            "failed": 2,
+            "success_rate": 50.0
         },
         {
             "challenger": "Tyler Glasnow",
@@ -434,10 +434,10 @@
     "dodgers_by_inning": [
         {
             "inning": 1,
-            "total": 19,
+            "total": 20,
             "successful": 15,
-            "failed": 4,
-            "success_rate": 78.9
+            "failed": 5,
+            "success_rate": 75.0
         },
         {
             "inning": 2,
