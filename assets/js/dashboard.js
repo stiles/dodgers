@@ -1,6 +1,8 @@
 // Import manifest loader for dataset access
 import { fetchDataset, getDatasetUrl } from './manifest_loader.js';
 
+const END_LABEL_CUTOFF_GAME = 130;
+
 // Games back line chart
 
 async function fetchData() {
@@ -182,41 +184,44 @@ function renderChart(data) {
     // Ensure data is sorted by game number before taking the last point
     currentDataArray.sort((a, b) => a.gm - b.gm);
     const lastDataCurrent = currentDataArray.slice(-1)[0];
+    const shouldShowEndLabel = lastDataCurrent.gm <= END_LABEL_CUTOFF_GAME;
 
-    svg.append('text')
-      .attr('x', xScale(lastDataCurrent.gm + 0)) // Reduced horizontal offset
-      .attr('y', yScale(lastDataCurrent.gb) - 20)
-      .text(currentYear)
-      .attr('class', 'anno-dodgers')
-      .style('stroke', '#fff')
-      .style('stroke-width', '4px')
-      .style('stroke-linejoin', 'round')
-      .attr('text-anchor', 'start')
-      .style('paint-order', 'stroke')
-      .clone(true)
-      .style('stroke', 'none');
+    if (shouldShowEndLabel) {
+      svg.append('text')
+        .attr('x', xScale(lastDataCurrent.gm + 0)) // Reduced horizontal offset
+        .attr('y', yScale(lastDataCurrent.gb) - 20)
+        .text(currentYear)
+        .attr('class', 'anno-dodgers')
+        .style('stroke', '#fff')
+        .style('stroke-width', '4px')
+        .style('stroke-linejoin', 'round')
+        .attr('text-anchor', 'start')
+        .style('paint-order', 'stroke')
+        .clone(true)
+        .style('stroke', 'none');
 
-    svg.append('text')
-      .attr('x', xScale(lastDataCurrent.gm + 0)) // Reduced horizontal offset
-      .attr('y', yScale(lastDataCurrent.gb) + -6)
-      .text(() => {
-          const gb = lastDataCurrent.gb;
-          if (gb > 0) {
-              return `Games up: ${gb}`;
-          } else if (gb < 0) {
-              return `Games back: ${Math.abs(gb)}`;
-          } else {
-              return 'Even';
-          }
-      })
-      .attr('class', 'anno-dark')
-      .style('stroke', '#fff')
-      .style('stroke-width', '4px')
-      .style('stroke-linejoin', 'round')
-      .attr('text-anchor', 'start')
-      .style('paint-order', 'stroke')
-      .clone(true)
-      .style('stroke', 'none');
+      svg.append('text')
+        .attr('x', xScale(lastDataCurrent.gm + 0)) // Reduced horizontal offset
+        .attr('y', yScale(lastDataCurrent.gb) + -6)
+        .text(() => {
+            const gb = lastDataCurrent.gb;
+            if (gb > 0) {
+                return `Games up: ${gb}`;
+            } else if (gb < 0) {
+                return `Games back: ${Math.abs(gb)}`;
+            } else {
+                return 'Even';
+            }
+        })
+        .attr('class', 'anno-dark')
+        .style('stroke', '#fff')
+        .style('stroke-width', '4px')
+        .style('stroke-linejoin', 'round')
+        .attr('text-anchor', 'start')
+        .style('paint-order', 'stroke')
+        .clone(true)
+        .style('stroke', 'none');
+    }
   }
 }
 
@@ -226,6 +231,384 @@ fetchData();
 
 
 
+
+document.addEventListener('DOMContentLoaded', function () {
+  const section = document.getElementById('rolling-compare-section');
+  const chartContainer = d3.select('#rolling-compare-chart');
+  if (!section || chartContainer.empty()) {
+    return;
+  }
+
+  const presetContainer = document.getElementById('rolling-compare-presets');
+  const select = document.getElementById('rolling-compare-select');
+  const highlights = document.getElementById('rolling-compare-highlights');
+  const summary = document.getElementById('rolling-compare-summary');
+  const minGamesToShow = 40;
+
+  let groupedByYear = new Map();
+  let comparisonYear = null;
+  let currentYear = new Date().getFullYear().toString();
+  let currentGamesPlayed = null;
+  let windowSize = 20;
+  let recommendedComparisons = [];
+
+  function formatPercent(value) {
+    return `${Math.round(value * 100)}%`;
+  }
+
+  function normalizeRollingPayload(response) {
+    return {
+      windowSize: response.window_size || 20,
+      recommendedComparisons: response.recommended_comparisons || [],
+      records: (response.records || response).map((d) => ({
+        year: String(d.year),
+        gm: Number(d.gm),
+        game_date: d.game_date,
+        result: d.result,
+        rolling_win_pct_20: Number(d.rolling_win_pct_20),
+        rolling_wins_20: Number(d.rolling_wins_20),
+      })),
+    };
+  }
+
+  function buildRollingPayloadFromStandings(standingsRows, fallbackWindowSize = 20) {
+    const grouped = d3.group(
+      standingsRows
+        .map((row) => ({
+          year: String(row.year),
+          gm: Number(row.gm),
+          game_date: row.game_date,
+          result: typeof row.result === 'string' ? row.result.trim().charAt(0) : '',
+        }))
+        .filter((row) => row.result === 'W' || row.result === 'L'),
+      (row) => row.year
+    );
+
+    const records = [];
+    Array.from(grouped.entries())
+      .sort((a, b) => Number(a[0]) - Number(b[0]))
+      .forEach(([year, rows]) => {
+        const sorted = rows.slice().sort((a, b) => a.gm - b.gm);
+        const results = sorted.map((row) => (row.result === 'W' ? 1 : 0));
+
+        sorted.forEach((row, index) => {
+          if (index < fallbackWindowSize - 1) {
+            return;
+          }
+
+          const wins = d3.sum(results.slice(index - fallbackWindowSize + 1, index + 1));
+          records.push({
+            year,
+            gm: row.gm,
+            game_date: row.game_date,
+            result: row.result,
+            rolling_win_pct_20: Number((wins / fallbackWindowSize).toFixed(3)),
+            rolling_wins_20: wins,
+          });
+        });
+      });
+
+    const availableYears = Array.from(new Set(records.map((row) => Number(row.year)))).sort((a, b) => b - a);
+    const latestYear = availableYears[0];
+
+    return {
+      windowSize: fallbackWindowSize,
+      recommendedComparisons: availableYears.filter((year) => year !== latestYear).slice(0, 6),
+      records,
+    };
+  }
+
+  function seasonLabel(year) {
+    return year;
+  }
+
+  function getAvailableYears() {
+    return Array.from(groupedByYear.keys()).sort((a, b) => Number(b) - Number(a));
+  }
+
+  function chooseDefaultComparison() {
+    const availableYears = getAvailableYears();
+    const recommended = recommendedComparisons
+      .map(String)
+      .find((year) => year !== currentYear && availableYears.includes(year));
+
+    return recommended || availableYears.find((year) => year !== currentYear) || currentYear;
+  }
+
+  function computeSeasonStats(rows, comparisonLimit) {
+    const sorted = rows.slice().sort((a, b) => a.gm - b.gm);
+    const comparable = sorted.filter((row) => row.gm <= comparisonLimit);
+    const comparableRows = comparable.length > 0 ? comparable : sorted;
+    const latest = sorted[sorted.length - 1];
+    const latestComparable = comparableRows[comparableRows.length - 1];
+    const worstOverall = sorted.reduce((lowest, row) =>
+      row.rolling_win_pct_20 < lowest.rolling_win_pct_20 ? row : lowest
+    , sorted[0]);
+    const worstComparable = comparableRows.reduce((lowest, row) =>
+      row.rolling_win_pct_20 < lowest.rolling_win_pct_20 ? row : lowest
+    , comparableRows[0]);
+
+    return {
+      latest,
+      latestComparable,
+      gamesPlayed: latest.gm,
+      worstOverall,
+      worstComparable,
+      worstOverallStart: worstOverall.gm - windowSize + 1,
+      worstOverallEnd: worstOverall.gm,
+      worstComparableStart: worstComparable.gm - windowSize + 1,
+      worstComparableEnd: worstComparable.gm,
+    };
+  }
+
+  function renderHighlights(currentStats, comparisonStats) {
+    const comparisonLabel = comparisonStats.gamesPlayed >= currentGamesPlayed
+      ? `${comparisonYear}: low by Game ${currentGamesPlayed}`
+      : `${comparisonYear}: season low`;
+
+    highlights.innerHTML = `
+      <div class="stat-card rolling-compare-highlight">
+        <div class="stat-card-label rolling-compare-highlight__label">${currentYear}: current form</div>
+        <div class="stat-card-value rolling-compare-highlight__value">${formatPercent(currentStats.latestComparable.rolling_win_pct_20)}</div>
+        <p class="stat-card-context rolling-compare-highlight__meta">Rolling ${windowSize}-game win pct through Game ${currentGamesPlayed}</p>
+      </div>
+      <div class="stat-card rolling-compare-highlight">
+        <div class="stat-card-label rolling-compare-highlight__label">${currentYear}: low point</div>
+        <div class="stat-card-value rolling-compare-highlight__value">${formatPercent(currentStats.worstComparable.rolling_win_pct_20)}</div>
+        <p class="stat-card-context rolling-compare-highlight__meta">Lowest rolling win pct, Games ${currentStats.worstComparableStart}-${currentStats.worstComparableEnd}</p>
+      </div>
+      <div class="stat-card rolling-compare-highlight">
+        <div class="stat-card-label rolling-compare-highlight__label">${comparisonLabel}</div>
+        <div class="stat-card-value rolling-compare-highlight__value">${formatPercent(comparisonStats.worstComparable.rolling_win_pct_20)}</div>
+        <p class="stat-card-context rolling-compare-highlight__meta">Lowest rolling win pct, Games ${comparisonStats.worstComparableStart}-${comparisonStats.worstComparableEnd}</p>
+      </div>
+    `;
+  }
+
+  function renderSummary(currentStats, comparisonStats) {
+    let text = `${currentYear}'s lowest rolling ${windowSize}-game win percentage was ${formatPercent(currentStats.worstComparable.rolling_win_pct_20)} over Games ${currentStats.worstComparableStart}-${currentStats.worstComparableEnd}. `;
+    text += `${comparisonYear} reached ${formatPercent(comparisonStats.worstComparable.rolling_win_pct_20)} by Game ${Math.min(currentGamesPlayed, comparisonStats.gamesPlayed)} over Games ${comparisonStats.worstComparableStart}-${comparisonStats.worstComparableEnd}.`;
+
+    if (
+      comparisonStats.gamesPlayed > currentGamesPlayed &&
+      comparisonStats.worstOverall.gm > currentGamesPlayed &&
+      comparisonStats.worstOverall.rolling_win_pct_20 < comparisonStats.worstComparable.rolling_win_pct_20
+    ) {
+      text += ` It later fell to ${formatPercent(comparisonStats.worstOverall.rolling_win_pct_20)} over Games ${comparisonStats.worstOverallStart}-${comparisonStats.worstOverallEnd}.`;
+    }
+
+    summary.textContent = `Note: ${text}`;
+  }
+
+  function renderPresetButtons(availableYears) {
+    presetContainer.innerHTML = '';
+
+    const presetYears = (
+      recommendedComparisons.length > 0
+        ? recommendedComparisons.map(String)
+        : availableYears.filter((year) => year !== currentYear).slice(0, 6)
+    );
+
+    presetYears
+      .map(String)
+      .filter((year) => year !== currentYear && availableYears.includes(year))
+      .forEach((year) => {
+        const button = document.createElement('button');
+        button.type = 'button';
+        button.className = `rolling-compare-btn${year === comparisonYear ? ' is-active' : ''}`;
+        button.textContent = year;
+        button.setAttribute('aria-pressed', year === comparisonYear ? 'true' : 'false');
+        button.addEventListener('click', () => {
+          comparisonYear = year;
+          select.value = year;
+          renderPresetButtons(availableYears);
+          renderChart();
+        });
+        presetContainer.appendChild(button);
+      });
+  }
+
+  function populateSeasonSelect(availableYears) {
+    select.innerHTML = '';
+
+    availableYears
+      .filter((year) => year !== currentYear)
+      .forEach((year) => {
+        const option = document.createElement('option');
+        option.value = year;
+        option.textContent = seasonLabel(year);
+        select.appendChild(option);
+      });
+
+    select.value = comparisonYear;
+    select.addEventListener('change', function () {
+      comparisonYear = this.value;
+      renderPresetButtons(availableYears);
+      renderChart();
+    });
+  }
+
+  function renderChart() {
+    const currentRows = (groupedByYear.get(currentYear) || []).slice().sort((a, b) => a.gm - b.gm);
+    const comparisonRows = (groupedByYear.get(comparisonYear) || []).slice().sort((a, b) => a.gm - b.gm);
+    if (currentRows.length === 0 || comparisonRows.length === 0) {
+      return;
+    }
+
+    const currentStats = computeSeasonStats(currentRows, currentGamesPlayed);
+    const comparisonStats = computeSeasonStats(comparisonRows, currentGamesPlayed);
+    const seasons = [currentYear, comparisonYear];
+    const maxGame = d3.max([
+      d3.max(currentRows, (d) => d.gm),
+      d3.max(comparisonRows, (d) => d.gm),
+      currentGamesPlayed,
+    ]);
+    const firstRollingGame = windowSize;
+    const gameCount = Math.max(1, maxGame - firstRollingGame + 1);
+
+    renderHighlights(currentStats, comparisonStats);
+    renderSummary(currentStats, comparisonStats);
+
+    chartContainer.selectAll('*').remove();
+
+    const isMobile = window.innerWidth <= 767;
+    const margin = isMobile
+      ? { top: 52, right: 16, bottom: 28, left: 74 }
+      : { top: 58, right: 20, bottom: 30, left: 92 };
+    const containerWidth = chartContainer.node().getBoundingClientRect().width;
+    const width = containerWidth - margin.left - margin.right;
+    const height = isMobile ? 170 : 200;
+
+    const svg = chartContainer
+      .append('svg')
+      .attr('viewBox', `0 0 ${containerWidth} ${height + margin.top + margin.bottom}`)
+      .append('g')
+      .attr('transform', `translate(${margin.left}, ${margin.top})`);
+
+    const xScale = d3.scaleLinear()
+      .domain([firstRollingGame, maxGame])
+      .range([0, width]);
+    const cellWidth = width / gameCount;
+    const xPosition = (gameNumber) => (gameNumber - firstRollingGame) * cellWidth;
+
+    const yScale = d3.scaleBand()
+      .domain(seasons)
+      .range([0, height])
+      .paddingInner(0.26);
+
+    const colorScale = d3.scaleLinear()
+      .domain([0, 0.5, 1])
+      .range(['#C94741', '#F0F0F0', '#005A9C']);
+
+    const xAxis = d3.axisTop(xScale)
+      .tickValues([20, 40, 60, 80, 100, 120, 140, 160].filter((tick) => tick <= maxGame))
+      .tickFormat(d3.format('d'));
+
+    svg.append('g').call(xAxis);
+
+    svg.append('text')
+      .attr('x', width / 2)
+      .attr('y', -36)
+      .attr('class', 'anno-dark')
+      .attr('text-anchor', 'middle')
+      .text('Game number');
+
+    svg.append('g')
+      .call(d3.axisLeft(yScale).tickSize(0))
+      .call((axis) => axis.select('.domain').remove())
+      .call((axis) => axis.selectAll('text').attr('class', 'anno-dark'));
+
+    seasons.forEach((season) => {
+      const rows = season === currentYear ? currentRows : comparisonRows;
+
+      svg.append('g')
+        .selectAll('rect')
+        .data(rows)
+        .enter()
+        .append('rect')
+        .attr('x', (d) => xPosition(d.gm))
+        .attr('y', yScale(season))
+        .attr('width', cellWidth + 0.25)
+        .attr('height', yScale.bandwidth())
+        .attr('fill', (d) => colorScale(d.rolling_win_pct_20))
+        .append('title')
+        .text((d) => `${season}\nGame ${d.gm}\nDate ${d.game_date}\nLast ${windowSize} games: ${formatPercent(d.rolling_win_pct_20)} (${d.rolling_wins_20}-${windowSize - d.rolling_wins_20})`);
+    });
+
+    [
+      { season: currentYear, stats: currentStats, stroke: '#005A9C' },
+      { season: comparisonYear, stats: comparisonStats, stroke: '#40464b' },
+    ].forEach(({ season, stats, stroke }) => {
+      svg.append('rect')
+        .attr('x', xPosition(stats.worstComparableStart))
+        .attr('y', yScale(season) - 2)
+        .attr('width', (stats.worstComparableEnd - stats.worstComparableStart + 1) * cellWidth)
+        .attr('height', yScale.bandwidth() + 4)
+        .attr('fill', 'none')
+        .attr('stroke', stroke)
+        .attr('stroke-width', 1.5)
+        .attr('stroke-dasharray', '4 3')
+        .attr('pointer-events', 'none');
+    });
+
+    const guideX = xPosition(currentGamesPlayed) + cellWidth;
+    svg.append('line')
+      .attr('x1', guideX)
+      .attr('x2', guideX)
+      .attr('y1', -8)
+      .attr('y2', height)
+      .attr('stroke', '#b5b5b5')
+      .attr('stroke-width', 1)
+      .attr('stroke-dasharray', '4 4');
+  }
+
+  async function initializeRollingCompareChart() {
+    try {
+      let payload;
+
+      try {
+        const response = await fetchDataset('rolling_win_pct_20');
+        payload = normalizeRollingPayload(response);
+      } catch (error) {
+        console.warn('Falling back to browser-side rolling calculation from standings history.', error);
+        const standingsHistory = await fetchDataset('standings_1958_present');
+        payload = buildRollingPayloadFromStandings(standingsHistory);
+      }
+
+      windowSize = payload.windowSize;
+      recommendedComparisons = payload.recommendedComparisons;
+      groupedByYear = d3.group(payload.records, (d) => d.year);
+
+      if (!groupedByYear.has(currentYear)) {
+        currentYear = d3.max(Array.from(groupedByYear.keys()), (d) => Number(d)).toString();
+      }
+
+      currentGamesPlayed = d3.max(groupedByYear.get(currentYear), (d) => d.gm);
+      if (currentGamesPlayed < minGamesToShow) {
+        section.style.display = 'none';
+        return;
+      }
+
+      section.style.display = '';
+      comparisonYear = chooseDefaultComparison();
+
+      const availableYears = getAvailableYears();
+      populateSeasonSelect(availableYears);
+      renderPresetButtons(availableYears);
+      renderChart();
+
+      let resizeTimer;
+      window.addEventListener('resize', () => {
+        clearTimeout(resizeTimer);
+        resizeTimer = setTimeout(renderChart, 120);
+      });
+    } catch (error) {
+      console.error('Failed to load rolling win-percentage comparison data:', error);
+    }
+  }
+
+  initializeRollingCompareChart();
+});
 
 // Wins, losses, run differential column chart
 
@@ -460,9 +843,10 @@ document.addEventListener('DOMContentLoaded', function() {
       .style('stroke-width', 2);
   
     // Set lastDataCurrentYear safely
-    if (lineCurrentYear.length > 0) {
+      if (lineCurrentYear.length > 0) {
       lineCurrentYear[0][1].sort((a, b) => d3.ascending(Number(a.gm), Number(b.gm)));
       const lastDataCurrentYear = lineCurrentYear[0][1].slice(-1)[0];
+      const shouldShowEndLabel = Number(lastDataCurrentYear.gm) <= END_LABEL_CUTOFF_GAME;
       
       // Add circle at the end of current year line
       svg.append('circle')
@@ -473,31 +857,33 @@ document.addEventListener('DOMContentLoaded', function() {
         .style('stroke', '#fff')
         .style('stroke-width', 2);
   
-      svg.append('text')
-        .attr('x', xScale(Number(lastDataCurrentYear.gm)) + 5)
-        .attr('y', yScale(Number(lastDataCurrentYear.wins)) - 20)
-        .text(currentYear)
-        .attr('class', 'anno-dodgers')
-        .style('stroke', '#fff')
-        .style('stroke-width', '4px')
-        .style('stroke-linejoin', 'round')
-        .attr('text-anchor', 'start')
-        .style('paint-order', 'stroke')
-        .clone(true)
-        .style('stroke', 'none');
-  
-      svg.append('text')
-        .attr('x', xScale(Number(lastDataCurrentYear.gm)) + 5)
-        .attr('y', yScale(Number(lastDataCurrentYear.wins)) -6 )
-        .text(`${lastDataCurrentYear.wins} wins`)
-        .attr('class', 'anno-dark')
-        .style('stroke', '#fff')
-        .style('stroke-width', '4px')
-        .style('stroke-linejoin', 'round')
-        .attr('text-anchor', 'start')
-        .style('paint-order', 'stroke')
-        .clone(true)
-        .style('stroke', 'none');
+      if (shouldShowEndLabel) {
+        svg.append('text')
+          .attr('x', xScale(Number(lastDataCurrentYear.gm)) + 5)
+          .attr('y', yScale(Number(lastDataCurrentYear.wins)) - 20)
+          .text(currentYear)
+          .attr('class', 'anno-dodgers')
+          .style('stroke', '#fff')
+          .style('stroke-width', '4px')
+          .style('stroke-linejoin', 'round')
+          .attr('text-anchor', 'start')
+          .style('paint-order', 'stroke')
+          .clone(true)
+          .style('stroke', 'none');
+    
+        svg.append('text')
+          .attr('x', xScale(Number(lastDataCurrentYear.gm)) + 5)
+          .attr('y', yScale(Number(lastDataCurrentYear.wins)) -6 )
+          .text(`${lastDataCurrentYear.wins} wins`)
+          .attr('class', 'anno-dark')
+          .style('stroke', '#fff')
+          .style('stroke-width', '4px')
+          .style('stroke-linejoin', 'round')
+          .attr('text-anchor', 'start')
+          .style('paint-order', 'stroke')
+          .clone(true)
+          .style('stroke', 'none');
+      }
     }
   }
   
@@ -621,8 +1007,6 @@ document.addEventListener('DOMContentLoaded', function() {
         }
       ];
     
-      const endLabelCutoffGame = 130;
-
       async function fetchData() {
         try {
           const response = await d3.json(
@@ -756,7 +1140,7 @@ document.addEventListener('DOMContentLoaded', function() {
     
         const lastDataCurrentYear = data.get(currentYear)?.slice(-1)[0];
         const shouldShowEndLabel =
-          lastDataCurrentYear && lastDataCurrentYear.gtm <= endLabelCutoffGame;
+          lastDataCurrentYear && lastDataCurrentYear.gtm <= END_LABEL_CUTOFF_GAME;
 
         if (shouldShowEndLabel) {
           svg
@@ -819,8 +1203,6 @@ document.addEventListener('DOMContentLoaded', function() {
       pastAnnotationY: 1200
     }
   ];
-
-  const endLabelCutoffGame = 130;
 
   async function fetchData() {
     try {
@@ -954,7 +1336,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
     const lastDataCurrentYear = data.get(currentYear)?.slice(-1)[0];
     const shouldShowEndLabel =
-      lastDataCurrentYear && lastDataCurrentYear.gtm <= endLabelCutoffGame;
+      lastDataCurrentYear && lastDataCurrentYear.gtm <= END_LABEL_CUTOFF_GAME;
 
     if (shouldShowEndLabel) {
       svg
@@ -1110,6 +1492,7 @@ document.addEventListener('DOMContentLoaded', function() {
         .style('stroke-width', 2);
 
       const lastDataCurrentYear = lineCurrentYear.slice(-1)[0];
+      const shouldShowEndLabel = lastDataCurrentYear.gtm <= END_LABEL_CUTOFF_GAME;
       
       // Add circle at the end of current year line
       svg
@@ -1121,33 +1504,35 @@ document.addEventListener('DOMContentLoaded', function() {
         .style('stroke', '#fff')
         .style('stroke-width', 2);
 
-      svg
-        .append('text')
-        .attr('x', xScale(lastDataCurrentYear.gtm + 1))
-        .attr('y', yScale(lastDataCurrentYear.era_cum) - 20)
-        .text(currentYear)
-        .attr('class', 'anno-dodgers')
-        .style('stroke', '#fff')
-        .style('stroke-width', '4px')
-        .style('stroke-linejoin', 'round')
-        .attr('text-anchor', 'start')
-        .style('paint-order', 'stroke')
-        .clone(true)
-        .style('stroke', 'none');
+      if (shouldShowEndLabel) {
+        svg
+          .append('text')
+          .attr('x', xScale(lastDataCurrentYear.gtm + 1))
+          .attr('y', yScale(lastDataCurrentYear.era_cum) - 20)
+          .text(currentYear)
+          .attr('class', 'anno-dodgers')
+          .style('stroke', '#fff')
+          .style('stroke-width', '4px')
+          .style('stroke-linejoin', 'round')
+          .attr('text-anchor', 'start')
+          .style('paint-order', 'stroke')
+          .clone(true)
+          .style('stroke', 'none');
 
-      svg
-        .append('text')
-        .attr('x', xScale(lastDataCurrentYear.gtm + 1))
-        .attr('y', yScale(lastDataCurrentYear.era_cum) -6)
-        .text(`${lastDataCurrentYear.era_cum} ERA`)
-        .attr('class', 'anno-dark')
-        .style('stroke', '#fff')
-        .style('stroke-width', '4px')
-        .style('stroke-linejoin', 'round')
-        .attr('text-anchor', 'start')
-        .style('paint-order', 'stroke')
-        .clone(true)
-        .style('stroke', 'none');
+        svg
+          .append('text')
+          .attr('x', xScale(lastDataCurrentYear.gtm + 1))
+          .attr('y', yScale(lastDataCurrentYear.era_cum) -6)
+          .text(`${lastDataCurrentYear.era_cum} ERA`)
+          .attr('class', 'anno-dark')
+          .style('stroke', '#fff')
+          .style('stroke-width', '4px')
+          .style('stroke-linejoin', 'round')
+          .attr('text-anchor', 'start')
+          .style('paint-order', 'stroke')
+          .clone(true)
+          .style('stroke', 'none');
+      }
     }
 
     svg
@@ -1172,6 +1557,8 @@ document.addEventListener('DOMContentLoaded', function() {
 
 
 document.addEventListener('DOMContentLoaded', function () {
+  const isPlaceholderOpponent = (opponentName) => /winner|tbd/i.test(opponentName ?? '');
+
   const renderTable = (games, tableId) => {
     const tableBody = document.querySelector(`#${tableId} tbody`);
     tableBody.innerHTML = '';
@@ -1188,11 +1575,13 @@ document.addEventListener('DOMContentLoaded', function () {
           <td class="${game.result === 'win' ? 'win' : game.result === 'loss' ? 'loss' : ''}">${game.result}</td>
         `;
       } else if (tableId === 'next-games') {
+        const displayGameStart = isPlaceholderOpponent(game.opp_name) ? 'TBD' : game.game_start;
+
         row.innerHTML = `
           <td>${game.date}</td>
           <td>${game.opp_name}</td>
           <td>${game.home_away === 'home' ? '<i class="fas fa-home home-icon"></i>' : '<i class="fas fa-road road-icon"></i>'}</td>
-          <td>${game.game_start}</td>  <!-- Display game_start time instead of result -->
+          <td>${displayGameStart}</td>  <!-- Display game_start time instead of result -->
         `;
       }
       tableBody.appendChild(row);

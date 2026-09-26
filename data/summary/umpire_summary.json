@@ -1,17 +1,17 @@
 {
     "season_summary": {
-        "correct_strikes_pct": 90.85,
-        "incorrect_strikes_pct": 9.150000000000006,
-        "total_called_strikes": 4000,
-        "bad_calls_count": 366
+        "correct_strikes_pct": 90.82113619449268,
+        "incorrect_strikes_pct": 9.17886380550732,
+        "total_called_strikes": 4031,
+        "bad_calls_count": 370
     },
     "last_game_summary": {
-        "date": "September 25, 2026",
-        "correct_strikes_pct": 94.11764705882352,
-        "incorrect_strikes_pct": 5.882352941176478,
-        "total_called_strikes": 17,
-        "bad_calls_count": 1,
-        "home_plate_umpire": "Tripp Gibson"
+        "date": "September 26, 2026",
+        "correct_strikes_pct": 87.09677419354838,
+        "incorrect_strikes_pct": 12.903225806451616,
+        "total_called_strikes": 31,
+        "bad_calls_count": 4,
+        "home_plate_umpire": "Nick Mahrley"
     },
     "worst_calls_of_season": [
         {
@@ -56,16 +56,16 @@
         }
     ],
     "pitching_season_summary": {
-        "correct_balls_pct": 96.35938109478612,
-        "incorrect_balls_pct": 3.640618905213884,
-        "total_called_balls": 7691,
+        "correct_balls_pct": 96.38009049773756,
+        "incorrect_balls_pct": 3.619909502262445,
+        "total_called_balls": 7735,
         "bad_calls_count": 280
     },
     "pitching_last_game_summary": {
-        "date": "September 25, 2026",
+        "date": "September 26, 2026",
         "correct_balls_pct": 100.0,
         "incorrect_balls_pct": 0.0,
-        "total_called_balls": 26,
+        "total_called_balls": 44,
         "bad_calls_count": 0
     },
     "pitching_worst_calls_of_season": [],
@@ -89,9 +89,9 @@
         },
         "opponents": {
             "batting": {
-                "total": 45,
+                "total": 46,
                 "successful": 10,
-                "failed": 35
+                "failed": 36
             },
             "pitching": {
                 "total": 0,
@@ -99,12 +99,48 @@
                 "failed": 0
             },
             "catching": {
-                "total": 56,
-                "successful": 42,
+                "total": 58,
+                "successful": 44,
                 "failed": 14
             }
         },
         "challenge_log": [
+            {
+                "date": "2026-09-26",
+                "date_formatted": "September 26, 2026",
+                "challenger": "Andrew Knizner",
+                "role": "catching",
+                "team": "opponents",
+                "outcome": "overturned",
+                "result_desc": "Mookie Betts called out on strikes.",
+                "batter": "Mookie Betts",
+                "pitcher": "Camilo Doval",
+                "game_pk": 823165
+            },
+            {
+                "date": "2026-09-26",
+                "date_formatted": "September 26, 2026",
+                "challenger": "Andrew Knizner",
+                "role": "catching",
+                "team": "opponents",
+                "outcome": "overturned",
+                "result_desc": "Dalton Rushing called out on strikes.",
+                "batter": "Dalton Rushing",
+                "pitcher": "Camilo Doval",
+                "game_pk": 823165
+            },
+            {
+                "date": "2026-09-26",
+                "date_formatted": "September 26, 2026",
+                "challenger": "Osleivis Basabe",
+                "role": "batting",
+                "team": "opponents",
+                "outcome": "confirmed",
+                "result_desc": "Osleivis Basabe called out on strikes.",
+                "batter": "Osleivis Basabe",
+                "pitcher": "Tanner Scott",
+                "game_pk": 823165
+            },
             {
                 "date": "2026-09-25",
                 "date_formatted": "September 25, 2026",
@@ -308,42 +344,6 @@
                 "batter": "Elly De La Cruz",
                 "pitcher": "Yoshinobu Yamamoto",
                 "game_pk": 823900
-            },
-            {
-                "date": "2026-09-08",
-                "date_formatted": "September 8, 2026",
-                "challenger": "Jose Trevino",
-                "role": "catching",
-                "team": "opponents",
-                "outcome": "overturned",
-                "result_desc": "Freddie Freeman called out on strikes.",
-                "batter": "Freddie Freeman",
-                "pitcher": "Nick Lodolo",
-                "game_pk": 823901
-            },
-            {
-                "date": "2026-09-07",
-                "date_formatted": "September 7, 2026",
-                "challenger": "Sal Stewart",
-                "role": "batting",
-                "team": "opponents",
-                "outcome": "overturned",
-                "result_desc": "Sal Stewart walks. H\u00e9ctor Rodr\u00edguez to 2nd.",
-                "batter": "Sal Stewart",
-                "pitcher": "Emmet Sheehan",
-                "game_pk": 823902
-            },
-            {
-                "date": "2026-09-06",
-                "date_formatted": "September 6, 2026",
-                "challenger": "Harry Ford",
-                "role": "catching",
-                "team": "opponents",
-                "outcome": "confirmed",
-                "result_desc": "Tommy Edman walks. Alex Call to 2nd.",
-                "batter": "Tommy Edman",
-                "pitcher": "Will Dion",
-                "game_pk": 823903
             }
         ]
     }

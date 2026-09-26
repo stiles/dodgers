@@ -1,13 +1,5 @@
 [
     {
-        "date":"Sep 15",
-        "opp_name":"Cincinnati Reds",
-        "home_away":"away",
-        "result":"win",
-        "placement":"last",
-        "game_start":"4-0"
-    },
-    {
         "date":"Sep 16",
         "opp_name":"Cincinnati Reds",
         "home_away":"away",
@@ -83,9 +75,9 @@
         "date":"Sep 26",
         "opp_name":"San Francisco Giants",
         "home_away":"away",
-        "result":"--",
-        "placement":"next",
-        "game_start":"1:05 PM"
+        "result":"win",
+        "placement":"last",
+        "game_start":"4-3"
     },
     {
         "date":"Sep 27",
@@ -101,7 +93,7 @@
         "home_away":"home",
         "result":"--",
         "placement":"next",
-        "game_start":"3:33 AM"
+        "game_start":"TBD"
     },
     {
         "date":"Oct 4",
@@ -109,7 +101,7 @@
         "home_away":"home",
         "result":"--",
         "placement":"next",
-        "game_start":"3:33 AM"
+        "game_start":"TBD"
     },
     {
         "date":"Oct 6",
@@ -117,7 +109,7 @@
         "home_away":"away",
         "result":"--",
         "placement":"next",
-        "game_start":"12:33 AM"
+        "game_start":"TBD"
     },
     {
         "date":"Oct 7",
@@ -125,7 +117,7 @@
         "home_away":"away",
         "result":"--",
         "placement":"next",
-        "game_start":"12:33 AM"
+        "game_start":"TBD"
     },
     {
         "date":"Oct 9",
@@ -133,6 +125,6 @@
         "home_away":"home",
         "result":"--",
         "placement":"next",
-        "game_start":"3:33 AM"
+        "game_start":"TBD"
     }
 ]

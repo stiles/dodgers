@@ -1,9 +1,9 @@
 {
     "dodgers": {
         "batting": {
-            "total": 123,
+            "total": 124,
             "successful": 77,
-            "failed": 46
+            "failed": 47
         },
         "pitching": {
             "total": 8,
@@ -28,12 +28,36 @@
             "failed": 3
         },
         "catching": {
-            "total": 180,
+            "total": 181,
             "successful": 111,
-            "failed": 69
+            "failed": 70
         }
     },
     "challenge_log": [
+        {
+            "date": "2026-09-26",
+            "date_formatted": "September 26, 2026",
+            "challenger": "Andrew Knizner",
+            "role": "catching",
+            "team": "opponents",
+            "outcome": "confirmed",
+            "result_desc": "Shohei Ohtani flies out to left fielder Scott Bandura.",
+            "batter": "Shohei Ohtani",
+            "pitcher": "Matt Wilkinson",
+            "game_pk": 823165
+        },
+        {
+            "date": "2026-09-26",
+            "date_formatted": "September 26, 2026",
+            "challenger": "Shohei Ohtani",
+            "role": "batting",
+            "team": "dodgers",
+            "outcome": "confirmed",
+            "result_desc": "Shohei Ohtani flies out to left fielder Scott Bandura.",
+            "batter": "Shohei Ohtani",
+            "pitcher": "Matt Wilkinson",
+            "game_pk": 823165
+        },
         {
             "date": "2026-09-25",
             "date_formatted": "September 25, 2026",
@@ -193,18 +217,6 @@
         {
             "date": "2026-09-20",
             "date_formatted": "September 20, 2026",
-            "challenger": "Andrew Knizner",
-            "role": "catching",
-            "team": "opponents",
-            "outcome": "overturned",
-            "result_desc": "Freddie Freeman singles on a ground ball to left fielder Scott Bandura. Teoscar Hern\u00e1ndez to 2nd.",
-            "batter": "Freddie Freeman",
-            "pitcher": "Trent Harris",
-            "game_pk": 823896
-        },
-        {
-            "date": "2026-09-20",
-            "date_formatted": "September 20, 2026",
             "challenger": "Miguel Rojas",
             "role": "batting",
             "team": "dodgers",
@@ -212,6 +224,18 @@
             "result_desc": "Miguel Rojas doubles (16) on a sharp ground ball to left fielder Scott Bandura.",
             "batter": "Miguel Rojas",
             "pitcher": "Matt Wilkinson",
+            "game_pk": 823896
+        },
+        {
+            "date": "2026-09-20",
+            "date_formatted": "September 20, 2026",
+            "challenger": "Andrew Knizner",
+            "role": "catching",
+            "team": "opponents",
+            "outcome": "overturned",
+            "result_desc": "Freddie Freeman singles on a ground ball to left fielder Scott Bandura. Teoscar Hern\u00e1ndez to 2nd.",
+            "batter": "Freddie Freeman",
+            "pitcher": "Trent Harris",
             "game_pk": 823896
         },
         {
@@ -249,30 +273,6 @@
             "batter": "Freddie Freeman",
             "pitcher": "Yunior Marte",
             "game_pk": 823899
-        },
-        {
-            "date": "2026-09-18",
-            "date_formatted": "September 18, 2026",
-            "challenger": "Josue De Paula",
-            "role": "batting",
-            "team": "dodgers",
-            "outcome": "overturned",
-            "result_desc": "Josue De Paula walks.",
-            "batter": "Josue De Paula",
-            "pitcher": "Philip Abner",
-            "game_pk": 823898
-        },
-        {
-            "date": "2026-09-18",
-            "date_formatted": "September 18, 2026",
-            "challenger": "Will Smith",
-            "role": "catching",
-            "team": "dodgers",
-            "outcome": "confirmed",
-            "result_desc": "Drew Cavanaugh strikes out swinging.",
-            "batter": "Drew Cavanaugh",
-            "pitcher": "Tyler Glasnow",
-            "game_pk": 823898
         }
     ],
     "dodgers_by_player": [
@@ -320,10 +320,10 @@
         },
         {
             "challenger": "Shohei Ohtani",
-            "total": 12,
+            "total": 13,
             "successful": 7,
-            "failed": 5,
-            "success_rate": 58.3
+            "failed": 6,
+            "success_rate": 53.8
         },
         {
             "challenger": "Kyle Tucker",
@@ -448,10 +448,10 @@
         },
         {
             "inning": 3,
-            "total": 26,
+            "total": 27,
             "successful": 16,
-            "failed": 10,
-            "success_rate": 61.5
+            "failed": 11,
+            "success_rate": 59.3
         },
         {
             "inning": 4,

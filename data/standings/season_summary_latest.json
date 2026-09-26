@@ -2,7 +2,7 @@
     {
         "stat_label":"Wins",
         "stat":"wins",
-        "value":98,
+        "value":99,
         "category":"standings",
         "context_value":91,
         "context_value_label":"This point last season"
@@ -18,7 +18,7 @@
     {
         "stat_label":"Win percentage",
         "stat":"win_pct",
-        "value":"61%",
+        "value":"62%",
         "category":"standings",
         "context_value":"57%",
         "context_value_label":"This point last season"
@@ -26,7 +26,7 @@
     {
         "stat_label":"Games up\/back",
         "stat":"games_up_back",
-        "value":9,
+        "value":9.5,
         "category":"standings",
         "context_value":"1st",
         "context_value_label":"Division rank"
@@ -50,7 +50,7 @@
     {
         "stat_label":"Runs",
         "stat":"runs",
-        "value":792,
+        "value":796,
         "category":"standings",
         "context_value":"4th",
         "context_value_label":"League rank"
@@ -58,7 +58,7 @@
     {
         "stat_label":"Runs against",
         "stat":"runs_against",
-        "value":596,
+        "value":599,
         "category":"standings",
         "context_value":679,
         "context_value_label":"This point last season"
@@ -66,7 +66,7 @@
     {
         "stat_label":"Run differential",
         "stat":"run_differential",
-        "value":196,
+        "value":197,
         "category":"standings",
         "context_value":135,
         "context_value_label":"This point last season"
@@ -82,7 +82,7 @@
     {
         "stat_label":"Home runs",
         "stat":"home_runs",
-        "value":201,
+        "value":203,
         "category":"batting",
         "context_value":"7th",
         "context_value_label":"League rank"
@@ -138,7 +138,7 @@
     {
         "stat_label":"Doubles",
         "stat":"doubles",
-        "value":262,
+        "value":263,
         "category":"batting",
         "context_value":"8th",
         "context_value_label":"League rank"
@@ -146,7 +146,7 @@
     {
         "stat_label":"Strikeouts",
         "stat":"strikeouts",
-        "value":"1,495",
+        "value":"1,505",
         "category":"pitching",
         "context_value":"4th",
         "context_value_label":"League rank"
@@ -154,7 +154,7 @@
     {
         "stat_label":"Walks",
         "stat":"walks",
-        "value":477,
+        "value":478,
         "category":"pitching",
         "context_value":"26th",
         "context_value_label":"League rank"
@@ -186,7 +186,7 @@
     {
         "stat_label":"K\/BB ratio",
         "stat":"k_bb_ratio",
-        "value":3.13,
+        "value":3.15,
         "category":"pitching",
         "context_value":"4th",
         "context_value_label":"League rank"
@@ -194,7 +194,7 @@
     {
         "stat_label":"Last updated",
         "stat":"update_time",
-        "value":"September 26, 2026, 11:29 AM PT",
+        "value":"September 26, 2026, 4:02 PM PT",
         "category":"summary",
         "context_value":"",
         "context_value_label":""
@@ -202,7 +202,7 @@
     {
         "stat_label":"Team summary",
         "stat":"summary",
-        "value":"<span class='highlight'>LOS ANGELES<\/span> <span class='updated'>(September 26)<\/span> \u2014 The Dodgers have compiled a <span class='highlight'>98-62<\/span> record in the 2026 regular season, a <span class='highlight'>61%<\/span> winning percentage. The last game was a <span class='highlight'>2-0<\/span> away <span class='highlight'>win<\/span> against the <span class='highlight'>San Francisco Giants<\/span>. The team next faces the <span class='highlight'>San Francisco Giants<\/span> on Saturday at 1:05 p.m. PDT at <span class='highlight'>Oracle Park<\/span>.",
+        "value":"<span class='highlight'>LOS ANGELES<\/span> <span class='updated'>(September 26)<\/span> \u2014 The Dodgers have compiled a <span class='highlight'>99-62<\/span> record in the 2026 regular season, a <span class='highlight'>62%<\/span> winning percentage. The last game was a <span class='highlight'>4-3<\/span> away <span class='highlight'>win<\/span> against the <span class='highlight'>San Francisco Giants<\/span>. The team next faces the <span class='highlight'>San Francisco Giants<\/span> on Sunday at 12:05 p.m. PDT at <span class='highlight'>Oracle Park<\/span>.",
         "category":"summary",
         "context_value":"",
         "context_value_label":""
