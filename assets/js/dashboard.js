@@ -233,8 +233,9 @@ fetchData();
 
 
 document.addEventListener('DOMContentLoaded', function () {
+  const section = document.getElementById('rolling-compare-section');
   const chartContainer = d3.select('#rolling-compare-chart');
-  if (chartContainer.empty()) {
+  if (!section || chartContainer.empty()) {
     return;
   }
 
@@ -242,15 +243,7 @@ document.addEventListener('DOMContentLoaded', function () {
   const select = document.getElementById('rolling-compare-select');
   const highlights = document.getElementById('rolling-compare-highlights');
   const summary = document.getElementById('rolling-compare-summary');
-
-  const seasonLabels = {
-    '2025': 'Last title',
-    '2024': 'Title',
-    '2022': '111 wins',
-    '2020': 'Short season title',
-    '2017': 'Late fade',
-    '1988': 'Title',
-  };
+  const minGamesToShow = 40;
 
   let groupedByYear = new Map();
   let comparisonYear = null;
@@ -263,8 +256,70 @@ document.addEventListener('DOMContentLoaded', function () {
     return `${Math.round(value * 100)}%`;
   }
 
+  function normalizeRollingPayload(response) {
+    return {
+      windowSize: response.window_size || 20,
+      recommendedComparisons: response.recommended_comparisons || [],
+      records: (response.records || response).map((d) => ({
+        year: String(d.year),
+        gm: Number(d.gm),
+        game_date: d.game_date,
+        result: d.result,
+        rolling_win_pct_20: Number(d.rolling_win_pct_20),
+        rolling_wins_20: Number(d.rolling_wins_20),
+      })),
+    };
+  }
+
+  function buildRollingPayloadFromStandings(standingsRows, fallbackWindowSize = 20) {
+    const grouped = d3.group(
+      standingsRows
+        .map((row) => ({
+          year: String(row.year),
+          gm: Number(row.gm),
+          game_date: row.game_date,
+          result: typeof row.result === 'string' ? row.result.trim().charAt(0) : '',
+        }))
+        .filter((row) => row.result === 'W' || row.result === 'L'),
+      (row) => row.year
+    );
+
+    const records = [];
+    Array.from(grouped.entries())
+      .sort((a, b) => Number(a[0]) - Number(b[0]))
+      .forEach(([year, rows]) => {
+        const sorted = rows.slice().sort((a, b) => a.gm - b.gm);
+        const results = sorted.map((row) => (row.result === 'W' ? 1 : 0));
+
+        sorted.forEach((row, index) => {
+          if (index < fallbackWindowSize - 1) {
+            return;
+          }
+
+          const wins = d3.sum(results.slice(index - fallbackWindowSize + 1, index + 1));
+          records.push({
+            year,
+            gm: row.gm,
+            game_date: row.game_date,
+            result: row.result,
+            rolling_win_pct_20: Number((wins / fallbackWindowSize).toFixed(3)),
+            rolling_wins_20: wins,
+          });
+        });
+      });
+
+    const availableYears = Array.from(new Set(records.map((row) => Number(row.year)))).sort((a, b) => b - a);
+    const latestYear = availableYears[0];
+
+    return {
+      windowSize: fallbackWindowSize,
+      recommendedComparisons: availableYears.filter((year) => year !== latestYear).slice(0, 6),
+      records,
+    };
+  }
+
   function seasonLabel(year) {
-    return seasonLabels[year] ? `${year} - ${seasonLabels[year]}` : year;
+    return year;
   }
 
   function getAvailableYears() {
@@ -308,30 +363,30 @@ document.addEventListener('DOMContentLoaded', function () {
 
   function renderHighlights(currentStats, comparisonStats) {
     const comparisonLabel = comparisonStats.gamesPlayed >= currentGamesPlayed
-      ? `${comparisonYear} low by Game ${currentGamesPlayed}`
-      : `${comparisonYear} season low`;
+      ? `${comparisonYear}: low by Game ${currentGamesPlayed}`
+      : `${comparisonYear}: season low`;
 
     highlights.innerHTML = `
-      <div class="rolling-compare-highlight">
-        <div class="rolling-compare-highlight__label">${currentYear} current form</div>
-        <div class="rolling-compare-highlight__value">${formatPercent(currentStats.latestComparable.rolling_win_pct_20)}</div>
-        <div class="rolling-compare-highlight__meta">Last 20 games through Game ${currentGamesPlayed}</div>
+      <div class="stat-card rolling-compare-highlight">
+        <div class="stat-card-label rolling-compare-highlight__label">${currentYear}: current form</div>
+        <div class="stat-card-value rolling-compare-highlight__value">${formatPercent(currentStats.latestComparable.rolling_win_pct_20)}</div>
+        <p class="stat-card-context rolling-compare-highlight__meta">Rolling ${windowSize}-game win pct through Game ${currentGamesPlayed}</p>
       </div>
-      <div class="rolling-compare-highlight">
-        <div class="rolling-compare-highlight__label">${currentYear} low point</div>
-        <div class="rolling-compare-highlight__value">${formatPercent(currentStats.worstComparable.rolling_win_pct_20)}</div>
-        <div class="rolling-compare-highlight__meta">Games ${currentStats.worstComparableStart}-${currentStats.worstComparableEnd}</div>
+      <div class="stat-card rolling-compare-highlight">
+        <div class="stat-card-label rolling-compare-highlight__label">${currentYear}: low point</div>
+        <div class="stat-card-value rolling-compare-highlight__value">${formatPercent(currentStats.worstComparable.rolling_win_pct_20)}</div>
+        <p class="stat-card-context rolling-compare-highlight__meta">Lowest rolling win pct, Games ${currentStats.worstComparableStart}-${currentStats.worstComparableEnd}</p>
       </div>
-      <div class="rolling-compare-highlight">
-        <div class="rolling-compare-highlight__label">${comparisonLabel}</div>
-        <div class="rolling-compare-highlight__value">${formatPercent(comparisonStats.worstComparable.rolling_win_pct_20)}</div>
-        <div class="rolling-compare-highlight__meta">Games ${comparisonStats.worstComparableStart}-${comparisonStats.worstComparableEnd}</div>
+      <div class="stat-card rolling-compare-highlight">
+        <div class="stat-card-label rolling-compare-highlight__label">${comparisonLabel}</div>
+        <div class="stat-card-value rolling-compare-highlight__value">${formatPercent(comparisonStats.worstComparable.rolling_win_pct_20)}</div>
+        <p class="stat-card-context rolling-compare-highlight__meta">Lowest rolling win pct, Games ${comparisonStats.worstComparableStart}-${comparisonStats.worstComparableEnd}</p>
       </div>
     `;
   }
 
   function renderSummary(currentStats, comparisonStats) {
-    let text = `${currentYear} bottomed out at ${formatPercent(currentStats.worstComparable.rolling_win_pct_20)} over Games ${currentStats.worstComparableStart}-${currentStats.worstComparableEnd}. `;
+    let text = `${currentYear}'s lowest rolling ${windowSize}-game win percentage was ${formatPercent(currentStats.worstComparable.rolling_win_pct_20)} over Games ${currentStats.worstComparableStart}-${currentStats.worstComparableEnd}. `;
     text += `${comparisonYear} reached ${formatPercent(comparisonStats.worstComparable.rolling_win_pct_20)} by Game ${Math.min(currentGamesPlayed, comparisonStats.gamesPlayed)} over Games ${comparisonStats.worstComparableStart}-${comparisonStats.worstComparableEnd}.`;
 
     if (
@@ -342,13 +397,19 @@ document.addEventListener('DOMContentLoaded', function () {
       text += ` It later fell to ${formatPercent(comparisonStats.worstOverall.rolling_win_pct_20)} over Games ${comparisonStats.worstOverallStart}-${comparisonStats.worstOverallEnd}.`;
     }
 
-    summary.textContent = text;
+    summary.textContent = `Note: ${text}`;
   }
 
   function renderPresetButtons(availableYears) {
     presetContainer.innerHTML = '';
 
-    recommendedComparisons
+    const presetYears = (
+      recommendedComparisons.length > 0
+        ? recommendedComparisons.map(String)
+        : availableYears.filter((year) => year !== currentYear).slice(0, 6)
+    );
+
+    presetYears
       .map(String)
       .filter((year) => year !== currentYear && availableYears.includes(year))
       .forEach((year) => {
@@ -357,7 +418,6 @@ document.addEventListener('DOMContentLoaded', function () {
         button.className = `rolling-compare-btn${year === comparisonYear ? ' is-active' : ''}`;
         button.textContent = year;
         button.setAttribute('aria-pressed', year === comparisonYear ? 'true' : 'false');
-        button.title = seasonLabels[year] || year;
         button.addEventListener('click', () => {
           comparisonYear = year;
           select.value = year;
@@ -403,6 +463,8 @@ document.addEventListener('DOMContentLoaded', function () {
       d3.max(comparisonRows, (d) => d.gm),
       currentGamesPlayed,
     ]);
+    const firstRollingGame = windowSize;
+    const gameCount = Math.max(1, maxGame - firstRollingGame + 1);
 
     renderHighlights(currentStats, comparisonStats);
     renderSummary(currentStats, comparisonStats);
@@ -424,8 +486,10 @@ document.addEventListener('DOMContentLoaded', function () {
       .attr('transform', `translate(${margin.left}, ${margin.top})`);
 
     const xScale = d3.scaleLinear()
-      .domain([19.5, maxGame + 0.5])
+      .domain([firstRollingGame, maxGame])
       .range([0, width]);
+    const cellWidth = width / gameCount;
+    const xPosition = (gameNumber) => (gameNumber - firstRollingGame) * cellWidth;
 
     const yScale = d3.scaleBand()
       .domain(seasons)
@@ -462,9 +526,9 @@ document.addEventListener('DOMContentLoaded', function () {
         .data(rows)
         .enter()
         .append('rect')
-        .attr('x', (d) => xScale(d.gm - 0.5))
+        .attr('x', (d) => xPosition(d.gm))
         .attr('y', yScale(season))
-        .attr('width', (d) => xScale(d.gm + 0.5) - xScale(d.gm - 0.5))
+        .attr('width', cellWidth + 0.25)
         .attr('height', yScale.bandwidth())
         .attr('fill', (d) => colorScale(d.rolling_win_pct_20))
         .append('title')
@@ -476,9 +540,9 @@ document.addEventListener('DOMContentLoaded', function () {
       { season: comparisonYear, stats: comparisonStats, stroke: '#40464b' },
     ].forEach(({ season, stats, stroke }) => {
       svg.append('rect')
-        .attr('x', xScale(stats.worstComparableStart - 0.5))
+        .attr('x', xPosition(stats.worstComparableStart))
         .attr('y', yScale(season) - 2)
-        .attr('width', xScale(stats.worstComparableEnd + 0.5) - xScale(stats.worstComparableStart - 0.5))
+        .attr('width', (stats.worstComparableEnd - stats.worstComparableStart + 1) * cellWidth)
         .attr('height', yScale.bandwidth() + 4)
         .attr('fill', 'none')
         .attr('stroke', stroke)
@@ -487,47 +551,45 @@ document.addEventListener('DOMContentLoaded', function () {
         .attr('pointer-events', 'none');
     });
 
-    const guideX = xScale(currentGamesPlayed + 0.5);
+    const guideX = xPosition(currentGamesPlayed) + cellWidth;
     svg.append('line')
       .attr('x1', guideX)
       .attr('x2', guideX)
       .attr('y1', -8)
       .attr('y2', height)
-      .attr('stroke', '#7a7a7a')
+      .attr('stroke', '#b5b5b5')
       .attr('stroke-width', 1)
       .attr('stroke-dasharray', '4 4');
-
-    svg.append('text')
-      .attr('x', guideX > width - 80 ? guideX - 6 : guideX + 6)
-      .attr('y', -12)
-      .attr('class', 'anno')
-      .attr('text-anchor', guideX > width - 80 ? 'end' : 'start')
-      .text(`${currentYear} through Game ${currentGamesPlayed}`);
   }
 
   async function initializeRollingCompareChart() {
     try {
-      const response = await d3.json(await getDatasetUrl('rolling_win_pct_20'));
-      const records = response.records || response;
-      windowSize = response.window_size || 20;
-      recommendedComparisons = response.recommended_comparisons || [2025, 2024, 2022, 2020, 2017, 1988];
+      let payload;
 
-      const parsed = records.map((d) => ({
-        year: String(d.year),
-        gm: Number(d.gm),
-        game_date: d.game_date,
-        result: d.result,
-        rolling_win_pct_20: Number(d.rolling_win_pct_20),
-        rolling_wins_20: Number(d.rolling_wins_20),
-      }));
+      try {
+        const response = await fetchDataset('rolling_win_pct_20');
+        payload = normalizeRollingPayload(response);
+      } catch (error) {
+        console.warn('Falling back to browser-side rolling calculation from standings history.', error);
+        const standingsHistory = await fetchDataset('standings_1958_present');
+        payload = buildRollingPayloadFromStandings(standingsHistory);
+      }
 
-      groupedByYear = d3.group(parsed, (d) => d.year);
+      windowSize = payload.windowSize;
+      recommendedComparisons = payload.recommendedComparisons;
+      groupedByYear = d3.group(payload.records, (d) => d.year);
 
       if (!groupedByYear.has(currentYear)) {
         currentYear = d3.max(Array.from(groupedByYear.keys()), (d) => Number(d)).toString();
       }
 
       currentGamesPlayed = d3.max(groupedByYear.get(currentYear), (d) => d.gm);
+      if (currentGamesPlayed < minGamesToShow) {
+        section.style.display = 'none';
+        return;
+      }
+
+      section.style.display = '';
       comparisonYear = chooseDefaultComparison();
 
       const availableYears = getAvailableYears();

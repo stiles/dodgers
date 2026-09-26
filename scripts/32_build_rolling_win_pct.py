@@ -23,8 +23,6 @@ INPUT_FILE = "data/standings/dodgers_standings_1958_present.parquet"
 OUTPUT_FILE = "data/standings/dodgers_rolling_win_pct_20.json"
 S3_BUCKET = "stilesdata.com"
 S3_KEY = "dodgers/data/standings/dodgers_rolling_win_pct_20.json"
-RECOMMENDED_COMPARISONS = [2025, 2024, 2022, 2020, 2017, 1988]
-
 logging.basicConfig(level=logging.INFO, format="%(asctime)s - %(levelname)s - %(message)s")
 
 
@@ -79,6 +77,8 @@ def build_rolling_dataset(df: pd.DataFrame) -> dict:
     rolling_games["game_date"] = rolling_games["game_date"].dt.strftime("%Y-%m-%d")
 
     latest_year = int(rolling_games["year"].max())
+    available_years = sorted(rolling_games["year"].unique().tolist(), reverse=True)
+    recommended_comparisons = [year for year in available_years if year != latest_year][:6]
     records = rolling_games[
         ["year", "gm", "game_date", "result", "rolling_win_pct_20", "rolling_wins_20"]
     ].to_dict(orient="records")
@@ -88,7 +88,7 @@ def build_rolling_dataset(df: pd.DataFrame) -> dict:
     return {
         "window_size": WINDOW_SIZE,
         "current_year": latest_year,
-        "recommended_comparisons": RECOMMENDED_COMPARISONS,
+        "recommended_comparisons": recommended_comparisons,
         "last_updated": get_pacific_time(),
         "records": records,
     }
