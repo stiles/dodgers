@@ -12,7 +12,7 @@
         "ip_rounded":185,
         "gs":28,
         "gp":28,
-        "fetched":"2026-09-26"
+        "fetched":"2026-09-27"
     },
     {
         "player":"Justin Wrobleski",
@@ -27,7 +27,7 @@
         "ip_rounded":138,
         "gs":22,
         "gp":27,
-        "fetched":"2026-09-26"
+        "fetched":"2026-09-27"
     },
     {
         "player":"Roki Sasaki",
@@ -42,7 +42,7 @@
         "ip_rounded":121,
         "gs":23,
         "gp":25,
-        "fetched":"2026-09-26"
+        "fetched":"2026-09-27"
     },
     {
         "player":"Emmet Sheehan",
@@ -57,7 +57,7 @@
         "ip_rounded":112,
         "gs":22,
         "gp":23,
-        "fetched":"2026-09-26"
+        "fetched":"2026-09-27"
     },
     {
         "player":"Shohei Ohtani",
@@ -72,7 +72,7 @@
         "ip_rounded":85,
         "gs":14,
         "gp":14,
-        "fetched":"2026-09-26"
+        "fetched":"2026-09-27"
     },
     {
         "player":"Tyler Glasnow",
@@ -87,7 +87,7 @@
         "ip_rounded":74,
         "gs":13,
         "gp":13,
-        "fetched":"2026-09-26"
+        "fetched":"2026-09-27"
     },
     {
         "player":"Eric Lauer",
@@ -102,7 +102,22 @@
         "ip_rounded":72,
         "gs":12,
         "gp":14,
-        "fetched":"2026-09-26"
+        "fetched":"2026-09-27"
+    },
+    {
+        "player":"Tanner Scott",
+        "role":"RP",
+        "position":"P",
+        "era":"2.69",
+        "whip":"0.99",
+        "k9":"11.59",
+        "bb9":"2.12",
+        "kbb":"5.47",
+        "ip":"63.2",
+        "ip_rounded":63,
+        "gs":0,
+        "gp":69,
+        "fetched":"2026-09-27"
     },
     {
         "player":"Jack Dreyer",
@@ -117,22 +132,7 @@
         "ip_rounded":62,
         "gs":2,
         "gp":66,
-        "fetched":"2026-09-26"
-    },
-    {
-        "player":"Tanner Scott",
-        "role":"RP",
-        "position":"P",
-        "era":"2.73",
-        "whip":"0.99",
-        "k9":"11.49",
-        "bb9":"2.15",
-        "kbb":"5.33",
-        "ip":"62.2",
-        "ip_rounded":62,
-        "gs":0,
-        "gp":68,
-        "fetched":"2026-09-26"
+        "fetched":"2026-09-27"
     },
     {
         "player":"Tarik Skubal",
@@ -147,6 +147,6 @@
         "ip_rounded":62,
         "gs":10,
         "gp":10,
-        "fetched":"2026-09-26"
+        "fetched":"2026-09-27"
     }
 ]
