@@ -126,10 +126,8 @@ twitter:
   <h3 class="visual-subhead">Hot and cold stretches: <em>20-game form</em></h3>
   <p class="chart-chatter">Each slice shows the Dodgers' winning percentage over the previous 20 games. Blue runs are heaters. Red runs mark colder stretches.</p>
   <div class="rolling-compare-controls">
-    <div id="rolling-compare-presets" class="rolling-compare-presets"></div>
     <div class="rolling-compare-select-wrap">
-      <label for="rolling-compare-select">Compare with another season</label>
-      <select id="rolling-compare-select"></select>
+      <select id="rolling-compare-select" aria-label="Compare with another season"></select>
     </div>
   </div>
   <div id="rolling-compare-highlights" class="rolling-compare-highlights"></div>

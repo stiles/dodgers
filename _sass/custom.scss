@@ -1329,67 +1329,34 @@ label {
 }
 
 .rolling-compare-controls {
-  display: flex;
-  align-items: flex-end;
-  justify-content: space-between;
-  gap: 18px;
-  margin: 10px 0 16px;
-  flex-wrap: wrap;
-}
-
-.rolling-compare-presets {
-  display: flex;
-  gap: 8px;
-  flex-wrap: wrap;
-}
-
-.rolling-compare-btn {
-  border: 1px solid #d7dde3;
-  border-radius: 12px;
-  background: #fff;
-  color: #40464b;
-  font-family: 'Roboto';
-  font-size: 12px;
-  font-weight: 700;
-  line-height: 1;
-  padding: 9px 12px;
-  cursor: pointer;
-  transition: all 0.15s ease;
-}
-
-.rolling-compare-btn:hover {
-  border-color: c.$dodger-blue;
-  color: c.$dodger-blue;
-}
-
-.rolling-compare-btn.is-active {
-  background: c.$dodger-blue;
-  border-color: c.$dodger-blue;
-  color: #fff;
+  margin: 10px 0 20px;
 }
 
 .rolling-compare-select-wrap {
-  display: flex;
-  flex-direction: column;
-  gap: 6px;
-
-  label {
-    color: #666;
-    font-family: 'Roboto';
-    font-size: 12px;
-    font-weight: 700;
-    text-transform: uppercase;
-    letter-spacing: 0.03em;
-  }
+  display: block;
 
   select {
-    min-width: 220px;
+    min-width: 320px;
     padding: 8px 12px;
-    border: 1px solid #d7dde3;
-    border-radius: 8px;
+    border: 2px solid c.$dodger-blue;
+    border-radius: 6px;
     background: #fff;
-    font-family: 'Roboto';
-    font-size: 14px;
+    color: #333;
+    font-family: 'Roboto', serif;
+    font-size: 1em;
+    font-weight: 500;
+    cursor: pointer;
+    transition: all 0.2s ease;
+
+    &:hover {
+      background-color: #f8f9ff;
+      border-color: #003d6b;
+    }
+
+    &:focus {
+      outline: none;
+      box-shadow: 0 0 0 3px rgba(0, 90, 156, 0.2);
+    }
   }
 }
 
@@ -1423,39 +1390,45 @@ label {
   font-weight: 400;
   color: #7a7a7a;
   line-height: 1.45;
+  text-align: center;
   text-wrap: balance;
 }
 
 .rolling-compare-legend {
+  width: min(300px, 100%);
+  margin-left: auto;
+  margin-right: auto;
   margin-bottom: 10px;
+  opacity: 0.82;
+  text-align: center;
 }
 
 .rolling-compare-legend-title {
   margin-bottom: 4px;
-  color: #7d7d7d;
+  color: #8c8c8c;
   font-family: 'Roboto', sans-serif;
   font-size: 11px;
-  font-weight: 700;
+  font-weight: 600;
   letter-spacing: 0.08em;
   text-transform: uppercase;
 }
 
 .rolling-compare-legend-gradient {
-  width: min(360px, 100%);
-  height: 8px;
+  width: min(300px, 100%);
+  height: 6px;
   border-radius: 999px;
   background: linear-gradient(90deg, #c94741 0%, #f0f0f0 50%, #005a9c 100%);
-  opacity: 0.9;
+  opacity: 0.75;
 }
 
 .rolling-compare-legend-labels {
-  width: min(360px, 100%);
+  width: min(300px, 100%);
   display: flex;
   justify-content: space-between;
-  color: #8a8a8a;
+  color: #999;
   font-family: 'Roboto';
   font-size: 11px;
-  margin-top: 3px;
+  margin-top: 2px;
 }
 
 .rolling-compare-chart {
@@ -1463,11 +1436,72 @@ label {
   margin-bottom: 10px;
 }
 
+.rolling-compare-tooltip {
+  position: absolute;
+  z-index: 5;
+  min-width: 170px;
+  max-width: 220px;
+  padding: 10px 12px;
+  border: 1px solid rgba(0, 0, 0, 0.08);
+  border-radius: 8px;
+  background: rgba(255, 255, 255, 0.50);
+  box-shadow: 0 10px 24px rgba(0, 0, 0, 0.10);
+  backdrop-filter: blur(3px);
+  color: #333;
+  font-family: 'Roboto', sans-serif;
+  font-size: 12px;
+  line-height: 1.4;
+  pointer-events: none;
+  opacity: 0;
+  transform: translateY(4px);
+  transition: opacity 0.12s ease, transform 0.12s ease;
+}
+
+.rolling-compare-tooltip.is-visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.rolling-compare-tooltip__season {
+  color: #222;
+  font-size: 12px;
+  font-weight: 700;
+}
+
+.rolling-compare-tooltip__value {
+  margin-top: 6px;
+  color: #2f2f2f;
+  font-size: 16px;
+  font-weight: 700;
+  line-height: 1.2;
+}
+
+.rolling-compare-tooltip__record {
+  margin-top: 4px;
+  color: #555;
+  font-size: 12px;
+  font-weight: 500;
+}
+
+.rolling-compare-tooltip__date {
+  margin-top: 6px;
+  color: #8a8a8a;
+  font-size: 11px;
+}
+
 .rolling-compare-summary {
   margin-bottom: 28px;
 }
 
 @media (max-width: 767px) {
+  .rolling-compare-controls {
+    margin-bottom: 12px;
+  }
+
+  .rolling-compare-highlights {
+    display: none;
+  }
+
   .rolling-compare-highlights {
     grid-template-columns: 1fr;
   }
@@ -1482,6 +1516,7 @@ label {
     select {
       width: 100%;
       min-width: 0;
+      margin-bottom: 0;
     }
   }
 }
@@ -1604,6 +1639,25 @@ label {
   background: rgba(0, 90, 156, 0.1);
   color: c.$dodger-blue;
   vertical-align: middle;
+}
+
+@media (max-width: 767px) {
+  .playoff-status--clinched {
+    margin-left: 4px;
+    padding: 0;
+    background: transparent;
+    color: transparent;
+    font-size: 0;
+    line-height: 1;
+    vertical-align: baseline;
+
+    &::before {
+      content: "✓";
+      color: #2e9e4d;
+      font-size: 14px;
+      font-weight: 700;
+    }
+  }
 }
 
 .playoff-cutline-note {

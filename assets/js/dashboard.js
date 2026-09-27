@@ -239,11 +239,11 @@ document.addEventListener('DOMContentLoaded', function () {
     return;
   }
 
-  const presetContainer = document.getElementById('rolling-compare-presets');
   const select = document.getElementById('rolling-compare-select');
   const highlights = document.getElementById('rolling-compare-highlights');
   const summary = document.getElementById('rolling-compare-summary');
   const minGamesToShow = 40;
+  let activeTooltipKey = null;
 
   let groupedByYear = new Map();
   let comparisonYear = null;
@@ -254,6 +254,25 @@ document.addEventListener('DOMContentLoaded', function () {
 
   function formatPercent(value) {
     return `${Math.round(value * 100)}%`;
+  }
+
+  function formatTooltipDate(dateString) {
+    const date = new Date(`${dateString}T12:00:00`);
+    if (Number.isNaN(date.getTime())) {
+      return dateString;
+    }
+
+    const month = ['Jan.', 'Feb.', 'March', 'April', 'May', 'June', 'July', 'Aug.', 'Sept.', 'Oct.', 'Nov.', 'Dec.'][date.getMonth()];
+    return `${month} ${date.getDate()}, ${date.getFullYear()}`;
+  }
+
+  function tooltipHtml(d) {
+    return `
+      <div class="rolling-compare-tooltip__season">${d.year} · Game ${d.gm}</div>
+      <div class="rolling-compare-tooltip__value">${formatPercent(d.rolling_win_pct_20)} over the last ${windowSize}</div>
+      <div class="rolling-compare-tooltip__record">${d.rolling_wins_20}-${windowSize - d.rolling_wins_20} in that stretch</div>
+      <div class="rolling-compare-tooltip__date">${formatTooltipDate(d.game_date)}</div>
+    `;
   }
 
   function normalizeRollingPayload(response) {
@@ -400,36 +419,14 @@ document.addEventListener('DOMContentLoaded', function () {
     summary.textContent = `Note: ${text}`;
   }
 
-  function renderPresetButtons(availableYears) {
-    presetContainer.innerHTML = '';
-
-    const presetYears = (
-      recommendedComparisons.length > 0
-        ? recommendedComparisons.map(String)
-        : availableYears.filter((year) => year !== currentYear).slice(0, 6)
-    );
-
-    presetYears
-      .map(String)
-      .filter((year) => year !== currentYear && availableYears.includes(year))
-      .forEach((year) => {
-        const button = document.createElement('button');
-        button.type = 'button';
-        button.className = `rolling-compare-btn${year === comparisonYear ? ' is-active' : ''}`;
-        button.textContent = year;
-        button.setAttribute('aria-pressed', year === comparisonYear ? 'true' : 'false');
-        button.addEventListener('click', () => {
-          comparisonYear = year;
-          select.value = year;
-          renderPresetButtons(availableYears);
-          renderChart();
-        });
-        presetContainer.appendChild(button);
-      });
-  }
-
   function populateSeasonSelect(availableYears) {
     select.innerHTML = '';
+
+    const defaultOption = document.createElement('option');
+    defaultOption.value = '';
+    defaultOption.textContent = 'Compare with another season';
+    defaultOption.disabled = true;
+    select.appendChild(defaultOption);
 
     availableYears
       .filter((year) => year !== currentYear)
@@ -443,7 +440,6 @@ document.addEventListener('DOMContentLoaded', function () {
     select.value = comparisonYear;
     select.addEventListener('change', function () {
       comparisonYear = this.value;
-      renderPresetButtons(availableYears);
       renderChart();
     });
   }
@@ -470,11 +466,12 @@ document.addEventListener('DOMContentLoaded', function () {
     renderSummary(currentStats, comparisonStats);
 
     chartContainer.selectAll('*').remove();
+    chartContainer.style('position', 'relative');
 
     const isMobile = window.innerWidth <= 767;
     const margin = isMobile
-      ? { top: 52, right: 16, bottom: 28, left: 74 }
-      : { top: 58, right: 20, bottom: 30, left: 92 };
+      ? { top: 16, right: 16, bottom: 52, left: 44 }
+      : { top: 16, right: 20, bottom: 56, left: 54 };
     const containerWidth = chartContainer.node().getBoundingClientRect().width;
     const width = containerWidth - margin.left - margin.right;
     const height = isMobile ? 170 : 200;
@@ -484,6 +481,12 @@ document.addEventListener('DOMContentLoaded', function () {
       .attr('viewBox', `0 0 ${containerWidth} ${height + margin.top + margin.bottom}`)
       .append('g')
       .attr('transform', `translate(${margin.left}, ${margin.top})`);
+
+    const tooltip = chartContainer
+      .append('div')
+      .attr('class', 'rolling-compare-tooltip')
+      .attr('role', 'status')
+      .attr('aria-live', 'polite');
 
     const xScale = d3.scaleLinear()
       .domain([firstRollingGame, maxGame])
@@ -500,23 +503,43 @@ document.addEventListener('DOMContentLoaded', function () {
       .domain([0, 0.5, 1])
       .range(['#C94741', '#F0F0F0', '#005A9C']);
 
-    const xAxis = d3.axisTop(xScale)
+    const xAxis = d3.axisBottom(xScale)
       .tickValues([20, 40, 60, 80, 100, 120, 140, 160].filter((tick) => tick <= maxGame))
       .tickFormat(d3.format('d'));
-
-    svg.append('g').call(xAxis);
-
-    svg.append('text')
-      .attr('x', width / 2)
-      .attr('y', -36)
-      .attr('class', 'anno-dark')
-      .attr('text-anchor', 'middle')
-      .text('Game number');
 
     svg.append('g')
       .call(d3.axisLeft(yScale).tickSize(0))
       .call((axis) => axis.select('.domain').remove())
-      .call((axis) => axis.selectAll('text').attr('class', 'anno-dark'));
+      .call((axis) => axis.selectAll('text')
+        .attr('class', 'anno-dark')
+        .attr('dx', '-0.2em'));
+
+    function hideTooltip() {
+      activeTooltipKey = null;
+      tooltip.classed('is-visible', false);
+    }
+
+    function positionTooltip(event) {
+      const bounds = chartContainer.node().getBoundingClientRect();
+      const tooltipNode = tooltip.node();
+      const tooltipWidth = tooltipNode.offsetWidth || 180;
+      const tooltipHeight = tooltipNode.offsetHeight || 60;
+      const pointerX = event.clientX - bounds.left;
+      const pointerY = event.clientY - bounds.top;
+      const left = Math.max(8, Math.min(pointerX - (tooltipWidth / 2), bounds.width - tooltipWidth - 8));
+      const top = Math.max(8, pointerY - tooltipHeight - 32);
+
+      tooltip.style('left', `${left}px`).style('top', `${top}px`);
+    }
+
+    function showTooltip(event, d, persistent = false) {
+      if (persistent) {
+        activeTooltipKey = `${d.year}-${d.gm}`;
+      }
+
+      tooltip.html(tooltipHtml(d)).classed('is-visible', true);
+      positionTooltip(event);
+    }
 
     seasons.forEach((season) => {
       const rows = season === currentYear ? currentRows : comparisonRows;
@@ -531,24 +554,26 @@ document.addEventListener('DOMContentLoaded', function () {
         .attr('width', cellWidth + 0.25)
         .attr('height', yScale.bandwidth())
         .attr('fill', (d) => colorScale(d.rolling_win_pct_20))
-        .append('title')
-        .text((d) => `${season}\nGame ${d.gm}\nDate ${d.game_date}\nLast ${windowSize} games: ${formatPercent(d.rolling_win_pct_20)} (${d.rolling_wins_20}-${windowSize - d.rolling_wins_20})`);
-    });
+        .on('mouseenter', function (event, d) {
+          showTooltip(event, d);
+        })
+        .on('mousemove', function (event) {
+          positionTooltip(event);
+        })
+        .on('mouseleave', function () {
+          if (!activeTooltipKey) {
+            hideTooltip();
+          }
+        })
+        .on('click', function (event, d) {
+          const key = `${d.year}-${d.gm}`;
+          if (activeTooltipKey === key) {
+            hideTooltip();
+            return;
+          }
 
-    [
-      { season: currentYear, stats: currentStats, stroke: '#005A9C' },
-      { season: comparisonYear, stats: comparisonStats, stroke: '#40464b' },
-    ].forEach(({ season, stats, stroke }) => {
-      svg.append('rect')
-        .attr('x', xPosition(stats.worstComparableStart))
-        .attr('y', yScale(season) - 2)
-        .attr('width', (stats.worstComparableEnd - stats.worstComparableStart + 1) * cellWidth)
-        .attr('height', yScale.bandwidth() + 4)
-        .attr('fill', 'none')
-        .attr('stroke', stroke)
-        .attr('stroke-width', 1.5)
-        .attr('stroke-dasharray', '4 3')
-        .attr('pointer-events', 'none');
+          showTooltip(event, d, true);
+        });
     });
 
     const guideX = xPosition(currentGamesPlayed) + cellWidth;
@@ -560,6 +585,32 @@ document.addEventListener('DOMContentLoaded', function () {
       .attr('stroke', '#b5b5b5')
       .attr('stroke-width', 1)
       .attr('stroke-dasharray', '4 4');
+
+    svg.append('g')
+      .attr('transform', `translate(0, ${height})`)
+      .call(xAxis)
+      .call((axis) => axis.select('.domain').style('stroke', '#d8d8d8'))
+      .call((axis) => axis.selectAll('line').style('stroke', '#d8d8d8'))
+      .call((axis) => axis.selectAll('text').attr('class', 'axis-label'));
+
+    svg.append('text')
+      .attr('x', width / 2)
+      .attr('y', height + (isMobile ? 42 : 46))
+      .attr('class', 'anno-dark')
+      .attr('text-anchor', 'middle')
+      .text('Game number');
+
+    chartContainer.on('mouseleave', function () {
+      if (!activeTooltipKey) {
+        hideTooltip();
+      }
+    });
+
+    d3.select(document).on('click.rollingCompareTooltip', function (event) {
+      if (!chartContainer.node().contains(event.target)) {
+        hideTooltip();
+      }
+    });
   }
 
   async function initializeRollingCompareChart() {
@@ -594,7 +645,6 @@ document.addEventListener('DOMContentLoaded', function () {
 
       const availableYears = getAvailableYears();
       populateSeasonSelect(availableYears);
-      renderPresetButtons(availableYears);
       renderChart();
 
       let resizeTimer;
