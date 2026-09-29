@@ -3556,11 +3556,12 @@ document.addEventListener('DOMContentLoaded', function () {
   }
 
   function renderShoheiChart(config, data) {
+    const container = d3.select(`#${config.elementId}`);
+    if (container.empty()) return;
     const isMobile = window.innerWidth <= 767;
     const margin = isMobile
       ? { top: 20, right: 10, bottom: 60, left: 60 }
       : { top: 20, right: 10, bottom: 50, left: 60 };
-    const container = d3.select(`#${config.elementId}`);
     container.selectAll('*').remove();
     const containerWidth = container.node().getBoundingClientRect().width;
     const width = containerWidth - margin.left - margin.right;
@@ -3887,6 +3888,11 @@ document.addEventListener('DOMContentLoaded', function () {
   }
 
   async function initializeShoheiCharts() {
+    // Section is optional on the page; skip the fetch entirely when it's absent.
+    if (!document.getElementById('shohei-homers-chart') && !document.getElementById('shohei-sb-chart')) {
+      return;
+    }
+
     const { hrData, sbData } = await fetchShoheiData();
 
     // --- Start: Dynamic Subhead Logic ---
@@ -3929,8 +3935,6 @@ document.addEventListener('DOMContentLoaded', function () {
         const subheadElement = document.getElementById('shohei-comparison-subhead');
         if (subheadElement) {
             subheadElement.innerHTML = subheadText; // Use innerHTML to render the strong tags
-        } else {
-            console.error("Element with ID 'shohei-comparison-subhead' not found.");
         }
     }
     // --- End: Dynamic Subhead Logic ---
@@ -5171,6 +5175,105 @@ function renderPlayoffBracket(playoffTeams) {
   }
 }
 
+// Rounds in the order the Dodgers would play them.
+const DODGERS_ROUND_ORDER = ['Wild Card', 'NLDS', 'NLCS', 'World Series'];
+
+function getDodgersSlotForRound(round) {
+  const nlBracket = document.querySelector('.nl-bracket');
+  if (!nlBracket) return null;
+
+  switch (round) {
+    case 'Wild Card':
+      return nlBracket.querySelector('.wildcards .dodgers-team');
+    case 'NLDS':
+      // Seeded straight into the DS on a bye, otherwise they arrive as a wild card winner.
+      return nlBracket.querySelector('.division-series .dodgers-team')
+        || nlBracket.querySelector('.division-series .ds-team.wc-winner');
+    case 'NLCS':
+      return nlBracket.querySelector('.championship .cs-team');
+    case 'World Series':
+      return document.querySelector('.ws-team.nl-champion');
+    default:
+      return null;
+  }
+}
+
+function getOpponentSlot(round, dodgersSlot) {
+  if (round === 'World Series') return document.querySelector('.ws-team.al-champion');
+  if (!dodgersSlot) return null;
+
+  const matchup = dodgersSlot.closest('.wildcard-matchup, .ds-matchup, .cs-matchup');
+  if (!matchup) return null;
+
+  const teams = matchup.querySelectorAll('.wildcard-team, .ds-team, .cs-team');
+  return Array.from(teams).find(slot => slot !== dodgersSlot) || null;
+}
+
+function setSlotTeamName(slot, name) {
+  const nameEl = slot && slot.querySelector('.team-name');
+  if (nameEl && name && name !== '?') nameEl.textContent = name;
+}
+
+function setSeriesRecord(slot, label, state) {
+  const info = slot.querySelector('.team-info');
+  if (!info) return;
+
+  let recordEl = slot.querySelector('.series-record');
+  if (!recordEl) {
+    recordEl = document.createElement('span');
+    recordEl.className = 'series-record';
+    info.appendChild(recordEl);
+  }
+  recordEl.textContent = label;
+
+  slot.classList.remove('series-won', 'series-lost', 'series-leading', 'series-trailing', 'series-tied');
+  if (state) slot.classList.add(state);
+}
+
+function describeSeries(series) {
+  const wins = Number(series.wins) || 0;
+  const losses = Number(series.losses) || 0;
+  const isComplete = series.status === 'completed';
+
+  if (isComplete && wins > losses) return { label: `Won ${wins}-${losses}`, state: 'series-won', eliminated: false };
+  if (isComplete && losses > wins) return { label: `Lost ${wins}-${losses}`, state: 'series-lost', eliminated: true };
+  if (wins > losses) return { label: `Leads ${wins}-${losses}`, state: 'series-leading', eliminated: false };
+  if (losses > wins) return { label: `Trails ${wins}-${losses}`, state: 'series-trailing', eliminated: false };
+  if (wins + losses > 0) return { label: `Tied ${wins}-${losses}`, state: 'series-tied', eliminated: false };
+  return { label: 'Yet to play', state: null, eliminated: false };
+}
+
+function applyDodgersSeriesProgress(seriesData, nlTeams) {
+  const container = document.getElementById('playoff-bracket-container');
+  if (!container || !Array.isArray(seriesData)) return;
+
+  const dodgers = (nlTeams || []).find(t => t.team_name === 'Los Angeles Dodgers');
+  const byRound = new Map(seriesData.map(s => [s.round, s]));
+
+  for (const round of DODGERS_ROUND_ORDER) {
+    const series = byRound.get(round);
+    // A bye leaves the wild card round "upcoming" while later rounds are live, so skip rather than stop.
+    if (!series || series.status === 'upcoming') continue;
+
+    const slot = getDodgersSlotForRound(round);
+    if (!slot) continue;
+
+    // Later rounds start as "DS winner" placeholders, so fill them in on advancement.
+    if (!slot.classList.contains('dodgers-team') && dodgers) {
+      populateTeamSlot(slot, dodgers);
+    }
+    setSlotTeamName(getOpponentSlot(round, slot), getTeamMascot(series.opponent));
+
+    const { label, state, eliminated } = describeSeries(series);
+    setSeriesRecord(slot, label, state);
+
+    if (eliminated) {
+      container.classList.add('dodgers-eliminated');
+      break;
+    }
+  }
+}
+
 function displayLastUpdated(lastUpdated) {
   if (!lastUpdated) return;
   
@@ -5196,6 +5299,11 @@ async function initPlayoffBracket() {
     if (standingsData && standingsData.teams && standingsData.teams.length > 0) {
       const playoffTeams = calculatePlayoffSeeds(standingsData.teams);
       renderPlayoffBracket(playoffTeams);
+
+      const seriesData = await fetchPlayoffJourney();
+      if (seriesData) {
+        applyDodgersSeriesProgress(seriesData, playoffTeams.nl);
+      }
       
       // Display last updated timestamp
       if (standingsData.last_updated) {
