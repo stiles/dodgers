@@ -4058,6 +4058,19 @@ label {
   margin-left: auto;
   margin-right: auto;
   margin-bottom: 20px;
+
+  &.is-empty {
+    grid-template-columns: 1fr;
+    grid-template-rows: auto;
+  }
+}
+
+.postseason-empty {
+  font-family: 'Roboto', sans-serif;
+  font-size: 14px;
+  color: #767676;
+  margin: 0;
+  padding: 18px 0;
 }
 
 // Modern minimal card styling

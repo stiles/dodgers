@@ -5436,12 +5436,26 @@ function createPostseasonPlayerCard(player) {
   `;
 }
 
+function setPostseasonGridMessage(grid, message) {
+  grid.classList.add('is-empty');
+  grid.innerHTML = `<p class="postseason-empty">${message}</p>`;
+  // The "top 12 by plate appearances" note only makes sense once cards exist.
+  const note = grid.nextElementSibling;
+  if (note && note.classList.contains('note')) note.style.display = 'none';
+}
+
 function renderPostseasonStats(playersData) {
   const grid = document.getElementById('postseason-grid');
-  if (!grid || !playersData || playersData.length === 0) {
-    console.log('No postseason stats data to display');
+  if (!grid) return;
+
+  if (!playersData || playersData.length === 0) {
+    setPostseasonGridMessage(grid, 'Player stats will appear after the first postseason game.');
     return;
   }
+
+  const note = grid.nextElementSibling;
+  if (note && note.classList.contains('note')) note.style.display = '';
+  grid.classList.remove('is-empty');
   
   // Sort players by at-bats (descending) to show most active players first
   const sortedPlayers = playersData.sort((a, b) => {
@@ -5461,25 +5475,17 @@ async function initPostseasonStats() {
   // Add a temporary loading indicator
   const grid = document.getElementById('postseason-grid');
   if (grid) {
-    grid.innerHTML = '<div style="text-align: center; padding: 20px; color: #666;">Loading postseason stats...</div>';
+    setPostseasonGridMessage(grid, 'Loading postseason stats…');
   }
   
   try {
     const postseasonData = await fetchPostseasonStats();
     console.log('Postseason data:', postseasonData);
-    if (postseasonData) {
-      renderPostseasonStats(postseasonData);
-      console.log('Postseason stats rendered successfully');
-    } else {
-      console.log('No postseason data available, hiding section');
-      if (grid) {
-        grid.innerHTML = '<div style="text-align: center; padding: 20px; color: #999;">No postseason data available</div>';
-      }
-    }
+    renderPostseasonStats(postseasonData || []);
   } catch (error) {
     console.error('Error initializing postseason stats:', error);
     if (grid) {
-      grid.innerHTML = '<div style="text-align: center; padding: 20px; color: #f00;">Error loading postseason stats</div>';
+      setPostseasonGridMessage(grid, 'Postseason stats are unavailable right now.');
     }
   }
 }
