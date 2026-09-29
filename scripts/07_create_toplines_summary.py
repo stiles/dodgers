@@ -660,10 +660,18 @@ def get_next_game_info():
                         opponent_name = game.get('teams', {}).get('home', {}).get('team', {}).get('name', 'Unknown')
                     
                     highlighted_opponent = f"<span class='highlight'>{opponent_name}</span>"
+                    if '/' in opponent_name:
+                        opponent_phrase = f"the winner of {highlighted_opponent}"
+                    else:
+                        opponent_phrase = f"the {highlighted_opponent}"
                     
                     location_text = f"at {highlighted_venue}"
                     
-                    return f"The team next faces the {highlighted_opponent} on {day_name} at {time_str} {tz_abbr} {location_text}"
+                    # MLB publishes a placeholder start time until the slot is announced.
+                    if game.get('status', {}).get('startTimeTBD'):
+                        return f"The team next faces {opponent_phrase} on {day_name} {location_text}, with the start time to be announced"
+                    
+                    return f"The team next faces {opponent_phrase} on {day_name} at {time_str} {tz_abbr} {location_text}"
         
         return None
         
@@ -715,11 +723,20 @@ def generate_postseason_summary():
                         series_status = result  # Already has proper format
                     else:
                         series_status = f"Series is {result.lower().replace('series ', '')}"
+                elif ' plays ' in result:
+                    # MLB's pre-series placeholder ("ATL/PHI plays LAD") isn't a status worth printing.
+                    series_status = ""
                 else:
                     series_status = result
                 
+                # An unresolved matchup ("ATL/PHI") isn't a team, so don't treat it as one.
+                if '/' in opponent:
+                    opponent_phrase = f"the winner of <span class='highlight'>{opponent}</span>"
+                else:
+                    opponent_phrase = f"the <span class='highlight'>{opponent}</span>"
+
                 return {
-                    'competing': f"The team is competing in the <span class='highlight'>{round_name}</span> against the <span class='highlight'>{opponent}</span>.",
+                    'competing': f"The team is competing in the <span class='highlight'>{round_name}</span> against {opponent_phrase}.",
                     'series_status': series_status
                 }
             
@@ -744,6 +761,25 @@ def generate_postseason_summary():
     except Exception as e:
         logging.warning(f"Could not generate postseason summary: {e}")
         return None
+
+def article_for_number(value):
+    """Return 'an' for numbers read as starting with a vowel sound (8, 11, 18, 80s)."""
+    digits = str(value).lstrip('0') or '0'
+    if digits.startswith('8') or digits[:2] in ('11', '18'):
+        return 'an'
+    return 'a'
+
+def join_sentences(*parts):
+    """Join sentence fragments, skipping empties and ensuring single end punctuation."""
+    sentences = []
+    for part in parts:
+        text = (part or "").strip()
+        if not text:
+            continue
+        if not text.endswith(('.', '!', '?')):
+            text += '.'
+        sentences.append(text)
+    return " ".join(sentences)
 
 def generate_summary(
     update_date_str, standings_live_lad=None
@@ -914,10 +950,10 @@ def generate_summary(
             # Create the summary with series transition flow
             summary = (
                 f"<span class='highlight'>LOS ANGELES</span> <span class='updated'>({current_date})</span> — "
-                f"The Dodgers compiled a <span class='highlight'>{record}</span> record in the {current_year} regular season, a <span class='highlight'>{win_pct:.0f}%</span> winning percentage. "
+                f"The Dodgers compiled {article_for_number(record)} <span class='highlight'>{record}</span> record in the {current_year} regular season, a <span class='highlight'>{win_pct:.0f}%</span> winning percentage. "
                 f"{enhanced_last_game} "
                 f"The team is now competing in the <span class='highlight'>{current_series['round']}</span> against the <span class='highlight'>{current_series['opponent']}</span>. "
-                f"The {series_status.lower()}{next_game_text}."
+                f"{join_sentences(series_status, next_game_text)}"
             )
         else:
             # Standard format for non-transition periods
@@ -958,10 +994,10 @@ def generate_summary(
             
             summary = (
                 f"<span class='highlight'>LOS ANGELES</span> <span class='updated'>({current_date})</span> — "
-                f"The Dodgers compiled a <span class='highlight'>{record}</span> record in the {current_year} regular season, a <span class='highlight'>{win_pct:.0f}%</span> winning percentage. "
+                f"The Dodgers compiled {article_for_number(record)} <span class='highlight'>{record}</span> record in the {current_year} regular season, a <span class='highlight'>{win_pct:.0f}%</span> winning percentage. "
                 f"{competing_text} "
                 f"{clean_last_game} "
-                f"{series_status}{next_game_text}."
+                f"{join_sentences(series_status, next_game_text)}"
             )
     else:
         # Simple text format (fallback) - or no postseason text during regular season
@@ -978,7 +1014,7 @@ def generate_summary(
         
         summary_parts = [
             f"<span class='highlight'>LOS ANGELES</span> <span class='updated'>({current_date})</span> — "
-            f"The Dodgers have compiled a <span class='highlight'>{record}</span> record in the {current_year} regular season, {article} <span class='highlight'>{win_pct:.0f}%</span> winning percentage."
+            f"The Dodgers have compiled {article_for_number(record)} <span class='highlight'>{record}</span> record in the {current_year} regular season, {article} <span class='highlight'>{win_pct:.0f}%</span> winning percentage."
         ]
         
         if postseason_text:

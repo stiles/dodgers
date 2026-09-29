@@ -3649,6 +3649,46 @@ label {
   }
 }
 
+.series-record {
+  font-family: 'Roboto', sans-serif;
+  font-size: 11px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.4px;
+  color: #a3a2a2;
+  text-align: left;
+
+  .dodgers-team & {
+    color: rgba(255, 255, 255, 0.85);
+  }
+
+  .series-won & {
+    color: #1a9641;
+  }
+
+  .series-lost & {
+    color: #d7191c;
+  }
+
+  .dodgers-team.series-won &,
+  .dodgers-team.series-lost &,
+  .dodgers-team.series-leading &,
+  .dodgers-team.series-trailing & {
+    color: #fff;
+  }
+
+  @media (max-width: 767px) {
+    font-size: 10px;
+  }
+}
+
+#playoff-bracket-container.dodgers-eliminated {
+  .cs-team:not(.dodgers-team),
+  .ws-team {
+    opacity: 0.45;
+  }
+}
+
 .team-seed {
   font-family: 'Roboto Slab', serif;
   font-size: 16px;

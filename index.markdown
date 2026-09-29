@@ -152,10 +152,11 @@ twitter:
 {% comment %} Try to load current year's data using the dynamic filename key {% endcomment %}
 {% assign standings_data = site.data.standings[dynamic_filename_key] %}
 
-{% comment %} Fallback to 2024 data if current year's data is not found.
-    This also covers the case where the dynamic key was for 2024 but didn't load. {% endcomment %}
+{% comment %} Fall back to the previous season's snapshot if the current year's file is missing. {% endcomment %}
 {% if standings_data == nil %}
-  {% assign standings_data = site.data.standings.all_teams_standings_metrics_2024 %}
+  {% assign previous_year_str = current_year_str | minus: 1 %}
+  {% assign fallback_filename_key = "all_teams_standings_metrics_" | append: previous_year_str %}
+  {% assign standings_data = site.data.standings[fallback_filename_key] %}
 {% endif %}
 
 {% comment %} If all potential data sources are nil, default to an empty array to prevent errors. {% endcomment %}
@@ -313,7 +314,8 @@ twitter:
   </div>
 </div>
 
-<!-- <h3 class="visual-subhead">Playoff bracket: <em>If the postseason started today</em></h3>
+<h3 class="visual-subhead">Playoff bracket</h3>
+<p class="chart-chatter playoff-bracket-chatter">Seeds are set by final standings. Series records update as games are played.</p>
 <div id="playoff-bracket-container">
   <div class="bracket-section">
     <h4 class="bracket-league-title">National League</h4>
@@ -513,9 +515,9 @@ twitter:
         </div>
       </div>
     </div>
-  </div> -->
+  </div>
 
-  <!-- <div class="world-series-section">
+  <div class="world-series-section">
     <h4 class="bracket-league-title">World Series</h4>
     <div class="ws-matchup">
       <div class="ws-team nl-champion">
@@ -534,7 +536,7 @@ twitter:
         </span>
       </div>
     </div>
-  </div> -->
+  </div>
 </div>
 
 </div>
@@ -628,7 +630,7 @@ twitter:
    <p class="note">Note: Tables and charts include top batters by plate appearances.</p>
 </div>
 
-`<h3 class="visual-subhead">Recent form: Expected weighted on-base average</h3>
+<h3 class="visual-subhead">Recent form: Expected weighted on-base average</h3>
   <p class="chart-chatter">Rolling 100-plate appearance <span class='anno-xwoba'>xwOBA</span> for each Dodgers batter compared to the <span class='anno-mean'>league average</span>. This stat predicts a player's offensive contributions based on the quality of contact they make with the ball.</p>
   <div id="xwoba-grid" class="xwoba-grid-container">
   </div> 

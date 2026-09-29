@@ -3,6 +3,7 @@ import requests
 import pandas as pd
 import json
 import logging
+import boto3
 from datetime import datetime
 from dateutil import parser
 import pytz
@@ -11,10 +12,44 @@ logging.basicConfig(level=logging.INFO, format='%(asctime)s - %(levelname)s - %(
 
 # We'll fetch all batters (non-pitchers) and filter to top 12 by plate appearances
 
+CURRENT_SEASON = str(datetime.now().year)
+
 # Output files
 output_dir = "data/postseason"
-json_file = f"{output_dir}/dodgers_postseason_stats_2025.json"
-series_file = f"{output_dir}/dodgers_postseason_series_2025.json"
+json_file = f"{output_dir}/dodgers_postseason_stats_{CURRENT_SEASON}.json"
+series_file = f"{output_dir}/dodgers_postseason_series_{CURRENT_SEASON}.json"
+
+is_github_actions = os.getenv('GITHUB_ACTIONS') == 'true'
+aws_region = "us-west-1"
+s3_bucket_name = "stilesdata.com"
+
+
+def get_s3_resource():
+    """Create an S3 resource using CI env credentials or the local profile."""
+    if is_github_actions:
+        session = boto3.Session(
+            aws_access_key_id=os.environ.get("AWS_ACCESS_KEY_ID"),
+            aws_secret_access_key=os.environ.get("AWS_SECRET_ACCESS_KEY"),
+            region_name=aws_region,
+        )
+    else:
+        profile_name = os.environ.get("AWS_PERSONAL_PROFILE", "haekeo")
+        session = boto3.Session(profile_name=profile_name, region_name=aws_region)
+    return session.resource("s3")
+
+
+def upload_to_s3(local_path):
+    """Publish a local postseason file to the S3 path the manifest points at."""
+    if not os.path.exists(local_path):
+        logging.warning(f"Local file {local_path} not found. Skipping S3 upload.")
+        return
+
+    s3_key = f"dodgers/{local_path.replace(os.sep, '/')}"
+    try:
+        get_s3_resource().Bucket(s3_bucket_name).upload_file(local_path, s3_key)
+        logging.info(f"Uploaded {local_path} to S3 at '{s3_key}'")
+    except Exception as e:
+        logging.error(f"Failed to upload {local_path} to S3: {e}")
 
 def fetch_roster_data():
     """Fetch roster data from local file or URL"""
@@ -88,12 +123,15 @@ def get_next_game_info(series_data):
                                         game_dt = parser.parse(game_datetime)
                                         pt_tz = pytz.timezone('US/Pacific')
                                         game_pt = game_dt.astimezone(pt_tz)
+                                        start_tbd = game.get('status', {}).get('startTimeTBD', False)
+                                        am_pm = game_pt.strftime('%p').lower().replace('m', '.m.')
                                         
                                         next_game_info = {
                                             'opponent': away_team if home_team == 'Los Angeles Dodgers' else home_team,
                                             'venue': venue_name,
                                             'datetime_pt': game_pt,
-                                            'time_pt': game_pt.strftime('%-I:%M p.m. PT'),
+                                            'start_time_tbd': start_tbd,
+                                            'time_pt': 'time TBA' if start_tbd else f"{game_pt.strftime('%-I:%M')} {am_pm} PT",
                                             'day': game_pt.strftime('%A'),
                                             'is_home': home_team == 'Los Angeles Dodgers'
                                         }
@@ -115,11 +153,11 @@ def fetch_postseason_series():
     # Try different parameter combinations to get the most current data
     urls = [
         # Most comprehensive - all postseason game types with current season
-        "https://statsapi.mlb.com/api/v1/schedule/postseason/series?sportId=1&season=2025&language=en&timeZone=America/New_York&hydrate=team,linescore(matchup),flags,statusFlags,broadcasts(all),venue(location),decisions,game(content(media(epg),summary),tickets),seriesStatus(useOverride=true)&sortBy=gameDate",
+        f"https://statsapi.mlb.com/api/v1/schedule/postseason/series?sportId=1&season={CURRENT_SEASON}&language=en&timeZone=America/New_York&hydrate=team,linescore(matchup),flags,statusFlags,broadcasts(all),venue(location),decisions,game(content(media(epg),summary),tickets),seriesStatus(useOverride=true)&sortBy=gameDate",
         # Alternative with specific game types
-        "https://statsapi.mlb.com/api/v1/schedule/postseason/series?sportId=1&gameType=D&gameType=F&gameType=L&gameType=W&season=2025&language=en&hydrate=team,seriesStatus(useOverride=true)&sortBy=gameDate",
+        f"https://statsapi.mlb.com/api/v1/schedule/postseason/series?sportId=1&gameType=D&gameType=F&gameType=L&gameType=W&season={CURRENT_SEASON}&language=en&hydrate=team,seriesStatus(useOverride=true)&sortBy=gameDate",
         # Simpler call to avoid potential caching issues
-        "https://statsapi.mlb.com/api/v1/schedule/postseason?sportId=1&season=2025&hydrate=team,seriesStatus&language=en"
+        f"https://statsapi.mlb.com/api/v1/schedule/postseason?sportId=1&season={CURRENT_SEASON}&hydrate=team,seriesStatus&language=en"
     ]
     
     for i, url in enumerate(urls):
@@ -209,27 +247,27 @@ def fetch_postseason_stats(player_id, player_name):
         response.raise_for_status()
         data = response.json()
         
-        # Extract 2025 postseason stats
-        stats_2025 = None
+        # Extract current-season postseason stats
+        season_stats = None
         if 'stats' in data and len(data['stats']) > 0:
             for stat_group in data['stats']:
                 if stat_group['type']['displayName'] == 'yearByYear':
                     for split in stat_group['splits']:
-                        if split['season'] == '2025':
-                            stats_2025 = split['stat']
+                        if split['season'] == CURRENT_SEASON:
+                            season_stats = split['stat']
                             break
                     break
         
-        if stats_2025:
-            logging.info(f"Found 2025 postseason stats for {player_name}")
+        if season_stats:
+            logging.info(f"Found {CURRENT_SEASON} postseason stats for {player_name}")
             return {
                 'player_id': player_id,
                 'player_name': player_name,
-                'season': '2025',
-                'stats': stats_2025
+                'season': CURRENT_SEASON,
+                'stats': season_stats
             }
         else:
-            logging.warning(f"No 2025 postseason stats found for {player_name}")
+            logging.warning(f"No {CURRENT_SEASON} postseason stats found for {player_name}")
             return None
             
     except Exception as e:
@@ -310,6 +348,7 @@ def main():
         json.dump(playoff_journey, f, indent=2, ensure_ascii=False)
     
     logging.info(f"Saved postseason series data to {series_file}")
+    upload_to_s3(series_file)
     
     # Fetch player stats
     player_ids = get_all_batters()
@@ -344,9 +383,10 @@ def main():
         json.dump(top_12_stats, f, indent=2, ensure_ascii=False)
     
     logging.info(f"Saved postseason stats for top {len(top_12_stats)} players (by plate appearances) to {json_file}")
+    upload_to_s3(json_file)
     
     # Print summary
-    print(f"\n=== Dodgers 2025 Postseason Journey (as of Oct 13, 2025) ===")
+    print(f"\n=== Dodgers {CURRENT_SEASON} Postseason Journey ===")
     for journey in playoff_journey:
         status_icon = "✅" if journey['status'] == "completed" else "🏃" if journey['status'] == "in_progress" else "❓"
         print(f"{status_icon} {journey['round']}: vs {journey['opponent']} - {journey['result']}")
@@ -371,8 +411,10 @@ def main():
         game_day = next_game['day']
         venue = next_game['venue']
         current_opponent = next_game['opponent']
+        current_round = current_series['round'] if current_series else 'Postseason'
+        when = f"{game_day} ({game_time})" if next_game.get('start_time_tbd') else f"{game_day} at {game_time}"
         
-        print(f"\n📅 Current Status: NLCS Game 1 vs {current_opponent} starts {game_day} at {game_time}")
+        print(f"\n📅 Current Status: {current_round} vs {current_opponent} starts {when}")
         print(f"🏟️ Venue: {venue}")
         
         if previous_series and previous_series['opponent'] != current_opponent:
@@ -384,7 +426,7 @@ def main():
         if previous_series:
             print(f"🏆 Last completed series: {previous_series['round']} vs {previous_series['opponent']} ({previous_series['result']})")
     
-    print(f"\n=== Top {len(top_12_stats)} Players by 2025 Postseason Plate Appearances ===")
+    print(f"\n=== Top {len(top_12_stats)} Players by {CURRENT_SEASON} Postseason Plate Appearances ===")
     for i, player_stats in enumerate(top_12_stats, 1):
         name = player_stats['player_name']
         stats = player_stats['stats']

@@ -55,6 +55,18 @@ PHASE_CONFIG = {
             "scripts/24_fetch_news.py",
             # Prediction markets (Kalshi odds)
             "scripts/31_fetch_kalshi_markets.py",
+            # Finalize regular season datasets: the last games are played after the
+            # phase flips, so these must run here or the season ends a game short.
+            "scripts/02_update_boxscores_archive.py",
+            "scripts/09_build_wins_losses_from_boxscores.py",
+            "scripts/03_scrape_league_ranks.py",
+            "scripts/05_fetch_process_batting.py",
+            "scripts/06_fetch_process_pitching.py",
+            "scripts/13_fetch_process_schedule.py",
+            "scripts/14_fetch_process_batting_mlb.py",
+            "scripts/14b_fetch_pitcher_stats_mlb.py",
+            "scripts/15_fetch_xwoba.py",
+            "scripts/11_fetch_process_attendance.py",
             # Optionally refresh final regular season snapshots (low frequency)
             "scripts/00_fetch_league_standings.py",
             "scripts/32_build_rolling_win_pct.py",
@@ -69,6 +81,9 @@ PHASE_CONFIG = {
             "scripts/19_fetch_roster.py",
             "scripts/26_post_transactions.py",
             "scripts/24_fetch_news.py",
+            # Final standings must keep regenerating: _data/ is gitignored, so the
+            # Jekyll build only sees this file if the script runs that same run.
+            "scripts/00_fetch_league_standings.py",
             # Prediction markets (Kalshi odds; WS futures trade in offseason)
             "scripts/31_fetch_kalshi_markets.py",
             # Occasional historical data refresh

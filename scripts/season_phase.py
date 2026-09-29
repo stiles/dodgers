@@ -19,6 +19,15 @@ logging.basicConfig(level=logging.INFO, format='%(asctime)s - %(levelname)s - %(
 DODGERS_TEAM_ID = 119
 BASE_URL = "https://statsapi.mlb.com/api/v1"
 
+# MLB scopes postseason games by round, not a single "P" code:
+# F = wild card, D = division series, L = championship series, W = World Series.
+POSTSEASON_GAME_TYPES = ["F", "D", "L", "W"]
+REGULAR_SEASON_GAME_TYPES = ["R"]
+
+# Wide enough to span a first-round bye between the regular season and the DS.
+POSTSEASON_LOOKAHEAD_DAYS = 10
+REGULAR_SEASON_LOOKAHEAD_DAYS = 7
+
 def get_dodgers_schedule(start_date, end_date, game_type=None):
     """
     Fetch Dodgers schedule from MLB StatsAPI
@@ -26,7 +35,7 @@ def get_dodgers_schedule(start_date, end_date, game_type=None):
     Args:
         start_date: datetime object for start of range
         end_date: datetime object for end of range
-        game_type: Optional game type filter ('R' for regular, 'P' for postseason)
+        game_type: Optional game type code or list of codes
     
     Returns:
         List of game dictionaries
@@ -78,28 +87,27 @@ def detect_season_phase():
     """
     now = datetime.now()
     current_year = now.year
-    
-    # Check next 7 days for upcoming games
-    future_window = now + timedelta(days=7)
-    
-    logging.info(f"Checking Dodgers schedule from {now.date()} to {future_window.date()}")
-    
-    # Check for postseason games first (higher priority)
-    postseason_games = get_dodgers_schedule(now, future_window, game_type="P")
-    logging.info(f"Found {len(postseason_games)} postseason games in next 7 days")
-    
-    if postseason_games and has_active_or_upcoming_games(postseason_games):
-        logging.info("✅ Phase detected: POSTSEASON (active or upcoming postseason games)")
-        return ("postseason", True, current_year)
-    
-    # Check for regular season games
-    regular_games = get_dodgers_schedule(now, future_window, game_type="R")
-    logging.info(f"Found {len(regular_games)} regular season games in next 7 days")
-    
+
+    # Regular season is checked first so a published postseason bracket can't flip
+    # the phase while games still remain on the regular schedule.
+    regular_window = now + timedelta(days=REGULAR_SEASON_LOOKAHEAD_DAYS)
+    logging.info(f"Checking Dodgers schedule from {now.date()} to {regular_window.date()}")
+
+    regular_games = get_dodgers_schedule(now, regular_window, game_type=REGULAR_SEASON_GAME_TYPES)
+    logging.info(f"Found {len(regular_games)} regular season games in next {REGULAR_SEASON_LOOKAHEAD_DAYS} days")
+
     if regular_games and has_active_or_upcoming_games(regular_games):
         logging.info("✅ Phase detected: REGULAR_SEASON (active or upcoming regular season games)")
         return ("regular_season", False, current_year)
-    
+
+    postseason_window = now + timedelta(days=POSTSEASON_LOOKAHEAD_DAYS)
+    postseason_games = get_dodgers_schedule(now, postseason_window, game_type=POSTSEASON_GAME_TYPES)
+    logging.info(f"Found {len(postseason_games)} postseason games in next {POSTSEASON_LOOKAHEAD_DAYS} days")
+
+    if postseason_games and has_active_or_upcoming_games(postseason_games):
+        logging.info("✅ Phase detected: POSTSEASON (active or upcoming postseason games)")
+        return ("postseason", True, current_year)
+
     # No upcoming games = offseason
     logging.info("✅ Phase detected: OFFSEASON (no upcoming games in next 7 days)")
     
@@ -111,7 +119,6 @@ def detect_season_phase():
         season_year = current_year
     
     return ("offseason", False, season_year)
-
 def get_postseason_series_status():
     """
     Get detailed postseason series status if in postseason
