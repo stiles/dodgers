@@ -360,20 +360,17 @@ def main():
             logging.error(f"Failed to load historical archive: {e}", exc_info=True)
             raise
         
-        # Calculate cumulative wins/losses for historical data if missing
-        if historic_df['wins'].isna().any():
-            logging.info("Calculating cumulative wins/losses for historical data")
-            # Group by year and calculate cumulative stats
-            historic_df = historic_df.sort_values(['year', 'gm'])
-            historic_df['wins'] = historic_df.groupby('year')['result'].apply(
-                lambda x: (x == 'W').cumsum()
-            ).values
-            historic_df['losses'] = historic_df.groupby('year')['result'].apply(
-                lambda x: (x == 'L').cumsum()
-            ).values
-            # Recalculate win_pct
-            historic_df['win_pct'] = (historic_df['wins'] / historic_df['gm']).round(3)
-            logging.info("Cumulative stats calculated for historical data")
+        # Recalculate cumulative wins/losses for historical data.
+        # The archive's stored totals miss suffixed results ("W-wo", "L &H", etc.),
+        # which undercounts seasons like 2017 (94 instead of 104).
+        logging.info("Calculating cumulative wins/losses for historical data")
+        historic_df = historic_df.sort_values(['year', 'gm'])
+        outcome = historic_df['result'].astype(str).str.strip().str[0]
+        historic_df['wins'] = outcome.eq('W').groupby(historic_df['year']).cumsum().astype(int)
+        historic_df['losses'] = outcome.eq('L').groupby(historic_df['year']).cumsum().astype(int)
+        historic_df['record'] = historic_df['wins'].astype(str) + "-" + historic_df['losses'].astype(str)
+        historic_df['win_pct'] = (historic_df['wins'] / historic_df['gm']).round(3)
+        logging.info("Cumulative stats calculated for historical data")
         
         # Ensure consistent data types before combining
         # Convert game_date to string in both dataframes to avoid Parquet mixed-type errors
