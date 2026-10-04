@@ -1,13 +1,5 @@
 [
     {
-        "date":"Sep 17",
-        "opp_name":"Cincinnati Reds",
-        "home_away":"away",
-        "result":"win",
-        "placement":"last",
-        "game_start":"8-2"
-    },
-    {
         "date":"Sep 18",
         "opp_name":"San Francisco Giants",
         "home_away":"home",
@@ -83,9 +75,9 @@
         "date":"Oct 3",
         "opp_name":"Atlanta Braves",
         "home_away":"home",
-        "result":"--",
-        "placement":"next",
-        "game_start":"1:00 PM"
+        "result":"win",
+        "placement":"last",
+        "game_start":"5-3"
     },
     {
         "date":"Oct 4",
