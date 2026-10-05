@@ -1,13 +1,5 @@
 [
     {
-        "date":"Sep 18",
-        "opp_name":"San Francisco Giants",
-        "home_away":"home",
-        "result":"win",
-        "placement":"last",
-        "game_start":"8-2"
-    },
-    {
         "date":"Sep 19",
         "opp_name":"San Francisco Giants",
         "home_away":"home",
@@ -83,9 +75,9 @@
         "date":"Oct 4",
         "opp_name":"Atlanta Braves",
         "home_away":"home",
-        "result":"in progress",
-        "placement":"next",
-        "game_start":"Live"
+        "result":"loss",
+        "placement":"last",
+        "game_start":"2-3"
     },
     {
         "date":"Oct 6",
