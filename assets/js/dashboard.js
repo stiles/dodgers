@@ -5486,6 +5486,17 @@ document.addEventListener('DOMContentLoaded', async function() {
       postseasonHeader.textContent = `Postseason ${season}`;
       console.log(`Updated header to: Postseason ${season}`);
     }
+
+    // Seeds are final once the postseason starts, so the "if it started
+    // today" race is moot and the season charts below are regular season only.
+    const playoffRaceSection = document.getElementById('playoff-race-section');
+    if (playoffRaceSection) playoffRaceSection.style.display = 'none';
+    const performanceHeader = document.querySelector('.performance-header');
+    if (performanceHeader) performanceHeader.textContent = 'Regular season performance and standings';
+    document.querySelectorAll('.regular-season-header').forEach(header => {
+      const label = header.textContent.trim();
+      header.textContent = `Regular season ${label.charAt(0).toLowerCase()}${label.slice(1)}`;
+    });
     
     // Initialize postseason components
     if (document.getElementById('playoff-bracket-container')) {
