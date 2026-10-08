@@ -5667,6 +5667,7 @@ function renderPlayoffJourney(journeyData) {
 
   // Generate HTML for all rounds
   const roundsHTML = visibleRounds.map(round => createPlayoffRoundCard(round)).join('');
+  container.style.setProperty('--rounds', visibleRounds.length);
   container.innerHTML = roundsHTML;
 }
 
