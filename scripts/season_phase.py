@@ -75,6 +75,39 @@ def has_active_or_upcoming_games(games):
             return True
     return False
 
+def dodgers_in_live_postseason(season):
+    """
+    True if the Dodgers are in this season's bracket and the World Series isn't over.
+
+    Between rounds the next series is listed with placeholder teams ("LAD/SD"),
+    so a teamId schedule query returns nothing even though the Dodgers advanced.
+    """
+    url = f"{BASE_URL}/schedule/postseason/series"
+    params = {"sportId": 1, "season": season, "hydrate": "team,seriesStatus(useOverride=true)"}
+    try:
+        response = requests.get(url, params=params, timeout=10)
+        response.raise_for_status()
+        series_groups = response.json().get("series", [])
+    except Exception as e:
+        logging.error(f"Failed to fetch postseason series: {e}")
+        return False
+
+    dodgers_in_bracket = False
+    world_series_over = False
+    for group in series_groups:
+        games = group.get("games", [])
+        if not games:
+            continue
+        for game in games:
+            teams = game.get("teams", {})
+            team_ids = {teams.get(side, {}).get("team", {}).get("id") for side in ("home", "away")}
+            if DODGERS_TEAM_ID in team_ids:
+                dodgers_in_bracket = True
+        if group.get("series", {}).get("gameType") == "W":
+            world_series_over = bool(games[-1].get("seriesStatus", {}).get("isOver"))
+
+    return dodgers_in_bracket and not world_series_over
+
 def detect_season_phase():
     """
     Detect current season phase for the Dodgers
@@ -106,6 +139,10 @@ def detect_season_phase():
 
     if postseason_games and has_active_or_upcoming_games(postseason_games):
         logging.info("✅ Phase detected: POSTSEASON (active or upcoming postseason games)")
+        return ("postseason", True, current_year)
+
+    if dodgers_in_live_postseason(current_year):
+        logging.info("✅ Phase detected: POSTSEASON (Dodgers in bracket, World Series not over)")
         return ("postseason", True, current_year)
 
     # No upcoming games = offseason

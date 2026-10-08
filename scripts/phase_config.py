@@ -95,6 +95,8 @@ PHASE_CONFIG = {
             "scripts/10_fetch_process_historic_batting_gamelogs.py",
             "scripts/11_fetch_process_attendance.py",
             "scripts/12_fetch_process_historic_pitching_gamelogs.py",
+            # Writes _data/season_summary_latest.json; the page summary is blank without it.
+            "scripts/07_create_toplines_summary.py",
         ],
         "cadence": "weekly"
     }
