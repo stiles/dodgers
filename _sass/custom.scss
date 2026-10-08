@@ -3823,46 +3823,25 @@ label {
 
 /* Playoff Journey */
 .playoff-journey {
+  // --rounds is set by renderPlayoffJourney (3 when a bye skips the wild card).
+  --rounds: 4;
   display: grid;
-  grid-template-columns: repeat(4, 1fr);
+  grid-template-columns: repeat(var(--rounds), minmax(0, 1fr));
   gap: 15px;
   margin: 20px 0;
-  max-width: 1200px;
+  max-width: calc(300px * var(--rounds));
   margin-left: auto;
   margin-right: auto;
   position: relative;
   
-  // Connecting lines between boxes
+  // Connector runs center-to-center of the first and last boxes; the opaque
+  // boxes (z-index 2) cover it, leaving only the gaps visible.
   &::before {
     content: '';
     position: absolute;
     top: 50%;
-    left: 12.5%;
-    right: 12.5%;
-    height: 2px;
-    background: linear-gradient(to right, 
-      #ddd 0%, 
-      #ddd 30%, 
-      transparent 30%, 
-      transparent 35%, 
-      #ddd 35%, 
-      #ddd 65%, 
-      transparent 65%, 
-      transparent 70%, 
-      #ddd 70%, 
-      #ddd 100%
-    );
-    z-index: 0;
-    pointer-events: none;
-  }
-  
-  // Simple connecting lines only
-  &::after {
-    content: '';
-    position: absolute;
-    top: 50%;
-    left: 20%;
-    right: 20%;
+    left: calc(50% / var(--rounds));
+    right: calc(50% / var(--rounds));
     height: 2px;
     background: #ddd;
     z-index: 0;

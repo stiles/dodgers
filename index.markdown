@@ -322,23 +322,7 @@ twitter:
     <div class="bracket-grid nl-bracket">
       <div class="bracket-column wildcards">
         <div class="stat-card-label">Wild card</div>
-        <div class="wildcard-matchup">
-          <div class="wildcard-team seed-6" data-seed="6">
-            <span class="team-logo"></span>
-            <span class="team-info">
-              <span class="team-name">TBD</span>
-              <span class="team-seed">6</span>
-            </span>
-          </div>
-          <div class="vs">vs</div>
-          <div class="wildcard-team seed-3" data-seed="3">
-            <span class="team-logo"></span>
-            <span class="team-info">
-              <span class="team-name">TBD</span>
-              <span class="team-seed">3</span>
-            </span>
-          </div>
-        </div>
+        <!-- Order must match .ds-matchup below: the 4/5 winner plays the 1 seed, the 3/6 winner plays the 2 seed. -->
         <div class="wildcard-matchup">
           <div class="wildcard-team seed-5" data-seed="5">
             <span class="team-logo"></span>
@@ -353,6 +337,23 @@ twitter:
             <span class="team-info">
               <span class="team-name">TBD</span>
               <span class="team-seed">4</span>
+            </span>
+          </div>
+        </div>
+        <div class="wildcard-matchup">
+          <div class="wildcard-team seed-6" data-seed="6">
+            <span class="team-logo"></span>
+            <span class="team-info">
+              <span class="team-name">TBD</span>
+              <span class="team-seed">6</span>
+            </span>
+          </div>
+          <div class="vs">vs</div>
+          <div class="wildcard-team seed-3" data-seed="3">
+            <span class="team-logo"></span>
+            <span class="team-info">
+              <span class="team-name">TBD</span>
+              <span class="team-seed">3</span>
             </span>
           </div>
         </div>
@@ -422,23 +423,7 @@ twitter:
     <div class="bracket-grid al-bracket">
       <div class="bracket-column wildcards">
         <div class="stat-card-label">Wild card</div>
-        <div class="wildcard-matchup">
-          <div class="wildcard-team seed-6" data-seed="6">
-            <span class="team-logo"></span>
-            <span class="team-info">
-              <span class="team-name">TBD</span>
-              <span class="team-seed">6</span>
-            </span>
-          </div>
-          <div class="vs">vs</div>
-          <div class="wildcard-team seed-3" data-seed="3">
-            <span class="team-logo"></span>
-            <span class="team-info">
-              <span class="team-name">TBD</span>
-              <span class="team-seed">3</span>
-            </span>
-          </div>
-        </div>
+        <!-- Order must match .ds-matchup below: the 4/5 winner plays the 1 seed, the 3/6 winner plays the 2 seed. -->
         <div class="wildcard-matchup">
           <div class="wildcard-team seed-5" data-seed="5">
             <span class="team-logo"></span>
@@ -453,6 +438,23 @@ twitter:
             <span class="team-info">
               <span class="team-name">TBD</span>
               <span class="team-seed">4</span>
+            </span>
+          </div>
+        </div>
+        <div class="wildcard-matchup">
+          <div class="wildcard-team seed-6" data-seed="6">
+            <span class="team-logo"></span>
+            <span class="team-info">
+              <span class="team-name">TBD</span>
+              <span class="team-seed">6</span>
+            </span>
+          </div>
+          <div class="vs">vs</div>
+          <div class="wildcard-team seed-3" data-seed="3">
+            <span class="team-logo"></span>
+            <span class="team-info">
+              <span class="team-name">TBD</span>
+              <span class="team-seed">3</span>
             </span>
           </div>
         </div>
