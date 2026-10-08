@@ -48,6 +48,7 @@ PHASE_CONFIG = {
         "scripts": [
             # Postseason-specific
             "scripts/28_fetch_postseason_stats.py",
+            "scripts/33_fetch_all_teams_postseason_series.py",
             # Keep roster/transactions active
             "scripts/19_fetch_roster.py",
             "scripts/26_post_transactions.py",

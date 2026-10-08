@@ -5114,6 +5114,12 @@ function populateTeamSlot(element, team) {
   }
   teamRecord.textContent = `(${team.wins}-${team.losses})`;
   
+  // Tag the slot with the team id so later bracket-progress updates can find
+  // it again without re-deriving seeds (wc-winner/CS/WS slots start empty).
+  if (team.team_id != null) {
+    element.dataset.teamId = String(team.team_id);
+  }
+
   // Add team-specific styling
   teamLogo.setAttribute('data-team', teamAbbr);
   
@@ -5274,6 +5280,113 @@ function applyDodgersSeriesProgress(seriesData, nlTeams) {
   }
 }
 
+// Applies real series results to every team's slot in the bracket (not just
+// the Dodgers'), filling in wc-winner/CS/WS placeholders as rounds complete.
+// Falls back to the Dodgers-only journey (applyDodgersSeriesProgress) when
+// the league-wide dataset isn't available.
+function findSlotByTeamId(root, selector, teamId) {
+  if (!root || teamId == null) return null;
+  return Array.from(root.querySelectorAll(selector)).find(
+    el => Number(el.dataset.teamId) === Number(teamId)
+  ) || null;
+}
+
+function findMatchupByTeamId(root, matchupSelector, teamSelector, teamId) {
+  if (!root || teamId == null) return null;
+  return Array.from(root.querySelectorAll(matchupSelector)).find(matchup =>
+    Array.from(matchup.querySelectorAll(teamSelector)).some(
+      el => Number(el.dataset.teamId) === Number(teamId)
+    )
+  ) || null;
+}
+
+function markMatchupResult(matchupEl, teamSelector, series) {
+  if (!matchupEl || !series.is_over) return;
+  const winnerSlot = findSlotByTeamId(matchupEl, teamSelector, series.winner_team_id);
+  const loserSlot = findSlotByTeamId(matchupEl, teamSelector, series.loser_team_id);
+  if (winnerSlot) setSeriesRecord(winnerSlot, `Won ${series.wins}-${series.losses}`, 'series-won');
+  if (loserSlot) setSeriesRecord(loserSlot, `Lost ${series.wins}-${series.losses}`, 'series-lost');
+}
+
+function applyAllTeamsBracketProgress(seriesList, playoffTeams) {
+  if (!Array.isArray(seriesList) || seriesList.length === 0) return false;
+
+  const allTeams = [...(playoffTeams.nl || []), ...(playoffTeams.al || [])];
+  const teamById = new Map(allTeams.map(t => [Number(t.team_id), t]));
+  const seriesByRoundLeague = (round, league) =>
+    seriesList.filter(s => s.round === round && s.league === league);
+
+  ['NL', 'AL'].forEach(league => {
+    const bracket = document.querySelector(league === 'AL' ? '.al-bracket' : '.nl-bracket');
+    if (!bracket) return;
+
+    const wcMatchups = Array.from(bracket.querySelectorAll('.wildcard-matchup'));
+    const dsMatchups = Array.from(bracket.querySelectorAll('.ds-matchup'));
+
+    // Wild Card round -> fills each Division Series' "wc-winner" placeholder.
+    seriesByRoundLeague('Wild Card', league).forEach(series => {
+      const matchupEl = findMatchupByTeamId(bracket, '.wildcard-matchup', '.wildcard-team', series.home_team_id)
+        || findMatchupByTeamId(bracket, '.wildcard-matchup', '.wildcard-team', series.away_team_id);
+      if (!matchupEl) return;
+      markMatchupResult(matchupEl, '.wildcard-team', series);
+
+      if (series.is_over) {
+        const idx = wcMatchups.indexOf(matchupEl);
+        const dsWinnerSlot = idx >= 0 && dsMatchups[idx]
+          ? dsMatchups[idx].querySelector('.wc-winner')
+          : null;
+        const winnerTeam = teamById.get(Number(series.winner_team_id));
+        if (dsWinnerSlot && winnerTeam) populateTeamSlot(dsWinnerSlot, winnerTeam);
+      }
+    });
+
+    // Division Series -> fills the Championship Series placeholders.
+    seriesByRoundLeague('Division Series', league).forEach(series => {
+      const matchupEl = findMatchupByTeamId(bracket, '.ds-matchup', '.ds-team', series.home_team_id)
+        || findMatchupByTeamId(bracket, '.ds-matchup', '.ds-team', series.away_team_id);
+      if (!matchupEl) return;
+      markMatchupResult(matchupEl, '.ds-team', series);
+
+      if (series.is_over) {
+        const idx = dsMatchups.indexOf(matchupEl);
+        const csSlots = bracket.querySelectorAll('.cs-matchup .cs-team');
+        const csWinnerSlot = idx >= 0 ? csSlots[idx] : null;
+        const winnerTeam = teamById.get(Number(series.winner_team_id));
+        if (csWinnerSlot && winnerTeam) populateTeamSlot(csWinnerSlot, winnerTeam);
+      }
+    });
+
+    // Championship Series -> fills this league's World Series slot.
+    seriesByRoundLeague('Championship Series', league).forEach(series => {
+      const matchupEl = bracket.querySelector('.cs-matchup');
+      if (!matchupEl) return;
+      markMatchupResult(matchupEl, '.cs-team', series);
+
+      if (series.is_over) {
+        const wsSlot = document.querySelector(
+          league === 'AL' ? '.ws-team.al-champion' : '.ws-team.nl-champion'
+        );
+        const winnerTeam = teamById.get(Number(series.winner_team_id));
+        if (wsSlot && winnerTeam) populateTeamSlot(wsSlot, winnerTeam);
+      }
+    });
+  });
+
+  // World Series
+  const worldSeries = seriesList.find(s => s.round === 'World Series');
+  if (worldSeries) {
+    const matchupEl = document.querySelector('.ws-matchup');
+    if (matchupEl) markMatchupResult(matchupEl, '.ws-team', worldSeries);
+  }
+
+  const container = document.getElementById('playoff-bracket-container');
+  if (container && container.querySelector('.dodgers-team.series-lost')) {
+    container.classList.add('dodgers-eliminated');
+  }
+
+  return true;
+}
+
 function displayLastUpdated(lastUpdated) {
   if (!lastUpdated) return;
   
@@ -5293,6 +5406,17 @@ function displayLastUpdated(lastUpdated) {
   lastUpdatedElement.textContent = `Last updated on ${lastUpdated}`;
 }
 
+async function fetchAllTeamsBracketSeries() {
+  try {
+    const { fetchDataset } = await import('./manifest_loader.js');
+    const data = await fetchDataset('postseason_bracket_all_teams');
+    return data && Array.isArray(data.series) ? data.series : null;
+  } catch (error) {
+    console.error('Error fetching all-teams bracket series:', error);
+    return null;
+  }
+}
+
 async function initPlayoffBracket() {
   try {
     const standingsData = await fetchPlayoffBracketData();
@@ -5300,11 +5424,18 @@ async function initPlayoffBracket() {
       const playoffTeams = calculatePlayoffSeeds(standingsData.teams);
       renderPlayoffBracket(playoffTeams);
 
-      const seriesData = await fetchPlayoffJourney();
-      if (seriesData) {
-        applyDodgersSeriesProgress(seriesData, playoffTeams.nl);
+      const allTeamsSeries = await fetchAllTeamsBracketSeries();
+      const appliedAllTeams = allTeamsSeries && applyAllTeamsBracketProgress(allTeamsSeries, playoffTeams);
+
+      // Fall back to the Dodgers-only journey if the league-wide dataset is
+      // missing, so the Dodgers' own slot still reflects their progress.
+      if (!appliedAllTeams) {
+        const seriesData = await fetchPlayoffJourney();
+        if (seriesData) {
+          applyDodgersSeriesProgress(seriesData, playoffTeams.nl);
+        }
       }
-      
+
       // Display last updated timestamp
       if (standingsData.last_updated) {
         displayLastUpdated(standingsData.last_updated);
@@ -5525,9 +5656,17 @@ function renderPlayoffJourney(journeyData) {
     console.log('No playoff journey data to display');
     return;
   }
-  
+
+  // A round that's still "upcoming" while a later round is already in
+  // progress or complete was skipped via a bye (e.g. Wild Card for a
+  // division winner) -- drop it instead of showing a permanent "vs TBD".
+  const visibleRounds = journeyData.filter((round, index) => {
+    if (round.status !== 'upcoming') return true;
+    return !journeyData.slice(index + 1).some(later => later.status !== 'upcoming');
+  });
+
   // Generate HTML for all rounds
-  const roundsHTML = journeyData.map(round => createPlayoffRoundCard(round)).join('');
+  const roundsHTML = visibleRounds.map(round => createPlayoffRoundCard(round)).join('');
   container.innerHTML = roundsHTML;
 }
 

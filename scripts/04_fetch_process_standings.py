@@ -63,6 +63,38 @@ def load_boxscores(profile_name: Optional[str] = None) -> pd.DataFrame:
     raise FileNotFoundError("Boxscores archive not found in S3 or local")
 
 
+def get_regular_season_game_pks(season: int) -> set:
+    """Game PKs for the Dodgers' regular season games.
+
+    The boxscores archive also picks up postseason games (Savant gamelogs +
+    the MLB schedule don't distinguish game type), which must not count
+    toward the regular-season cumulative wins/standings chart. gameType=R
+    scopes the schedule call to the regular season only.
+    """
+    url = "https://statsapi.mlb.com/api/v1/schedule"
+    params = {
+        "sportId": 1,
+        "teamId": 119,
+        "season": season,
+        "gameType": "R",
+    }
+    try:
+        response = requests.get(url, params=params, timeout=30)
+        response.raise_for_status()
+        data = response.json()
+    except Exception as e:
+        logging.warning(f"Could not fetch regular season schedule for {season}: {e}")
+        return set()
+
+    pks = set()
+    for date_entry in data.get("dates", []):
+        for game in date_entry.get("games", []):
+            game_pk = game.get("gamePk")
+            if game_pk is not None:
+                pks.add(int(game_pk))
+    return pks
+
+
 def fetch_nl_west_standings(season: int) -> pd.DataFrame:
     """Fetch game-by-game standings for all NL West teams"""
     import requests
@@ -207,7 +239,14 @@ def build_standings_from_boxscores(df: pd.DataFrame, season: int) -> pd.DataFram
     # Normalize date
     df["game_date"] = pd.to_datetime(df.get("date", df.get("game_date")))
     df = df[df["game_date"].dt.year == season]
-    
+
+    # Exclude postseason games: the boxscores archive also contains them,
+    # but this chart (and the 1958-present history it feeds) is regular
+    # season only.
+    regular_season_pks = get_regular_season_game_pks(season)
+    if regular_season_pks and "game_pk" in df.columns:
+        df = df[df["game_pk"].astype(int).isin(regular_season_pks)]
+
     # Exclude spring training exhibitions (Angels games in March)
     march_angels = (
         (df["game_date"].dt.month == 3) & 

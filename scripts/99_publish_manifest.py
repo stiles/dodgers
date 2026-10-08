@@ -251,6 +251,16 @@ def build_manifest():
             "source": "mlb_statsapi"
         },
         {
+            "id": "postseason_bracket_all_teams",
+            "version": "v1",
+            "url": f"https://stilesdata.com/dodgers/data/postseason/all_teams_postseason_series_{season}.json",
+            "content_type": "application/json",
+            "last_updated": get_pacific_time(),
+            "description": "League-wide postseason series results for the bracket diagram",
+            "cadence": "postseason_only",
+            "source": "mlb_statsapi"
+        },
+        {
             "id": "wins_projection",
             "version": "v1",
             "url": "https://stilesdata.com/dodgers/data/standings/dodgers_wins_projection_timeseries.json",

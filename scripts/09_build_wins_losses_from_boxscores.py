@@ -1,10 +1,11 @@
 import argparse
 import json
 import os
-from typing import Optional
+from typing import Optional, Set
 
 import boto3
 import pandas as pd
+import requests
 
 
 BUCKET = "stilesdata.com"
@@ -15,6 +16,40 @@ LOCAL_BOXES_CSV = os.path.join("data", "standings", "dodgers_boxscores.csv")
 
 OUT_KEY_JSON = "dodgers/data/standings/dodgers_wins_losses_current.json"
 LOCAL_OUT_JSON = os.path.join("data", "standings", "dodgers_wins_losses_current.json")
+
+DODGERS_TEAM_ID = 119
+
+
+def get_regular_season_game_pks(season: int) -> Set[int]:
+    """Game PKs for the Dodgers' regular season games.
+
+    The boxscores archive (built from Baseball Savant gamelogs + the MLB
+    schedule) also picks up postseason games, which must not count toward
+    the regular-season cumulative wins/losses chart. gameType=R scopes the
+    schedule call to the regular season only.
+    """
+    url = "https://statsapi.mlb.com/api/v1/schedule"
+    params = {
+        "sportId": 1,
+        "teamId": DODGERS_TEAM_ID,
+        "season": season,
+        "gameType": "R",
+    }
+    try:
+        response = requests.get(url, params=params, timeout=30)
+        response.raise_for_status()
+        data = response.json()
+    except Exception as exc:
+        print(f"Could not fetch regular season schedule for {season}: {exc}")
+        return set()
+
+    pks = set()
+    for date_entry in data.get("dates", []):
+        for game in date_entry.get("games", []):
+            game_pk = game.get("gamePk")
+            if game_pk is not None:
+                pks.add(int(game_pk))
+    return pks
 
 
 def get_s3_client(profile_name: Optional[str]) -> boto3.client:
@@ -79,7 +114,14 @@ def build_wins_losses(df: pd.DataFrame) -> pd.DataFrame:
     # Filter for current season only
     current_year = pd.Timestamp.now().year
     df = df[df["game_date"].dt.year == current_year]
-    
+
+    # Exclude postseason games: the boxscores archive also contains them
+    # (Savant gamelogs + MLB schedule don't distinguish game type), but this
+    # chart is regular-season wins/losses only.
+    regular_season_pks = get_regular_season_game_pks(current_year)
+    if regular_season_pks and "game_pk" in df.columns:
+        df = df[df["game_pk"].astype(int).isin(regular_season_pks)]
+
     # Filter out exhibition/spring training games
     # Method 1: Exclude games against Angels (Freeway Series exhibitions)
     # Method 2: Only include games from April onwards (regular season typically starts in April)
