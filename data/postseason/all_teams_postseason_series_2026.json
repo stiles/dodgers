@@ -1,6 +1,6 @@
 {
   "season": "2026",
-  "last_updated": "2026-10-08T08:21:34.228405-07:00",
+  "last_updated": "2026-10-08T19:51:25.397211-07:00",
   "series": [
     {
       "series_id": "D_1",
@@ -114,11 +114,11 @@
       "series_id": "W_1",
       "round": "World Series",
       "game_type": "W",
-      "league": null,
-      "home_team": "Higher Seed League Champion",
-      "home_team_id": 2710,
-      "away_team": "Lower Seed League Champion",
-      "away_team_id": 2711,
+      "league": "NL",
+      "home_team": "NL Champion",
+      "home_team_id": 31,
+      "away_team": "AL Champion",
+      "away_team_id": 21,
       "wins": 0,
       "losses": 0,
       "is_over": false,
