@@ -1,6 +1,6 @@
 {
   "season": "2026",
-  "last_updated": "2026-10-08T19:51:25.397211-07:00",
+  "last_updated": "2026-10-09T08:04:50.271667-07:00",
   "series": [
     {
       "series_id": "D_1",
@@ -30,12 +30,12 @@
       "away_team": "Chicago White Sox",
       "away_team_id": 145,
       "wins": 2,
-      "losses": 1,
+      "losses": 2,
       "is_over": false,
-      "winner_team": "Chicago White Sox",
-      "winner_team_id": 145,
-      "loser_team": "Cleveland Guardians",
-      "loser_team_id": 114,
+      "winner_team": null,
+      "winner_team_id": null,
+      "loser_team": null,
+      "loser_team_id": null,
       "description": "ALDS"
     },
     {
