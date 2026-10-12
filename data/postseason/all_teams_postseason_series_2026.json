@@ -1,6 +1,6 @@
 {
   "season": "2026",
-  "last_updated": "2026-10-11T19:10:16.460084-07:00",
+  "last_updated": "2026-10-12T10:31:36.985593-07:00",
   "series": [
     {
       "series_id": "L_1",
@@ -29,13 +29,13 @@
       "home_team_id": 158,
       "away_team": "Los Angeles Dodgers",
       "away_team_id": 119,
-      "wins": 0,
+      "wins": 1,
       "losses": 0,
       "is_over": false,
-      "winner_team": null,
-      "winner_team_id": null,
-      "loser_team": null,
-      "loser_team_id": null,
+      "winner_team": "Milwaukee Brewers",
+      "winner_team_id": 158,
+      "loser_team": "Los Angeles Dodgers",
+      "loser_team_id": 119,
       "description": "NLCS"
     },
     {

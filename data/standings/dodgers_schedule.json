@@ -1,13 +1,5 @@
 [
     {
-        "date":"Sep 22",
-        "opp_name":"San Diego Padres",
-        "home_away":"home",
-        "result":"win",
-        "placement":"last",
-        "game_start":"7-0"
-    },
-    {
         "date":"Sep 23",
         "opp_name":"San Diego Padres",
         "home_away":"home",
@@ -83,9 +75,9 @@
         "date":"Oct 11",
         "opp_name":"Milwaukee Brewers",
         "home_away":"away",
-        "result":"in progress",
-        "placement":"next",
-        "game_start":"Live"
+        "result":"loss",
+        "placement":"last",
+        "game_start":"1-2"
     },
     {
         "date":"Oct 12",
