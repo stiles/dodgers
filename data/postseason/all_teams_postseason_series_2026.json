@@ -1,6 +1,6 @@
 {
   "season": "2026",
-  "last_updated": "2026-10-13T18:42:05.010107-07:00",
+  "last_updated": "2026-10-14T06:26:14.320426-07:00",
   "series": [
     {
       "series_id": "L_1",
@@ -12,12 +12,12 @@
       "away_team": "Cleveland Guardians",
       "away_team_id": 114,
       "wins": 1,
-      "losses": 0,
+      "losses": 1,
       "is_over": false,
-      "winner_team": "Cleveland Guardians",
-      "winner_team_id": 114,
-      "loser_team": "Tampa Bay Rays",
-      "loser_team_id": 139,
+      "winner_team": null,
+      "winner_team_id": null,
+      "loser_team": null,
+      "loser_team_id": null,
       "description": "ALCS"
     },
     {
