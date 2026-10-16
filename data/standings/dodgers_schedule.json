@@ -1,13 +1,5 @@
 [
     {
-        "date":"Sep 25",
-        "opp_name":"San Francisco Giants",
-        "home_away":"away",
-        "result":"win",
-        "placement":"last",
-        "game_start":"2-0"
-    },
-    {
         "date":"Sep 26",
         "opp_name":"San Francisco Giants",
         "home_away":"away",
@@ -83,32 +75,8 @@
         "date":"Oct 15",
         "opp_name":"Milwaukee Brewers",
         "home_away":"home",
-        "result":"in progress",
-        "placement":"next",
-        "game_start":"Live"
-    },
-    {
-        "date":"Oct 16",
-        "opp_name":"Milwaukee Brewers",
-        "home_away":"home",
-        "result":"--",
-        "placement":"next",
-        "game_start":"6:00 PM"
-    },
-    {
-        "date":"Oct 18",
-        "opp_name":"Milwaukee Brewers",
-        "home_away":"away",
-        "result":"--",
-        "placement":"next",
-        "game_start":"5:00 PM"
-    },
-    {
-        "date":"Oct 19",
-        "opp_name":"Milwaukee Brewers",
-        "home_away":"away",
-        "result":"--",
-        "placement":"next",
-        "game_start":"5:00 PM"
+        "result":"loss",
+        "placement":"last",
+        "game_start":"4-6"
     }
 ]
