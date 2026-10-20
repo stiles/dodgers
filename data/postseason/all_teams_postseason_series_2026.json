@@ -1,6 +1,6 @@
 {
   "season": "2026",
-  "last_updated": "2026-10-19T08:22:28.893426-07:00",
+  "last_updated": "2026-10-20T06:25:16.882824-07:00",
   "series": [
     {
       "series_id": "L_1",
@@ -11,9 +11,9 @@
       "home_team_id": 139,
       "away_team": "Cleveland Guardians",
       "away_team_id": 114,
-      "wins": 3,
+      "wins": 4,
       "losses": 2,
-      "is_over": false,
+      "is_over": true,
       "winner_team": "Tampa Bay Rays",
       "winner_team_id": 139,
       "loser_team": "Cleveland Guardians",
@@ -45,8 +45,8 @@
       "league": "NL",
       "home_team": "Milwaukee Brewers",
       "home_team_id": 158,
-      "away_team": "TB/CLE",
-      "away_team_id": 21,
+      "away_team": "Tampa Bay Rays",
+      "away_team_id": 139,
       "wins": 0,
       "losses": 0,
       "is_over": false,
