@@ -1,43 +1,7 @@
 {
   "season": "2026",
-  "last_updated": "2026-10-20T06:25:16.882824-07:00",
+  "last_updated": "2026-10-20T12:02:27.737975-07:00",
   "series": [
-    {
-      "series_id": "L_1",
-      "round": "Championship Series",
-      "game_type": "L",
-      "league": "AL",
-      "home_team": "Tampa Bay Rays",
-      "home_team_id": 139,
-      "away_team": "Cleveland Guardians",
-      "away_team_id": 114,
-      "wins": 4,
-      "losses": 2,
-      "is_over": true,
-      "winner_team": "Tampa Bay Rays",
-      "winner_team_id": 139,
-      "loser_team": "Cleveland Guardians",
-      "loser_team_id": 114,
-      "description": "ALCS"
-    },
-    {
-      "series_id": "L_2",
-      "round": "Championship Series",
-      "game_type": "L",
-      "league": "NL",
-      "home_team": "Los Angeles Dodgers",
-      "home_team_id": 119,
-      "away_team": "Milwaukee Brewers",
-      "away_team_id": 158,
-      "wins": 4,
-      "losses": 0,
-      "is_over": true,
-      "winner_team": "Milwaukee Brewers",
-      "winner_team_id": 158,
-      "loser_team": "Los Angeles Dodgers",
-      "loser_team_id": 119,
-      "description": "NLCS"
-    },
     {
       "series_id": "W_1",
       "round": "World Series",
@@ -199,6 +163,42 @@
       "loser_team": "San Diego Padres",
       "loser_team_id": 135,
       "description": "NLDS"
+    },
+    {
+      "series_id": "L_2",
+      "round": "Championship Series",
+      "game_type": "L",
+      "league": "NL",
+      "home_team": "Los Angeles Dodgers",
+      "home_team_id": 119,
+      "away_team": "Milwaukee Brewers",
+      "away_team_id": 158,
+      "wins": 4,
+      "losses": 0,
+      "is_over": true,
+      "winner_team": "Milwaukee Brewers",
+      "winner_team_id": 158,
+      "loser_team": "Los Angeles Dodgers",
+      "loser_team_id": 119,
+      "description": "NLCS"
+    },
+    {
+      "series_id": "L_1",
+      "round": "Championship Series",
+      "game_type": "L",
+      "league": "AL",
+      "home_team": "Tampa Bay Rays",
+      "home_team_id": 139,
+      "away_team": "Cleveland Guardians",
+      "away_team_id": 114,
+      "wins": 4,
+      "losses": 2,
+      "is_over": true,
+      "winner_team": "Tampa Bay Rays",
+      "winner_team_id": 139,
+      "loser_team": "Cleveland Guardians",
+      "loser_team_id": 114,
+      "description": "ALCS"
     }
   ]
 }
