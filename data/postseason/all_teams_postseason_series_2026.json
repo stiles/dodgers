@@ -1,6 +1,6 @@
 {
   "season": "2026",
-  "last_updated": "2026-10-23T18:26:06.223525-07:00",
+  "last_updated": "2026-10-24T05:31:11.917942-07:00",
   "series": [
     {
       "series_id": "W_1",
@@ -11,13 +11,13 @@
       "home_team_id": 158,
       "away_team": "Tampa Bay Rays",
       "away_team_id": 139,
-      "wins": 0,
+      "wins": 1,
       "losses": 0,
       "is_over": false,
-      "winner_team": null,
-      "winner_team_id": null,
-      "loser_team": null,
-      "loser_team_id": null,
+      "winner_team": "Milwaukee Brewers",
+      "winner_team_id": 158,
+      "loser_team": "Tampa Bay Rays",
+      "loser_team_id": 139,
       "description": "World Series"
     },
     {

@@ -653,13 +653,6 @@
   },
   {
     "date":"2026-08-21",
-    "transaction":"Dodgers optioned RHP Emmet Sheehan to Oklahoma City Comets.",
-    "players":[
-      "Emmet Sheehan"
-    ]
-  },
-  {
-    "date":"2026-08-21",
     "transaction":"Dodgers recalled RHP Paul Gervase from Oklahoma City Comets.",
     "players":[
       "Paul Gervase"
@@ -673,10 +666,10 @@
     ]
   },
   {
-    "date":"2026-08-19",
-    "transaction":"Dodgers activated RHP Brock Stewart from the 15-day injured list.",
+    "date":"2026-08-21",
+    "transaction":"Dodgers optioned RHP Emmet Sheehan to Oklahoma City Comets.",
     "players":[
-      "Brock Stewart"
+      "Emmet Sheehan"
     ]
   },
   {
@@ -687,10 +680,10 @@
     ]
   },
   {
-    "date":"2026-08-18",
-    "transaction":"Dodgers sent RHP Blake Treinen on a rehab assignment to Oklahoma City Comets.",
+    "date":"2026-08-19",
+    "transaction":"Dodgers activated RHP Brock Stewart from the 15-day injured list.",
     "players":[
-      "Blake Treinen"
+      "Brock Stewart"
     ]
   },
   {
@@ -698,6 +691,13 @@
     "transaction":"Dodgers placed RHP Edwin Díaz on the 15-day injured list. Neck inflammation.",
     "players":[
       "Edwin Díaz"
+    ]
+  },
+  {
+    "date":"2026-08-18",
+    "transaction":"Dodgers sent RHP Blake Treinen on a rehab assignment to Oklahoma City Comets.",
+    "players":[
+      "Blake Treinen"
     ]
   }
 ]
