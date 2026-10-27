@@ -21,18 +21,18 @@ jobs:
           echo "proceed=false" >> $GITHUB_OUTPUT
         fi
 
-    - uses: actions/checkout@v2
+    - uses: actions/checkout@v7
       if: steps.time_check.outputs.proceed == 'true'
 
     - name: Set up Python
       if: steps.time_check.outputs.proceed == 'true'
-      uses: actions/setup-python@v2
+      uses: actions/setup-python@v7
       with:
-        python-version: '3.9'
+        python-version: '3.12'
 
     - name: Set up AWS Credentials
       if: steps.time_check.outputs.proceed == 'true'
-      uses: aws-actions/configure-aws-credentials@v1
+      uses: aws-actions/configure-aws-credentials@v6
       with:
         aws-access-key-id: ${{ secrets.AWS_ACCESS_KEY_ID }}
         aws-secret-access-key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
