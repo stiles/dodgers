@@ -36,7 +36,7 @@
         "stat":"fielding_pct",
         "value":".989",
         "category":"standings",
-        "context_value":"4th",
+        "context_value":"N\/A",
         "context_value_label":"League rank"
     },
     {
@@ -44,7 +44,7 @@
         "stat":"errors",
         "value":64,
         "category":"standings",
-        "context_value":"2nd",
+        "context_value":"N\/A",
         "context_value_label":"League rank"
     },
     {
@@ -52,7 +52,7 @@
         "stat":"runs",
         "value":801,
         "category":"standings",
-        "context_value":"4th",
+        "context_value":"N\/A",
         "context_value_label":"League rank"
     },
     {
@@ -84,7 +84,7 @@
         "stat":"home_runs",
         "value":204,
         "category":"batting",
-        "context_value":"7th",
+        "context_value":"N\/A",
         "context_value_label":"League rank"
     },
     {
@@ -100,7 +100,7 @@
         "stat":"on_base_pct",
         "value":".338",
         "category":"batting",
-        "context_value":"3rd",
+        "context_value":"N\/A",
         "context_value_label":"League rank"
     },
     {
@@ -108,7 +108,7 @@
         "stat":"slugging_pct",
         "value":".424",
         "category":"batting",
-        "context_value":"2nd",
+        "context_value":"N\/A",
         "context_value_label":"League rank"
     },
     {
@@ -116,7 +116,7 @@
         "stat":"ops",
         "value":".762",
         "category":"batting",
-        "context_value":"2nd",
+        "context_value":"N\/A",
         "context_value_label":"League rank"
     },
     {
@@ -124,7 +124,7 @@
         "stat":"stolen_bases",
         "value":72,
         "category":"batting",
-        "context_value":"28th",
+        "context_value":"N\/A",
         "context_value_label":"League rank"
     },
     {
@@ -140,7 +140,7 @@
         "stat":"doubles",
         "value":266,
         "category":"batting",
-        "context_value":"8th",
+        "context_value":"N\/A",
         "context_value_label":"League rank"
     },
     {
@@ -148,7 +148,7 @@
         "stat":"strikeouts",
         "value":"1,521",
         "category":"pitching",
-        "context_value":"4th",
+        "context_value":"N\/A",
         "context_value_label":"League rank"
     },
     {
@@ -156,7 +156,7 @@
         "stat":"walks",
         "value":480,
         "category":"pitching",
-        "context_value":"27th",
+        "context_value":"N\/A",
         "context_value_label":"League rank"
     },
     {
@@ -164,7 +164,7 @@
         "stat":"era",
         "value":"3.55",
         "category":"pitching",
-        "context_value":"4th",
+        "context_value":"N\/A",
         "context_value_label":"League rank"
     },
     {
@@ -172,7 +172,7 @@
         "stat":"whip",
         "value":"1.14",
         "category":"pitching",
-        "context_value":"2nd",
+        "context_value":"N\/A",
         "context_value_label":"League rank"
     },
     {
@@ -180,7 +180,7 @@
         "stat":"avg_against",
         "value":".218",
         "category":"pitching",
-        "context_value":"1st",
+        "context_value":"N\/A",
         "context_value_label":"League rank"
     },
     {
@@ -188,13 +188,13 @@
         "stat":"k_bb_ratio",
         "value":3.17,
         "category":"pitching",
-        "context_value":"3rd",
+        "context_value":"N\/A",
         "context_value_label":"League rank"
     },
     {
         "stat_label":"Last updated",
         "stat":"update_time",
-        "value":"October 25, 2026, 6:04 PM PT",
+        "value":"October 26, 2026, 7:52 PM PT",
         "category":"summary",
         "context_value":"",
         "context_value_label":""
@@ -202,7 +202,7 @@
     {
         "stat_label":"Team summary",
         "stat":"summary",
-        "value":"<span class='highlight'>LOS ANGELES<\/span> <span class='updated'>(October 25)<\/span> \u2014 The Dodgers have compiled a <span class='highlight'>100-62<\/span> record in the 2026 regular season, a <span class='highlight'>62%<\/span> winning percentage. The team was eliminated in the NLCS. The last game's result is not yet available.",
+        "value":"<span class='highlight'>LOS ANGELES<\/span> <span class='updated'>(October 26)<\/span> \u2014 The Dodgers compiled a <span class='highlight'>100-62<\/span> record in the 2026 regular season, a <span class='highlight'>62%<\/span> winning percentage. The team was eliminated in the NLCS. See you next spring!",
         "category":"summary",
         "context_value":"",
         "context_value_label":""

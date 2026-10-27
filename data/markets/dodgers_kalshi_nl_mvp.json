@@ -2,7 +2,7 @@
   "title": "NL MVP odds",
   "event_ticker": "KXMLBNLMVP-26",
   "source": "kalshi",
-  "last_updated": "2026-10-25T18:03:11.645553-07:00",
+  "last_updated": "2026-10-26T19:49:02.041578-07:00",
   "candidates": [
     {
       "ticker": "KXMLBNLMVP-26-PCRO",
@@ -979,6 +979,10 @@
         },
         {
           "date": "2026-10-25",
+          "price": 0.99
+        },
+        {
+          "date": "2026-10-26",
           "price": 0.99
         }
       ]
@@ -2022,6 +2026,10 @@
         },
         {
           "date": "2026-10-25",
+          "price": 0.01
+        },
+        {
+          "date": "2026-10-26",
           "price": 0.01
         }
       ]

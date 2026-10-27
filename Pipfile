@@ -21,10 +21,9 @@ cython = "*"
 geopandas = "*"
 bs4 = "*"
 rtree = "*"
-pygeos = "*"
-ipywidgets = '7.0.0'
-ipympl = '0.2.1'
-matplotlib = '3.2.0'
+ipywidgets = "*"
+ipympl = "*"
+matplotlib = "*"
 plotly = "*"
 cartopy = "*"
 jupyter-black = "*"
@@ -42,4 +41,4 @@ pyogrio = "*"
 fiona = "*"
 
 [requires]
-python_version = "3.9"
+python_version = "3.12"
