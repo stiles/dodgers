@@ -679,15 +679,31 @@ def get_next_game_info():
         logging.warning(f"Could not fetch next game info: {e}")
         return None
 
+def load_postseason_series():
+    """Load this season's postseason series, falling back to the published copy.
+
+    Offseason runs don't fetch postseason data and data/ isn't committed,
+    so the local file only exists during the postseason phase.
+    """
+    year = datetime.now().year
+    postseason_file = f"data/postseason/dodgers_postseason_series_{year}.json"
+    if os.path.exists(postseason_file):
+        with open(postseason_file, 'r') as f:
+            return json.load(f)
+    url = f"https://stilesdata.com/dodgers/data/postseason/dodgers_postseason_series_{year}.json"
+    try:
+        response = requests.get(url, timeout=10)
+        if response.status_code == 200:
+            return response.json()
+    except (requests.exceptions.RequestException, ValueError) as e:
+        logging.warning(f"Could not fetch published postseason series: {e}")
+    return None
+
 def generate_postseason_summary():
     """Generate a summary of the current postseason status"""
     try:
-        # Try to load postseason series data
-        postseason_file = f"data/postseason/dodgers_postseason_series_{datetime.now().year}.json"
-        if os.path.exists(postseason_file):
-            with open(postseason_file, 'r') as f:
-                postseason_data = json.load(f)
-            
+        postseason_data = load_postseason_series()
+        if postseason_data:
             # Find current series status
             current_series = None
             completed_series = []
@@ -747,11 +763,11 @@ def generate_postseason_summary():
                     # Check if the last series was the World Series
                     if last_series['round'] == 'World Series':
                         opponent = last_series.get('opponent', 'their opponent')
-                        return {"text": f"The team won the <span class='highlight'>World Series</span>, defeating the <span class='highlight'>{opponent}</span>!"}
+                        return {"text": f"The team won the <span class='highlight'>World Series</span>, defeating the <span class='highlight'>{opponent}</span>!", "season_over": True}
                     else:
                         return {"text": f"The team advanced through the {last_series['round']} and continues in the postseason."}
                 else:
-                    return {"text": f"The team was eliminated in the {last_series['round']}."}
+                    return {"text": f"The team was eliminated in the {last_series['round']}.", "season_over": True}
             else:
                 return {"text": "The team is preparing for their postseason run."}
         else:
@@ -890,11 +906,8 @@ def generate_summary(
         
         try:
             # Load postseason series data to check for transitions
-            postseason_file = f"data/postseason/dodgers_postseason_series_{datetime.now().year}.json"
-            if os.path.exists(postseason_file):
-                with open(postseason_file, 'r') as f:
-                    postseason_data = json.load(f)
-                
+            postseason_data = load_postseason_series()
+            if postseason_data:
                 # Find current and most recent completed series
                 current_series = None
                 last_completed_series = None
@@ -963,11 +976,8 @@ def generate_summary(
                 # Extract current series info to compare
                 current_series_info = ""
                 try:
-                    postseason_file = f"data/postseason/dodgers_postseason_series_{datetime.now().year}.json"
-                    if os.path.exists(postseason_file):
-                        with open(postseason_file, 'r') as f:
-                            postseason_data = json.load(f)
-                        
+                    postseason_data = load_postseason_series()
+                    if postseason_data:
                         # Find current series
                         for series in postseason_data:
                             if series['status'] == 'in_progress':
@@ -1002,39 +1012,39 @@ def generate_summary(
     else:
         # Simple text format (fallback) - or no postseason text during regular season
         postseason_text = ""
+        season_over = False
         if postseason_summary:
             postseason_text = postseason_summary.get('text', '') if isinstance(postseason_summary, dict) else str(postseason_summary)
-        
-        # Check if we need to add a period (avoid double punctuation)
-        ending_punctuation = "." if not (last_game_summary_fragment and (last_game_summary_fragment.endswith('.') or last_game_summary_fragment.endswith('!') or last_game_summary_fragment.endswith('?'))) else ""
+            season_over = isinstance(postseason_summary, dict) and postseason_summary.get('season_over', False)
         
         # Build summary - only include postseason text if it exists
         # Use "an" before percentages starting with 8 (80, 81, etc.)
         article = "an" if str(int(win_pct))[0] == "8" else "a"
+        verb = "compiled" if season_over else "have compiled"
         
         summary_parts = [
             f"<span class='highlight'>LOS ANGELES</span> <span class='updated'>({current_date})</span> — "
-            f"The Dodgers have compiled {article_for_number(record)} <span class='highlight'>{record}</span> record in the {current_year} regular season, {article} <span class='highlight'>{win_pct:.0f}%</span> winning percentage."
+            f"The Dodgers {verb} {article_for_number(record)} <span class='highlight'>{record}</span> record in the {current_year} regular season, {article} <span class='highlight'>{win_pct:.0f}%</span> winning percentage."
         ]
         
         if postseason_text:
             summary_parts.append(postseason_text)
         
-        if last_game_summary_fragment:
-            # Keep the period from last game fragment (it's a complete sentence now)
-            summary_parts.append(last_game_summary_fragment)
+        if season_over:
+            summary_parts.append("See you next spring!")
+        else:
+            if last_game_summary_fragment:
+                # Keep the period from last game fragment (it's a complete sentence now)
+                summary_parts.append(last_game_summary_fragment)
+            
+            if next_game_text:
+                # Next game is now a separate sentence starting with "The team will face..."
+                next_game_clean = next_game_text.strip()
+                if next_game_clean.startswith('and '):
+                    next_game_clean = next_game_clean[4:]  # Remove "and " if present
+                summary_parts.append(next_game_clean)
         
-        if next_game_text:
-            # Next game is now a separate sentence starting with "The team will face..."
-            next_game_clean = next_game_text.strip()
-            if next_game_clean.startswith('and '):
-                next_game_clean = next_game_clean[4:]  # Remove "and " if present
-            summary_parts.append(next_game_clean)
-        
-        # Always end with a period
-        summary = " ".join(summary_parts)
-        if not summary.endswith('.'):
-            summary += '.'
+        summary = join_sentences(*summary_parts)
     return summary
 
 

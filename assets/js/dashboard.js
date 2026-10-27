@@ -5448,11 +5448,24 @@ async function initPlayoffBracket() {
   }
 }
 
+// Seeds are final once the postseason starts, so the "if it started today"
+// race is moot and the season charts below are regular season only.
+function labelSectionsAsRegularSeason() {
+  const playoffRaceSection = document.getElementById('playoff-race-section');
+  if (playoffRaceSection) playoffRaceSection.style.display = 'none';
+  const performanceHeader = document.querySelector('.performance-header');
+  if (performanceHeader) performanceHeader.textContent = 'Regular season performance and standings';
+  document.querySelectorAll('.regular-season-header').forEach(header => {
+    const label = header.textContent.trim();
+    header.textContent = `Regular season ${label.charAt(0).toLowerCase()}${label.slice(1)}`;
+  });
+}
+
 // Initialize playoff bracket when DOM is loaded
 document.addEventListener('DOMContentLoaded', async function() {
   // Check if postseason section should be visible
   try {
-    const { isPostseasonActive, getCurrentSeason } = await import('./manifest_loader.js');
+    const { isPostseasonActive, getCurrentSeason, getCurrentPhase } = await import('./manifest_loader.js');
     
     console.log('Checking postseason status...');
     const postseasonActive = await isPostseasonActive();
@@ -5472,6 +5485,9 @@ document.addEventListener('DOMContentLoaded', async function() {
         performanceHeader.style.borderTop = 'none';
         performanceHeader.style.paddingTop = '0';
       }
+      if (await getCurrentPhase() === 'offseason') {
+        labelSectionsAsRegularSeason();
+      }
       // Do not initialize any postseason components
       return;
     }
@@ -5487,16 +5503,7 @@ document.addEventListener('DOMContentLoaded', async function() {
       console.log(`Updated header to: Postseason ${season}`);
     }
 
-    // Seeds are final once the postseason starts, so the "if it started
-    // today" race is moot and the season charts below are regular season only.
-    const playoffRaceSection = document.getElementById('playoff-race-section');
-    if (playoffRaceSection) playoffRaceSection.style.display = 'none';
-    const performanceHeader = document.querySelector('.performance-header');
-    if (performanceHeader) performanceHeader.textContent = 'Regular season performance and standings';
-    document.querySelectorAll('.regular-season-header').forEach(header => {
-      const label = header.textContent.trim();
-      header.textContent = `Regular season ${label.charAt(0).toLowerCase()}${label.slice(1)}`;
-    });
+    labelSectionsAsRegularSeason();
     
     // Initialize postseason components
     if (document.getElementById('playoff-bracket-container')) {

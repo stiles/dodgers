@@ -77,7 +77,8 @@ def has_active_or_upcoming_games(games):
 
 def dodgers_in_live_postseason(season):
     """
-    True if the Dodgers are in this season's bracket and the World Series isn't over.
+    True if the Dodgers are in this season's bracket, haven't been eliminated
+    and the World Series isn't over.
 
     Between rounds the next series is listed with placeholder teams ("LAD/SD"),
     so a teamId schedule query returns nothing even though the Dodgers advanced.
@@ -93,6 +94,7 @@ def dodgers_in_live_postseason(season):
         return False
 
     dodgers_in_bracket = False
+    dodgers_eliminated = False
     world_series_over = False
     for group in series_groups:
         games = group.get("games", [])
@@ -103,10 +105,13 @@ def dodgers_in_live_postseason(season):
             team_ids = {teams.get(side, {}).get("team", {}).get("id") for side in ("home", "away")}
             if DODGERS_TEAM_ID in team_ids:
                 dodgers_in_bracket = True
+        series_status = games[-1].get("seriesStatus", {})
+        if series_status.get("isOver") and series_status.get("losingTeam", {}).get("id") == DODGERS_TEAM_ID:
+            dodgers_eliminated = True
         if group.get("series", {}).get("gameType") == "W":
-            world_series_over = bool(games[-1].get("seriesStatus", {}).get("isOver"))
+            world_series_over = bool(series_status.get("isOver"))
 
-    return dodgers_in_bracket and not world_series_over
+    return dodgers_in_bracket and not dodgers_eliminated and not world_series_over
 
 def detect_season_phase():
     """

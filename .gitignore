@@ -22,6 +22,7 @@ _data/
 !_data/navigation.yml
 
 # Python
+.venv/
 __pycache__/
 *.pyc
 *.pyo
