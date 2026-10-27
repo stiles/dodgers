@@ -38,6 +38,6 @@ gem 'csv'
 gem 'base64'
 gem 'bigdecimal'
 gem 'faraday-retry'
-gem "sass-embedded", "~> 1.69.5"
-gem "google-protobuf", "~> 3.25.3"
+gem "sass-embedded"
+gem "google-protobuf"
 gem "rake", "~> 13.2"
